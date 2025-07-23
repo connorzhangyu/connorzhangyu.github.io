@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"connorzhangyu.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="元件库新建元件库的文件  随便画一个图,并保存,注意这里的1和2的表示  另外个文件引入元件库  引入之后,就可以看到  移除元件库  母版修改了母版,所有使用母版的页面都会修改 母版的占用空间 创建两个母版  一个母版是这样的,坐标位置是0,0  一个母版不是0,0,  创建一个页面,把两个组件都拖过来,能看到这两个母版占用的空间的大小不一样  母版的设置   随意拖放,就是使用母版之后,位置是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Axure">
+<meta property="og:url" content="https://connorzhangyu.github.io/2025/07/06/Axure/index.html">
+<meta property="og:site_name" content="Hello World!">
+<meta property="og:description" content="元件库新建元件库的文件  随便画一个图,并保存,注意这里的1和2的表示  另外个文件引入元件库  引入之后,就可以看到  移除元件库  母版修改了母版,所有使用母版的页面都会修改 母版的占用空间 创建两个母版  一个母版是这样的,坐标位置是0,0  一个母版不是0,0,  创建一个页面,把两个组件都拖过来,能看到这两个母版占用的空间的大小不一样  母版的设置   随意拖放,就是使用母版之后,位置是">
+<meta property="og:locale">
+<meta property="og:image" content="https://image.runtimes.cc/202507061428942.png">
+<meta property="og:image" content="https://image.runtimes.cc/202507061428190.png">
+<meta property="og:image" content="https://image.runtimes.cc/202507061428906.png">
+<meta property="og:image" content="https://image.runtimes.cc/202507061430476.png">
+<meta property="og:image" content="https://image.runtimes.cc/202507061428232.png">
+<meta property="og:image" content="https://image.runtimes.cc/202507061428243.png">
+<meta property="og:image" content="https://image.runtimes.cc/202507061428483.png">
+<meta property="og:image" content="https://image.runtimes.cc/202507061428764.png">
+<meta property="og:image" content="https://image.runtimes.cc/202507061428063.png">
+<meta property="og:image" content="https://image.runtimes.cc/202507061429492.png">
+<meta property="og:image" content="https://image.runtimes.cc/202507061430589.png">
+<meta property="og:image" content="https://image.runtimes.cc/202507061429156.png">
+<meta property="og:image" content="https://image.runtimes.cc/202507061429815.png">
+<meta property="og:image" content="https://image.runtimes.cc/202507061429481.png">
+<meta property="og:image" content="https://image.runtimes.cc/202507061429096.png">
+<meta property="og:image" content="https://image.runtimes.cc/202507061429866.png">
+<meta property="og:image" content="https://image.runtimes.cc/202507061429855.png">
+<meta property="og:image" content="https://image.runtimes.cc/202507061429196.png">
+<meta property="og:image" content="https://image.runtimes.cc/202507061429908.png">
+<meta property="og:image" content="https://image.runtimes.cc/202507061429243.png">
+<meta property="og:image" content="https://image.runtimes.cc/202507061430370.png">
+<meta property="article:published_time" content="2025-07-06T06:31:09.000Z">
+<meta property="article:modified_time" content="2025-07-06T06:31:09.000Z">
+<meta property="article:author" content="connorzhang">
+<meta property="article:tag" content="Axure">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image.runtimes.cc/202507061428942.png">
+
+
+<link rel="canonical" href="https://connorzhangyu.github.io/2025/07/06/Axure/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh","comments":true,"permalink":"https://connorzhangyu.github.io/2025/07/06/Axure/","path":"2025/07/06/Axure/","title":"Axure"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Axure | Hello World!</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Hello World!</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%83%E4%BB%B6%E5%BA%93"><span class="nav-number">1.</span> <span class="nav-text">元件库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AF%8D%E7%89%88"><span class="nav-number">2.</span> <span class="nav-text">母版</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%A4%E4%BA%92%E9%9D%A2%E6%9D%BF"><span class="nav-number">3.</span> <span class="nav-text">交互面板</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%B7%E5%BC%8F%E9%9D%A2%E6%9D%BF"><span class="nav-number">4.</span> <span class="nav-text">样式面板</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%99%8D%E4%BD%8E%E9%A5%B1%E5%92%8C%E5%BA%A6"><span class="nav-number">4.0.1.</span> <span class="nav-text">降低饱和度</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%B4%E6%98%8E%E7%BC%96%E8%BE%91%E5%8C%BA"><span class="nav-number">5.</span> <span class="nav-text">说明编辑区</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Axure%E5%9F%BA%E6%9C%AC%E5%85%83%E4%BB%B6"><span class="nav-number">6.</span> <span class="nav-text">Axure基本元件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1%E4%B8%AD%E7%9A%84%E6%A0%B7%E5%BC%8F"><span class="nav-number">7.</span> <span class="nav-text">交互设计中的样式</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">connorzhang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">64</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">81</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh">
+    <link itemprop="mainEntityOfPage" href="https://connorzhangyu.github.io/2025/07/06/Axure/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="connorzhang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello World!">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Axure | Hello World!">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Axure
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2025-07-06 14:31:09" itemprop="dateCreated datePublished" datetime="2025-07-06T14:31:09+08:00">2025-07-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Axure/" itemprop="url" rel="index"><span itemprop="name">Axure</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="元件库"><a href="#元件库" class="headerlink" title="元件库"></a>元件库</h1><p>新建元件库的文件</p>
+<p><img src="https://image.runtimes.cc/202507061428942.png" alt="image-20250706142136476"></p>
+<p>随便画一个图,并保存,注意这里的1和2的表示</p>
+<p><img src="https://image.runtimes.cc/202507061428190.png" alt="image-20250706142151097"></p>
+<p>另外个文件引入元件库</p>
+<p><img src="https://image.runtimes.cc/202507061428906.png" alt="image-20250706142226628"></p>
+<p>引入之后,就可以看到</p>
+<p><img src="https://image.runtimes.cc/202507061430476.png" alt="image-20250706142238748"></p>
+<p>移除元件库</p>
+<p><img src="https://image.runtimes.cc/202507061428232.png" alt="image-20250706142255363"></p>
+<h1 id="母版"><a href="#母版" class="headerlink" title="母版"></a>母版</h1><p>修改了母版,所有使用母版的页面都会修改</p>
+<p>母版的占用空间</p>
+<p>创建两个母版</p>
+<p><img src="https://image.runtimes.cc/202507061428243.png" alt="image-20250706142340026"></p>
+<p>一个母版是这样的,坐标位置是0,0</p>
+<p><img src="https://image.runtimes.cc/202507061428483.png" alt="image-20250706142402446"></p>
+<p>一个母版不是0,0,</p>
+<p><img src="https://image.runtimes.cc/202507061428764.png" alt="image-20250706142416270"></p>
+<p>创建一个页面,把两个组件都拖过来,能看到这两个母版占用的空间的大小不一样</p>
+<p><img src="https://image.runtimes.cc/202507061428063.png" alt="image-20250706142431054"></p>
+<p>母版的设置</p>
+<p><img src="https://image.runtimes.cc/202507061429492.png" alt="image-20250706142444726"></p>
+<ul>
+<li>随意拖放,就是使用母版之后,位置是可以随意拖放的</li>
+<li>使用母版的位置,比如母版的位置是0.0, 在页面上拖过去的母版就是0.0</li>
+<li>脱离母版:使用母版的内容,可以任意修改内容,跟母版就没有关系了,就相当于复制了母版的内容而已</li>
+</ul>
+<p>在页面上使用了母版,点击右键也可以 脱离母版</p>
+<p><img src="https://image.runtimes.cc/202507061430589.png" alt="image-20250706142506429"></p>
+<p>添加到页面 的功能,相当于批量一键把母版添加到多个页面</p>
+<p><img src="https://image.runtimes.cc/202507061429156.png" alt="image-20250706142523136"></p>
+<h1 id="交互面板"><a href="#交互面板" class="headerlink" title="交互面板"></a>交互面板</h1><p><img src="https://image.runtimes.cc/202507061429815.png" alt="image-20250706142536449"></p>
+<p><img src="https://image.runtimes.cc/202507061429481.png" alt="image-20250706142544668"></p>
+<h1 id="样式面板"><a href="#样式面板" class="headerlink" title="样式面板"></a>样式面板</h1><h3 id="降低饱和度"><a href="#降低饱和度" class="headerlink" title="降低饱和度"></a>降低饱和度</h3><p>不要点击元件,随便点个背景页面,就会有这个显示了</p>
+<p><img src="https://image.runtimes.cc/202507061429096.png" alt="image-20250706142602186"></p>
+<p>自适应文本宽度高度</p>
+<p><img src="https://image.runtimes.cc/202507061429866.png" alt="image-20250706142614281"></p>
+<h1 id="说明编辑区"><a href="#说明编辑区" class="headerlink" title="说明编辑区"></a>说明编辑区</h1><p><img src="https://image.runtimes.cc/202507061429855.png" alt="image-20250706142630046"></p>
+<h1 id="Axure基本元件"><a href="#Axure基本元件" class="headerlink" title="Axure基本元件"></a>Axure基本元件</h1><p>图片</p>
+<p><img src="https://image.runtimes.cc/202507061429196.png" alt="image-20250706142646293"></p>
+<p>中间的图是刚从组件库里拖出来的,这是双击画面添加图片, 图片的大小不是组件的大小 要双击边框,就变成右边的的图了(黄色变成了白色),再双击图片,就可以把要添加的图片自动缩小成组件的大小了</p>
+<h1 id="交互设计中的样式"><a href="#交互设计中的样式" class="headerlink" title="交互设计中的样式"></a>交互设计中的样式</h1><ul>
+<li>鼠标悬停</li>
+</ul>
+<p><img src="https://image.runtimes.cc/202507061429908.png" alt="image-20250706142719000"></p>
+<ul>
+<li>鼠标按下,同理(鼠标悬停,只是选项不一样)</li>
+<li>选中(需要通过别的时间,才能触发,比如这里要触发矩形,用右边的按钮触发)</li>
+</ul>
+<p><img src="https://image.runtimes.cc/202507061429243.png" alt="image-20250706142738173"></p>
+<ul>
+<li>禁用</li>
+</ul>
+<p><img src="https://image.runtimes.cc/202507061430370.png" alt="image-20250706142752114"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Axure/" rel="tag"># Axure</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/05/29/Dapp/" rel="prev" title="Dapp">
+                  <i class="fa fa-angle-left"></i> Dapp
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/07/23/hello-world/" rel="next" title="Hello World">
+                  Hello World <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">connorzhang</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
