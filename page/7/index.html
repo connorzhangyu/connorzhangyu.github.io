@@ -1620,95 +1620,6 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://connorzhangyu.github.io/2022/11/19/Cloudflare/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Connor">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hello World">
-      <meta itemprop="description" content="connor的个人博客">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Hello World">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/11/19/Cloudflare/" class="post-title-link" itemprop="url">Cloudflare</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-11-19 18:25:00" itemprop="dateCreated datePublished" datetime="2022-11-19T18:25:00+07:00">2022-11-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-11-21 18:57:00" itemprop="dateModified" datetime="2022-11-21T18:57:00+07:00">2022-11-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Cloud/" itemprop="url" rel="index"><span itemprop="name">Cloud</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="关闭IPV6"><a href="#关闭IPV6" class="headerlink" title="关闭IPV6"></a>关闭IPV6</h1><p><img src="https://image.runtimes.cc/202404051517919.png"></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">curl -X PATCH <span class="string">&quot;https://api.cloudflare.com/client/v4/zones/cfa068f2a1e282a2731ba29a0a24b052/settings/ipv6&quot;</span> \</span><br><span class="line">     -H <span class="string">&quot;X-Auth-Email: y950727@gmail.com&quot;</span> \</span><br><span class="line">     -H <span class="string">&quot;X-Auth-Key: 830419c40277b1cff929397d7c08b2012c2a&quot;</span> \</span><br><span class="line">     -H <span class="string">&quot;Content-Type: application/json&quot;</span> \</span><br><span class="line">     --data <span class="string">&#x27;&#123;&quot;value&quot;:&quot;off&quot;&#125;&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>URL上的地址:<br><img src="https://image.runtimes.cc/202404051411183.png"></p>
-<p>X-Auth-Key:<br><img src="https://image.runtimes.cc/202404051411721.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://connorzhangyu.github.io/2022/11/19/C++/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1960,6 +1871,95 @@
 
 <p>例子:</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line">	<span class="type">int</span> b = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">	<span class="type">int</span>* p = &amp;a;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;第一个测试指针a地址:&quot;</span>&lt;&lt;p &lt;&lt; <span class="string">&quot;===&quot;</span> &lt;&lt; *p  &lt;&lt; endl;</span><br><span class="line">	<span class="type">int</span>* p111 = &amp;b;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;第一个测试指针b地址:&quot;</span>&lt;&lt; p111 &lt;&lt; <span class="string">&quot;===&quot;</span> &lt;&lt; *p111  &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// const 修饰指针</span></span><br><span class="line">	<span class="type">const</span> <span class="type">int</span>* p1 = &amp;a;</span><br><span class="line">	<span class="comment">// *p=20 错误</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;第二个测试指针地址:&quot;</span> &lt;&lt; p1 &lt;&lt; <span class="string">&quot;===&quot;</span> &lt;&lt; *p1 &lt;&lt; endl;</span><br><span class="line">	p1 = &amp;b;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;第二个测试指针地址:&quot;</span> &lt;&lt; p1 &lt;&lt; <span class="string">&quot;===&quot;</span> &lt;&lt; *p1 &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// const 修饰常量</span></span><br><span class="line">	<span class="type">int</span>* <span class="type">const</span> p2 = &amp;a;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;第三个测试指针地址:&quot;</span> &lt;&lt; p2 &lt;&lt; <span class="string">&quot;===&quot;</span> &lt;&lt; *p2 &lt;&lt; endl;</span><br><span class="line">	*p2=<span class="number">30</span>;</span><br><span class="line">	<span class="comment">// p = &amp;b; 错误</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;第三个测试指针地址:&quot;</span> &lt;&lt; p2 &lt;&lt; <span class="string">&quot;===&quot;</span> &lt;&lt; *p2 &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// const 修饰指针和常量</span></span><br><span class="line">	<span class="type">const</span> <span class="type">int</span>* <span class="type">const</span> p3 = &amp;a;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://connorzhangyu.github.io/2022/11/19/Cloudflare/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Connor">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello World">
+      <meta itemprop="description" content="connor的个人博客">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | Hello World">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/11/19/Cloudflare/" class="post-title-link" itemprop="url">Cloudflare</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-11-19 18:25:00" itemprop="dateCreated datePublished" datetime="2022-11-19T18:25:00+07:00">2022-11-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-11-21 18:57:00" itemprop="dateModified" datetime="2022-11-21T18:57:00+07:00">2022-11-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Cloud/" itemprop="url" rel="index"><span itemprop="name">Cloud</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="关闭IPV6"><a href="#关闭IPV6" class="headerlink" title="关闭IPV6"></a>关闭IPV6</h1><p><img src="https://image.runtimes.cc/202404051517919.png"></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">curl -X PATCH <span class="string">&quot;https://api.cloudflare.com/client/v4/zones/cfa068f2a1e282a2731ba29a0a24b052/settings/ipv6&quot;</span> \</span><br><span class="line">     -H <span class="string">&quot;X-Auth-Email: y950727@gmail.com&quot;</span> \</span><br><span class="line">     -H <span class="string">&quot;X-Auth-Key: 830419c40277b1cff929397d7c08b2012c2a&quot;</span> \</span><br><span class="line">     -H <span class="string">&quot;Content-Type: application/json&quot;</span> \</span><br><span class="line">     --data <span class="string">&#x27;&#123;&quot;value&quot;:&quot;off&quot;&#125;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>URL上的地址:<br><img src="https://image.runtimes.cc/202404051411183.png"></p>
+<p>X-Auth-Key:<br><img src="https://image.runtimes.cc/202404051411721.png"></p>
+
       
     </div>
 

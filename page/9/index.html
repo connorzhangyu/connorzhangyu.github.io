@@ -167,6 +167,427 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://connorzhangyu.github.io/2022/11/19/Linux%E8%BD%AF%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Connor">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello World">
+      <meta itemprop="description" content="connor的个人博客">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | Hello World">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/11/19/Linux%E8%BD%AF%E4%BB%B6/" class="post-title-link" itemprop="url">Linux软件</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-11-19 18:25:00" itemprop="dateCreated datePublished" datetime="2022-11-19T18:25:00+07:00">2022-11-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-07-01 14:05:48" itemprop="dateModified" datetime="2024-07-01T14:05:48+07:00">2024-07-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="JumpSserver"><a href="#JumpSserver" class="headerlink" title="JumpSserver"></a>JumpSserver</h1><h2 id="设置SFTP根目录"><a href="#设置SFTP根目录" class="headerlink" title="设置SFTP根目录"></a>设置SFTP根目录</h2><p>3.0版本设置文件管理</p>
+<p>克隆一份Linux平台</p>
+<p><img src="https://image.runtimes.cc/202404051426282.png" alt="image-20230917163307359"></p>
+<p><img src="https://image.runtimes.cc/202404051426865.png" alt="image-20230917163359314"></p>
+<p><img src="https://image.runtimes.cc/202404051426331.png" alt="image-20230917163415467"></p>
+<p>修改或者创建资产的时候,选择该克隆的平台,在资产这里不能设置SFTP路径</p>
+<p><img src="https://image.runtimes.cc/202404051426116.png" alt="image-20230917163519193"></p>
+<h1 id="安装vmware-tool"><a href="#安装vmware-tool" class="headerlink" title="安装vmware tool"></a>安装vmware tool</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">运行 ./vmware-install.pl</span><br><span class="line">一直按<span class="built_in">yes</span>,按完一段之后就会有暂时的停顿</span><br><span class="line">运行命令 reboot</span><br></pre></td></tr></table></figure>
+
+<h1 id="安装Wget"><a href="#安装Wget" class="headerlink" title="安装Wget"></a>安装Wget</h1><p>最开始的Centos7 感觉什么都没有<code>wget</code>也没有</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#远程下载的工具</span></span><br><span class="line">yum -y install wget</span><br><span class="line"></span><br><span class="line"><span class="comment">#bash: make: command not found 是因为缺少这些工具</span></span><br><span class="line">yum -y install gcc automake autoconf libtool make</span><br><span class="line"></span><br><span class="line">yum -y install wget</span><br></pre></td></tr></table></figure>
+
+<h1 id="安装LNMP环境"><a href="#安装LNMP环境" class="headerlink" title="安装LNMP环境"></a>安装LNMP环境</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 更新源</span></span><br><span class="line">apt-get update &amp;&amp; apt-get dist-upgrade -y</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装nginx</span></span><br><span class="line">apt-get install nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装php-fpm和常用php扩展</span></span><br><span class="line">apt-get install php-fpm php-gd php-mbstring php-curl php-xml php-mcrypt php-mysql php-zip php-json php-redis php-memcached</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装mysql</span></span><br><span class="line">apt-get install mysql-server</span><br><span class="line"></span><br><span class="line"><span class="comment"># 建立测试站点</span></span><br><span class="line"><span class="comment"># 1.我们在/var/www下面新建一个test目录，作为站点目录。 运行以下命令：</span></span><br><span class="line"><span class="built_in">mkdir</span> /var/www/test</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.新建php入口文件</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;&lt;?php echo 1;&#x27;</span>  &gt; /var/www/test/index.php</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.授权给fpm用户www-data，使fpm进程可以访问站点文件</span></span><br><span class="line"><span class="built_in">chown</span> -R www-data:www-data /var/www/test &amp;&amp; <span class="built_in">chmod</span> -R 755 /var/www/test</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4.设置nginx站点配置,在/etc/nginx/conf.d新增一个test.conf文件，并写入以下内容</span></span><br><span class="line"><span class="comment"># 这个配置表示站点监听80端口，网站根目录为/var/www/test,入口文件为index.php,通过php-fpm进程来执行php脚本。</span></span><br><span class="line">server &#123;</span><br><span class="line">        listen 80 default_server;</span><br><span class="line">        listen [::]:80 default_server;</span><br><span class="line">        root /var/www/test;</span><br><span class="line">        index index.php index.html index.htm;</span><br><span class="line">        server_name _;</span><br><span class="line">        location / &#123;</span><br><span class="line">                try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ =404;</span><br><span class="line">        &#125;</span><br><span class="line">        location ~ \.php$ &#123;</span><br><span class="line">               include snippets/fastcgi-php.conf;</span><br><span class="line">               fastcgi_pass unix:/run/php/php7.0-fpm.sock;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5.重新加载</span></span><br><span class="line">nginx -t &amp;&amp; nginx -s reload</span><br><span class="line"></span><br><span class="line"><span class="comment"># 6.访问试试看</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="Ubuntu卸载Apache"><a href="#Ubuntu卸载Apache" class="headerlink" title="Ubuntu卸载Apache"></a>Ubuntu卸载Apache</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除apache</span></span><br><span class="line">$ <span class="built_in">sudo</span> apt-get --purge remove apache2</span><br><span class="line">$ <span class="built_in">sudo</span> apt-get --purge remove apache2.2-common</span><br><span class="line">$ <span class="built_in">sudo</span> apt-get autoremove</span><br><span class="line"></span><br><span class="line"><span class="comment"># 找到没有删除掉的配置文件，一并删除</span></span><br><span class="line">$ <span class="built_in">sudo</span> find  /etc -name <span class="string">&quot;*apache*&quot;</span> -<span class="built_in">exec</span>  <span class="built_in">rm</span> -rf &#123;&#125; \;</span><br><span class="line">$ <span class="built_in">sudo</span> <span class="built_in">rm</span> -rf /var/www</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重装apache2</span></span><br><span class="line">$ <span class="built_in">sudo</span> apt-get install apache2</span><br><span class="line">$ <span class="built_in">sudo</span> /etc/init.d/apache2 restart</span><br></pre></td></tr></table></figure>
+
+<p>Ubuntu安装软件指定版本号</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装软件的时候,机器上安装的依赖版本可能高于软件本身需要的</span></span><br><span class="line">The following packages have unmet dependencies:</span><br><span class="line"> libpcre3-dev : Depends: libpcre3 (= 2:8.39-12build1) but 2:8.44-1+ubuntu18.04.1+deb.sury.org+1 is to be installed</span><br><span class="line">                Depends: libpcrecpp0v5 (= 2:8.39-12build1) but 2:8.44-1+ubuntu18.04.1+deb.sury.org+1 is to be installed</span><br><span class="line"></span><br><span class="line"><span class="built_in">sudo</span> apt install libpcrecpp0v5=2:8.39-12build1 libpcre3=2:8.39-12build1</span><br></pre></td></tr></table></figure>
+
+<h1 id="Gitlab安装"><a href="#Gitlab安装" class="headerlink" title="Gitlab安装"></a>Gitlab安装</h1><p><a target="_blank" rel="noopener" href="https://ken.io/note/centos7-gitlab-install-tutorial#H3-11">https://ken.io/note/centos7-gitlab-install-tutorial#H3-11</a></p>
+<h1 id="Zsh安装"><a href="#Zsh安装" class="headerlink" title="Zsh安装"></a>Zsh安装</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">sudo</span> apt-get install zsh</span><br><span class="line"><span class="comment"># 验证是否安装成功</span></span><br><span class="line">$ zsh --version</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将 Zsh 设为默认 Shell</span></span><br><span class="line">$ <span class="built_in">sudo</span> chsh -s $(<span class="built_in">which</span> zsh)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装oh my zsh</span></span><br><span class="line">https://ohmyz.sh/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 注销当前用户重新登录</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 若输出为 /bin/zsh 或者 /usr/bin/zsh 则表示当前默认 Shell 是 Zsh</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="variable">$SHELL</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="安装confluence"><a href="#安装confluence" class="headerlink" title="安装confluence"></a>安装confluence</h1><p><a target="_blank" rel="noopener" href="https://www.atlassian.com/purchase/?utm_source=pocket_mylist">atlassian的相关软件</a></p>
+<p><a target="_blank" rel="noopener" href="https://3reality.tech/downloads/atlassian/?utm_source=pocket_mylist">confluence下载地址</a></p>
+<p>安装:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker run -v \</span><br><span class="line">	/root/confluence/:/var/atlassian/application-data/confluence/ \</span><br><span class="line">	--name=<span class="string">&quot;confluence&quot;</span> \</span><br><span class="line">	-d \</span><br><span class="line">	-p <span class="number">8090</span>:<span class="number">8090</span> \</span><br><span class="line">	-p <span class="number">8091</span>:<span class="number">8091</span> \</span><br><span class="line">	atlassian/confluence-server</span><br></pre></td></tr></table></figure>
+
+<p>破解:</p>
+<p>1.&#x2F;opt&#x2F;atlassian&#x2F;confluence&#x2F;confluence&#x2F;WEB-INF&#x2F;lib&#x2F;atlassian-extras-decoder-v2-3.4.1.jar备份<br>2.atlassian-extras-decoder-v2-3.4.1.jar重命名为atlassian-extras-2.4.jar并下载到本地 （和破解工具放在同一目录）<br>3.下载破解工具confluence_keygen.jar,在上面的超链接下载</p>
+<p><img src="https://image.runtimes.cc/202404051426404.png"></p>
+<p>4.将已被破解的jar包atlassian-extras-2.4.jar重名为atlassian-extras-decoder-v2-3.4.1.jar</p>
+<p>并放置在原路径&#x2F;opt&#x2F;atlassian&#x2F;confluence&#x2F;confluence&#x2F;WEB-INF&#x2F;lib</p>
+<p>5.下载mysql-connector-java-5.1.32-bin.jar 上传&#x2F;opt&#x2F;atlassian&#x2F;confluence&#x2F;confluence&#x2F;WEB-INF&#x2F;lib</p>
+<p>6.开始安装到需要授权码</p>
+<p><img src="https://image.runtimes.cc/202404051426338.png"></p>
+<p><img src="https://image.runtimes.cc/202404051427340.png"></p>
+<p>相关报错:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">启动发生报错 <span class="string">&quot;Spring Application context has not been set&quot;</span></span><br><span class="line">rm -f /var/atlassian/application-data/confluence/confluence.cfg.xml</span><br></pre></td></tr></table></figure>
+
+<h1 id="Nmap"><a href="#Nmap" class="headerlink" title="Nmap"></a>Nmap</h1><h2 id="找出活跃的主机"><a href="#找出活跃的主机" class="headerlink" title="找出活跃的主机"></a>找出活跃的主机</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nmap -sP 192.168.41.136</span><br><span class="line"></span><br><span class="line">nping --echo-client &quot;public&quot; echo.nmap.org</span><br></pre></td></tr></table></figure>
+
+<h2 id="查看打开的端口"><a href="#查看打开的端口" class="headerlink" title="查看打开的端口"></a>查看打开的端口</h2><p>nmap 192.168.41.136</p>
+<h1 id="网络软件"><a href="#网络软件" class="headerlink" title="网络软件"></a>网络软件</h1><p><a target="_blank" rel="noopener" href="https://one.one.one.one/purge-cache/">清理网络DNS缓存</a></p>
+<p><a target="_blank" rel="noopener" href="https://dnschecker.org/ns-lookup.php?query=55lukcy.in&dns=cloudflare">检查nameserver有没有生效</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.whatsmydns.net/#CNAME/whatsmydns.net">DNS生效的国家</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.ip2location.com/demo/92.98.82.166">IP查询</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.amazon.com/sendtokindle">发送文件到Kindle</a></p>
+<h1 id="VIM"><a href="#VIM" class="headerlink" title="VIM"></a>VIM</h1><h2 id="vim的配置文件设置"><a href="#vim的配置文件设置" class="headerlink" title="vim的配置文件设置"></a>vim的配置文件设置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 先复制一份vim配置模板到个人目录下</span></span><br><span class="line"><span class="built_in">cp</span> /usr/share/vim/vimrc ~/.vimrc</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编辑</span></span><br><span class="line">vi ~/.vimrc</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加</span></span><br><span class="line">syntax on <span class="comment"># 开启高亮</span></span><br><span class="line"><span class="built_in">set</span> nu!   <span class="comment"># 默认开启行号</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="行号"><a href="#行号" class="headerlink" title="行号"></a>行号</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> nu</span><br></pre></td></tr></table></figure>
+
+<h2 id="过滤注释"><a href="#过滤注释" class="headerlink" title="过滤注释"></a>过滤注释</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> redis.conf |grep -v <span class="string">&#x27;#&#x27;</span> |grep -v <span class="string">&#x27;^$&#x27;</span> &gt;redis-6237.conf</span><br></pre></td></tr></table></figure>
+
+<h2 id="多行注释"><a href="#多行注释" class="headerlink" title="多行注释"></a>多行注释</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1 Ctrl+v进入v模式</span><br><span class="line">2 上下方向键选中要注释的行</span><br><span class="line">3 <span class="built_in">shift</span>+i（即大写的I）行首插入</span><br><span class="line">4 输入注释符//</span><br><span class="line">5 按esc返回</span><br></pre></td></tr></table></figure>
+
+<h2 id="反注释"><a href="#反注释" class="headerlink" title="反注释"></a>反注释</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1 Ctrl+v进入v模式</span><br><span class="line">2 上下方向键选中要注释的行，左右键选择要删除的字符//</span><br><span class="line">3 按d删除</span><br></pre></td></tr></table></figure>
+
+<h2 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># gg 跳转到第一行</span></span><br><span class="line"><span class="comment"># shift+v 转到可视模式</span></span><br><span class="line"><span class="comment"># shift+g 全选</span></span><br><span class="line"><span class="comment"># 按下=号</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="删除-开头的行"><a href="#删除-开头的行" class="headerlink" title="删除#开头的行"></a>删除#开头的行</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:g/^#/d</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h1><h2 id="安装ssh"><a href="#安装ssh" class="headerlink" title="安装ssh"></a>安装ssh</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 判断Ubuntu是否安装了ssh服务,检查有没有可以看到“sshd”</span></span><br><span class="line">ps -e | grep ssh</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装ssh服务，输入命令</span></span><br><span class="line"><span class="built_in">sudo</span> apt-get install openssh-server</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动服务</span></span><br><span class="line"><span class="built_in">sudo</span> /etc/init.d/ssh start</span><br></pre></td></tr></table></figure>
+
+<h2 id="SSH配置文件设置"><a href="#SSH配置文件设置" class="headerlink" title="SSH配置文件设置"></a>SSH配置文件设置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/ssh/sshd_config</span><br><span class="line"></span><br><span class="line"><span class="comment"># 这是设置允许root登陆</span></span><br><span class="line">PermitRootLogin prohibit-password ===&gt; PermitRootLogin <span class="built_in">yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 这是设置允许使用账号密码登录</span></span><br><span class="line"><span class="comment"># 不能只注释,注释会不起作用,还是可以用密码登录</span></span><br><span class="line">PasswordAuthentication no ===&gt; PasswordAuthentication <span class="built_in">yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 允许用证书登录方式</span></span><br><span class="line">PubkeyAuthentication <span class="built_in">yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启ssh服务</span></span><br><span class="line"><span class="built_in">sudo</span> service ssh reload</span><br></pre></td></tr></table></figure>
+
+<h2 id="SSH连接-key失效"><a href="#SSH连接-key失效" class="headerlink" title="SSH连接,key失效"></a>SSH连接,key失效</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">λ ssh root@10.19.44.12</span><br><span class="line">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="line">@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @</span><br><span class="line">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="line">IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!</span><br><span class="line">Someone could be eavesdropping on you right now (man-in-the-middle attack)!</span><br><span class="line">It is also possible that a host key has just been changed.</span><br><span class="line">The fingerprint <span class="keyword">for</span> the ECDSA key sent by the remote host is</span><br><span class="line">SHA256:RIqSp3Pd94k4PPQcDtKAzK0sQbf4VWffKGwy/nvO8Kw.</span><br><span class="line">Please contact your system administrator.</span><br><span class="line">Add correct host key <span class="keyword">in</span> C:\\Users\\Owner/.ssh/known_hosts to get rid of this message.</span><br><span class="line">Offending ECDSA key <span class="keyword">in</span> C:\\Users\\Owner/.ssh/known_hosts:12</span><br><span class="line">ECDSA host key <span class="keyword">for</span> 10.19.44.12 has changed and you have requested strict checking.</span><br><span class="line">Host key verification failed.</span><br></pre></td></tr></table></figure>
+
+<p>解决方法:找到.ssh文件下的known_hosts,删除相关ip的行</p>
+<h2 id="生成证书"><a href="#生成证书" class="headerlink" title="生成证书"></a>生成证书</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">客户端生成秘钥</span></span><br><span class="line">ssh-keygen</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">ssh目录的文件</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">id_rsa,私钥文件。不应该分享给任何人。私钥文件通常以 PEM 格式存储。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">id_rsa.pub,公钥文件。公钥可以公开分享，用于配置在你需要访问的服务器上。服务器使用公钥来加密信息，私钥可以解密。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">known_hosts, 文件存储了你之前连接过的所有服务器的主机密钥。这些密钥用于验证服务器的身份，以防止中间人攻击。每次你连接一个新的服务器，服务器的公钥会被添加到这个文件中。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">known_hosts.old,是 `known_hosts` 文件的备份。每当 `known_hosts` 文件更新时，旧版本会被保存为 `known_hosts.old`。这可以作为一个安全机制，如果新的 `known_hosts` 文件出现问题，可以回滚到旧版本。</span></span><br><span class="line">➜  .ssh ll /Users/anthony/.ssh</span><br><span class="line">-rw-------@ 1 anthony  staff   1.6K  6  8 21:50 id_rsa    </span><br><span class="line">-rw-r--r--@ 1 anthony  staff   425B  6  8 21:50 id_rsa.pub</span><br><span class="line">-rw-------@ 1 anthony  staff   3.0K  6  8 21:24 known_hosts			</span><br><span class="line">-rw-------@ 1 anthony  staff   2.3K  6  8 21:23 known_hosts.old</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">把公钥拷贝到服务器,这次是要输入密码</span></span><br><span class="line">ssh-copy-id -i ~/.ssh/id_rsa.pub user@remote_host</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">使用证书登录服务器</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">实验的时候有个问题,如果不指定证书登录的命令,还是会提示输入密码</span></span><br><span class="line">ssh -i ~/.ssh/id_rsa_server2 ubuntu@your_server_ip2</span><br></pre></td></tr></table></figure>
+
+<h2 id="root账号登录并且配置证书"><a href="#root账号登录并且配置证书" class="headerlink" title="root账号登录并且配置证书"></a>root账号登录并且配置证书</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">已经使用别的用户(账户名是:anthony)登录了服务器之后,再执行</span></span><br><span class="line">sudo passwd root</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">第一次输入anthony用户的密码</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">第二次输入新密码</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">第三次再次输入新密码</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">修改配置文件,让root用户可以登录,看上面的配置</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">客户端上传rsa公钥,留意这里是root的账户的路径</span></span><br><span class="line">cat ~/.ssh/id_rsa.pub | ssh root@172.16.147.129 &#x27;cat &gt;&gt; /root/.ssh/authorized_keys&#x27;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">然后就可以使用root账户和证书登录了</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">证书本身是不区分用户名,只认是不是一对公钥还是私钥</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="root登录之后没有高亮"><a href="#root登录之后没有高亮" class="headerlink" title="root登录之后没有高亮"></a>root登录之后没有高亮</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cp</span> /home/kali/.bashrc /root</span><br><span class="line"><span class="built_in">source</span> .bashrc</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="oh-my-zsh"><a href="#oh-my-zsh" class="headerlink" title="oh-my-zsh"></a>oh-my-zsh</h2><h3 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装oh-my-zsh</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置文件位置</span></span><br><span class="line">vim ~/.zshrc</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置主题</span></span><br><span class="line"><span class="comment"># jonathan 是主题的名字</span></span><br><span class="line">ZSH_THEME=<span class="string">&quot;jonathan&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置插件,空格分开 插件的名字</span></span><br><span class="line">plugins=(git zsh-syntax-highlighting zsh-autosuggestions)</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="oh-my-zsh插件"><a href="#oh-my-zsh插件" class="headerlink" title="oh my zsh插件"></a>oh my zsh插件</h3><h4 id="zsh-syntax-highlighting"><a href="#zsh-syntax-highlighting" class="headerlink" title="zsh-syntax-highlighting"></a>zsh-syntax-highlighting</h4><p>高亮语法，如图，输入正确语法会显示绿色，错误的会显示红色，使得我们无需运行该命令即可知道此命令语法是否正确</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-syntax-highlighting</span><br></pre></td></tr></table></figure>
+
+<p>plugins&#x3D;(其他的插件 zsh-syntax-highlighting)</p>
+<h4 id="zsh-autosuggestions"><a href="#zsh-autosuggestions" class="headerlink" title="zsh-autosuggestions"></a>zsh-autosuggestions</h4><p>自动补全</p>
+<p>只需输入部分命令即可根据之前输入过的命令提示，按右键→即可补全</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-autosuggestions <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-autosuggestions</span><br></pre></td></tr></table></figure>
+
+<p>plugins&#x3D;(其他的插件 zsh-syntax-highlighting)</p>
+<h1 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h1><h2 id="设置别名"><a href="#设置别名" class="headerlink" title="设置别名"></a>设置别名</h2><p>经常要用命令行,进入到某个目录</p>
+<ol>
+<li>编辑你的 Shell 配置文件，例如 Bash 的配置文件是 <code>~/.bashrc</code> 或 <code>~/.bash_profile</code>，Zsh 的配置文件是 <code>~/.zshrc</code>。</li>
+<li>添加 <code>alias work=&#39;cd /path/to/your/work/directory&#39;</code></li>
+<li>运行 <code>source ~/.bashrc</code> 或 <code>source ~/.zshrc</code> 来使配置生效。</li>
+<li>终端中输入 <code>work</code> 命令，就会进入你设置的工作目录</li>
+</ol>
+<h2 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置环境变量</span></span><br><span class="line"><span class="built_in">export</span> http_proxy=http://127.0.0.1:3128</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除环境变量</span></span><br><span class="line"><span class="built_in">unset</span> http_proxy</span><br></pre></td></tr></table></figure>
+
+<h2 id="curl换行"><a href="#curl换行" class="headerlink" title="curl换行"></a>curl换行</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl http://www.baidu.com -w <span class="string">&#x27;\n&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="curl请求不校验证书"><a href="#curl请求不校验证书" class="headerlink" title="curl请求不校验证书"></a>curl请求不校验证书</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 报错信息</span></span><br><span class="line"><span class="comment"># curl failed to verify the legitimacy of the server and therefore could not</span></span><br><span class="line"><span class="comment"># establish a secure connection to it. To learn more about this situation and</span></span><br><span class="line"><span class="comment"># how to fix it, please visit the web page mentioned above.</span></span><br><span class="line"></span><br><span class="line">curl -k https://random.com</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">curl -insecure https://random.com</span><br></pre></td></tr></table></figure>
+
+<h2 id="脚本首行"><a href="#脚本首行" class="headerlink" title="脚本首行"></a>脚本首行</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="脚本变量"><a href="#脚本变量" class="headerlink" title="脚本变量"></a>脚本变量</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># shell脚本给变量赋值的时候 = 两边不能加空格</span></span><br><span class="line">your_name=<span class="string">&quot;runoob&quot;</span></span><br><span class="line"><span class="comment"># 使用双引号拼接</span></span><br><span class="line">greeting=<span class="string">&quot;hello, &quot;</span><span class="variable">$your_name</span><span class="string">&quot; !&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/doiido/article/details/43966819">Linux shell脚本之 if条件判断_doiido的专栏-CSDN博客</a></p>
+<h2 id="判断数值"><a href="#判断数值" class="headerlink" title="判断数值"></a>判断数值</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[ INT1 -eq INT2 ]</td>
+<td>INT1和INT2两数相等返回为真 ,&#x3D;</td>
+</tr>
+<tr>
+<td>[ INT1 -ne INT2 ]</td>
+<td>INT1和INT2两数不等返回为真 ,&lt;&gt;</td>
+</tr>
+<tr>
+<td>[ INT1 -gt INT2 ]</td>
+<td>INT1大于INT2返回为真 ,&gt;</td>
+</tr>
+<tr>
+<td>[ INT1 -ge INT2 ]</td>
+<td>INT1大于等于INT2返回为真,&gt;&#x3D;</td>
+</tr>
+<tr>
+<td>[ INT1 -lt INT2 ]</td>
+<td>INT1小于INT2返回为真 ,&lt;</td>
+</tr>
+<tr>
+<td>[ INT1 -le INT2 ]</td>
+<td>INT1小于等于INT2返回为真,&lt;&#x3D;</td>
+</tr>
+</tbody></table>
+<h2 id="字符串判断"><a href="#字符串判断" class="headerlink" title="字符串判断"></a>字符串判断</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[ -z STRING ]</td>
+<td>如果STRING的长度为零则返回为真，即空是真</td>
+</tr>
+<tr>
+<td>[ -n STRING ]</td>
+<td>如果STRING的长度非零则返回为真，即非空是真</td>
+</tr>
+<tr>
+<td>[ STRING1 ]</td>
+<td>如果字符串不为空则返回为真,与-n类似</td>
+</tr>
+<tr>
+<td>[ STRING1 &#x3D;&#x3D; STRING2 ]</td>
+<td>如果两个字符串相同则返回为真</td>
+</tr>
+<tr>
+<td>[ STRING1 !&#x3D; STRING2 ]</td>
+<td>如果字符串不相同则返回为真</td>
+</tr>
+<tr>
+<td>[ STRING1 &lt; STRING2 ]</td>
+<td>如果 “STRING1”字典排序在“STRING2”前面则返回为真。</td>
+</tr>
+<tr>
+<td>[ STRING1 &gt; STRING2 ]</td>
+<td>如果 “STRING1”字典排序在“STRING2”后面则返回为真。</td>
+</tr>
+</tbody></table>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"></span><br><span class="line">STRING=</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ -z <span class="string">&quot;<span class="variable">$STRING</span>&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;STRING is empty&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ -n <span class="string">&quot;<span class="variable">$STRING</span>&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;STRING is not empty&quot;</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果是:STRING is empty</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://connorzhangyu.github.io/2022/11/19/Mycat/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Connor">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello World">
+      <meta itemprop="description" content="connor的个人博客">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | Hello World">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/11/19/Mycat/" class="post-title-link" itemprop="url">Mycat</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-11-19 18:25:00" itemprop="dateCreated datePublished" datetime="2022-11-19T18:25:00+07:00">2022-11-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="主从复制"><a href="#主从复制" class="headerlink" title="主从复制"></a>主从复制</h1><h1 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h1><p>1 .下载jre包</p>
+<p>2 下载mycat包</p>
+<p>3 打包镜像</p>
+<p>Dockerfile</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">FROM centos</span><br><span class="line"># 解压这个包到home下面</span><br><span class="line">ADD server-jre-8u251-linux-x64.tar.gz /home/</span><br><span class="line">ADD ./Mycat-server-1.6.7.4-release-20200105164103-linux.tar.gz /home</span><br><span class="line">ENV WORKPATH /home/mycat/</span><br><span class="line">WORKDIR $WORKPATH</span><br><span class="line"></span><br><span class="line">ENV JAVA_HOME /home/jdk1.8.0_251</span><br><span class="line">ENV CLASSPATH $JAVA_HOME/dt.jar:$JAVA_HOME/lib/tools.jar</span><br><span class="line">ENV PATH $PATH:$JAVA_HOME/BIN:$CATALINA_HOME/lib:$CATALINA_HOME/bin</span><br><span class="line"></span><br><span class="line"># 暴露8066端口</span><br><span class="line">EXPOSE 8066</span><br><span class="line">CMD /home/mycat/bin/mycat console</span><br></pre></td></tr></table></figure>
+
+<p>把mycat里的conf 和 logs 从容器中拷贝出来</p>
+<p>再挂在两个目录,并启动</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">docker run -it \</span><br><span class="line">           --name mycat \</span><br><span class="line">           -p 8066:8066 \</span><br><span class="line">           -v /home/anthony/mycat/conf:/home/mycat/conf/ \</span><br><span class="line">           -v /home/anthony/mycat/logs:/home/mycat/logs/ \</span><br><span class="line">           java1234/mycat:1.0</span><br><span class="line"></span><br><span class="line">Running Mycat-server...</span><br><span class="line">Removed stale pid file: /home/mycat/logs/mycat.pid</span><br><span class="line">wrapper  | --&gt; Wrapper Started as Console</span><br><span class="line">wrapper  | Launching a JVM...</span><br><span class="line">jvm 1    | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org</span><br><span class="line">jvm 1    |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.</span><br><span class="line">jvm 1    |</span><br><span class="line">jvm 1    | MyCAT Server startup successfully. see logs in logs/mycat.log</span><br></pre></td></tr></table></figure>
+
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><ul>
+<li>schems.xml 定义逻辑库,表,分片节点等内容</li>
+<li>rule.xml 定义分片规则</li>
+<li>server.xml 定义用户以及系统相关变量</li>
+</ul>
+<h1 id="安装mysql5-7"><a href="#安装mysql5-7" class="headerlink" title="安装mysql5.7"></a>安装mysql5.7</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 从容器中拷贝这些文件</span><br><span class="line">docker cp xxx:/etc/mysql/mysql.conf.d/ /home/anthony/mysql</span><br><span class="line">docker cp xxx:/var/log/ /home/anthony/mysql</span><br></pre></td></tr></table></figure>
+
+<p>启动的时候映射这些</p>
+<h1 id="创建网络"><a href="#创建网络" class="headerlink" title="创建网络"></a>创建网络</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 可以查看容器的虚拟ip</span><br><span class="line">docker inspect ac7</span><br><span class="line"></span><br><span class="line"># 查看网络</span><br><span class="line">docker network ls</span><br><span class="line"></span><br><span class="line"># 自定义一个网络模式</span><br><span class="line"># extnetwork 是网络模式的名字</span><br><span class="line"># 172.20.0.1 是网关</span><br><span class="line">docker network create --subnet=172.20.0.0/16 extnetwork</span><br></pre></td></tr></table></figure>
+
+<h1 id="mysql-mycat指定网路-重建容器"><a href="#mysql-mycat指定网路-重建容器" class="headerlink" title="mysql,mycat指定网路,重建容器"></a>mysql,mycat指定网路,重建容器</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"># 指定网络模式和ip地址</span><br><span class="line">--net extnetwork --ip 172.20.0.2</span><br><span class="line"></span><br><span class="line">docker run -itd \</span><br><span class="line">            --name mysql-master \</span><br><span class="line">            -p 3306:3306 \</span><br><span class="line">            -e MYSQL_ROOT_PASSWORD=123456 \</span><br><span class="line">            -v /home/anthony/mysql/mysql.conf.d/:/etc/mysql/conf.d/ \</span><br><span class="line">            -v /home/anthony/mysql/log/:/var/log/ \</span><br><span class="line">            --net extnetwork --ip 172.20.0.2 \</span><br><span class="line">            mysql:5.7</span><br><span class="line"></span><br><span class="line">docker run -itd \</span><br><span class="line">            --name mysql-slave \</span><br><span class="line">            -p 3307:3306 \</span><br><span class="line">            -e MYSQL_ROOT_PASSWORD=123456 \</span><br><span class="line">            -v /home/anthony/mysql2/mysql.conf.d/:/etc/mysql/conf.d/ \</span><br><span class="line">            -v /home/anthony/mysql2/log/:/var/log/ \</span><br><span class="line">            --net extnetwork --ip 172.20.0.3 \</span><br><span class="line">            mysql:5.7</span><br><span class="line"></span><br><span class="line">docker run -it \</span><br><span class="line">           --name mycat \</span><br><span class="line">           -p 8066:8066 \</span><br><span class="line">           -v /home/anthony/mycat/conf:/home/mycat/conf/ \</span><br><span class="line">           -v /home/anthony/mycat/logs:/home/mycat/logs/ \</span><br><span class="line">           --net extnetwork --ip 172.20.0.4 \</span><br><span class="line">           java1234/mycat:1.0</span><br></pre></td></tr></table></figure>
+
+<h1 id="主从配置"><a href="#主从配置" class="headerlink" title="主从配置"></a>主从配置</h1><p>主,在[mysqld]</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 主服务器ID,必须唯一</span><br><span class="line">server-id=2</span><br><span class="line"># 开启和设置二进制日志文件名称</span><br><span class="line">log_bin=mysql-bin</span><br><span class="line"># 要同步的数据库</span><br><span class="line">binlog-do-db=db_java1234</span><br><span class="line"># 不需要同步的数据库</span><br><span class="line">binlog-ignore_db=mysql</span><br><span class="line">binlog-ignore_db=information_schema</span><br><span class="line">binlog-ignore_db=performation_schema</span><br><span class="line">binlog_ignore_db=sys</span><br><span class="line"># 设置logbin格式,mysql默认采用statement,建议使用mixed</span><br><span class="line">binlog_format=MIXED</span><br></pre></td></tr></table></figure>
+
+<p>从,在[mysqld]</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># 主服务器ID,必须唯一</span><br><span class="line">server-id=3</span><br><span class="line"># 这行是从库需要添加的</span><br><span class="line">relay-log=mysql-relay</span><br><span class="line"></span><br><span class="line"># 开启和设置二进制日志文件名称</span><br><span class="line">log_bin=mysql-bin</span><br><span class="line"># 要同步的数据库</span><br><span class="line">binlog-do-db=db_java1234</span><br><span class="line"># 不需要同步的数据库</span><br><span class="line">binlog-ignore_db=mysql</span><br><span class="line">binlog-ignore_db=information_schema</span><br><span class="line">binlog-ignore_db=performation_schema</span><br><span class="line">binlog_ignore_db=sys</span><br><span class="line"># 设置logbin格式,mysql默认采用statement,建议使用mixed</span><br><span class="line">binlog_format=MIXED</span><br></pre></td></tr></table></figure>
+
+<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>主从还没有生效</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show master status;</span><br><span class="line">+------------------+----------+--------------+--------------------------------------------------+-------------------+</span><br><span class="line">| File             | Position | Binlog_Do_DB | Binlog_Ignore_DB                                 | Executed_Gtid_Set |</span><br><span class="line">+------------------+----------+--------------+--------------------------------------------------+-------------------+</span><br><span class="line">| mysql-bin.000003 |      357 | db_java1234  | mysql,information_schema,performation_schema,sys |                   |</span><br><span class="line">+------------------+----------+--------------+--------------------------------------------------+-------------------+</span><br><span class="line">1 row in set (0.01 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; show slave status;</span><br><span class="line">Empty set</span><br></pre></td></tr></table></figure>
+
+<h1 id="设置用户名"><a href="#设置用户名" class="headerlink" title="设置用户名"></a>设置用户名</h1><p>在master执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 创建用户名为slave1</span><br><span class="line"># 172.20.0.3从库ip</span><br><span class="line"># 123456 密码</span><br><span class="line">CREATE USER &#x27;slave1&#x27;@&#x27;172.20.0.3&#x27; IDENTIFIED BY &#x27;123456&#x27;;</span><br><span class="line"></span><br><span class="line"># 语法:GRANT privileges ON databasename.tablename TO &#x27;username&#x27;@&#x27;host&#x27;</span><br><span class="line"># 172.20.0.3 从库</span><br><span class="line"># 两个权限:REPLICATION和SLAVE</span><br><span class="line"># *.* 所有的库和表</span><br><span class="line">GRANT REPLICATION SLAVE ON *.* TO &#x27;slave1&#x27;@&#x27;172.20.0.3&#x27;;</span><br><span class="line"></span><br><span class="line"># 刷新权限</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+
+<p>在slave执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CHANGE MASTER TO MASTER_HOST=&#x27;172.20.0.2&#x27;,MASTER_USER=&#x27;slave1&#x27;,MASTER_PASSWORD=&#x27;123456&#x27;,MASTER_LOG_FILE=&#x27;mysql-bin.000003&#x27;,MASTER_LOG_POS=964;</span><br><span class="line"></span><br><span class="line"># 开启主从</span><br><span class="line">start slave;</span><br></pre></td></tr></table></figure>
+
+<p>在从库执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show slave status;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://image.runtimes.cc/202404051430859.png"></p>
+<p>主要看Slave_io_running &#x3D;yes</p>
+<p>主要看Slave_sql_running &#x3D;yes</p>
+<h1 id="读写分离"><a href="#读写分离" class="headerlink" title="读写分离"></a>读写分离</h1><h1 id="scheml-xml"><a href="#scheml-xml" class="headerlink" title="scheml.xml"></a>scheml.xml</h1><h3 id="schema标签"><a href="#schema标签" class="headerlink" title="schema标签"></a>schema标签</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;schema name=&quot;TESTDB&quot; checkSQLschema=&quot;true&quot; sqlMaxLimit=&quot;100&quot; randomDataNode=&quot;dn1&quot;&gt;</span><br><span class="line">    &lt;!-- auto sharding by id (long) --&gt;</span><br><span class="line">    &lt;!--splitTableNames 启用&lt;table name 属性使用逗号分割配置多个表,即多个表使用这个配置--&gt;</span><br><span class="line">    &lt;table name=&quot;travelrecord,address&quot; dataNode=&quot;dn1,dn2,dn3&quot; rule=&quot;auto-sharding-long&quot; splitTableNames =&quot;true&quot;/&gt;</span><br><span class="line">    &lt;!-- &lt;table name=&quot;oc_call&quot; primaryKey=&quot;ID&quot; dataNode=&quot;dn1$0-743&quot; rule=&quot;latest-month-calldate&quot;</span><br><span class="line">   /&gt; --&gt;</span><br><span class="line">&lt;/schema&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>name: 配置逻辑库的名称</li>
+<li>checkSQLschema: 当执行<code>select * from T_Account.user</code></li>
+</ul>
+<p>为true时,mycat会把sql转成<code>select * from user</code></p>
+<p>false 会报错</p>
+<ul>
+<li>sqlMaxLimit:最大查询每页条数,如果sql指定了limit,就以sql为准,没有,就以配置为准</li>
+<li>randomDataNode:这个先不用,先改成<code>datanote=&#39;dn1&#39;</code></li>
+</ul>
+<h3 id="datanote标签"><a href="#datanote标签" class="headerlink" title="datanote标签"></a>datanote标签</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;dataNode name=&quot;dn1&quot; dataHost=&quot;localhost1&quot; database=&quot;db1&quot; /&gt;</span><br><span class="line">&lt;dataNode name=&quot;dn2&quot; dataHost=&quot;localhost1&quot; database=&quot;db2&quot; /&gt;</span><br><span class="line">&lt;dataNode name=&quot;dn3&quot; dataHost=&quot;localhost1&quot; database=&quot;db3&quot; /&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>name:数据分片节点名称</li>
+<li>dataHost:定义该数据分片节点属于哪台数据库主机</li>
+<li>database:指定哪个数据库,db_java1234</li>
+</ul>
+<h3 id="datahost标签"><a href="#datahost标签" class="headerlink" title="datahost标签"></a>datahost标签</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;dataHost name=&quot;localhost1&quot; maxCon=&quot;1000&quot; minCon=&quot;10&quot; balance=&quot;3&quot;</span><br><span class="line">          writeType=&quot;0&quot; dbType=&quot;mysql&quot; dbDriver=&quot;native&quot; switchType=&quot;1&quot;  slaveThreshold=&quot;100&quot;&gt;</span><br><span class="line">    &lt;heartbeat&gt;select user()&lt;/heartbeat&gt;</span><br><span class="line">    &lt;!-- can have multi write hosts --&gt;</span><br><span class="line">    &lt;writeHost host=&quot;hostM1&quot; url=&quot;localhost:3306&quot; user=&quot;root&quot;</span><br><span class="line">               password=&quot;123456&quot;&gt;</span><br><span class="line">    &lt;/writeHost&gt;</span><br><span class="line">    &lt;!-- &lt;writeHost host=&quot;hostM2&quot; url=&quot;localhost:3316&quot; user=&quot;root&quot; password=&quot;123456&quot;/&gt; --&gt;</span><br><span class="line">&lt;/dataHost&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>name:跟datanote标签的datahost对应</li>
+<li>maxCon 指定每个读写实例连接池的的最大链接,write合readhost标签都会使用这个属性的值来实例化出连接池的最大连接数</li>
+<li>min 最小的连接</li>
+<li>balance:</li>
+<li>0 不开启读写分离,所有读操作都发送到当前可用的writehost上</li>
+<li>1</li>
+<li>2 所有读操作都随机在writehost合readehost上分发</li>
+<li>3 所有读请求随机分发到writehost合readhos</li>
+</ul>
+<h1 id="双组双从"><a href="#双组双从" class="headerlink" title="双组双从"></a>双组双从</h1><h1 id="第二套主从"><a href="#第二套主从" class="headerlink" title="第二套主从"></a>第二套主从</h1><p>1.在mysql添加中添加</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">log-slave-update=1</span><br><span class="line">auto-increment-increment=2</span><br><span class="line">auto-increment-offset=1</span><br></pre></td></tr></table></figure>
+
+<p>2.把mysql文件复制一份mysql3</p>
+<p>3.把mysql3的配置文件修修改这些配置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 主服务器ID,必须唯一</span><br><span class="line">server-id=5</span><br><span class="line">auto-increment-offset=2</span><br></pre></td></tr></table></figure>
+
+<p>4.再创建两个容器,m2 和 s2</p>
+<h1 id="master-和-master同步"><a href="#master-和-master同步" class="headerlink" title="master 和 master同步"></a>master 和 master同步</h1><p>就是相互slave</p>
+<h1 id="测试读写分离"><a href="#测试读写分离" class="headerlink" title="测试读写分离"></a>测试读写分离</h1><p>插入语句</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into test valus(@@hostname)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://connorzhangyu.github.io/2022/11/19/Mybatis/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -352,167 +773,6 @@
 <h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// org.apache.ibatis.executor.CachingExecutor#createCacheKey</span></span><br><span class="line"><span class="comment">// CacheKey重新了 hacode和equals方法</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> CacheKey <span class="title function_">createCacheKey</span><span class="params">(MappedStatement ms, Object parameterObject, RowBounds rowBounds, BoundSql boundSql)</span> &#123;</span><br><span class="line">  <span class="comment">// delegate 是具体类型的执行器的应用</span></span><br><span class="line">  <span class="comment">// 默认是SimpleExecutor</span></span><br><span class="line">  <span class="keyword">return</span> delegate.createCacheKey(ms, parameterObject, rowBounds, boundSql);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// org.apache.ibatis.executor.BaseExecutor#createCacheKey</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> CacheKey <span class="title function_">createCacheKey</span><span class="params">(MappedStatement ms, Object parameterObject, RowBounds rowBounds, BoundSql boundSql)</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (closed) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">ExecutorException</span>(<span class="string">&quot;Executor was closed.&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 通过构造器创建</span></span><br><span class="line">  <span class="type">CacheKey</span> <span class="variable">cacheKey</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">CacheKey</span>();</span><br><span class="line">  <span class="comment">// id</span></span><br><span class="line">  cacheKey.update(ms.getId());</span><br><span class="line">  <span class="comment">// 分页参数</span></span><br><span class="line">  cacheKey.update(rowBounds.getOffset());</span><br><span class="line">  cacheKey.update(rowBounds.getLimit());</span><br><span class="line">  <span class="comment">// sql</span></span><br><span class="line">  cacheKey.update(boundSql.getSql());</span><br><span class="line">  List&lt;ParameterMapping&gt; parameterMappings = boundSql.getParameterMappings();</span><br><span class="line">  <span class="type">TypeHandlerRegistry</span> <span class="variable">typeHandlerRegistry</span> <span class="operator">=</span> ms.getConfiguration().getTypeHandlerRegistry();</span><br><span class="line">  <span class="comment">// mimic DefaultParameterHandler logic</span></span><br><span class="line">  <span class="keyword">for</span> (ParameterMapping parameterMapping : parameterMappings) &#123;</span><br><span class="line">    <span class="keyword">if</span> (parameterMapping.getMode() != ParameterMode.OUT) &#123;</span><br><span class="line">      Object value;</span><br><span class="line">      <span class="type">String</span> <span class="variable">propertyName</span> <span class="operator">=</span> parameterMapping.getProperty();</span><br><span class="line">      <span class="keyword">if</span> (boundSql.hasAdditionalParameter(propertyName)) &#123;</span><br><span class="line">        value = boundSql.getAdditionalParameter(propertyName);</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (parameterObject == <span class="literal">null</span>) &#123;</span><br><span class="line">        value = <span class="literal">null</span>;</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (typeHandlerRegistry.hasTypeHandler(parameterObject.getClass())) &#123;</span><br><span class="line">        value = parameterObject;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="type">MetaObject</span> <span class="variable">metaObject</span> <span class="operator">=</span> configuration.newMetaObject(parameterObject);</span><br><span class="line">        value = metaObject.getValue(propertyName);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 参数的值</span></span><br><span class="line">      cacheKey.update(value);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (configuration.getEnvironment() != <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="comment">// issue #176</span></span><br><span class="line">    <span class="comment">// 当前环境的值</span></span><br><span class="line">    cacheKey.update(configuration.getEnvironment().getId());</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> cacheKey;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h1 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h1>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://connorzhangyu.github.io/2022/11/19/Mycat/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Connor">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hello World">
-      <meta itemprop="description" content="connor的个人博客">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Hello World">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/11/19/Mycat/" class="post-title-link" itemprop="url">Mycat</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-11-19 18:25:00" itemprop="dateCreated datePublished" datetime="2022-11-19T18:25:00+07:00">2022-11-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="主从复制"><a href="#主从复制" class="headerlink" title="主从复制"></a>主从复制</h1><h1 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h1><p>1 .下载jre包</p>
-<p>2 下载mycat包</p>
-<p>3 打包镜像</p>
-<p>Dockerfile</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">FROM centos</span><br><span class="line"># 解压这个包到home下面</span><br><span class="line">ADD server-jre-8u251-linux-x64.tar.gz /home/</span><br><span class="line">ADD ./Mycat-server-1.6.7.4-release-20200105164103-linux.tar.gz /home</span><br><span class="line">ENV WORKPATH /home/mycat/</span><br><span class="line">WORKDIR $WORKPATH</span><br><span class="line"></span><br><span class="line">ENV JAVA_HOME /home/jdk1.8.0_251</span><br><span class="line">ENV CLASSPATH $JAVA_HOME/dt.jar:$JAVA_HOME/lib/tools.jar</span><br><span class="line">ENV PATH $PATH:$JAVA_HOME/BIN:$CATALINA_HOME/lib:$CATALINA_HOME/bin</span><br><span class="line"></span><br><span class="line"># 暴露8066端口</span><br><span class="line">EXPOSE 8066</span><br><span class="line">CMD /home/mycat/bin/mycat console</span><br></pre></td></tr></table></figure>
-
-<p>把mycat里的conf 和 logs 从容器中拷贝出来</p>
-<p>再挂在两个目录,并启动</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">docker run -it \</span><br><span class="line">           --name mycat \</span><br><span class="line">           -p 8066:8066 \</span><br><span class="line">           -v /home/anthony/mycat/conf:/home/mycat/conf/ \</span><br><span class="line">           -v /home/anthony/mycat/logs:/home/mycat/logs/ \</span><br><span class="line">           java1234/mycat:1.0</span><br><span class="line"></span><br><span class="line">Running Mycat-server...</span><br><span class="line">Removed stale pid file: /home/mycat/logs/mycat.pid</span><br><span class="line">wrapper  | --&gt; Wrapper Started as Console</span><br><span class="line">wrapper  | Launching a JVM...</span><br><span class="line">jvm 1    | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org</span><br><span class="line">jvm 1    |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.</span><br><span class="line">jvm 1    |</span><br><span class="line">jvm 1    | MyCAT Server startup successfully. see logs in logs/mycat.log</span><br></pre></td></tr></table></figure>
-
-<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><ul>
-<li>schems.xml 定义逻辑库,表,分片节点等内容</li>
-<li>rule.xml 定义分片规则</li>
-<li>server.xml 定义用户以及系统相关变量</li>
-</ul>
-<h1 id="安装mysql5-7"><a href="#安装mysql5-7" class="headerlink" title="安装mysql5.7"></a>安装mysql5.7</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 从容器中拷贝这些文件</span><br><span class="line">docker cp xxx:/etc/mysql/mysql.conf.d/ /home/anthony/mysql</span><br><span class="line">docker cp xxx:/var/log/ /home/anthony/mysql</span><br></pre></td></tr></table></figure>
-
-<p>启动的时候映射这些</p>
-<h1 id="创建网络"><a href="#创建网络" class="headerlink" title="创建网络"></a>创建网络</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 可以查看容器的虚拟ip</span><br><span class="line">docker inspect ac7</span><br><span class="line"></span><br><span class="line"># 查看网络</span><br><span class="line">docker network ls</span><br><span class="line"></span><br><span class="line"># 自定义一个网络模式</span><br><span class="line"># extnetwork 是网络模式的名字</span><br><span class="line"># 172.20.0.1 是网关</span><br><span class="line">docker network create --subnet=172.20.0.0/16 extnetwork</span><br></pre></td></tr></table></figure>
-
-<h1 id="mysql-mycat指定网路-重建容器"><a href="#mysql-mycat指定网路-重建容器" class="headerlink" title="mysql,mycat指定网路,重建容器"></a>mysql,mycat指定网路,重建容器</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"># 指定网络模式和ip地址</span><br><span class="line">--net extnetwork --ip 172.20.0.2</span><br><span class="line"></span><br><span class="line">docker run -itd \</span><br><span class="line">            --name mysql-master \</span><br><span class="line">            -p 3306:3306 \</span><br><span class="line">            -e MYSQL_ROOT_PASSWORD=123456 \</span><br><span class="line">            -v /home/anthony/mysql/mysql.conf.d/:/etc/mysql/conf.d/ \</span><br><span class="line">            -v /home/anthony/mysql/log/:/var/log/ \</span><br><span class="line">            --net extnetwork --ip 172.20.0.2 \</span><br><span class="line">            mysql:5.7</span><br><span class="line"></span><br><span class="line">docker run -itd \</span><br><span class="line">            --name mysql-slave \</span><br><span class="line">            -p 3307:3306 \</span><br><span class="line">            -e MYSQL_ROOT_PASSWORD=123456 \</span><br><span class="line">            -v /home/anthony/mysql2/mysql.conf.d/:/etc/mysql/conf.d/ \</span><br><span class="line">            -v /home/anthony/mysql2/log/:/var/log/ \</span><br><span class="line">            --net extnetwork --ip 172.20.0.3 \</span><br><span class="line">            mysql:5.7</span><br><span class="line"></span><br><span class="line">docker run -it \</span><br><span class="line">           --name mycat \</span><br><span class="line">           -p 8066:8066 \</span><br><span class="line">           -v /home/anthony/mycat/conf:/home/mycat/conf/ \</span><br><span class="line">           -v /home/anthony/mycat/logs:/home/mycat/logs/ \</span><br><span class="line">           --net extnetwork --ip 172.20.0.4 \</span><br><span class="line">           java1234/mycat:1.0</span><br></pre></td></tr></table></figure>
-
-<h1 id="主从配置"><a href="#主从配置" class="headerlink" title="主从配置"></a>主从配置</h1><p>主,在[mysqld]</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 主服务器ID,必须唯一</span><br><span class="line">server-id=2</span><br><span class="line"># 开启和设置二进制日志文件名称</span><br><span class="line">log_bin=mysql-bin</span><br><span class="line"># 要同步的数据库</span><br><span class="line">binlog-do-db=db_java1234</span><br><span class="line"># 不需要同步的数据库</span><br><span class="line">binlog-ignore_db=mysql</span><br><span class="line">binlog-ignore_db=information_schema</span><br><span class="line">binlog-ignore_db=performation_schema</span><br><span class="line">binlog_ignore_db=sys</span><br><span class="line"># 设置logbin格式,mysql默认采用statement,建议使用mixed</span><br><span class="line">binlog_format=MIXED</span><br></pre></td></tr></table></figure>
-
-<p>从,在[mysqld]</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># 主服务器ID,必须唯一</span><br><span class="line">server-id=3</span><br><span class="line"># 这行是从库需要添加的</span><br><span class="line">relay-log=mysql-relay</span><br><span class="line"></span><br><span class="line"># 开启和设置二进制日志文件名称</span><br><span class="line">log_bin=mysql-bin</span><br><span class="line"># 要同步的数据库</span><br><span class="line">binlog-do-db=db_java1234</span><br><span class="line"># 不需要同步的数据库</span><br><span class="line">binlog-ignore_db=mysql</span><br><span class="line">binlog-ignore_db=information_schema</span><br><span class="line">binlog-ignore_db=performation_schema</span><br><span class="line">binlog_ignore_db=sys</span><br><span class="line"># 设置logbin格式,mysql默认采用statement,建议使用mixed</span><br><span class="line">binlog_format=MIXED</span><br></pre></td></tr></table></figure>
-
-<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>主从还没有生效</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show master status;</span><br><span class="line">+------------------+----------+--------------+--------------------------------------------------+-------------------+</span><br><span class="line">| File             | Position | Binlog_Do_DB | Binlog_Ignore_DB                                 | Executed_Gtid_Set |</span><br><span class="line">+------------------+----------+--------------+--------------------------------------------------+-------------------+</span><br><span class="line">| mysql-bin.000003 |      357 | db_java1234  | mysql,information_schema,performation_schema,sys |                   |</span><br><span class="line">+------------------+----------+--------------+--------------------------------------------------+-------------------+</span><br><span class="line">1 row in set (0.01 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; show slave status;</span><br><span class="line">Empty set</span><br></pre></td></tr></table></figure>
-
-<h1 id="设置用户名"><a href="#设置用户名" class="headerlink" title="设置用户名"></a>设置用户名</h1><p>在master执行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 创建用户名为slave1</span><br><span class="line"># 172.20.0.3从库ip</span><br><span class="line"># 123456 密码</span><br><span class="line">CREATE USER &#x27;slave1&#x27;@&#x27;172.20.0.3&#x27; IDENTIFIED BY &#x27;123456&#x27;;</span><br><span class="line"></span><br><span class="line"># 语法:GRANT privileges ON databasename.tablename TO &#x27;username&#x27;@&#x27;host&#x27;</span><br><span class="line"># 172.20.0.3 从库</span><br><span class="line"># 两个权限:REPLICATION和SLAVE</span><br><span class="line"># *.* 所有的库和表</span><br><span class="line">GRANT REPLICATION SLAVE ON *.* TO &#x27;slave1&#x27;@&#x27;172.20.0.3&#x27;;</span><br><span class="line"></span><br><span class="line"># 刷新权限</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
-
-<p>在slave执行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CHANGE MASTER TO MASTER_HOST=&#x27;172.20.0.2&#x27;,MASTER_USER=&#x27;slave1&#x27;,MASTER_PASSWORD=&#x27;123456&#x27;,MASTER_LOG_FILE=&#x27;mysql-bin.000003&#x27;,MASTER_LOG_POS=964;</span><br><span class="line"></span><br><span class="line"># 开启主从</span><br><span class="line">start slave;</span><br></pre></td></tr></table></figure>
-
-<p>在从库执行</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show slave status;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://image.runtimes.cc/202404051430859.png"></p>
-<p>主要看Slave_io_running &#x3D;yes</p>
-<p>主要看Slave_sql_running &#x3D;yes</p>
-<h1 id="读写分离"><a href="#读写分离" class="headerlink" title="读写分离"></a>读写分离</h1><h1 id="scheml-xml"><a href="#scheml-xml" class="headerlink" title="scheml.xml"></a>scheml.xml</h1><h3 id="schema标签"><a href="#schema标签" class="headerlink" title="schema标签"></a>schema标签</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;schema name=&quot;TESTDB&quot; checkSQLschema=&quot;true&quot; sqlMaxLimit=&quot;100&quot; randomDataNode=&quot;dn1&quot;&gt;</span><br><span class="line">    &lt;!-- auto sharding by id (long) --&gt;</span><br><span class="line">    &lt;!--splitTableNames 启用&lt;table name 属性使用逗号分割配置多个表,即多个表使用这个配置--&gt;</span><br><span class="line">    &lt;table name=&quot;travelrecord,address&quot; dataNode=&quot;dn1,dn2,dn3&quot; rule=&quot;auto-sharding-long&quot; splitTableNames =&quot;true&quot;/&gt;</span><br><span class="line">    &lt;!-- &lt;table name=&quot;oc_call&quot; primaryKey=&quot;ID&quot; dataNode=&quot;dn1$0-743&quot; rule=&quot;latest-month-calldate&quot;</span><br><span class="line">   /&gt; --&gt;</span><br><span class="line">&lt;/schema&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>name: 配置逻辑库的名称</li>
-<li>checkSQLschema: 当执行<code>select * from T_Account.user</code></li>
-</ul>
-<p>为true时,mycat会把sql转成<code>select * from user</code></p>
-<p>false 会报错</p>
-<ul>
-<li>sqlMaxLimit:最大查询每页条数,如果sql指定了limit,就以sql为准,没有,就以配置为准</li>
-<li>randomDataNode:这个先不用,先改成<code>datanote=&#39;dn1&#39;</code></li>
-</ul>
-<h3 id="datanote标签"><a href="#datanote标签" class="headerlink" title="datanote标签"></a>datanote标签</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;dataNode name=&quot;dn1&quot; dataHost=&quot;localhost1&quot; database=&quot;db1&quot; /&gt;</span><br><span class="line">&lt;dataNode name=&quot;dn2&quot; dataHost=&quot;localhost1&quot; database=&quot;db2&quot; /&gt;</span><br><span class="line">&lt;dataNode name=&quot;dn3&quot; dataHost=&quot;localhost1&quot; database=&quot;db3&quot; /&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>name:数据分片节点名称</li>
-<li>dataHost:定义该数据分片节点属于哪台数据库主机</li>
-<li>database:指定哪个数据库,db_java1234</li>
-</ul>
-<h3 id="datahost标签"><a href="#datahost标签" class="headerlink" title="datahost标签"></a>datahost标签</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;dataHost name=&quot;localhost1&quot; maxCon=&quot;1000&quot; minCon=&quot;10&quot; balance=&quot;3&quot;</span><br><span class="line">          writeType=&quot;0&quot; dbType=&quot;mysql&quot; dbDriver=&quot;native&quot; switchType=&quot;1&quot;  slaveThreshold=&quot;100&quot;&gt;</span><br><span class="line">    &lt;heartbeat&gt;select user()&lt;/heartbeat&gt;</span><br><span class="line">    &lt;!-- can have multi write hosts --&gt;</span><br><span class="line">    &lt;writeHost host=&quot;hostM1&quot; url=&quot;localhost:3306&quot; user=&quot;root&quot;</span><br><span class="line">               password=&quot;123456&quot;&gt;</span><br><span class="line">    &lt;/writeHost&gt;</span><br><span class="line">    &lt;!-- &lt;writeHost host=&quot;hostM2&quot; url=&quot;localhost:3316&quot; user=&quot;root&quot; password=&quot;123456&quot;/&gt; --&gt;</span><br><span class="line">&lt;/dataHost&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>name:跟datanote标签的datahost对应</li>
-<li>maxCon 指定每个读写实例连接池的的最大链接,write合readhost标签都会使用这个属性的值来实例化出连接池的最大连接数</li>
-<li>min 最小的连接</li>
-<li>balance:</li>
-<li>0 不开启读写分离,所有读操作都发送到当前可用的writehost上</li>
-<li>1</li>
-<li>2 所有读操作都随机在writehost合readehost上分发</li>
-<li>3 所有读请求随机分发到writehost合readhos</li>
-</ul>
-<h1 id="双组双从"><a href="#双组双从" class="headerlink" title="双组双从"></a>双组双从</h1><h1 id="第二套主从"><a href="#第二套主从" class="headerlink" title="第二套主从"></a>第二套主从</h1><p>1.在mysql添加中添加</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">log-slave-update=1</span><br><span class="line">auto-increment-increment=2</span><br><span class="line">auto-increment-offset=1</span><br></pre></td></tr></table></figure>
-
-<p>2.把mysql文件复制一份mysql3</p>
-<p>3.把mysql3的配置文件修修改这些配置</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 主服务器ID,必须唯一</span><br><span class="line">server-id=5</span><br><span class="line">auto-increment-offset=2</span><br></pre></td></tr></table></figure>
-
-<p>4.再创建两个容器,m2 和 s2</p>
-<h1 id="master-和-master同步"><a href="#master-和-master同步" class="headerlink" title="master 和 master同步"></a>master 和 master同步</h1><p>就是相互slave</p>
-<h1 id="测试读写分离"><a href="#测试读写分离" class="headerlink" title="测试读写分离"></a>测试读写分离</h1><p>插入语句</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into test valus(@@hostname)</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -2370,104 +2630,6 @@ subgraph 双向链表
 
 <p>找Java包的路径</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">mac</span></span><br><span class="line">/usr/libexec/java_home -V</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://connorzhangyu.github.io/2022/11/19/IDEA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Connor">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hello World">
-      <meta itemprop="description" content="connor的个人博客">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Hello World">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/11/19/IDEA/" class="post-title-link" itemprop="url">IDEA</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-11-19 18:25:00" itemprop="dateCreated datePublished" datetime="2022-11-19T18:25:00+07:00">2022-11-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-09-24 14:23:21" itemprop="dateModified" datetime="2023-09-24T14:23:21+07:00">2023-09-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E8%BD%AF%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">软件</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h1><h2 id="IDEA查看方法被调用"><a href="#IDEA查看方法被调用" class="headerlink" title="IDEA查看方法被调用"></a>IDEA查看方法被调用</h2><p><img src="https://image.runtimes.cc/202404051423853.png"></p>
-<h2 id="修改光标所在行背景颜色"><a href="#修改光标所在行背景颜色" class="headerlink" title="修改光标所在行背景颜色"></a>修改光标所在行背景颜色</h2><p><img src="https://image.runtimes.cc/202404051423630.png"></p>
-<h2 id="断点判断条件"><a href="#断点判断条件" class="headerlink" title="断点判断条件"></a>断点判断条件</h2><p>在断点上点右键,正常的写判断代码就行</p>
-<p><img src="https://image.runtimes.cc/202404051423731.png" alt="image-20230803174451532"></p>
-<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><h3 id="Rabinbow-Brackets"><a href="#Rabinbow-Brackets" class="headerlink" title="Rabinbow Brackets"></a>Rabinbow Brackets</h3><p>作者:Zhihao Zhang</p>
-<p>使用方法</p>
-<p><code>Command</code>+右键,高亮选中部分</p>
-<p><code>Alt</code>+右键,高亮选中部分,其余的代码变暗</p>
-<h3 id="CommitMessage"><a href="#CommitMessage" class="headerlink" title="CommitMessage"></a>CommitMessage</h3><p>作者:郭翰林</p>
-<p>使用方法,提交的时候,点击✈️的图标</p>
-<h3 id="Codeium"><a href="#Codeium" class="headerlink" title="Codeium"></a>Codeium</h3><p>作者:Codeium</p>
-<p>写代码的时候会有自动提示,按tab确定使用AI生成的代码</p>
-<h3 id="Key-Promoter-X"><a href="#Key-Promoter-X" class="headerlink" title="Key Promoter X"></a>Key Promoter X</h3><h3 id="Translation"><a href="#Translation" class="headerlink" title="Translation"></a>Translation</h3><p>作者:Yii.Guxing</p>
-<p>选中要翻译的内容,右键选择翻译</p>
 
       
     </div>
