@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"connorzhangyu.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="Spring MVC 说一下 spring mvc 运行流程？ Spring MVC运行流程图： Spring运行流程描述： 用户向服务器发送请求，请求被Spring 前端控制Servelt DispatcherServlet捕获；">
+<meta property="og:type" content="article">
+<meta property="og:title" content="springMVC">
+<meta property="og:url" content="https://connorzhangyu.github.io/2025/01/04/springMVC/index.html">
+<meta property="og:site_name" content="Hello World">
+<meta property="og:description" content="Spring MVC 说一下 spring mvc 运行流程？ Spring MVC运行流程图： Spring运行流程描述： 用户向服务器发送请求，请求被Spring 前端控制Servelt DispatcherServlet捕获；">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/d1f3cfcfacc0c82aa4f6870eaca54d649c6b8358aaff78b9ffa1413397124e3f1c0ec0ad425d6fe651ce7a7e1ee52520?pictype=scale&from=30113&version=3.3.3.3&uin=495869333&fname=springMVC%E8%BF%90%E8%A1%8C%E6%B5%81%E7%A8%8B.png&size=750">
+<meta property="article:published_time" content="2025-01-03T21:08:56.000Z">
+<meta property="article:modified_time" content="2025-07-28T17:18:39.842Z">
+<meta property="article:author" content="Connor">
+<meta property="article:tag" content="Java,Linux,Spring,博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/d1f3cfcfacc0c82aa4f6870eaca54d649c6b8358aaff78b9ffa1413397124e3f1c0ec0ad425d6fe651ce7a7e1ee52520?pictype=scale&from=30113&version=3.3.3.3&uin=495869333&fname=springMVC%E8%BF%90%E8%A1%8C%E6%B5%81%E7%A8%8B.png&size=750">
+
+
+<link rel="canonical" href="https://connorzhangyu.github.io/2025/01/04/springMVC/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-cn","comments":true,"permalink":"https://connorzhangyu.github.io/2025/01/04/springMVC/","path":"2025/01/04/springMVC/","title":"springMVC"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>springMVC | Hello World</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Hello World</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Connor SJ 张</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-MVC"><span class="nav-number">1.</span> <span class="nav-text">Spring MVC</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B4%E4%B8%80%E4%B8%8B-spring-mvc-%E8%BF%90%E8%A1%8C%E6%B5%81%E7%A8%8B%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">说一下 spring mvc 运行流程？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spring-mvc-%E6%9C%89%E5%93%AA%E4%BA%9B%E7%BB%84%E4%BB%B6%EF%BC%9F"><span class="nav-number">1.2.</span> <span class="nav-text">spring mvc 有哪些组件？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Controller%E5%92%8C-RestController%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.3.</span> <span class="nav-text">@Controller和@RestController的区别?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RequestBody-ResponseBody-%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">1.4.</span> <span class="nav-text">@RequestBody @ResponseBody 的作用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RequestBody"><span class="nav-number">1.4.1.</span> <span class="nav-text">@RequestBody</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ResponseBody"><span class="nav-number">1.4.2.</span> <span class="nav-text">@ResponseBody</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RequestMapping-%E7%9A%84%E4%BD%9C%E7%94%A8%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.5.</span> <span class="nav-text">@RequestMapping 的作用是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Autowired-%E7%9A%84%E4%BD%9C%E7%94%A8%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.6.</span> <span class="nav-text">@Autowired 的作用是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95"><span class="nav-number">1.7.</span> <span class="nav-text">目录</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Connor</p>
+  <div class="site-description" itemprop="description">connor的个人博客</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">100</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">81</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-cn">
+    <link itemprop="mainEntityOfPage" href="https://connorzhangyu.github.io/2025/01/04/springMVC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Connor">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello World">
+      <meta itemprop="description" content="connor的个人博客">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="springMVC | Hello World">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          springMVC
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2025-01-04 04:08:56" itemprop="dateCreated datePublished" datetime="2025-01-04T04:08:56+07:00">2025-01-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-07-29 00:18:39" itemprop="dateModified" datetime="2025-07-29T00:18:39+07:00">2025-07-29</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="Spring-MVC"><a href="#Spring-MVC" class="headerlink" title="Spring MVC"></a>Spring MVC</h1><h2 id="说一下-spring-mvc-运行流程？"><a href="#说一下-spring-mvc-运行流程？" class="headerlink" title="说一下 spring mvc 运行流程？"></a>说一下 spring mvc 运行流程？</h2><p>Spring MVC运行流程图：</p>
+<p><img src="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/d1f3cfcfacc0c82aa4f6870eaca54d649c6b8358aaff78b9ffa1413397124e3f1c0ec0ad425d6fe651ce7a7e1ee52520?pictype=scale&from=30113&version=3.3.3.3&uin=495869333&fname=springMVC%E8%BF%90%E8%A1%8C%E6%B5%81%E7%A8%8B.png&size=750" alt="Spring MVC运行流程图"></p>
+<p>Spring运行流程描述：</p>
+<ol>
+<li>用户向服务器发送请求，请求被Spring 前端控制Servelt DispatcherServlet捕获；</li>
+<li>DispatcherServlet对请求URL进行解析，得到请求资源标识符（URI）。然后根据该URI，调用HandlerMapping获得该Handler配置的所有相关的对象（包括Handler对象以及Handler对象对应的拦截器），最后以HandlerExecutionChain对象的形式返回；</li>
+<li>DispatcherServlet 根据获得的Handler，选择一个合适的HandlerAdapter；（附注：如果成功获得HandlerAdapter后，此时将开始执行拦截器的preHandler(…)方法）</li>
+<li>提取Request中的模型数据，填充Handler入参，开始执行Handler（Controller)。 在填充Handler的入参过程中，根据你的配置，Spring将帮你做一些额外的工作：<br>HttpMessageConveter： 将请求消息（如Json、xml等数据）转换成一个对象，将对象转换为指定的响应信息<br>数据转换：对请求消息进行数据转换。如String转换成Integer、Double等<br>数据根式化：对请求消息进行数据格式化。 如将字符串转换成格式化数字或格式化日期等<br>数据验证： 验证数据的有效性（长度、格式等），验证结果存储到BindingResult或Error中</li>
+<li>Handler执行完成后，向DispatcherServlet 返回一个ModelAndView对象；</li>
+<li>根据返回的ModelAndView，选择一个适合的ViewResolver（必须是已经注册到Spring容器中的ViewResolver)返回给DispatcherServlet ；</li>
+<li>ViewResolver 结合Model和View，来渲染视图；</li>
+<li>将渲染结果返回给客户端。</li>
+</ol>
+<h2 id="spring-mvc-有哪些组件？"><a href="#spring-mvc-有哪些组件？" class="headerlink" title="spring mvc 有哪些组件？"></a>spring mvc 有哪些组件？</h2><p>Spring MVC的核心组件：<br>DispatcherServlet：中央控制器，把请求给转发到具体的控制类<br>Controller：具体处理请求的控制器<br>HandlerMapping：映射处理器，负责映射中央处理器转发给controller时的映射策略<br>ModelAndView：服务层返回的数据和视图层的封装类<br>ViewResolver：视图解析器，解析具体的视图<br>Interceptors ：拦截器，负责拦截我们定义的请求然后做处理工作</p>
+<h2 id="Controller和-RestController的区别"><a href="#Controller和-RestController的区别" class="headerlink" title="@Controller和@RestController的区别?"></a>@Controller和@RestController的区别?</h2><ol>
+<li><p>Controller, RestController的共同点<br>都是用来表示Spring某个类的是否可以接收HTTP请求</p>
+</li>
+<li><p>Controller, RestController的不同点<br>@Controller标识一个Spring类是Spring MVC controller处理器<br>@RestController：@RestController是@Controller和@ResponseBody的结合体，两个标注合并起来的作用。</p>
+</li>
+</ol>
+<p>3、如果只是使用@RestController注解Controller，则Controller中的方法无法返回jsp页面，配置的视图解析器InternalResourceViewResolver不起作用，返回的内容就是Return 里的内容。<br>例如：本来应该到success.jsp页面的，则其显示success.</p>
+<p>4、如果需要返回到指定页面，则需要用 @Controller配合视图解析器InternalResourceViewResolver才行。</p>
+<p>5、如果需要返回JSON，XML或自定义mediaType内容到页面，则需要在对应的方法上加上@ResponseBody注解。</p>
+<h2 id="RequestBody-ResponseBody-的作用"><a href="#RequestBody-ResponseBody-的作用" class="headerlink" title="@RequestBody @ResponseBody 的作用"></a>@RequestBody @ResponseBody 的作用</h2><h3 id="RequestBody"><a href="#RequestBody" class="headerlink" title="@RequestBody"></a>@RequestBody</h3><ol>
+<li>作用：<br>该注解用于读取 Request 请求的 body 部分数据，使用系统默认配置的 HttpMessageConverter 进行解析，然后把相应的数据绑定到要返回的对象上；<br>再把 HttpMessageConverter 返回的对象数据绑定到 controller 中方法的参数上。</li>
+<li>使用时机：<br>GET、POST方式提交时， 根据 request header Content-Type 的值来判断:<br>application&#x2F;x-www-form-urlencoded：可选（即非必须，因为这种情况的数据 @RequestParam, @ModelAttribute 也可以处理，当然@RequestBody也能处理）；<br>multipart&#x2F;form-data：不能处理（即使用@RequestBody不能处理这种格式的数据）；<br>其他格式：必须（其他格式包括application&#x2F;json, application&#x2F;xml等。这些格式的数据，必须使用@RequestBody来处理）；<br>PUT 方式提交时， 根据request header Content-Type的值来判断:<br>application&#x2F;x-www-form-urlencoded：必须；<br>multipart&#x2F;form-data：不能处理；<br>其他格式：必须；</li>
+</ol>
+<p>作者：希希里之海<br>链接：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/64b22da6c9ab">https://www.jianshu.com/p/64b22da6c9ab</a><br>来源：简书<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<h3 id="ResponseBody"><a href="#ResponseBody" class="headerlink" title="@ResponseBody"></a>@ResponseBody</h3><ol>
+<li><p>作用：<br>该注解用于将 Controller 的方法返回的对象，通过适当的 HttpMessageConverter 转换为指定格式后，写入到 Response 对象的body 数据区。</p>
+</li>
+<li><p>使用时机：<br>返回的数据不是 html 标签的页面，而是其他某种格式的数据时（如 json、xml 等）使用。</p>
+</li>
+</ol>
+<p>作者：希希里之海<br>链接：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/64b22da6c9ab">https://www.jianshu.com/p/64b22da6c9ab</a><br>来源：简书<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<h2 id="RequestMapping-的作用是什么？"><a href="#RequestMapping-的作用是什么？" class="headerlink" title="@RequestMapping 的作用是什么？"></a>@RequestMapping 的作用是什么？</h2><p>RequestMapping是一个用来处理请求地址映射的注解，可用于类或方法上。用于类上，表示类中的所有响应请求的方法都是以该地址作为父路径。</p>
+<p>RequestMapping注解有六个属性，下面我们把她分成三类进行说明。</p>
+<p>value， method：<br>value：指定请求的实际地址，指定的地址可以是URI Template 模式（后面将会说明）；<br>method：指定请求的method类型， GET、POST、PUT、DELETE等；</p>
+<p>consumes，produces<br>consumes：指定处理请求的提交内容类型（Content-Type），例如application&#x2F;json, text&#x2F;html；<br>produces：指定返回的内容类型，仅当request请求头中的(Accept)类型中包含该指定类型才返回；</p>
+<p>params，headers<br>params： 指定request中必须包含某些参数值是，才让该方法处理。<br>headers：指定request中必须包含某些指定的header值，才能让该方法处理请求。</p>
+<h2 id="Autowired-的作用是什么？"><a href="#Autowired-的作用是什么？" class="headerlink" title="@Autowired 的作用是什么？"></a>@Autowired 的作用是什么？</h2><p>《@Autowired用法详解》：blog.csdn.net&#x2F;u013257679&#x2F;article&#x2F;details&#x2F;52295106</p>
+<p>首先要知道另一个东西，default-autowire，它是在xml文件中进行配置的，可以设置为byName、byType、constructor和autodetect；比如byName，不用显式的在bean中写出依赖的对象，它会自动的匹配其它bean中id名与本bean的set**相同的，并自动装载。</p>
+<p>@Autowired是用在JavaBean中的注解，通过byType形式，用来给指定的字段或方法注入所需的外部资源。<br>两者的功能是一样的，就是能减少或者消除属性或构造器参数的设置，只是配置地方不一样而已。<br>autowire四种模式的区别：</p>
+<table>
+<thead>
+<tr>
+<th align="center">模式</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">no</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">byName</td>
+<td align="center">根据属性名自动装配。此选项将检查容器并根据名字查找与属性完全一致的bean, 并将其与属性自动装配。例如，再bean中将autowire设置为 by name, 而该 bean 包含 master 属性（同时提供setMaster(..)方法），Spring 就会查找名为 master 的 bean 定义，并且用它来装配给master属性</td>
+</tr>
+<tr>
+<td align="center">byType</td>
+<td align="center">如果容器中存在一个与制定属性类型相同的 bean,那么将与该属性自动装配。入股哦存在多个该类型的 bean，那么将会抛出异常，并指出不能使用 byType 方式进行自动装配。若没有找到相匹配的 bean，则什么事都不发生，属性也不会被设置。如果你不希望这样，那么可以通过设置 dependency-check&#x3D;”object” 让Spring 抛出异常</td>
+</tr>
+<tr>
+<td align="center">constructor</td>
+<td align="center">与 byType 的方式类似，不同指出在于它应用于构造器参数。如果在容器中没有找到与构造器参数类型一直的 bean，那么将会抛出异常</td>
+</tr>
+<tr>
+<td align="center">autodetect</td>
+<td align="center">通过 bean 类的自省机制(introspection)来决定是使用 constructor 还是 byType 方式进行自动装配。如果发现默认的构造器，那么将使用 byType 方式</td>
+</tr>
+</tbody></table>
+<p>先看一下bean实例化和@Autowired装配过程：<br>一切都是从bean工厂的getBean方法开始的，一旦该方法调用总会返回一个bean实例，无论当前是否存在，不存在就实例化一个并装配，否则直接返回。（Spring MVC是在什么时候开始执行bean的实例化过程的呢？其实就在组件扫描完成之后）</p>
+<p>实例化和装配过程中会多次递归调用getBean方法来解决类之间的依赖。</p>
+<p>Spring几乎考虑了所有可能性，所以方法特别复杂但完整有条理。</p>
+<p>@Autowired最终是根据类型来查找和装配元素的，但是我们设置了&lt;beans default-autowire&#x3D;”byName”&#x2F;&gt;后会影响最终的类型匹配查找。因为在前面有根据BeanDefinition的autowire类型设置PropertyValue值得一步，其中会有新实例的创建和注册。就是那个autowireByName方法。</p>
+<p>下面通过@Autowired来说明一下用法</p>
+<p>Setter 方法中的 @Autowired<br>你可以在 JavaBean中的 setter 方法中使用 @Autowired 注解。当 Spring遇到一个在 setter 方法中使用的 @Autowired 注解，它会在方法中执行 byType 自动装配。<br>这里是 TextEditor.java 文件的内容：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.tutorialspoint;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TextEditor</span> &#123;</span><br><span class="line">   <span class="keyword">private</span> SpellChecker spellChecker;</span><br><span class="line">   <span class="meta">@Autowired</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setSpellChecker</span><span class="params">( SpellChecker spellChecker )</span>&#123;</span><br><span class="line">      <span class="built_in">this</span>.spellChecker = spellChecker;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">public</span> SpellChecker <span class="title function_">getSpellChecker</span><span class="params">( )</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> spellChecker;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">spellCheck</span><span class="params">()</span> &#123;</span><br><span class="line">      spellChecker.checkSpelling();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下面是另一个依赖的类文件 SpellChecker.java 的内容：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.tutorialspoint;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SpellChecker</span> &#123;</span><br><span class="line">   <span class="keyword">public</span> <span class="title function_">SpellChecker</span><span class="params">()</span>&#123;</span><br><span class="line">      System.out.println(<span class="string">&quot;Inside SpellChecker constructor.&quot;</span> );</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">checkSpelling</span><span class="params">()</span>&#123;</span><br><span class="line">      System.out.println(<span class="string">&quot;Inside checkSpelling.&quot;</span> );</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下面是 MainApp.java 文件的内容：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.tutorialspoint;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.ApplicationContext;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.support.ClassPathXmlApplicationContext;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MainApp</span> &#123;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">      <span class="type">ApplicationContext</span> <span class="variable">context</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ClassPathXmlApplicationContext</span>(<span class="string">&quot;Beans.xml&quot;</span>);</span><br><span class="line">      <span class="type">TextEditor</span> <span class="variable">te</span> <span class="operator">=</span> (TextEditor) context.getBean(<span class="string">&quot;textEditor&quot;</span>);</span><br><span class="line">      te.spellCheck();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下面是配置文件 Beans.xml：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:context</span>=<span class="string">&quot;http://www.springframework.org/schema/context&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="string"><span class="tag">    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd</span></span></span><br><span class="line"><span class="string"><span class="tag">    http://www.springframework.org/schema/context</span></span></span><br><span class="line"><span class="string"><span class="tag">    http://www.springframework.org/schema/context/spring-context-3.0.xsd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">   <span class="tag">&lt;<span class="name">context:annotation-config</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">&lt;!-- Definition for textEditor bean without constructor-arg  --&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;textEditor&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.tutorialspoint.TextEditor&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">&lt;!-- Definition for spellChecker bean --&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;spellChecker&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.tutorialspoint.SpellChecker&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>一旦你已经完成的创建了源文件和 bean 配置文件，让我们运行一下应用程序。如果你的应用程序一切都正常的话，这将会输出以下消息：</p>
+<pre><code>Inside SpellChecker constructor.
+Inside checkSpelling.
+</code></pre>
+<p>属性中的 @Autowired<br>你可以在属性中使用 @Autowired 注解来除去 setter 方法。当时使用 为自动连接属性传递的时候，Spring 会将这些传递过来的值或者引用自动分配给那些属性。所以利用在属性中 @Autowired 的用法，你的 TextEditor.java 文件将变成如下所示：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.tutorialspoint;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TextEditor</span> &#123;</span><br><span class="line">   <span class="meta">@Autowired</span></span><br><span class="line">   <span class="keyword">private</span> SpellChecker spellChecker;</span><br><span class="line">   <span class="keyword">public</span> <span class="title function_">TextEditor</span><span class="params">()</span> &#123;</span><br><span class="line">      System.out.println(<span class="string">&quot;Inside TextEditor constructor.&quot;</span> );</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">public</span> SpellChecker <span class="title function_">getSpellChecker</span><span class="params">( )</span>&#123;</span><br><span class="line">      <span class="keyword">return</span> spellChecker;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">spellCheck</span><span class="params">()</span>&#123;</span><br><span class="line">      spellChecker.checkSpelling();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下面是配置文件 Beans.xml：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:context</span>=<span class="string">&quot;http://www.springframework.org/schema/context&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="string"><span class="tag">    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd</span></span></span><br><span class="line"><span class="string"><span class="tag">    http://www.springframework.org/schema/context</span></span></span><br><span class="line"><span class="string"><span class="tag">    http://www.springframework.org/schema/context/spring-context-3.0.xsd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">   <span class="tag">&lt;<span class="name">context:annotation-config</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">&lt;!-- Definition for textEditor bean --&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;textEditor&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.tutorialspoint.TextEditor&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">&lt;!-- Definition for spellChecker bean --&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;spellChecker&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.tutorialspoint.SpellChecker&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>一旦你在源文件和 bean 配置文件中完成了上面两处改变，让我们运行一下应用程序。如果你的应用程序一切都正常的话，这将会输出以下消息：</p>
+<pre><code>Inside TextEditor constructor.
+Inside SpellChecker constructor.
+Inside checkSpelling.
+</code></pre>
+<p>构造函数中的 @Autowired<br>你也可以在构造函数中使用 @Autowired。一个构造函数 @Autowired 说明当创建 bean 时，即使在 XML 文件中没有使用 元素配置 bean ，构造函数也会被自动连接。让我们检查一下下面的示例。<br>这里是 TextEditor.java 文件的内容：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.tutorialspoint;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TextEditor</span> &#123;</span><br><span class="line">   <span class="keyword">private</span> SpellChecker spellChecker;</span><br><span class="line">   <span class="meta">@Autowired</span></span><br><span class="line">   <span class="keyword">public</span> <span class="title function_">TextEditor</span><span class="params">(SpellChecker spellChecker)</span>&#123;</span><br><span class="line">      System.out.println(<span class="string">&quot;Inside TextEditor constructor.&quot;</span> );</span><br><span class="line">      <span class="built_in">this</span>.spellChecker = spellChecker;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">spellCheck</span><span class="params">()</span>&#123;</span><br><span class="line">      spellChecker.checkSpelling();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下面是配置文件 Beans.xml：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:context</span>=<span class="string">&quot;http://www.springframework.org/schema/context&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="string"><span class="tag">    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd</span></span></span><br><span class="line"><span class="string"><span class="tag">    http://www.springframework.org/schema/context</span></span></span><br><span class="line"><span class="string"><span class="tag">    http://www.springframework.org/schema/context/spring-context-3.0.xsd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">   <span class="tag">&lt;<span class="name">context:annotation-config</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">&lt;!-- Definition for textEditor bean without constructor-arg  --&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;textEditor&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.tutorialspoint.TextEditor&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">&lt;!-- Definition for spellChecker bean --&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;spellChecker&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.tutorialspoint.SpellChecker&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>一旦你在源文件和 bean 配置文件中完成了上面两处改变，让我们运行一下应用程序。如果你的应用程序一切都正常的话，这将会输出以下消息：</p>
+<pre><code>Inside TextEditor constructor.
+Inside SpellChecker constructor.
+Inside checkSpelling.
+</code></pre>
+<p>@Autowired 的（required&#x3D;false）选项<br>默认情况下，@Autowired 注解意味着依赖是必须的，它类似于 @Required 注解，然而，你可以使用 @Autowired 的 （required&#x3D;false） 选项关闭默认行为。<br>即使你不为 age 属性传递任何参数，下面的示例也会成功运行，但是对于 name 属性则需要一个参数。你可以自己尝试一下这个示例，因为除了只有 Student.java 文件被修改以外，它和 @Required 注解示例是相似的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.tutorialspoint;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Student</span> &#123;</span><br><span class="line">   <span class="keyword">private</span> Integer age;</span><br><span class="line">   <span class="keyword">private</span> String name;</span><br><span class="line">   <span class="meta">@Autowired(required=false)</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setAge</span><span class="params">(Integer age)</span> &#123;</span><br><span class="line">      <span class="built_in">this</span>.age = age;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">public</span> Integer <span class="title function_">getAge</span><span class="params">()</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> age;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="meta">@Autowired</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span> &#123;</span><br><span class="line">      <span class="built_in">this</span>.name = name;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> name;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>————————————————<br>版权声明：本文为CSDN博主「阿文施瓦辛格」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/u013257679/article/details/52295106">https://blog.csdn.net/u013257679/article/details/52295106</a></p>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="/java/javaBase.md">Java基础</a></li>
+<li><a href="/java/collection.md">容器</a></li>
+<li><a href="/java/thread.md">线程</a></li>
+<li><a href="/java/reflection.md">反射</a></li>
+<li><a href="/java/cloneable.md">对象克隆</a></li>
+<li><a href="/java/javaWeb.md">JavaWeb</a></li>
+<li><a href="/java/exception.md">异常</a></li>
+<li><a href="/java/netWork.md">网络服务</a></li>
+<li><a href="/java/designpattern.md">设计模式</a></li>
+<li><a href="/java/spring.md">Spring</a></li>
+<li><a href="/java/springMVC.md">Spring MVC</a></li>
+<li><a href="/java/springBoot.md">Spring Boot</a></li>
+<li><a href="/java/springCloud.md">Spring Cloud</a></li>
+<li><a href="/java/hibernate.md">Hibernate</a></li>
+<li><a href="/java/mybatis.md">Mybatis</a></li>
+<li><a href="/java/mq.md">队列</a></li>
+<li><a href="/java/zookeeper.md">Zookeeper</a></li>
+<li><a href="/java/mySql.md">MySql</a></li>
+<li><a href="/java/redis.md">Redis</a></li>
+<li><a href="/java/jvm.md">Jvm</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/01/04/zookeeper/" rel="prev" title="zookeeper">
+                  <i class="fa fa-angle-left"></i> zookeeper
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/01/04/thread/" rel="next" title="thread">
+                  thread <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Connor</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>

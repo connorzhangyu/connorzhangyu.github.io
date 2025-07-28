@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"connorzhangyu.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="分支管理切一个新的本地分支123# 先切换到需要复制的分支,比如想从prod分支,切一个新的分支git checkout prod   # 先到prod分支git checkout -b prod-fix  # 从prod分支拷贝一个新的分支叫prod-fix  用命令pull request代码1234# 把本地的代码切换到mastergit checkout -b theme-next-mas">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git">
+<meta property="og:url" content="https://connorzhangyu.github.io/2022/11/19/Git/index.html">
+<meta property="og:site_name" content="Hello World">
+<meta property="og:description" content="分支管理切一个新的本地分支123# 先切换到需要复制的分支,比如想从prod分支,切一个新的分支git checkout prod   # 先到prod分支git checkout -b prod-fix  # 从prod分支拷贝一个新的分支叫prod-fix  用命令pull request代码1234# 把本地的代码切换到mastergit checkout -b theme-next-mas">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image.runtimes.cc/202404051416064.png">
+<meta property="og:image" content="https://image.runtimes.cc/202404051418900.png">
+<meta property="og:image" content="https://image.runtimes.cc/202404051418039.png">
+<meta property="og:image" content="https://image.runtimes.cc/202404051418540.png">
+<meta property="og:image" content="https://image.runtimes.cc/202404051418125.png">
+<meta property="og:image" content="https://image.runtimes.cc/202404051418448.png">
+<meta property="og:image" content="https://image.runtimes.cc/202404051418043.png">
+<meta property="og:image" content="https://image.runtimes.cc/202404051419575.png">
+<meta property="og:image" content="https://image.runtimes.cc/202404051518534.png">
+<meta property="og:image" content="https://image.runtimes.cc/202404051419385.png">
+<meta property="og:image" content="https://image.runtimes.cc/202404051419086.png">
+<meta property="og:image" content="https://image.runtimes.cc/202404051420630.png">
+<meta property="og:image" content="https://image.runtimes.cc/202404051420367.png">
+<meta property="og:image" content="https://image.runtimes.cc/202404051420877.png">
+<meta property="og:image" content="https://image.runtimes.cc/202404051420776.png">
+<meta property="og:image" content="https://image.runtimes.cc/202404051420936.png">
+<meta property="og:image" content="https://image.runtimes.cc/202404051420518.png">
+<meta property="og:image" content="https://image.runtimes.cc/202404051420688.png">
+<meta property="article:published_time" content="2022-11-19T11:25:00.000Z">
+<meta property="article:modified_time" content="2023-11-07T10:28:27.000Z">
+<meta property="article:author" content="Connor">
+<meta property="article:tag" content="Git">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image.runtimes.cc/202404051416064.png">
+
+
+<link rel="canonical" href="https://connorzhangyu.github.io/2022/11/19/Git/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-cn","comments":true,"permalink":"https://connorzhangyu.github.io/2022/11/19/Git/","path":"2022/11/19/Git/","title":"Git"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Git | Hello World</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Hello World</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Connor SJ 张</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">分支管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E4%B8%80%E4%B8%AA%E6%96%B0%E7%9A%84%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF"><span class="nav-number">1.1.</span> <span class="nav-text">切一个新的本地分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.2.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%A8%E5%91%BD%E4%BB%A4pull-request%E4%BB%A3%E7%A0%81"><span class="nav-number">2.</span> <span class="nav-text">用命令pull request代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-Key"><span class="nav-number">3.</span> <span class="nav-text">Git Key</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-Bash%E5%90%AF%E5%8A%A8%E6%85%A2"><span class="nav-number">4.</span> <span class="nav-text">Git Bash启动慢</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%A8%8B"><span class="nav-number">5.</span> <span class="nav-text">推送到远程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9A%84%E5%88%86%E6%94%AF%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%A8%8B"><span class="nav-number">6.</span> <span class="nav-text">创建新的分支推送到远程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E6%96%87%E4%BB%B6"><span class="nav-number">7.</span> <span class="nav-text">删除远程仓库文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%92%A4%E9%94%80%E4%BF%AE%E6%94%B9"><span class="nav-number">8.</span> <span class="nav-text">撤销修改</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80reset"><span class="nav-number">9.</span> <span class="nav-text">版本回退reset</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80revert"><span class="nav-number">10.</span> <span class="nav-text">版本回退revert</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86-1"><span class="nav-number">11.</span> <span class="nav-text">分支管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TAG%E7%AE%A1%E7%90%86"><span class="nav-number">12.</span> <span class="nav-text">TAG管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git%E5%AD%90%E6%A8%A1%E5%9D%97"><span class="nav-number">13.</span> <span class="nav-text">Git子模块</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%8B%E9%9A%86%E9%A1%B9%E7%9B%AE%E6%8C%87%E5%AE%9A%E5%88%86%E6%94%AF"><span class="nav-number">13.1.</span> <span class="nav-text">克隆项目指定分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%8B%E9%9A%86%E9%A1%B9%E7%9B%AE"><span class="nav-number">13.2.</span> <span class="nav-text">克隆项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E9%A1%B9%E7%9B%AE"><span class="nav-number">13.3.</span> <span class="nav-text">添加项目</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Rebase"><span class="nav-number">14.</span> <span class="nav-text">Rebase</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84"><span class="nav-number">15.</span> <span class="nav-text">要注意的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%82%A8%E8%97%8F"><span class="nav-number">16.</span> <span class="nav-text">储藏</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7"><span class="nav-number">17.</span> <span class="nav-text">升级</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Github%E6%9B%B4%E6%96%B0fork%E5%88%AB%E4%BA%BA%E7%9A%84%E9%A1%B9%E7%9B%AE"><span class="nav-number">18.</span> <span class="nav-text">Github更新fork别人的项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%88%E7%AB%AF%E9%85%8D%E7%BD%AEgithub-person-token"><span class="nav-number">19.</span> <span class="nav-text">终端配置github person token</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SourceTree"><span class="nav-number">20.</span> <span class="nav-text">SourceTree</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%84%E7%A7%8D%E7%8A%B6%E6%80%81"><span class="nav-number">20.1.</span> <span class="nav-text">各种状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rebase%E5%88%86%E6%94%AF"><span class="nav-number">20.2.</span> <span class="nav-text">rebase分支</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Connor</p>
+  <div class="site-description" itemprop="description">connor的个人博客</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">100</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">81</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-cn">
+    <link itemprop="mainEntityOfPage" href="https://connorzhangyu.github.io/2022/11/19/Git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Connor">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello World">
+      <meta itemprop="description" content="connor的个人博客">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Git | Hello World">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Git
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-11-19 18:25:00" itemprop="dateCreated datePublished" datetime="2022-11-19T18:25:00+07:00">2022-11-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-11-07 17:28:27" itemprop="dateModified" datetime="2023-11-07T17:28:27+07:00">2023-11-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h1><h2 id="切一个新的本地分支"><a href="#切一个新的本地分支" class="headerlink" title="切一个新的本地分支"></a>切一个新的本地分支</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">先切换到需要复制的分支,比如想从prod分支,切一个新的分支</span></span><br><span class="line">git checkout prod   # 先到prod分支</span><br><span class="line">git checkout -b prod-fix  # 从prod分支拷贝一个新的分支叫prod-fix</span><br></pre></td></tr></table></figure>
+
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h1 id="用命令pull-request代码"><a href="#用命令pull-request代码" class="headerlink" title="用命令pull request代码"></a>用命令pull request代码</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 把本地的代码切换到master</span><br><span class="line">git checkout -b theme-next-master master</span><br><span class="line"># https://github.com/theme-next/hexo-theme-next.git 是要合并的代码</span><br><span class="line">git pull https://github.com/theme-next/hexo-theme-next.git master</span><br></pre></td></tr></table></figure>
+
+<h1 id="Git-Key"><a href="#Git-Key" class="headerlink" title="Git Key"></a>Git Key</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">ssh-keygen</span><br><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<h1 id="Git-Bash启动慢"><a href="#Git-Bash启动慢" class="headerlink" title="Git Bash启动慢"></a>Git Bash启动慢</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.preloadindex true</span><br><span class="line">git config --global core.fscache true</span><br><span class="line">git config --global gc.auto 256</span><br></pre></td></tr></table></figure>
+
+<h1 id="推送到远程"><a href="#推送到远程" class="headerlink" title="推送到远程"></a>推送到远程</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin git@github.com:YangAnLin/bbs.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<h1 id="创建新的分支推送到远程"><a href="#创建新的分支推送到远程" class="headerlink" title="创建新的分支推送到远程"></a>创建新的分支推送到远程</h1><ol>
+<li>先创建本地分支<code>git checkout -b &lt;branch-name&gt;</code></li>
+<li>本地分支推送到远程服务器时，远程分支自动创建，推送本地分支到远程</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">git push --set-upstream &lt;remote-name&gt; &lt;local-branch-name&gt;:&lt;remote-branch-name&gt;</span><br><span class="line"></span><br><span class="line">&lt;remote-name&gt;：远程git服务器名称，一般设为origin</span><br><span class="line">&lt;local-branch-name&gt;：本地分支名称</span><br><span class="line">&lt;remote-branch-name&gt;：远程分支名称</span><br><span class="line"></span><br><span class="line">最后的结果是: git push --set-upstream origin prerelease:prerelease</span><br><span class="line">prerelease是分支的名字</span><br><span class="line"></span><br><span class="line">也可以这样操作:本地有个master_anthony,服务器中没有这个分支,</span><br><span class="line">git push -u origin master_anthony</span><br><span class="line">这个命令,就是把master_anthony分支的代码,提交到远程,还要在远程创建这个分支</span><br></pre></td></tr></table></figure>
+
+<h1 id="删除远程仓库文件"><a href="#删除远程仓库文件" class="headerlink" title="删除远程仓库文件"></a>删除远程仓库文件</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 加上 -n 这个参数，执行命令时，是不会删除任何文件，而是展示此命令要删除的文件列表预览。</span></span><br><span class="line">git <span class="built_in">rm</span> -r -n --cached 文件/文件夹名称</span><br><span class="line"></span><br><span class="line">git <span class="built_in">rm</span> -r --cached 文件/文件夹名称</span><br><span class="line"></span><br><span class="line">git commit -m <span class="string">&quot;提交说明&quot;</span></span><br><span class="line"></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+<h1 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 工作区修改过了,恢复工作区</span><br><span class="line">git checkout -- file</span><br><span class="line"></span><br><span class="line"># 已经commit了,但是还没有push</span><br><span class="line">git reset --soft HEAD^</span><br><span class="line"></span><br><span class="line"># 现在就已经把暂存区恢复到工作了</span><br></pre></td></tr></table></figure>
+
+<h1 id="版本回退reset"><a href="#版本回退reset" class="headerlink" title="版本回退reset"></a>版本回退reset</h1><p>reset用于回退版本，可以遗弃不再使用的提交</p>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"># 查看日志提交log</span><br><span class="line">$ git log --pretty=oneline</span><br><span class="line">c27561bbe42dc1ae1b08442ce0d8100d4e02a689 (<span class="symbol">HEAD</span> -&gt; master) stage</span><br><span class="line"><span class="number">1</span>fd6bc87438d26b24c93441b82c8840a9ad47e32 test_3</span><br><span class="line"><span class="number">66</span>f444c9de0b3c2d1cddb8f17becca7ce774a7c7 test_2</span><br><span class="line"><span class="number">2502</span>c400cab4d7cb48ed3e4200577f428904da9b test_1</span><br><span class="line"><span class="number">26</span>d73f758411c3656b7fa243d77837943a6c782c <span class="number">321321</span></span><br><span class="line"><span class="number">5</span>fa733378d5eb187d1d46bf2d2395e6c67867a8d 测试</span><br><span class="line">e9fa63e3bafc275e99cc88b40cc68bde6933323c <span class="number">123</span></span><br><span class="line"><span class="number">3</span>d338b67e2b57dcd6887099cb3977f5d96b3cbb5 第一次提交</span><br><span class="line"></span><br><span class="line"># 远程地址回退版本</span><br><span class="line"># 先让本地回退到指定版本</span><br><span class="line">git reset --hard <span class="symbol">HEAD</span>^</span><br><span class="line">#再推送到远程(这样也会把别人提交的给弄消息了)</span><br><span class="line">git push --force</span><br><span class="line"></span><br><span class="line"># 操作记录</span><br><span class="line">$ git reflog</span><br><span class="line">c27561b (<span class="symbol">HEAD</span> -&gt; master) <span class="symbol">HEAD</span>@&#123;<span class="number">0</span>&#125;: commit: stage</span><br><span class="line"><span class="number">1</span>fd6bc8 <span class="symbol">HEAD</span>@&#123;<span class="number">1</span>&#125;: reset: moving to <span class="number">1</span>fd6bc8</span><br><span class="line"><span class="number">66</span>f444c <span class="symbol">HEAD</span>@&#123;<span class="number">2</span>&#125;: reset: moving to <span class="symbol">HEAD</span>^</span><br><span class="line"><span class="number">1</span>fd6bc8 <span class="symbol">HEAD</span>@&#123;<span class="number">3</span>&#125;: commit: test_3</span><br><span class="line"><span class="number">66</span>f444c <span class="symbol">HEAD</span>@&#123;<span class="number">4</span>&#125;: commit: test_2</span><br><span class="line"><span class="number">2502</span>c40 <span class="symbol">HEAD</span>@&#123;<span class="number">5</span>&#125;: commit: test_1</span><br><span class="line"><span class="number">26</span>d73f7 <span class="symbol">HEAD</span>@&#123;<span class="number">6</span>&#125;: commit: <span class="number">321321</span></span><br><span class="line"><span class="number">5</span>fa7333 <span class="symbol">HEAD</span>@&#123;<span class="number">7</span>&#125;: commit: 测试</span><br><span class="line">e9fa63e <span class="symbol">HEAD</span>@&#123;<span class="number">8</span>&#125;: commit: <span class="number">123</span></span><br><span class="line"><span class="number">3</span>d338b6 <span class="symbol">HEAD</span>@&#123;<span class="number">9</span>&#125;: commit (initial): 第一次提交</span><br></pre></td></tr></table></figure>
+
+<h1 id="版本回退revert"><a href="#版本回退revert" class="headerlink" title="版本回退revert"></a>版本回退revert</h1><p><img src="https://image.runtimes.cc/202404051416064.png"></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">git</span> <span class="string">reset</span> <span class="string">&lt;ID&gt;</span></span><br><span class="line"><span class="string">git</span> <span class="string">push</span></span><br></pre></td></tr></table></figure>
+
+<p>📌 操作同一个文件的时候,容易冲突</p>
+<h1 id="分支管理-1"><a href="#分支管理-1" class="headerlink" title="分支管理"></a>分支管理</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看提交历史</span></span><br><span class="line">git log --graph --pretty=oneline</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">删除本地分支</span></span><br><span class="line">git branch -d localBranchName</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">删除远程分支</span></span><br><span class="line">git push origin --delete remoteBranchName</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">设置全局默认的分支名字</span></span><br><span class="line">git config --global init.defaultBranch &lt;名称&gt;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">修改分支名字</span></span><br><span class="line">git branch -m &lt;name&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="TAG管理"><a href="#TAG管理" class="headerlink" title="TAG管理"></a>TAG管理</h1><p>查看本地所有的tag</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag</span><br></pre></td></tr></table></figure>
+
+<p>新建tag</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 在本地创建一个tag</span><br><span class="line">git tag v2.0</span><br><span class="line"></span><br><span class="line"># 把本地所有tag推送到远程</span><br><span class="line">git push --tags</span><br><span class="line"></span><br><span class="line"># 把指定的tag推送到远程</span><br><span class="line">git push origin [tagname]</span><br></pre></td></tr></table></figure>
+
+<h1 id="Git子模块"><a href="#Git子模块" class="headerlink" title="Git子模块"></a>Git子模块</h1><h2 id="克隆项目指定分支"><a href="#克隆项目指定分支" class="headerlink" title="克隆项目指定分支"></a>克隆项目指定分支</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -b prod https://git.oschina.net/oschina/android-app.git</span><br></pre></td></tr></table></figure>
+
+<h2 id="克隆项目"><a href="#克隆项目" class="headerlink" title="克隆项目"></a>克隆项目</h2><p>第一种方式:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">先clone父项目</span><br><span class="line">git clone sum.git</span><br><span class="line"></span><br><span class="line">再初始化子项目</span><br><span class="line">git submodule init</span><br><span class="line">git submodule foreach git pull</span><br><span class="line"></span><br><span class="line">再更新子项目</span><br><span class="line">git submodule update</span><br></pre></td></tr></table></figure>
+
+<p>第二中方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 克隆完整的项目</span><br><span class="line">git clone git@github.com:jjz/pod-project.git --recursive</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加项目"><a href="#添加项目" class="headerlink" title="添加项目"></a>添加项目</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule add module1.git</span><br></pre></td></tr></table></figure>
+
+<h1 id="Rebase"><a href="#Rebase" class="headerlink" title="Rebase"></a>Rebase</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 进入编辑模式</span><br><span class="line">git rebase -i N</span><br></pre></td></tr></table></figure>
+
+<p>这些 commit 自旧到新由上而下排列</p>
+<p>在合并 commit 这个需求里，我们可以选择 pick(p) 最旧的 commit1，然后在后续的 commit_id 前添加 squash(s) 命令，将这些 commits 都合并到最旧的 commit1 上。</p>
+<p>保存 rebase 结果后，再编辑 commit 信息，使这次 rebase 失效，git 会将之前的这些 commit 都删除，并将其更改合并为一个新的 commit5</p>
+<p>提交的过程中,可能需要加 <code>-f</code> 强制推送</p>
+<p>操作过程中,遇到出错,使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase --abort/--continue/--edit-todo</span><br></pre></td></tr></table></figure>
+
+<h1 id="要注意的"><a href="#要注意的" class="headerlink" title="要注意的"></a>要注意的</h1><ul>
+<li>进入到子项目的目录中,默认的分支并不是master,需要手动切换到master</li>
+<li>删除子模块的,没有这样的功能,需要手动修改<code>.gitmodules</code>文件</li>
+<li>添加了新的子模块之后,<code>.gitmodules</code>就会被创建或者是修改,这个文件需要推送到远程仓库</li>
+</ul>
+<h1 id="储藏"><a href="#储藏" class="headerlink" title="储藏"></a>储藏</h1><p>比如在当前分支正在开发,突然来了一个bug,但是当前写的代码又不能提交,需要先储藏起来</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash</span><br></pre></td></tr></table></figure>
+
+<p>等bug改好,再回来</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash pop</span><br></pre></td></tr></table></figure>
+
+<h1 id="升级"><a href="#升级" class="headerlink" title="升级"></a>升级</h1><p>window</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git update-git-for-windows</span><br></pre></td></tr></table></figure>
+
+<h1 id="Github更新fork别人的项目"><a href="#Github更新fork别人的项目" class="headerlink" title="Github更新fork别人的项目"></a>Github更新fork别人的项目</h1><p>1.打开自己的仓库，进入code下面</p>
+<p>2.点击new pull request创建<br><img src="https://image.runtimes.cc/202404051418900.png"></p>
+<h1 id="终端配置github-person-token"><a href="#终端配置github-person-token" class="headerlink" title="终端配置github person token"></a>终端配置github person token</h1><p>应用场景 Github Personal Access Token in Jenkins</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在命令行中的用户主目录创建如下文件</span></span><br><span class="line">vi .git-credentials</span><br><span class="line"></span><br><span class="line"><span class="comment"># 写入如下内容，请注意将 &#123;username&#125;, &#123;password&#125; 替换成自己的 github 用户名和 token</span></span><br><span class="line">https://&#123;username&#125;:&#123;password&#125;@github.com</span><br><span class="line"></span><br><span class="line"><span class="comment"># 退出保存,执行</span></span><br><span class="line">git config --global credential.helper store</span><br></pre></td></tr></table></figure>
+
+<h1 id="SourceTree"><a href="#SourceTree" class="headerlink" title="SourceTree"></a>SourceTree</h1><h2 id="各种状态"><a href="#各种状态" class="headerlink" title="各种状态"></a>各种状态</h2><p>1.添加文件或者修改文件<br>uncommitted changes 这次是添加了<code>f.txt</code>文件<br><img src="https://image.runtimes.cc/202404051418039.png" alt="未提交"></p>
+<p>2.add的状态<br><img src="https://image.runtimes.cc/202404051418540.png" alt="add"></p>
+<p>3.提交的状态<br>这里<code>超前一个版本</code>,是相对远程<br><img src="https://image.runtimes.cc/202404051418125.png" alt="提交"></p>
+<p>4.推送完的状态<br><img src="https://image.runtimes.cc/202404051418448.png" alt="提交"></p>
+<h2 id="rebase分支"><a href="#rebase分支" class="headerlink" title="rebase分支"></a>rebase分支</h2><p>1.这里的分割线的这次提交是用来分区之前的测试,表示新的测试,测试rebase分支,相当于原始的样子<br><img src="https://image.runtimes.cc/202404051418043.png" alt="原始状态"></p>
+<p>2.如果现在想要开发一个新的功能<br>先在远程的main分支上右键,检出一个自己的分支<code>dev</code><br><img src="https://image.runtimes.cc/202404051419575.png"><br><img src="https://image.runtimes.cc/202404051518534.png"><br><img src="https://image.runtimes.cc/202404051419385.png"></p>
+<p>3.在dev分支上新建&#x2F;或者编辑文件,我这里创建的一个文件,叫<code>dev分支创建的文件.txt</code>,然后提交到本地,<code>不要推送</code><br><img src="https://image.runtimes.cc/202404051419086.png"><br>这里的<code>超前1个版本</code>,是相对于<code>origin/main</code>来说的</p>
+<p>4.再切换到main分支</p>
+<ol>
+<li><p>我这里创建了一个文件,叫<code>master分支创建的文件.txt</code>,提交并且推送到远程<br>(这个操作相当于,你在dev分支 开发自己的功能,然后有别的同事提交了新的代码提交到<code>main</code>分支)</p>
+</li>
+<li><p>pull main分支的代码</p>
+</li>
+</ol>
+<p>5.再切换的dev分支,选中main分支,右键,选择将当前变更变基到main<br><img src="https://image.runtimes.cc/202404051420630.png"></p>
+<p>这里的: </p>
+<ul>
+<li>超前1个版本: 相当于本地的dev分支来说</li>
+<li>落后一个版本: 相对于远程分支来说</li>
+</ul>
+<p>如果有冲突则合并冲突，点击左上角(中间位置)的提交，选择继续变基</p>
+<ul>
+<li>1.第三步 的操作,已经提交到本地了</li>
+<li>2.如果这里解决冲突,就相当于,有编辑了一次文件</li>
+<li>3.再把编辑的提交一次到本地</li>
+</ul>
+<p>6.此时我们的本地更新是基于最新的 main 分支<br><img src="https://image.runtimes.cc/202404051420367.png"><br>点击推送,把dev分支,推送到远程<br><img src="https://image.runtimes.cc/202404051420877.png"></p>
+<p>7.切换到main分支,点拉取,拉取dev分支到main分支<br><img src="https://image.runtimes.cc/202404051420776.png"><br><img src="https://image.runtimes.cc/202404051420936.png"></p>
+<p>再推送main<br><img src="https://image.runtimes.cc/202404051420518.png"><br><img src="https://image.runtimes.cc/202404051420688.png"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Git/" rel="tag"># Git</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/11/19/Go/" rel="prev" title="Go">
+                  <i class="fa fa-angle-left"></i> Go
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/11/19/Excel/" rel="next" title="Excel">
+                  Excel <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Connor</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>

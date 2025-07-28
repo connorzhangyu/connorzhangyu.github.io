@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"connorzhangyu.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="Hibernate 为什么要使用 hibernate？ 对JDBC访问数据库的代码做了封装，大大简化了数据访问层繁琐的重复性代码。 Hibernate是一个基于JDBC的主流持久化框架，是一个优秀的ORM实现。他很大程度的简化DAO层的编码工作 hibernate使用Java反射机制，而不是字节码增">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hibernate">
+<meta property="og:url" content="https://connorzhangyu.github.io/2025/01/04/hibernate/index.html">
+<meta property="og:site_name" content="Hello World">
+<meta property="og:description" content="Hibernate 为什么要使用 hibernate？ 对JDBC访问数据库的代码做了封装，大大简化了数据访问层繁琐的重复性代码。 Hibernate是一个基于JDBC的主流持久化框架，是一个优秀的ORM实现。他很大程度的简化DAO层的编码工作 hibernate使用Java反射机制，而不是字节码增">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/c2e157ae990c78d230f2c2e7dc7e5244100b46230d2493787c9983a8874efe5c683bbe5cfbb8aa42da2717c82547b1d6?pictype=scale&from=30113&version=3.3.3.3&uin=495869333&fname=%E5%AF%B9%E8%B1%A1%E7%8A%B6%E6%80%81.png&size=750">
+<meta property="article:published_time" content="2025-01-03T21:08:55.000Z">
+<meta property="article:modified_time" content="2025-07-28T17:18:39.854Z">
+<meta property="article:author" content="Connor">
+<meta property="article:tag" content="Java,Linux,Spring,博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/c2e157ae990c78d230f2c2e7dc7e5244100b46230d2493787c9983a8874efe5c683bbe5cfbb8aa42da2717c82547b1d6?pictype=scale&from=30113&version=3.3.3.3&uin=495869333&fname=%E5%AF%B9%E8%B1%A1%E7%8A%B6%E6%80%81.png&size=750">
+
+
+<link rel="canonical" href="https://connorzhangyu.github.io/2025/01/04/hibernate/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-cn","comments":true,"permalink":"https://connorzhangyu.github.io/2025/01/04/hibernate/","path":"2025/01/04/hibernate/","title":"hibernate"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>hibernate | Hello World</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Hello World</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Connor SJ 张</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hibernate"><span class="nav-number">1.</span> <span class="nav-text">Hibernate</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8-hibernate%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">为什么要使用 hibernate？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-ORM-%E6%A1%86%E6%9E%B6%EF%BC%9F"><span class="nav-number">1.2.</span> <span class="nav-text">什么是 ORM 框架？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hibernate-%E4%B8%AD%E5%A6%82%E4%BD%95%E5%9C%A8%E6%8E%A7%E5%88%B6%E5%8F%B0%E6%9F%A5%E7%9C%8B%E6%89%93%E5%8D%B0%E7%9A%84-sql-%E8%AF%AD%E5%8F%A5%EF%BC%9F"><span class="nav-number">1.3.</span> <span class="nav-text">hibernate 中如何在控制台查看打印的 sql 语句？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E5%8D%B0sql%E8%AF%AD%E5%8F%A5%E5%88%B0%E6%8E%A7%E5%88%B6%E5%8F%B0"><span class="nav-number">1.4.</span> <span class="nav-text">打印sql语句到控制台</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E5%8D%B0sql%E8%AF%AD%E5%8F%A5%E4%B8%AD%E7%9A%84%E5%8F%82%E6%95%B0%E5%80%BC"><span class="nav-number">1.5.</span> <span class="nav-text">打印sql语句中的参数值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E5%8D%B0sql%E8%AF%AD%E5%8F%A5%E5%88%B0%E6%97%A5%E5%BF%97"><span class="nav-number">1.6.</span> <span class="nav-text">打印sql语句到日志</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hibernate-%E6%9C%89%E5%87%A0%E7%A7%8D%E6%9F%A5%E8%AF%A2%E6%96%B9%E5%BC%8F%EF%BC%9F"><span class="nav-number">1.7.</span> <span class="nav-text">hibernate 有几种查询方式？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HQL%E6%9F%A5%E8%AF%A2"><span class="nav-number">1.8.</span> <span class="nav-text">HQL查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL%E6%9F%A5%E8%AF%A2"><span class="nav-number">1.9.</span> <span class="nav-text">SQL查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#QBC%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2"><span class="nav-number">1.10.</span> <span class="nav-text">QBC条件查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HQL%EF%BC%9A-%E5%85%B7%E4%BD%93%E5%88%86%E7%B1%BB"><span class="nav-number">1.11.</span> <span class="nav-text">HQL： 具体分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hibernate-%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%8F%AF%E4%BB%A5%E8%A2%AB%E5%AE%9A%E4%B9%89%E4%B8%BA-final-%E5%90%97%EF%BC%9F"><span class="nav-number">1.12.</span> <span class="nav-text">hibernate 实体类可以被定义为 final 吗？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8-hibernate-%E4%B8%AD%E4%BD%BF%E7%94%A8-Integer-%E5%92%8C-int-%E5%81%9A%E6%98%A0%E5%B0%84%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">1.13.</span> <span class="nav-text">在 hibernate 中使用 Integer 和 int 做映射有什么区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hibernate-%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84%EF%BC%9F"><span class="nav-number">1.14.</span> <span class="nav-text">hibernate 是如何工作的？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#get-%E5%92%8C-load-%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">1.15.</span> <span class="nav-text">get()和 load()的区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B4%E4%B8%80%E4%B8%8B-hibernate-%E7%9A%84%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6%EF%BC%9F"><span class="nav-number">1.16.</span> <span class="nav-text">说一下 hibernate 的缓存机制？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E6%95%B0%E6%8D%AE%E9%80%82%E5%90%88%E5%AD%98%E6%94%BE%E5%88%B0%E7%AC%AC%E4%BA%8C%E7%BA%A7%E7%BC%93%E5%AD%98%E4%B8%AD%EF%BC%9F"><span class="nav-number">1.17.</span> <span class="nav-text">什么样的数据适合存放到第二级缓存中？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hibernate-%E5%AF%B9%E8%B1%A1%E6%9C%89%E5%93%AA%E4%BA%9B%E7%8A%B6%E6%80%81%EF%BC%9F"><span class="nav-number">1.18.</span> <span class="nav-text">hibernate 对象有哪些状态？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8-hibernate-%E4%B8%AD-getCurrentSession-%E5%92%8C-openSession-%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.19.</span> <span class="nav-text">在 hibernate 中 getCurrentSession 和 openSession 的区别是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hibernate-%E5%AE%9E%E4%BD%93%E7%B1%BB%E5%BF%85%E9%A1%BB%E8%A6%81%E6%9C%89%E6%97%A0%E5%8F%82%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%90%97%EF%BC%9F%E4%B8%BA%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.20.</span> <span class="nav-text">hibernate 实体类必须要有无参构造函数吗？为什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95"><span class="nav-number">1.21.</span> <span class="nav-text">目录</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Connor</p>
+  <div class="site-description" itemprop="description">connor的个人博客</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">100</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">81</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-cn">
+    <link itemprop="mainEntityOfPage" href="https://connorzhangyu.github.io/2025/01/04/hibernate/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Connor">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello World">
+      <meta itemprop="description" content="connor的个人博客">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="hibernate | Hello World">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          hibernate
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2025-01-04 04:08:55" itemprop="dateCreated datePublished" datetime="2025-01-04T04:08:55+07:00">2025-01-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-07-29 00:18:39" itemprop="dateModified" datetime="2025-07-29T00:18:39+07:00">2025-07-29</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="Hibernate"><a href="#Hibernate" class="headerlink" title="Hibernate"></a>Hibernate</h1><h2 id="为什么要使用-hibernate？"><a href="#为什么要使用-hibernate？" class="headerlink" title="为什么要使用 hibernate？"></a>为什么要使用 hibernate？</h2><p>对JDBC访问数据库的代码做了封装，大大简化了数据访问层繁琐的重复性代码。<br>Hibernate是一个基于JDBC的主流持久化框架，是一个优秀的ORM实现。他很大程度的简化DAO层的编码工作<br>hibernate使用Java反射机制，而不是字节码增强程序来实现透明性。<br>hibernate的性能非常好，因为它是个轻量级框架。映射的灵活性很出色。它支持各种关系数据库，从一对一到多对多的各种复杂关系。</p>
+<h2 id="什么是-ORM-框架？"><a href="#什么是-ORM-框架？" class="headerlink" title="什么是 ORM 框架？"></a>什么是 ORM 框架？</h2><p>对象-关系映射（Object-Relational Mapping，简称ORM），面向对象的开发方法是当今企业级应用开发环境中的主流开发方法，关系数据库是企业级应用环境中永久存放数据的主流数据存储系统。对象和关系数据是业务实体的两种表现形式，业务实体在内存中表现为对象，在数据库中表现为关系数据。内存中的对象之间存在关联和继承关系，而在数据库中，关系数据无法直接表达多对多关联和继承关系。因此，对象-关系映射(ORM)系统一般以中间件的形式存在，主要实现程序对象到关系数据库数据的映射。</p>
+<h2 id="hibernate-中如何在控制台查看打印的-sql-语句？"><a href="#hibernate-中如何在控制台查看打印的-sql-语句？" class="headerlink" title="hibernate 中如何在控制台查看打印的 sql 语句？"></a>hibernate 中如何在控制台查看打印的 sql 语句？</h2><p>参考：blog.csdn.net&#x2F;Randy_Wang_&#x2F;article&#x2F;details&#x2F;79460306</p>
+<h2 id="打印sql语句到控制台"><a href="#打印sql语句到控制台" class="headerlink" title="打印sql语句到控制台"></a>打印sql语句到控制台</h2><p>首先，我使用的是application.properties配置文件，使用yml也可以达到同样的效果。<br>在网上查这个问题查了好久，基本上都是xml配置，在此不多说；<br>正确的properties配置项应该如下所示：<br>在jpa下一级不直接是hibernate，而是properties。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">    <span class="attr">jpa:</span></span><br><span class="line">        <span class="attr">properties:</span></span><br><span class="line">            <span class="attr">hibernate:</span></span><br><span class="line">                <span class="attr">show_sql:</span> <span class="string">ture</span>                          <span class="string">//控制台是否打印</span></span><br><span class="line">                <span class="attr">format_sql:</span> <span class="literal">true</span>                        <span class="string">//格式化sql语句</span></span><br><span class="line">                <span class="attr">use_sql_comments:</span> <span class="string">ture</span>                  <span class="string">//指出是什么操作生成了该语句</span></span><br><span class="line"></span><br><span class="line"><span class="string">spring.jpa.properties.hibernate.show_sql=true</span>           <span class="string">//控制台是否打印</span></span><br><span class="line"><span class="string">spring.jpa.properties.hibernate.format_sql=true</span>         <span class="string">//格式化sql语句</span></span><br><span class="line"><span class="string">spring.jpa.properties.hibernate.use_sql_comments=true</span>   <span class="string">//指出是什么操作生成了该语句</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>此时，在控制台可以看到，控制台打印了一条经过格式化之后的sql语句，并标明了这条语句是在哪个步骤生成的。</p>
+<h2 id="打印sql语句中的参数值"><a href="#打印sql语句中的参数值" class="headerlink" title="打印sql语句中的参数值"></a>打印sql语句中的参数值</h2><p>经过上面的步骤，我们已经可以在控制台打印出格式化之后的sql语句，但是大多数情况下，我们还需要具体的sql参数值，这个时候我们就需要配置 日志配置文件。</p>
+<p>博主使用的是slf4j的日志，配置文件用的是logback.xml，配置方式如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">&quot;org.hibernate.SQL&quot;</span> <span class="attr">level</span>=<span class="string">&quot;DEBUG&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">&quot;org.hibernate.engine.QueryParameters&quot;</span> <span class="attr">level</span>=<span class="string">&quot;DEBUG&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">&quot;org.hibernate.engine.query.HQLQueryPlan&quot;</span> <span class="attr">level</span>=<span class="string">&quot;DEBUG&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>直接把这三个配置丢到xml的根节点下就可以~</p>
+<p>可以看到控制台依次输出了sql参数，并且将这些参数在数据库中的类型也一并输出了。</p>
+<h2 id="打印sql语句到日志"><a href="#打印sql语句到日志" class="headerlink" title="打印sql语句到日志"></a>打印sql语句到日志</h2><p>在上述步骤的基础上，在logback.xml中增加两项配置：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">&quot;org.hibernate.type.descriptor.sql.BasicBinder&quot;</span> <span class="attr">level</span>=<span class="string">&quot;TRACE&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">&quot;org.hibernate.type.descriptor.sql.BasicExtractor&quot;</span> <span class="attr">level</span>=<span class="string">&quot;TRACE&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这样就会在日志中将sql语句打印出来，在无法查看控制台的情况下，就可以使用这个方法啦。效果如图所示：</p>
+<p>注：</p>
+<p>以上提到的配置如果全部配置，在控制台会有冗余的打印信息：</p>
+<p>建议根据需要，只配置打印到控制台或打印到日志其中一种。<br>————————————————<br>版权声明：本文为CSDN博主「努力升级的小R」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Randy_Wang_/article/details/79460306">https://blog.csdn.net/Randy_Wang_/article/details/79460306</a></p>
+<h2 id="hibernate-有几种查询方式？"><a href="#hibernate-有几种查询方式？" class="headerlink" title="hibernate 有几种查询方式？"></a>hibernate 有几种查询方式？</h2><p>Query对象查询<br>SQL查询<br>条件查询</p>
+<h2 id="HQL查询"><a href="#HQL查询" class="headerlink" title="HQL查询"></a>HQL查询</h2><p>HQL:  Hibernate Query Language. 面向对象的写法:<br>Query query &#x3D; session.createQuery(“from Customer where name &#x3D; ?”);<br>query.setParameter(0, “苍老师”);<br>Query.list();</p>
+<h2 id="SQL查询"><a href="#SQL查询" class="headerlink" title="SQL查询"></a>SQL查询</h2><p>SQL:<br>SQLQuery query &#x3D; session.createSQLQuery(“select * from customer”);<br>List&lt;Object[]&gt; list &#x3D; query.list();<br>SQLQuery query &#x3D; session.createSQLQuery(“select * from customer”);<br>query.addEntity(Customer.class);<br>List<Customer> list &#x3D; query.list();</p>
+<h2 id="QBC条件查询"><a href="#QBC条件查询" class="headerlink" title="QBC条件查询"></a>QBC条件查询</h2><p>QBC:  Query By Criteria.(条件查询)<br>Criteria criteria &#x3D; session.createCriteria(Customer.class);<br>criteria.add(Restrictions.eq(“name”, “花姐”));<br>List<Customer> list &#x3D; criteria.list();</p>
+<h2 id="HQL：-具体分类"><a href="#HQL：-具体分类" class="headerlink" title="HQL： 具体分类"></a>HQL： 具体分类</h2><p>1、 属性查询 2、 参数查询、命名参数查询 3、 关联查询 4、 分页查询 5、 统计函数</p>
+<p>HQL和SQL的区别<br>HQL是面向对象查询操作的，SQL是结构化查询语言 是面向数据库表结构的</p>
+<h2 id="hibernate-实体类可以被定义为-final-吗？"><a href="#hibernate-实体类可以被定义为-final-吗？" class="headerlink" title="hibernate 实体类可以被定义为 final 吗？"></a>hibernate 实体类可以被定义为 final 吗？</h2><p>可以将Hibernate的实体类定义为final类，但这种做法并不好。因为Hibernate会使用代理模式在延迟关联的情况下提高性能，如果你把实体类定义成final类之后，因为 Java不允许对final类进行扩展，所以Hibernate就无法再使用代理了，如此一来就限制了使用可以提升性能的手段。不过，如果你的持久化类实现了一个接口而且在该接口中声明了所有定义于实体类中的所有public的方法轮到话，你就能够避免出现前面所说的不利后果。</p>
+<h2 id="在-hibernate-中使用-Integer-和-int-做映射有什么区别？"><a href="#在-hibernate-中使用-Integer-和-int-做映射有什么区别？" class="headerlink" title="在 hibernate 中使用 Integer 和 int 做映射有什么区别？"></a>在 hibernate 中使用 Integer 和 int 做映射有什么区别？</h2><p>在Hibernate中，如果将OID定义为Integer类型，那么Hibernate就可以根据其值是否为null而判断一个对象是否是临时的，如果将OID定义为了int类型，还需要在hbm映射文件中设置其unsaved-value属性为0。</p>
+<h2 id="hibernate-是如何工作的？"><a href="#hibernate-是如何工作的？" class="headerlink" title="hibernate 是如何工作的？"></a>hibernate 是如何工作的？</h2><p>hibernate工作原理：<br>通过Configuration config &#x3D; new Configuration().configure();读取并解析hibernate.cfg.xml配置文件<br>由hibernate.cfg.xml中的<mapping resource="com/xx/User.hbm.xml"/>读取并解析映射信息<br>通过SessionFactory sf &#x3D; config.buildSessionFactory();&#x2F;&#x2F;创建SessionFactory<br>Session session &#x3D; sf.openSession();&#x2F;&#x2F;打开Sesssion<br>Transaction tx &#x3D; session.beginTransaction();&#x2F;&#x2F;创建并启动事务Transation<br>persistent operate操作数据，持久化操作<br>tx.commit();&#x2F;&#x2F;提交事务<br>关闭Session<br>关闭SesstionFactory</p>
+<h2 id="get-和-load-的区别？"><a href="#get-和-load-的区别？" class="headerlink" title="get()和 load()的区别？"></a>get()和 load()的区别？</h2><p>load() 没有使用对象的其他属性的时候，没有SQL  延迟加载</p>
+<p>get() 没有使用对象的其他属性的时候，也生成了SQL  立即加载</p>
+<h2 id="说一下-hibernate-的缓存机制？"><a href="#说一下-hibernate-的缓存机制？" class="headerlink" title="说一下 hibernate 的缓存机制？"></a>说一下 hibernate 的缓存机制？</h2><p>Hibernate中的缓存分为一级缓存和二级缓存。</p>
+<p>一级缓存就是  Session 级别的缓存，在事务范围内有效是,内置的不能被卸载。二级缓存是 SesionFactory级别的缓存，从应用启动到应用结束有效。是可选的，默认没有二级缓存，需要手动开启。保存数据库后，缓存在内存中保存一份，如果更新了数据库就要同步更新。</p>
+<h2 id="什么样的数据适合存放到第二级缓存中？"><a href="#什么样的数据适合存放到第二级缓存中？" class="headerlink" title="什么样的数据适合存放到第二级缓存中？"></a>什么样的数据适合存放到第二级缓存中？</h2><p>很少被修改的数据(帖子的最后回复时间)<br>经常被查询的数据(电商的地点)<br>不是很重要的数据<br>允许出现偶尔并发的数据<br>不会被并发访问的数据<br>常量数据</p>
+<p>扩展：hibernate的二级缓存默认是不支持分布式缓存的。使用  memcahe,redis等中央缓存来代替二级缓存。</p>
+<h2 id="hibernate-对象有哪些状态？"><a href="#hibernate-对象有哪些状态？" class="headerlink" title="hibernate 对象有哪些状态？"></a>hibernate 对象有哪些状态？</h2><p>hibernate里对象有三种状态：</p>
+<ol>
+<li>Transient（瞬时）：对象刚new出来，还没设id，设了其他值。</li>
+<li>Persistent（持久）：调用了save()、saveOrUpdate()，就变成Persistent，有id。</li>
+<li>Detached（脱管）：当session  close()完之后，变成Detached。</li>
+</ol>
+<p><img src="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/c2e157ae990c78d230f2c2e7dc7e5244100b46230d2493787c9983a8874efe5c683bbe5cfbb8aa42da2717c82547b1d6?pictype=scale&from=30113&version=3.3.3.3&uin=495869333&fname=%E5%AF%B9%E8%B1%A1%E7%8A%B6%E6%80%81.png&size=750" alt="对象状态"></p>
+<h2 id="在-hibernate-中-getCurrentSession-和-openSession-的区别是什么？"><a href="#在-hibernate-中-getCurrentSession-和-openSession-的区别是什么？" class="headerlink" title="在 hibernate 中 getCurrentSession 和 openSession 的区别是什么？"></a>在 hibernate 中 getCurrentSession 和 openSession 的区别是什么？</h2><p>openSession 从字面上可以看得出来，是打开一个新的session对象，而且每次使用都是打开一个新的session，假如连续使用多次，则获得的session不是同一个对象，并且使用完需要调用close方法关闭session。</p>
+<p>getCurrentSession ，从字面上可以看得出来，是获取当前上下文一个session对象，当第一次使用此方法时，会自动产生一个session对象，并且连续使用多次时，得到的session都是同一个对象，这就是与openSession的区别之一，简单而言，getCurrentSession 就是：如果有已经使用的，用旧的，如果没有，建新的。</p>
+<p>注意：在实际开发中，往往使用getCurrentSession多，因为一般是处理同一个事务（即是使用一个数据库的情况），所以在一般情况下比较少使用openSession或者说openSession是比较老旧的一套接口了。</p>
+<h2 id="hibernate-实体类必须要有无参构造函数吗？为什么？"><a href="#hibernate-实体类必须要有无参构造函数吗？为什么？" class="headerlink" title="hibernate 实体类必须要有无参构造函数吗？为什么？"></a>hibernate 实体类必须要有无参构造函数吗？为什么？</h2><p>必须，因为hibernate框架会调用这个默认构造方法来构造实例对象，即Class类的newInstance方法，这个方法就是通过调用默认构造方法来创建实例对象的。</p>
+<p>另外再提醒一点，如果你没有提供任何构造方法，虚拟机会自动提供默认构造方法（无参构造器），但是如果你提供了其他有参数的构造方法的话，虚拟机就不再为你提供默认构造方法，这时必须手动把无参构造器写在代码里，否则new Xxxx()是会报错的，所以默认的构造方法不是必须的，只在有多个构造方法时才是必须的，这里“必须”指的是“必须手动写出来”。</p>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="/java/javaBase.md">Java基础</a></li>
+<li><a href="/java/collection.md">容器</a></li>
+<li><a href="/java/thread.md">线程</a></li>
+<li><a href="/java/reflection.md">反射</a></li>
+<li><a href="/java/cloneable.md">对象克隆</a></li>
+<li><a href="/java/javaWeb.md">JavaWeb</a></li>
+<li><a href="/java/exception.md">异常</a></li>
+<li><a href="/java/netWork.md">网络服务</a></li>
+<li><a href="/java/designpattern.md">设计模式</a></li>
+<li><a href="/java/spring.md">Spring</a></li>
+<li><a href="/java/springMVC.md">Spring MVC</a></li>
+<li><a href="/java/springBoot.md">Spring Boot</a></li>
+<li><a href="/java/springCloud.md">Spring Cloud</a></li>
+<li><a href="/java/hibernate.md">Hibernate</a></li>
+<li><a href="/java/mybatis.md">Mybatis</a></li>
+<li><a href="/java/mq.md">队列</a></li>
+<li><a href="/java/zookeeper.md">Zookeeper</a></li>
+<li><a href="/java/mySql.md">MySql</a></li>
+<li><a href="/java/redis.md">Redis</a></li>
+<li><a href="/java/jvm.md">Jvm</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/01/04/javaBase/" rel="prev" title="javaBase">
+                  <i class="fa fa-angle-left"></i> javaBase
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/01/04/exception/" rel="next" title="exception">
+                  exception <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Connor</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"connorzhangyu.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="安装Vue局部安装局部安装并使用vue-cli 4.x版本,和创建项目 12345678910111213141516171819202122# 先创建一个文件夹# 初始化一个node项目npm init -y# 局部安装vuenpm i -D @vue&#x2F;cli# 查看vue的版本# 局部安装要用npx命令C:\Users\mmzcg\WebstormProjects&gt;npx vue -V@">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue项目">
+<meta property="og:url" content="https://connorzhangyu.github.io/2022/11/19/%E5%89%8D%E7%AB%AF/Vue%E9%A1%B9%E7%9B%AE/index.html">
+<meta property="og:site_name" content="Hello World">
+<meta property="og:description" content="安装Vue局部安装局部安装并使用vue-cli 4.x版本,和创建项目 12345678910111213141516171819202122# 先创建一个文件夹# 初始化一个node项目npm init -y# 局部安装vuenpm i -D @vue&#x2F;cli# 查看vue的版本# 局部安装要用npx命令C:\Users\mmzcg\WebstormProjects&gt;npx vue -V@">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image.runtimes.cc/202404051519062.png">
+<meta property="article:published_time" content="2022-11-19T11:25:00.000Z">
+<meta property="article:modified_time" content="2025-05-23T16:31:57.000Z">
+<meta property="article:author" content="Connor">
+<meta property="article:tag" content="教程">
+<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="Vue.js">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image.runtimes.cc/202404051519062.png">
+
+
+<link rel="canonical" href="https://connorzhangyu.github.io/2022/11/19/%E5%89%8D%E7%AB%AF/Vue%E9%A1%B9%E7%9B%AE/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-cn","comments":true,"permalink":"https://connorzhangyu.github.io/2022/11/19/%E5%89%8D%E7%AB%AF/Vue%E9%A1%B9%E7%9B%AE/","path":"2022/11/19/前端/Vue项目/","title":"Vue项目"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Vue项目 | Hello World</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Hello World</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Connor SJ 张</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Vue"><span class="nav-number">1.</span> <span class="nav-text">安装Vue</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E5%AE%89%E8%A3%85"><span class="nav-number">1.1.</span> <span class="nav-text">局部安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85"><span class="nav-number">1.2.</span> <span class="nav-text">全局安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Element-UI"><span class="nav-number">2.</span> <span class="nav-text">安装Element-UI</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85-1"><span class="nav-number">2.1.</span> <span class="nav-text">全局安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%89%E9%9C%80%E5%BC%95%E5%85%A5"><span class="nav-number">2.2.</span> <span class="nav-text">按需引入</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85CSS%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8"><span class="nav-number">3.</span> <span class="nav-text">安装CSS预处理器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Sass"><span class="nav-number">3.1.</span> <span class="nav-text">Sass</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Less"><span class="nav-number">3.2.</span> <span class="nav-text">Less</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%87%8D%E7%BD%AE%E6%A0%B7%E5%BC%8F"><span class="nav-number">4.</span> <span class="nav-text">重置样式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%9B%BE%E6%A0%87%E5%BA%93"><span class="nav-number">5.</span> <span class="nav-text">安装图标库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85axios"><span class="nav-number">6.</span> <span class="nav-text">安装axios</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85vue-router"><span class="nav-number">7.</span> <span class="nav-text">安装vue-router</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B7%AF%E7%94%B1%E6%87%92%E5%8A%A0%E8%BD%BD%E5%92%8C%E5%BC%82%E6%AD%A5%E7%BB%84%E4%BB%B6"><span class="nav-number">8.</span> <span class="nav-text">路由懒加载和异步组件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#setToken%E5%B0%81%E8%A3%85"><span class="nav-number">9.</span> <span class="nav-text">setToken封装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">10.</span> <span class="nav-text">配置代理服务器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#404"><span class="nav-number">11.</span> <span class="nav-text">404</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Connor</p>
+  <div class="site-description" itemprop="description">connor的个人博客</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">100</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">81</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-cn">
+    <link itemprop="mainEntityOfPage" href="https://connorzhangyu.github.io/2022/11/19/%E5%89%8D%E7%AB%AF/Vue%E9%A1%B9%E7%9B%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Connor">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello World">
+      <meta itemprop="description" content="connor的个人博客">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Vue项目 | Hello World">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Vue项目
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-11-19 18:25:00" itemprop="dateCreated datePublished" datetime="2022-11-19T18:25:00+07:00">2022-11-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2025-05-23 23:31:57" itemprop="dateModified" datetime="2025-05-23T23:31:57+07:00">2025-05-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%89%8D%E7%AB%AF/Vue/" itemprop="url" rel="index"><span itemprop="name">Vue</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="安装Vue"><a href="#安装Vue" class="headerlink" title="安装Vue"></a>安装Vue</h1><h2 id="局部安装"><a href="#局部安装" class="headerlink" title="局部安装"></a>局部安装</h2><p>局部安装并使用vue-cli 4.x版本,和创建项目</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">先创建一个文件夹</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">初始化一个node项目</span></span><br><span class="line">npm init -y</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">局部安装vue</span></span><br><span class="line">npm i -D @vue/cli</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看vue的版本</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">局部安装要用npx命令</span></span><br><span class="line">C:\Users\mmzcg\WebstormProjects&gt;npx vue -V</span><br><span class="line">@vue/cli 5.0.8</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建一个项目</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">为啥不能用npm运行</span></span><br><span class="line">npx vue create project-one</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">进入项目并且运行</span></span><br><span class="line">cd project-one</span><br><span class="line">npm run serve</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">也可以用ui</span></span><br><span class="line">npx vue ui</span><br></pre></td></tr></table></figure>
+<h2 id="全局安装"><a href="#全局安装" class="headerlink" title="全局安装"></a>全局安装</h2><div class="tabs" id="vue"><ul class="nav-tabs"><li class="tab active"><a href="#vue-1">Vue2</a></li><li class="tab"><a href="#vue-2">Vue3</a></li></ul><div class="tab-content"><div class="tab-pane active" id="vue-1"><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @vue/cli</span><br><span class="line"></span><br><span class="line">vue create my-project</span><br><span class="line"></span><br><span class="line">vue ui</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="vue-2"><p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/quick-start.html">Vue脚手架官网</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装脚手架</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">会有选项</span></span><br><span class="line">pnpm create vue@latest</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">进入项目</span></span><br><span class="line">cd vue-project</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装依赖</span></span><br><span class="line">pnpm install</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">运行项目</span></span><br><span class="line">pnpm dev</span><br></pre></td></tr></table></figure></div></div></div>
+
+<h1 id="安装Element-UI"><a href="#安装Element-UI" class="headerlink" title="安装Element-UI"></a>安装Element-UI</h1><h2 id="全局安装-1"><a href="#全局安装-1" class="headerlink" title="全局安装"></a>全局安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">npm</span></span><br><span class="line">npm i element-ui -S</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">pnpm</span></span><br><span class="line">pnpm add element-ui -S</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// main.js 使用</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ElementUI</span> <span class="keyword">from</span> <span class="string">&#x27;element-ui&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;element-ui/lib/theme-chalk/index.css&#x27;</span></span><br><span class="line"><span class="title class_">Vue</span>.<span class="title function_">use</span>(<span class="title class_">ElementUI</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="按需引入"><a href="#按需引入" class="headerlink" title="按需引入"></a>按需引入</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装</span></span><br><span class="line">npm i element-ui -S</span><br><span class="line">npm install babel-plugin-component -D</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// main.js</span></span><br><span class="line"><span class="comment">// 全局引入</span></span><br><span class="line"><span class="comment">// import ElementUI from &#x27;element-ui&#x27;</span></span><br><span class="line"><span class="comment">// import &#x27;element-ui/lib/theme-chalk/index.css&#x27;</span></span><br><span class="line"><span class="comment">// Vue.use(ElementUI)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 按需引入</span></span><br><span class="line"><span class="keyword">import</span> &#123;<span class="title class_">Button</span>&#125; <span class="keyword">from</span> <span class="string">&#x27;element-ui&#x27;</span></span><br><span class="line"><span class="title class_">Vue</span>.<span class="title function_">use</span>(<span class="title class_">Button</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// babel.config.js</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">	<span class="comment">// 自动生成的</span></span><br><span class="line">  <span class="attr">presets</span>: [</span><br><span class="line">    <span class="string">&#x27;@vue/cli-plugin-babel/preset&#x27;</span></span><br><span class="line">  ],</span><br><span class="line">	<span class="comment">// 从官网上复制的</span></span><br><span class="line">  <span class="string">&quot;plugins&quot;</span>: [</span><br><span class="line">    [</span><br><span class="line">      <span class="string">&quot;component&quot;</span>,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">&quot;libraryName&quot;</span>: <span class="string">&quot;element-ui&quot;</span>,</span><br><span class="line">        <span class="string">&quot;styleLibraryName&quot;</span>: <span class="string">&quot;theme-chalk&quot;</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果没有找到.babelirc文件,找找babel.config.js文件<br><img src="https://image.runtimes.cc/202404051519062.png"></p>
+<p>一个一个import 按需引入有点麻烦,在根目录下面创建一个plugins文件夹,在这个文件夹下面创建element.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Vue</span> <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123;<span class="title class_">Button</span>&#125; <span class="keyword">from</span> <span class="string">&#x27;element-ui&#x27;</span></span><br><span class="line"><span class="title class_">Vue</span>.<span class="title function_">use</span>(<span class="title class_">Button</span>)</span><br></pre></td></tr></table></figure>
+<p>在main.js引入element.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;../element.js&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="安装CSS预处理器"><a href="#安装CSS预处理器" class="headerlink" title="安装CSS预处理器"></a>安装CSS预处理器</h1><h2 id="Sass"><a href="#Sass" class="headerlink" title="Sass"></a>Sass</h2><p>安装的是sass,使用的时候是scss…. 留意</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev node-sass</span><br><span class="line">npm install --save-dev sass-loader</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 注意这里是scss</span><br><span class="line">&lt;style scoped lang=<span class="string">&quot;scss&quot;</span>&gt;</span><br><span class="line">.<span class="property">hello</span>&#123;</span><br><span class="line">  <span class="attr">background</span>: yellow;</span><br><span class="line">  .<span class="property">el</span>-button&#123;</span><br><span class="line">    <span class="attr">color</span>: red</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Less"><a href="#Less" class="headerlink" title="Less"></a>Less</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm i less less-loader --save-dev</span><br><span class="line">npm i less less-loader --save-dev</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;style scoped lang=<span class="string">&quot;less&quot;</span>&gt;</span><br><span class="line">.<span class="property">hello</span>&#123;</span><br><span class="line">  <span class="attr">background</span>: yellow;</span><br><span class="line">  .<span class="property">el</span>-button&#123;</span><br><span class="line">    <span class="attr">color</span>: red</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="重置样式"><a href="#重置样式" class="headerlink" title="重置样式"></a>重置样式</h1><p>下面的代码可以搜索<code>reset.css</code><br>在src&#x2F;assets 下创建css文件夹,在这个文件下创建reset.css文件,粘贴</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* http://meyerweb.com/eric/tools/css/reset/</span></span><br><span class="line"><span class="comment">   v2.0 | 20110126</span></span><br><span class="line"><span class="comment">   License: none (public domain)</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="selector-tag">html</span>, <span class="selector-tag">body</span>, <span class="selector-tag">div</span>, <span class="selector-tag">span</span>, applet, <span class="selector-tag">object</span>, <span class="selector-tag">iframe</span>,</span><br><span class="line"><span class="selector-tag">h1</span>, <span class="selector-tag">h2</span>, <span class="selector-tag">h3</span>, <span class="selector-tag">h4</span>, <span class="selector-tag">h5</span>, <span class="selector-tag">h6</span>, <span class="selector-tag">p</span>, <span class="selector-tag">blockquote</span>, pre,</span><br><span class="line"><span class="selector-tag">a</span>, <span class="selector-tag">abbr</span>, acronym, <span class="selector-tag">address</span>, big, <span class="selector-tag">cite</span>, <span class="selector-tag">code</span>,</span><br><span class="line"><span class="selector-tag">del</span>, <span class="selector-tag">dfn</span>, <span class="selector-tag">em</span>, <span class="selector-tag">img</span>, <span class="selector-tag">ins</span>, <span class="selector-tag">kbd</span>, <span class="selector-tag">q</span>, s, <span class="selector-tag">samp</span>,</span><br><span class="line">small, strike, <span class="selector-tag">strong</span>, sub, <span class="selector-tag">sup</span>, tt, <span class="selector-tag">var</span>,</span><br><span class="line"><span class="selector-tag">b</span>, u, <span class="selector-tag">i</span>, center,</span><br><span class="line"><span class="selector-tag">dl</span>, <span class="selector-tag">dt</span>, <span class="selector-tag">dd</span>, <span class="selector-tag">ol</span>, <span class="selector-tag">ul</span>, <span class="selector-tag">li</span>,</span><br><span class="line"><span class="selector-tag">fieldset</span>, <span class="selector-tag">form</span>, <span class="selector-tag">label</span>, <span class="selector-tag">legend</span>,</span><br><span class="line"><span class="selector-tag">table</span>, <span class="selector-tag">caption</span>, <span class="selector-tag">tbody</span>, <span class="selector-tag">tfoot</span>, <span class="selector-tag">thead</span>, <span class="selector-tag">tr</span>, <span class="selector-tag">th</span>, <span class="selector-tag">td</span>,</span><br><span class="line"><span class="selector-tag">article</span>, <span class="selector-tag">aside</span>, <span class="selector-tag">canvas</span>, <span class="selector-tag">details</span>, embed,</span><br><span class="line"><span class="selector-tag">figure</span>, <span class="selector-tag">figcaption</span>, <span class="selector-tag">footer</span>, <span class="selector-tag">header</span>, <span class="selector-tag">hgroup</span>,</span><br><span class="line"><span class="selector-tag">menu</span>, <span class="selector-tag">nav</span>, output, ruby, <span class="selector-tag">section</span>, <span class="selector-tag">summary</span>,</span><br><span class="line"><span class="selector-tag">time</span>, <span class="selector-tag">mark</span>, <span class="selector-tag">audio</span>, <span class="selector-tag">video</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">font</span>: inherit;</span><br><span class="line">    <span class="attribute">vertical-align</span>: baseline;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* HTML5 display-role reset for older browsers */</span></span><br><span class="line"><span class="selector-tag">article</span>, <span class="selector-tag">aside</span>, <span class="selector-tag">details</span>, <span class="selector-tag">figcaption</span>, <span class="selector-tag">figure</span>,</span><br><span class="line"><span class="selector-tag">footer</span>, <span class="selector-tag">header</span>, <span class="selector-tag">hgroup</span>, <span class="selector-tag">menu</span>, <span class="selector-tag">nav</span>, <span class="selector-tag">section</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">ol</span>, <span class="selector-tag">ul</span> &#123;</span><br><span class="line">    <span class="attribute">list-style</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">blockquote</span>, <span class="selector-tag">q</span> &#123;</span><br><span class="line">    <span class="attribute">quotes</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">blockquote</span><span class="selector-pseudo">:before</span>, <span class="selector-tag">blockquote</span><span class="selector-pseudo">:after</span>,</span><br><span class="line"><span class="selector-tag">q</span><span class="selector-pseudo">:before</span>, <span class="selector-tag">q</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">    <span class="attribute">content</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">table</span> &#123;</span><br><span class="line">    <span class="attribute">border-collapse</span>: collapse;</span><br><span class="line">    <span class="attribute">border-spacing</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在App.vue或者其他的组件中使用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;style lang=<span class="string">&quot;scss&quot;</span>&gt;</span><br><span class="line">@<span class="keyword">import</span> <span class="title function_">url</span>(<span class="string">&#x27;./assets/css/reset.css&#x27;</span>);</span><br><span class="line">#app &#123;</span><br><span class="line">  font-<span class="attr">family</span>: <span class="title class_">Avenir</span>, <span class="title class_">Helvetica</span>, <span class="title class_">Arial</span>, sans-serif;</span><br><span class="line">  -webkit-font-<span class="attr">smoothing</span>: antialiased;</span><br><span class="line">  -moz-osx-font-<span class="attr">smoothing</span>: grayscale;</span><br><span class="line">  text-<span class="attr">align</span>: center;</span><br><span class="line">  <span class="attr">color</span>: #2c3e50;</span><br><span class="line">  margin-<span class="attr">top</span>: 60px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="安装图标库"><a href="#安装图标库" class="headerlink" title="安装图标库"></a>安装图标库</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装</span></span><br><span class="line">npm i -D font-awesome</span><br><span class="line"></span><br><span class="line">main.js</span><br><span class="line">import &#x27;font-awesome/css/font-awesome.min.css&#x27;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">使用</span></span><br><span class="line">&lt;i class=&quot;fa fa-user&quot;&gt;&lt;/i&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="安装axios"><a href="#安装axios" class="headerlink" title="安装axios"></a>安装axios</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">npm i axios -S</span><br><span class="line"></span><br><span class="line">main.js</span><br><span class="line">import axios from &quot;axios&quot;;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">挂在之后,就可以全局使用了</span></span><br><span class="line">Vue.prototype.axios = axios</span><br></pre></td></tr></table></figure>
+
+<h1 id="安装vue-router"><a href="#安装vue-router" class="headerlink" title="安装vue-router"></a>安装vue-router</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">vue-router3 和 4 的配置不一样</span></span><br><span class="line">npm install vue-router@3.5.3</span><br></pre></td></tr></table></figure>
+
+<p>创建文件和文件夹<br>src-&gt;router-&gt;index.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">Vue</span> <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Router</span> <span class="keyword">from</span> <span class="string">&#x27;vue-router&#x27;</span></span><br><span class="line"><span class="keyword">import</span>  <span class="title class_">Home</span> <span class="keyword">from</span> <span class="string">&#x27;../components/Home.vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="title class_">Vue</span>.<span class="title function_">use</span>(<span class="title class_">Router</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> <span class="title class_">Router</span>(&#123;</span><br><span class="line">    <span class="attr">routes</span>:[</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">path</span>:<span class="string">&#x27;/home&#x27;</span>,</span><br><span class="line">            <span class="attr">component</span>:<span class="title class_">Home</span></span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">mode</span>:<span class="string">&#x27;history&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">main.<span class="property">js</span></span><br><span class="line"><span class="keyword">import</span> router <span class="keyword">from</span> <span class="string">&#x27;./router&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span><br><span class="line">  <span class="attr">render</span>: <span class="function"><span class="params">h</span> =&gt;</span> <span class="title function_">h</span>(<span class="title class_">App</span>),</span><br><span class="line">  router,</span><br><span class="line">&#125;).$mount(<span class="string">&#x27;#app&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="路由懒加载和异步组件"><a href="#路由懒加载和异步组件" class="headerlink" title="路由懒加载和异步组件"></a>路由懒加载和异步组件</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> <span class="title class_">Router</span>(&#123;</span><br><span class="line">    <span class="attr">routes</span>:[</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">path</span>:<span class="string">&#x27;/home&#x27;</span>,</span><br><span class="line">            <span class="comment">// 路由懒加载</span></span><br><span class="line">            <span class="attr">component</span>:<span class="function">()=&gt;</span><span class="keyword">import</span>(<span class="string">&#x27;@/components/Home.vue&#x27;</span>)</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">path</span>:<span class="string">&#x27;/home2&#x27;</span>,</span><br><span class="line">						<span class="comment">// 异步组件</span></span><br><span class="line">            <span class="attr">component</span>:<span class="function"><span class="params">resolve</span> =&gt;</span><span class="built_in">require</span>([<span class="string">&#x27;@/components/Home.vue&#x27;</span>],resolve)</span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">mode</span>:<span class="string">&#x27;history&#x27;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="setToken封装"><a href="#setToken封装" class="headerlink" title="setToken封装"></a>setToken封装</h1><p>src→utils→settoken.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">setToken</span>(<span class="params">key,token</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">localStorage</span>.<span class="title function_">setItem</span>(key,token)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">getToken</span>(<span class="params">key</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">localStorage</span>.<span class="title function_">getItem</span>(key)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">delToken</span>(<span class="params">key</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">localStorage</span>.<span class="title function_">removeItem</span>(key)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">import</span> &#123;nameRule,passwordRule&#125; <span class="keyword">from</span> <span class="string">&quot;@/utils/vaildate&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;setToken&#125; <span class="keyword">from</span> <span class="string">&quot;@/utils/setToken&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="attr">form</span>: &#123;</span><br><span class="line">        <span class="attr">username</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">        <span class="attr">password</span>: <span class="string">&quot;&quot;</span></span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attr">rules</span>: &#123;</span><br><span class="line">        <span class="attr">username</span>: [&#123;<span class="attr">validator</span>: nameRule, <span class="attr">trigger</span>: <span class="string">&#x27;blur&#x27;</span>&#125;],</span><br><span class="line">        <span class="attr">password</span>: [&#123;<span class="attr">validator</span>: passwordRule, <span class="attr">trigger</span>: <span class="string">&#x27;blur&#x27;</span>&#125;],</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">methods</span>: &#123;</span><br><span class="line">    <span class="title function_">login</span>(<span class="params">form</span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">$refs</span>[form].<span class="title function_">validate</span>(<span class="function">(<span class="params">valid</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (valid) &#123;</span><br><span class="line">          <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;验证通过&quot;</span>)</span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">axios</span>.<span class="title function_">post</span>(<span class="string">&quot;http://localhost&quot;</span>, <span class="variable language_">this</span>.<span class="property">form</span>).<span class="title function_">then</span>(</span><br><span class="line">              <span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="variable language_">console</span>.<span class="title function_">log</span>(res)</span><br><span class="line">                <span class="keyword">if</span> (res.<span class="property">data</span>.<span class="property">status</span> === <span class="number">200</span>) &#123;</span><br><span class="line">                  <span class="title function_">setToken</span>(<span class="string">&quot;username&quot;</span>, res.<span class="property">data</span>.<span class="property">username</span>)</span><br><span class="line">                  <span class="variable language_">this</span>.$message(&#123;</span><br><span class="line">                    <span class="attr">message</span>: res.<span class="property">data</span>.<span class="property">message</span>,</span><br><span class="line">                    <span class="attr">type</span>: <span class="string">&#x27;success&#x27;</span></span><br><span class="line">                  &#125;)</span><br><span class="line">                  <span class="variable language_">this</span>.<span class="property">$router</span>.<span class="title function_">push</span>(<span class="string">&#x27;/home&#x27;</span>)</span><br><span class="line">                &#125;</span><br><span class="line">              &#125;</span><br><span class="line">          )</span><br><span class="line">              .<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="variable language_">console</span>.<span class="title function_">error</span>(err)</span><br><span class="line">              &#125;)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="variable language_">console</span>.<span class="title function_">error</span>(<span class="string">&quot;验证不通过&quot;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="配置代理服务器"><a href="#配置代理服务器" class="headerlink" title="配置代理服务器"></a>配置代理服务器</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; defineConfig &#125; = <span class="built_in">require</span>(<span class="string">&#x27;@vue/cli-service&#x27;</span>)</span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = <span class="title function_">defineConfig</span>(&#123;</span><br><span class="line">  <span class="attr">transpileDependencies</span>: <span class="literal">true</span>,</span><br><span class="line"></span><br><span class="line">  <span class="attr">lintOnSave</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">devServer</span>:&#123;</span><br><span class="line">    <span class="comment">// 运行自动打开浏览器,</span></span><br><span class="line">    <span class="attr">open</span>:<span class="literal">true</span>,</span><br><span class="line">    <span class="comment">// 如果不配置这个,自动打开浏览器,就是0.0.0.0:8080</span></span><br><span class="line">    <span class="attr">host</span>:<span class="string">&quot;localhost&quot;</span>,</span><br><span class="line">    <span class="attr">proxy</span>:&#123;</span><br><span class="line">      <span class="string">&#x27;/api&#x27;</span>:&#123;</span><br><span class="line">        <span class="attr">target</span>:<span class="string">&#x27;http://127.0.0.1&#x27;</span>,</span><br><span class="line">        <span class="attr">changeOrigin</span>:<span class="literal">true</span>,</span><br><span class="line">        <span class="attr">pathRewrite</span>:&#123;</span><br><span class="line">          <span class="string">&#x27;^/api&#x27;</span>:<span class="string">&#x27;&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="404"><a href="#404" class="headerlink" title="404"></a>404</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">path</span>:<span class="string">&#x27;*&#x27;</span>,</span><br><span class="line">    <span class="comment">// 路由懒加载</span></span><br><span class="line">    <span class="attr">component</span>:<span class="function">()=&gt;</span><span class="keyword">import</span>(<span class="string">&#x27;@/components/404.vue&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%99%E7%A8%8B/" rel="tag"># 教程</a>
+              <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"># 笔记</a>
+              <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"># 前端</a>
+              <a href="/tags/Vue-js/" rel="tag"># Vue.js</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/11/18/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="prev" title="虚拟机">
+                  <i class="fa fa-angle-left"></i> 虚拟机
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/11/19/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Windows/" rel="next" title="Windows">
+                  Windows <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Connor</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>

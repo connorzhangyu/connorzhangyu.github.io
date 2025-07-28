@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"connorzhangyu.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="安装以Ma为例,安装之后任何地方有问题,要执行flutter自带的命令,检查flutter doctor 选择对应的版本,下载到本地就是一个压缩包,解压,就能看到flutter的源码,包含DartSDK  修改环境变量,记得要source下 1export PATH&#x3D;安装目录&#x2F;flutter&#x2F;bin:$PATH  Android Studio 安装Flutter插件,会自动安装Dart插件,新建F">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter">
+<meta property="og:url" content="https://connorzhangyu.github.io/2024/07/27/Flutter/index.html">
+<meta property="og:site_name" content="Hello World">
+<meta property="og:description" content="安装以Ma为例,安装之后任何地方有问题,要执行flutter自带的命令,检查flutter doctor 选择对应的版本,下载到本地就是一个压缩包,解压,就能看到flutter的源码,包含DartSDK  修改环境变量,记得要source下 1export PATH&#x3D;安装目录&#x2F;flutter&#x2F;bin:$PATH  Android Studio 安装Flutter插件,会自动安装Dart插件,新建F">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image.runtimes.cc/202407271624215.png">
+<meta property="og:image" content="https://image.runtimes.cc/202407271627148.png">
+<meta property="og:image" content="https://image.runtimes.cc/202407271628362.png">
+<meta property="og:image" content="https://image.runtimes.cc/202407271629455.png">
+<meta property="og:image" content="https://image.runtimes.cc/202407271632326.png">
+<meta property="og:image" content="https://image.runtimes.cc/202407281223696.png">
+<meta property="og:image" content="https://image.runtimes.cc/202407281225750.png">
+<meta property="og:image" content="https://image.runtimes.cc/202407281226888.png">
+<meta property="og:image" content="https://image.runtimes.cc/202407281227469.png">
+<meta property="article:published_time" content="2024-07-27T09:17:46.000Z">
+<meta property="article:modified_time" content="2024-07-28T05:55:32.000Z">
+<meta property="article:author" content="Connor">
+<meta property="article:tag" content="Java,Linux,Spring,博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image.runtimes.cc/202407271624215.png">
+
+
+<link rel="canonical" href="https://connorzhangyu.github.io/2024/07/27/Flutter/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-cn","comments":true,"permalink":"https://connorzhangyu.github.io/2024/07/27/Flutter/","path":"2024/07/27/Flutter/","title":"Flutter"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Flutter | Hello World</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Hello World</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Connor SJ 张</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B5%84%E6%BA%90-%E5%AA%92%E4%BD%93"><span class="nav-number">2.</span> <span class="nav-text">资源 &amp; 媒体</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E8%B5%84%E6%BA%90%E5%92%8C%E5%9B%BE%E7%89%87"><span class="nav-number">2.1.</span> <span class="nav-text">添加资源和图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A0%E8%BD%BD%E7%BD%91%E7%BB%9C%E5%9B%BE%E7%89%87"><span class="nav-number">2.2.</span> <span class="nav-text">加载网络图片</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Connor</p>
+  <div class="site-description" itemprop="description">connor的个人博客</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">100</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">81</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-cn">
+    <link itemprop="mainEntityOfPage" href="https://connorzhangyu.github.io/2024/07/27/Flutter/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Connor">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hello World">
+      <meta itemprop="description" content="connor的个人博客">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Flutter | Hello World">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Flutter
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-07-27 16:17:46" itemprop="dateCreated datePublished" datetime="2024-07-27T16:17:46+07:00">2024-07-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-07-28 12:55:32" itemprop="dateModified" datetime="2024-07-28T12:55:32+07:00">2024-07-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>以<code>Ma</code>为例,安装之后任何地方有问题,要执行flutter自带的命令,检查<code>flutter doctor</code></p>
+<p>选择对应的版本,下载到本地就是一个压缩包,解压,就能看到flutter的源码,包含<code>Dart</code>SDK</p>
+<p><img src="https://image.runtimes.cc/202407271624215.png" alt="image-20240727162450510"></p>
+<p>修改环境变量,记得要<code>source</code>下</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=安装目录/flutter/bin:$PATH</span><br></pre></td></tr></table></figure>
+
+<p>Android Studio 安装<code>Flutter</code>插件,会自动安装<code>Dart</code>插件,新建Flutter项目</p>
+<p><img src="https://image.runtimes.cc/202407271627148.png" alt="image-20240727162701726"></p>
+<p>选择flutter下载的目录,最后解压出来的文件夹,后缀加上版本号</p>
+<p><img src="https://image.runtimes.cc/202407271628362.png" alt="image-20240727162820290"></p>
+<p>选择要创建哪些平台,看别人的教程,这里还有ios language的选项,不知道这里为啥没有</p>
+<p><img src="https://image.runtimes.cc/202407271629455.png" alt="image-20240727162913174"></p>
+<p>点击创建,flutter项目就创建完成了,接下来安装安卓模拟器</p>
+<p><img src="https://image.runtimes.cc/202407271632326.png" alt="image-20240727163213937"></p>
+<p>用生成出来的Demo运行下,就能看到例子了,到目前使用的是安卓的模拟器,下面是ios的模拟器</p>
+<p>下载xcode,创建一个默认的ios的项目,点击运行,会提示下载模拟器,点下载就好了</p>
+<p><img src="https://image.runtimes.cc/202407281223696.png" alt="image-20240728122303800"></p>
+<p>选择模拟器,并重新再运行</p>
+<p><img src="https://image.runtimes.cc/202407281225750.png" alt="image-20240728122551387"></p>
+<p>运行成功就会有一个iPhone的界面</p>
+<p><img src="https://image.runtimes.cc/202407281226888.png" alt="image-20240728122648500"></p>
+<p>安装命令行工具</p>
+<p><img src="https://image.runtimes.cc/202407281227469.png" alt="image-20240728122757878"></p>
+<p>之后再执行<code>flutter doctor</code>就能大部分的都解决了,没有解决的,有会相应的命令提示</p>
+<h1 id="资源-媒体"><a href="#资源-媒体" class="headerlink" title="资源 &amp; 媒体"></a>资源 &amp; 媒体</h1><h2 id="添加资源和图片"><a href="#添加资源和图片" class="headerlink" title="添加资源和图片"></a>添加资源和图片</h2><p><strong>指定资源</strong></p>
+<p>Flutter 使用 <code>pubspec.yaml</code> 文件，位于项目根目录，来识别应用程序所需的资源。</p>
+<p>在根目录下创建<code>assets</code>文件夹</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">flutter:</span></span><br><span class="line">  <span class="attr">assets:</span></span><br><span class="line">	  <span class="comment"># 指定单个资源</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">assets/my_icon.png</span></span><br><span class="line">    <span class="comment"># 指定整个目录,需要在目录名称的结尾加上 /：</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">directory/</span></span><br></pre></td></tr></table></figure>
+
+<p>代码使用</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Image.asset(<span class="string">&quot;assets/images/star.png&quot;</span>, width: <span class="number">30</span>, height: <span class="number">30</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="加载网络图片"><a href="#加载网络图片" class="headerlink" title="加载网络图片"></a>加载网络图片</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Image.network(<span class="string">&quot;https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9Gc&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>参考:</p>
+<p><a target="_blank" rel="noopener" href="https://docs.flutter.dev/get-started/install">Flutter官网</a></p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/07/07/Pinia/" rel="prev" title="Pinia">
+                  <i class="fa fa-angle-left"></i> Pinia
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/12/06/%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/" rel="next" title="使用 Docker 和 CI&#x2F;CD 实现 Java 服务与 Nginx Proxy Manager 的自动化部署">
+                  使用 Docker 和 CI/CD 实现 Java 服务与 Nginx Proxy Manager 的自动化部署 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Connor</span>
+  </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>
