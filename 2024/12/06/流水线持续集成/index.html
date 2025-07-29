@@ -253,7 +253,7 @@
 <p>启动服务：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
 
-<p>访问 Nginx Proxy Manager 管理界面：<a href="http://<服务器IP>:81">http:&#x2F;&#x2F;&lt;服务器IP&gt;:81</a><br>默认登录账号：<strong><a href="mailto:&#97;&#x64;&#x6d;&#x69;&#x6e;&#x40;&#101;&#120;&#x61;&#109;&#112;&#108;&#x65;&#46;&#x63;&#111;&#109;">admin@example.com</a></strong>，密码：<strong>changeme</strong>。</p>
+<p>访问 Nginx Proxy Manager 管理界面：<a href="http://<服务器IP>:81">http:&#x2F;&#x2F;&lt;服务器IP&gt;:81</a><br>默认登录账号：<strong><a href="mailto:&#97;&#100;&#x6d;&#105;&#110;&#64;&#101;&#x78;&#x61;&#109;&#x70;&#108;&#x65;&#46;&#x63;&#x6f;&#x6d;">admin@example.com</a></strong>，密码：<strong>changeme</strong>。</p>
 <hr>
 <h2 id="四、参数化配置支持多环境"><a href="#四、参数化配置支持多环境" class="headerlink" title="四、参数化配置支持多环境"></a>四、参数化配置支持多环境</h2><p>通过 <code>.env</code> 文件管理环境变量，以支持不同的环境（如开发、测试、生产）。以下是 <code>.env</code> 文件的示例：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SPRING_PROFILES_ACTIVE=prod</span><br><span class="line">NGINX_DOMAIN=myapp.example.com</span><br><span class="line">NGINX_FORWARD_HOST=java-service</span><br><span class="line">NGINX_FORWARD_PORT=8080</span><br></pre></td></tr></table></figure>
