@@ -2,3 +2,7 @@ baseURL = 'https://connorzhangyu.com/'
 languageCode = 'zh-cn'
 title = 'Hello World'
 theme = 'terminal'
+
+[caches]
+[caches.images]
+dir = ':cacheDir/images'
