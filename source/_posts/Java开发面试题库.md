@@ -1,11 +1,11 @@
 ---
-title: Java开发面试题库
+title: Java开发面试
 date: 2025-07-28 23:30:12
 auther: connor
 tags:
 ---
 
-# Java开发面试题库
+# Java开发面试
 
 ## 一、Java基础
 ### ✅ 基础语法
