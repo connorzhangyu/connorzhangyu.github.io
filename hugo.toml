@@ -1,8 +1,10 @@
+# 基础配置
 baseURL = 'https://connorzhangyu.com/'
 languageCode = 'zh-cn'
 title = 'Hello World'
 theme = 'terminal'
 
+# 图片缓存
 [caches]
 [caches.images]
 dir = ':cacheDir/images'

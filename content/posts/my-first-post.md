@@ -1,7 +1,9 @@
 +++
-date = '2025-07-30T14:21:19+07:00'
-draft = true
 title = 'My First Post'
+date = '2025-07-30T14:21:19+07:00'
+draft = false
+
+auther = 'connor'
 +++
 ## Introduction
 
