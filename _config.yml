@@ -105,6 +105,4 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: git
-  repo: git@github.com:connorzhangyu/connorzhangyu.github.io.git
-  branch: master
+  type: 
