@@ -1,0 +1,109 @@
++++
+title = "Java开发面试题库"
+date = "2025-07-31T01:16:47+07:00"
+#dateFormat = "2006-01-02" # This value can be configured for per-post date formatting
+author = "connor"
+authorTwitter = "" #do not include @
+cover = ""
+tags = ["", ""]
+keywords = ["", ""]
+description = ""
+showFullContent = false
+readingTime = false
+hideComments = false
++++
+
+# Java开发面试题库
+
+## 一、Java基础
+### ✅ 基础语法
+**Q: Java中==与equals的区别？**
+A: `==` 比较的是两个对象的引用地址是否相同，`equals()` 比较的是对象的内容是否相同（前提是该类重写了equals方法）。
+
+**Q: String为什么是不可变的？**
+A: 因为String类被final修饰，内部字符数组也是final，且没有提供修改的方法，这样可以保证安全性、线程安全，并能用于常量池优化。
+
+**Q: String、StringBuilder、StringBuffer的区别？**
+A:
+- String：不可变，适合少量拼接。
+- StringBuilder：可变，单线程高效。
+- StringBuffer：可变，线程安全但效率较低。
+
+**Q: 抽象类与接口的区别？**
+A:
+- 抽象类可以包含成员变量和构造函数；接口只能有常量。
+- 一个类只能继承一个抽象类，但可以实现多个接口。
+- 接口更侧重于行为约定，抽象类是类层次结构的一部分。
+
+**Q: final关键字的使用场景？**
+A:
+- final变量：不可被重新赋值。
+- final方法：不可被子类重写。
+- final类：不可被继承。
+
+## 二、集合框架
+**Q: HashMap的底层实现？**
+A: 底层由数组 + 链表/红黑树组成。Java 8之后，当链表长度超过8时转为红黑树。
+
+**Q: ConcurrentHashMap如何实现线程安全？**
+A: Java 8中使用 CAS + synchronized 实现分段锁保护节点，提高并发性能。
+
+**Q: Set如何保证元素不重复？**
+A: 依赖元素的 `hashCode()` 和 `equals()` 方法判断重复。
+
+## 三、并发编程
+**Q: volatile关键字的原理与使用？**
+A: 保证可见性，禁止指令重排序，不保证原子性。适用于状态标志。
+
+**Q: 死锁产生的条件及解决办法？**
+A: 四个条件：互斥、不可剥夺、请求与保持、循环等待。
+解决方案：打破其中一个条件，例如通过资源顺序获取避免循环等待。
+
+**Q: ThreadLocal作用与底层原理？**
+A: 为每个线程提供独立变量副本。底层通过Thread类中的ThreadLocalMap实现。
+
+## 四、JVM与性能优化
+**Q: JVM内存结构？**
+A: 包括程序计数器、虚拟机栈、本地方法栈、堆、方法区。
+
+**Q: Minor GC与Full GC区别？**
+A: Minor GC主要回收新生代，Full GC会回收整个堆（包括老年代）与方法区，开销更大。
+
+## 五、Spring相关
+**Q: Bean的生命周期？**
+A: 实例化 -> 设置属性 -> BeanNameAware -> BeanFactoryAware -> PostConstruct -> InitializingBean -> 自定义init方法 -> 使用 -> PreDestroy -> DisposableBean -> 自定义destroy方法。
+
+**Q: Spring的AOP底层实现？**
+A: 基于动态代理（JDK Proxy 或 CGLIB），使用切点表达式和通知方法完成横切逻辑织入。
+
+## 六、数据库与MyBatis
+**Q: MySQL索引底层结构？**
+A: 使用B+树结构，叶子节点存储数据，所有查询都从根节点向下查找。
+
+**Q: #{} 和 ${} 的区别？**
+A: `#{}`是预编译处理，防止SQL注入；`${}`是字符串拼接，可能会有注入风险。
+
+## 七、网络与分布式
+**Q: TCP三次握手过程？**
+A:
+1. 客户端发送SYN请求；
+2. 服务器返回SYN+ACK；
+3. 客户端发送ACK，连接建立。
+
+**Q: CAP理论解释？**
+A: 一致性（C）、可用性（A）、分区容错性（P），在分布式系统中三者不可兼得，只能选择其中两者优先。
+
+**Q: 分布式锁的实现方式？**
+A:
+- 基于数据库（悲观锁）
+- Redis实现：setnx + 过期时间
+- ZooKeeper临时顺序节点
+
+## 八、项目经验相关
+**Q: 项目中遇到的最大挑战是什么？**
+A: 举例：高并发下系统响应慢，采用缓存+异步队列+数据库优化方式解决，响应速度提升50%。
+
+---
+
+> 建议：熟练掌握每个问题的底层原理和应用场景，在面试中主动引导话题更容易脱颖而出。
+
