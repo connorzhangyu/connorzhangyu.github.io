@@ -13,6 +13,235 @@ readingTime = false
 hideComments = false
 +++
 
+# Java 面试题库（完整版，含标准答案）
+
+---
+
+## 模块一：Java 基础（共 10 题）
+
+### 1. Java 的基本数据类型有哪些？
+Java 有 8 种基本数据类型：byte、short、int、long、float、double、char、boolean。
+
+### 2. 面向对象的三大特性是什么？
+封装、继承、多态。
+
+### 3. String 为什么是不可变的？
+因为 String 被 final 修饰，底层使用 char 数组存储，一旦创建不可更改，提高安全性和效率（如在 HashMap 中）。
+
+### 4. ArrayList 和 LinkedList 的区别？
+- ArrayList：基于数组，查找快，插入删除慢。
+- LinkedList：基于链表，插入删除快，查找慢。
+
+### 5. 重载和重写的区别？
+- 重载（Overload）：同一类中方法名相同，参数不同。
+- 重写（Override）：子类重写父类方法，参数和返回值相同。
+
+### 6. 抽象类和接口的区别？
+- 抽象类可以包含实现的方法，接口只能包含抽象方法（Java 8 以后允许 default 方法）。
+- 一个类只能继承一个抽象类，但可以实现多个接口。
+
+### 7. Java 中的异常体系？
+- Checked Exception（受检异常）：如 IOException。
+- Unchecked Exception（运行时异常）：如 NullPointerException。
+
+### 8. final、finally 和 finalize 的区别？
+- final：修饰不可变内容。
+- finally：异常处理中始终执行的代码块。
+- finalize：垃圾回收前调用的方法（不推荐使用）。
+
+### 9. Java 中的包装类有哪些？
+Boolean、Byte、Character、Short、Integer、Long、Float、Double。
+
+### 10. Java 如何实现反射？
+通过 `Class.forName()`、`getDeclaredMethods()`、`getConstructor()` 等方法反射获取类信息并动态操作。
+
+---
+
+## 模块二：JVM 与性能优化（共 10 题）
+
+### 1. JVM 内存模型？
+程序计数器、虚拟机栈、本地方法栈、堆、方法区。
+
+### 2. 什么是类加载器？
+BootstrapClassLoader、ExtensionClassLoader、AppClassLoader，遵循双亲委派模型。
+
+### 3. JVM 垃圾回收器有哪些？
+Serial、Parallel、CMS、G1、ZGC、Shenandoah 等。
+
+### 4. Minor GC 和 Full GC 的区别？
+- Minor GC 发生在新生代，速度快。
+- Full GC 会回收整个堆，包括老年代，速度慢。
+
+### 5. 判断对象是否可以被 GC 回收的依据？
+引用计数法、可达性分析算法（GC Roots）。
+
+### 6. Java 中的强、软、弱、虚引用？
+- 强引用：默认引用类型。
+- 软引用：内存不足时回收。
+- 弱引用：下一次 GC 时就回收。
+- 虚引用：仅用于追踪对象是否被 GC。
+
+### 7. 如何查看 Java 堆栈信息？
+使用 jps、jstack、jmap、VisualVM 工具。
+
+### 8. 内存泄漏和内存溢出的区别？
+- 泄漏：对象不再使用但未被回收。
+- 溢出：申请的内存超出最大限制。
+
+### 9. 方法区和堆的区别？
+- 堆存放实例对象。
+- 方法区（元空间）存储类结构、常量池等。
+
+### 10. JVM 调优常用参数？
+如 `-Xms`, `-Xmx`, `-XX:+UseG1GC` 等。
+
+---
+
+## 模块三：多线程与并发（共 10 题）
+
+### 1. 创建线程的方式有哪些？
+继承 Thread 类、实现 Runnable 接口、实现 Callable 接口。
+
+### 2. synchronized 的作用？
+可用于修饰方法或代码块，确保线程安全。
+
+### 3. volatile 的作用？
+保证变量的可见性，不保证原子性。
+
+### 4. 什么是线程死锁？如何避免？
+多个线程互相等待资源，避免策略包括锁顺序、定时锁、死锁检测机制等。
+
+### 5. ThreadLocal 的作用？
+为每个线程提供独立的变量副本，适用于线程封闭。
+
+### 6. 线程池的构造参数？
+corePoolSize、maximumPoolSize、keepAliveTime、workQueue、threadFactory、handler。
+
+### 7. Java 并发包 J.U.C 有哪些工具类？
+CountDownLatch、CyclicBarrier、Semaphore、ReentrantLock、BlockingQueue、Atomic 系列类等。
+
+### 8. CAS 是什么？
+比较并交换，无锁并发的核心，原子性操作的基础。
+
+### 9. 什么是 AQS？
+AbstractQueuedSynchronizer，用于构建锁和同步器的框架。
+
+### 10. Java 中的锁有哪些？
+公平锁/非公平锁、可重入锁、读写锁、偏向锁、轻量级锁、重量级锁。
+
+---
+
+## 模块四：Spring & Spring Boot（共 10 题）
+
+### 1. Spring 的核心模块有哪些？
+Core、Context、Beans、AOP、Web、ORM 等。
+
+### 2. Spring Bean 生命周期？
+实例化 -> 设置属性 -> 初始化（@PostConstruct）-> 使用 -> 销毁（@PreDestroy）。
+
+### 3. IoC 和 DI 是什么？
+- IoC：控制反转。
+- DI：依赖注入，是实现 IoC 的一种方式。
+
+### 4. AOP 实现原理？
+基于动态代理（JDK、CGLIB）实现横切逻辑。
+
+### 5. Spring Boot 的自动配置原理？
+基于 @EnableAutoConfiguration 和 META-INF/spring.factories。
+
+### 6. @Autowired 和 @Resource 区别？
+- @Autowired：按类型注入。
+- @Resource：按名称注入。
+
+### 7. Spring 常见注解？
+@Component、@Service、@Repository、@Controller、@RestController、@Bean、@Configuration。
+
+### 8. Spring MVC 请求流程？
+DispatcherServlet -> HandlerMapping -> Controller -> ViewResolver。
+
+### 9. Spring 中的事务管理？
+使用 @Transactional，支持声明式和编程式事务。
+
+### 10. 如何排查 Spring 启动失败？
+查看日志、排查依赖冲突、使用 `--debug` 模式。
+
+---
+
+## 模块五：数据库与缓存（共 10 题）
+
+### 1. 索引的底层原理？
+一般使用 B+ 树，便于范围查询和排序。
+
+### 2. 主键索引和普通索引区别？
+主键索引唯一且不能为 null，普通索引可重复。
+
+### 3. Redis 常见数据结构？
+String、List、Set、ZSet、Hash、Bitmap、HyperLogLog。
+
+### 4. Redis 过期策略？
+定时删除、惰性删除、定期删除。
+
+### 5. Redis 缓存雪崩、击穿、穿透？
+- 雪崩：大量 key 同时失效。
+- 击穿：热点 key 失效。
+- 穿透：请求不存在的数据。
+
+### 6. MySQL 的事务隔离级别？
+Read Uncommitted、Read Committed、Repeatable Read、Serializable。
+
+### 7. InnoDB 和 MyISAM 区别？
+- InnoDB 支持事务和外键，支持行级锁。
+- MyISAM 不支持事务，锁粒度较大。
+
+### 8. Redis 持久化方式？
+RDB（快照）、AOF（追加日志）、混合持久化。
+
+### 9. 什么是慢查询？如何优化？
+执行时间超过指定阈值的 SQL，可通过索引、优化 SQL、加缓存等方法优化。
+
+### 10. 分库分表的常见策略？
+按用户 ID 哈希、时间分表、水平垂直分拆等。
+
+---
+
+## 模块六：分布式系统设计（共 10 题）
+
+### 1. 什么是微服务架构？
+将单体应用拆分为多个小型服务，通过接口进行通信。
+
+### 2. 常见的注册中心有哪些？
+Eureka、Consul、Zookeeper、Nacos。
+
+### 3. 分布式系统中的一致性问题如何解决？
+使用分布式事务、最终一致性、幂等性处理。
+
+### 4. 分布式锁的实现方式？
+基于 Redis（SETNX + EX）、Zookeeper（临时顺序节点）。
+
+### 5. 什么是服务雪崩？如何避免？
+服务依赖失败导致系统整体崩溃，可通过熔断、限流、降级机制避免。
+
+### 6. CAP 原理与 BASE 理论？
+- CAP：一致性、可用性、分区容忍性。
+- BASE：基本可用、软状态、最终一致性。
+
+### 7. 常见的服务调用方式？
+REST、RPC（如 Dubbo、gRPC）、消息队列异步调用。
+
+### 8. 微服务的配置管理怎么做？
+使用 Nacos、Apollo、Spring Cloud Config 等。
+
+### 9. 网关的作用和常见实现？
+统一入口、安全认证、路由转发，如 Nginx、Spring Cloud Gateway。
+
+### 10. 如何实现链路追踪？
+使用 Sleuth、Zipkin、SkyWalking、Jaeger 等组件。
+
+---
+
+**提示：** 本题库适用于笔试、自测、面试准备，也适合整理为答题卡和知识地图。
+
+
 # Java开发面试题库
 
 ## 一、Java基础
