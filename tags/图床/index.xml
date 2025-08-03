@@ -1,0 +1,858 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>图床 on Hello World</title><link>https://connorzhangyu.com/tags/%E5%9B%BE%E5%BA%8A/</link><description>Recent content in 图床 on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sat, 19 Nov 2022 18:25:00 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/%E5%9B%BE%E5%BA%8A/index.xml" rel="self" type="application/rss+xml"/><item><title>AWS</title><link>https://connorzhangyu.com/posts/aws/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/aws/</guid><description>&lt;h1 id="aws基本教程">AWS基本教程&lt;/h1>
+&lt;p>场景是:在把22端口关闭了,无法再连上服务器的情况&lt;/p>
+&lt;p>解决办法:关闭服务器,点击&lt;code>操作&lt;/code>-&amp;gt;&lt;code>实例设置&lt;/code>-&amp;gt;&lt;code>编辑用户数据&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#!/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#75715e"># 允许 SSH 端口&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>iptables -P INPUT ACCEPT
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>iptables -P OUTPUT ACCEPT
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>iptables -P FORWARD ACCEPT
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>iptables -F
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>iptables -A INPUT -p tcp --dport &lt;span style="color:#ae81ff">22&lt;/span> -j ACCEPT
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>再启动服务器&lt;/p>
+&lt;h2 id="aws升级配置">AWS升级配置&lt;/h2>
+&lt;p>1.先&lt;code>停止&lt;/code>实例,不是&lt;code>终止&lt;/code>实例
+&lt;img src="https://image.runtimes.cc/202404051405513.png" alt="">&lt;/p>
+&lt;p>2.修改实例类型
+&lt;img src="https://image.runtimes.cc/202404051406722.png" alt="">&lt;/p>
+&lt;p>{% note danger simple %}
+重启公网IP可能会改变
+{% endnote %}&lt;/p>
+&lt;h2 id="服务器局域网互通">服务器局域网互通&lt;/h2>
+&lt;p>需要把局域网 想要互通的服务器,加入一个公共的的默认安全组&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051406727.png" alt="">
+选择&lt;code>default&lt;/code>安全组
+&lt;img src="https://image.runtimes.cc/202404051406784.png" alt="">&lt;/p>
+&lt;h2 id="要看服务器部署在哪里">要看服务器部署在哪里&lt;/h2>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051406380.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051407931.png" alt="">&lt;/p>
+&lt;h2 id="javasdk上传图片到s3">JavaSDK上传图片到S3&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@RestController&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@Slf4j&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@Api&lt;/span>(tags &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;上传接口&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">UploadController&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Value&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;${S3.accessKey}&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String accessKey;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Value&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;${S3.secretKey}&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String secretKey;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Value&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;${S3.endPoint}&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String endPoint;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Value&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;${S3.bucketName}&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String bucketName;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@PostMapping&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;/upload&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@ApiOperation&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;上传&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@NotNeedAuth&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> Response&lt;span style="color:#f92672">&amp;lt;&lt;/span>String&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#a6e22e">upload&lt;/span>(&lt;span style="color:#a6e22e">@RequestParam&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;file&amp;#34;&lt;/span>) MultipartFile file) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String originalFilename &lt;span style="color:#f92672">=&lt;/span> file.&lt;span style="color:#a6e22e">getOriginalFilename&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#f92672">!&lt;/span>Constant.&lt;span style="color:#a6e22e">PHOTO_LIST&lt;/span>.&lt;span style="color:#a6e22e">contains&lt;/span>(originalFilename.&lt;span style="color:#a6e22e">substring&lt;/span>(originalFilename.&lt;span style="color:#a6e22e">lastIndexOf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;.&amp;#34;&lt;/span>) &lt;span style="color:#f92672">+&lt;/span> 1))) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> Response.&lt;span style="color:#a6e22e">fail&lt;/span>(CodeConstant.&lt;span style="color:#a6e22e">CODE_095&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String newImageName &lt;span style="color:#f92672">=&lt;/span> ThreadLocalRandom.&lt;span style="color:#a6e22e">current&lt;/span>().&lt;span style="color:#a6e22e">nextInt&lt;/span>(10000) &lt;span style="color:#f92672">+&lt;/span> System.&lt;span style="color:#a6e22e">currentTimeMillis&lt;/span>() &lt;span style="color:#f92672">+&lt;/span> originalFilename.&lt;span style="color:#a6e22e">substring&lt;/span>(originalFilename.&lt;span style="color:#a6e22e">lastIndexOf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;.&amp;#34;&lt;/span>)).&lt;span style="color:#a6e22e">toLowerCase&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String fileName &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;lxdt/dt/&amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> Constant.&lt;span style="color:#a6e22e">DIRECTORY_TIME_FORMAT&lt;/span>.&lt;span style="color:#a6e22e">format&lt;/span>(LocalDateTime.&lt;span style="color:#a6e22e">now&lt;/span>(Constant.&lt;span style="color:#a6e22e">TIME_ZONE&lt;/span>)) &lt;span style="color:#f92672">+&lt;/span> newImageName;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">try&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> S3Util.&lt;span style="color:#a6e22e">uploadFileByFile&lt;/span>(accessKey, secretKey, endPoint, bucketName, fileName, file);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#66d9ef">catch&lt;/span> (Exception e) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> log.&lt;span style="color:#a6e22e">error&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;上传失败&amp;#34;&lt;/span>, e);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> Response.&lt;span style="color:#a6e22e">error&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> Response.&lt;span style="color:#a6e22e">successData&lt;/span>(fileName);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">S3Util&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * 图片上传
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">uploadFileByFile&lt;/span>(String accessKey, String secretKey, String endPoint, String bucketName, String folderName, MultipartFile file) &lt;span style="color:#66d9ef">throws&lt;/span> IOException {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ClientConfiguration clientConfig &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> ClientConfiguration();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> clientConfig.&lt;span style="color:#a6e22e">setProtocol&lt;/span>(Protocol.&lt;span style="color:#a6e22e">HTTPS&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> AmazonS3 amazonS3 &lt;span style="color:#f92672">=&lt;/span> AmazonS3Client.&lt;span style="color:#a6e22e">builder&lt;/span>().&lt;span style="color:#a6e22e">withEndpointConfiguration&lt;/span>(&lt;span style="color:#66d9ef">new&lt;/span> AwsClientBuilder.&lt;span style="color:#a6e22e">EndpointConfiguration&lt;/span>(endPoint, Region.&lt;span style="color:#a6e22e">getRegion&lt;/span>(Regions.&lt;span style="color:#a6e22e">AP_SOUTHEAST_1&lt;/span>).&lt;span style="color:#a6e22e">getName&lt;/span>()))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">withClientConfiguration&lt;/span>(clientConfig).&lt;span style="color:#a6e22e">withCredentials&lt;/span>(&lt;span style="color:#66d9ef">new&lt;/span> AWSStaticCredentialsProvider(&lt;span style="color:#66d9ef">new&lt;/span> BasicAWSCredentials(accessKey, secretKey)))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">disableChunkedEncoding&lt;/span>().&lt;span style="color:#a6e22e">withPathStyleAccessEnabled&lt;/span>(&lt;span style="color:#66d9ef">true&lt;/span>).&lt;span style="color:#a6e22e">withForceGlobalBucketAccessEnabled&lt;/span>(&lt;span style="color:#66d9ef">true&lt;/span>).&lt;span style="color:#a6e22e">enablePathStyleAccess&lt;/span>().&lt;span style="color:#a6e22e">build&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ObjectMetadata objectMetadata &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> ObjectMetadata();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> objectMetadata.&lt;span style="color:#a6e22e">setContentType&lt;/span>(file.&lt;span style="color:#a6e22e">getContentType&lt;/span>());
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> objectMetadata.&lt;span style="color:#a6e22e">setContentLength&lt;/span>(file.&lt;span style="color:#a6e22e">getSize&lt;/span>());
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> amazonS3.&lt;span style="color:#a6e22e">putObject&lt;/span>(&lt;span style="color:#66d9ef">new&lt;/span> PutObjectRequest(bucketName, folderName, file.&lt;span style="color:#a6e22e">getInputStream&lt;/span>(), objectMetadata).&lt;span style="color:#a6e22e">withCannedAcl&lt;/span>(CannedAccessControlList.&lt;span style="color:#a6e22e">PublicRead&lt;/span>));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="s3桶策略">S3桶策略&lt;/h2>
+&lt;p>公开访问桶策略&lt;/p></description><content>&lt;h1 id="aws基本教程">AWS基本教程&lt;/h1>
+&lt;p>场景是:在把22端口关闭了,无法再连上服务器的情况&lt;/p>
+&lt;p>解决办法:关闭服务器,点击&lt;code>操作&lt;/code>-&amp;gt;&lt;code>实例设置&lt;/code>-&amp;gt;&lt;code>编辑用户数据&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#!/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#75715e"># 允许 SSH 端口&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>iptables -P INPUT ACCEPT
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>iptables -P OUTPUT ACCEPT
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>iptables -P FORWARD ACCEPT
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>iptables -F
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>iptables -A INPUT -p tcp --dport &lt;span style="color:#ae81ff">22&lt;/span> -j ACCEPT
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>再启动服务器&lt;/p>
+&lt;h2 id="aws升级配置">AWS升级配置&lt;/h2>
+&lt;p>1.先&lt;code>停止&lt;/code>实例,不是&lt;code>终止&lt;/code>实例
+&lt;img src="https://image.runtimes.cc/202404051405513.png" alt="">&lt;/p>
+&lt;p>2.修改实例类型
+&lt;img src="https://image.runtimes.cc/202404051406722.png" alt="">&lt;/p>
+&lt;p>{% note danger simple %}
+重启公网IP可能会改变
+{% endnote %}&lt;/p>
+&lt;h2 id="服务器局域网互通">服务器局域网互通&lt;/h2>
+&lt;p>需要把局域网 想要互通的服务器,加入一个公共的的默认安全组&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051406727.png" alt="">
+选择&lt;code>default&lt;/code>安全组
+&lt;img src="https://image.runtimes.cc/202404051406784.png" alt="">&lt;/p>
+&lt;h2 id="要看服务器部署在哪里">要看服务器部署在哪里&lt;/h2>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051406380.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051407931.png" alt="">&lt;/p>
+&lt;h2 id="javasdk上传图片到s3">JavaSDK上传图片到S3&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@RestController&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@Slf4j&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@Api&lt;/span>(tags &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;上传接口&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">UploadController&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Value&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;${S3.accessKey}&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String accessKey;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Value&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;${S3.secretKey}&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String secretKey;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Value&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;${S3.endPoint}&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String endPoint;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Value&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;${S3.bucketName}&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String bucketName;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@PostMapping&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;/upload&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@ApiOperation&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;上传&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@NotNeedAuth&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> Response&lt;span style="color:#f92672">&amp;lt;&lt;/span>String&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#a6e22e">upload&lt;/span>(&lt;span style="color:#a6e22e">@RequestParam&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;file&amp;#34;&lt;/span>) MultipartFile file) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String originalFilename &lt;span style="color:#f92672">=&lt;/span> file.&lt;span style="color:#a6e22e">getOriginalFilename&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#f92672">!&lt;/span>Constant.&lt;span style="color:#a6e22e">PHOTO_LIST&lt;/span>.&lt;span style="color:#a6e22e">contains&lt;/span>(originalFilename.&lt;span style="color:#a6e22e">substring&lt;/span>(originalFilename.&lt;span style="color:#a6e22e">lastIndexOf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;.&amp;#34;&lt;/span>) &lt;span style="color:#f92672">+&lt;/span> 1))) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> Response.&lt;span style="color:#a6e22e">fail&lt;/span>(CodeConstant.&lt;span style="color:#a6e22e">CODE_095&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String newImageName &lt;span style="color:#f92672">=&lt;/span> ThreadLocalRandom.&lt;span style="color:#a6e22e">current&lt;/span>().&lt;span style="color:#a6e22e">nextInt&lt;/span>(10000) &lt;span style="color:#f92672">+&lt;/span> System.&lt;span style="color:#a6e22e">currentTimeMillis&lt;/span>() &lt;span style="color:#f92672">+&lt;/span> originalFilename.&lt;span style="color:#a6e22e">substring&lt;/span>(originalFilename.&lt;span style="color:#a6e22e">lastIndexOf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;.&amp;#34;&lt;/span>)).&lt;span style="color:#a6e22e">toLowerCase&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String fileName &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;lxdt/dt/&amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> Constant.&lt;span style="color:#a6e22e">DIRECTORY_TIME_FORMAT&lt;/span>.&lt;span style="color:#a6e22e">format&lt;/span>(LocalDateTime.&lt;span style="color:#a6e22e">now&lt;/span>(Constant.&lt;span style="color:#a6e22e">TIME_ZONE&lt;/span>)) &lt;span style="color:#f92672">+&lt;/span> newImageName;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">try&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> S3Util.&lt;span style="color:#a6e22e">uploadFileByFile&lt;/span>(accessKey, secretKey, endPoint, bucketName, fileName, file);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#66d9ef">catch&lt;/span> (Exception e) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> log.&lt;span style="color:#a6e22e">error&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;上传失败&amp;#34;&lt;/span>, e);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> Response.&lt;span style="color:#a6e22e">error&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> Response.&lt;span style="color:#a6e22e">successData&lt;/span>(fileName);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">S3Util&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * 图片上传
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">uploadFileByFile&lt;/span>(String accessKey, String secretKey, String endPoint, String bucketName, String folderName, MultipartFile file) &lt;span style="color:#66d9ef">throws&lt;/span> IOException {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ClientConfiguration clientConfig &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> ClientConfiguration();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> clientConfig.&lt;span style="color:#a6e22e">setProtocol&lt;/span>(Protocol.&lt;span style="color:#a6e22e">HTTPS&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> AmazonS3 amazonS3 &lt;span style="color:#f92672">=&lt;/span> AmazonS3Client.&lt;span style="color:#a6e22e">builder&lt;/span>().&lt;span style="color:#a6e22e">withEndpointConfiguration&lt;/span>(&lt;span style="color:#66d9ef">new&lt;/span> AwsClientBuilder.&lt;span style="color:#a6e22e">EndpointConfiguration&lt;/span>(endPoint, Region.&lt;span style="color:#a6e22e">getRegion&lt;/span>(Regions.&lt;span style="color:#a6e22e">AP_SOUTHEAST_1&lt;/span>).&lt;span style="color:#a6e22e">getName&lt;/span>()))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">withClientConfiguration&lt;/span>(clientConfig).&lt;span style="color:#a6e22e">withCredentials&lt;/span>(&lt;span style="color:#66d9ef">new&lt;/span> AWSStaticCredentialsProvider(&lt;span style="color:#66d9ef">new&lt;/span> BasicAWSCredentials(accessKey, secretKey)))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">disableChunkedEncoding&lt;/span>().&lt;span style="color:#a6e22e">withPathStyleAccessEnabled&lt;/span>(&lt;span style="color:#66d9ef">true&lt;/span>).&lt;span style="color:#a6e22e">withForceGlobalBucketAccessEnabled&lt;/span>(&lt;span style="color:#66d9ef">true&lt;/span>).&lt;span style="color:#a6e22e">enablePathStyleAccess&lt;/span>().&lt;span style="color:#a6e22e">build&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ObjectMetadata objectMetadata &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> ObjectMetadata();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> objectMetadata.&lt;span style="color:#a6e22e">setContentType&lt;/span>(file.&lt;span style="color:#a6e22e">getContentType&lt;/span>());
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> objectMetadata.&lt;span style="color:#a6e22e">setContentLength&lt;/span>(file.&lt;span style="color:#a6e22e">getSize&lt;/span>());
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> amazonS3.&lt;span style="color:#a6e22e">putObject&lt;/span>(&lt;span style="color:#66d9ef">new&lt;/span> PutObjectRequest(bucketName, folderName, file.&lt;span style="color:#a6e22e">getInputStream&lt;/span>(), objectMetadata).&lt;span style="color:#a6e22e">withCannedAcl&lt;/span>(CannedAccessControlList.&lt;span style="color:#a6e22e">PublicRead&lt;/span>));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="s3桶策略">S3桶策略&lt;/h2>
+&lt;p>公开访问桶策略&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;Version&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;2012-10-17&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;Statement&amp;#34;&lt;/span>: [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;Sid&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;PublicReadGetObject&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;Effect&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;Allow&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;Principal&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;*&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;Action&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;s3:GetObject&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;Resource&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;arn:aws:s3:::your-bucket-name/*&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>印象中有遇到这种情况:&lt;/p>
+&lt;p>​ 第一次操作桶的时候,桶里面的文件是能正常共享出来的&lt;/p>
+&lt;p>​ 很久之后没有操作了,再上传一个新文件,上传的这个文件就不能共享了&lt;/p>
+&lt;p>第二次出现这样情况的时候,我文件的url搞错了,是可以正常共享的&lt;/p>&lt;/blockquote>
+&lt;h1 id="picgos3">PicGO+S3&lt;/h1>
+&lt;h3 id="创建存储桶">创建存储桶&lt;/h3>
+&lt;p>红框里不要勾选&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051407616.png" alt="">&lt;/p>
+&lt;h3 id="创建文件夹设置公开">创建文件夹,设置公开&lt;/h3>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051407911.png" alt="">&lt;/p>
+&lt;h3 id="开启静态托管">开启静态托管&lt;/h3>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051407713.png" alt="">&lt;/p>
+&lt;h3 id="新建iam用户">新建IAM用户&lt;/h3>
+&lt;p>访问创建IAM页面
+&lt;img src="https://image.runtimes.cc/202404051407343.png" alt="">&lt;/p>
+&lt;p>创建使用者
+&lt;img src="https://image.runtimes.cc/202404051408604.png" alt="">&lt;/p>
+&lt;p>创建使用者详情
+&lt;img src="https://image.runtimes.cc/202404051408370.png" alt="">&lt;/p>
+&lt;p>创建使用者权限,点击下一步,然后就能看到key和密钥了
+&lt;img src="https://image.runtimes.cc/202404051409638.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051410989.png" alt="">&lt;/p>
+&lt;h3 id="picgo配置">PicGO配置&lt;/h3>
+&lt;p>PicGO软件许要下再S3插件,然后再配置文件里粘贴这个&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#34;aws-s3&amp;#34;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">:&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;accessKeyID&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;AKIA2Q6ZSIPP7MKZOFHR&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;secretAccessKey&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;ZifJfUmVVGMq37hd8Itozp4fws5O97dVlwgMgtCY&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;bucketName&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;mmzcg.com&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;uploadPath&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;blog/{year}/{fullName}&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;acl&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;public-read&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="参考">参考&lt;/h2>
+&lt;p>&lt;a href="https://atsud0.me/2021/02/24/%E4%BD%BF%E7%94%A8Amazon-S3%E5%AE%9E%E7%8E%B0%E5%9B%BE%E5%BA%8A/">S3教程&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://github.com/wayjam/picgo-plugin-s3">PicGoS3教程&lt;/a>&lt;/p>
+&lt;h1 id="cloudfront加速vercel">CloudFront加速Vercel&lt;/h1>
+&lt;p>1.找到vercel自动分配的域名&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051410348.png" alt="image-20221123104312029">&lt;/p>
+&lt;p>2.aws 创建分配&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051410581.png" alt="image-20221123104312029">&lt;/p>
+&lt;p>3.选择源&lt;/p>
+&lt;p>不要选择源,输入vercel分配的域名&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051410351.png" alt="image-20221123104312029">&lt;/p>
+&lt;p>4.选择全部https,其它可以默认&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051410472.png" alt="image-20221123104312029">
+5.选择证书&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051410436.png" alt="image-20221123104312029">&lt;/p>
+&lt;p>备用域名:
+比如vercel默认分配的是xxx.vercel.app
+你想加速的域名是 abc.blog,备用域名就填abc.blog&lt;/p>
+&lt;p>自定义SSL证书:
+用aws自带的证书申请工具&lt;/p>
+&lt;p>点击保存,回到CloudFront首页&lt;/p>
+&lt;p>6.cname&lt;/p>
+&lt;ul>
+&lt;li>看上次修改时间这一列,如果显示的时间,就表示刚才的配置已经生效了,如果显示在部署中&amp;hellip;就等一会&lt;/li>
+&lt;li>CloudFront这一列会分配一个域名,在域名解析那里Cname指向这个域名就可以了&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051410552.png" alt="image-20221123104312029">&lt;/p>
+&lt;h1 id="aws-s3和hexo">AWS S3和Hexo&lt;/h1>
+&lt;p>1.安装插件&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 装置&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>npm install hexo-deployer-aws-s3 --save-dev
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>2.改&lt;code>_config.yml&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>deploy&lt;span style="color:#960050;background-color:#1e0010">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># - type: &amp;#39;git&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># repo: git@github.com:aaaaaaanthony/aaaaaaanthony.github.io.git&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># branch: master&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> type&lt;span style="color:#960050;background-color:#1e0010">:&lt;/span> &lt;span style="color:#e6db74">&amp;#39;aws-s3&amp;#39;&lt;/span> &lt;span style="color:#75715e"># 写死&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> region&lt;span style="color:#960050;background-color:#1e0010">:&lt;/span> ap-east-&lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#75715e"># 区域名&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bucket&lt;span style="color:#960050;background-color:#1e0010">:&lt;/span> mmzcg.com &lt;span style="color:#75715e"># 桶名&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>如果要部署多个地方,每个仓库的type前面要加一个&lt;code>-&lt;/code>&lt;/p>
+&lt;p>如果只有一个,就只用type开头就行&lt;/p>
+&lt;p>3.执行环境变量&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>export AWS_ACCESS_KEY_ID&lt;span style="color:#f92672">=&lt;/span>AKIA2Q6ZSIPP7MKZOFHR
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export AWS_SECRET_ACCESS_KEY&lt;span style="color:#f92672">=&lt;/span>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
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>source /etc/profile
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>4.部署&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>hexo clean
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>hexo algoli
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>hexo d -g
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>发现报错，&lt;code>The bucket does not allow ACLs&lt;/code>，还需要在存储中开启 &lt;code>ACLs&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051411607.png" alt="">&lt;/p>
+&lt;p>接下来要关闭「阻止共有访问操作」&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051411528.png" alt="">&lt;/p>
+&lt;p>部署成功后，开启静态网站托管功能&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051411449.png" alt="">&lt;/p>
+&lt;h1 id="rds">RDS&lt;/h1>
+&lt;h2 id="创建rds">创建RDS&lt;/h2>
+&lt;p>选择mysql社区版本&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202406151610262.png" alt="1">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202406151612706.png" alt="image-20240615161249827">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202406151618731.png" alt="image-20240615161843363">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202406151620676.png" alt="image-20240615162034149">&lt;/p>
+&lt;p>&lt;a href="https://blog.csdn.net/zhouyan8603/article/details/107947011">AWS的RDS开启慢查询日志到cloudwatch中&lt;/a>&lt;/p>
+&lt;h2 id="快照导出到s3">快照导出到S3&lt;/h2>
+&lt;blockquote>
+&lt;p>&lt;a href="https://docs.aws.amazon.com/zh_cn/AmazonRDS/latest/UserGuide/USER_ExportSnapshot.html#USER_ExportSnapshot.Exporting">参考文档&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;p>&lt;img src="https://image.runtimes.cc/202408131038847.png" alt="image-20240813103851409">&lt;/p>
+&lt;p>接下来的页面是需要的设置&lt;/p>
+&lt;ul>
+&lt;li>导出标识符,就是导出任务的名字&lt;/li>
+&lt;li>导出的数据,这里测试就简单点,导出全部表,要是选部分表,文档里有导出规则&lt;/li>
+&lt;li>S3 目标, 选一个存储桶&lt;/li>
+&lt;li>接下来的两个是难点,IAM角色,和加密&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://image.runtimes.cc/202408131042173.png" alt="image-20240813104211323">&lt;/p>
+&lt;p>先看加密,先创建ARN,找到配置的选项卡&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202408131044763.png" alt="image-20240813104403258">&lt;/p>
+&lt;p>点击下面的链接&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202408131044182.png" alt="image-20240813104444558">&lt;/p>
+&lt;p>在客户管理的秘钥,创建一个秘钥, 客户管理的密钥和AWS托管的密钥是有区别的,要选对&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202408131045111.png" alt="image-20240813104544460">&lt;/p>
+&lt;p>创建完之后,再回到 密钥列表的页面,点密钥ID,进入到详情页&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202408131047379.png" alt="image-20240813104726725">&lt;/p>
+&lt;p>复制ARN刚刚才导出的页面,角色权限什么的,各种尝试下就可以了&lt;/p>
+&lt;h1 id="front清空缓存api">front清空缓存API&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> boto3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> datetime
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">create_invalidation&lt;/span>(distribution_id, paths):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 创建一个CloudFront客户端并提供凭证&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> client &lt;span style="color:#f92672">=&lt;/span> boto3&lt;span style="color:#f92672">.&lt;/span>client(&lt;span style="color:#e6db74">&amp;#39;cloudfront&amp;#39;&lt;/span>,aws_access_key_id&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;AKIA2UC26S7767GSGKJQ&amp;#39;&lt;/span>,aws_secret_access_key&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;6V0B3uOHkr4Bt60fJRMUA4TW4jDKOLnOn0PASpdC&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 创建一个唯一的无效请求ID&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> caller_reference &lt;span style="color:#f92672">=&lt;/span> str(datetime&lt;span style="color:#f92672">.&lt;/span>datetime&lt;span style="color:#f92672">.&lt;/span>now())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 格式化路径&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> items &lt;span style="color:#f92672">=&lt;/span> paths &lt;span style="color:#66d9ef">if&lt;/span> isinstance(paths, list) &lt;span style="color:#66d9ef">else&lt;/span> [paths]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 构建无效请求&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> invalidation_batch &lt;span style="color:#f92672">=&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;Paths&amp;#39;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;Quantity&amp;#39;&lt;/span>: len(items),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;Items&amp;#39;&lt;/span>: items
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;CallerReference&amp;#39;&lt;/span>: caller_reference
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 创建无效请求&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> response &lt;span style="color:#f92672">=&lt;/span> client&lt;span style="color:#f92672">.&lt;/span>create_invalidation(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> DistributionId&lt;span style="color:#f92672">=&lt;/span>distribution_id,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> InvalidationBatch&lt;span style="color:#f92672">=&lt;/span>invalidation_batch
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> response
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># distribution_id 列表，包含ID、说明和类型&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>distribution_info &lt;span style="color:#f92672">=&lt;/span> [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#e6db74">&amp;#34;EX123AFBG&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;生产环境&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;生产&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;baidu.com&amp;#34;&lt;/span>],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 要使失效的路径&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>paths_to_invalidate &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#e6db74">&amp;#39;/*&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 循环遍历每个distribution_id&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> info &lt;span style="color:#f92672">in&lt;/span> distribution_info:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> distribution_id &lt;span style="color:#f92672">=&lt;/span> info[&lt;span style="color:#ae81ff">0&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">f&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Creating invalidation for Distribution ID: &lt;/span>&lt;span style="color:#e6db74">{&lt;/span>distribution_id&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">, Description: &lt;/span>&lt;span style="color:#e6db74">{&lt;/span>info[&lt;span style="color:#ae81ff">1&lt;/span>]&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">, Type: &lt;/span>&lt;span style="color:#e6db74">{&lt;/span>info[&lt;span style="color:#ae81ff">2&lt;/span>]&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> response &lt;span style="color:#f92672">=&lt;/span> create_invalidation(distribution_id, paths_to_invalidate)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(response)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;================&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#e6db74">&amp;#34;刷新完成&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>Windows</title><link>https://connorzhangyu.com/posts/windows/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/windows/</guid><description>&lt;h1 id="windows-server">Windows Server&lt;/h1>
+&lt;h2 id="开放指定端口">开放指定端口&lt;/h2>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051353354.webp" alt="1">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051353503.webp" alt="2">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051353919.webp" alt="3">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051353502.webp" alt="4">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051354921.webp" alt="6">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051355944.webp" alt="7">&lt;/p>
+&lt;h2 id="服务器禁用ipv6">服务器禁用IPV6&lt;/h2>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051355530.png" alt="">&lt;/p>
+&lt;p>⛔ 一定要重启&lt;/p>
+&lt;p>&lt;a href="https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/configure-ipv6-in-windows">官方文档&lt;/a>&lt;/p>
+&lt;h2 id="ie浏览器允许下载">IE浏览器允许下载&lt;/h2>
+&lt;p>通常服务器不允许乱下载软件,所以一般默认被禁用,下面两种方法都行&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051355878.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051355807.png" alt="">&lt;/p>
+&lt;h1 id="安装win10系统创建本地账号">安装win10系统,创建本地账号&lt;/h1>
+&lt;p>在提示需要账号登录的时候,按&lt;code>Shift + F10&lt;/code>打开命令行,输入&lt;code>oobe\bypassnro.cmd&lt;/code>，就会重启,再安装，就不会要求输入微软账号了；也有例外的情况，用过win11商业版的镜像安装的时候,用这个命令不起作用
+&lt;img src="https://image.runtimes.cc/202404051355254.png" alt="win11">&lt;/p>
+&lt;blockquote>
+&lt;p>参考:&lt;a href="https://blog.csdn.net/qq_33427869/article/details/127573950">系统安装跳过登录&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;h1 id="powershell改变默认编码">Powershell改变默认编码&lt;/h1>
+&lt;p>中文版Powershell默认编码为GB2312，而编程,运维,开发中常用编码格式为UTF-8。&lt;/p>
+&lt;h2 id="临时修改">临时修改&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Powershell" data-lang="Powershell">&lt;span style="display:flex;">&lt;span>chcp &lt;span style="color:#ae81ff">65001&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="永久修改">永久修改&lt;/h2>
+&lt;p>进入注册表&lt;code>win+R-&amp;gt;输入regedit&lt;/code>在&lt;code>HKEY_CURRENT_USER\Console&lt;/code>，双击&lt;code>CodePage&lt;/code>修改键值为&lt;code>65001&lt;/code>
+&lt;img src="https://image.runtimes.cc/202404051355297.png" alt="">
+检查是否生效: 新开一个PowerShell,或者重启&lt;/p>
+&lt;h1 id="win10杀线程">Win10杀线程&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-nix" data-lang="nix">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 查找5091的端口&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>netstat &lt;span style="color:#960050;background-color:#1e0010">-&lt;/span>aon &lt;span style="color:#960050;background-color:#1e0010">|&lt;/span> find &lt;span style="color:#e6db74">&amp;#34;5091&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 杀5091的PID&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>taskkill &lt;span style="color:#e6db74">/f&lt;/span> &lt;span style="color:#e6db74">/pid&lt;/span> &lt;span style="color:#ae81ff">6880&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="win10安装scoop包管理器">Win10安装Scoop包管理器&lt;/h1>
+&lt;p>Scoop是windows的包管理器&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 使用了PowerShell在你当前Windows的账户下&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>set-executionpolicy remotesigned -s cu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 在PowerShell下输入&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>iex &lt;span style="color:#f92672">(&lt;/span>new-object net.webclient&lt;span style="color:#f92672">)&lt;/span>.downloadstring&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#39;https://get.scoop.sh&amp;#39;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="windows-terminal策略">Windows Terminal策略&lt;/h1>
+&lt;p>以管理员身份打开PowerShell 输入&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>set-executionpolicy remotesigned
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="win10去掉小箭头">Win10去掉小箭头&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 去掉小箭头&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>reg add &lt;span style="color:#e6db74">&amp;#34;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons&amp;#34;&lt;/span> /v &lt;span style="color:#ae81ff">29&lt;/span> /d &lt;span style="color:#e6db74">&amp;#34;%systemroot%\system32\imageres.dll,197&amp;#34;&lt;/span> /t reg_sz /f
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>taskkill /f /im explorer.exe
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>attrib -s -r -h &lt;span style="color:#e6db74">&amp;#34;%userprofile%\AppData\Local\iconcache.db&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>del &lt;span style="color:#e6db74">&amp;#34;%userprofile%\AppData\Local\iconcache.db&amp;#34;&lt;/span> /f /q
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>start explorer
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pause
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 回复小箭头&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>reg delete &lt;span style="color:#e6db74">&amp;#34;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons&amp;#34;&lt;/span> /v &lt;span style="color:#ae81ff">29&lt;/span> /f
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>taskkill /f /im explorer.exe
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>attrib -s -r -h &lt;span style="color:#e6db74">&amp;#34;%userprofile%\AppData\Local\iconcache.db&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>del &lt;span style="color:#e6db74">&amp;#34;%userprofile%\AppData\Local\iconcache.db&amp;#34;&lt;/span> /f /q
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>start explorer
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pause
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>复制上面的代码。新建一个文本文件。粘贴后另存为.bat文件，然后以管理员身份打开。&lt;/p></description><content>&lt;h1 id="windows-server">Windows Server&lt;/h1>
+&lt;h2 id="开放指定端口">开放指定端口&lt;/h2>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051353354.webp" alt="1">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051353503.webp" alt="2">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051353919.webp" alt="3">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051353502.webp" alt="4">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051354921.webp" alt="6">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051355944.webp" alt="7">&lt;/p>
+&lt;h2 id="服务器禁用ipv6">服务器禁用IPV6&lt;/h2>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051355530.png" alt="">&lt;/p>
+&lt;p>⛔ 一定要重启&lt;/p>
+&lt;p>&lt;a href="https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/configure-ipv6-in-windows">官方文档&lt;/a>&lt;/p>
+&lt;h2 id="ie浏览器允许下载">IE浏览器允许下载&lt;/h2>
+&lt;p>通常服务器不允许乱下载软件,所以一般默认被禁用,下面两种方法都行&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051355878.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051355807.png" alt="">&lt;/p>
+&lt;h1 id="安装win10系统创建本地账号">安装win10系统,创建本地账号&lt;/h1>
+&lt;p>在提示需要账号登录的时候,按&lt;code>Shift + F10&lt;/code>打开命令行,输入&lt;code>oobe\bypassnro.cmd&lt;/code>，就会重启,再安装，就不会要求输入微软账号了；也有例外的情况，用过win11商业版的镜像安装的时候,用这个命令不起作用
+&lt;img src="https://image.runtimes.cc/202404051355254.png" alt="win11">&lt;/p>
+&lt;blockquote>
+&lt;p>参考:&lt;a href="https://blog.csdn.net/qq_33427869/article/details/127573950">系统安装跳过登录&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;h1 id="powershell改变默认编码">Powershell改变默认编码&lt;/h1>
+&lt;p>中文版Powershell默认编码为GB2312，而编程,运维,开发中常用编码格式为UTF-8。&lt;/p>
+&lt;h2 id="临时修改">临时修改&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Powershell" data-lang="Powershell">&lt;span style="display:flex;">&lt;span>chcp &lt;span style="color:#ae81ff">65001&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="永久修改">永久修改&lt;/h2>
+&lt;p>进入注册表&lt;code>win+R-&amp;gt;输入regedit&lt;/code>在&lt;code>HKEY_CURRENT_USER\Console&lt;/code>，双击&lt;code>CodePage&lt;/code>修改键值为&lt;code>65001&lt;/code>
+&lt;img src="https://image.runtimes.cc/202404051355297.png" alt="">
+检查是否生效: 新开一个PowerShell,或者重启&lt;/p>
+&lt;h1 id="win10杀线程">Win10杀线程&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-nix" data-lang="nix">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 查找5091的端口&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>netstat &lt;span style="color:#960050;background-color:#1e0010">-&lt;/span>aon &lt;span style="color:#960050;background-color:#1e0010">|&lt;/span> find &lt;span style="color:#e6db74">&amp;#34;5091&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 杀5091的PID&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>taskkill &lt;span style="color:#e6db74">/f&lt;/span> &lt;span style="color:#e6db74">/pid&lt;/span> &lt;span style="color:#ae81ff">6880&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="win10安装scoop包管理器">Win10安装Scoop包管理器&lt;/h1>
+&lt;p>Scoop是windows的包管理器&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 使用了PowerShell在你当前Windows的账户下&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>set-executionpolicy remotesigned -s cu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 在PowerShell下输入&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>iex &lt;span style="color:#f92672">(&lt;/span>new-object net.webclient&lt;span style="color:#f92672">)&lt;/span>.downloadstring&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#39;https://get.scoop.sh&amp;#39;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="windows-terminal策略">Windows Terminal策略&lt;/h1>
+&lt;p>以管理员身份打开PowerShell 输入&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>set-executionpolicy remotesigned
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="win10去掉小箭头">Win10去掉小箭头&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 去掉小箭头&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>reg add &lt;span style="color:#e6db74">&amp;#34;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons&amp;#34;&lt;/span> /v &lt;span style="color:#ae81ff">29&lt;/span> /d &lt;span style="color:#e6db74">&amp;#34;%systemroot%\system32\imageres.dll,197&amp;#34;&lt;/span> /t reg_sz /f
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>taskkill /f /im explorer.exe
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>attrib -s -r -h &lt;span style="color:#e6db74">&amp;#34;%userprofile%\AppData\Local\iconcache.db&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>del &lt;span style="color:#e6db74">&amp;#34;%userprofile%\AppData\Local\iconcache.db&amp;#34;&lt;/span> /f /q
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>start explorer
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pause
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 回复小箭头&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>reg delete &lt;span style="color:#e6db74">&amp;#34;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons&amp;#34;&lt;/span> /v &lt;span style="color:#ae81ff">29&lt;/span> /f
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>taskkill /f /im explorer.exe
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>attrib -s -r -h &lt;span style="color:#e6db74">&amp;#34;%userprofile%\AppData\Local\iconcache.db&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>del &lt;span style="color:#e6db74">&amp;#34;%userprofile%\AppData\Local\iconcache.db&amp;#34;&lt;/span> /f /q
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>start explorer
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pause
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>复制上面的代码。新建一个文本文件。粘贴后另存为.bat文件，然后以管理员身份打开。&lt;/p>
+&lt;h1 id="win10安装concfg用来清空掉命令行和powershell的多配置文件">Win10安装concfg,用来清空掉命令行和powershell的多配置文件&lt;/h1>
+&lt;p>github仓库:&lt;code>https://github.com/lukesampson/concfg&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 安装concfg软件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>scoop install concfg
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 删除掉多余的配置文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>concfg clean
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 导入内置的主题配置,还有别的配置&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>concfg import solarized-dark
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="cmd和powershell的默认值和属性的区别">Cmd和Powershell的默认值和属性的区别&lt;/h1>
+&lt;p>默认值和属性的不同设置,从哪里启动有关系,比如用开始菜单的 和 从shift + 右键,加载的命令行不一样,还是安装好concfg软件,把多余的都删掉,只留一个&lt;/p>
+&lt;p>如果你打开 PowerShell 快捷方式时不小心右键修改它的“属性”中的设置项的话，那么它的表现又会不同了。所以如果想一直保持一致，最好不要动任何一个控制台实例的“属性”。&lt;code>https://www.zhihu.com/question/63867578/answer/220101109&lt;/code>&lt;/p>
+&lt;h1 id="powershell美化教程">Powershell美化教程&lt;/h1>
+&lt;p>用的是这三个地址,等下回安装的时候再写的详细点&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>https://zhuanlan.zhihu.com/p/51901035
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>https://blog.walterlv.com/post/beautify-powershell-like-zsh.html
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>https://coolcode.org/2018/03/16/how-to-make-your-powershell-beautiful/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="把软件加入到自启动">把软件加入到自启动&lt;/h1>
+&lt;p>在运行里输入&lt;code>shell:startup&lt;/code>,把快捷键拖到打开的文件夹里&lt;/p>
+&lt;h1 id="wsl2安装">WSL2安装&lt;/h1>
+&lt;p>1.开启
+&lt;img src="https://image.runtimes.cc/202404051355619.png" alt="">
+2.下载安装镜像
+&lt;img src="https://image.runtimes.cc/202404051357406.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051357977.png" alt="">
+3.设置wsl2&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051358316.png" alt="">&lt;/p>
+&lt;pre tabindex="0">&lt;code>PS C:\Users\anthony&amp;gt; wsl -l -v
+NAME STATE VERSION
+* Ubuntu-20.04 Stopped 2
+&lt;/code>&lt;/pre>&lt;h1 id="docker和vmware的虚拟机冲突">Docker和VMware的虚拟机冲突&lt;/h1>
+&lt;p>把Windows自带虚拟机删除掉
+&lt;img src="https://image.runtimes.cc/202404051358708.png" alt="">&lt;/p>
+&lt;p>再用管理员的powershell执行&lt;code>bcdedit /set hypervisorlaunchtype off&lt;/code>&lt;/p>
+&lt;h1 id="everythingtoolbar">EverythingToolbar&lt;/h1>
+&lt;p>&lt;code>https://github.com/stnkl/EverythingToolbar&lt;/code>&lt;/p>
+&lt;h1 id="picgogithub">PicGO+Github&lt;/h1>
+&lt;p>生成token:&lt;code>在github-&amp;gt;setting-&amp;gt;developer settings 选择generate new token&lt;/code>
+&lt;img src="https://image.runtimes.cc/202404051358110.png" alt="">&lt;/p>
+&lt;p>&lt;code>记得保存好密码,只会创建成功后显示,以后就看不到了&lt;/code>&lt;/p>
+&lt;p>PicGo设置&lt;/p>
+&lt;pre tabindex="0">&lt;code>仓库名:YangAnLin/images
+分支名:master
+设定token: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
+设定自定义域名:https://cdn.jsdelivr.net/gh/YangAnLin/images
+&lt;/code>&lt;/pre>&lt;h1 id="通过修改注册表更改ie浏览器的代理设置">通过修改注册表更改IE浏览器的代理设置&lt;/h1>
+&lt;p>打开注册表&lt;/p>
+&lt;pre tabindex="0">&lt;code>regedit或regedit.exe、regedt32或regedt32.exe
+&lt;/code>&lt;/pre>&lt;h1 id="xshell输入删除回车变成h">Xshell输入删除回车变成^H&lt;/h1>
+&lt;p>File&amp;ndash;&amp;gt;Properties&amp;ndash;&amp;gt;Terminl里选择Keyboard，然后在Backspace key sequence里选择&lt;code>ASCII 127&lt;/code>&lt;/p>
+&lt;h1 id="whatsapp">WhatsApp&lt;/h1>
+&lt;p>&lt;a href="https://faq.whatsapp.com/web/download-and-installation/how-to-join-or-leave-the-multi-device-beta/?lang=zh_cn">申请测试版&lt;/a>&lt;/p>
+&lt;h1 id="vscode">Vscode&lt;/h1>
+&lt;h2 id="快捷键">快捷键&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Win命令&lt;/th>
+&lt;th>Mac命令&lt;/th>
+&lt;th>描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>Ctrl + J&lt;/code>&lt;/td>
+&lt;td>&lt;code>Command + J&lt;/code>&lt;/td>
+&lt;td>隐藏/显示终端&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Ctrl + P&lt;/code>&lt;/td>
+&lt;td>&lt;code>Command + P&lt;/code>&lt;/td>
+&lt;td>快速打开文件&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;code>Alt + Shift&lt;/code>+鼠标移动&lt;/td>
+&lt;td>列编辑&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;code>Alt&lt;/code>+鼠标点选&lt;/td>
+&lt;td>列编辑+点选&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="设置">设置&lt;/h2>
+&lt;h3 id="python自动补全函数">Python自动补全函数&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">settings&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">—&lt;/span>&amp;gt;&lt;span style="color:#a6e22e">addBrackets&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="go自动补全函数">Go自动补全函数&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 这个选项打勾&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>useCodeSnippetsOnMethodSuggest&lt;span style="color:#e6db74">&amp;#34;:true
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"># 或者搜索suggest相关的设置
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="隐藏目录">隐藏目录&lt;/h3>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051358058.png" alt="">&lt;/p>
+&lt;h3 id="文本乱码和重新编码">文本乱码和重新编码&lt;/h3>
+&lt;p>比如打开的一个文本是GBK编码的文件,用vscode打开的是乱码
+如果想要正常显示,先选择文件本来的编码
+&lt;img src="https://image.runtimes.cc/202404051358762.webp" alt="">
+&lt;img src="https://image.runtimes.cc/202404051519153.webp" alt="">&lt;/p>
+&lt;p>如果想要把GBK编码的文件,转成UTF-8的编码格式,再保存
+&lt;img src="https://image.runtimes.cc/202404051358732.webp" alt="">
+&lt;img src="https://image.runtimes.cc/202404051519346.webp" alt="">&lt;/p>
+&lt;h3 id="使用制表符而不是空格">使用制表符而不是空格&lt;/h3>
+&lt;p>在设置你搜索&lt;code>indent&lt;/code>，找到 &lt;code>Editor:Detect Indexntation&lt;/code> 和 &lt;code>Editor：Insert Spaces&lt;/code> 两个勾选框，取消勾选&lt;/p>
+&lt;h3 id="显示空格和制表符">显示空格和制表符&lt;/h3>
+&lt;p>打开setting&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>在搜索框中输入renderControlCharacters,选中勾选框,即可显示tab.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在搜索框中输入renderWhitespace,选择all,即可显示空格.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="设置制表符为4个空格">设置制表符为4个空格&lt;/h3>
+&lt;p>打开setting，搜索&lt;code>tab size&lt;/code>为4，如果不起作用，接下来要设置&lt;/p>
+&lt;p>搜索&lt;code>Detect Indentation&lt;/code> 取消勾选，或者勾选试试&lt;/p>
+&lt;h2 id="插件">插件&lt;/h2>
+&lt;h3 id="write-timestamp">Write Timestamp&lt;/h3>
+&lt;p>作用:插入当前时间
+&lt;code>Ctrl + Shift + T&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051359789.png" alt="Write Timestamp">&lt;/p>
+&lt;p>也可以自己修改时间格式:
+&lt;img src="https://image.runtimes.cc/202404051359630.png" alt="">&lt;/p>
+&lt;h3 id="picgo">PicGO&lt;/h3>
+&lt;p>1.在插件那搜索picgo,安装好插件在插件那里点设置2.配置阿里云oss,参考:&lt;code>https://picgo.github.io/PicGo-Doc/&lt;/code>&lt;/p>
+&lt;pre tabindex="0">&lt;code>{
+&amp;#34;accessKeyId&amp;#34;: &amp;#34;&amp;#34;,
+&amp;#34;accessKeySecret&amp;#34;: &amp;#34;&amp;#34;,
+&amp;#34;bucket&amp;#34;: &amp;#34;&amp;#34;, // 存储空间名
+&amp;#34;area&amp;#34;: &amp;#34;&amp;#34;, // 存储区域代号
+&amp;#34;path&amp;#34;: &amp;#34;&amp;#34;, // 自定义存储路径
+&amp;#34;customUrl&amp;#34;: &amp;#34;&amp;#34; // 自定义域名，注意要加http://或者https://
+}
+&lt;/code>&lt;/pre>&lt;p>3.通过三个组合键，可以分别从：1.（Ctrl+alt+U）剪切板 2.（Ctrl+alt+E）文件夹 3.（Ctrl+alt+O）指定路径&lt;/p></content></item><item><title>Windows</title><link>https://connorzhangyu.com/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/windows/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/windows/</guid><description>&lt;h1 id="windows-server">Windows Server&lt;/h1>
+&lt;h2 id="开放指定端口">开放指定端口&lt;/h2>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051353354.webp" alt="1">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051353503.webp" alt="2">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051353919.webp" alt="3">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051353502.webp" alt="4">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051354921.webp" alt="6">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051355944.webp" alt="7">&lt;/p>
+&lt;h2 id="服务器禁用ipv6">服务器禁用IPV6&lt;/h2>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051355530.png" alt="">&lt;/p>
+&lt;p>⛔ 一定要重启&lt;/p>
+&lt;p>&lt;a href="https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/configure-ipv6-in-windows">官方文档&lt;/a>&lt;/p>
+&lt;h2 id="ie浏览器允许下载">IE浏览器允许下载&lt;/h2>
+&lt;p>通常服务器不允许乱下载软件,所以一般默认被禁用,下面两种方法都行&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051355878.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051355807.png" alt="">&lt;/p>
+&lt;h1 id="安装win10系统创建本地账号">安装win10系统,创建本地账号&lt;/h1>
+&lt;p>在提示需要账号登录的时候,按&lt;code>Shift + F10&lt;/code>打开命令行,输入&lt;code>oobe\bypassnro.cmd&lt;/code>，就会重启,再安装，就不会要求输入微软账号了；也有例外的情况，用过win11商业版的镜像安装的时候,用这个命令不起作用
+&lt;img src="https://image.runtimes.cc/202404051355254.png" alt="win11">&lt;/p>
+&lt;blockquote>
+&lt;p>参考:&lt;a href="https://blog.csdn.net/qq_33427869/article/details/127573950">系统安装跳过登录&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;h1 id="powershell改变默认编码">Powershell改变默认编码&lt;/h1>
+&lt;p>中文版Powershell默认编码为GB2312，而编程,运维,开发中常用编码格式为UTF-8。&lt;/p>
+&lt;h2 id="临时修改">临时修改&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Powershell" data-lang="Powershell">&lt;span style="display:flex;">&lt;span>chcp &lt;span style="color:#ae81ff">65001&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="永久修改">永久修改&lt;/h2>
+&lt;p>进入注册表&lt;code>win+R-&amp;gt;输入regedit&lt;/code>在&lt;code>HKEY_CURRENT_USER\Console&lt;/code>，双击&lt;code>CodePage&lt;/code>修改键值为&lt;code>65001&lt;/code>
+&lt;img src="https://image.runtimes.cc/202404051355297.png" alt="">
+检查是否生效: 新开一个PowerShell,或者重启&lt;/p>
+&lt;h1 id="win10杀线程">Win10杀线程&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-nix" data-lang="nix">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 查找5091的端口&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>netstat &lt;span style="color:#960050;background-color:#1e0010">-&lt;/span>aon &lt;span style="color:#960050;background-color:#1e0010">|&lt;/span> find &lt;span style="color:#e6db74">&amp;#34;5091&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 杀5091的PID&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>taskkill &lt;span style="color:#e6db74">/f&lt;/span> &lt;span style="color:#e6db74">/pid&lt;/span> &lt;span style="color:#ae81ff">6880&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="win10安装scoop包管理器">Win10安装Scoop包管理器&lt;/h1>
+&lt;p>Scoop是windows的包管理器&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 使用了PowerShell在你当前Windows的账户下&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>set-executionpolicy remotesigned -s cu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 在PowerShell下输入&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>iex &lt;span style="color:#f92672">(&lt;/span>new-object net.webclient&lt;span style="color:#f92672">)&lt;/span>.downloadstring&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#39;https://get.scoop.sh&amp;#39;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="windows-terminal策略">Windows Terminal策略&lt;/h1>
+&lt;p>以管理员身份打开PowerShell 输入&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>set-executionpolicy remotesigned
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="win10去掉小箭头">Win10去掉小箭头&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 去掉小箭头&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>reg add &lt;span style="color:#e6db74">&amp;#34;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons&amp;#34;&lt;/span> /v &lt;span style="color:#ae81ff">29&lt;/span> /d &lt;span style="color:#e6db74">&amp;#34;%systemroot%\system32\imageres.dll,197&amp;#34;&lt;/span> /t reg_sz /f
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>taskkill /f /im explorer.exe
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>attrib -s -r -h &lt;span style="color:#e6db74">&amp;#34;%userprofile%\AppData\Local\iconcache.db&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>del &lt;span style="color:#e6db74">&amp;#34;%userprofile%\AppData\Local\iconcache.db&amp;#34;&lt;/span> /f /q
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>start explorer
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pause
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 回复小箭头&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>reg delete &lt;span style="color:#e6db74">&amp;#34;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons&amp;#34;&lt;/span> /v &lt;span style="color:#ae81ff">29&lt;/span> /f
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>taskkill /f /im explorer.exe
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>attrib -s -r -h &lt;span style="color:#e6db74">&amp;#34;%userprofile%\AppData\Local\iconcache.db&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>del &lt;span style="color:#e6db74">&amp;#34;%userprofile%\AppData\Local\iconcache.db&amp;#34;&lt;/span> /f /q
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>start explorer
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pause
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>复制上面的代码。新建一个文本文件。粘贴后另存为.bat文件，然后以管理员身份打开。&lt;/p></description><content>&lt;h1 id="windows-server">Windows Server&lt;/h1>
+&lt;h2 id="开放指定端口">开放指定端口&lt;/h2>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051353354.webp" alt="1">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051353503.webp" alt="2">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051353919.webp" alt="3">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051353502.webp" alt="4">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051354921.webp" alt="6">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051355944.webp" alt="7">&lt;/p>
+&lt;h2 id="服务器禁用ipv6">服务器禁用IPV6&lt;/h2>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051355530.png" alt="">&lt;/p>
+&lt;p>⛔ 一定要重启&lt;/p>
+&lt;p>&lt;a href="https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/configure-ipv6-in-windows">官方文档&lt;/a>&lt;/p>
+&lt;h2 id="ie浏览器允许下载">IE浏览器允许下载&lt;/h2>
+&lt;p>通常服务器不允许乱下载软件,所以一般默认被禁用,下面两种方法都行&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051355878.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051355807.png" alt="">&lt;/p>
+&lt;h1 id="安装win10系统创建本地账号">安装win10系统,创建本地账号&lt;/h1>
+&lt;p>在提示需要账号登录的时候,按&lt;code>Shift + F10&lt;/code>打开命令行,输入&lt;code>oobe\bypassnro.cmd&lt;/code>，就会重启,再安装，就不会要求输入微软账号了；也有例外的情况，用过win11商业版的镜像安装的时候,用这个命令不起作用
+&lt;img src="https://image.runtimes.cc/202404051355254.png" alt="win11">&lt;/p>
+&lt;blockquote>
+&lt;p>参考:&lt;a href="https://blog.csdn.net/qq_33427869/article/details/127573950">系统安装跳过登录&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;h1 id="powershell改变默认编码">Powershell改变默认编码&lt;/h1>
+&lt;p>中文版Powershell默认编码为GB2312，而编程,运维,开发中常用编码格式为UTF-8。&lt;/p>
+&lt;h2 id="临时修改">临时修改&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Powershell" data-lang="Powershell">&lt;span style="display:flex;">&lt;span>chcp &lt;span style="color:#ae81ff">65001&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="永久修改">永久修改&lt;/h2>
+&lt;p>进入注册表&lt;code>win+R-&amp;gt;输入regedit&lt;/code>在&lt;code>HKEY_CURRENT_USER\Console&lt;/code>，双击&lt;code>CodePage&lt;/code>修改键值为&lt;code>65001&lt;/code>
+&lt;img src="https://image.runtimes.cc/202404051355297.png" alt="">
+检查是否生效: 新开一个PowerShell,或者重启&lt;/p>
+&lt;h1 id="win10杀线程">Win10杀线程&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-nix" data-lang="nix">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 查找5091的端口&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>netstat &lt;span style="color:#960050;background-color:#1e0010">-&lt;/span>aon &lt;span style="color:#960050;background-color:#1e0010">|&lt;/span> find &lt;span style="color:#e6db74">&amp;#34;5091&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 杀5091的PID&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>taskkill &lt;span style="color:#e6db74">/f&lt;/span> &lt;span style="color:#e6db74">/pid&lt;/span> &lt;span style="color:#ae81ff">6880&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="win10安装scoop包管理器">Win10安装Scoop包管理器&lt;/h1>
+&lt;p>Scoop是windows的包管理器&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 使用了PowerShell在你当前Windows的账户下&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>set-executionpolicy remotesigned -s cu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 在PowerShell下输入&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>iex &lt;span style="color:#f92672">(&lt;/span>new-object net.webclient&lt;span style="color:#f92672">)&lt;/span>.downloadstring&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#39;https://get.scoop.sh&amp;#39;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="windows-terminal策略">Windows Terminal策略&lt;/h1>
+&lt;p>以管理员身份打开PowerShell 输入&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>set-executionpolicy remotesigned
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="win10去掉小箭头">Win10去掉小箭头&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 去掉小箭头&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>reg add &lt;span style="color:#e6db74">&amp;#34;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons&amp;#34;&lt;/span> /v &lt;span style="color:#ae81ff">29&lt;/span> /d &lt;span style="color:#e6db74">&amp;#34;%systemroot%\system32\imageres.dll,197&amp;#34;&lt;/span> /t reg_sz /f
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>taskkill /f /im explorer.exe
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>attrib -s -r -h &lt;span style="color:#e6db74">&amp;#34;%userprofile%\AppData\Local\iconcache.db&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>del &lt;span style="color:#e6db74">&amp;#34;%userprofile%\AppData\Local\iconcache.db&amp;#34;&lt;/span> /f /q
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>start explorer
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pause
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 回复小箭头&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>reg delete &lt;span style="color:#e6db74">&amp;#34;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons&amp;#34;&lt;/span> /v &lt;span style="color:#ae81ff">29&lt;/span> /f
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>taskkill /f /im explorer.exe
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>attrib -s -r -h &lt;span style="color:#e6db74">&amp;#34;%userprofile%\AppData\Local\iconcache.db&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>del &lt;span style="color:#e6db74">&amp;#34;%userprofile%\AppData\Local\iconcache.db&amp;#34;&lt;/span> /f /q
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>start explorer
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pause
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>复制上面的代码。新建一个文本文件。粘贴后另存为.bat文件，然后以管理员身份打开。&lt;/p>
+&lt;h1 id="win10安装concfg用来清空掉命令行和powershell的多配置文件">Win10安装concfg,用来清空掉命令行和powershell的多配置文件&lt;/h1>
+&lt;p>github仓库:&lt;code>https://github.com/lukesampson/concfg&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 安装concfg软件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>scoop install concfg
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 删除掉多余的配置文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>concfg clean
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 导入内置的主题配置,还有别的配置&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>concfg import solarized-dark
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="cmd和powershell的默认值和属性的区别">Cmd和Powershell的默认值和属性的区别&lt;/h1>
+&lt;p>默认值和属性的不同设置,从哪里启动有关系,比如用开始菜单的 和 从shift + 右键,加载的命令行不一样,还是安装好concfg软件,把多余的都删掉,只留一个&lt;/p>
+&lt;p>如果你打开 PowerShell 快捷方式时不小心右键修改它的“属性”中的设置项的话，那么它的表现又会不同了。所以如果想一直保持一致，最好不要动任何一个控制台实例的“属性”。&lt;code>https://www.zhihu.com/question/63867578/answer/220101109&lt;/code>&lt;/p>
+&lt;h1 id="powershell美化教程">Powershell美化教程&lt;/h1>
+&lt;p>用的是这三个地址,等下回安装的时候再写的详细点&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>https://zhuanlan.zhihu.com/p/51901035
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>https://blog.walterlv.com/post/beautify-powershell-like-zsh.html
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>https://coolcode.org/2018/03/16/how-to-make-your-powershell-beautiful/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="把软件加入到自启动">把软件加入到自启动&lt;/h1>
+&lt;p>在运行里输入&lt;code>shell:startup&lt;/code>,把快捷键拖到打开的文件夹里&lt;/p>
+&lt;h1 id="wsl2安装">WSL2安装&lt;/h1>
+&lt;p>1.开启
+&lt;img src="https://image.runtimes.cc/202404051355619.png" alt="">
+2.下载安装镜像
+&lt;img src="https://image.runtimes.cc/202404051357406.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051357977.png" alt="">
+3.设置wsl2&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051358316.png" alt="">&lt;/p>
+&lt;pre tabindex="0">&lt;code>PS C:\Users\anthony&amp;gt; wsl -l -v
+NAME STATE VERSION
+* Ubuntu-20.04 Stopped 2
+&lt;/code>&lt;/pre>&lt;h1 id="docker和vmware的虚拟机冲突">Docker和VMware的虚拟机冲突&lt;/h1>
+&lt;p>把Windows自带虚拟机删除掉
+&lt;img src="https://image.runtimes.cc/202404051358708.png" alt="">&lt;/p>
+&lt;p>再用管理员的powershell执行&lt;code>bcdedit /set hypervisorlaunchtype off&lt;/code>&lt;/p>
+&lt;h1 id="everythingtoolbar">EverythingToolbar&lt;/h1>
+&lt;p>&lt;code>https://github.com/stnkl/EverythingToolbar&lt;/code>&lt;/p>
+&lt;h1 id="picgogithub">PicGO+Github&lt;/h1>
+&lt;p>生成token:&lt;code>在github-&amp;gt;setting-&amp;gt;developer settings 选择generate new token&lt;/code>
+&lt;img src="https://image.runtimes.cc/202404051358110.png" alt="">&lt;/p>
+&lt;p>&lt;code>记得保存好密码,只会创建成功后显示,以后就看不到了&lt;/code>&lt;/p>
+&lt;p>PicGo设置&lt;/p>
+&lt;pre tabindex="0">&lt;code>仓库名:YangAnLin/images
+分支名:master
+设定token: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
+设定自定义域名:https://cdn.jsdelivr.net/gh/YangAnLin/images
+&lt;/code>&lt;/pre>&lt;h1 id="通过修改注册表更改ie浏览器的代理设置">通过修改注册表更改IE浏览器的代理设置&lt;/h1>
+&lt;p>打开注册表&lt;/p>
+&lt;pre tabindex="0">&lt;code>regedit或regedit.exe、regedt32或regedt32.exe
+&lt;/code>&lt;/pre>&lt;h1 id="xshell输入删除回车变成h">Xshell输入删除回车变成^H&lt;/h1>
+&lt;p>File&amp;ndash;&amp;gt;Properties&amp;ndash;&amp;gt;Terminl里选择Keyboard，然后在Backspace key sequence里选择&lt;code>ASCII 127&lt;/code>&lt;/p>
+&lt;h1 id="whatsapp">WhatsApp&lt;/h1>
+&lt;p>&lt;a href="https://faq.whatsapp.com/web/download-and-installation/how-to-join-or-leave-the-multi-device-beta/?lang=zh_cn">申请测试版&lt;/a>&lt;/p>
+&lt;h1 id="vscode">Vscode&lt;/h1>
+&lt;h2 id="不同的窗口配置不同的主题">不同的窗口配置不同的主题&lt;/h2>
+&lt;p>在&lt;code>settings.json&lt;/code>中添加&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#34;workbench.colorTheme&amp;#34;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">:&lt;/span> &lt;span style="color:#e6db74">&amp;#34;GitHub Light&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="快捷键">快捷键&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Win命令&lt;/th>
+&lt;th>Mac命令&lt;/th>
+&lt;th>描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>Ctrl + J&lt;/code>&lt;/td>
+&lt;td>&lt;code>Command + J&lt;/code>&lt;/td>
+&lt;td>隐藏/显示终端&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Ctrl + P&lt;/code>&lt;/td>
+&lt;td>&lt;code>Command + P&lt;/code>&lt;/td>
+&lt;td>快速打开文件&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;code>Alt + Shift&lt;/code>+鼠标移动&lt;/td>
+&lt;td>列编辑&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;code>Alt&lt;/code>+鼠标点选&lt;/td>
+&lt;td>列编辑+点选&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="设置">设置&lt;/h2>
+&lt;h3 id="python自动补全函数">Python自动补全函数&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">settings&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">—&lt;/span>&amp;gt;&lt;span style="color:#a6e22e">addBrackets&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="go自动补全函数">Go自动补全函数&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 这个选项打勾&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>useCodeSnippetsOnMethodSuggest&lt;span style="color:#e6db74">&amp;#34;:true
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"># 或者搜索suggest相关的设置
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="隐藏目录">隐藏目录&lt;/h3>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051358058.png" alt="">&lt;/p>
+&lt;h3 id="文本乱码和重新编码">文本乱码和重新编码&lt;/h3>
+&lt;p>比如打开的一个文本是GBK编码的文件,用vscode打开的是乱码
+如果想要正常显示,先选择文件本来的编码
+&lt;img src="https://image.runtimes.cc/202404051358762.webp" alt="">
+&lt;img src="https://image.runtimes.cc/202404051519153.webp" alt="">&lt;/p>
+&lt;p>如果想要把GBK编码的文件,转成UTF-8的编码格式,再保存
+&lt;img src="https://image.runtimes.cc/202404051358732.webp" alt="">
+&lt;img src="https://image.runtimes.cc/202404051519346.webp" alt="">&lt;/p>
+&lt;h3 id="使用制表符而不是空格">使用制表符而不是空格&lt;/h3>
+&lt;p>在设置你搜索&lt;code>indent&lt;/code>，找到 &lt;code>Editor:Detect Indexntation&lt;/code> 和 &lt;code>Editor：Insert Spaces&lt;/code> 两个勾选框，取消勾选&lt;/p>
+&lt;h3 id="显示空格和制表符">显示空格和制表符&lt;/h3>
+&lt;p>打开setting&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>在搜索框中输入renderControlCharacters,选中勾选框,即可显示tab.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在搜索框中输入renderWhitespace,选择all,即可显示空格.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="设置制表符为4个空格">设置制表符为4个空格&lt;/h3>
+&lt;p>打开setting，搜索&lt;code>tab size&lt;/code>为4，如果不起作用，接下来要设置&lt;/p>
+&lt;p>搜索&lt;code>Detect Indentation&lt;/code> 取消勾选，或者勾选试试&lt;/p>
+&lt;h2 id="插件">插件&lt;/h2>
+&lt;h3 id="write-timestamp">Write Timestamp&lt;/h3>
+&lt;p>作用:插入当前时间
+&lt;code>Ctrl + Shift + T&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051359789.png" alt="Write Timestamp">&lt;/p>
+&lt;p>也可以自己修改时间格式:
+&lt;img src="https://image.runtimes.cc/202404051359630.png" alt="">&lt;/p>
+&lt;h3 id="picgo">PicGO&lt;/h3>
+&lt;p>1.在插件那搜索picgo,安装好插件在插件那里点设置2.配置阿里云oss,参考:&lt;code>https://picgo.github.io/PicGo-Doc/&lt;/code>&lt;/p>
+&lt;pre tabindex="0">&lt;code>{
+&amp;#34;accessKeyId&amp;#34;: &amp;#34;&amp;#34;,
+&amp;#34;accessKeySecret&amp;#34;: &amp;#34;&amp;#34;,
+&amp;#34;bucket&amp;#34;: &amp;#34;&amp;#34;, // 存储空间名
+&amp;#34;area&amp;#34;: &amp;#34;&amp;#34;, // 存储区域代号
+&amp;#34;path&amp;#34;: &amp;#34;&amp;#34;, // 自定义存储路径
+&amp;#34;customUrl&amp;#34;: &amp;#34;&amp;#34; // 自定义域名，注意要加http://或者https://
+}
+&lt;/code>&lt;/pre>&lt;p>3.通过三个组合键，可以分别从：1.（Ctrl+alt+U）剪切板 2.（Ctrl+alt+E）文件夹 3.（Ctrl+alt+O）指定路径&lt;/p></content></item></channel></rss>

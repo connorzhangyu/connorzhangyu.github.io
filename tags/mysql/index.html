@@ -1,0 +1,75 @@
+<!doctype html><html lang=zh><head><title>Mysql :: Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://connorzhangyu.com/tags/mysql/><link rel=stylesheet href=https://connorzhangyu.com/styles.css><link rel="shortcut icon" href=https://connorzhangyu.com/img/theme-colors/orange.png><link rel=apple-touch-icon href=https://connorzhangyu.com/img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta name=twitter:site content><meta name=twitter:creator content><meta property="og:locale" content="zh"><meta property="og:type" content="website"><meta property="og:title" content="Mysql"><meta property="og:description" content><meta property="og:url" content="https://connorzhangyu.com/tags/mysql/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="https://connorzhangyu.com/img/favicon/orange.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><link href=/tags/mysql/index.xml rel=alternate type=application/rss+xml title="Hello World"></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></nav></header><div class=content><h1>Posts for: #Mysql</h1><div class=posts><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/mysql/>Mysql</a></h1><div class=post-meta><time class=post-date>2022-11-25</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/>数据库</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/mysql/>Mysql</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051531635.jpg class=post-cover alt=Mysql title="Cover Image"><div class=post-content><h1 id=常见问题>常见问题</h1><h2 id=字符集问题>字符集问题</h2><p>修改mysql的数据陆慕下的my.ini的配置文件(Windows系统)</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-ini data-lang=ini><span style=display:flex><span><span style=color:#a6e22e>[mysql] #大概在63行左右，在其下添加</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>default-character-set</span><span style=color:#f92672>=</span><span style=color:#e6db74>utf8 #默认字符集</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>[mysqld] # 大概在76行左右，在其下添加</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>character-set-server</span><span style=color:#f92672>=</span><span style=color:#e6db74>utf8 collation-server=utf8_general_ci</span>
+</span></span></code></pre></div><blockquote><p>注意：建议修改配置文件使用notepad++等高级文本编辑器，使用记事本等软件打开修改后可能会导致文件编码修改为“含BOM头”的编码，从而服务重启失败</p></blockquote><p>重启服务,再查看一次编码</p><blockquote><p>修改编码前,已经创建的表和库,修改编码后不会自动更改,需要重新建库表或者手动修改库表的编码</p></blockquote><p>手动修改库表的编码</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>修改数据库的字符编码为</span>utf8 
+</span></span><span style=display:flex><span><span style=color:#66d9ef>alter</span> <span style=color:#66d9ef>database</span> test charset utf8; 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>修改表字符编码为</span>UTF8
+</span></span><span style=display:flex><span><span style=color:#66d9ef>alter</span> <span style=color:#66d9ef>table</span> student charset utf8; 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>修改字段字符编码为</span>UTF8
+</span></span><span style=display:flex><span><span style=color:#66d9ef>alter</span> <span style=color:#66d9ef>table</span> student <span style=color:#66d9ef>modify</span> name varchar(<span style=color:#ae81ff>20</span>) charset utf8; 
+</span></span></code></pre></div><h2 id=客户端连接的问题>客户端连接的问题</h2><p>旧版本图形界面工具连接MySQL8时出现<code>Authentication plugin caching_sha2_password' cannot be loaded</code>错误。</p><p>MySQL8之前的版本中加密规则是<code>mysql_native_password</code>，</p><p>MySQL8之后的加密规则是<code>caching_sha2_password</code></p><p>解决问题:</p><p>修改用户名为“root@localhost”的用户密码规则为“mysql_native_password”，密码值为“123456”</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#f92672>#</span> <span style=color:#960050;background-color:#1e0010>查看所有数据库</span>
+</span></span><span style=display:flex><span>mysql<span style=color:#f92672>&gt;</span> <span style=color:#66d9ef>show</span> databases;
+</span></span><span style=display:flex><span><span style=color:#f92672>+</span><span style=color:#75715e>--------------------+
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#f92672>|</span> <span style=color:#66d9ef>Database</span>           <span style=color:#f92672>|</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>+</span><span style=color:#75715e>--------------------+
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#f92672>|</span> information_schema <span style=color:#f92672>|</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>|</span> mysql              <span style=color:#f92672>|</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>|</span> performance_schema <span style=color:#f92672>|</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>|</span> ry<span style=color:#f92672>-</span>vue             <span style=color:#f92672>|</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>|</span> sys                <span style=color:#f92672>|</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>+</span><span style=color:#75715e>--------------------+
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#ae81ff>5</span> <span style=color:#66d9ef>rows</span> <span style=color:#66d9ef>in</span> <span style=color:#66d9ef>set</span> (<span style=color:#ae81ff>0</span>.<span style=color:#ae81ff>01</span> sec)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>#</span> <span style=color:#960050;background-color:#1e0010>使用</span>mysql数据库,<span style=color:#960050;background-color:#1e0010>不需要要分号</span>,<span style=color:#960050;background-color:#1e0010>其余的命令要加分号</span>
+</span></span><span style=display:flex><span>use mysql;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>#</span> <span style=color:#960050;background-color:#1e0010>修改</span><span style=color:#e6db74>&#39;root&#39;</span><span style=color:#f92672>@</span><span style=color:#e6db74>&#39;localhost&#39;</span><span style=color:#960050;background-color:#1e0010>用户的密码规则和密码</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>ALTER</span> <span style=color:#66d9ef>USER</span> <span style=color:#e6db74>&#39;root&#39;</span><span style=color:#f92672>@</span><span style=color:#e6db74>&#39;localhost&#39;</span> IDENTIFIED <span style=color:#66d9ef>WITH</span> mysql_native_password <span style=color:#66d9ef>BY</span> <span style=color:#e6db74>&#39;abc123&#39;</span>;
+</span></span><span style=display:flex><span>FLUSH <span style=color:#66d9ef>PRIVILEGES</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>#</span> <span style=color:#960050;background-color:#1e0010>开启远程访问</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>UPDATE</span> <span style=color:#66d9ef>user</span> <span style=color:#66d9ef>SET</span> <span style=color:#66d9ef>host</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#39;%&#39;</span> <span style=color:#66d9ef>WHERE</span> <span style=color:#66d9ef>user</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#39;root&#39;</span>;
+</span></span><span style=display:flex><span>FLUSH <span style=color:#66d9ef>PRIVILEGES</span>;
+</span></span></code></pre></div><h2 id=存过报错>存过报错</h2><p>报错信息:</p></div><div><a class="read-more button" href=/posts/mysql/>Read more →</a></div></article><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/mycat/>Mycat</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/>数据库</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/mysql/>Mysql</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/java/>Java</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051530979.jpg class=post-cover alt=Mycat title="Cover Image"><div class=post-content><h1 id=主从复制>主从复制</h1><h1 id=启动>启动</h1><p>1 .下载jre包</p><p>2 下载mycat包</p><p>3 打包镜像</p><p>Dockerfile</p><pre tabindex=0><code>FROM centos
+# 解压这个包到home下面
+ADD server-jre-8u251-linux-x64.tar.gz /home/
+ADD ./Mycat-server-1.6.7.4-release-20200105164103-linux.tar.gz /home
+ENV WORKPATH /home/mycat/
+WORKDIR $WORKPATH
+
+ENV JAVA_HOME /home/jdk1.8.0_251
+ENV CLASSPATH $JAVA_HOME/dt.jar:$JAVA_HOME/lib/tools.jar
+ENV PATH $PATH:$JAVA_HOME/BIN:$CATALINA_HOME/lib:$CATALINA_HOME/bin
+
+# 暴露8066端口
+EXPOSE 8066
+CMD /home/mycat/bin/mycat console
+</code></pre><p>把mycat里的conf 和 logs 从容器中拷贝出来</p><p>再挂在两个目录,并启动</p><pre tabindex=0><code>docker run -it \
+           --name mycat \
+           -p 8066:8066 \
+           -v /home/anthony/mycat/conf:/home/mycat/conf/ \
+           -v /home/anthony/mycat/logs:/home/mycat/logs/ \
+           java1234/mycat:1.0
+
+Running Mycat-server...
+Removed stale pid file: /home/mycat/logs/mycat.pid
+wrapper  | --&gt; Wrapper Started as Console
+wrapper  | Launching a JVM...
+jvm 1    | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+jvm 1    |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+jvm 1    |
+jvm 1    | MyCAT Server startup successfully. see logs in logs/mycat.log
+</code></pre><h1 id=配置>配置</h1><ul><li>schems.xml 定义逻辑库,表,分片节点等内容</li><li>rule.xml 定义分片规则</li><li>server.xml 定义用户以及系统相关变量</li></ul><h1 id=安装mysql57>安装mysql5.7</h1><pre tabindex=0><code># 从容器中拷贝这些文件
+docker cp xxx:/etc/mysql/mysql.conf.d/ /home/anthony/mysql
+docker cp xxx:/var/log/ /home/anthony/mysql
+</code></pre><p>启动的时候映射这些</p></div><div><a class="read-more button" href=/posts/mycat/>Read more →</a></div></article><div class=pagination><div class=pagination__buttons></div></div></div></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>
+<span>:: <a href=https://github.com/mirus-ua/hugo-theme-re-terminal target=_blank>Theme</a> made by <a href=https://github.com/mirus-ua target=_blank>Mirus</a></span></div></div></footer><script type=text/javascript src=/bundle.min.js></script></div></body></html>

@@ -1,0 +1,31 @@
+<!doctype html><html lang=zh><head><title>部署 :: Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://connorzhangyu.com/tags/%E9%83%A8%E7%BD%B2/><link rel=stylesheet href=https://connorzhangyu.com/styles.css><link rel="shortcut icon" href=https://connorzhangyu.com/img/theme-colors/orange.png><link rel=apple-touch-icon href=https://connorzhangyu.com/img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta name=twitter:site content><meta name=twitter:creator content><meta property="og:locale" content="zh"><meta property="og:type" content="website"><meta property="og:title" content="部署"><meta property="og:description" content><meta property="og:url" content="https://connorzhangyu.com/tags/%E9%83%A8%E7%BD%B2/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="https://connorzhangyu.com/img/favicon/orange.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><link href=/tags/%E9%83%A8%E7%BD%B2/index.xml rel=alternate type=application/rss+xml title="Hello World"></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></nav></header><div class=content><h1>Posts for: #部署</h1><div class=posts><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/jenkins/>Jenkins</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/mac/>Mac</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/%E9%83%A8%E7%BD%B2/>部署</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/maven/>Maven</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051529846.png class=post-cover alt=Jenkins title="Cover Image"><div class=post-content><h1 id=root用户权限启动jenkins>Root用户权限启动Jenkins</h1><p>适用于Ubuntu环境下通过<code>apt-get install -y jenkins</code>命令在线安装的Jenkins</p><p>1.修改配置文件</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>vim /etc/default/jenkins
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 将下面两个参数修改为root</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 修改前</span>
+</span></span><span style=display:flex><span>JENKINS_USER<span style=color:#f92672>=</span>$NAME
+</span></span><span style=display:flex><span>JENKINS_GROUP<span style=color:#f92672>=</span>$NAME
+</span></span><span style=display:flex><span><span style=color:#75715e># 修改后</span>
+</span></span><span style=display:flex><span>JENKINS_USER<span style=color:#f92672>=</span>root
+</span></span><span style=display:flex><span>JENKINS_GROUP<span style=color:#f92672>=</span>root
+</span></span></code></pre></div><p>2.更改目录权限</p><p>不知道这步有没有起作用</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>cd /var/lib/
+</span></span><span style=display:flex><span>chown -R root:root ./jenkins
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 重启</span>
+</span></span><span style=display:flex><span>systemctl restart jenkins.service
+</span></span></code></pre></div><h1 id=jenkins使用教程>Jenkins使用教程</h1><h2 id=配置jdk>配置JDK</h2><p>Manage Jenkins &ndash;> Global Tool Configuration</p><ol><li>自动安装</li><li>手动安装要注意,J<code>AVA_HOME</code>的输入框下面，不要有警告或者错误信息，否则就是路径不正确,取消勾选自动安装</li></ol><h2 id=配置maven>配置Maven</h2><ol><li>安装Maven Integration 插件</li><li>通常自动安装maven就行了,如果手动安装,<code>MAVEN_HOME</code> 输入框下面，不要有警告或者错误信息，否则就是路径不正确</li></ol><h2 id=获取当前项目名称>获取当前项目名称</h2><p>在脚本中输入 <code>$JOB_NAME</code>就能获取到了</p><h2 id=卸载jenkins>卸载jenkins</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>//服务
+</span></span><span style=display:flex><span>sudo apt-get remove jenkins
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>//安装包，注意这里如果不是ubuntu那就yum
+</span></span><span style=display:flex><span>sudo apt-get remove --auto-remove jenkins
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>//配置和数据
+</span></span><span style=display:flex><span>sudo apt-get purge jenkins
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>sudo apt-get purge --auto-remove jenkins
+</span></span></code></pre></div><h2 id=升级jenkins>升级jenkins</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># 适用于ubuntu安装的</span>
+</span></span><span style=display:flex><span>apt-get upgrade jenkins
+</span></span></code></pre></div><h2 id=同时构建任务的个数>同时构建任务的个数</h2><p>系统管理&ndash;>系统设置&ndash;>执行者数量</p></div><div><a class="read-more button" href=/posts/jenkins/>Read more →</a></div></article><div class=pagination><div class=pagination__buttons></div></div></div></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>
+<span>:: <a href=https://github.com/mirus-ua/hugo-theme-re-terminal target=_blank>Theme</a> made by <a href=https://github.com/mirus-ua target=_blank>Mirus</a></span></div></div></footer><script type=text/javascript src=/bundle.min.js></script></div></body></html>

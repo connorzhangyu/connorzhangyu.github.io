@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Waline on Hello World</title><link>https://connorzhangyu.com/tags/waline/</link><description>Recent content in Waline on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Tue, 25 Jul 2023 00:05:46 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/waline/index.xml" rel="self" type="application/rss+xml"/><item><title>Waline部署</title><link>https://connorzhangyu.com/posts/waline/</link><pubDate>Tue, 25 Jul 2023 00:05:46 +0000</pubDate><guid>https://connorzhangyu.com/posts/waline/</guid><description>&lt;p>查看Waline文档,并点击&lt;code>Deploy&lt;/code>,文档上有大概步骤,也可以参考,要使用免费的数据库,我就选择&lt;code>MongoDB&lt;/code>,可以免费申请&lt;/p>
+&lt;p>&lt;a href="https://waline.js.org/guide/deploy/vercel.html">Waline-Vercel部署&lt;/a>&lt;/p>
+&lt;p>部署Waline到Vercel
+&lt;img src="https://image.runtimes.cc/202404051403234.png" alt="image-20230724225259528">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404626.png" alt="image-20230724225326229">&lt;/p>
+&lt;p>打开Vercel分配的地址,测试评论,就会显示下图,是因为需要配置数据库
+&lt;img src="https://image.runtimes.cc/202404051404342.png" alt="image-20230724225745349">&lt;/p>
+&lt;p>申请免费的&lt;code>MongoDB&lt;/code>&lt;/p>
+&lt;p>访问&lt;a href="https://www.mongodb.com/zh-cn">MongoDB官网&lt;/a>,并点击免费开始使用,跳转到注册页面,点击使用Google账号登陆,也可以自己注册,这里是为了方便使用Google登陆,登陆之后需要同意一些协议,和调查,随便填写,没有很大关系&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404429.png" alt="image-20230724225938394">&lt;/p>
+&lt;p>选择免费的,并点击下面的Create&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404269.png" alt="image-20230724230315868">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404594.png" alt="image-20230724230343845">&lt;/p>
+&lt;p>等待一会,会自动开始创建&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404821.png" alt="image-20230724230509021">&lt;/p>
+&lt;p>创建成功,然后点击,Connect,设置ip,设置任何地方都可以访问&lt;/p>
+&lt;p>点击Choose a connection method,在弹出的窗口选择&lt;code>Compass&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404159.png" alt="image-20230724231046357">&lt;/p>
+&lt;p>获取链接地址,这里有个坑,Waine使用的包比较旧,新版本的协议是:mongod+srv,旧版本使用的mongodb,这里的选项,要使用旧版本,&lt;code>1.11 or earlier&lt;/code>&lt;/p>
+&lt;p>步骤1获取到的是:MONGO_HOST&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051405802.png" alt="image-20230725001040403">&lt;/p>
+&lt;p>查看Waline文档,查看MongoDB需要的环境配置&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051405587.png" alt="image-20230724231654843">&lt;/p>
+&lt;p>具体的配置如下:&lt;/p>
+&lt;ol>
+&lt;li>MONGO_HOST 就是从上面的步骤一 获取到的&lt;/li>
+&lt;li>默认ssl=true&lt;/li>
+&lt;li>MONGO_AUTHSOURCE 从上面步骤4获取到的&lt;/li>
+&lt;li>MONGO_USER 前面创建的用户名&lt;/li>
+&lt;li>MONGO_PASSWORD 前面创建的密码&lt;/li>
+&lt;li>MONGO_PORT 设置默认值&lt;/li>
+&lt;li>MONGO_REPLICASET 如果是默认值的话,就是Cluster0, 自己修改的话,就用自己的&lt;/li>
+&lt;li>MONGO_DB = waline, 这个值也可以随便填, 不用手动创建库,waline会自动创建&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051405827.png" alt="image-20230725001132730">&lt;/p>
+&lt;p>环境变量配置好之后,重新部署下就行了&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051405198.png" alt="image-20230725001724373">&lt;/p>
+&lt;p>评论地址是:&lt;code>vercel分配的域名&lt;/code>&lt;/p>
+&lt;p>后台系统是:&lt;code>vercel分配的域名/ui&lt;/code>&lt;/p></description><content>&lt;p>查看Waline文档,并点击&lt;code>Deploy&lt;/code>,文档上有大概步骤,也可以参考,要使用免费的数据库,我就选择&lt;code>MongoDB&lt;/code>,可以免费申请&lt;/p>
+&lt;p>&lt;a href="https://waline.js.org/guide/deploy/vercel.html">Waline-Vercel部署&lt;/a>&lt;/p>
+&lt;p>部署Waline到Vercel
+&lt;img src="https://image.runtimes.cc/202404051403234.png" alt="image-20230724225259528">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404626.png" alt="image-20230724225326229">&lt;/p>
+&lt;p>打开Vercel分配的地址,测试评论,就会显示下图,是因为需要配置数据库
+&lt;img src="https://image.runtimes.cc/202404051404342.png" alt="image-20230724225745349">&lt;/p>
+&lt;p>申请免费的&lt;code>MongoDB&lt;/code>&lt;/p>
+&lt;p>访问&lt;a href="https://www.mongodb.com/zh-cn">MongoDB官网&lt;/a>,并点击免费开始使用,跳转到注册页面,点击使用Google账号登陆,也可以自己注册,这里是为了方便使用Google登陆,登陆之后需要同意一些协议,和调查,随便填写,没有很大关系&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404429.png" alt="image-20230724225938394">&lt;/p>
+&lt;p>选择免费的,并点击下面的Create&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404269.png" alt="image-20230724230315868">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404594.png" alt="image-20230724230343845">&lt;/p>
+&lt;p>等待一会,会自动开始创建&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404821.png" alt="image-20230724230509021">&lt;/p>
+&lt;p>创建成功,然后点击,Connect,设置ip,设置任何地方都可以访问&lt;/p>
+&lt;p>点击Choose a connection method,在弹出的窗口选择&lt;code>Compass&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404159.png" alt="image-20230724231046357">&lt;/p>
+&lt;p>获取链接地址,这里有个坑,Waine使用的包比较旧,新版本的协议是:mongod+srv,旧版本使用的mongodb,这里的选项,要使用旧版本,&lt;code>1.11 or earlier&lt;/code>&lt;/p>
+&lt;p>步骤1获取到的是:MONGO_HOST&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051405802.png" alt="image-20230725001040403">&lt;/p>
+&lt;p>查看Waline文档,查看MongoDB需要的环境配置&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051405587.png" alt="image-20230724231654843">&lt;/p>
+&lt;p>具体的配置如下:&lt;/p>
+&lt;ol>
+&lt;li>MONGO_HOST 就是从上面的步骤一 获取到的&lt;/li>
+&lt;li>默认ssl=true&lt;/li>
+&lt;li>MONGO_AUTHSOURCE 从上面步骤4获取到的&lt;/li>
+&lt;li>MONGO_USER 前面创建的用户名&lt;/li>
+&lt;li>MONGO_PASSWORD 前面创建的密码&lt;/li>
+&lt;li>MONGO_PORT 设置默认值&lt;/li>
+&lt;li>MONGO_REPLICASET 如果是默认值的话,就是Cluster0, 自己修改的话,就用自己的&lt;/li>
+&lt;li>MONGO_DB = waline, 这个值也可以随便填, 不用手动创建库,waline会自动创建&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051405827.png" alt="image-20230725001132730">&lt;/p>
+&lt;p>环境变量配置好之后,重新部署下就行了&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051405198.png" alt="image-20230725001724373">&lt;/p>
+&lt;p>评论地址是:&lt;code>vercel分配的域名&lt;/code>&lt;/p>
+&lt;p>后台系统是:&lt;code>vercel分配的域名/ui&lt;/code>&lt;/p></content></item><item><title>Waline部署</title><link>https://connorzhangyu.com/posts/%E8%AE%B0%E5%BD%95/waline/</link><pubDate>Tue, 25 Jul 2023 00:05:46 +0000</pubDate><guid>https://connorzhangyu.com/posts/%E8%AE%B0%E5%BD%95/waline/</guid><description>&lt;p>查看Waline文档,并点击&lt;code>Deploy&lt;/code>,文档上有大概步骤,也可以参考,要使用免费的数据库,我就选择&lt;code>MongoDB&lt;/code>,可以免费申请&lt;/p>
+&lt;p>&lt;a href="https://waline.js.org/guide/deploy/vercel.html">Waline-Vercel部署&lt;/a>&lt;/p>
+&lt;p>部署Waline到Vercel
+&lt;img src="https://image.runtimes.cc/202404051403234.png" alt="image-20230724225259528">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404626.png" alt="image-20230724225326229">&lt;/p>
+&lt;p>打开Vercel分配的地址,测试评论,就会显示下图,是因为需要配置数据库
+&lt;img src="https://image.runtimes.cc/202404051404342.png" alt="image-20230724225745349">&lt;/p>
+&lt;p>申请免费的&lt;code>MongoDB&lt;/code>&lt;/p>
+&lt;p>访问&lt;a href="https://www.mongodb.com/zh-cn">MongoDB官网&lt;/a>,并点击免费开始使用,跳转到注册页面,点击使用Google账号登陆,也可以自己注册,这里是为了方便使用Google登陆,登陆之后需要同意一些协议,和调查,随便填写,没有很大关系&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404429.png" alt="image-20230724225938394">&lt;/p>
+&lt;p>选择免费的,并点击下面的Create&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404269.png" alt="image-20230724230315868">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404594.png" alt="image-20230724230343845">&lt;/p>
+&lt;p>等待一会,会自动开始创建&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404821.png" alt="image-20230724230509021">&lt;/p>
+&lt;p>创建成功,然后点击,Connect,设置ip,设置任何地方都可以访问&lt;/p>
+&lt;p>点击Choose a connection method,在弹出的窗口选择&lt;code>Compass&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404159.png" alt="image-20230724231046357">&lt;/p>
+&lt;p>获取链接地址,这里有个坑,Waine使用的包比较旧,新版本的协议是:mongod+srv,旧版本使用的mongodb,这里的选项,要使用旧版本,&lt;code>1.11 or earlier&lt;/code>&lt;/p>
+&lt;p>步骤1获取到的是:MONGO_HOST&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051405802.png" alt="image-20230725001040403">&lt;/p>
+&lt;p>查看Waline文档,查看MongoDB需要的环境配置&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051405587.png" alt="image-20230724231654843">&lt;/p>
+&lt;p>具体的配置如下:&lt;/p>
+&lt;ol>
+&lt;li>MONGO_HOST 就是从上面的步骤一 获取到的&lt;/li>
+&lt;li>默认ssl=true&lt;/li>
+&lt;li>MONGO_AUTHSOURCE 从上面步骤4获取到的&lt;/li>
+&lt;li>MONGO_USER 前面创建的用户名&lt;/li>
+&lt;li>MONGO_PASSWORD 前面创建的密码&lt;/li>
+&lt;li>MONGO_PORT 设置默认值&lt;/li>
+&lt;li>MONGO_REPLICASET 如果是默认值的话,就是Cluster0, 自己修改的话,就用自己的&lt;/li>
+&lt;li>MONGO_DB = waline, 这个值也可以随便填, 不用手动创建库,waline会自动创建&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051405827.png" alt="image-20230725001132730">&lt;/p>
+&lt;p>环境变量配置好之后,重新部署下就行了&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051405198.png" alt="image-20230725001724373">&lt;/p>
+&lt;p>评论地址是:&lt;code>vercel分配的域名&lt;/code>&lt;/p>
+&lt;p>后台系统是:&lt;code>vercel分配的域名/ui&lt;/code>&lt;/p></description><content>&lt;p>查看Waline文档,并点击&lt;code>Deploy&lt;/code>,文档上有大概步骤,也可以参考,要使用免费的数据库,我就选择&lt;code>MongoDB&lt;/code>,可以免费申请&lt;/p>
+&lt;p>&lt;a href="https://waline.js.org/guide/deploy/vercel.html">Waline-Vercel部署&lt;/a>&lt;/p>
+&lt;p>部署Waline到Vercel
+&lt;img src="https://image.runtimes.cc/202404051403234.png" alt="image-20230724225259528">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404626.png" alt="image-20230724225326229">&lt;/p>
+&lt;p>打开Vercel分配的地址,测试评论,就会显示下图,是因为需要配置数据库
+&lt;img src="https://image.runtimes.cc/202404051404342.png" alt="image-20230724225745349">&lt;/p>
+&lt;p>申请免费的&lt;code>MongoDB&lt;/code>&lt;/p>
+&lt;p>访问&lt;a href="https://www.mongodb.com/zh-cn">MongoDB官网&lt;/a>,并点击免费开始使用,跳转到注册页面,点击使用Google账号登陆,也可以自己注册,这里是为了方便使用Google登陆,登陆之后需要同意一些协议,和调查,随便填写,没有很大关系&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404429.png" alt="image-20230724225938394">&lt;/p>
+&lt;p>选择免费的,并点击下面的Create&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404269.png" alt="image-20230724230315868">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404594.png" alt="image-20230724230343845">&lt;/p>
+&lt;p>等待一会,会自动开始创建&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404821.png" alt="image-20230724230509021">&lt;/p>
+&lt;p>创建成功,然后点击,Connect,设置ip,设置任何地方都可以访问&lt;/p>
+&lt;p>点击Choose a connection method,在弹出的窗口选择&lt;code>Compass&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404159.png" alt="image-20230724231046357">&lt;/p>
+&lt;p>获取链接地址,这里有个坑,Waine使用的包比较旧,新版本的协议是:mongod+srv,旧版本使用的mongodb,这里的选项,要使用旧版本,&lt;code>1.11 or earlier&lt;/code>&lt;/p>
+&lt;p>步骤1获取到的是:MONGO_HOST&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051405802.png" alt="image-20230725001040403">&lt;/p>
+&lt;p>查看Waline文档,查看MongoDB需要的环境配置&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051405587.png" alt="image-20230724231654843">&lt;/p>
+&lt;p>具体的配置如下:&lt;/p>
+&lt;ol>
+&lt;li>MONGO_HOST 就是从上面的步骤一 获取到的&lt;/li>
+&lt;li>默认ssl=true&lt;/li>
+&lt;li>MONGO_AUTHSOURCE 从上面步骤4获取到的&lt;/li>
+&lt;li>MONGO_USER 前面创建的用户名&lt;/li>
+&lt;li>MONGO_PASSWORD 前面创建的密码&lt;/li>
+&lt;li>MONGO_PORT 设置默认值&lt;/li>
+&lt;li>MONGO_REPLICASET 如果是默认值的话,就是Cluster0, 自己修改的话,就用自己的&lt;/li>
+&lt;li>MONGO_DB = waline, 这个值也可以随便填, 不用手动创建库,waline会自动创建&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051405827.png" alt="image-20230725001132730">&lt;/p>
+&lt;p>环境变量配置好之后,重新部署下就行了&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051405198.png" alt="image-20230725001724373">&lt;/p>
+&lt;p>评论地址是:&lt;code>vercel分配的域名&lt;/code>&lt;/p>
+&lt;p>后台系统是:&lt;code>vercel分配的域名/ui&lt;/code>&lt;/p></content></item></channel></rss>

@@ -1,0 +1,382 @@
+<!doctype html><html lang=zh><head><title>Posts :: Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://connorzhangyu.com/posts/><link rel=stylesheet href=https://connorzhangyu.com/styles.css><link rel="shortcut icon" href=https://connorzhangyu.com/img/theme-colors/orange.png><link rel=apple-touch-icon href=https://connorzhangyu.com/img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta name=twitter:site content><meta name=twitter:creator content><meta property="og:locale" content="zh"><meta property="og:type" content="website"><meta property="og:title" content="Posts"><meta property="og:description" content><meta property="og:url" content="https://connorzhangyu.com/posts/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="https://connorzhangyu.com/img/favicon/orange.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><link href=/posts/index.xml rel=alternate type=application/rss+xml title="Hello World"></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></nav></header><div class=content><div class=posts><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/mac/>Mac</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/mac/>Mac</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/%E4%BD%BF%E7%94%A8/>使用</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/%E6%95%99%E7%A8%8B/>教程</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/github/>Github</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051524065.jpg class=post-cover alt=Mac title="Cover Image"><div class=post-content><h1 id=快捷键>快捷键</h1><table><thead><tr><th>描述</th><th>命令</th></tr></thead><tbody><tr><td>一个应用多个窗口 切换</td><td>command+`</td></tr><tr><td>录屏幕</td><td>shift+command+5</td></tr><tr><td>截图</td><td>shift+command+4</td></tr><tr><td>重装系统</td><td>先一直按住不要松手:Common+R,<br>再按开机键;非苹果键盘,按住微软键+R</td></tr><tr><td>上一级目录</td><td>command+↑</td></tr></tbody></table><h1 id=网站链接>网站链接</h1><ul><li><a href=https://www.iplaysoft.com/fix-chrome-slow.html>一招解决 Chrome / Edge 浏览器卡顿变慢视频掉帧问题 - 让浏览器重回丝般流畅</a></li><li><a href=https://alt-tab-macos.netlify.app/>AltTab</a></li></ul><h1 id=iphone强制重启>iphone强制重启</h1><p><img src=https://image.runtimes.cc/202404051349933.webp alt></p><h1 id=浏览器返回手势>浏览器返回手势</h1><p><img src=https://image.runtimes.cc/202404051350113.png alt></p><h1 id=放歌有噪音>放歌有噪音</h1><p>通过【活动监视器】程序终止【coreaudiod】进程：</p><ol><li>聚焦搜索】中输入【activity monitor】</li><li>在窗口右上角的搜索栏里输入【coreaudiod】</li><li>选择【coreaudiod】进程后，点击窗口上方工具栏中的【停止按钮】（按钮图标为X）</li></ol><h1 id=只有mac不能访问github>只有mac不能访问github</h1><ol><li><p>打开<code>https://github.com.ipaddress.com/</code></p></li><li><p>打开<code>https://fastly.net.ipaddress.com/github.global.ssl.fastly.net#ipinfo</code></p></li><li><p>sudo vim /etc/hosts</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-Shell data-lang=Shell><span style=display:flex><span><span style=color:#75715e># 这个ip从第一步获取到的</span>
+</span></span><span style=display:flex><span>140.82.112.4 github.com
+</span></span><span style=display:flex><span><span style=color:#75715e># 这个ip从第二步获取到的</span>
+</span></span><span style=display:flex><span>199.232.69.194 github.global.ssl.fastly.net
+</span></span></code></pre></div></li><li><p>刷新:<code>sudo killall -HUP mDNSResponder;say DNS cache has been flushed</code></p></li></ol><h1 id=启动台有问号的图标点击没反应>启动台有问号的图标,点击没反应</h1><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># 执行了之后,自己新建的文件夹会重置</span>
+</span></span><span style=display:flex><span>defaults write com.apple.dock ResetLaunchPad -bool TRUE
+</span></span><span style=display:flex><span>killall Dock
+</span></span></code></pre></div><h1 id=mac-os-x-访问-windows共享文件夹>Mac OS X 访问 Windows共享文件夹</h1><p><img src=https://image.runtimes.cc/202404051351999.png alt></p></div><div><a class="read-more button" href=/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/mac/>Read more →</a></div></article><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/mybatis/>Mybatis</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/java/>Java</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/mybatis/>Mybatis</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/%E7%AC%94%E8%AE%B0/>笔记</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051530595.jpeg class=post-cover alt=Mybatis title="Cover Image"><div class=post-content><h1 id=教程>教程</h1><blockquote><p>参考:</p><p><a href=https://mybatis.org/mybatis-3/>官方文档</a></p><p><a href=https://github.com/mybatis>源码</a></p></blockquote><h2 id=provider的使用>Provider的使用</h2><p>1.一定要注意type的类名.class 和 method方法名,还要注意形参也得是一样的</p><p>2.Provider的方法,大概就三个方法sql.SELECT,sql.WHERE,sql.FROM</p><p>3.SQL 对象里的方法名跟别的不一样,小写的不行,idea也识别不到,要用大写,比如SLELECT</p><p>4.Provider里返回的是String</p><p><img src=https://image.runtimes.cc/202404051427670.png alt></p><p><img src=https://image.runtimes.cc/202404051427490.png alt></p><h2 id=注解-一对多查询多个参数>注解 一对多查询(多个参数)</h2><p><img src=https://image.runtimes.cc/202404051427839.png alt></p><p><img src=https://image.runtimes.cc/202404051428785.png alt></p><p><img src=https://image.runtimes.cc/202404051429441.png alt></p><h2 id=注解-一对多查询多个参数-1>注解 一对多查询(多个参数)</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#a6e22e>@SelectProvider</span>(method<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;queryPageFloors&#34;</span>,type<span style=color:#f92672>=</span>BarterGroupProvider.<span style=color:#a6e22e>class</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Results</span>({
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@Result</span>(property <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;userId&#34;</span>,column<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;user_id&#34;</span>),
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@Result</span>(property <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;floorNum&#34;</span>,column<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;floor_num&#34;</span>),
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@Result</span>(property <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;floorSecond&#34;</span>,column<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;id&#34;</span>),
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@Result</span>(property <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;say&#34;</span>,column<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;note&#34;</span>),
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@Result</span>(property <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;joinOrPublish&#34;</span>,column<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;join_or_publish&#34;</span>),
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@Result</span>(property<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;categorys&#34;</span>,javaType <span style=color:#f92672>=</span> List.<span style=color:#a6e22e>class</span>,column<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;id&#34;</span>,many<span style=color:#f92672>=</span><span style=color:#a6e22e>@Many</span>(select<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;com.ecloud.hobay.marketing.service.infrastructure.mapper.bartergroup.BarterGroupMapper.queryCategory&#34;</span>)),
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@Result</span>(property<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;productIds&#34;</span>,javaType <span style=color:#f92672>=</span> List.<span style=color:#a6e22e>class</span>,column<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;id&#34;</span>,many<span style=color:#f92672>=</span><span style=color:#a6e22e>@Many</span>(select<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;com.ecloud.hobay.marketing.service.infrastructure.mapper.bartergroup.BarterGroupMapper.queryProducts&#34;</span>)),
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@Result</span>(property<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;beforeResult&#34;</span>,javaType <span style=color:#f92672>=</span> List.<span style=color:#a6e22e>class</span>,column<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;id&#34;</span>,many<span style=color:#f92672>=</span><span style=color:#a6e22e>@Many</span>(select<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;com.ecloud.hobay.marketing.service.infrastructure.mapper.bartergroup.BarterGroupEvaluationMapper.queryAll&#34;</span>)),
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@Result</span>(property<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;barterGroupUser&#34;</span>,javaType <span style=color:#f92672>=</span> BarterGroupUser.<span style=color:#a6e22e>class</span>,column<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{user_id=user_id,id = barter_group_id }&#34;</span>,many<span style=color:#f92672>=</span><span style=color:#a6e22e>@Many</span>(select<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;com.ecloud.hobay.marketing.service.infrastructure.mapper.bartergroup.BarterGroupMapper.isHead&#34;</span>)),
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@Result</span>(property<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;futureResultNum&#34;</span>,column<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;id&#34;</span>,many<span style=color:#f92672>=</span><span style=color:#a6e22e>@Many</span>(select<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;com.ecloud.hobay.marketing.service.infrastructure.mapper.bartergroup.BarterGroupMapper.futureResultNum&#34;</span>))
+</span></span><span style=display:flex><span>})
+</span></span><span style=display:flex><span>List<span style=color:#f92672>&lt;</span>QueryFloors<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>queryFloors3</span>(Page<span style=color:#f92672>&lt;</span>QueryFloors<span style=color:#f92672>&gt;</span> page);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 分类
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param id
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * @return
+</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Select</span>(<span style=color:#e6db74>&#34;SELECT * FROM ecloud_marketing.barter_group_category WHERE barter_group_details_id = #{id} limit 0,7 &#34;</span>)
+</span></span><span style=display:flex><span>List<span style=color:#f92672>&lt;</span>BarterGroupCategory<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>queryCategory</span>(<span style=color:#a6e22e>@Param</span>(<span style=color:#e6db74>&#34;id&#34;</span>) Long id);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 产品
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param id
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * @return
+</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Select</span>(<span style=color:#e6db74>&#34;SELECT product_id from ecloud_marketing.barter_group_product_category WHERE barter_group_details_id = #{id} limit 0,3 &#34;</span>)
+</span></span><span style=display:flex><span>List<span style=color:#f92672>&lt;</span>Long<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>queryProducts</span>(<span style=color:#a6e22e>@Param</span>(<span style=color:#e6db74>&#34;id&#34;</span>) Long id);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 团员
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param userId
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param id
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * @return
+</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Select</span>(<span style=color:#e6db74>&#34;SELECT * FROM ecloud_marketing.barter_group_user WHERE user_id =#{user_id} and barter_group_id = #{id} and status = 1&#34;</span>)
+</span></span><span style=display:flex><span>BarterGroupUser <span style=color:#a6e22e>isHead</span>(Map<span style=color:#f92672>&lt;</span>String,Object<span style=color:#f92672>&gt;</span> map);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Select</span>(<span style=color:#e6db74>&#34;SELECT count(*) from ecloud_marketing.barter_group_evaluation WHERE barter_group_details_id = #{id}&#34;</span>)
+</span></span><span style=display:flex><span>Integer <span style=color:#a6e22e>futureResultNum</span>(<span style=color:#a6e22e>@Param</span>(<span style=color:#e6db74>&#34;id&#34;</span>) Long id);
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>QueryFloors</span> <span style=color:#66d9ef>implements</span> Serializable {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(<span style=color:#e6db74>&#34;我有的产品的id&#34;</span>)
+</span></span><span style=display:flex><span>    List<span style=color:#f92672>&lt;</span>ProductBarter<span style=color:#f92672>&gt;</span> list;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(<span style=color:#e6db74>&#34;封装前的评论数据&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> List<span style=color:#f92672>&lt;</span>BarterGroupEvaluation<span style=color:#f92672>&gt;</span> beforeResult;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(<span style=color:#e6db74>&#34;封装后的评论数据有分页给功能&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> Page<span style=color:#f92672>&lt;</span>BarterGroupEvaluation<span style=color:#f92672>&gt;</span> beforeResultPage;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(<span style=color:#e6db74>&#34;封装后的评论数据&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> List<span style=color:#f92672>&lt;</span>BarterGroupEvaluationResult<span style=color:#f92672>&gt;</span> futureResult;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(<span style=color:#e6db74>&#34;剩余评论条数&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> Integer futureResultNum;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(<span style=color:#e6db74>&#34;分类&#34;</span>)
+</span></span><span style=display:flex><span>    List<span style=color:#f92672>&lt;</span>BarterGroupCategory<span style=color:#f92672>&gt;</span> categorys;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(value<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;楼层数&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> Integer floorNum;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(value<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;楼层id&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> Long floorSecond;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(value<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;要说的&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> String say;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(value<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;加入或者是发布&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> Integer joinOrPublish;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(<span style=color:#e6db74>&#34;会员表&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> BarterGroupUser barterGroupUser;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(value<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;加入时间&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> Long joinData;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h2 id=注解-一对多查询一个参数>注解 一对多查询(一个参数)</h2><p><img src=https://image.runtimes.cc/202404051430732.png alt></p></div><div><a class="read-more button" href=/posts/mybatis/>Read more →</a></div></article><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/mycat/>Mycat</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/>数据库</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/mysql/>Mysql</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/java/>Java</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051530979.jpg class=post-cover alt=Mycat title="Cover Image"><div class=post-content><h1 id=主从复制>主从复制</h1><h1 id=启动>启动</h1><p>1 .下载jre包</p><p>2 下载mycat包</p><p>3 打包镜像</p><p>Dockerfile</p><pre tabindex=0><code>FROM centos
+# 解压这个包到home下面
+ADD server-jre-8u251-linux-x64.tar.gz /home/
+ADD ./Mycat-server-1.6.7.4-release-20200105164103-linux.tar.gz /home
+ENV WORKPATH /home/mycat/
+WORKDIR $WORKPATH
+
+ENV JAVA_HOME /home/jdk1.8.0_251
+ENV CLASSPATH $JAVA_HOME/dt.jar:$JAVA_HOME/lib/tools.jar
+ENV PATH $PATH:$JAVA_HOME/BIN:$CATALINA_HOME/lib:$CATALINA_HOME/bin
+
+# 暴露8066端口
+EXPOSE 8066
+CMD /home/mycat/bin/mycat console
+</code></pre><p>把mycat里的conf 和 logs 从容器中拷贝出来</p><p>再挂在两个目录,并启动</p><pre tabindex=0><code>docker run -it \
+           --name mycat \
+           -p 8066:8066 \
+           -v /home/anthony/mycat/conf:/home/mycat/conf/ \
+           -v /home/anthony/mycat/logs:/home/mycat/logs/ \
+           java1234/mycat:1.0
+
+Running Mycat-server...
+Removed stale pid file: /home/mycat/logs/mycat.pid
+wrapper  | --&gt; Wrapper Started as Console
+wrapper  | Launching a JVM...
+jvm 1    | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+jvm 1    |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+jvm 1    |
+jvm 1    | MyCAT Server startup successfully. see logs in logs/mycat.log
+</code></pre><h1 id=配置>配置</h1><ul><li>schems.xml 定义逻辑库,表,分片节点等内容</li><li>rule.xml 定义分片规则</li><li>server.xml 定义用户以及系统相关变量</li></ul><h1 id=安装mysql57>安装mysql5.7</h1><pre tabindex=0><code># 从容器中拷贝这些文件
+docker cp xxx:/etc/mysql/mysql.conf.d/ /home/anthony/mysql
+docker cp xxx:/var/log/ /home/anthony/mysql
+</code></pre><p>启动的时候映射这些</p></div><div><a class="read-more button" href=/posts/mycat/>Read more →</a></div></article><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/nginx/>Nginx</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/mac/>Mac</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051531732.png class=post-cover alt=Nginx title="Cover Image"><div class=post-content><h2 id=docker安装-nginx>Docker安装 Nginx</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># 简单的</span>
+</span></span><span style=display:flex><span>docker run --name nginx-test <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>     -p 8080:80 <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>     -d <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>     nginx
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 正式的</span>
+</span></span><span style=display:flex><span>docker run -d <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>           -p 443:443 <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>           -p 80:80 <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>           --name nginx <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>           -v /home/nginx/www:/usr/share/nginx/html <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>           -v /home/nginx/conf/nginx.conf:/etc/nginx/nginx.conf <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>           -v /home/nginx/logs:/var/log/nginx <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>           nginx
+</span></span></code></pre></div><h2 id=ubuntu安装nginx>Ubuntu安装Nginx</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># Ubuntu安装依赖</span>
+</span></span><span style=display:flex><span>sudo apt-get install libpcre3 libpcre3-dev openssl libssl-dev zlib1g-dev
+</span></span><span style=display:flex><span><span style=color:#75715e># Ubuntu 如果还缺少依赖</span>
+</span></span><span style=display:flex><span>apt-get install build-essential
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Centos安装依赖</span>
+</span></span><span style=display:flex><span>yum install -y gcc-c++ pcre pcre-devel  zlib zlib-devel  openssl openssl-devel
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 进入到解压的文件</span>
+</span></span><span style=display:flex><span>cd ./nginx-1.16
+</span></span><span style=display:flex><span>./configure --prefix<span style=color:#f92672>=</span>/url/local/nginx
+</span></span><span style=display:flex><span><span style=color:#75715e>#或者</span>
+</span></span><span style=display:flex><span>./configure
+</span></span><span style=display:flex><span><span style=color:#75715e># 如果需要指定模块</span>
+</span></span><span style=display:flex><span>./configure --add-module<span style=color:#f92672>=</span>../nginx-rtmp-module
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#然后目录下就多了一个nginx文件</span>
+</span></span><span style=display:flex><span>make <span style=color:#f92672>&amp;&amp;</span> make install
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#启动</span>
+</span></span><span style=display:flex><span>cd ../nginx/sbin
+</span></span><span style=display:flex><span>./nginx
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 配置文件目录</span>
+</span></span><span style=display:flex><span>所有的配置文件都在/etc/nginx下，并且每个虚拟主机已经安排在了/etc/nginx/sites-available下
+</span></span><span style=display:flex><span>程序文件在/usr/sbin/nginx
+</span></span><span style=display:flex><span>日志放在了/var/log/nginx中
+</span></span><span style=display:flex><span>并已经在/etc/init.d/下创建了启动脚本nginx
+</span></span><span style=display:flex><span>默认的虚拟主机的目录设置在了/var/www/nginx-default <span style=color:#f92672>(</span>有的版本 默认的虚拟主机的目录设置在了/var/www, 请参考/etc/nginx/sites-available里的配置<span style=color:#f92672>)</span>
+</span></span></code></pre></div><h2 id=nginx-常用命令>Nginx 常用命令</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 启动nginx</span>
+</span></span><span style=display:flex><span>start nginx
+</span></span><span style=display:flex><span><span style=color:#75715e># 或者</span>
+</span></span><span style=display:flex><span>nginx
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 修改配置后重新加载生效</span>
+</span></span><span style=display:flex><span>nginx -s reload
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 重新打开日志文件</span>
+</span></span><span style=display:flex><span>nginx -s reopen
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 测试nginx配置文件是否正确</span>
+</span></span><span style=display:flex><span>nginx -t -c /path/to/nginx.conf
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 快速停止nginx</span>
+</span></span><span style=display:flex><span>nginx -s stop
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 完整有序的停止nginx</span>
+</span></span><span style=display:flex><span>nginx -s quit
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 指定配置文件启动</span>
+</span></span><span style=display:flex><span>nginx -c /home/anthony/nginx.conf
+</span></span></code></pre></div><h2 id=nginx-配置模板>Nginx 配置模板</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#75715e>#user  nobody;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 设置 &lt;= cpu核数,一般设置成cpu*核数</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>worker_processes  1;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 指定错误日志文件存放路径，错误日志级别可选项为【debug|info|notice|warn|error|crit】</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>error_log  logs/warn.log  warn;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 指定pid存放路径 nginx启动后的进程ID</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>pid        logs/nginx.pid;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 工作模式及连接数上限</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#user  nobody;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 设置 &lt;= cpu核数</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>worker_processes  1;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 指定错误日志文件存放路径，错误日志级别可选项为【debug|info|notice|warn|error|crit】</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># error_log  logs/error.log  error;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 指定pid存放路径 nginx启动后的进程ID</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># pid        logs/nginx.pid;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 工作模式及连接数上限</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>events {</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 使用网络I/O模型，Linux系统推荐使用epoll模型，FreeBSD系统推荐使用kqueue;window下不指定</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># user epoll;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 允许的最大连接数</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>worker_connections  1024;</span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 设定http服务器，利用他的反向代理功能提供负载均衡支持</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>http {</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 设定mime类型</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>include       mime.types;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>default_type  application/octet-stream;</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 设定日志格式</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>log_format  main  &#39;$remote_addr - $remote_user [$time_local] &#34;$request&#34; &#39;</span>
+</span></span><span style=display:flex><span>                      <span style=color:#e6db74>&#39;$status $body_bytes_sent &#34;$http_referer&#34; &#39;</span>
+</span></span><span style=display:flex><span>                      <span style=color:#e6db74>&#39;&#34;$http_user_agent&#34; &#34;$http_x_forwarded_for&#34;&#39;</span><span style=color:#ae81ff>;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>client_header_buffer_size 1k;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>large_client_header_buffers 4 4k;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># access_log  logs/info.log  main;</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># # 设定access log</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>send_timeout 3m;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>sendfile on;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>tcp_nopush on;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>tcp_nodelay on;</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 这个参数表示http连接超时时间，默认是65s。要是上传文件比较大，在规定时间内没有上传完成，就会自动断开连接！所以适当调大这个时间。</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>keepalive_timeout  0;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>keepalive_timeout  5000;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 开启gzip模块</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>gzip  on;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>gzip_min_length 1100;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>gzip_buffers 4 8k;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>gzip_types text/plain application/x-javascript text/css application/xml text/javascript application/x-httpd-php application/javascript application/json;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>output_buffers 1 32k;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>postpone_output 1460;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>server_names_hash_bucket_size 128;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>client_header_timeout 3m;       </span> <span style=color:#75715e>#调大点</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>client_body_timeout 3m;         </span> <span style=color:#75715e>#调大点</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>client_max_body_size 200m;        </span> <span style=color:#75715e>#主要是这个参数，限制了上传文件大大小</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>#client_body_buffer_size 1024;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>fastcgi_connect_timeout 300;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>fastcgi_send_timeout 300;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>fastcgi_read_timeout 300;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>fastcgi_buffer_size 64k;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>fastcgi_buffers 4 64k;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>fastcgi_busy_buffers_size 128k;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>fastcgi_temp_file_write_size 128k;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>gzip_http_version 1.1;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>gzip_comp_level 2;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>gzip_vary on;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span> <span style=color:#75715e>#设定虚拟主机</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>server {</span>
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>listen      80;</span>
+</span></span><span style=display:flex><span>     <span style=color:#ae81ff>server_name  ap.mmzcg.com;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># 设置url编码格式，解决参数中文乱码问题</span>
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>charset UTF-8;</span>
+</span></span><span style=display:flex><span>     <span style=color:#75715e># 设定本虚拟主机的访问日志</span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># access_log  logs/host.access.log  main;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># 对 &#34;/&#34; 启用负载均衡</span>
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>location / {</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># 设定代理访问地址</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>proxy_pass http://127.0.0.1:30000/;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># 配置SSL证书</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># ssl_certificate /etc/nginx/conf.d/ssl/STAR.huihuang200.com.crt;</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># ssl_certificate_key  /etc/nginx/conf.d/ssl/STAR.huihuang200.com.key;</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># ssl_session_timeout 5m;</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># ssl_session_cache shared:SSL:10m;</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># ssl_protocols TLSv1 TLSv1.1 TLSv1.2 SSLv2 SSLv3;</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># ssl_ciphers ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP;</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># ssl_prefer_server_ciphers on;</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># ssl_verify_client off;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># 解决ajax跨域问题</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>add_header &#39;Access-Control-Allow-Origin&#39; &#39;*&#39;;</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>add_header &#39;Access-Control-Allow-Credentials&#39; &#39;true&#39;;</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>add_header &#39;Access-Control-Allow-Methods&#39; &#39;GET, POST, OPTIONS&#39;;</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>add_header &#39;Access-Control-Allow-Headers&#39; &#39;DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type&#39;;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>         <span style=color:#75715e># 保留用户真实信息</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>proxy_set_header Host $host:$server_port;</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>proxy_set_header X-Real-IP $remote_addr;</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># 允许客户端请求的最大单个文件字节数</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>client_max_body_size 100m;</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># 缓冲区代理缓冲用户端请求的最大字节数，可以理解为先保存到本地再传给用户</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>client_body_buffer_size 1280k;</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># nginx跟后端服务器连接超时时间，发起握手等候响应超时时间(代理连接超时)</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>proxy_connect_timeout 5;</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># 连接成功后 等待后端服务器响应时间 其实已进入后端的排队之中等候处理</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>proxy_read_timeout 60;</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># 代理请求缓存区 这个缓存区间会保存用户的头信息一共Nginx进行规则处理 一般只要能保存下头信息即可</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>proxy_send_timeout 30;</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># 同上 告诉Nginx保存单个用的几个Buffer最大用多大空间</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>proxy_buffer_size 256k;</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>proxy_buffers 4 256k;</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># 如果系统很忙的时候可以申请国内各大的proxy_buffers 官方推荐 *2</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>proxy_busy_buffers_size 256k;</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># proxy 缓存临时文件的大小</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>proxy_temp_file_write_size 256k;</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>proxy_next_upstream error timeout invalid_header http_500 http_503 http_404;</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>proxy_max_temp_file_size 128m;</span>
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h2 id=nginx日志管理>Nginx日志管理</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-nginx data-lang=nginx><span style=display:flex><span><span style=color:#75715e>#access_log  logs/access.log  main;
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e># nginx的默认配置,如果在安装的nginx里没有看到这个,也没有关系
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#log_format  main  &#39;$remote_addr - $remote_user [$time_local] &#34;$request&#34; &#39;
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#                  &#39;$status $body_bytes_sent &#34;$http_referer&#34; &#39;
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#                  &#39;&#34;$http_user_agent&#34; &#34;$http_x_forwarded_for&#34;&#39;;
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>server</span> {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>listen</span>  <span style=color:#ae81ff>80</span>;
+</span></span><span style=display:flex><span>    <span style=color:#f92672>location</span> <span style=color:#e6db74>/</span> {
+</span></span><span style=display:flex><span>        <span style=color:#f92672>root</span> <span style=color:#e6db74>my</span>;
+</span></span><span style=display:flex><span>        <span style=color:#f92672>index</span> <span style=color:#e6db74>index.html</span>
+</span></span><span style=display:flex><span>    <span style=color:#960050;background-color:#1e0010>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>#配置日志, main 就是log_format 后面的名字
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  	<span style=color:#75715e># 该server的访问日志的文件是logs/access.log,使用的是main格式
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#e6db74>access_log</span>  <span style=color:#e6db74>logs/access.log</span>  <span style=color:#e6db74>main</span>;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>推荐的配置</p></div><div><a class="read-more button" href=/posts/nginx/>Read more →</a></div></article><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/nodejs/>NodeJs</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/nodejs/>NodeJs</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/%E5%89%8D%E7%AB%AF/>前端</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051531669.png class=post-cover alt=NodeJs title="Cover Image"><div class=post-content><h1 id=语法>语法</h1><h1 id=基本使用>基本使用</h1><h1 id=初始化项目>初始化项目</h1><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>npm init -y 
+</span></span></code></pre></div><h1 id=创建文件>创建文件</h1><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 新建src文件夹</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 在src里新建index.html和index.css</span>
+</span></span></code></pre></div><p>安装jQuery</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># -S 的意思是 jquery安装好了,记录在package.json的 dependencies里</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># -S 等于 --save的简写</span>
+</span></span><span style=display:flex><span>npm i jquery -S
+</span></span></code></pre></div><p>index.html</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span><span style=color:#75715e>&lt;!DOCTYPE html&gt;</span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>html</span> <span style=color:#a6e22e>lang</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;en&#34;</span>&gt;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>head</span>&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>meta</span> <span style=color:#a6e22e>charset</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;UTF-8&#34;</span>&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>title</span>&gt;隔行变色&lt;/<span style=color:#f92672>title</span>&gt;
+</span></span><span style=display:flex><span>				&lt;<span style=color:#f92672>script</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;./index.js&#34;</span>&gt;&lt;/<span style=color:#f92672>script</span>&gt;
+</span></span><span style=display:flex><span>    &lt;/<span style=color:#f92672>head</span>&gt;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>body</span>&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>ul</span>&gt;
+</span></span><span style=display:flex><span>            &lt;<span style=color:#f92672>li</span>&gt;这是第 1 个li&lt;/<span style=color:#f92672>li</span>&gt;
+</span></span><span style=display:flex><span>            &lt;<span style=color:#f92672>li</span>&gt;这是第 2 个li&lt;/<span style=color:#f92672>li</span>&gt;
+</span></span><span style=display:flex><span>            &lt;<span style=color:#f92672>li</span>&gt;这是第 3 个li&lt;/<span style=color:#f92672>li</span>&gt;
+</span></span><span style=display:flex><span>            &lt;<span style=color:#f92672>li</span>&gt;这是第 4 个li&lt;/<span style=color:#f92672>li</span>&gt;
+</span></span><span style=display:flex><span>            &lt;<span style=color:#f92672>li</span>&gt;这是第 5 个li&lt;/<span style=color:#f92672>li</span>&gt;
+</span></span><span style=display:flex><span>            &lt;<span style=color:#f92672>li</span>&gt;这是第 6 个li&lt;/<span style=color:#f92672>li</span>&gt;
+</span></span><span style=display:flex><span>            &lt;<span style=color:#f92672>li</span>&gt;这是第 7 个li&lt;/<span style=color:#f92672>li</span>&gt;
+</span></span><span style=display:flex><span>            &lt;<span style=color:#f92672>li</span>&gt;这是第 8 个li&lt;/<span style=color:#f92672>li</span>&gt;
+</span></span><span style=display:flex><span>            &lt;<span style=color:#f92672>li</span>&gt;这是第 9 个li&lt;/<span style=color:#f92672>li</span>&gt;
+</span></span><span style=display:flex><span>        &lt;/<span style=color:#f92672>ul</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    &lt;/<span style=color:#f92672>body</span>&gt;
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>html</span>&gt;
+</span></span></code></pre></div><p>index.js</p></div><div><a class="read-more button" href=/posts/nodejs/>Read more →</a></div></article><div class=pagination><div class=pagination__buttons><a href=/posts/page/17/ class="button previous"><span class=button__icon>←</span>
+<span class=button__text>Newer posts</span>
+</a><a href=/posts/page/19/ class="button next"><span class=button__text>Older posts</span>
+<span class=button__icon>→</span></a></div></div></div></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>
+<span>:: <a href=https://github.com/mirus-ua/hugo-theme-re-terminal target=_blank>Theme</a> made by <a href=https://github.com/mirus-ua target=_blank>Mirus</a></span></div></div></footer><script type=text/javascript src=/bundle.min.js></script></div></body></html>

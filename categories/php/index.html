@@ -1,0 +1,91 @@
+<!doctype html><html lang=zh><head><title>PHP :: Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://connorzhangyu.com/categories/php/><link rel=stylesheet href=https://connorzhangyu.com/styles.css><link rel="shortcut icon" href=https://connorzhangyu.com/img/theme-colors/orange.png><link rel=apple-touch-icon href=https://connorzhangyu.com/img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta name=twitter:site content><meta name=twitter:creator content><meta property="og:locale" content="zh"><meta property="og:type" content="website"><meta property="og:title" content="PHP"><meta property="og:description" content><meta property="og:url" content="https://connorzhangyu.com/categories/php/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="https://connorzhangyu.com/img/favicon/orange.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><link href=/categories/php/index.xml rel=alternate type=application/rss+xml title="Hello World"></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></nav></header><div class=content><h1>Posts for: #PHP</h1><div class=posts><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/php/>PHP</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/php/>PHP</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051532559.jpeg class=post-cover alt=PHP title="Cover Image"><div class=post-content><h1 id=安装nginx与php-74>安装Nginx与PHP 7.4</h1><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=display:flex><span>sudo apt update
+</span></span><span style=display:flex><span>sudo apt install php-fpm
+</span></span><span style=display:flex><span>systemctl status php7.<span style=color:#ae81ff>4</span>-fpm
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>apt install nginx
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-nix data-lang=nix><span style=display:flex><span>server {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># . . . other code</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    location <span style=color:#960050;background-color:#1e0010>~</span> <span style=color:#960050;background-color:#1e0010>\</span><span style=color:#f92672>.</span>php<span style=color:#960050;background-color:#1e0010>$</span> {
+</span></span><span style=display:flex><span>        include <span style=color:#e6db74>snippets/fastcgi-php.conf</span>;
+</span></span><span style=display:flex><span>        fastcgi_pass <span style=color:#e6db74>unix:/run/php/php7.4-fpm.sock</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 重启</span>
+</span></span><span style=display:flex><span>sudo systemctl restart nginx
+</span></span></code></pre></div><h1 id=测试php>测试PHP</h1><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>cd <span style=color:#f92672>/</span>var<span style=color:#f92672>/</span>www<span style=color:#f92672>/</span>html<span style=color:#f92672>/</span>
+</span></span><span style=display:flex><span>vim info<span style=color:#f92672>.</span>php
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=display:flex><span><span style=color:#f92672>&lt;?</span><span style=color:#a6e22e>php</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>phpinfo</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 访问
+</span></span></span><span style=display:flex><span><span style=color:#75715e># http://your_server_ip/info.php
+</span></span></span></code></pre></div><h1 id=wordpress>WordPress</h1><h2 id=docker安装>Docker安装</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 安装docker-compose</span>
+</span></span><span style=display:flex><span>apt install docker-compose
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 查看版本</span>
+</span></span><span style=display:flex><span>docker-compose version
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>vim docker-compose.yml
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-docker data-lang=docker><span style=display:flex><span>version: <span style=color:#e6db74>&#39;3.3&#39;</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>services:<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>   db:<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>     image: mysql:5.7<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>     volumes:<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>       - db_data:/var/lib/mysql<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>     restart: always<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>     environment:<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>       MYSQL_ROOT_PASSWORD: somewordpress<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>       MYSQL_DATABASE: wordpress<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>       MYSQL_USER: wordpress<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>       MYSQL_PASSWORD: wordpress<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>   wordpress:<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>     depends_on:<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>       - db<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>     image: wordpress:latest<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>     ports:<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>       - <span style=color:#e6db74>&#34;8000:80&#34;</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>     restart: always<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>     environment:<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>       WORDPRESS_DB_HOST: db:3306<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>       WORDPRESS_DB_USER: wordpress<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>       WORDPRESS_DB_PASSWORD: wordpress<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>       WORDPRESS_DB_NAME: wordpress<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>volumes:<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>    db_data: <span style=color:#f92672>{}</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span></code></pre></div><pre tabindex=0><code># 后台运行
+docker-compose -f docker-compose.wordpress.yml up -d
+# 停止并删除服务
+docker-compose -f docker-compose.wordpress.yml down
+# IP:8000
+# IP:8000/wp-admin
+</code></pre><pre tabindex=0><code># ningx反代WordPress
+server {
+  listen 80;
+  listen [::]:80;
+
+  # 域名
+  server_name .leozl.site;
+
+  location / {
+    ## service 的名称，docker-compose.yaml文件中的wordpress服务名称
+    proxy_pass http://wp;
+
+        proxy_http_version    1.1;
+        proxy_cache_bypass    $http_upgrade;
+
+        proxy_set_header Upgrade            $http_upgrade;
+        proxy_set_header Connection         &#34;upgrade&#34;;
+        proxy_set_header Host                $host;
+        proxy_set_header X-Real-IP            $remote_addr;
+        proxy_set_header X-Forwarded-For    $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto    $scheme;
+        proxy_set_header X-Forwarded-Host    $host;
+        proxy_set_header X-Forwarded-Port    $server_port;
+  }
+}
+</code></pre><h2 id=vultr上安装>Vultr上安装</h2><p><a href=https://import.wp-migration.com/>上传备份</a></p></div><div><a class="read-more button" href=/posts/php/>Read more →</a></div></article><div class=pagination><div class=pagination__buttons></div></div></div></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>
+<span>:: <a href=https://github.com/mirus-ua/hugo-theme-re-terminal target=_blank>Theme</a> made by <a href=https://github.com/mirus-ua target=_blank>Mirus</a></span></div></div></footer><script type=text/javascript src=/bundle.min.js></script></div></body></html>

@@ -1,0 +1,1061 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>记录 on Hello World</title><link>https://connorzhangyu.com/categories/%E8%AE%B0%E5%BD%95/</link><description>Recent content in 记录 on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Fri, 23 May 2025 17:59:24 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/categories/%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml"/><item><title>好用的软件</title><link>https://connorzhangyu.com/posts/%E8%AE%B0%E5%BD%95/%E5%A5%BD%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6/</link><pubDate>Fri, 23 May 2025 17:59:24 +0000</pubDate><guid>https://connorzhangyu.com/posts/%E8%AE%B0%E5%BD%95/%E5%A5%BD%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6/</guid><description>&lt;h1 id="图片">图片&lt;/h1>
+&lt;p>截图软件
+&lt;a href="https://www.snipaste.com/">Snipaste&lt;/a>&lt;/p>
+&lt;p>图片上传到图床
+&lt;a href="https://github.com/Molunerfinn/PicGo">PicGo&lt;/a>&lt;/p>
+&lt;p>录屏软件
+&lt;a href="https://screenity.io/">Screenity&lt;/a>&lt;/p>
+&lt;h1 id="文件">文件&lt;/h1>
+&lt;p>&lt;a href="https://localsend.org/">LocalSend&lt;/a>&lt;/p></description><content>&lt;h1 id="图片">图片&lt;/h1>
+&lt;p>截图软件
+&lt;a href="https://www.snipaste.com/">Snipaste&lt;/a>&lt;/p>
+&lt;p>图片上传到图床
+&lt;a href="https://github.com/Molunerfinn/PicGo">PicGo&lt;/a>&lt;/p>
+&lt;p>录屏软件
+&lt;a href="https://screenity.io/">Screenity&lt;/a>&lt;/p>
+&lt;h1 id="文件">文件&lt;/h1>
+&lt;p>&lt;a href="https://localsend.org/">LocalSend&lt;/a>&lt;/p></content></item><item><title>Mac Apple芯片安装Win11</title><link>https://connorzhangyu.com/posts/%E8%AE%B0%E5%BD%95/mac-apple%E8%8A%AF%E7%89%87%E5%AE%89%E8%A3%85win11/</link><pubDate>Tue, 06 May 2025 15:09:33 +0000</pubDate><guid>https://connorzhangyu.com/posts/%E8%AE%B0%E5%BD%95/mac-apple%E8%8A%AF%E7%89%87%E5%AE%89%E8%A3%85win11/</guid><description>&lt;h1 id="mac-apple芯片安装win11">Mac Apple芯片安装Win11&lt;/h1>
+&lt;blockquote>
+&lt;p>&lt;a href="https://blog.csdn.net/weixin_52799373/article/details/129658881">M1/M2 Pro VMware Fusion虚拟机安装Win11教程(超详细)_m1装win11_七维大脑的博客-CSDN博客&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://blog.csdn.net/m0_72489515/article/details/128036581">M用户使用VM虚拟机安装win11连不上网，怎么解决_mac_xwz的博客-CSDN博客&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051338314.png" alt="image-20240106171142746">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051338837.png" alt="image-20240106171214171">&lt;/p>
+&lt;blockquote>
+&lt;p>记得要下载ARM版本的&lt;/p>&lt;/blockquote>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051338380.png" alt="image-20240106171222884">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051339250.png" alt="image-20240106171238651">&lt;/p>
+&lt;p>这里设置的密码,后面不会再用了,可以设置个简单点的就行&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051339063.png" alt="image-20240106171316780">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051340279.png" alt="image-20240106171329023">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051340353.png" alt="image-20240106171353840">&lt;/p>
+&lt;p>内存设置4GB,硬盘设置成80GB&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051340025.png" alt="image-20240106171404594">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051341339.png" alt="image-20240106171419408">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051341466.png" alt="image-20240106171447630">&lt;/p>
+&lt;p>这里要快速按回车,不然就提示EFI Network,如果是这个提示,重新启动虚拟机就行,之后就是正常安装Window系统的步骤,然后就会遇到连接到网络的问题&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051341301.png" alt="image-20240106172001913">&lt;/p>
+&lt;p>&lt;code>Shift + F10&lt;/code>打开命令行,输入&lt;code>OOBE\BYPASSNRO&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051341481.png" alt="image-20240106174310837">&lt;/p>
+&lt;p>然后系统就行回重启,然后又回到设置Windown的设置开始,这是正常的,然后就一直都是配置,正常配置就好,选择没有连接,就可以创建本地账号&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051341581.png" alt="image-20240106174320712">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051341019.png" alt="image-20240106174335945">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051341025.png" alt="image-20240106174424437">&lt;/p>
+&lt;p>安装完成之后,是没有网络的,需要安装vm-tools&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051345365.png" alt="image-20240106174524696">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051346760.png" alt="image-20240106174545175">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051347491.png" alt="image-20240106174556748">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051348197.png" alt="image-20240106174616569">&lt;/p>
+&lt;p>正常安装软件的步骤就可以了&lt;/p>
+&lt;h1 id="固定ip">固定IP&lt;/h1>
+&lt;p>配置完了,最好是重启下vmware和虚拟机,和禁用开启 win10上的vmare8网卡&lt;/p>
+&lt;p>1.vmare配置
+&lt;img src="https://image.runtimes.cc/202404051348330.png" alt="">&lt;/p>
+&lt;p>2.电脑配置,虚拟机配置&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051349925.png" alt="">&lt;/p></description><content>&lt;h1 id="mac-apple芯片安装win11">Mac Apple芯片安装Win11&lt;/h1>
+&lt;blockquote>
+&lt;p>&lt;a href="https://blog.csdn.net/weixin_52799373/article/details/129658881">M1/M2 Pro VMware Fusion虚拟机安装Win11教程(超详细)_m1装win11_七维大脑的博客-CSDN博客&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://blog.csdn.net/m0_72489515/article/details/128036581">M用户使用VM虚拟机安装win11连不上网，怎么解决_mac_xwz的博客-CSDN博客&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051338314.png" alt="image-20240106171142746">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051338837.png" alt="image-20240106171214171">&lt;/p>
+&lt;blockquote>
+&lt;p>记得要下载ARM版本的&lt;/p>&lt;/blockquote>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051338380.png" alt="image-20240106171222884">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051339250.png" alt="image-20240106171238651">&lt;/p>
+&lt;p>这里设置的密码,后面不会再用了,可以设置个简单点的就行&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051339063.png" alt="image-20240106171316780">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051340279.png" alt="image-20240106171329023">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051340353.png" alt="image-20240106171353840">&lt;/p>
+&lt;p>内存设置4GB,硬盘设置成80GB&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051340025.png" alt="image-20240106171404594">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051341339.png" alt="image-20240106171419408">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051341466.png" alt="image-20240106171447630">&lt;/p>
+&lt;p>这里要快速按回车,不然就提示EFI Network,如果是这个提示,重新启动虚拟机就行,之后就是正常安装Window系统的步骤,然后就会遇到连接到网络的问题&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051341301.png" alt="image-20240106172001913">&lt;/p>
+&lt;p>&lt;code>Shift + F10&lt;/code>打开命令行,输入&lt;code>OOBE\BYPASSNRO&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051341481.png" alt="image-20240106174310837">&lt;/p>
+&lt;p>然后系统就行回重启,然后又回到设置Windown的设置开始,这是正常的,然后就一直都是配置,正常配置就好,选择没有连接,就可以创建本地账号&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051341581.png" alt="image-20240106174320712">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051341019.png" alt="image-20240106174335945">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051341025.png" alt="image-20240106174424437">&lt;/p>
+&lt;p>安装完成之后,是没有网络的,需要安装vm-tools&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051345365.png" alt="image-20240106174524696">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051346760.png" alt="image-20240106174545175">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051347491.png" alt="image-20240106174556748">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051348197.png" alt="image-20240106174616569">&lt;/p>
+&lt;p>正常安装软件的步骤就可以了&lt;/p>
+&lt;h1 id="固定ip">固定IP&lt;/h1>
+&lt;p>配置完了,最好是重启下vmware和虚拟机,和禁用开启 win10上的vmare8网卡&lt;/p>
+&lt;p>1.vmare配置
+&lt;img src="https://image.runtimes.cc/202404051348330.png" alt="">&lt;/p>
+&lt;p>2.电脑配置,虚拟机配置&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051349925.png" alt="">&lt;/p></content></item><item><title>Flarum</title><link>https://connorzhangyu.com/posts/%E8%AE%B0%E5%BD%95/flarum/</link><pubDate>Sun, 04 May 2025 18:52:43 +0000</pubDate><guid>https://connorzhangyu.com/posts/%E8%AE%B0%E5%BD%95/flarum/</guid><description>&lt;h1 id="flarum-部署">Flarum 部署&lt;/h1>
+&lt;ul>
+&lt;li>
+&lt;p>Ubuntu 24.04&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>安装 PHP、MariaDB、Nginx、Composer&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>安装的目录是在&lt;code>/home/ubuntu/flarum/&lt;/code>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h1 id="安装flarum">安装Flarum&lt;/h1>
+&lt;h2 id="-安装php">✅ 安装PHP&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sudo apt update &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> sudo apt upgrade -y
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo apt install -y &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> nginx &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> php &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> php-cli &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> php-mbstring &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> unzip &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> curl &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> php-gd &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> php-mysql &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> php-xml &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> php-curl &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> php-zip &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> php-bcmath &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> php-fpm
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 验证版本&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>php -v
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="-安装-composer">✅ 安装 Composer&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>cd ~
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>curl -sS https://getcomposer.org/installer | php
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo mv composer.phar /usr/local/bin/composer
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 验证版本&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>composer -V
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="-安装-flarum">✅ 安装 Flarum&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>cd ~
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mkdir flarum
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>composer create-project flarum/flarum flarum
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="-安装mariadb">✅ 安装MariaDB&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">安装数据库&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo apt install mariadb&lt;span style="color:#f92672">-&lt;/span>server &lt;span style="color:#f92672">-&lt;/span>y
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo systemctl enable mariadb
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo systemctl &lt;span style="color:#66d9ef">start&lt;/span> mariadb
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">初始化&lt;/span>,&lt;span style="color:#960050;background-color:#1e0010">设置密码&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo mysql_secure_installation
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">登录&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo mysql &lt;span style="color:#f92672">-&lt;/span>u root &lt;span style="color:#f92672">-&lt;/span>p
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">设置密码&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">ALTER&lt;/span> &lt;span style="color:#66d9ef">USER&lt;/span> &lt;span style="color:#e6db74">&amp;#39;root&amp;#39;&lt;/span>&lt;span style="color:#f92672">@&lt;/span>&lt;span style="color:#e6db74">&amp;#39;localhost&amp;#39;&lt;/span> IDENTIFIED &lt;span style="color:#66d9ef">BY&lt;/span> &lt;span style="color:#e6db74">&amp;#39;MyRootPass123!&amp;#39;&lt;/span> ;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">设置远程访问&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">CREATE&lt;/span> &lt;span style="color:#66d9ef">USER&lt;/span> &lt;span style="color:#e6db74">&amp;#39;root&amp;#39;&lt;/span>&lt;span style="color:#f92672">@&lt;/span>&lt;span style="color:#e6db74">&amp;#39;%&amp;#39;&lt;/span> IDENTIFIED &lt;span style="color:#66d9ef">BY&lt;/span> &lt;span style="color:#e6db74">&amp;#39;MyRootPass123!&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">设置权限&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">GRANT&lt;/span> &lt;span style="color:#66d9ef">ALL&lt;/span> &lt;span style="color:#66d9ef">PRIVILEGES&lt;/span> &lt;span style="color:#66d9ef">ON&lt;/span> &lt;span style="color:#f92672">*&lt;/span>.&lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#66d9ef">TO&lt;/span> &lt;span style="color:#e6db74">&amp;#39;root&amp;#39;&lt;/span>&lt;span style="color:#f92672">@&lt;/span>&lt;span style="color:#e6db74">&amp;#39;%&amp;#39;&lt;/span> &lt;span style="color:#66d9ef">WITH&lt;/span> &lt;span style="color:#66d9ef">GRANT&lt;/span> &lt;span style="color:#66d9ef">OPTION&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">创建数据库&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">CREATE&lt;/span> &lt;span style="color:#66d9ef">DATABASE&lt;/span> flarum CHARACTER &lt;span style="color:#66d9ef">SET&lt;/span> utf8mb4 &lt;span style="color:#66d9ef">COLLATE&lt;/span> utf8mb4_unicode_ci;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">刷新权限&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>FLUSH &lt;span style="color:#66d9ef">PRIVILEGES&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">退出&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>EXIT;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">开启远程访问&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo vim &lt;span style="color:#f92672">/&lt;/span>etc&lt;span style="color:#f92672">/&lt;/span>mysql&lt;span style="color:#f92672">/&lt;/span>mariadb.conf.d&lt;span style="color:#f92672">/&lt;/span>&lt;span style="color:#ae81ff">50&lt;/span>&lt;span style="color:#f92672">-&lt;/span>server.cnf
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>bind&lt;span style="color:#f92672">-&lt;/span>address &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">127&lt;/span>.&lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">-&amp;gt;&lt;/span> bind&lt;span style="color:#f92672">-&lt;/span>address &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo systemctl &lt;span style="color:#66d9ef">restart&lt;/span> mariadb
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="-配置nginx">✅ 配置Nginx&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-nginx" data-lang="nginx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">server&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">listen&lt;/span> &lt;span style="color:#ae81ff">80&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">server_name&lt;/span> &lt;span style="color:#e6db74">_&lt;/span>; &lt;span style="color:#75715e"># ← 如果没有域名，可以写你的公网 IP
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">root&lt;/span> &lt;span style="color:#e6db74">/home/ubuntu/flarum/public&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">index&lt;/span> &lt;span style="color:#e6db74">index.php&lt;/span> &lt;span style="color:#e6db74">index.html&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># URL 重写规则
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">location&lt;/span> &lt;span style="color:#e6db74">/&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">try_files&lt;/span> $uri $uri/ &lt;span style="color:#e6db74">/index.php?&lt;/span>$query_string;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># PHP 解析设置
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">location&lt;/span> ~ &lt;span style="color:#e6db74">\.php$&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">include&lt;/span> &lt;span style="color:#e6db74">snippets/fastcgi-php.conf&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">fastcgi_pass&lt;/span> &lt;span style="color:#e6db74">unix:/run/php/php8.3-fpm.sock&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">fastcgi_param&lt;/span> &lt;span style="color:#e6db74">SCRIPT_FILENAME&lt;/span> $document_root$fastcgi_script_name;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 禁止访问隐藏文件
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">location&lt;/span> ~ &lt;span style="color:#e6db74">/\.ht&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">deny&lt;/span> &lt;span style="color:#e6db74">all&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 缓存静态资源
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">location&lt;/span> ~&lt;span style="color:#e6db74">*&lt;/span> &lt;span style="color:#e6db74">\.(?:ico|css|js|gif|jpe?g|png|woff2?|ttf|svg|eot)&lt;/span>$ {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">expires&lt;/span> &lt;span style="color:#e6db74">6M&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">access_log&lt;/span> &lt;span style="color:#66d9ef">off&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">add_header&lt;/span> &lt;span style="color:#e6db74">Cache-Control&lt;/span> &lt;span style="color:#e6db74">&amp;#34;public&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="-修改文件全新">✅ 修改文件全新&lt;/h2>
+&lt;p>到这一步,使用IP访问,会404,执行以下命令授权&lt;/p></description><content>&lt;h1 id="flarum-部署">Flarum 部署&lt;/h1>
+&lt;ul>
+&lt;li>
+&lt;p>Ubuntu 24.04&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>安装 PHP、MariaDB、Nginx、Composer&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>安装的目录是在&lt;code>/home/ubuntu/flarum/&lt;/code>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h1 id="安装flarum">安装Flarum&lt;/h1>
+&lt;h2 id="-安装php">✅ 安装PHP&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sudo apt update &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> sudo apt upgrade -y
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo apt install -y &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> nginx &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> php &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> php-cli &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> php-mbstring &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> unzip &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> curl &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> php-gd &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> php-mysql &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> php-xml &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> php-curl &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> php-zip &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> php-bcmath &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> php-fpm
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 验证版本&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>php -v
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="-安装-composer">✅ 安装 Composer&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>cd ~
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>curl -sS https://getcomposer.org/installer | php
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo mv composer.phar /usr/local/bin/composer
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 验证版本&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>composer -V
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="-安装-flarum">✅ 安装 Flarum&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>cd ~
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mkdir flarum
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>composer create-project flarum/flarum flarum
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="-安装mariadb">✅ 安装MariaDB&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">安装数据库&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo apt install mariadb&lt;span style="color:#f92672">-&lt;/span>server &lt;span style="color:#f92672">-&lt;/span>y
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo systemctl enable mariadb
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo systemctl &lt;span style="color:#66d9ef">start&lt;/span> mariadb
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">初始化&lt;/span>,&lt;span style="color:#960050;background-color:#1e0010">设置密码&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo mysql_secure_installation
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">登录&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo mysql &lt;span style="color:#f92672">-&lt;/span>u root &lt;span style="color:#f92672">-&lt;/span>p
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">设置密码&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">ALTER&lt;/span> &lt;span style="color:#66d9ef">USER&lt;/span> &lt;span style="color:#e6db74">&amp;#39;root&amp;#39;&lt;/span>&lt;span style="color:#f92672">@&lt;/span>&lt;span style="color:#e6db74">&amp;#39;localhost&amp;#39;&lt;/span> IDENTIFIED &lt;span style="color:#66d9ef">BY&lt;/span> &lt;span style="color:#e6db74">&amp;#39;MyRootPass123!&amp;#39;&lt;/span> ;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">设置远程访问&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">CREATE&lt;/span> &lt;span style="color:#66d9ef">USER&lt;/span> &lt;span style="color:#e6db74">&amp;#39;root&amp;#39;&lt;/span>&lt;span style="color:#f92672">@&lt;/span>&lt;span style="color:#e6db74">&amp;#39;%&amp;#39;&lt;/span> IDENTIFIED &lt;span style="color:#66d9ef">BY&lt;/span> &lt;span style="color:#e6db74">&amp;#39;MyRootPass123!&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">设置权限&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">GRANT&lt;/span> &lt;span style="color:#66d9ef">ALL&lt;/span> &lt;span style="color:#66d9ef">PRIVILEGES&lt;/span> &lt;span style="color:#66d9ef">ON&lt;/span> &lt;span style="color:#f92672">*&lt;/span>.&lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#66d9ef">TO&lt;/span> &lt;span style="color:#e6db74">&amp;#39;root&amp;#39;&lt;/span>&lt;span style="color:#f92672">@&lt;/span>&lt;span style="color:#e6db74">&amp;#39;%&amp;#39;&lt;/span> &lt;span style="color:#66d9ef">WITH&lt;/span> &lt;span style="color:#66d9ef">GRANT&lt;/span> &lt;span style="color:#66d9ef">OPTION&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">创建数据库&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">CREATE&lt;/span> &lt;span style="color:#66d9ef">DATABASE&lt;/span> flarum CHARACTER &lt;span style="color:#66d9ef">SET&lt;/span> utf8mb4 &lt;span style="color:#66d9ef">COLLATE&lt;/span> utf8mb4_unicode_ci;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">刷新权限&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>FLUSH &lt;span style="color:#66d9ef">PRIVILEGES&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">退出&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>EXIT;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">开启远程访问&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo vim &lt;span style="color:#f92672">/&lt;/span>etc&lt;span style="color:#f92672">/&lt;/span>mysql&lt;span style="color:#f92672">/&lt;/span>mariadb.conf.d&lt;span style="color:#f92672">/&lt;/span>&lt;span style="color:#ae81ff">50&lt;/span>&lt;span style="color:#f92672">-&lt;/span>server.cnf
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>bind&lt;span style="color:#f92672">-&lt;/span>address &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">127&lt;/span>.&lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">-&amp;gt;&lt;/span> bind&lt;span style="color:#f92672">-&lt;/span>address &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo systemctl &lt;span style="color:#66d9ef">restart&lt;/span> mariadb
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="-配置nginx">✅ 配置Nginx&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-nginx" data-lang="nginx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">server&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">listen&lt;/span> &lt;span style="color:#ae81ff">80&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">server_name&lt;/span> &lt;span style="color:#e6db74">_&lt;/span>; &lt;span style="color:#75715e"># ← 如果没有域名，可以写你的公网 IP
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">root&lt;/span> &lt;span style="color:#e6db74">/home/ubuntu/flarum/public&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">index&lt;/span> &lt;span style="color:#e6db74">index.php&lt;/span> &lt;span style="color:#e6db74">index.html&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># URL 重写规则
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">location&lt;/span> &lt;span style="color:#e6db74">/&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">try_files&lt;/span> $uri $uri/ &lt;span style="color:#e6db74">/index.php?&lt;/span>$query_string;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># PHP 解析设置
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">location&lt;/span> ~ &lt;span style="color:#e6db74">\.php$&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">include&lt;/span> &lt;span style="color:#e6db74">snippets/fastcgi-php.conf&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">fastcgi_pass&lt;/span> &lt;span style="color:#e6db74">unix:/run/php/php8.3-fpm.sock&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">fastcgi_param&lt;/span> &lt;span style="color:#e6db74">SCRIPT_FILENAME&lt;/span> $document_root$fastcgi_script_name;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 禁止访问隐藏文件
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">location&lt;/span> ~ &lt;span style="color:#e6db74">/\.ht&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">deny&lt;/span> &lt;span style="color:#e6db74">all&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 缓存静态资源
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> &lt;span style="color:#f92672">location&lt;/span> ~&lt;span style="color:#e6db74">*&lt;/span> &lt;span style="color:#e6db74">\.(?:ico|css|js|gif|jpe?g|png|woff2?|ttf|svg|eot)&lt;/span>$ {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">expires&lt;/span> &lt;span style="color:#e6db74">6M&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">access_log&lt;/span> &lt;span style="color:#66d9ef">off&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">add_header&lt;/span> &lt;span style="color:#e6db74">Cache-Control&lt;/span> &lt;span style="color:#e6db74">&amp;#34;public&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="-修改文件全新">✅ 修改文件全新&lt;/h2>
+&lt;p>到这一步,使用IP访问,会404,执行以下命令授权&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sudo chown -R www-data:www-data /home/ubuntu/flarum
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo chmod -R &lt;span style="color:#ae81ff">775&lt;/span> /home/ubuntu/flarum/storage
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo chmod -R &lt;span style="color:#ae81ff">775&lt;/span> /home/ubuntu/flarum/public/assets
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo chmod +x /home/ubuntu
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="-配置域名">✅ 配置域名&lt;/h2>
+&lt;p>Cloudflare开启了正常CDN,还需要修改php的配置文件
+修改flarum目录下的config.php&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>vim ~/flarum/config.php
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#39;url&amp;#39;&lt;/span> &lt;span style="color:#f92672">=&lt;/span>&amp;gt; &lt;span style="color:#e6db74">&amp;#39;http://&amp;lt;原来的IP&amp;gt;&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>修改成
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#39;url&amp;#39;&lt;/span> &lt;span style="color:#f92672">=&lt;/span>&amp;gt; &lt;span style="color:#e6db74">&amp;#39;https://forum.example.com&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>php flarum cache:clear
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="配置">配置&lt;/h1>
+&lt;h2 id="配置邮箱">📤配置邮箱&lt;/h2>
+&lt;p>驱动:smtp&lt;/p>
+&lt;p>主机:smtp.gmail.com&lt;/p>
+&lt;p>顿口:587&lt;/p>
+&lt;p>加密协议:tls&lt;/p>
+&lt;p>用户名:发送验证码的邮箱&lt;/p>
+&lt;p>密码:Gmail应用程序的专用密码&lt;/p></content></item><item><title>nexus3</title><link>https://connorzhangyu.com/posts/%E8%AE%B0%E5%BD%95/nexus-3/</link><pubDate>Tue, 12 Mar 2024 18:52:43 +0000</pubDate><guid>https://connorzhangyu.com/posts/%E8%AE%B0%E5%BD%95/nexus-3/</guid><description>&lt;h1 id="docker仓库">Docker仓库&lt;/h1>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>类型&lt;/th>
+&lt;th>端口&lt;/th>
+&lt;th>仓库名字&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Host&lt;/td>
+&lt;td>9083&lt;/td>
+&lt;td>My-docker-host&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>proxy&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>My-docker-proxy&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>group&lt;/td>
+&lt;td>9082&lt;/td>
+&lt;td>My-docker-group&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;strong>创建一个存储目录&lt;/strong>&lt;/p>
+&lt;p>名字随便起,没有太多影响&lt;/p>
+&lt;p>![image-20240917104642184](../../../../../../Library/Application Support/typora-user-images/image-20240917104642184.png)&lt;/p>
+&lt;p>创建docker host仓库&lt;/p>
+&lt;p>![image-20240917104411323](../../../../../../Library/Application Support/typora-user-images/image-20240917104411323.png)&lt;/p>
+&lt;p>![image-20240917104515460](../../../../../../Library/Application Support/typora-user-images/image-20240917104515460.png)&lt;/p>
+&lt;p>![image-20240917104240181](../../../../../../Library/Application Support/typora-user-images/image-20240917104240181.png)&lt;/p>
+&lt;p>创建proxy仓库&lt;/p>
+&lt;p>![image-20240917113108378](../../../../../../Library/Application Support/typora-user-images/image-20240917113108378.png)&lt;/p>
+&lt;p>![image-20240917113128237](../../../../../../Library/Application Support/typora-user-images/image-20240917113128237.png)&lt;/p>
+&lt;p>group&lt;/p>
+&lt;p>![image-20240917113647416](../../../../../../Library/Application Support/typora-user-images/image-20240917113647416.png)&lt;/p>
+&lt;p>docker客户端配置&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># vim /etc/docker/daemon.json&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;insecure-registries&amp;#34;&lt;/span>: &lt;span style="color:#f92672">[&lt;/span>&lt;span style="color:#e6db74">&amp;#34;54.255.206.44:9082&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;54.255.206.44:9083&amp;#34;&lt;/span>&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 需要重启&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>systemctl daemon-reload
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>systemctl restart docker
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>登录&lt;/p>
+&lt;p>登录之后凭证保存在&lt;code>/.docker/config.json&lt;/code>或者是在,部署的时候遇到一个问题,就是jenkins打包之后docker login可以,但是push的时候就提示没有授权,暂时的解决办法是,宿主机docker login下,保存凭证,然后jenkins容器挂载&lt;code>/root/.docker/config.json&lt;/code>这个文件,jenkins打包就可以不用登录,直接推送&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>root@anthony:~# docker login http://54.255.206.44:9083
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Username: admin
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Password:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Error response from daemon: login attempt to http://54.255.206.44:9083/v2/ failed with status: &lt;span style="color:#ae81ff">401&lt;/span> Unauthorized
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># ----------------------------------------------------------------------------&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>root@anthony:~# docker login http://54.255.206.44:9082
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Username: admin
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Password:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Configure a credential helper to remove this warning. See
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Login Succeeded
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 镜像操作&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># pull镜像&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker pull nginx:latest
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 给镜像打tag&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker tag nginx:latest 54.255.206.44:9082/my-docker-host/nginx:latest
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 推送镜像&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker push 54.255.206.44:9082/my-docker-host/nginx:latest
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description><content>&lt;h1 id="docker仓库">Docker仓库&lt;/h1>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>类型&lt;/th>
+&lt;th>端口&lt;/th>
+&lt;th>仓库名字&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Host&lt;/td>
+&lt;td>9083&lt;/td>
+&lt;td>My-docker-host&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>proxy&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>My-docker-proxy&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>group&lt;/td>
+&lt;td>9082&lt;/td>
+&lt;td>My-docker-group&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;strong>创建一个存储目录&lt;/strong>&lt;/p>
+&lt;p>名字随便起,没有太多影响&lt;/p>
+&lt;p>![image-20240917104642184](../../../../../../Library/Application Support/typora-user-images/image-20240917104642184.png)&lt;/p>
+&lt;p>创建docker host仓库&lt;/p>
+&lt;p>![image-20240917104411323](../../../../../../Library/Application Support/typora-user-images/image-20240917104411323.png)&lt;/p>
+&lt;p>![image-20240917104515460](../../../../../../Library/Application Support/typora-user-images/image-20240917104515460.png)&lt;/p>
+&lt;p>![image-20240917104240181](../../../../../../Library/Application Support/typora-user-images/image-20240917104240181.png)&lt;/p>
+&lt;p>创建proxy仓库&lt;/p>
+&lt;p>![image-20240917113108378](../../../../../../Library/Application Support/typora-user-images/image-20240917113108378.png)&lt;/p>
+&lt;p>![image-20240917113128237](../../../../../../Library/Application Support/typora-user-images/image-20240917113128237.png)&lt;/p>
+&lt;p>group&lt;/p>
+&lt;p>![image-20240917113647416](../../../../../../Library/Application Support/typora-user-images/image-20240917113647416.png)&lt;/p>
+&lt;p>docker客户端配置&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># vim /etc/docker/daemon.json&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;insecure-registries&amp;#34;&lt;/span>: &lt;span style="color:#f92672">[&lt;/span>&lt;span style="color:#e6db74">&amp;#34;54.255.206.44:9082&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;54.255.206.44:9083&amp;#34;&lt;/span>&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 需要重启&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>systemctl daemon-reload
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>systemctl restart docker
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>登录&lt;/p>
+&lt;p>登录之后凭证保存在&lt;code>/.docker/config.json&lt;/code>或者是在,部署的时候遇到一个问题,就是jenkins打包之后docker login可以,但是push的时候就提示没有授权,暂时的解决办法是,宿主机docker login下,保存凭证,然后jenkins容器挂载&lt;code>/root/.docker/config.json&lt;/code>这个文件,jenkins打包就可以不用登录,直接推送&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>root@anthony:~# docker login http://54.255.206.44:9083
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Username: admin
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Password:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Error response from daemon: login attempt to http://54.255.206.44:9083/v2/ failed with status: &lt;span style="color:#ae81ff">401&lt;/span> Unauthorized
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># ----------------------------------------------------------------------------&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>root@anthony:~# docker login http://54.255.206.44:9082
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Username: admin
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Password:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Configure a credential helper to remove this warning. See
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Login Succeeded
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 镜像操作&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># pull镜像&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker pull nginx:latest
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 给镜像打tag&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker tag nginx:latest 54.255.206.44:9082/my-docker-host/nginx:latest
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 推送镜像&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker push 54.255.206.44:9082/my-docker-host/nginx:latest
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>SpringBoot配置Gmail</title><link>https://connorzhangyu.com/posts/%E8%AE%B0%E5%BD%95/springboot%E9%85%8D%E7%BD%AEgmail/</link><pubDate>Sat, 02 Mar 2024 18:52:43 +0000</pubDate><guid>https://connorzhangyu.com/posts/%E8%AE%B0%E5%BD%95/springboot%E9%85%8D%E7%BD%AEgmail/</guid><description>&lt;p>&lt;img src="https://image.runtimes.cc/202404051400542.png" alt="image-20240302190257438">&lt;/p>
+&lt;p>申请应用程序验证码&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051400643.png" alt="image-20240302184916544">&lt;/p>
+&lt;p>配置二步验证&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051400904.png" alt="image-20240302185000050">&lt;/p>
+&lt;p>要配置二步验证,才能看到应用程序的选项&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051402469.png" alt="image-20240302185040456">&lt;/p>
+&lt;p>最后就能获取到应用程序验证码&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051402369.png" alt="image-20240302185121257">&lt;/p>
+&lt;p>引入代码&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.springframework.boot&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>spring-boot-starter-mail&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>application.properties文件配置&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">spring.mail.host&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">smtp.gmail.com&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 邮件服务器端口号&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">spring.mail.port&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">587&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 邮件发送方的电子邮件地址&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">spring.mail.username&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">你的Gmail邮箱账号&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 邮件发送方的密码或应用程序专用密码一定要开启了两步验证&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">spring.mail.password&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">应用程序专用密码&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 启用TLS加密&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">spring.mail.properties.mail.smtp.starttls.enable&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 验证邮件服务器的身份&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">spring.mail.properties.mail.smtp.auth&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 邮件传输协议&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">spring.mail.properties.mail.transport.protocol&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">smtp&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>配置的代码&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@Service&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">EmailUtil&lt;/span> &lt;span style="color:#66d9ef">implements&lt;/span> EmailService
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">final&lt;/span> Logger logger &lt;span style="color:#f92672">=&lt;/span> LoggerFactory.&lt;span style="color:#a6e22e">getLogger&lt;/span>(&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">getClass&lt;/span>());
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//Spring Boot 提供了一个发送邮件的简单抽象，使用的是下面这个接口，这里直接注入即可使用&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Autowired&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> JavaMailSender mailSender;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 配置文件中我的谷歌邮箱&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Value&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;${spring.mail.username}&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> String from;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * 简单文本邮件
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param to 收件人
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param subject 主题
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param content 内容
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Override&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">sendSimpleMail&lt;/span>(String to, String subject, String content) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//创建SimpleMailMessage对象&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> SimpleMailMessage message &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> SimpleMailMessage();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//邮件发送人&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> message.&lt;span style="color:#a6e22e">setFrom&lt;/span>(from);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//邮件接收人&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> message.&lt;span style="color:#a6e22e">setTo&lt;/span>(to);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//邮件主题&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> message.&lt;span style="color:#a6e22e">setSubject&lt;/span>(subject);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//邮件内容&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> message.&lt;span style="color:#a6e22e">setText&lt;/span>(content);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//发送邮件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mailSender.&lt;span style="color:#a6e22e">send&lt;/span>(message);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * html邮件
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param to 收件人,多个时参数形式 ：&amp;#34;xxx@xxx.com,xxx@xxx.com,xxx@xxx.com&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param subject 主题
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param content 内容
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Override&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">sendHtmlMail&lt;/span>(String to, String subject, String content) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//获取MimeMessage对象&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MimeMessage message &lt;span style="color:#f92672">=&lt;/span> mailSender.&lt;span style="color:#a6e22e">createMimeMessage&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MimeMessageHelper messageHelper;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">try&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> messageHelper &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> MimeMessageHelper(message, &lt;span style="color:#66d9ef">true&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//邮件发送人&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> messageHelper.&lt;span style="color:#a6e22e">setFrom&lt;/span>(from);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//邮件接收人,设置多个收件人地址&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> InternetAddress&lt;span style="color:#f92672">[]&lt;/span> internetAddressTo &lt;span style="color:#f92672">=&lt;/span> InternetAddress.&lt;span style="color:#a6e22e">parse&lt;/span>(to);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> messageHelper.&lt;span style="color:#a6e22e">setTo&lt;/span>(internetAddressTo);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//messageHelper.setTo(to);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//邮件主题&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> message.&lt;span style="color:#a6e22e">setSubject&lt;/span>(subject);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//邮件内容，html格式&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> messageHelper.&lt;span style="color:#a6e22e">setText&lt;/span>(content, &lt;span style="color:#66d9ef">true&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//发送&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mailSender.&lt;span style="color:#a6e22e">send&lt;/span>(message);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//日志信息&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> logger.&lt;span style="color:#a6e22e">info&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;邮件已经发送。&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#66d9ef">catch&lt;/span> (Exception e) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> logger.&lt;span style="color:#a6e22e">error&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;发送邮件时发生异常！&amp;#34;&lt;/span>, e);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * 带附件的邮件
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param to 收件人
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param subject 主题
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param content 内容
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param filePath 附件
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Override&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">sendAttachmentsMail&lt;/span>(String to, String subject, String content, String filePath) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MimeMessage message &lt;span style="color:#f92672">=&lt;/span> mailSender.&lt;span style="color:#a6e22e">createMimeMessage&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">try&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MimeMessageHelper helper &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> MimeMessageHelper(message, &lt;span style="color:#66d9ef">true&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> helper.&lt;span style="color:#a6e22e">setFrom&lt;/span>(from);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> helper.&lt;span style="color:#a6e22e">setTo&lt;/span>(to);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> helper.&lt;span style="color:#a6e22e">setSubject&lt;/span>(subject);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> helper.&lt;span style="color:#a6e22e">setText&lt;/span>(content, &lt;span style="color:#66d9ef">true&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> FileSystemResource file &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> FileSystemResource(&lt;span style="color:#66d9ef">new&lt;/span> File(filePath));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String fileName &lt;span style="color:#f92672">=&lt;/span> filePath.&lt;span style="color:#a6e22e">substring&lt;/span>(filePath.&lt;span style="color:#a6e22e">lastIndexOf&lt;/span>(File.&lt;span style="color:#a6e22e">separator&lt;/span>));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> helper.&lt;span style="color:#a6e22e">addAttachment&lt;/span>(fileName, file);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mailSender.&lt;span style="color:#a6e22e">send&lt;/span>(message);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//日志信息&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> logger.&lt;span style="color:#a6e22e">info&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;邮件已经发送。&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#66d9ef">catch&lt;/span> (Exception e) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> logger.&lt;span style="color:#a6e22e">error&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;发送邮件时发生异常！&amp;#34;&lt;/span>, e);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * 验证邮箱格式
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param email
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @return
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">boolean&lt;/span> &lt;span style="color:#a6e22e">isEmail&lt;/span>(String email) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (email &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#66d9ef">null&lt;/span> &lt;span style="color:#f92672">||&lt;/span> email.&lt;span style="color:#a6e22e">length&lt;/span>() &lt;span style="color:#f92672">&amp;lt;&lt;/span> 1 &lt;span style="color:#f92672">||&lt;/span> email.&lt;span style="color:#a6e22e">length&lt;/span>() &lt;span style="color:#f92672">&amp;gt;&lt;/span> 256) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">false&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Pattern pattern &lt;span style="color:#f92672">=&lt;/span> Pattern.&lt;span style="color:#a6e22e">compile&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> pattern.&lt;span style="color:#a6e22e">matcher&lt;/span>(email).&lt;span style="color:#a6e22e">matches&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">interface&lt;/span> &lt;span style="color:#a6e22e">EmailService&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * 发送文本邮件
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> *
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param to 收件人
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param subject 主题
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param content 内容
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">sendSimpleMail&lt;/span>(String to, String subject, String content);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * 发送HTML邮件
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> *
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param to 收件人
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param subject 主题
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param content 内容
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">sendHtmlMail&lt;/span>(String to, String subject, String content);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * 发送带附件的邮件
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> *
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param to 收件人
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param subject 主题
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param content 内容
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param filePath 附件
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">sendAttachmentsMail&lt;/span>(String to, String subject, String content, String filePath);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@Service&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">CodeUtil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Autowired&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> StringRedisTemplate redisTemplate;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> String &lt;span style="color:#a6e22e">generateVerificationCode&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 生成6位随机数字验证码&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> String.&lt;span style="color:#a6e22e">valueOf&lt;/span>((&lt;span style="color:#66d9ef">int&lt;/span>) ((Math.&lt;span style="color:#a6e22e">random&lt;/span>() &lt;span style="color:#f92672">*&lt;/span> 9 &lt;span style="color:#f92672">+&lt;/span> 1) &lt;span style="color:#f92672">*&lt;/span> 100000));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 验证验证码是否正确&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">boolean&lt;/span> &lt;span style="color:#a6e22e">verifyCode&lt;/span>(String userId, String code,String key) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> key &lt;span style="color:#f92672">=&lt;/span> key &lt;span style="color:#f92672">+&lt;/span> userId;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String storedCode &lt;span style="color:#f92672">=&lt;/span> redisTemplate.&lt;span style="color:#a6e22e">opsForValue&lt;/span>().&lt;span style="color:#a6e22e">get&lt;/span>(key);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> code.&lt;span style="color:#a6e22e">equals&lt;/span>(storedCode);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//删除redis中验证码&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">deleteCode&lt;/span>(String userId,String key) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> key &lt;span style="color:#f92672">=&lt;/span> key &lt;span style="color:#f92672">+&lt;/span> userId;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> redisTemplate.&lt;span style="color:#a6e22e">delete&lt;/span>(key);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">//写在需要发送验证码的地方&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">//存储时间&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">final&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> EXPIRATION_TIME_IN_MINUTES &lt;span style="color:#f92672">=&lt;/span> 3;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//键名&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">final&lt;/span> String KEY_PREFIX &lt;span style="color:#f92672">==&lt;/span>&lt;span style="color:#e6db74">&amp;#34;xxx&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> key&lt;span style="color:#f92672">=&lt;/span>KEY_PREFIX&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#e6db74">&amp;#34;123456&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>redisTemplate.&lt;span style="color:#a6e22e">opsForValue&lt;/span>().&lt;span style="color:#a6e22e">set&lt;/span>(key, 随机数字验证码, EXPIRATION_TIME_IN_MINUTES, TimeUnit.&lt;span style="color:#a6e22e">MINUTES&lt;/span>);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description><content>&lt;p>&lt;img src="https://image.runtimes.cc/202404051400542.png" alt="image-20240302190257438">&lt;/p>
+&lt;p>申请应用程序验证码&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051400643.png" alt="image-20240302184916544">&lt;/p>
+&lt;p>配置二步验证&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051400904.png" alt="image-20240302185000050">&lt;/p>
+&lt;p>要配置二步验证,才能看到应用程序的选项&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051402469.png" alt="image-20240302185040456">&lt;/p>
+&lt;p>最后就能获取到应用程序验证码&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051402369.png" alt="image-20240302185121257">&lt;/p>
+&lt;p>引入代码&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.springframework.boot&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>spring-boot-starter-mail&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>application.properties文件配置&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">spring.mail.host&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">smtp.gmail.com&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 邮件服务器端口号&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">spring.mail.port&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">587&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 邮件发送方的电子邮件地址&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">spring.mail.username&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">你的Gmail邮箱账号&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 邮件发送方的密码或应用程序专用密码一定要开启了两步验证&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">spring.mail.password&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">应用程序专用密码&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 启用TLS加密&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">spring.mail.properties.mail.smtp.starttls.enable&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 验证邮件服务器的身份&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">spring.mail.properties.mail.smtp.auth&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 邮件传输协议&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">spring.mail.properties.mail.transport.protocol&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">smtp&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>配置的代码&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@Service&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">EmailUtil&lt;/span> &lt;span style="color:#66d9ef">implements&lt;/span> EmailService
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">final&lt;/span> Logger logger &lt;span style="color:#f92672">=&lt;/span> LoggerFactory.&lt;span style="color:#a6e22e">getLogger&lt;/span>(&lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">getClass&lt;/span>());
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//Spring Boot 提供了一个发送邮件的简单抽象，使用的是下面这个接口，这里直接注入即可使用&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Autowired&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> JavaMailSender mailSender;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 配置文件中我的谷歌邮箱&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Value&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;${spring.mail.username}&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> String from;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * 简单文本邮件
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param to 收件人
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param subject 主题
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param content 内容
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Override&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">sendSimpleMail&lt;/span>(String to, String subject, String content) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//创建SimpleMailMessage对象&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> SimpleMailMessage message &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> SimpleMailMessage();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//邮件发送人&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> message.&lt;span style="color:#a6e22e">setFrom&lt;/span>(from);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//邮件接收人&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> message.&lt;span style="color:#a6e22e">setTo&lt;/span>(to);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//邮件主题&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> message.&lt;span style="color:#a6e22e">setSubject&lt;/span>(subject);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//邮件内容&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> message.&lt;span style="color:#a6e22e">setText&lt;/span>(content);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//发送邮件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mailSender.&lt;span style="color:#a6e22e">send&lt;/span>(message);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * html邮件
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param to 收件人,多个时参数形式 ：&amp;#34;xxx@xxx.com,xxx@xxx.com,xxx@xxx.com&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param subject 主题
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param content 内容
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Override&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">sendHtmlMail&lt;/span>(String to, String subject, String content) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//获取MimeMessage对象&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MimeMessage message &lt;span style="color:#f92672">=&lt;/span> mailSender.&lt;span style="color:#a6e22e">createMimeMessage&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MimeMessageHelper messageHelper;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">try&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> messageHelper &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> MimeMessageHelper(message, &lt;span style="color:#66d9ef">true&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//邮件发送人&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> messageHelper.&lt;span style="color:#a6e22e">setFrom&lt;/span>(from);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//邮件接收人,设置多个收件人地址&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> InternetAddress&lt;span style="color:#f92672">[]&lt;/span> internetAddressTo &lt;span style="color:#f92672">=&lt;/span> InternetAddress.&lt;span style="color:#a6e22e">parse&lt;/span>(to);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> messageHelper.&lt;span style="color:#a6e22e">setTo&lt;/span>(internetAddressTo);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//messageHelper.setTo(to);&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//邮件主题&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> message.&lt;span style="color:#a6e22e">setSubject&lt;/span>(subject);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//邮件内容，html格式&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> messageHelper.&lt;span style="color:#a6e22e">setText&lt;/span>(content, &lt;span style="color:#66d9ef">true&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//发送&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mailSender.&lt;span style="color:#a6e22e">send&lt;/span>(message);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//日志信息&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> logger.&lt;span style="color:#a6e22e">info&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;邮件已经发送。&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#66d9ef">catch&lt;/span> (Exception e) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> logger.&lt;span style="color:#a6e22e">error&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;发送邮件时发生异常！&amp;#34;&lt;/span>, e);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * 带附件的邮件
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param to 收件人
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param subject 主题
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param content 内容
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param filePath 附件
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Override&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">sendAttachmentsMail&lt;/span>(String to, String subject, String content, String filePath) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MimeMessage message &lt;span style="color:#f92672">=&lt;/span> mailSender.&lt;span style="color:#a6e22e">createMimeMessage&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">try&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MimeMessageHelper helper &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> MimeMessageHelper(message, &lt;span style="color:#66d9ef">true&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> helper.&lt;span style="color:#a6e22e">setFrom&lt;/span>(from);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> helper.&lt;span style="color:#a6e22e">setTo&lt;/span>(to);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> helper.&lt;span style="color:#a6e22e">setSubject&lt;/span>(subject);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> helper.&lt;span style="color:#a6e22e">setText&lt;/span>(content, &lt;span style="color:#66d9ef">true&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> FileSystemResource file &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> FileSystemResource(&lt;span style="color:#66d9ef">new&lt;/span> File(filePath));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String fileName &lt;span style="color:#f92672">=&lt;/span> filePath.&lt;span style="color:#a6e22e">substring&lt;/span>(filePath.&lt;span style="color:#a6e22e">lastIndexOf&lt;/span>(File.&lt;span style="color:#a6e22e">separator&lt;/span>));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> helper.&lt;span style="color:#a6e22e">addAttachment&lt;/span>(fileName, file);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mailSender.&lt;span style="color:#a6e22e">send&lt;/span>(message);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//日志信息&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> logger.&lt;span style="color:#a6e22e">info&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;邮件已经发送。&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#66d9ef">catch&lt;/span> (Exception e) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> logger.&lt;span style="color:#a6e22e">error&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;发送邮件时发生异常！&amp;#34;&lt;/span>, e);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * 验证邮箱格式
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param email
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @return
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">boolean&lt;/span> &lt;span style="color:#a6e22e">isEmail&lt;/span>(String email) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (email &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#66d9ef">null&lt;/span> &lt;span style="color:#f92672">||&lt;/span> email.&lt;span style="color:#a6e22e">length&lt;/span>() &lt;span style="color:#f92672">&amp;lt;&lt;/span> 1 &lt;span style="color:#f92672">||&lt;/span> email.&lt;span style="color:#a6e22e">length&lt;/span>() &lt;span style="color:#f92672">&amp;gt;&lt;/span> 256) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">false&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Pattern pattern &lt;span style="color:#f92672">=&lt;/span> Pattern.&lt;span style="color:#a6e22e">compile&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> pattern.&lt;span style="color:#a6e22e">matcher&lt;/span>(email).&lt;span style="color:#a6e22e">matches&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">interface&lt;/span> &lt;span style="color:#a6e22e">EmailService&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * 发送文本邮件
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> *
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param to 收件人
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param subject 主题
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param content 内容
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">sendSimpleMail&lt;/span>(String to, String subject, String content);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * 发送HTML邮件
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> *
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param to 收件人
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param subject 主题
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param content 内容
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">sendHtmlMail&lt;/span>(String to, String subject, String content);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * 发送带附件的邮件
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> *
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param to 收件人
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param subject 主题
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param content 内容
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param filePath 附件
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">sendAttachmentsMail&lt;/span>(String to, String subject, String content, String filePath);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@Service&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">CodeUtil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Autowired&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> StringRedisTemplate redisTemplate;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> String &lt;span style="color:#a6e22e">generateVerificationCode&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 生成6位随机数字验证码&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> String.&lt;span style="color:#a6e22e">valueOf&lt;/span>((&lt;span style="color:#66d9ef">int&lt;/span>) ((Math.&lt;span style="color:#a6e22e">random&lt;/span>() &lt;span style="color:#f92672">*&lt;/span> 9 &lt;span style="color:#f92672">+&lt;/span> 1) &lt;span style="color:#f92672">*&lt;/span> 100000));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 验证验证码是否正确&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">boolean&lt;/span> &lt;span style="color:#a6e22e">verifyCode&lt;/span>(String userId, String code,String key) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> key &lt;span style="color:#f92672">=&lt;/span> key &lt;span style="color:#f92672">+&lt;/span> userId;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String storedCode &lt;span style="color:#f92672">=&lt;/span> redisTemplate.&lt;span style="color:#a6e22e">opsForValue&lt;/span>().&lt;span style="color:#a6e22e">get&lt;/span>(key);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> code.&lt;span style="color:#a6e22e">equals&lt;/span>(storedCode);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//删除redis中验证码&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">deleteCode&lt;/span>(String userId,String key) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> key &lt;span style="color:#f92672">=&lt;/span> key &lt;span style="color:#f92672">+&lt;/span> userId;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> redisTemplate.&lt;span style="color:#a6e22e">delete&lt;/span>(key);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">//写在需要发送验证码的地方&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">//存储时间&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">final&lt;/span> &lt;span style="color:#66d9ef">int&lt;/span> EXPIRATION_TIME_IN_MINUTES &lt;span style="color:#f92672">=&lt;/span> 3;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//键名&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">final&lt;/span> String KEY_PREFIX &lt;span style="color:#f92672">==&lt;/span>&lt;span style="color:#e6db74">&amp;#34;xxx&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> key&lt;span style="color:#f92672">=&lt;/span>KEY_PREFIX&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#e6db74">&amp;#34;123456&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>redisTemplate.&lt;span style="color:#a6e22e">opsForValue&lt;/span>().&lt;span style="color:#a6e22e">set&lt;/span>(key, 随机数字验证码, EXPIRATION_TIME_IN_MINUTES, TimeUnit.&lt;span style="color:#a6e22e">MINUTES&lt;/span>);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>面试记录</title><link>https://connorzhangyu.com/posts/%E8%AE%B0%E5%BD%95/%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/</link><pubDate>Tue, 01 Aug 2023 20:54:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/%E8%AE%B0%E5%BD%95/%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/</guid><description>&lt;p>{% timeline 至今 ,color %}&lt;/p>
+&lt;!-- timeline 2023-08-01 yb -->
+&lt;ol>
+&lt;li>mysql 主从复制异常怎么办&lt;/li>
+&lt;li>ThreadLocal 没有答上来&lt;/li>
+&lt;li>强应用,弱引用&lt;/li>
+&lt;li>mybatis源码,myabtis怎么通过接口调用到sql的&lt;/li>
+&lt;li>RabbitMQ 和 RocketMQ的区别&lt;/li>
+&lt;li>Redis的数据结构有哪些&lt;/li>
+&lt;li>重构代码用了哪些设计模式&lt;/li>
+&lt;li>Spring Cloud的常用组件&lt;/li>
+&lt;li>violate关键字&lt;/li>
+&lt;li>实现多数据源&lt;/li>
+&lt;li>Spring事务传播&lt;/li>
+&lt;/ol>
+&lt;!-- endtimeline -->
+&lt;p>{% endtimeline %}&lt;/p></description><content>&lt;p>{% timeline 至今 ,color %}&lt;/p>
+&lt;!-- timeline 2023-08-01 yb -->
+&lt;ol>
+&lt;li>mysql 主从复制异常怎么办&lt;/li>
+&lt;li>ThreadLocal 没有答上来&lt;/li>
+&lt;li>强应用,弱引用&lt;/li>
+&lt;li>mybatis源码,myabtis怎么通过接口调用到sql的&lt;/li>
+&lt;li>RabbitMQ 和 RocketMQ的区别&lt;/li>
+&lt;li>Redis的数据结构有哪些&lt;/li>
+&lt;li>重构代码用了哪些设计模式&lt;/li>
+&lt;li>Spring Cloud的常用组件&lt;/li>
+&lt;li>violate关键字&lt;/li>
+&lt;li>实现多数据源&lt;/li>
+&lt;li>Spring事务传播&lt;/li>
+&lt;/ol>
+&lt;!-- endtimeline -->
+&lt;p>{% endtimeline %}&lt;/p></content></item><item><title>Waline部署</title><link>https://connorzhangyu.com/posts/waline/</link><pubDate>Tue, 25 Jul 2023 00:05:46 +0000</pubDate><guid>https://connorzhangyu.com/posts/waline/</guid><description>&lt;p>查看Waline文档,并点击&lt;code>Deploy&lt;/code>,文档上有大概步骤,也可以参考,要使用免费的数据库,我就选择&lt;code>MongoDB&lt;/code>,可以免费申请&lt;/p>
+&lt;p>&lt;a href="https://waline.js.org/guide/deploy/vercel.html">Waline-Vercel部署&lt;/a>&lt;/p>
+&lt;p>部署Waline到Vercel
+&lt;img src="https://image.runtimes.cc/202404051403234.png" alt="image-20230724225259528">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404626.png" alt="image-20230724225326229">&lt;/p>
+&lt;p>打开Vercel分配的地址,测试评论,就会显示下图,是因为需要配置数据库
+&lt;img src="https://image.runtimes.cc/202404051404342.png" alt="image-20230724225745349">&lt;/p>
+&lt;p>申请免费的&lt;code>MongoDB&lt;/code>&lt;/p>
+&lt;p>访问&lt;a href="https://www.mongodb.com/zh-cn">MongoDB官网&lt;/a>,并点击免费开始使用,跳转到注册页面,点击使用Google账号登陆,也可以自己注册,这里是为了方便使用Google登陆,登陆之后需要同意一些协议,和调查,随便填写,没有很大关系&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404429.png" alt="image-20230724225938394">&lt;/p>
+&lt;p>选择免费的,并点击下面的Create&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404269.png" alt="image-20230724230315868">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404594.png" alt="image-20230724230343845">&lt;/p>
+&lt;p>等待一会,会自动开始创建&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404821.png" alt="image-20230724230509021">&lt;/p>
+&lt;p>创建成功,然后点击,Connect,设置ip,设置任何地方都可以访问&lt;/p>
+&lt;p>点击Choose a connection method,在弹出的窗口选择&lt;code>Compass&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404159.png" alt="image-20230724231046357">&lt;/p>
+&lt;p>获取链接地址,这里有个坑,Waine使用的包比较旧,新版本的协议是:mongod+srv,旧版本使用的mongodb,这里的选项,要使用旧版本,&lt;code>1.11 or earlier&lt;/code>&lt;/p>
+&lt;p>步骤1获取到的是:MONGO_HOST&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051405802.png" alt="image-20230725001040403">&lt;/p>
+&lt;p>查看Waline文档,查看MongoDB需要的环境配置&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051405587.png" alt="image-20230724231654843">&lt;/p>
+&lt;p>具体的配置如下:&lt;/p>
+&lt;ol>
+&lt;li>MONGO_HOST 就是从上面的步骤一 获取到的&lt;/li>
+&lt;li>默认ssl=true&lt;/li>
+&lt;li>MONGO_AUTHSOURCE 从上面步骤4获取到的&lt;/li>
+&lt;li>MONGO_USER 前面创建的用户名&lt;/li>
+&lt;li>MONGO_PASSWORD 前面创建的密码&lt;/li>
+&lt;li>MONGO_PORT 设置默认值&lt;/li>
+&lt;li>MONGO_REPLICASET 如果是默认值的话,就是Cluster0, 自己修改的话,就用自己的&lt;/li>
+&lt;li>MONGO_DB = waline, 这个值也可以随便填, 不用手动创建库,waline会自动创建&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051405827.png" alt="image-20230725001132730">&lt;/p>
+&lt;p>环境变量配置好之后,重新部署下就行了&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051405198.png" alt="image-20230725001724373">&lt;/p>
+&lt;p>评论地址是:&lt;code>vercel分配的域名&lt;/code>&lt;/p>
+&lt;p>后台系统是:&lt;code>vercel分配的域名/ui&lt;/code>&lt;/p></description><content>&lt;p>查看Waline文档,并点击&lt;code>Deploy&lt;/code>,文档上有大概步骤,也可以参考,要使用免费的数据库,我就选择&lt;code>MongoDB&lt;/code>,可以免费申请&lt;/p>
+&lt;p>&lt;a href="https://waline.js.org/guide/deploy/vercel.html">Waline-Vercel部署&lt;/a>&lt;/p>
+&lt;p>部署Waline到Vercel
+&lt;img src="https://image.runtimes.cc/202404051403234.png" alt="image-20230724225259528">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404626.png" alt="image-20230724225326229">&lt;/p>
+&lt;p>打开Vercel分配的地址,测试评论,就会显示下图,是因为需要配置数据库
+&lt;img src="https://image.runtimes.cc/202404051404342.png" alt="image-20230724225745349">&lt;/p>
+&lt;p>申请免费的&lt;code>MongoDB&lt;/code>&lt;/p>
+&lt;p>访问&lt;a href="https://www.mongodb.com/zh-cn">MongoDB官网&lt;/a>,并点击免费开始使用,跳转到注册页面,点击使用Google账号登陆,也可以自己注册,这里是为了方便使用Google登陆,登陆之后需要同意一些协议,和调查,随便填写,没有很大关系&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404429.png" alt="image-20230724225938394">&lt;/p>
+&lt;p>选择免费的,并点击下面的Create&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404269.png" alt="image-20230724230315868">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404594.png" alt="image-20230724230343845">&lt;/p>
+&lt;p>等待一会,会自动开始创建&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404821.png" alt="image-20230724230509021">&lt;/p>
+&lt;p>创建成功,然后点击,Connect,设置ip,设置任何地方都可以访问&lt;/p>
+&lt;p>点击Choose a connection method,在弹出的窗口选择&lt;code>Compass&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404159.png" alt="image-20230724231046357">&lt;/p>
+&lt;p>获取链接地址,这里有个坑,Waine使用的包比较旧,新版本的协议是:mongod+srv,旧版本使用的mongodb,这里的选项,要使用旧版本,&lt;code>1.11 or earlier&lt;/code>&lt;/p>
+&lt;p>步骤1获取到的是:MONGO_HOST&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051405802.png" alt="image-20230725001040403">&lt;/p>
+&lt;p>查看Waline文档,查看MongoDB需要的环境配置&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051405587.png" alt="image-20230724231654843">&lt;/p>
+&lt;p>具体的配置如下:&lt;/p>
+&lt;ol>
+&lt;li>MONGO_HOST 就是从上面的步骤一 获取到的&lt;/li>
+&lt;li>默认ssl=true&lt;/li>
+&lt;li>MONGO_AUTHSOURCE 从上面步骤4获取到的&lt;/li>
+&lt;li>MONGO_USER 前面创建的用户名&lt;/li>
+&lt;li>MONGO_PASSWORD 前面创建的密码&lt;/li>
+&lt;li>MONGO_PORT 设置默认值&lt;/li>
+&lt;li>MONGO_REPLICASET 如果是默认值的话,就是Cluster0, 自己修改的话,就用自己的&lt;/li>
+&lt;li>MONGO_DB = waline, 这个值也可以随便填, 不用手动创建库,waline会自动创建&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051405827.png" alt="image-20230725001132730">&lt;/p>
+&lt;p>环境变量配置好之后,重新部署下就行了&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051405198.png" alt="image-20230725001724373">&lt;/p>
+&lt;p>评论地址是:&lt;code>vercel分配的域名&lt;/code>&lt;/p>
+&lt;p>后台系统是:&lt;code>vercel分配的域名/ui&lt;/code>&lt;/p></content></item><item><title>Waline部署</title><link>https://connorzhangyu.com/posts/%E8%AE%B0%E5%BD%95/waline/</link><pubDate>Tue, 25 Jul 2023 00:05:46 +0000</pubDate><guid>https://connorzhangyu.com/posts/%E8%AE%B0%E5%BD%95/waline/</guid><description>&lt;p>查看Waline文档,并点击&lt;code>Deploy&lt;/code>,文档上有大概步骤,也可以参考,要使用免费的数据库,我就选择&lt;code>MongoDB&lt;/code>,可以免费申请&lt;/p>
+&lt;p>&lt;a href="https://waline.js.org/guide/deploy/vercel.html">Waline-Vercel部署&lt;/a>&lt;/p>
+&lt;p>部署Waline到Vercel
+&lt;img src="https://image.runtimes.cc/202404051403234.png" alt="image-20230724225259528">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404626.png" alt="image-20230724225326229">&lt;/p>
+&lt;p>打开Vercel分配的地址,测试评论,就会显示下图,是因为需要配置数据库
+&lt;img src="https://image.runtimes.cc/202404051404342.png" alt="image-20230724225745349">&lt;/p>
+&lt;p>申请免费的&lt;code>MongoDB&lt;/code>&lt;/p>
+&lt;p>访问&lt;a href="https://www.mongodb.com/zh-cn">MongoDB官网&lt;/a>,并点击免费开始使用,跳转到注册页面,点击使用Google账号登陆,也可以自己注册,这里是为了方便使用Google登陆,登陆之后需要同意一些协议,和调查,随便填写,没有很大关系&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404429.png" alt="image-20230724225938394">&lt;/p>
+&lt;p>选择免费的,并点击下面的Create&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404269.png" alt="image-20230724230315868">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404594.png" alt="image-20230724230343845">&lt;/p>
+&lt;p>等待一会,会自动开始创建&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404821.png" alt="image-20230724230509021">&lt;/p>
+&lt;p>创建成功,然后点击,Connect,设置ip,设置任何地方都可以访问&lt;/p>
+&lt;p>点击Choose a connection method,在弹出的窗口选择&lt;code>Compass&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404159.png" alt="image-20230724231046357">&lt;/p>
+&lt;p>获取链接地址,这里有个坑,Waine使用的包比较旧,新版本的协议是:mongod+srv,旧版本使用的mongodb,这里的选项,要使用旧版本,&lt;code>1.11 or earlier&lt;/code>&lt;/p>
+&lt;p>步骤1获取到的是:MONGO_HOST&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051405802.png" alt="image-20230725001040403">&lt;/p>
+&lt;p>查看Waline文档,查看MongoDB需要的环境配置&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051405587.png" alt="image-20230724231654843">&lt;/p>
+&lt;p>具体的配置如下:&lt;/p>
+&lt;ol>
+&lt;li>MONGO_HOST 就是从上面的步骤一 获取到的&lt;/li>
+&lt;li>默认ssl=true&lt;/li>
+&lt;li>MONGO_AUTHSOURCE 从上面步骤4获取到的&lt;/li>
+&lt;li>MONGO_USER 前面创建的用户名&lt;/li>
+&lt;li>MONGO_PASSWORD 前面创建的密码&lt;/li>
+&lt;li>MONGO_PORT 设置默认值&lt;/li>
+&lt;li>MONGO_REPLICASET 如果是默认值的话,就是Cluster0, 自己修改的话,就用自己的&lt;/li>
+&lt;li>MONGO_DB = waline, 这个值也可以随便填, 不用手动创建库,waline会自动创建&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051405827.png" alt="image-20230725001132730">&lt;/p>
+&lt;p>环境变量配置好之后,重新部署下就行了&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051405198.png" alt="image-20230725001724373">&lt;/p>
+&lt;p>评论地址是:&lt;code>vercel分配的域名&lt;/code>&lt;/p>
+&lt;p>后台系统是:&lt;code>vercel分配的域名/ui&lt;/code>&lt;/p></description><content>&lt;p>查看Waline文档,并点击&lt;code>Deploy&lt;/code>,文档上有大概步骤,也可以参考,要使用免费的数据库,我就选择&lt;code>MongoDB&lt;/code>,可以免费申请&lt;/p>
+&lt;p>&lt;a href="https://waline.js.org/guide/deploy/vercel.html">Waline-Vercel部署&lt;/a>&lt;/p>
+&lt;p>部署Waline到Vercel
+&lt;img src="https://image.runtimes.cc/202404051403234.png" alt="image-20230724225259528">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404626.png" alt="image-20230724225326229">&lt;/p>
+&lt;p>打开Vercel分配的地址,测试评论,就会显示下图,是因为需要配置数据库
+&lt;img src="https://image.runtimes.cc/202404051404342.png" alt="image-20230724225745349">&lt;/p>
+&lt;p>申请免费的&lt;code>MongoDB&lt;/code>&lt;/p>
+&lt;p>访问&lt;a href="https://www.mongodb.com/zh-cn">MongoDB官网&lt;/a>,并点击免费开始使用,跳转到注册页面,点击使用Google账号登陆,也可以自己注册,这里是为了方便使用Google登陆,登陆之后需要同意一些协议,和调查,随便填写,没有很大关系&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404429.png" alt="image-20230724225938394">&lt;/p>
+&lt;p>选择免费的,并点击下面的Create&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404269.png" alt="image-20230724230315868">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404594.png" alt="image-20230724230343845">&lt;/p>
+&lt;p>等待一会,会自动开始创建&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404821.png" alt="image-20230724230509021">&lt;/p>
+&lt;p>创建成功,然后点击,Connect,设置ip,设置任何地方都可以访问&lt;/p>
+&lt;p>点击Choose a connection method,在弹出的窗口选择&lt;code>Compass&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051404159.png" alt="image-20230724231046357">&lt;/p>
+&lt;p>获取链接地址,这里有个坑,Waine使用的包比较旧,新版本的协议是:mongod+srv,旧版本使用的mongodb,这里的选项,要使用旧版本,&lt;code>1.11 or earlier&lt;/code>&lt;/p>
+&lt;p>步骤1获取到的是:MONGO_HOST&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051405802.png" alt="image-20230725001040403">&lt;/p>
+&lt;p>查看Waline文档,查看MongoDB需要的环境配置&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051405587.png" alt="image-20230724231654843">&lt;/p>
+&lt;p>具体的配置如下:&lt;/p>
+&lt;ol>
+&lt;li>MONGO_HOST 就是从上面的步骤一 获取到的&lt;/li>
+&lt;li>默认ssl=true&lt;/li>
+&lt;li>MONGO_AUTHSOURCE 从上面步骤4获取到的&lt;/li>
+&lt;li>MONGO_USER 前面创建的用户名&lt;/li>
+&lt;li>MONGO_PASSWORD 前面创建的密码&lt;/li>
+&lt;li>MONGO_PORT 设置默认值&lt;/li>
+&lt;li>MONGO_REPLICASET 如果是默认值的话,就是Cluster0, 自己修改的话,就用自己的&lt;/li>
+&lt;li>MONGO_DB = waline, 这个值也可以随便填, 不用手动创建库,waline会自动创建&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051405827.png" alt="image-20230725001132730">&lt;/p>
+&lt;p>环境变量配置好之后,重新部署下就行了&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051405198.png" alt="image-20230725001724373">&lt;/p>
+&lt;p>评论地址是:&lt;code>vercel分配的域名&lt;/code>&lt;/p>
+&lt;p>后台系统是:&lt;code>vercel分配的域名/ui&lt;/code>&lt;/p></content></item></channel></rss>

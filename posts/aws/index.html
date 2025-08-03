@@ -1,0 +1,182 @@
+<!doctype html><html lang=zh><head><title>AWS :: Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content='AWS基本教程 场景是:在把22端口关闭了,无法再连上服务器的情况
+解决办法:关闭服务器,点击操作->实例设置->编辑用户数据
+#!/bin/bash # 允许 SSH 端口 iptables -P INPUT ACCEPT iptables -P OUTPUT ACCEPT iptables -P FORWARD ACCEPT iptables -F iptables -A INPUT -p tcp --dport 22 -j ACCEPT 再启动服务器
+AWS升级配置 1.先停止实例,不是终止实例 2.修改实例类型 {% note danger simple %} 重启公网IP可能会改变 {% endnote %}
+服务器局域网互通 需要把局域网 想要互通的服务器,加入一个公共的的默认安全组
+选择default安全组 要看服务器部署在哪里 JavaSDK上传图片到S3 @RestController @Slf4j @Api(tags = "上传接口") public class UploadController { @Value("${S3.accessKey}") String accessKey; @Value("${S3.secretKey}") String secretKey; @Value("${S3.endPoint}") String endPoint; @Value("${S3.bucketName}") String bucketName; @PostMapping("/upload") @ApiOperation("上传") @NotNeedAuth public Response<String> upload(@RequestParam("file") MultipartFile file) { String originalFilename = file.getOriginalFilename(); if (!Constant.PHOTO_LIST.contains(originalFilename.substring(originalFilename.lastIndexOf(".") + 1))) { return Response.fail(CodeConstant.CODE_095); } String newImageName = ThreadLocalRandom.current().nextInt(10000) + System.currentTimeMillis() + originalFilename.substring(originalFilename.lastIndexOf(".")).toLowerCase(); String fileName = "lxdt/dt/" + Constant.DIRECTORY_TIME_FORMAT.format(LocalDateTime.now(Constant.TIME_ZONE)) + newImageName; try { S3Util.uploadFileByFile(accessKey, secretKey, endPoint, bucketName, fileName, file); } catch (Exception e) { log.error("上传失败", e); return Response.error(""); } return Response.successData(fileName); } } public class S3Util { /** * 图片上传 */ public static void uploadFileByFile(String accessKey, String secretKey, String endPoint, String bucketName, String folderName, MultipartFile file) throws IOException { ClientConfiguration clientConfig = new ClientConfiguration(); clientConfig.setProtocol(Protocol.HTTPS); AmazonS3 amazonS3 = AmazonS3Client.builder().withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration(endPoint, Region.getRegion(Regions.AP_SOUTHEAST_1).getName())) .withClientConfiguration(clientConfig).withCredentials(new AWSStaticCredentialsProvider(new BasicAWSCredentials(accessKey, secretKey))) .disableChunkedEncoding().withPathStyleAccessEnabled(true).withForceGlobalBucketAccessEnabled(true).enablePathStyleAccess().build(); ObjectMetadata objectMetadata = new ObjectMetadata(); objectMetadata.setContentType(file.getContentType()); objectMetadata.setContentLength(file.getSize()); amazonS3.putObject(new PutObjectRequest(bucketName, folderName, file.getInputStream(), objectMetadata).withCannedAcl(CannedAccessControlList.PublicRead)); } } S3桶策略 公开访问桶策略
+'><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://connorzhangyu.com/posts/aws/><link rel=stylesheet href=https://connorzhangyu.com/styles.css><link rel="shortcut icon" href=https://connorzhangyu.com/img/theme-colors/orange.png><link rel=apple-touch-icon href=https://connorzhangyu.com/img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta name=twitter:site content><meta name=twitter:creator content="Anthony"><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="og:title" content="AWS"><meta property="og:description" content='AWS基本教程 场景是:在把22端口关闭了,无法再连上服务器的情况
+解决办法:关闭服务器,点击操作->实例设置->编辑用户数据
+#!/bin/bash # 允许 SSH 端口 iptables -P INPUT ACCEPT iptables -P OUTPUT ACCEPT iptables -P FORWARD ACCEPT iptables -F iptables -A INPUT -p tcp --dport 22 -j ACCEPT 再启动服务器
+AWS升级配置 1.先停止实例,不是终止实例 2.修改实例类型 {% note danger simple %} 重启公网IP可能会改变 {% endnote %}
+服务器局域网互通 需要把局域网 想要互通的服务器,加入一个公共的的默认安全组
+选择default安全组 要看服务器部署在哪里 JavaSDK上传图片到S3 @RestController @Slf4j @Api(tags = "上传接口") public class UploadController { @Value("${S3.accessKey}") String accessKey; @Value("${S3.secretKey}") String secretKey; @Value("${S3.endPoint}") String endPoint; @Value("${S3.bucketName}") String bucketName; @PostMapping("/upload") @ApiOperation("上传") @NotNeedAuth public Response<String> upload(@RequestParam("file") MultipartFile file) { String originalFilename = file.getOriginalFilename(); if (!Constant.PHOTO_LIST.contains(originalFilename.substring(originalFilename.lastIndexOf(".") + 1))) { return Response.fail(CodeConstant.CODE_095); } String newImageName = ThreadLocalRandom.current().nextInt(10000) + System.currentTimeMillis() + originalFilename.substring(originalFilename.lastIndexOf(".")).toLowerCase(); String fileName = "lxdt/dt/" + Constant.DIRECTORY_TIME_FORMAT.format(LocalDateTime.now(Constant.TIME_ZONE)) + newImageName; try { S3Util.uploadFileByFile(accessKey, secretKey, endPoint, bucketName, fileName, file); } catch (Exception e) { log.error("上传失败", e); return Response.error(""); } return Response.successData(fileName); } } public class S3Util { /** * 图片上传 */ public static void uploadFileByFile(String accessKey, String secretKey, String endPoint, String bucketName, String folderName, MultipartFile file) throws IOException { ClientConfiguration clientConfig = new ClientConfiguration(); clientConfig.setProtocol(Protocol.HTTPS); AmazonS3 amazonS3 = AmazonS3Client.builder().withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration(endPoint, Region.getRegion(Regions.AP_SOUTHEAST_1).getName())) .withClientConfiguration(clientConfig).withCredentials(new AWSStaticCredentialsProvider(new BasicAWSCredentials(accessKey, secretKey))) .disableChunkedEncoding().withPathStyleAccessEnabled(true).withForceGlobalBucketAccessEnabled(true).enablePathStyleAccess().build(); ObjectMetadata objectMetadata = new ObjectMetadata(); objectMetadata.setContentType(file.getContentType()); objectMetadata.setContentLength(file.getSize()); amazonS3.putObject(new PutObjectRequest(bucketName, folderName, file.getInputStream(), objectMetadata).withCannedAcl(CannedAccessControlList.PublicRead)); } } S3桶策略 公开访问桶策略
+'><meta property="og:url" content="https://connorzhangyu.com/posts/aws/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="https://image.runtimes.cc/202404051525243.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><meta property="article:section" content="Cloud"><meta property="article:published_time" content="2022-11-19 18:25:00 +0000 UTC"></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></nav></header><div class=content><article class=post><h1 class=post-title><a href=https://connorzhangyu.com/posts/aws/>AWS</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/aws/>AWS</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/>云服务器</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/%E5%9B%BE%E5%BA%8A/>图床</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/>静态资源</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/%E5%AE%89%E5%85%A8%E7%BB%84/>安全组</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/cdn/>CDN</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/%E8%BE%B9%E7%BC%98%E5%8A%A0%E9%80%9F/>边缘加速</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/cname/>cname</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051525243.png class=post-cover alt=" " title="Cover Image"><div class=post-content><div><h1 id=aws基本教程>AWS基本教程<a href=#aws基本教程 class=hanchor arialabel=Anchor>&#8983;</a></h1><p>场景是:在把22端口关闭了,无法再连上服务器的情况</p><p>解决办法:关闭服务器,点击<code>操作</code>-><code>实例设置</code>-><code>编辑用户数据</code></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e>#!/bin/bash
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#75715e># 允许 SSH 端口</span>
+</span></span><span style=display:flex><span>iptables -P INPUT ACCEPT
+</span></span><span style=display:flex><span>iptables -P OUTPUT ACCEPT
+</span></span><span style=display:flex><span>iptables -P FORWARD ACCEPT
+</span></span><span style=display:flex><span>iptables -F
+</span></span><span style=display:flex><span>iptables -A INPUT -p tcp --dport <span style=color:#ae81ff>22</span> -j ACCEPT
+</span></span></code></pre></div><p>再启动服务器</p><h2 id=aws升级配置>AWS升级配置<a href=#aws升级配置 class=hanchor arialabel=Anchor>&#8983;</a></h2><p>1.先<code>停止</code>实例,不是<code>终止</code>实例
+<img src=https://image.runtimes.cc/202404051405513.png alt></p><p>2.修改实例类型
+<img src=https://image.runtimes.cc/202404051406722.png alt></p><p>{% note danger simple %}
+重启公网IP可能会改变
+{% endnote %}</p><h2 id=服务器局域网互通>服务器局域网互通<a href=#服务器局域网互通 class=hanchor arialabel=Anchor>&#8983;</a></h2><p>需要把局域网 想要互通的服务器,加入一个公共的的默认安全组</p><p><img src=https://image.runtimes.cc/202404051406727.png alt>
+选择<code>default</code>安全组
+<img src=https://image.runtimes.cc/202404051406784.png alt></p><h2 id=要看服务器部署在哪里>要看服务器部署在哪里<a href=#要看服务器部署在哪里 class=hanchor arialabel=Anchor>&#8983;</a></h2><p><img src=https://image.runtimes.cc/202404051406380.png alt></p><p><img src=https://image.runtimes.cc/202404051407931.png alt></p><h2 id=javasdk上传图片到s3>JavaSDK上传图片到S3<a href=#javasdk上传图片到s3 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#a6e22e>@RestController</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Slf4j</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Api</span>(tags <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;上传接口&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>UploadController</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Value</span>(<span style=color:#e6db74>&#34;${S3.accessKey}&#34;</span>)
+</span></span><span style=display:flex><span>    String accessKey;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Value</span>(<span style=color:#e6db74>&#34;${S3.secretKey}&#34;</span>)
+</span></span><span style=display:flex><span>    String secretKey;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Value</span>(<span style=color:#e6db74>&#34;${S3.endPoint}&#34;</span>)
+</span></span><span style=display:flex><span>    String endPoint;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Value</span>(<span style=color:#e6db74>&#34;${S3.bucketName}&#34;</span>)
+</span></span><span style=display:flex><span>    String bucketName;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@PostMapping</span>(<span style=color:#e6db74>&#34;/upload&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiOperation</span>(<span style=color:#e6db74>&#34;上传&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@NotNeedAuth</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> Response<span style=color:#f92672>&lt;</span>String<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>upload</span>(<span style=color:#a6e22e>@RequestParam</span>(<span style=color:#e6db74>&#34;file&#34;</span>) MultipartFile file) {
+</span></span><span style=display:flex><span>        String originalFilename <span style=color:#f92672>=</span> file.<span style=color:#a6e22e>getOriginalFilename</span>();
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span>Constant.<span style=color:#a6e22e>PHOTO_LIST</span>.<span style=color:#a6e22e>contains</span>(originalFilename.<span style=color:#a6e22e>substring</span>(originalFilename.<span style=color:#a6e22e>lastIndexOf</span>(<span style=color:#e6db74>&#34;.&#34;</span>) <span style=color:#f92672>+</span> 1))) {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> Response.<span style=color:#a6e22e>fail</span>(CodeConstant.<span style=color:#a6e22e>CODE_095</span>);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        String newImageName <span style=color:#f92672>=</span> ThreadLocalRandom.<span style=color:#a6e22e>current</span>().<span style=color:#a6e22e>nextInt</span>(10000) <span style=color:#f92672>+</span> System.<span style=color:#a6e22e>currentTimeMillis</span>() <span style=color:#f92672>+</span> originalFilename.<span style=color:#a6e22e>substring</span>(originalFilename.<span style=color:#a6e22e>lastIndexOf</span>(<span style=color:#e6db74>&#34;.&#34;</span>)).<span style=color:#a6e22e>toLowerCase</span>();
+</span></span><span style=display:flex><span>        String fileName <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;lxdt/dt/&#34;</span> <span style=color:#f92672>+</span> Constant.<span style=color:#a6e22e>DIRECTORY_TIME_FORMAT</span>.<span style=color:#a6e22e>format</span>(LocalDateTime.<span style=color:#a6e22e>now</span>(Constant.<span style=color:#a6e22e>TIME_ZONE</span>)) <span style=color:#f92672>+</span> newImageName;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>            S3Util.<span style=color:#a6e22e>uploadFileByFile</span>(accessKey, secretKey, endPoint, bucketName, fileName, file);
+</span></span><span style=display:flex><span>        } <span style=color:#66d9ef>catch</span> (Exception e) {
+</span></span><span style=display:flex><span>            log.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>&#34;上传失败&#34;</span>, e);
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> Response.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>&#34;&#34;</span>);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> Response.<span style=color:#a6e22e>successData</span>(fileName);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>S3Util</span> {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * 图片上传
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     */</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>uploadFileByFile</span>(String accessKey, String secretKey, String endPoint, String bucketName, String folderName, MultipartFile file) <span style=color:#66d9ef>throws</span> IOException {
+</span></span><span style=display:flex><span>        ClientConfiguration clientConfig <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> ClientConfiguration();
+</span></span><span style=display:flex><span>        clientConfig.<span style=color:#a6e22e>setProtocol</span>(Protocol.<span style=color:#a6e22e>HTTPS</span>);
+</span></span><span style=display:flex><span>        AmazonS3 amazonS3 <span style=color:#f92672>=</span> AmazonS3Client.<span style=color:#a6e22e>builder</span>().<span style=color:#a6e22e>withEndpointConfiguration</span>(<span style=color:#66d9ef>new</span> AwsClientBuilder.<span style=color:#a6e22e>EndpointConfiguration</span>(endPoint, Region.<span style=color:#a6e22e>getRegion</span>(Regions.<span style=color:#a6e22e>AP_SOUTHEAST_1</span>).<span style=color:#a6e22e>getName</span>()))
+</span></span><span style=display:flex><span>                .<span style=color:#a6e22e>withClientConfiguration</span>(clientConfig).<span style=color:#a6e22e>withCredentials</span>(<span style=color:#66d9ef>new</span> AWSStaticCredentialsProvider(<span style=color:#66d9ef>new</span> BasicAWSCredentials(accessKey, secretKey)))
+</span></span><span style=display:flex><span>                .<span style=color:#a6e22e>disableChunkedEncoding</span>().<span style=color:#a6e22e>withPathStyleAccessEnabled</span>(<span style=color:#66d9ef>true</span>).<span style=color:#a6e22e>withForceGlobalBucketAccessEnabled</span>(<span style=color:#66d9ef>true</span>).<span style=color:#a6e22e>enablePathStyleAccess</span>().<span style=color:#a6e22e>build</span>();
+</span></span><span style=display:flex><span>        ObjectMetadata objectMetadata <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> ObjectMetadata();
+</span></span><span style=display:flex><span>        objectMetadata.<span style=color:#a6e22e>setContentType</span>(file.<span style=color:#a6e22e>getContentType</span>());
+</span></span><span style=display:flex><span>        objectMetadata.<span style=color:#a6e22e>setContentLength</span>(file.<span style=color:#a6e22e>getSize</span>());
+</span></span><span style=display:flex><span>        amazonS3.<span style=color:#a6e22e>putObject</span>(<span style=color:#66d9ef>new</span> PutObjectRequest(bucketName, folderName, file.<span style=color:#a6e22e>getInputStream</span>(), objectMetadata).<span style=color:#a6e22e>withCannedAcl</span>(CannedAccessControlList.<span style=color:#a6e22e>PublicRead</span>));
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h2 id=s3桶策略>S3桶策略<a href=#s3桶策略 class=hanchor arialabel=Anchor>&#8983;</a></h2><p>公开访问桶策略</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;Version&#34;</span>: <span style=color:#e6db74>&#34;2012-10-17&#34;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;Statement&#34;</span>: [
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&#34;Sid&#34;</span>: <span style=color:#e6db74>&#34;PublicReadGetObject&#34;</span>,
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&#34;Effect&#34;</span>: <span style=color:#e6db74>&#34;Allow&#34;</span>,
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&#34;Principal&#34;</span>: <span style=color:#e6db74>&#34;*&#34;</span>,
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&#34;Action&#34;</span>: <span style=color:#e6db74>&#34;s3:GetObject&#34;</span>,
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&#34;Resource&#34;</span>: <span style=color:#e6db74>&#34;arn:aws:s3:::your-bucket-name/*&#34;</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  ]
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><blockquote><p>印象中有遇到这种情况:</p><p>​ 第一次操作桶的时候,桶里面的文件是能正常共享出来的</p><p>​ 很久之后没有操作了,再上传一个新文件,上传的这个文件就不能共享了</p><p>第二次出现这样情况的时候,我文件的url搞错了,是可以正常共享的</p></blockquote><h1 id=picgos3>PicGO+S3<a href=#picgos3 class=hanchor arialabel=Anchor>&#8983;</a></h1><h3 id=创建存储桶>创建存储桶<a href=#创建存储桶 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>红框里不要勾选</p><p><img src=https://image.runtimes.cc/202404051407616.png alt></p><h3 id=创建文件夹设置公开>创建文件夹,设置公开<a href=#创建文件夹设置公开 class=hanchor arialabel=Anchor>&#8983;</a></h3><p><img src=https://image.runtimes.cc/202404051407911.png alt></p><h3 id=开启静态托管>开启静态托管<a href=#开启静态托管 class=hanchor arialabel=Anchor>&#8983;</a></h3><p><img src=https://image.runtimes.cc/202404051407713.png alt></p><h3 id=新建iam用户>新建IAM用户<a href=#新建iam用户 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>访问创建IAM页面
+<img src=https://image.runtimes.cc/202404051407343.png alt></p><p>创建使用者
+<img src=https://image.runtimes.cc/202404051408604.png alt></p><p>创建使用者详情
+<img src=https://image.runtimes.cc/202404051408370.png alt></p><p>创建使用者权限,点击下一步,然后就能看到key和密钥了
+<img src=https://image.runtimes.cc/202404051409638.png alt></p><p><img src=https://image.runtimes.cc/202404051410989.png alt></p><h3 id=picgo配置>PicGO配置<a href=#picgo配置 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>PicGO软件许要下再S3插件,然后再配置文件里粘贴这个</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span><span style=color:#e6db74>&#34;aws-s3&#34;</span><span style=color:#960050;background-color:#1e0010>:</span> {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;accessKeyID&#34;</span>: <span style=color:#e6db74>&#34;AKIA2Q6ZSIPP7MKZOFHR&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;secretAccessKey&#34;</span>: <span style=color:#e6db74>&#34;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&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;bucketName&#34;</span>: <span style=color:#e6db74>&#34;mmzcg.com&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;uploadPath&#34;</span>: <span style=color:#e6db74>&#34;blog/{year}/{fullName}&#34;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;acl&#34;</span>: <span style=color:#e6db74>&#34;public-read&#34;</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h2 id=参考>参考<a href=#参考 class=hanchor arialabel=Anchor>&#8983;</a></h2><p><a href=https://atsud0.me/2021/02/24/%E4%BD%BF%E7%94%A8Amazon-S3%E5%AE%9E%E7%8E%B0%E5%9B%BE%E5%BA%8A/>S3教程</a></p><p><a href=https://github.com/wayjam/picgo-plugin-s3>PicGoS3教程</a></p><h1 id=cloudfront加速vercel>CloudFront加速Vercel<a href=#cloudfront加速vercel class=hanchor arialabel=Anchor>&#8983;</a></h1><p>1.找到vercel自动分配的域名</p><p><img src=https://image.runtimes.cc/202404051410348.png alt=image-20221123104312029></p><p>2.aws 创建分配</p><p><img src=https://image.runtimes.cc/202404051410581.png alt=image-20221123104312029></p><p>3.选择源</p><p>不要选择源,输入vercel分配的域名</p><p><img src=https://image.runtimes.cc/202404051410351.png alt=image-20221123104312029></p><p>4.选择全部https,其它可以默认</p><p><img src=https://image.runtimes.cc/202404051410472.png alt=image-20221123104312029>
+5.选择证书</p><p><img src=https://image.runtimes.cc/202404051410436.png alt=image-20221123104312029></p><p>备用域名:
+比如vercel默认分配的是xxx.vercel.app
+你想加速的域名是 abc.blog,备用域名就填abc.blog</p><p>自定义SSL证书:
+用aws自带的证书申请工具</p><p>点击保存,回到CloudFront首页</p><p>6.cname</p><ul><li>看上次修改时间这一列,如果显示的时间,就表示刚才的配置已经生效了,如果显示在部署中&mldr;就等一会</li><li>CloudFront这一列会分配一个域名,在域名解析那里Cname指向这个域名就可以了</li></ul><p><img src=https://image.runtimes.cc/202404051410552.png alt=image-20221123104312029></p><h1 id=aws-s3和hexo>AWS S3和Hexo<a href=#aws-s3和hexo class=hanchor arialabel=Anchor>&#8983;</a></h1><p>1.安装插件</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=display:flex><span><span style=color:#75715e># 装置</span>
+</span></span><span style=display:flex><span>npm install hexo-deployer-aws-s3 --save-dev
+</span></span></code></pre></div><p>2.改<code>_config.yml</code></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=display:flex><span>deploy<span style=color:#960050;background-color:#1e0010>:</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># - type: &#39;git&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#   repo: git@github.com:aaaaaaanthony/aaaaaaanthony.github.io.git</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#   branch: master</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  type<span style=color:#960050;background-color:#1e0010>:</span> <span style=color:#e6db74>&#39;aws-s3&#39;</span>            <span style=color:#75715e># 写死</span>
+</span></span><span style=display:flex><span>  region<span style=color:#960050;background-color:#1e0010>:</span> ap-east-<span style=color:#ae81ff>1</span>        <span style=color:#75715e># 区域名</span>
+</span></span><span style=display:flex><span>  bucket<span style=color:#960050;background-color:#1e0010>:</span> mmzcg.com        <span style=color:#75715e># 桶名</span>
+</span></span></code></pre></div><p>如果要部署多个地方,每个仓库的type前面要加一个<code>-</code></p><p>如果只有一个,就只用type开头就行</p><p>3.执行环境变量</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>export AWS_ACCESS_KEY_ID<span style=color:#f92672>=</span>AKIA2Q6ZSIPP7MKZOFHR
+</span></span><span style=display:flex><span>export AWS_SECRET_ACCESS_KEY<span style=color:#f92672>=</span>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
+</span></span><span style=display:flex><span>source /etc/profile
+</span></span></code></pre></div><p>4.部署</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>
+</span></span><span style=display:flex><span>hexo clean
+</span></span><span style=display:flex><span>hexo algoli
+</span></span><span style=display:flex><span>hexo d -g
+</span></span></code></pre></div><p>发现报错，<code>The bucket does not allow ACLs</code>，还需要在存储中开启 <code>ACLs</code></p><p><img src=https://image.runtimes.cc/202404051411607.png alt></p><p>接下来要关闭「阻止共有访问操作」</p><p><img src=https://image.runtimes.cc/202404051411528.png alt></p><p>部署成功后，开启静态网站托管功能</p><p><img src=https://image.runtimes.cc/202404051411449.png alt></p><h1 id=rds>RDS<a href=#rds class=hanchor arialabel=Anchor>&#8983;</a></h1><h2 id=创建rds>创建RDS<a href=#创建rds class=hanchor arialabel=Anchor>&#8983;</a></h2><p>选择mysql社区版本</p><p><img src=https://image.runtimes.cc/202406151610262.png alt=1></p><p><img src=https://image.runtimes.cc/202406151612706.png alt=image-20240615161249827></p><p><img src=https://image.runtimes.cc/202406151618731.png alt=image-20240615161843363></p><p><img src=https://image.runtimes.cc/202406151620676.png alt=image-20240615162034149></p><p><a href=https://blog.csdn.net/zhouyan8603/article/details/107947011>AWS的RDS开启慢查询日志到cloudwatch中</a></p><h2 id=快照导出到s3>快照导出到S3<a href=#快照导出到s3 class=hanchor arialabel=Anchor>&#8983;</a></h2><blockquote><p><a href=https://docs.aws.amazon.com/zh_cn/AmazonRDS/latest/UserGuide/USER_ExportSnapshot.html#USER_ExportSnapshot.Exporting>参考文档</a></p></blockquote><p><img src=https://image.runtimes.cc/202408131038847.png alt=image-20240813103851409></p><p>接下来的页面是需要的设置</p><ul><li>导出标识符,就是导出任务的名字</li><li>导出的数据,这里测试就简单点,导出全部表,要是选部分表,文档里有导出规则</li><li>S3 目标, 选一个存储桶</li><li>接下来的两个是难点,IAM角色,和加密</li></ul><p><img src=https://image.runtimes.cc/202408131042173.png alt=image-20240813104211323></p><p>先看加密,先创建ARN,找到配置的选项卡</p><p><img src=https://image.runtimes.cc/202408131044763.png alt=image-20240813104403258></p><p>点击下面的链接</p><p><img src=https://image.runtimes.cc/202408131044182.png alt=image-20240813104444558></p><p>在客户管理的秘钥,创建一个秘钥, 客户管理的密钥和AWS托管的密钥是有区别的,要选对</p><p><img src=https://image.runtimes.cc/202408131045111.png alt=image-20240813104544460></p><p>创建完之后,再回到 密钥列表的页面,点密钥ID,进入到详情页</p><p><img src=https://image.runtimes.cc/202408131047379.png alt=image-20240813104726725></p><p>复制ARN刚刚才导出的页面,角色权限什么的,各种尝试下就可以了</p><h1 id=front清空缓存api>front清空缓存API<a href=#front清空缓存api class=hanchor arialabel=Anchor>&#8983;</a></h1><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> boto3
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> datetime
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>create_invalidation</span>(distribution_id, paths):
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 创建一个CloudFront客户端并提供凭证</span>
+</span></span><span style=display:flex><span>    client <span style=color:#f92672>=</span> boto3<span style=color:#f92672>.</span>client(<span style=color:#e6db74>&#39;cloudfront&#39;</span>,aws_access_key_id<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;AKIA2UC26S7767GSGKJQ&#39;</span>,aws_secret_access_key<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;6V0B3uOHkr4Bt60fJRMUA4TW4jDKOLnOn0PASpdC&#39;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 创建一个唯一的无效请求ID</span>
+</span></span><span style=display:flex><span>    caller_reference <span style=color:#f92672>=</span> str(datetime<span style=color:#f92672>.</span>datetime<span style=color:#f92672>.</span>now())
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 格式化路径</span>
+</span></span><span style=display:flex><span>    items <span style=color:#f92672>=</span> paths <span style=color:#66d9ef>if</span> isinstance(paths, list) <span style=color:#66d9ef>else</span> [paths]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 构建无效请求</span>
+</span></span><span style=display:flex><span>    invalidation_batch <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#39;Paths&#39;</span>: {
+</span></span><span style=display:flex><span>            <span style=color:#e6db74>&#39;Quantity&#39;</span>: len(items),
+</span></span><span style=display:flex><span>            <span style=color:#e6db74>&#39;Items&#39;</span>: items
+</span></span><span style=display:flex><span>        },
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#39;CallerReference&#39;</span>: caller_reference
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 创建无效请求</span>
+</span></span><span style=display:flex><span>    response <span style=color:#f92672>=</span> client<span style=color:#f92672>.</span>create_invalidation(
+</span></span><span style=display:flex><span>        DistributionId<span style=color:#f92672>=</span>distribution_id,
+</span></span><span style=display:flex><span>        InvalidationBatch<span style=color:#f92672>=</span>invalidation_batch
+</span></span><span style=display:flex><span>    )
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> response
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># distribution_id 列表，包含ID、说明和类型</span>
+</span></span><span style=display:flex><span>distribution_info <span style=color:#f92672>=</span> [
+</span></span><span style=display:flex><span>    [<span style=color:#e6db74>&#34;EX123AFBG&#34;</span>, <span style=color:#e6db74>&#34;生产环境&#34;</span>, <span style=color:#e6db74>&#34;生产&#34;</span>, <span style=color:#e6db74>&#34;baidu.com&#34;</span>],
+</span></span><span style=display:flex><span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 要使失效的路径</span>
+</span></span><span style=display:flex><span>paths_to_invalidate <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#39;/*&#39;</span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 循环遍历每个distribution_id</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> info <span style=color:#f92672>in</span> distribution_info:
+</span></span><span style=display:flex><span>    distribution_id <span style=color:#f92672>=</span> info[<span style=color:#ae81ff>0</span>]
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Creating invalidation for Distribution ID: </span><span style=color:#e6db74>{</span>distribution_id<span style=color:#e6db74>}</span><span style=color:#e6db74>, Description: </span><span style=color:#e6db74>{</span>info[<span style=color:#ae81ff>1</span>]<span style=color:#e6db74>}</span><span style=color:#e6db74>, Type: </span><span style=color:#e6db74>{</span>info[<span style=color:#ae81ff>2</span>]<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>    response <span style=color:#f92672>=</span> create_invalidation(distribution_id, paths_to_invalidate)
+</span></span><span style=display:flex><span>    print(response)
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#34;================&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;刷新完成&#34;</span>)
+</span></span></code></pre></div></div></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Read other posts</span><hr></div><div class=pagination__buttons><span class="button previous"><a href=https://connorzhangyu.com/posts/aliyun/><span class=button__icon>←</span>
+<span class=button__text>Aliyun</span>
+</a></span><span class="button next"><a href=https://connorzhangyu.com/posts/c++/><span class=button__text>C++</span>
+<span class=button__icon>→</span></a></span></div></div></article></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>
+<span>:: <a href=https://github.com/mirus-ua/hugo-theme-re-terminal target=_blank>Theme</a> made by <a href=https://github.com/mirus-ua target=_blank>Mirus</a></span></div></div></footer><script type=text/javascript src=/bundle.min.js></script></div></body></html>

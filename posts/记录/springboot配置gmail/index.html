@@ -1,0 +1,208 @@
+<!doctype html><html lang=zh><head><title>SpringBoot配置Gmail :: Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content='
+申请应用程序验证码
+配置二步验证
+要配置二步验证,才能看到应用程序的选项
+最后就能获取到应用程序验证码
+引入代码
+<dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-mail</artifactId> </dependency> application.properties文件配置
+spring.mail.host=smtp.gmail.com # 邮件服务器端口号 spring.mail.port=587 # 邮件发送方的电子邮件地址 spring.mail.username=你的Gmail邮箱账号 # 邮件发送方的密码或应用程序专用密码一定要开启了两步验证 spring.mail.password=应用程序专用密码 # 启用TLS加密 spring.mail.properties.mail.smtp.starttls.enable=true # 验证邮件服务器的身份 spring.mail.properties.mail.smtp.auth=true # 邮件传输协议 spring.mail.properties.mail.transport.protocol=smtp 配置的代码
+@Service public class EmailUtil implements EmailService { private final Logger logger = LoggerFactory.getLogger(this.getClass()); //Spring Boot 提供了一个发送邮件的简单抽象，使用的是下面这个接口，这里直接注入即可使用 @Autowired private JavaMailSender mailSender; // 配置文件中我的谷歌邮箱 @Value("${spring.mail.username}") private String from; /** * 简单文本邮件 * @param to 收件人 * @param subject 主题 * @param content 内容 */ @Override public void sendSimpleMail(String to, String subject, String content) { //创建SimpleMailMessage对象 SimpleMailMessage message = new SimpleMailMessage(); //邮件发送人 message.setFrom(from); //邮件接收人 message.setTo(to); //邮件主题 message.setSubject(subject); //邮件内容 message.setText(content); //发送邮件 mailSender.send(message); } /** * html邮件 * @param to 收件人,多个时参数形式 ："xxx@xxx.com,xxx@xxx.com,xxx@xxx.com" * @param subject 主题 * @param content 内容 */ @Override public void sendHtmlMail(String to, String subject, String content) { //获取MimeMessage对象 MimeMessage message = mailSender.createMimeMessage(); MimeMessageHelper messageHelper; try { messageHelper = new MimeMessageHelper(message, true); //邮件发送人 messageHelper.setFrom(from); //邮件接收人,设置多个收件人地址 InternetAddress[] internetAddressTo = InternetAddress.parse(to); messageHelper.setTo(internetAddressTo); //messageHelper.setTo(to); //邮件主题 message.setSubject(subject); //邮件内容，html格式 messageHelper.setText(content, true); //发送 mailSender.send(message); //日志信息 logger.info("邮件已经发送。"); } catch (Exception e) { logger.error("发送邮件时发生异常！", e); } } /** * 带附件的邮件 * @param to 收件人 * @param subject 主题 * @param content 内容 * @param filePath 附件 */ @Override public void sendAttachmentsMail(String to, String subject, String content, String filePath) { MimeMessage message = mailSender.createMimeMessage(); try { MimeMessageHelper helper = new MimeMessageHelper(message, true); helper.setFrom(from); helper.setTo(to); helper.setSubject(subject); helper.setText(content, true); FileSystemResource file = new FileSystemResource(new File(filePath)); String fileName = filePath.substring(filePath.lastIndexOf(File.separator)); helper.addAttachment(fileName, file); mailSender.send(message); //日志信息 logger.info("邮件已经发送。"); } catch (Exception e) { logger.error("发送邮件时发生异常！", e); } } /** * 验证邮箱格式 * @param email * @return */ public boolean isEmail(String email) { if (email == null || email.length() < 1 || email.length() > 256) { return false; } Pattern pattern = Pattern.compile("^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$"); return pattern.matcher(email).matches(); } } public interface EmailService { /** * 发送文本邮件 * * @param to 收件人 * @param subject 主题 * @param content 内容 */ void sendSimpleMail(String to, String subject, String content); /** * 发送HTML邮件 * * @param to 收件人 * @param subject 主题 * @param content 内容 */ public void sendHtmlMail(String to, String subject, String content); /** * 发送带附件的邮件 * * @param to 收件人 * @param subject 主题 * @param content 内容 * @param filePath 附件 */ public void sendAttachmentsMail(String to, String subject, String content, String filePath); } @Service public class CodeUtil { @Autowired private StringRedisTemplate redisTemplate; public String generateVerificationCode() { // 生成6位随机数字验证码 return String.valueOf((int) ((Math.random() * 9 + 1) * 100000)); } // 验证验证码是否正确 public boolean verifyCode(String userId, String code,String key) { key = key + userId; String storedCode = redisTemplate.opsForValue().get(key); return code.equals(storedCode); } //删除redis中验证码 public void deleteCode(String userId,String key) { key = key + userId; redisTemplate.delete(key); } } //写在需要发送验证码的地方 //存储时间 private static final int EXPIRATION_TIME_IN_MINUTES = 3; //键名 private static final String KEY_PREFIX =="xxx"; key=KEY_PREFIX+"123456" redisTemplate.opsForValue().set(key, 随机数字验证码, EXPIRATION_TIME_IN_MINUTES, TimeUnit.MINUTES); '><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://connorzhangyu.com/posts/%E8%AE%B0%E5%BD%95/springboot%E9%85%8D%E7%BD%AEgmail/><link rel=stylesheet href=https://connorzhangyu.com/styles.css><link rel="shortcut icon" href=https://connorzhangyu.com/img/theme-colors/orange.png><link rel=apple-touch-icon href=https://connorzhangyu.com/img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta name=twitter:site content><meta name=twitter:creator content="Anthony"><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="og:title" content="SpringBoot配置Gmail"><meta property="og:description" content='
+申请应用程序验证码
+配置二步验证
+要配置二步验证,才能看到应用程序的选项
+最后就能获取到应用程序验证码
+引入代码
+<dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-mail</artifactId> </dependency> application.properties文件配置
+spring.mail.host=smtp.gmail.com # 邮件服务器端口号 spring.mail.port=587 # 邮件发送方的电子邮件地址 spring.mail.username=你的Gmail邮箱账号 # 邮件发送方的密码或应用程序专用密码一定要开启了两步验证 spring.mail.password=应用程序专用密码 # 启用TLS加密 spring.mail.properties.mail.smtp.starttls.enable=true # 验证邮件服务器的身份 spring.mail.properties.mail.smtp.auth=true # 邮件传输协议 spring.mail.properties.mail.transport.protocol=smtp 配置的代码
+@Service public class EmailUtil implements EmailService { private final Logger logger = LoggerFactory.getLogger(this.getClass()); //Spring Boot 提供了一个发送邮件的简单抽象，使用的是下面这个接口，这里直接注入即可使用 @Autowired private JavaMailSender mailSender; // 配置文件中我的谷歌邮箱 @Value("${spring.mail.username}") private String from; /** * 简单文本邮件 * @param to 收件人 * @param subject 主题 * @param content 内容 */ @Override public void sendSimpleMail(String to, String subject, String content) { //创建SimpleMailMessage对象 SimpleMailMessage message = new SimpleMailMessage(); //邮件发送人 message.setFrom(from); //邮件接收人 message.setTo(to); //邮件主题 message.setSubject(subject); //邮件内容 message.setText(content); //发送邮件 mailSender.send(message); } /** * html邮件 * @param to 收件人,多个时参数形式 ："xxx@xxx.com,xxx@xxx.com,xxx@xxx.com" * @param subject 主题 * @param content 内容 */ @Override public void sendHtmlMail(String to, String subject, String content) { //获取MimeMessage对象 MimeMessage message = mailSender.createMimeMessage(); MimeMessageHelper messageHelper; try { messageHelper = new MimeMessageHelper(message, true); //邮件发送人 messageHelper.setFrom(from); //邮件接收人,设置多个收件人地址 InternetAddress[] internetAddressTo = InternetAddress.parse(to); messageHelper.setTo(internetAddressTo); //messageHelper.setTo(to); //邮件主题 message.setSubject(subject); //邮件内容，html格式 messageHelper.setText(content, true); //发送 mailSender.send(message); //日志信息 logger.info("邮件已经发送。"); } catch (Exception e) { logger.error("发送邮件时发生异常！", e); } } /** * 带附件的邮件 * @param to 收件人 * @param subject 主题 * @param content 内容 * @param filePath 附件 */ @Override public void sendAttachmentsMail(String to, String subject, String content, String filePath) { MimeMessage message = mailSender.createMimeMessage(); try { MimeMessageHelper helper = new MimeMessageHelper(message, true); helper.setFrom(from); helper.setTo(to); helper.setSubject(subject); helper.setText(content, true); FileSystemResource file = new FileSystemResource(new File(filePath)); String fileName = filePath.substring(filePath.lastIndexOf(File.separator)); helper.addAttachment(fileName, file); mailSender.send(message); //日志信息 logger.info("邮件已经发送。"); } catch (Exception e) { logger.error("发送邮件时发生异常！", e); } } /** * 验证邮箱格式 * @param email * @return */ public boolean isEmail(String email) { if (email == null || email.length() < 1 || email.length() > 256) { return false; } Pattern pattern = Pattern.compile("^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$"); return pattern.matcher(email).matches(); } } public interface EmailService { /** * 发送文本邮件 * * @param to 收件人 * @param subject 主题 * @param content 内容 */ void sendSimpleMail(String to, String subject, String content); /** * 发送HTML邮件 * * @param to 收件人 * @param subject 主题 * @param content 内容 */ public void sendHtmlMail(String to, String subject, String content); /** * 发送带附件的邮件 * * @param to 收件人 * @param subject 主题 * @param content 内容 * @param filePath 附件 */ public void sendAttachmentsMail(String to, String subject, String content, String filePath); } @Service public class CodeUtil { @Autowired private StringRedisTemplate redisTemplate; public String generateVerificationCode() { // 生成6位随机数字验证码 return String.valueOf((int) ((Math.random() * 9 + 1) * 100000)); } // 验证验证码是否正确 public boolean verifyCode(String userId, String code,String key) { key = key + userId; String storedCode = redisTemplate.opsForValue().get(key); return code.equals(storedCode); } //删除redis中验证码 public void deleteCode(String userId,String key) { key = key + userId; redisTemplate.delete(key); } } //写在需要发送验证码的地方 //存储时间 private static final int EXPIRATION_TIME_IN_MINUTES = 3; //键名 private static final String KEY_PREFIX =="xxx"; key=KEY_PREFIX+"123456" redisTemplate.opsForValue().set(key, 随机数字验证码, EXPIRATION_TIME_IN_MINUTES, TimeUnit.MINUTES); '><meta property="og:url" content="https://connorzhangyu.com/posts/%E8%AE%B0%E5%BD%95/springboot%E9%85%8D%E7%BD%AEgmail/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="https://image.runtimes.cc/202404051524969.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><meta property="article:section" content="记录"><meta property="article:published_time" content="2024-03-02 18:52:43 +0000 UTC"></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></nav></header><div class=content><article class=post><h1 class=post-title><a href=https://connorzhangyu.com/posts/%E8%AE%B0%E5%BD%95/springboot%E9%85%8D%E7%BD%AEgmail/>SpringBoot配置Gmail</a></h1><div class=post-meta><time class=post-date>2024-03-02</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/gmail/>Gmail</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/springboot/>SpringBoot</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051524969.jpg class=post-cover alt=" " title="Cover Image"><div class=post-content><div><p><img src=https://image.runtimes.cc/202404051400542.png alt=image-20240302190257438></p><p>申请应用程序验证码</p><p><img src=https://image.runtimes.cc/202404051400643.png alt=image-20240302184916544></p><p>配置二步验证</p><p><img src=https://image.runtimes.cc/202404051400904.png alt=image-20240302185000050></p><p>要配置二步验证,才能看到应用程序的选项</p><p><img src=https://image.runtimes.cc/202404051402469.png alt=image-20240302185040456></p><p>最后就能获取到应用程序验证码</p><p><img src=https://image.runtimes.cc/202404051402369.png alt=image-20240302185121257></p><p>引入代码</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;dependency&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;groupId&gt;</span>org.springframework.boot<span style=color:#f92672>&lt;/groupId&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;artifactId&gt;</span>spring-boot-starter-mail<span style=color:#f92672>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/dependency&gt;</span>
+</span></span></code></pre></div><p>application.properties文件配置</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-properties data-lang=properties><span style=display:flex><span><span style=color:#a6e22e>spring.mail.host</span><span style=color:#f92672>=</span><span style=color:#e6db74>smtp.gmail.com</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 邮件服务器端口号</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>spring.mail.port</span><span style=color:#f92672>=</span><span style=color:#e6db74>587</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 邮件发送方的电子邮件地址</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>spring.mail.username</span><span style=color:#f92672>=</span><span style=color:#e6db74>你的Gmail邮箱账号</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 邮件发送方的密码或应用程序专用密码一定要开启了两步验证</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>spring.mail.password</span><span style=color:#f92672>=</span><span style=color:#e6db74>应用程序专用密码</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 启用TLS加密</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>spring.mail.properties.mail.smtp.starttls.enable</span><span style=color:#f92672>=</span><span style=color:#e6db74>true</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 验证邮件服务器的身份</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>spring.mail.properties.mail.smtp.auth</span><span style=color:#f92672>=</span><span style=color:#e6db74>true</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 邮件传输协议</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>spring.mail.properties.mail.transport.protocol</span><span style=color:#f92672>=</span><span style=color:#e6db74>smtp</span>
+</span></span></code></pre></div><p>配置的代码</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#a6e22e>@Service</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>EmailUtil</span> <span style=color:#66d9ef>implements</span> EmailService
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>final</span> Logger logger <span style=color:#f92672>=</span> LoggerFactory.<span style=color:#a6e22e>getLogger</span>(<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>getClass</span>());
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//Spring Boot 提供了一个发送邮件的简单抽象，使用的是下面这个接口，这里直接注入即可使用</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Autowired</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> JavaMailSender mailSender;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 配置文件中我的谷歌邮箱</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Value</span>(<span style=color:#e6db74>&#34;${spring.mail.username}&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> String from;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * 简单文本邮件
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param to 收件人
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param subject 主题
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param content 内容
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     */</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>sendSimpleMail</span>(String to, String subject, String content) {
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//创建SimpleMailMessage对象</span>
+</span></span><span style=display:flex><span>        SimpleMailMessage message <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> SimpleMailMessage();
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//邮件发送人</span>
+</span></span><span style=display:flex><span>        message.<span style=color:#a6e22e>setFrom</span>(from);
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//邮件接收人</span>
+</span></span><span style=display:flex><span>        message.<span style=color:#a6e22e>setTo</span>(to);
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//邮件主题</span>
+</span></span><span style=display:flex><span>        message.<span style=color:#a6e22e>setSubject</span>(subject);
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//邮件内容</span>
+</span></span><span style=display:flex><span>        message.<span style=color:#a6e22e>setText</span>(content);
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//发送邮件</span>
+</span></span><span style=display:flex><span>        mailSender.<span style=color:#a6e22e>send</span>(message);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * html邮件
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param to 收件人,多个时参数形式 ：&#34;xxx@xxx.com,xxx@xxx.com,xxx@xxx.com&#34;
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param subject 主题
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param content 内容
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     */</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>sendHtmlMail</span>(String to, String subject, String content) {
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//获取MimeMessage对象</span>
+</span></span><span style=display:flex><span>        MimeMessage message <span style=color:#f92672>=</span> mailSender.<span style=color:#a6e22e>createMimeMessage</span>();
+</span></span><span style=display:flex><span>        MimeMessageHelper messageHelper;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>            messageHelper <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> MimeMessageHelper(message, <span style=color:#66d9ef>true</span>);
+</span></span><span style=display:flex><span>            <span style=color:#75715e>//邮件发送人</span>
+</span></span><span style=display:flex><span>            messageHelper.<span style=color:#a6e22e>setFrom</span>(from);
+</span></span><span style=display:flex><span>            <span style=color:#75715e>//邮件接收人,设置多个收件人地址</span>
+</span></span><span style=display:flex><span>            InternetAddress<span style=color:#f92672>[]</span> internetAddressTo <span style=color:#f92672>=</span> InternetAddress.<span style=color:#a6e22e>parse</span>(to);
+</span></span><span style=display:flex><span>            messageHelper.<span style=color:#a6e22e>setTo</span>(internetAddressTo);
+</span></span><span style=display:flex><span>            <span style=color:#75715e>//messageHelper.setTo(to);</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e>//邮件主题</span>
+</span></span><span style=display:flex><span>            message.<span style=color:#a6e22e>setSubject</span>(subject);
+</span></span><span style=display:flex><span>            <span style=color:#75715e>//邮件内容，html格式</span>
+</span></span><span style=display:flex><span>            messageHelper.<span style=color:#a6e22e>setText</span>(content, <span style=color:#66d9ef>true</span>);
+</span></span><span style=display:flex><span>            <span style=color:#75715e>//发送</span>
+</span></span><span style=display:flex><span>            mailSender.<span style=color:#a6e22e>send</span>(message);
+</span></span><span style=display:flex><span>            <span style=color:#75715e>//日志信息</span>
+</span></span><span style=display:flex><span>            logger.<span style=color:#a6e22e>info</span>(<span style=color:#e6db74>&#34;邮件已经发送。&#34;</span>);
+</span></span><span style=display:flex><span>        } <span style=color:#66d9ef>catch</span> (Exception e) {
+</span></span><span style=display:flex><span>            logger.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>&#34;发送邮件时发生异常！&#34;</span>, e);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * 带附件的邮件
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param to 收件人
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param subject 主题
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param content 内容
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param filePath 附件
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     */</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>sendAttachmentsMail</span>(String to, String subject, String content, String filePath) {
+</span></span><span style=display:flex><span>        MimeMessage message <span style=color:#f92672>=</span> mailSender.<span style=color:#a6e22e>createMimeMessage</span>();
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>            MimeMessageHelper helper <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> MimeMessageHelper(message, <span style=color:#66d9ef>true</span>);
+</span></span><span style=display:flex><span>            helper.<span style=color:#a6e22e>setFrom</span>(from);
+</span></span><span style=display:flex><span>            helper.<span style=color:#a6e22e>setTo</span>(to);
+</span></span><span style=display:flex><span>            helper.<span style=color:#a6e22e>setSubject</span>(subject);
+</span></span><span style=display:flex><span>            helper.<span style=color:#a6e22e>setText</span>(content, <span style=color:#66d9ef>true</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            FileSystemResource file <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> FileSystemResource(<span style=color:#66d9ef>new</span> File(filePath));
+</span></span><span style=display:flex><span>            String fileName <span style=color:#f92672>=</span> filePath.<span style=color:#a6e22e>substring</span>(filePath.<span style=color:#a6e22e>lastIndexOf</span>(File.<span style=color:#a6e22e>separator</span>));
+</span></span><span style=display:flex><span>            helper.<span style=color:#a6e22e>addAttachment</span>(fileName, file);
+</span></span><span style=display:flex><span>            mailSender.<span style=color:#a6e22e>send</span>(message);
+</span></span><span style=display:flex><span>            <span style=color:#75715e>//日志信息</span>
+</span></span><span style=display:flex><span>            logger.<span style=color:#a6e22e>info</span>(<span style=color:#e6db74>&#34;邮件已经发送。&#34;</span>);
+</span></span><span style=display:flex><span>        } <span style=color:#66d9ef>catch</span> (Exception e) {
+</span></span><span style=display:flex><span>            logger.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>&#34;发送邮件时发生异常！&#34;</span>, e);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * 验证邮箱格式
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param email
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @return
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     */</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span>  <span style=color:#66d9ef>boolean</span> <span style=color:#a6e22e>isEmail</span>(String email) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (email <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>||</span> email.<span style=color:#a6e22e>length</span>() <span style=color:#f92672>&lt;</span> 1 <span style=color:#f92672>||</span> email.<span style=color:#a6e22e>length</span>() <span style=color:#f92672>&gt;</span> 256) {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>false</span>;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        Pattern pattern <span style=color:#f92672>=</span> Pattern.<span style=color:#a6e22e>compile</span>(<span style=color:#e6db74>&#34;^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$&#34;</span>);
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> pattern.<span style=color:#a6e22e>matcher</span>(email).<span style=color:#a6e22e>matches</span>();
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>interface</span> <span style=color:#a6e22e>EmailService</span> {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * 发送文本邮件
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     *
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param to      收件人
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param subject 主题
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param content 内容
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     */</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>sendSimpleMail</span>(String to, String subject, String content);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * 发送HTML邮件
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     *
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param to      收件人
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param subject 主题
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param content 内容
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     */</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>sendHtmlMail</span>(String to, String subject, String content);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * 发送带附件的邮件
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     *
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param to       收件人
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param subject  主题
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param content  内容
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param filePath 附件
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     */</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>sendAttachmentsMail</span>(String to, String subject, String content, String filePath);
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#a6e22e>@Service</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>CodeUtil</span> {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Autowired</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> StringRedisTemplate redisTemplate;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>generateVerificationCode</span>() {
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// 生成6位随机数字验证码</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> String.<span style=color:#a6e22e>valueOf</span>((<span style=color:#66d9ef>int</span>) ((Math.<span style=color:#a6e22e>random</span>() <span style=color:#f92672>*</span> 9 <span style=color:#f92672>+</span> 1) <span style=color:#f92672>*</span> 100000));
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 验证验证码是否正确</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>boolean</span> <span style=color:#a6e22e>verifyCode</span>(String userId, String code,String key) {
+</span></span><span style=display:flex><span>        key <span style=color:#f92672>=</span> key <span style=color:#f92672>+</span> userId;
+</span></span><span style=display:flex><span>        String storedCode <span style=color:#f92672>=</span> redisTemplate.<span style=color:#a6e22e>opsForValue</span>().<span style=color:#a6e22e>get</span>(key);
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> code.<span style=color:#a6e22e>equals</span>(storedCode);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//删除redis中验证码</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>deleteCode</span>(String userId,String key) {
+</span></span><span style=display:flex><span>         key <span style=color:#f92672>=</span> key <span style=color:#f92672>+</span> userId;
+</span></span><span style=display:flex><span>        redisTemplate.<span style=color:#a6e22e>delete</span>(key);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#75715e>//写在需要发送验证码的地方</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//存储时间</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>final</span> <span style=color:#66d9ef>int</span> EXPIRATION_TIME_IN_MINUTES <span style=color:#f92672>=</span> 3;
+</span></span><span style=display:flex><span>  <span style=color:#75715e>//键名</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>final</span> String KEY_PREFIX <span style=color:#f92672>==</span><span style=color:#e6db74>&#34;xxx&#34;</span>;
+</span></span><span style=display:flex><span>  key<span style=color:#f92672>=</span>KEY_PREFIX<span style=color:#f92672>+</span><span style=color:#e6db74>&#34;123456&#34;</span>
+</span></span><span style=display:flex><span>redisTemplate.<span style=color:#a6e22e>opsForValue</span>().<span style=color:#a6e22e>set</span>(key, 随机数字验证码, EXPIRATION_TIME_IN_MINUTES, TimeUnit.<span style=color:#a6e22e>MINUTES</span>);
+</span></span></code></pre></div></div></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Read other posts</span><hr></div><div class=pagination__buttons><span class="button previous"><a href=https://connorzhangyu.com/posts/springcloud/><span class=button__icon>←</span>
+<span class=button__text>SpringCloud</span>
+</a></span><span class="button next"><a href=https://connorzhangyu.com/posts/vue%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F/><span class=button__text>Vue后台系统</span>
+<span class=button__icon>→</span></a></span></div></div></article></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>
+<span>:: <a href=https://github.com/mirus-ua/hugo-theme-re-terminal target=_blank>Theme</a> made by <a href=https://github.com/mirus-ua target=_blank>Mirus</a></span></div></div></footer><script type=text/javascript src=/bundle.min.js></script></div></body></html>

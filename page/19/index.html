@@ -1,0 +1,251 @@
+<!doctype html><html lang=zh><head><meta name=generator content="Hugo 0.148.2"><title>Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="记仇小本本"><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://connorzhangyu.com/><link rel=stylesheet href=https://connorzhangyu.com/styles.css><link rel="shortcut icon" href=https://connorzhangyu.com/img/theme-colors/orange.png><link rel=apple-touch-icon href=https://connorzhangyu.com/img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta name=twitter:site content><meta name=twitter:creator content><meta property="og:locale" content="zh"><meta property="og:type" content="website"><meta property="og:title" content="Hello World"><meta property="og:description" content="记仇小本本"><meta property="og:url" content="https://connorzhangyu.com/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="https://connorzhangyu.com/img/favicon/orange.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><link href=/index.xml rel=alternate type=application/rss+xml title="Hello World"><link href=/index.json rel=alternate type=application/json title="Hello World"></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></nav></header><div class=content><div class=posts><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/obsidian/>Obsidian</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/%E7%AC%94%E8%AE%B0/>笔记</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/markdown/>markdown</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051531738.webp class=post-cover alt=Obsidian title="Cover Image"><div class=post-content>Obsidian的使用,和记录</div><div><a class="read-more button" href=/posts/obsidian/>Read more →</a></div></article><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/php/>PHP</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/php/>PHP</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051532559.jpeg class=post-cover alt=PHP title="Cover Image"><div class=post-content><h1 id=安装nginx与php-74>安装Nginx与PHP 7.4</h1><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=display:flex><span>sudo apt update
+</span></span><span style=display:flex><span>sudo apt install php-fpm
+</span></span><span style=display:flex><span>systemctl status php7.<span style=color:#ae81ff>4</span>-fpm
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>apt install nginx
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-nix data-lang=nix><span style=display:flex><span>server {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># . . . other code</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    location <span style=color:#960050;background-color:#1e0010>~</span> <span style=color:#960050;background-color:#1e0010>\</span><span style=color:#f92672>.</span>php<span style=color:#960050;background-color:#1e0010>$</span> {
+</span></span><span style=display:flex><span>        include <span style=color:#e6db74>snippets/fastcgi-php.conf</span>;
+</span></span><span style=display:flex><span>        fastcgi_pass <span style=color:#e6db74>unix:/run/php/php7.4-fpm.sock</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 重启</span>
+</span></span><span style=display:flex><span>sudo systemctl restart nginx
+</span></span></code></pre></div><h1 id=测试php>测试PHP</h1><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>cd <span style=color:#f92672>/</span>var<span style=color:#f92672>/</span>www<span style=color:#f92672>/</span>html<span style=color:#f92672>/</span>
+</span></span><span style=display:flex><span>vim info<span style=color:#f92672>.</span>php
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=display:flex><span><span style=color:#f92672>&lt;?</span><span style=color:#a6e22e>php</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>phpinfo</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 访问
+</span></span></span><span style=display:flex><span><span style=color:#75715e># http://your_server_ip/info.php
+</span></span></span></code></pre></div><h1 id=wordpress>WordPress</h1><h2 id=docker安装>Docker安装</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 安装docker-compose</span>
+</span></span><span style=display:flex><span>apt install docker-compose
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 查看版本</span>
+</span></span><span style=display:flex><span>docker-compose version
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>vim docker-compose.yml
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-docker data-lang=docker><span style=display:flex><span>version: <span style=color:#e6db74>&#39;3.3&#39;</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>services:<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>   db:<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>     image: mysql:5.7<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>     volumes:<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>       - db_data:/var/lib/mysql<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>     restart: always<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>     environment:<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>       MYSQL_ROOT_PASSWORD: somewordpress<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>       MYSQL_DATABASE: wordpress<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>       MYSQL_USER: wordpress<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>       MYSQL_PASSWORD: wordpress<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>   wordpress:<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>     depends_on:<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>       - db<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>     image: wordpress:latest<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>     ports:<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>       - <span style=color:#e6db74>&#34;8000:80&#34;</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>     restart: always<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>     environment:<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>       WORDPRESS_DB_HOST: db:3306<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>       WORDPRESS_DB_USER: wordpress<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>       WORDPRESS_DB_PASSWORD: wordpress<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>       WORDPRESS_DB_NAME: wordpress<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>volumes:<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span>    db_data: <span style=color:#f92672>{}</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span></code></pre></div><pre tabindex=0><code># 后台运行
+docker-compose -f docker-compose.wordpress.yml up -d
+# 停止并删除服务
+docker-compose -f docker-compose.wordpress.yml down
+# IP:8000
+# IP:8000/wp-admin
+</code></pre><pre tabindex=0><code># ningx反代WordPress
+server {
+  listen 80;
+  listen [::]:80;
+
+  # 域名
+  server_name .leozl.site;
+
+  location / {
+    ## service 的名称，docker-compose.yaml文件中的wordpress服务名称
+    proxy_pass http://wp;
+
+        proxy_http_version    1.1;
+        proxy_cache_bypass    $http_upgrade;
+
+        proxy_set_header Upgrade            $http_upgrade;
+        proxy_set_header Connection         &#34;upgrade&#34;;
+        proxy_set_header Host                $host;
+        proxy_set_header X-Real-IP            $remote_addr;
+        proxy_set_header X-Forwarded-For    $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto    $scheme;
+        proxy_set_header X-Forwarded-Host    $host;
+        proxy_set_header X-Forwarded-Port    $server_port;
+  }
+}
+</code></pre><h2 id=vultr上安装>Vultr上安装</h2><p><a href=https://import.wp-migration.com/>上传备份</a></p></div><div><a class="read-more button" href=/posts/php/>Read more →</a></div></article><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/python/>Python</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/python/>Python</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/%E6%95%99%E7%A8%8B/>教程</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/%E7%AC%94%E8%AE%B0/>笔记</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051532070.png class=post-cover alt=Python title="Cover Image"><div class=post-content><h1 id=安装>安装</h1><h1 id=虚拟环境>虚拟环境</h1><pre tabindex=0><code># 判断有没有虚拟环境
+virtualenv -V
+
+# 安装虚拟环境
+# 需要sudo
+pip install virtualenv
+pip install virtualenvwrapper
+
+# 查看有多少虚拟环境的文件夹
+workon
+
+# 创建虚拟环境文件夹
+mkvirtualenv 文件夹名字
+
+# 从虚拟文件夹退出
+deactiave
+
+# 进入虚拟环境中
+workon 虚拟环境名称
+
+# 删除虚拟环境
+rmvirutalenv
+
+# 查看虚拟环境有哪些框架,要在虚拟环境中执行
+pip freeze
+
+# 安装软件指定版本,要在虚拟环境中执行
+pip install flask==10.0.0.0
+
+# 导出虚拟环境中的所有扩展,要在虚拟环境中执行
+pip freeze &gt; requirements.txt
+
+# 安装,要在虚拟环境中执行
+pip install -r requirements.txt
+</code></pre><h1 id=centos7安装python3>centos7安装python3</h1><p>特别是在喜欢环境中已经安装的python2.x的版本中</p><pre tabindex=0><code># 这个可能不一定要装
+sudo yum -y groupinstall &#34;Development tools&#34;
+
+# 需要的
+sudo yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel libffi-devel
+
+# 下载安装包
+wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0a1.tar.xz
+
+# 解压
+tar -xvxf  Python-3.7.0a1.tar.xz
+
+# 复制文件夹
+mv Python-3.7.0 /usr/local
+
+# 进入到文件夹
+cd /usr/local/Python-3.7.0/
+
+# 编译,一定需要后面的参数
+./configure --prefix=/usr/local/bin/python3
+make &amp; make install
+
+# 添加软连接
+ln -s /usr/local/bin/python3/bin/python3 /usr/bin/python3
+ln -s /usr/local/bin/python3/bin/pip3 /usr/bin/pip3
+
+# 验证
+python3
+pip3
+</code></pre><h1 id=基础>基础</h1><h1 id=1注释>1.注释</h1><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># 注释后面需要一个空格</span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;单行注释&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;单行注释&#34;</span>)  <span style=color:#75715e># 单行注释和代码之间至少要有两个空格</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>多行注释
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>&#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;这是多行注释&#34;</span>)
+</span></span></code></pre></div><h1 id=2算数运算符>2.算数运算符</h1><p>乘法的使用,用<code>*</code>可以拼接字符串</p></div><div><a class="read-more button" href=/posts/python/>Read more →</a></div></article><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/redis/>Redis</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/redis/>Redis</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051532701.jpg class=post-cover alt=Redis title="Cover Image"><div class=post-content><h1 id=安装redis>安装Redis</h1><h2 id=安装单机redis>安装单机Redis</h2><p>{% tabs 安装单机Redis %}</p><p><a href=https://github.com/tporadowski/redis/releases>Releases · tporadowski/redis</a></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>docker run <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>       -p 6379:6379 <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>       --name myredis <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>       -v $PWD/redis.conf:/etc/redis/redis.conf <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>       -v $PWD/data:/data <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>       -d redis:3.2 redis-server /etc/redis/redis.conf <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>       --restart<span style=color:#f92672>=</span>always <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>       --appendonly yes
+</span></span></code></pre></div><p>命令说明：</p><ul><li><code>-name myredis</code> : 指定容器名称，这个最好加上，不然在看docker进程的时候会很尴尬。</li><li><code>p 6699:6379</code> ： 端口映射，默认redis启动的是6379,外部端口(6699)。</li><li><code>v $PWD/redis.conf:/etc/redis/redis.conf</code> ： 将主机中当前目录下的redis.conf配置文件映射。</li><li><code>v $PWD/data:/data -d redis:latest</code>： 将主机中当前目录下的data挂载到容器的/data</li><li><code>-redis-server --appendonly yes</code> :在容器执行redis-server启动命令，并打开redis持久化配置</li><li><code>-restart=always</code>:自动启动</li><li>注意事项：</li><li>如果不需要指定配置，<code>v $PWD/redis.conf:/etc/redis/redis.conf</code> 可以不用</li><li>redis-server 后面的那段 <code>/etc/redis/redis.conf</code> 也可以不用。</li><li><code>$PWD</code> 在window系统下貌似不能用,可以用相对路径<code>/</code></li></ul><p>客户端连接</p></div><div><a class="read-more button" href=/posts/redis/>Read more →</a></div></article><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/spring-security/>Spring Security</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/spring-security/>Spring Security</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/>权限控制</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/%E5%AE%89%E5%85%A8%E6%A1%86%E6%9E%B6/>安全框架</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/spring/>Spring</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/java/>Java</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051525605.jpg class=post-cover alt="Spring Security" title="Cover Image"><div class=post-content><h1 id=spring-security>Spring Security</h1><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>&lt;dependency&gt;
+</span></span><span style=display:flex><span>    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+</span></span><span style=display:flex><span>    &lt;artifactId&gt;spring-boot-starter-security&lt;/artifactId&gt;
+</span></span><span style=display:flex><span>&lt;/dependency&gt;
+</span></span></code></pre></div><p>登录业务</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#a6e22e>@Service</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>LoginService</span> {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> Map<span style=color:#f92672>&lt;</span>String, RedisUser<span style=color:#f92672>&gt;</span> map <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> HashMap<span style=color:#f92672>&lt;&gt;</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Resource</span>
+</span></span><span style=display:flex><span>    AuthenticationManager authenticationManager;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>login</span>(SysUser sysUser) {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// AuthenticationManager 进行用户认证</span>
+</span></span><span style=display:flex><span>        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> UsernamePasswordAuthenticationToken(sysUser.<span style=color:#a6e22e>getUsername</span>(), sysUser.<span style=color:#a6e22e>getPassword</span>());
+</span></span><span style=display:flex><span>        Authentication authenticate <span style=color:#f92672>=</span> authenticationManager.<span style=color:#a6e22e>authenticate</span>(usernamePasswordAuthenticationToken);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// 如果认证不通过,给出对应的提示</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (Objects.<span style=color:#a6e22e>isNull</span>(authenticate)) {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> RuntimeException(<span style=color:#e6db74>&#34;登录失败&#34;</span>);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// 如果认证通过,使用username给jwt生成一个</span>
+</span></span><span style=display:flex><span>        RedisUser principal <span style=color:#f92672>=</span> (RedisUser) authenticate.<span style=color:#a6e22e>getPrincipal</span>();
+</span></span><span style=display:flex><span>        map.<span style=color:#a6e22e>put</span>(principal.<span style=color:#a6e22e>getUsername</span>(), principal);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> createJWT(<span style=color:#e6db74>&#34;1234567&#34;</span>, 9990000,  principal.<span style=color:#a6e22e>getUsername</span>());
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>logout</span>() {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        UsernamePasswordAuthenticationToken authentication <span style=color:#f92672>=</span> (UsernamePasswordAuthenticationToken) SecurityContextHolder.<span style=color:#a6e22e>getContext</span>().<span style=color:#a6e22e>getAuthentication</span>();
+</span></span><span style=display:flex><span>        RedisUser principal <span style=color:#f92672>=</span> (RedisUser) authentication.<span style=color:#a6e22e>getPrincipal</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        String username <span style=color:#f92672>=</span> principal.<span style=color:#a6e22e>getUsername</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// 从redis里删除</span>
+</span></span><span style=display:flex><span>        map.<span style=color:#a6e22e>remove</span>(username);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#a6e22e>@RestController</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@RequestMapping</span>(<span style=color:#e6db74>&#34;/&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>LoginController</span> {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Resource</span>
+</span></span><span style=display:flex><span>    LoginService loginService;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@PostMapping</span>(<span style=color:#e6db74>&#34;/user/login&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> ResponseEntity<span style=color:#f92672>&lt;</span>HashMap<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>login</span>(<span style=color:#a6e22e>@RequestParam</span>(<span style=color:#e6db74>&#34;username&#34;</span>) String username,<span style=color:#a6e22e>@RequestParam</span>(<span style=color:#e6db74>&#34;password&#34;</span>) String password){
+</span></span><span style=display:flex><span>        SysUser sysUser <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> SysUser();
+</span></span><span style=display:flex><span>        sysUser.<span style=color:#a6e22e>setUsername</span>(username);
+</span></span><span style=display:flex><span>        sysUser.<span style=color:#a6e22e>setPassword</span>(password);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        HashMap<span style=color:#f92672>&lt;</span>String, Object<span style=color:#f92672>&gt;</span> stringObjectHashMap <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> HashMap<span style=color:#f92672>&lt;&gt;</span>();
+</span></span><span style=display:flex><span>        stringObjectHashMap.<span style=color:#a6e22e>put</span>(<span style=color:#e6db74>&#34;token&#34;</span>, loginService.<span style=color:#a6e22e>login</span>(sysUser));
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> ResponseEntity.<span style=color:#a6e22e>status</span>(200).<span style=color:#a6e22e>body</span>(stringObjectHashMap);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@PostMapping</span>(<span style=color:#e6db74>&#34;/user/logout&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> ResponseEntity<span style=color:#f92672>&lt;</span>String<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>logout</span>(){
+</span></span><span style=display:flex><span>        loginService.<span style=color:#a6e22e>logout</span>();
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> ResponseEntity.<span style=color:#a6e22e>ok</span>(<span style=color:#e6db74>&#34;success&#34;</span>);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>验证账户</p></div><div><a class="read-more button" href=/posts/spring-security/>Read more →</a></div></article><div class=pagination><div class=pagination__buttons><a href=/page/18/ class="button previous"><span class=button__icon>←</span>
+<span class=button__text>Newer posts</span>
+</a><a href=/page/20/ class="button next"><span class=button__text>Older posts</span>
+<span class=button__icon>→</span></a></div></div></div></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>
+<span>:: <a href=https://github.com/mirus-ua/hugo-theme-re-terminal target=_blank>Theme</a> made by <a href=https://github.com/mirus-ua target=_blank>Mirus</a></span></div></div></footer><script type=text/javascript src=/bundle.min.js></script></div></body></html>

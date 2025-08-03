@@ -1,0 +1,1326 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>数据库 on Hello World</title><link>https://connorzhangyu.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</link><description>Recent content in 数据库 on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Fri, 25 Nov 2022 18:25:00 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml"/><item><title>Mysql</title><link>https://connorzhangyu.com/posts/mysql/</link><pubDate>Fri, 25 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/mysql/</guid><description>&lt;h1 id="常见问题">常见问题&lt;/h1>
+&lt;h2 id="字符集问题">字符集问题&lt;/h2>
+&lt;p>修改mysql的数据陆慕下的my.ini的配置文件(Windows系统)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ini" data-lang="ini">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">[mysql] #大概在63行左右，在其下添加&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">default-character-set&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">utf8 #默认字符集&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">[mysqld] # 大概在76行左右，在其下添加&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">character-set-server&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">utf8 collation-server=utf8_general_ci&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>注意：建议修改配置文件使用notepad++等高级文本编辑器，使用记事本等软件打开修改后可能会导致文件编码修改为“含BOM头”的编码，从而服务重启失败&lt;/p>&lt;/blockquote>
+&lt;p>重启服务,再查看一次编码&lt;/p>
+&lt;blockquote>
+&lt;p>修改编码前,已经创建的表和库,修改编码后不会自动更改,需要重新建库表或者手动修改库表的编码&lt;/p>&lt;/blockquote>
+&lt;p>手动修改库表的编码&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">修改数据库的字符编码为&lt;/span>utf8
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">alter&lt;/span> &lt;span style="color:#66d9ef">database&lt;/span> test charset utf8;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">修改表字符编码为&lt;/span>UTF8
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">alter&lt;/span> &lt;span style="color:#66d9ef">table&lt;/span> student charset utf8;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">修改字段字符编码为&lt;/span>UTF8
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">alter&lt;/span> &lt;span style="color:#66d9ef">table&lt;/span> student &lt;span style="color:#66d9ef">modify&lt;/span> name varchar(&lt;span style="color:#ae81ff">20&lt;/span>) charset utf8;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="客户端连接的问题">客户端连接的问题&lt;/h2>
+&lt;p>旧版本图形界面工具连接MySQL8时出现&lt;code>Authentication plugin caching_sha2_password' cannot be loaded&lt;/code>错误。&lt;/p>
+&lt;p>MySQL8之前的版本中加密规则是&lt;code>mysql_native_password&lt;/code>，&lt;/p>
+&lt;p>MySQL8之后的加密规则是&lt;code>caching_sha2_password&lt;/code>&lt;/p>
+&lt;p>解决问题:&lt;/p>
+&lt;p>修改用户名为“root@localhost”的用户密码规则为“mysql_native_password”，密码值为“123456”&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">查看所有数据库&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mysql&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#66d9ef">show&lt;/span> databases;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">--------------------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#66d9ef">Database&lt;/span> &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">--------------------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">|&lt;/span> information_schema &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">|&lt;/span> mysql &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">|&lt;/span> performance_schema &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">|&lt;/span> ry&lt;span style="color:#f92672">-&lt;/span>vue &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">|&lt;/span> sys &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">--------------------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#ae81ff">5&lt;/span> &lt;span style="color:#66d9ef">rows&lt;/span> &lt;span style="color:#66d9ef">in&lt;/span> &lt;span style="color:#66d9ef">set&lt;/span> (&lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">01&lt;/span> sec)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">使用&lt;/span>mysql数据库,&lt;span style="color:#960050;background-color:#1e0010">不需要要分号&lt;/span>,&lt;span style="color:#960050;background-color:#1e0010">其余的命令要加分号&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>use mysql;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">修改&lt;/span>&lt;span style="color:#e6db74">&amp;#39;root&amp;#39;&lt;/span>&lt;span style="color:#f92672">@&lt;/span>&lt;span style="color:#e6db74">&amp;#39;localhost&amp;#39;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">用户的密码规则和密码&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">ALTER&lt;/span> &lt;span style="color:#66d9ef">USER&lt;/span> &lt;span style="color:#e6db74">&amp;#39;root&amp;#39;&lt;/span>&lt;span style="color:#f92672">@&lt;/span>&lt;span style="color:#e6db74">&amp;#39;localhost&amp;#39;&lt;/span> IDENTIFIED &lt;span style="color:#66d9ef">WITH&lt;/span> mysql_native_password &lt;span style="color:#66d9ef">BY&lt;/span> &lt;span style="color:#e6db74">&amp;#39;abc123&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>FLUSH &lt;span style="color:#66d9ef">PRIVILEGES&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">开启远程访问&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">UPDATE&lt;/span> &lt;span style="color:#66d9ef">user&lt;/span> &lt;span style="color:#66d9ef">SET&lt;/span> &lt;span style="color:#66d9ef">host&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;%&amp;#39;&lt;/span> &lt;span style="color:#66d9ef">WHERE&lt;/span> &lt;span style="color:#66d9ef">user&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;root&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>FLUSH &lt;span style="color:#66d9ef">PRIVILEGES&lt;/span>;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="存过报错">存过报错&lt;/h2>
+&lt;p>报错信息:&lt;/p></description><content>&lt;h1 id="常见问题">常见问题&lt;/h1>
+&lt;h2 id="字符集问题">字符集问题&lt;/h2>
+&lt;p>修改mysql的数据陆慕下的my.ini的配置文件(Windows系统)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-ini" data-lang="ini">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">[mysql] #大概在63行左右，在其下添加&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">default-character-set&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">utf8 #默认字符集&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">[mysqld] # 大概在76行左右，在其下添加&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">character-set-server&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">utf8 collation-server=utf8_general_ci&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>注意：建议修改配置文件使用notepad++等高级文本编辑器，使用记事本等软件打开修改后可能会导致文件编码修改为“含BOM头”的编码，从而服务重启失败&lt;/p>&lt;/blockquote>
+&lt;p>重启服务,再查看一次编码&lt;/p>
+&lt;blockquote>
+&lt;p>修改编码前,已经创建的表和库,修改编码后不会自动更改,需要重新建库表或者手动修改库表的编码&lt;/p>&lt;/blockquote>
+&lt;p>手动修改库表的编码&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">修改数据库的字符编码为&lt;/span>utf8
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">alter&lt;/span> &lt;span style="color:#66d9ef">database&lt;/span> test charset utf8;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">修改表字符编码为&lt;/span>UTF8
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">alter&lt;/span> &lt;span style="color:#66d9ef">table&lt;/span> student charset utf8;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">修改字段字符编码为&lt;/span>UTF8
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">alter&lt;/span> &lt;span style="color:#66d9ef">table&lt;/span> student &lt;span style="color:#66d9ef">modify&lt;/span> name varchar(&lt;span style="color:#ae81ff">20&lt;/span>) charset utf8;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="客户端连接的问题">客户端连接的问题&lt;/h2>
+&lt;p>旧版本图形界面工具连接MySQL8时出现&lt;code>Authentication plugin caching_sha2_password' cannot be loaded&lt;/code>错误。&lt;/p>
+&lt;p>MySQL8之前的版本中加密规则是&lt;code>mysql_native_password&lt;/code>，&lt;/p>
+&lt;p>MySQL8之后的加密规则是&lt;code>caching_sha2_password&lt;/code>&lt;/p>
+&lt;p>解决问题:&lt;/p>
+&lt;p>修改用户名为“root@localhost”的用户密码规则为“mysql_native_password”，密码值为“123456”&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">查看所有数据库&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mysql&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#66d9ef">show&lt;/span> databases;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">--------------------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#66d9ef">Database&lt;/span> &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">--------------------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">|&lt;/span> information_schema &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">|&lt;/span> mysql &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">|&lt;/span> performance_schema &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">|&lt;/span> ry&lt;span style="color:#f92672">-&lt;/span>vue &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">|&lt;/span> sys &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">--------------------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#ae81ff">5&lt;/span> &lt;span style="color:#66d9ef">rows&lt;/span> &lt;span style="color:#66d9ef">in&lt;/span> &lt;span style="color:#66d9ef">set&lt;/span> (&lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">01&lt;/span> sec)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">使用&lt;/span>mysql数据库,&lt;span style="color:#960050;background-color:#1e0010">不需要要分号&lt;/span>,&lt;span style="color:#960050;background-color:#1e0010">其余的命令要加分号&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>use mysql;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">修改&lt;/span>&lt;span style="color:#e6db74">&amp;#39;root&amp;#39;&lt;/span>&lt;span style="color:#f92672">@&lt;/span>&lt;span style="color:#e6db74">&amp;#39;localhost&amp;#39;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">用户的密码规则和密码&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">ALTER&lt;/span> &lt;span style="color:#66d9ef">USER&lt;/span> &lt;span style="color:#e6db74">&amp;#39;root&amp;#39;&lt;/span>&lt;span style="color:#f92672">@&lt;/span>&lt;span style="color:#e6db74">&amp;#39;localhost&amp;#39;&lt;/span> IDENTIFIED &lt;span style="color:#66d9ef">WITH&lt;/span> mysql_native_password &lt;span style="color:#66d9ef">BY&lt;/span> &lt;span style="color:#e6db74">&amp;#39;abc123&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>FLUSH &lt;span style="color:#66d9ef">PRIVILEGES&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">开启远程访问&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">UPDATE&lt;/span> &lt;span style="color:#66d9ef">user&lt;/span> &lt;span style="color:#66d9ef">SET&lt;/span> &lt;span style="color:#66d9ef">host&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;%&amp;#39;&lt;/span> &lt;span style="color:#66d9ef">WHERE&lt;/span> &lt;span style="color:#66d9ef">user&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;root&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>FLUSH &lt;span style="color:#66d9ef">PRIVILEGES&lt;/span>;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="存过报错">存过报错&lt;/h2>
+&lt;p>报错信息:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>Err&lt;span style="color:#f92672">]&lt;/span> &lt;span style="color:#ae81ff">1418&lt;/span> - This &lt;span style="color:#66d9ef">function&lt;/span> has none of DETERMINISTIC, NO SQL, or READS SQL DATA in its declaration and binary logging is enabled &lt;span style="color:#f92672">(&lt;/span>you *might* want to use the less safe log_bin_trust_function_creators variable&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>我们就必须指定我们的函数是否是:&lt;/p>
+&lt;ul>
+&lt;li>DETERMINISTIC 不确定的&lt;/li>
+&lt;li>NO SQL 没有SQl语句&lt;/li>
+&lt;li>READS SQL DATA 只是读取数据&lt;/li>
+&lt;li>MODIFIES SQL DATA 要修改数据&lt;/li>
+&lt;li>CONTAINS SQL 包含SQL语句&lt;/li>
+&lt;/ul>
+&lt;p>其中在function/procedure 里面，只有 DETERMINISTIC, NO SQL 和 READS SQL DATA 被支持。&lt;/p>
+&lt;p>如果我们开启了 bin-log, 我们就必须为我们的function/procedure 指定一个参数。&lt;/p>
+&lt;p>解决方法:&lt;/p>
+&lt;p>{% tabs log_bin_trust_function_creators %}&lt;/p>
+&lt;!-- tab 方法1:临时修改-->
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 在mysql数据库中执行以下语句 （临时生效，重启后失效）&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>set global log_bin_trust_function_creators&lt;span style="color:#f92672">=&lt;/span>TRUE;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 或者&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>set global log_bin_trust_function_creators&lt;span style="color:#f92672">=&lt;/span>1;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- endtab -->
+&lt;!-- tab 方法2配置文件修改-->
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 在配置文件/etc/my.cnf的[mysqld]或者my-default.ini文件中配置&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>log_bin_trust_function_creators&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- endtab -->
+&lt;!-- tab 方法3:执行sql的时候添加信息-->
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">CREATE&lt;/span> &lt;span style="color:#66d9ef">DEFINER&lt;/span>&lt;span style="color:#f92672">=`&lt;/span>root&lt;span style="color:#f92672">`@`&lt;/span>localhost&lt;span style="color:#f92672">`&lt;/span> &lt;span style="color:#66d9ef">FUNCTION&lt;/span> test(param bigint) &lt;span style="color:#66d9ef">RETURNS&lt;/span> decimal(&lt;span style="color:#ae81ff">10&lt;/span>,&lt;span style="color:#ae81ff">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">需要添加这个&lt;/span>&lt;span style="color:#66d9ef">READS&lt;/span> &lt;span style="color:#66d9ef">SQL&lt;/span> &lt;span style="color:#66d9ef">DATA&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">READS&lt;/span> &lt;span style="color:#66d9ef">SQL&lt;/span> &lt;span style="color:#66d9ef">DATA&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">BEGIN&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ....
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">RETURN&lt;/span> .....;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">END&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- endtab -->
+&lt;p>{% endtabs %}&lt;/p>
+&lt;h1 id="常用sql例子">常用SQL例子&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- select 嵌套子查询
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">select&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#66d9ef">select&lt;/span> &lt;span style="color:#66d9ef">count&lt;/span>(id) &lt;span style="color:#66d9ef">from&lt;/span> user_info) &lt;span style="color:#66d9ef">as&lt;/span> a,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#66d9ef">select&lt;/span> &lt;span style="color:#66d9ef">count&lt;/span>(id) &lt;span style="color:#66d9ef">from&lt;/span> user_info &lt;span style="color:#66d9ef">where&lt;/span> age &lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#ae81ff">10&lt;/span>) &lt;span style="color:#66d9ef">as&lt;/span> b;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- 用到的函数,查询日期
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">select&lt;/span> curdate();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">select&lt;/span> date(now());
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">/* user_info已经筛选过一次, 再这之后再筛选一次 用的金额 */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">SELECT&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">SUM&lt;/span>(&lt;span style="color:#66d9ef">CASE&lt;/span> &lt;span style="color:#66d9ef">WHEN&lt;/span> status &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#66d9ef">THEN&lt;/span> amount &lt;span style="color:#66d9ef">ELSE&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#66d9ef">END&lt;/span>) &lt;span style="color:#66d9ef">AS&lt;/span> &lt;span style="color:#e6db74">&amp;#39;冻结的用户的总金额&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">SUM&lt;/span>(&lt;span style="color:#66d9ef">CASE&lt;/span> &lt;span style="color:#66d9ef">WHEN&lt;/span> status &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">2&lt;/span> &lt;span style="color:#66d9ef">THEN&lt;/span> amount &lt;span style="color:#66d9ef">ELSE&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#66d9ef">END&lt;/span>) &lt;span style="color:#66d9ef">AS&lt;/span> &lt;span style="color:#e6db74">&amp;#39;活跃的用户的总金额&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">FROM&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> user_info &lt;span style="color:#66d9ef">where&lt;/span> register &lt;span style="color:#66d9ef">between&lt;/span> &lt;span style="color:#e6db74">&amp;#39;2020-02-02&amp;#39;&lt;/span> &lt;span style="color:#66d9ef">and&lt;/span> &lt;span style="color:#e6db74">&amp;#39;2023-02-02&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- insert的字段数据,需要查询出来的数据
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">insert&lt;/span> &lt;span style="color:#66d9ef">into&lt;/span> bank_info(bank_code, bank_name)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">VALUES&lt;/span> (&lt;span style="color:#e6db74">&amp;#39;NEW&amp;#39;&lt;/span>, (&lt;span style="color:#66d9ef">select&lt;/span> user_no &lt;span style="color:#66d9ef">from&lt;/span> user_fund_info &lt;span style="color:#66d9ef">where&lt;/span> id &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">46&lt;/span>));
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="优化的例子">优化的例子&lt;/h1>
+&lt;p>优化大表的查询,查询一张流水表,要统计开始时间和时间之间的数据&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- 业务是:一个用户,流水在这个时间段最多只有一条记录,并且查询所有用户在这个时间段一共有多少条记录
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- 流水表目前的数据量有70w
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- 这样查询,需要好几秒的时间,explain的行数是70w
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">SELECT&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">count&lt;/span>(&lt;span style="color:#ae81ff">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">FROM&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> users &lt;span style="color:#66d9ef">AS&lt;/span> t1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">LEFT&lt;/span> &lt;span style="color:#66d9ef">JOIN&lt;/span> liushui &lt;span style="color:#66d9ef">AS&lt;/span> t2 &lt;span style="color:#66d9ef">ON&lt;/span> t1.id &lt;span style="color:#f92672">=&lt;/span> t2.user_id &lt;span style="color:#66d9ef">and&lt;/span> t2.begin_time &lt;span style="color:#f92672">&amp;lt;=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;2023-09-14 21:01:28&amp;#39;&lt;/span> &lt;span style="color:#66d9ef">AND&lt;/span> t2.open_time &lt;span style="color:#f92672">&amp;gt;=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;2023-09-14 21:01:28&amp;#39;&lt;/span> ;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- 进行优化
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- 增加了一个belong_date的字段,并且添加索引
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- begin_time 和 open_time 有可能之间跨天了,所以belong_date要筛选两天的
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- explain的行数只有2000多条
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">SELECT&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">count&lt;/span>(&lt;span style="color:#ae81ff">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">FROM&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> users &lt;span style="color:#66d9ef">AS&lt;/span> t1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">LEFT&lt;/span> &lt;span style="color:#66d9ef">JOIN&lt;/span> liushui &lt;span style="color:#66d9ef">AS&lt;/span> t2 &lt;span style="color:#66d9ef">ON&lt;/span> t1.id &lt;span style="color:#f92672">=&lt;/span> t2.user_id &lt;span style="color:#66d9ef">AND&lt;/span> t2.belong_date &lt;span style="color:#66d9ef">IN&lt;/span> (&lt;span style="color:#e6db74">&amp;#39;2023-09-14&amp;#39;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;2023-09-13&amp;#39;&lt;/span>) &lt;span style="color:#66d9ef">and&lt;/span> t2.begin_time &lt;span style="color:#f92672">&amp;lt;=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;2023-09-14 21:01:28&amp;#39;&lt;/span> &lt;span style="color:#66d9ef">AND&lt;/span> t2.open_time &lt;span style="color:#f92672">&amp;gt;=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;2023-09-14 21:01:28&amp;#39;&lt;/span> ;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- 再进行优化
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- 上面的sql和这个sql explain 看着差不多一样,索引出来的流水表的数据量都是一样,可就是上面这条记录查询慢,下面这条记录查询快
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- explain的行数只有2000多条
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- 查询查询出来的效果是,先用belong_date查一遍,再在子查询的结果集再筛选一遍
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">SELECT&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">COUNT&lt;/span>( &lt;span style="color:#ae81ff">1&lt;/span> )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">FROM&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">SELECT&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> t1.id
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> t2.begin_time, &lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">这两个时间字段对业务是没有用的&lt;/span>,&lt;span style="color:#960050;background-color:#1e0010">是为了外面这个查询使用到&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> t2.open_time
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">FROM&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> lottery_open &lt;span style="color:#66d9ef">AS&lt;/span> t1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">LEFT&lt;/span> &lt;span style="color:#66d9ef">JOIN&lt;/span> lottery_period &lt;span style="color:#66d9ef">AS&lt;/span> t2 &lt;span style="color:#66d9ef">ON&lt;/span> t1.id &lt;span style="color:#f92672">=&lt;/span> t2.lottery_id
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">AND&lt;/span> t2.belong_date &lt;span style="color:#66d9ef">IN&lt;/span> ( CURDATE(), DATE_SUB( CURDATE(), INTERVAL &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#66d9ef">DAY&lt;/span> ) )) &lt;span style="color:#66d9ef">AS&lt;/span> t3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">WHERE&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> t3.begin_time &lt;span style="color:#f92672">&amp;lt;=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;2023-09-14 21:01:28&amp;#39;&lt;/span> &lt;span style="color:#66d9ef">AND&lt;/span> t3.open_time &lt;span style="color:#f92672">&amp;gt;=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;2023-09-14 21:01:28&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="实战">实战&lt;/h1>
+&lt;h2 id="mysql使用source导入数据">mysql使用source导入数据&lt;/h2>
+&lt;p>导入的数据,中文乱码,只要先执行uft-8登录之后,再导入数据&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 登录mysql&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mysql -u root -p --default-character-set&lt;span style="color:#f92672">=&lt;/span>utf8
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 显示所有数据库&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>show databases;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 选择数据库&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>use &lt;span style="color:#f92672">[&lt;/span>数据库&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 导入文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mysql&amp;gt; source d:&lt;span style="color:#ae81ff">\m&lt;/span>ysqldb.sql
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="导出">导出&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># --default-character-set=utf8 编码&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># -h 192.168.8.2 数据库地址&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># -u root 数据库用户名&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># -p&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># test 数据库库名&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># test.sql 导出sql的文件名&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mysqldump --default-character-set&lt;span style="color:#f92672">=&lt;/span>utf8 --single-transaction --set-gtid-purged&lt;span style="color:#f92672">=&lt;/span>OFF -h 192.168.8.2 -u root -p test &amp;gt; test.sql
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="语法">语法&lt;/h2>
+&lt;p>&lt;strong>比较运算符&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">字符串存在隐式转换&lt;/span>,&lt;span style="color:#960050;background-color:#1e0010">如果转换不成功&lt;/span>,&lt;span style="color:#960050;background-color:#1e0010">就看做&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">两边的值一个是整数，另一个是字符串，则&lt;/span>MySQL会将字符串转化为数字进行比较&lt;span style="color:#960050;background-color:#1e0010">。&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">两边的值都是整数，则&lt;/span>MySQL会按照整数来比较两个值的大小&lt;span style="color:#960050;background-color:#1e0010">。&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mysql&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#66d9ef">select&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>,&lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span>,&lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">!=&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span>,&lt;span style="color:#ae81ff">2&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;2&amp;#39;&lt;/span>,&lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;a&amp;#39;&lt;/span>,&lt;span style="color:#ae81ff">0&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;a&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">-----+-----+------+-------+-------+-------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">!=&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">2&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;2&amp;#39;&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;a&amp;#39;&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;a&amp;#39;&lt;/span> &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">-----+-----+------+-------+-------+-------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">-----+-----+------+-------+-------+-------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#66d9ef">row&lt;/span> &lt;span style="color:#66d9ef">in&lt;/span> &lt;span style="color:#66d9ef">set&lt;/span>, &lt;span style="color:#ae81ff">2&lt;/span> warnings (&lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">00&lt;/span> sec)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">字符串和字符串比较&lt;/span>,&lt;span style="color:#960050;background-color:#1e0010">就不隐式转换了&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mysql&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#66d9ef">select&lt;/span> &lt;span style="color:#e6db74">&amp;#39;a&amp;#39;&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;a&amp;#39;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;ab&amp;#39;&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;ab&amp;#39;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;a&amp;#39;&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;b&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">---------+-----------+---------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#e6db74">&amp;#39;a&amp;#39;&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;a&amp;#39;&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#e6db74">&amp;#39;ab&amp;#39;&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;ab&amp;#39;&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#e6db74">&amp;#39;a&amp;#39;&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;b&amp;#39;&lt;/span> &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">---------+-----------+---------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">---------+-----------+---------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#66d9ef">row&lt;/span> &lt;span style="color:#66d9ef">in&lt;/span> &lt;span style="color:#66d9ef">set&lt;/span> (&lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">00&lt;/span> sec)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">两边的值、字符串或表达式中有一个为&lt;/span>&lt;span style="color:#66d9ef">NULL&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">，则比较结果为&lt;/span>&lt;span style="color:#66d9ef">NULL&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">。&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mysql&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#66d9ef">select&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">null&lt;/span>,&lt;span style="color:#66d9ef">null&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">null&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">--------+-----------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">null&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#66d9ef">null&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">null&lt;/span> &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">--------+-----------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#66d9ef">NULL&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#66d9ef">NULL&lt;/span> &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">--------+-----------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#66d9ef">row&lt;/span> &lt;span style="color:#66d9ef">in&lt;/span> &lt;span style="color:#66d9ef">set&lt;/span> (&lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">01&lt;/span> sec)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>安全等于运算符&lt;/strong>&lt;/p>
+&lt;p>安全等于运算符&lt;code>&amp;lt;=&amp;gt;&lt;/code>与等于运算符&lt;code>=&lt;/code>的作用是相似的,唯一的区别:&lt;code>&amp;lt;=&amp;gt;&lt;/code>可 以用来对NULL进行判断。&lt;/p>
+&lt;p>在两个操作数均为NULL时，其返回值为1，而不为NULL;当一个操作数为NULL 时，其返回值为0，而不为NULL。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>mysql&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#66d9ef">select&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">&amp;lt;=&amp;gt;&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>,&lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">&amp;lt;=&amp;gt;&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span>,&lt;span style="color:#ae81ff">2&lt;/span>&lt;span style="color:#f92672">&amp;lt;=&amp;gt;&lt;/span>&lt;span style="color:#e6db74">&amp;#39;2&amp;#39;&lt;/span>,&lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">&amp;lt;=&amp;gt;&lt;/span>&lt;span style="color:#e6db74">&amp;#39;a&amp;#39;&lt;/span>,&lt;span style="color:#ae81ff">0&lt;/span>&lt;span style="color:#f92672">&amp;lt;=&amp;gt;&lt;/span>&lt;span style="color:#e6db74">&amp;#39;a&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">-------+-------+---------+---------+---------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">&amp;lt;=&amp;gt;&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">&amp;lt;=&amp;gt;&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">2&lt;/span>&lt;span style="color:#f92672">&amp;lt;=&amp;gt;&lt;/span>&lt;span style="color:#e6db74">&amp;#39;2&amp;#39;&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">&amp;lt;=&amp;gt;&lt;/span>&lt;span style="color:#e6db74">&amp;#39;a&amp;#39;&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>&lt;span style="color:#f92672">&amp;lt;=&amp;gt;&lt;/span>&lt;span style="color:#e6db74">&amp;#39;a&amp;#39;&lt;/span> &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">-------+-------+---------+---------+---------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">-------+-------+---------+---------+---------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#66d9ef">row&lt;/span> &lt;span style="color:#66d9ef">in&lt;/span> &lt;span style="color:#66d9ef">set&lt;/span>, &lt;span style="color:#ae81ff">2&lt;/span> warnings (&lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">00&lt;/span> sec)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mysql&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#66d9ef">select&lt;/span> &lt;span style="color:#e6db74">&amp;#39;a&amp;#39;&lt;/span>&lt;span style="color:#f92672">&amp;lt;=&amp;gt;&lt;/span>&lt;span style="color:#e6db74">&amp;#39;a&amp;#39;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;ab&amp;#39;&lt;/span>&lt;span style="color:#f92672">&amp;lt;=&amp;gt;&lt;/span>&lt;span style="color:#e6db74">&amp;#39;ab&amp;#39;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;a&amp;#39;&lt;/span>&lt;span style="color:#f92672">&amp;lt;=&amp;gt;&lt;/span>&lt;span style="color:#e6db74">&amp;#39;b&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">-----------+-------------+-----------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#e6db74">&amp;#39;a&amp;#39;&lt;/span>&lt;span style="color:#f92672">&amp;lt;=&amp;gt;&lt;/span>&lt;span style="color:#e6db74">&amp;#39;a&amp;#39;&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#e6db74">&amp;#39;ab&amp;#39;&lt;/span>&lt;span style="color:#f92672">&amp;lt;=&amp;gt;&lt;/span>&lt;span style="color:#e6db74">&amp;#39;ab&amp;#39;&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#e6db74">&amp;#39;a&amp;#39;&lt;/span>&lt;span style="color:#f92672">&amp;lt;=&amp;gt;&lt;/span>&lt;span style="color:#e6db74">&amp;#39;b&amp;#39;&lt;/span> &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">-----------+-------------+-----------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">-----------+-------------+-----------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#66d9ef">row&lt;/span> &lt;span style="color:#66d9ef">in&lt;/span> &lt;span style="color:#66d9ef">set&lt;/span> (&lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">00&lt;/span> sec)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mysql&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#66d9ef">select&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">&amp;lt;=&amp;gt;&lt;/span>&lt;span style="color:#66d9ef">null&lt;/span>,&lt;span style="color:#66d9ef">null&lt;/span>&lt;span style="color:#f92672">&amp;lt;=&amp;gt;&lt;/span>&lt;span style="color:#66d9ef">null&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">----------+-------------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">&amp;lt;=&amp;gt;&lt;/span>&lt;span style="color:#66d9ef">null&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#66d9ef">null&lt;/span>&lt;span style="color:#f92672">&amp;lt;=&amp;gt;&lt;/span>&lt;span style="color:#66d9ef">null&lt;/span> &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">----------+-------------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">----------+-------------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#66d9ef">row&lt;/span> &lt;span style="color:#66d9ef">in&lt;/span> &lt;span style="color:#66d9ef">set&lt;/span> (&lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">00&lt;/span> sec)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">查询&lt;/span>commission_pct等于0.&lt;span style="color:#ae81ff">40&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">有数据&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">SELECT&lt;/span> employee_id,commission_pct &lt;span style="color:#66d9ef">FROM&lt;/span> employees &lt;span style="color:#66d9ef">WHERE&lt;/span> commission_pct &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">40&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">没有数据&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">SELECT&lt;/span> employee_id,commission_pct &lt;span style="color:#66d9ef">FROM&lt;/span> employees &lt;span style="color:#66d9ef">WHERE&lt;/span> commission_pct &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">null&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">有数据&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">SELECT&lt;/span> employee_id,commission_pct &lt;span style="color:#66d9ef">FROM&lt;/span> employees &lt;span style="color:#66d9ef">WHERE&lt;/span> commission_pct &lt;span style="color:#66d9ef">is&lt;/span> &lt;span style="color:#66d9ef">null&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">有数据&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">SELECT&lt;/span> employee_id,commission_pct &lt;span style="color:#66d9ef">FROM&lt;/span> employees &lt;span style="color:#66d9ef">WHERE&lt;/span> commission_pct &lt;span style="color:#f92672">&amp;lt;=&amp;gt;&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">40&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">只会查出&lt;/span>commission_pct &lt;span style="color:#f92672">=&lt;/span> null的
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">SELECT&lt;/span> employee_id,commission_pct &lt;span style="color:#66d9ef">FROM&lt;/span> employees &lt;span style="color:#66d9ef">WHERE&lt;/span> commission_pct &lt;span style="color:#f92672">&amp;lt;=&amp;gt;&lt;/span> &lt;span style="color:#66d9ef">null&lt;/span>;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>非空运算符&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">查询&lt;/span>commission_pct等于NULL&lt;span style="color:#960050;background-color:#1e0010">。比较如下的四种写法&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">SELECT&lt;/span> employee_id,commission_pct &lt;span style="color:#66d9ef">FROM&lt;/span> employees &lt;span style="color:#66d9ef">WHERE&lt;/span> commission_pct &lt;span style="color:#66d9ef">IS&lt;/span> &lt;span style="color:#66d9ef">NULL&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">SELECT&lt;/span> employee_id,commission_pct &lt;span style="color:#66d9ef">FROM&lt;/span> employees &lt;span style="color:#66d9ef">WHERE&lt;/span> commission_pct &lt;span style="color:#f92672">&amp;lt;=&amp;gt;&lt;/span> &lt;span style="color:#66d9ef">NULL&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">有点像调用函数了&lt;/span>,&lt;span style="color:#960050;background-color:#1e0010">也是判断&lt;/span>null的
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">SELECT&lt;/span> employee_id,commission_pct &lt;span style="color:#66d9ef">FROM&lt;/span> employees &lt;span style="color:#66d9ef">WHERE&lt;/span> &lt;span style="color:#66d9ef">ISNULL&lt;/span>(commission_pct);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">不要这样写&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">SELECT&lt;/span> employee_id,commission_pct &lt;span style="color:#66d9ef">FROM&lt;/span> employees &lt;span style="color:#66d9ef">WHERE&lt;/span> commission_pct &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">NULL&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">习惯用就用&lt;/span>,&lt;span style="color:#960050;background-color:#1e0010">不习惯就换一种用法&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">SELECT&lt;/span> employee_id,commission_pct &lt;span style="color:#66d9ef">FROM&lt;/span> employees &lt;span style="color:#66d9ef">WHERE&lt;/span> &lt;span style="color:#66d9ef">NOT&lt;/span> commission_pct &lt;span style="color:#f92672">&amp;lt;=&amp;gt;&lt;/span> &lt;span style="color:#66d9ef">NULL&lt;/span>;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>between and&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">查看年纪在&lt;/span>&lt;span style="color:#ae81ff">23&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">到&lt;/span>&lt;span style="color:#ae81ff">230&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">之间&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">select&lt;/span> &lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#66d9ef">table&lt;/span> &lt;span style="color:#66d9ef">where&lt;/span> age &lt;span style="color:#66d9ef">between&lt;/span> &lt;span style="color:#ae81ff">23&lt;/span> &lt;span style="color:#66d9ef">and&lt;/span> &lt;span style="color:#ae81ff">230&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">查询年纪不再&lt;/span>&lt;span style="color:#ae81ff">23&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">和&lt;/span>&lt;span style="color:#ae81ff">230&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">之间的&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">select&lt;/span> &lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#66d9ef">table&lt;/span> &lt;span style="color:#66d9ef">where&lt;/span> age &lt;span style="color:#66d9ef">not&lt;/span> &lt;span style="color:#66d9ef">between&lt;/span> &lt;span style="color:#ae81ff">23&lt;/span> &lt;span style="color:#66d9ef">and&lt;/span> &lt;span style="color:#ae81ff">230&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>In 和 not in&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#66d9ef">in&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">select&lt;/span> last_name,salary,department_id &lt;span style="color:#66d9ef">from&lt;/span> employees &lt;span style="color:#66d9ef">where&lt;/span> department_id &lt;span style="color:#66d9ef">in&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>,&lt;span style="color:#ae81ff">20&lt;/span>,&lt;span style="color:#ae81ff">30&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#66d9ef">not&lt;/span> &lt;span style="color:#66d9ef">in&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">select&lt;/span> last_name,salary,department_id &lt;span style="color:#66d9ef">from&lt;/span> employees &lt;span style="color:#66d9ef">where&lt;/span> department_id &lt;span style="color:#66d9ef">not&lt;/span> &lt;span style="color:#66d9ef">in&lt;/span>(&lt;span style="color:#ae81ff">10&lt;/span>,&lt;span style="color:#ae81ff">20&lt;/span>,&lt;span style="color:#ae81ff">30&lt;/span>);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>or&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">这两个查询出来的结果是不一样的&lt;/span>,&lt;span style="color:#960050;background-color:#1e0010">一定要仔细&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">select&lt;/span> last_name,salary,department_id &lt;span style="color:#66d9ef">from&lt;/span> employees &lt;span style="color:#66d9ef">where&lt;/span> department_id&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">10&lt;/span> &lt;span style="color:#66d9ef">or&lt;/span> department_id&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">20&lt;/span> &lt;span style="color:#66d9ef">or&lt;/span> department_id&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">30&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">select&lt;/span> last_name,salary,department_id &lt;span style="color:#66d9ef">from&lt;/span> employees &lt;span style="color:#66d9ef">where&lt;/span> department_id&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">10&lt;/span> &lt;span style="color:#66d9ef">or&lt;/span> &lt;span style="color:#ae81ff">20&lt;/span> &lt;span style="color:#66d9ef">or&lt;/span> &lt;span style="color:#ae81ff">30&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>like&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#f92672">%&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">代表不确定个数的字符&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">select&lt;/span> last_name &lt;span style="color:#66d9ef">from&lt;/span> employees &lt;span style="color:#66d9ef">where&lt;/span> last_name &lt;span style="color:#66d9ef">like&lt;/span> &lt;span style="color:#e6db74">&amp;#39;%a%&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#f92672">%&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">代表不确定个数的字符&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">select&lt;/span> last_name &lt;span style="color:#66d9ef">from&lt;/span> employees &lt;span style="color:#66d9ef">where&lt;/span> last_name &lt;span style="color:#66d9ef">like&lt;/span> &lt;span style="color:#e6db74">&amp;#39;a%&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">包含字符&lt;/span>a &lt;span style="color:#960050;background-color:#1e0010">并且&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">好办字符&lt;/span>e的
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">第一种写法&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">select&lt;/span> last_name &lt;span style="color:#66d9ef">from&lt;/span> employees &lt;span style="color:#66d9ef">where&lt;/span> last_name &lt;span style="color:#66d9ef">like&lt;/span> &lt;span style="color:#e6db74">&amp;#39;%a%&amp;#39;&lt;/span> &lt;span style="color:#66d9ef">and&lt;/span> last_name &lt;span style="color:#66d9ef">like&lt;/span> &lt;span style="color:#e6db74">&amp;#39;%e%&amp;#39;&lt;/span> ;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">第二种写法&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">select&lt;/span> last_name &lt;span style="color:#66d9ef">from&lt;/span> employees &lt;span style="color:#66d9ef">where&lt;/span> last_name &lt;span style="color:#66d9ef">like&lt;/span> &lt;span style="color:#e6db74">&amp;#39;%a%e%&amp;#39;&lt;/span> &lt;span style="color:#66d9ef">or&lt;/span> last_name &lt;span style="color:#66d9ef">like&lt;/span> &lt;span style="color:#e6db74">&amp;#39;%e%a%&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">第三种写法&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">强制第二个符号是&lt;/span>a的,_表示一个不确定的字符
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">select&lt;/span> last_name &lt;span style="color:#66d9ef">from&lt;/span> employees &lt;span style="color:#66d9ef">where&lt;/span> last_name &lt;span style="color:#66d9ef">like&lt;/span> &lt;span style="color:#e6db74">&amp;#39;_a%&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">转义字符&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">查询第二个字符是下划线&lt;/span>,&lt;span style="color:#960050;background-color:#1e0010">并且第三个字符串是&lt;/span>a的员工
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">select&lt;/span> last_name &lt;span style="color:#66d9ef">from&lt;/span> employees &lt;span style="color:#66d9ef">where&lt;/span> last_name &lt;span style="color:#66d9ef">like&lt;/span> &lt;span style="color:#e6db74">&amp;#39;_\_a%&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">或者&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">告诉&lt;/span>mysql,&lt;span style="color:#f92672">&amp;amp;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">是我自定义的转移字符&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">select&lt;/span> last_name &lt;span style="color:#66d9ef">from&lt;/span> employees &lt;span style="color:#66d9ef">where&lt;/span> last_name &lt;span style="color:#66d9ef">like&lt;/span> &lt;span style="color:#e6db74">&amp;#39;_&amp;amp;_a%&amp;#39;&lt;/span> &lt;span style="color:#66d9ef">escape&lt;/span> &lt;span style="color:#e6db74">&amp;#39;&amp;amp;&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>正则表达式&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>mysql&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#66d9ef">SELECT&lt;/span> &lt;span style="color:#e6db74">&amp;#39;shkstart&amp;#39;&lt;/span> REGEXP &lt;span style="color:#e6db74">&amp;#39;^s&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;shkstart&amp;#39;&lt;/span> REGEXP &lt;span style="color:#e6db74">&amp;#39;t$&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;shkstart&amp;#39;&lt;/span> REGEXP &lt;span style="color:#e6db74">&amp;#39;hk&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">------------------------+------------------------+------------------------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#e6db74">&amp;#39;shkstart&amp;#39;&lt;/span> REGEXP &lt;span style="color:#e6db74">&amp;#39;^s&amp;#39;&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#e6db74">&amp;#39;shkstart&amp;#39;&lt;/span> REGEXP &lt;span style="color:#e6db74">&amp;#39;t$&amp;#39;&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#e6db74">&amp;#39;shkstart&amp;#39;&lt;/span> REGEXP &lt;span style="color:#e6db74">&amp;#39;hk&amp;#39;&lt;/span> &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">------------------------+------------------------+------------------------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">------------------------+------------------------+------------------------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#66d9ef">row&lt;/span> &lt;span style="color:#66d9ef">in&lt;/span> &lt;span style="color:#66d9ef">set&lt;/span> (&lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">01&lt;/span> sec)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>NOT或者!&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>当给定的值为0 (False)时 NOT FALSE =&amp;gt; 1&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>当给定的值为非0值时返回0;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>当给定的值为NULL时，返回NULL。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">把&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">当做&lt;/span>&lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> NOT1 &lt;span style="color:#f92672">==&amp;gt;&lt;/span> &lt;span style="color:#66d9ef">Not&lt;/span> &lt;span style="color:#66d9ef">True&lt;/span>&lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#66d9ef">False&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#66d9ef">not&lt;/span>(&lt;span style="color:#ae81ff">2&lt;/span>)&lt;span style="color:#f92672">==&amp;gt;&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">是&lt;/span>&lt;span style="color:#66d9ef">true&lt;/span> &lt;span style="color:#f92672">==&amp;gt;&lt;/span>&lt;span style="color:#66d9ef">false&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#66d9ef">NOT&lt;/span> &lt;span style="color:#f92672">!&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">==&amp;gt;&lt;/span> &lt;span style="color:#66d9ef">NOT&lt;/span> &lt;span style="color:#f92672">!&lt;/span>&lt;span style="color:#66d9ef">True&lt;/span> &lt;span style="color:#f92672">==&amp;gt;&lt;/span> &lt;span style="color:#66d9ef">NOT&lt;/span> &lt;span style="color:#66d9ef">False&lt;/span>&lt;span style="color:#f92672">==&amp;gt;&lt;/span> &lt;span style="color:#66d9ef">True&lt;/span> &lt;span style="color:#f92672">==&amp;gt;&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mysql&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#66d9ef">SELECT&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>,&lt;span style="color:#66d9ef">NOT&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#66d9ef">NOT&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>, &lt;span style="color:#66d9ef">NOT&lt;/span>(&lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>),&lt;span style="color:#66d9ef">not&lt;/span>(&lt;span style="color:#ae81ff">2&lt;/span>), &lt;span style="color:#66d9ef">NOT&lt;/span> &lt;span style="color:#f92672">!&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#66d9ef">NOT&lt;/span> &lt;span style="color:#66d9ef">NULL&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">-----+-------+-------+----------+--------+--------+----------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#66d9ef">NOT&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#66d9ef">NOT&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#66d9ef">NOT&lt;/span>(&lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>) &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#66d9ef">not&lt;/span>(&lt;span style="color:#ae81ff">2&lt;/span>) &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#66d9ef">NOT&lt;/span> &lt;span style="color:#f92672">!&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#66d9ef">NOT&lt;/span> &lt;span style="color:#66d9ef">NULL&lt;/span> &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">-----+-------+-------+----------+--------+--------+----------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#66d9ef">NULL&lt;/span> &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">-----+-------+-------+----------+--------+--------+----------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#66d9ef">row&lt;/span> &lt;span style="color:#66d9ef">in&lt;/span> &lt;span style="color:#66d9ef">set&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span> warning (&lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">00&lt;/span> sec)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>AND或者 &amp;amp;&amp;amp;&lt;/strong>&lt;/p>
+&lt;p>当给定的所有值均为非0值，并且都不为NULL时，返回 1;&lt;/p>
+&lt;p>当给定的一个值或者多个值为0时则返回0;&lt;/p>
+&lt;p>否则返回NULL。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">理解成&lt;/span>&lt;span style="color:#66d9ef">True&lt;/span>,&lt;span style="color:#960050;background-color:#1e0010">其它的值就不管用&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#66d9ef">or&lt;/span> &lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span> ,&lt;span style="color:#960050;background-color:#1e0010">有一路是通电的&lt;/span>,&lt;span style="color:#960050;background-color:#1e0010">那就是通电的&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mysql&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#66d9ef">SELECT&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#66d9ef">OR&lt;/span> &lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#66d9ef">OR&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#66d9ef">OR&lt;/span> &lt;span style="color:#66d9ef">NULL&lt;/span>, &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#f92672">||&lt;/span> &lt;span style="color:#66d9ef">NULL&lt;/span>, &lt;span style="color:#66d9ef">NULL&lt;/span> &lt;span style="color:#f92672">||&lt;/span> &lt;span style="color:#66d9ef">NULL&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">---------+--------+-----------+-----------+--------------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#66d9ef">OR&lt;/span> &lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#66d9ef">OR&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#66d9ef">OR&lt;/span> &lt;span style="color:#66d9ef">NULL&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> &lt;span style="color:#f92672">||&lt;/span> &lt;span style="color:#66d9ef">NULL&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#66d9ef">NULL&lt;/span> &lt;span style="color:#f92672">||&lt;/span> &lt;span style="color:#66d9ef">NULL&lt;/span> &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">---------+--------+-----------+-----------+--------------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">|&lt;/span>&lt;span style="color:#66d9ef">NULL&lt;/span>&lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#66d9ef">NULL&lt;/span>&lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">---------+--------+-----------+-----------+--------------+ 1 row in set, 2 warnings (0.00 sec)
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>limit&lt;/strong>&lt;/p>
+&lt;p>格式:&lt;code>LIMIT [位置偏移量,] 行数&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>第一个“位置偏移量”参数指示MySQL从哪一行开始显示，是一个可选参数，如果不指定“位置偏移 量”，将会从表中的第一条记录开始(第一条记录的位置偏移量是0，第二条记录的位置偏移量是 1，以此类推);&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>第二个参数“行数”指示返回的记录条数。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>MySQL 8.0中可以使用“LIMIT 3 OFFSET 4”，意思是获取从第5条记录开始后面的3条记录，和“LIMIT 4,3;”返回的结果相同。&lt;/p>&lt;/blockquote>
+&lt;p>分页显式公式 :(当前页数-1)*每页条数，每页条数&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">SELECT&lt;/span> &lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#66d9ef">FROM&lt;/span> &lt;span style="color:#66d9ef">table&lt;/span> &lt;span style="color:#66d9ef">LIMIT&lt;/span>(PageNo &lt;span style="color:#f92672">-&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>)&lt;span style="color:#f92672">*&lt;/span>PageSize,PageSize;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>注意:LIMIT 子句必须放在整个&lt;code>SELECT&lt;/code>语句的最后!&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>order by&lt;/strong>&lt;/p>
+&lt;p>单列排序&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">默认升序&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">select&lt;/span> salary &lt;span style="color:#66d9ef">from&lt;/span> employees &lt;span style="color:#66d9ef">order&lt;/span> &lt;span style="color:#66d9ef">by&lt;/span> salary
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">使用列的别名&lt;/span>,&lt;span style="color:#960050;background-color:#1e0010">进行排序&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">select&lt;/span> salary,salary&lt;span style="color:#f92672">*&lt;/span>&lt;span style="color:#ae81ff">12&lt;/span> &lt;span style="color:#66d9ef">as&lt;/span> year_salary &lt;span style="color:#66d9ef">from&lt;/span> employees &lt;span style="color:#66d9ef">order&lt;/span> &lt;span style="color:#66d9ef">by&lt;/span> year_salary
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>多列排序&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">select&lt;/span> employee_id, salary, department_id
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">from&lt;/span> employees
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">order&lt;/span> &lt;span style="color:#66d9ef">by&lt;/span> department_id &lt;span style="color:#66d9ef">DESC&lt;/span>,salary &lt;span style="color:#66d9ef">ASC&lt;/span>;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>可以使用不在SELECT列表中的列排序。&lt;/li>
+&lt;li>在对多列进行排序的时候，首先排序的第一列必须有相同的列值，才会对第二列进行排序。如果第 一列数据中所有值都是唯一的，将不再对第二列进行排序。&lt;/li>
+&lt;/ul>
+&lt;h2 id="时间字段">时间字段&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;/th>
+&lt;th>date&lt;/th>
+&lt;th style="text-align: left">datetime&lt;/th>
+&lt;th>timestamp&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>插入时间(CURRENT_TIMESTAMP)&lt;/td>
+&lt;td>不行(now())&lt;/td>
+&lt;td style="text-align: left">不行(now())&lt;/td>
+&lt;td>可以&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>自动更新(CURRENT_TIMESTAMP)&lt;/td>
+&lt;td>不行&lt;/td>
+&lt;td style="text-align: left">可以&lt;/td>
+&lt;td>可以&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>时区&lt;/td>
+&lt;td>&lt;/td>
+&lt;td style="text-align: left">时间字符串&lt;/td>
+&lt;td>保存时区&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">插入的时候&lt;/span>,&lt;span style="color:#960050;background-color:#1e0010">自动插入时间&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">设置&lt;/span>&lt;span style="color:#66d9ef">CURRENT_TIMESTAMP&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">--添加CreateTime 设置默认时间 CURRENT_TIMESTAMP
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">ALTER&lt;/span> &lt;span style="color:#66d9ef">TABLE&lt;/span> &lt;span style="color:#f92672">`&lt;/span>test_time&lt;span style="color:#f92672">`&lt;/span> &lt;span style="color:#66d9ef">ADD&lt;/span> &lt;span style="color:#66d9ef">COLUMN&lt;/span> &lt;span style="color:#f92672">`&lt;/span>my_time_date&lt;span style="color:#f92672">`&lt;/span> datetime &lt;span style="color:#66d9ef">NULL&lt;/span> &lt;span style="color:#66d9ef">DEFAULT&lt;/span> &lt;span style="color:#66d9ef">CURRENT_TIMESTAMP&lt;/span> &lt;span style="color:#66d9ef">COMMENT&lt;/span> &lt;span style="color:#e6db74">&amp;#39;创建时间&amp;#39;&lt;/span> ;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">--修改CreateTime 设置默认时间 CURRENT_TIMESTAMP
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">ALTER&lt;/span> &lt;span style="color:#66d9ef">TABLE&lt;/span> &lt;span style="color:#f92672">`&lt;/span>test_time&lt;span style="color:#f92672">`&lt;/span> &lt;span style="color:#66d9ef">MODIFY&lt;/span> &lt;span style="color:#66d9ef">COLUMN&lt;/span> &lt;span style="color:#f92672">`&lt;/span>my_time_date&lt;span style="color:#f92672">`&lt;/span> datetime &lt;span style="color:#66d9ef">NULL&lt;/span> &lt;span style="color:#66d9ef">DEFAULT&lt;/span> &lt;span style="color:#66d9ef">CURRENT_TIMESTAMP&lt;/span> &lt;span style="color:#66d9ef">COMMENT&lt;/span> &lt;span style="color:#e6db74">&amp;#39;创建时间&amp;#39;&lt;/span> ;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">更新的时候自动更新时间&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">设置&lt;/span>&lt;span style="color:#66d9ef">CURRENT_TIMESTAMP&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">--添加UpdateTime 设置 默认时间 CURRENT_TIMESTAMP 设置更新时间为 ON UPDATE CURRENT_TIMESTAMP
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">ALTER&lt;/span> &lt;span style="color:#66d9ef">TABLE&lt;/span> &lt;span style="color:#f92672">`&lt;/span>test_time&lt;span style="color:#f92672">`&lt;/span> &lt;span style="color:#66d9ef">ADD&lt;/span> &lt;span style="color:#66d9ef">COLUMN&lt;/span> &lt;span style="color:#f92672">`&lt;/span>my_time_date&lt;span style="color:#f92672">`&lt;/span> &lt;span style="color:#66d9ef">timestamp&lt;/span> &lt;span style="color:#66d9ef">NULL&lt;/span> &lt;span style="color:#66d9ef">DEFAULT&lt;/span> &lt;span style="color:#66d9ef">CURRENT_TIMESTAMP&lt;/span> &lt;span style="color:#66d9ef">ON&lt;/span> &lt;span style="color:#66d9ef">UPDATE&lt;/span> &lt;span style="color:#66d9ef">CURRENT_TIMESTAMP&lt;/span> &lt;span style="color:#66d9ef">COMMENT&lt;/span> &lt;span style="color:#e6db74">&amp;#39;创建时间&amp;#39;&lt;/span> ;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">--修改 UpdateTime 设置 默认时间 CURRENT_TIMESTAMP 设置更新时间为 ON UPDATE CURRENT_TIMESTAMP
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">ALTER&lt;/span> &lt;span style="color:#66d9ef">TABLE&lt;/span> &lt;span style="color:#f92672">`&lt;/span>test_time&lt;span style="color:#f92672">`&lt;/span> &lt;span style="color:#66d9ef">MODIFY&lt;/span> &lt;span style="color:#66d9ef">COLUMN&lt;/span> &lt;span style="color:#f92672">`&lt;/span>my_time_date&lt;span style="color:#f92672">`&lt;/span> &lt;span style="color:#66d9ef">timestamp&lt;/span> &lt;span style="color:#66d9ef">NULL&lt;/span> &lt;span style="color:#66d9ef">DEFAULT&lt;/span> &lt;span style="color:#66d9ef">CURRENT_TIMESTAMP&lt;/span> &lt;span style="color:#66d9ef">ON&lt;/span> &lt;span style="color:#66d9ef">UPDATE&lt;/span> &lt;span style="color:#66d9ef">CURRENT_TIMESTAMP&lt;/span> &lt;span style="color:#66d9ef">COMMENT&lt;/span> &lt;span style="color:#e6db74">&amp;#39;创建时间&amp;#39;&lt;/span> ;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>参考:&lt;a href="https://zhuanlan.zhihu.com/p/569416633">MySQL 的 timestamp时区问题&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;h2 id="时区">时区&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">查询时区&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">不需要看&lt;/span>system_time_zone,&lt;span style="color:#960050;background-color:#1e0010">只需要修改&lt;/span>time_zone
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mysql&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#66d9ef">show&lt;/span> variables &lt;span style="color:#66d9ef">like&lt;/span> &lt;span style="color:#e6db74">&amp;#39;%time_zone%&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">------------------+--------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">|&lt;/span> Variable_name &lt;span style="color:#f92672">|&lt;/span> Value &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">------------------+--------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">|&lt;/span> system_time_zone &lt;span style="color:#f92672">|&lt;/span> UTC &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">|&lt;/span> time_zone &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#ae81ff">08&lt;/span>:&lt;span style="color:#ae81ff">00&lt;/span> &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">------------------+--------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span> &lt;span style="color:#66d9ef">rows&lt;/span> &lt;span style="color:#66d9ef">in&lt;/span> &lt;span style="color:#66d9ef">set&lt;/span> (&lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">01&lt;/span> sec)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">查询全局时区&lt;/span>,&lt;span style="color:#960050;background-color:#1e0010">和会话时区&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mysql&lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#66d9ef">select&lt;/span> &lt;span style="color:#f92672">@@&lt;/span>&lt;span style="color:#66d9ef">GLOBAL&lt;/span>.time_zone,&lt;span style="color:#f92672">@@&lt;/span>&lt;span style="color:#66d9ef">SESSION&lt;/span>.time_zone;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">--------------------+---------------------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#f92672">@@&lt;/span>&lt;span style="color:#66d9ef">GLOBAL&lt;/span>.time_zone &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#f92672">@@&lt;/span>&lt;span style="color:#66d9ef">SESSION&lt;/span>.time_zone &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">--------------------+---------------------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#ae81ff">08&lt;/span>:&lt;span style="color:#ae81ff">00&lt;/span> &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#ae81ff">08&lt;/span>:&lt;span style="color:#ae81ff">00&lt;/span> &lt;span style="color:#f92672">|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#75715e">--------------------+---------------------+
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#66d9ef">row&lt;/span> &lt;span style="color:#66d9ef">in&lt;/span> &lt;span style="color:#66d9ef">set&lt;/span> (&lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">00&lt;/span> sec)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">设置会话时区&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">set&lt;/span> time_zone&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;+8:00&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">设置全局时区&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">全局会话有效。必须重新连接才生效&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">set&lt;/span> &lt;span style="color:#66d9ef">global&lt;/span> time_zone&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;+8:00;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"># 修改 mysql 的配置文件永久设置时区
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">[mysqld]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">default-time-zone=+08:00
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>mysql当前在什么时区，看哪个变量&lt;/strong>&lt;/p>
+&lt;p>看 time_zone,不看 system_time_zone。如要修改时区，直接修改 time_zone，无视 system_time_zone&lt;/p>
+&lt;p>&lt;strong>time_zone 的值如果是 SYSTEM 表示什么?&lt;/strong>&lt;/p>
+&lt;p>表示跟 system_time_zone 取值一样。安装MySQL后默认就是SYSTEM&lt;/p>
+&lt;p>&lt;strong>system_time_zone 的值是怎么来的?&lt;/strong>&lt;/p>
+&lt;p>它的值来自mysql服务启动时读取操作系统时区，读取后即使修改操作系统的时区，它的值也不会再改变了，除非重启mysql 服务变量重新读取&lt;/p>
+&lt;p>&lt;strong>system_time_zone 的值能改变吗?&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 不能通过命令改变&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mysql&amp;gt; set system_time_zone&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;JST&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ERROR &lt;span style="color:#ae81ff">1238&lt;/span> &lt;span style="color:#f92672">(&lt;/span>HY000&lt;span style="color:#f92672">)&lt;/span>: Variable &lt;span style="color:#e6db74">&amp;#39;system_time_zone&amp;#39;&lt;/span> is a read only variable
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>参考:&lt;a href="https://blog.csdn.net/w8y56f/article/details/115445442">关于mysql的时区&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;h1 id="索引">索引&lt;/h1>
+&lt;h2 id="数据结构">数据结构&lt;/h2>
+&lt;h3 id="二叉树">二叉树&lt;/h3>
+&lt;p>二叉树的缺点:顺序插入,会变成一个链表,层级比较深,检索速度慢,可以使用红黑树解决这个问题&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-mermaid" data-lang="mermaid">graph TD
+subgraph Binary Tree
+10[10]
+10 --&amp;gt; 5[5]
+10 --&amp;gt; 15[15]
+5 --&amp;gt; 2[2]
+5 --&amp;gt; 7[7]
+15 --&amp;gt; 12[12]
+15 --&amp;gt; 20[20]
+2 --&amp;gt; 1[1]
+2 --&amp;gt; 3[3]
+7 --&amp;gt; 6[6]
+end
+subgraph Slash Linked List
+direction LR
+L1[1] --&amp;gt;|/| L2[2]
+L2[2] --&amp;gt;|/| L3[3]
+L3[3] --&amp;gt;|/| L4[4]
+L4[4] --&amp;gt;|/| L5[5]
+L5[5] --&amp;gt;|/| L6[6]
+end
+&lt;/code>&lt;/pre>&lt;h3 id="红黑树">红黑树&lt;/h3>
+&lt;p>红黑树是一个自平衡的二叉树,大数据情况下,层级较深,检索速度慢&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-mermaid" data-lang="mermaid">graph TD
+style 10 fill:#000,stroke:#fff,stroke-width:2px,color:#fff
+style 5 fill:#f00,stroke:#000,stroke-width:2px,color:#fff
+style 15 fill:#f00,stroke:#000,stroke-width:2px,color:#fff
+style 2 fill:#000,stroke:#fff,stroke-width:2px,color:#fff
+style 7 fill:#000,stroke:#fff,stroke-width:2px,color:#fff
+style 12 fill:#000,stroke:#fff,stroke-width:2px,color:#fff
+style 20 fill:#000,stroke:#fff,stroke-width:2px,color:#fff
+style 1 fill:#f00,stroke:#000,stroke-width:2px,color:#fff
+style 3 fill:#f00,stroke:#000,stroke-width:2px,color:#fff
+style 6 fill:#f00,stroke:#000,stroke-width:2px,color:#fff
+10[10]
+10 --&amp;gt; 5[5]
+10 --&amp;gt; 15[15]
+5 --&amp;gt; 2[2]
+5 --&amp;gt; 7[7]
+15 --&amp;gt; 12[12]
+15 --&amp;gt; 20[20]
+2 --&amp;gt; 1[1]
+2 --&amp;gt; 3[3]
+7 --&amp;gt; 6[6]
+&lt;/code>&lt;/pre>&lt;h3 id="b-tree和b树的区别">B-Tree和B+树的区别&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>B树&lt;/strong>：查找时可能在内部节点就能找到所需的值。&lt;/li>
+&lt;li>&lt;strong>B+树&lt;/strong>：查找时需要遍历到叶子节点才能找到所需的值，因为所有的值都存储在叶子节点中。&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>范围查询&lt;/strong>：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>B树&lt;/strong>：范围查询需要在树中进行多次查找，并且由于叶子节点之间没有链接，范围查询可能效率较低。&lt;/li>
+&lt;li>&lt;strong>B+树&lt;/strong>：由于叶子节点形成了一个链表，范围查询可以从一个叶子节点顺序访问到下一个，效率更高。&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>插入和删除&lt;/strong>：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>B树&lt;/strong>：插入和删除操作可能会影响到所有节点，因为值存储在所有节点中。&lt;/li>
+&lt;li>&lt;strong>B+树&lt;/strong>：插入和删除操作主要影响叶子节点，内部节点只需要更新键和指针。这种结构使得B+树的插入和删除操作相对简单。&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>索引覆盖/覆盖索引&lt;/strong>&lt;/p>
+&lt;p>select 后面的字段可以从索引中获取到数据,就是&lt;code>索引覆盖&lt;/code>,避免回标操作&lt;/p>
+&lt;p>比如user表,有id,name和age两个字段,id是主键索引,name是普通索引,age没有索引,select age 就是没有使用索引覆盖&lt;/p>
+&lt;p>如果不符合最左前缀匹配,虽然是索引覆盖,也是无法用到索引,回扫描索引树&lt;/p>
+&lt;p>&lt;strong>索引下推&lt;/strong>&lt;/p>
+&lt;p>是5.6之后才有的,默认开启,可以设置&lt;code>index_condition_pushdown=off&lt;/code>关闭掉&lt;/p>
+&lt;p>用类似官网的例子,user表,有id(主键),name,age三个字段,使用name,age建立一个普通索引&lt;/p>
+&lt;p>1,anthony,18&lt;/p>
+&lt;p>2,anthony,19&lt;/p>
+&lt;p>查询&lt;code>select *from user where name='anthony' and age != 18&lt;/code>&lt;/p>
+&lt;p>如果没有使用下推,存储引擎中会查询到 name=&amp;lsquo;anthony&amp;rsquo;的数据行,得到行主键索引,比如有两个name=&amp;lsquo;anthony&amp;rsquo;,比如第一行和第四行,那么主键id就是1和2,分别用1和2去聚簇索引中查找匹配的行数据,返回给mysql server层,再过滤age!= 18 ,这就会涉及到两次回表,分别是id=1和id=2&lt;/p>
+&lt;p>如果使用索引下推,直接在存储引擎中通过where的筛选条件,直接在存储引擎中得到行数据,再回表查询,这样就只是需要回标一次,因为只有一行数据是符合&lt;code>name='anthony' and age != 18&lt;/code>&lt;/p>
+&lt;p>使用了索引下推,执行explain计划的时候,extra的会显示&lt;code>Using index condition&lt;/code>&lt;/p>
+&lt;p>&lt;strong>回表&lt;/strong>&lt;/p>
+&lt;p>主键索引的B+树的叶子节点存储的是整行数据,&lt;/p>
+&lt;p>非主键索引的B+树的叶子节点存储的是主键的值&lt;/p>
+&lt;p>当查询根据非聚簇索引查询的时候,会先通过非聚簇索引查询到主键的值,然后再需要通过主键的值再进行一次查询才能得到要查询的数据,这个过程就是回表&lt;/p>
+&lt;p>&lt;strong>主键索引为什么快&lt;/strong>&lt;/p>
+&lt;h2 id="explain">explain&lt;/h2>
+&lt;ul>
+&lt;li>Possible_key 理论上用到的key
+&lt;ul>
+&lt;li>值有可能有多个,也有可能是&lt;code>null&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>key 实际用到的可以
+&lt;ul>
+&lt;li>如果值是primary 就是主键索引&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>row SQL执行过程中会被扫描的行数，该数值越大，意味着需要扫描的行数，相应的耗时更长&lt;/li>
+&lt;/ul>
+&lt;h1 id="事务">事务&lt;/h1>
+&lt;p>ACID&lt;/p>
+&lt;ul>
+&lt;li>原子性:同时成功,或者同时失败,&lt;code>undo log&lt;/code>日志, 比如插入一条记录,undo就会保存一条delete日志&lt;/li>
+&lt;li>一致性:业务代码正确逻辑保证,比如try catch了异常,导致事务不能回滚&lt;/li>
+&lt;li>隔离性别:&lt;/li>
+&lt;li>持久性:一旦提交了事务,它对数据库的改变就是应该永久性的,持久性由&lt;code>redo log&lt;/code>日志来保证&lt;/li>
+&lt;/ul>
+&lt;h2 id="隔离级别">隔离级别&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;/th>
+&lt;th>隔离级别&lt;/th>
+&lt;th>脏读&lt;/th>
+&lt;th>不可重复读&lt;/th>
+&lt;th>幻读&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>读未提交（Read Uncommitted）&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>mvcc&lt;/td>
+&lt;td>读已提交（Read Committed）&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>mvcc&lt;/td>
+&lt;td>可重复读（Repeatable Read）&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>锁&lt;/td>
+&lt;td>串行化（Serializable）&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>X&lt;/td>
+&lt;td>X&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;ul>
+&lt;li>读未提交,查询到别的事务修改但是没有提交的数据&lt;/li>
+&lt;li>不可重复读和幻读都是同一事务类,读取的结果不一样&lt;/li>
+&lt;li>区别:
+&lt;ul>
+&lt;li>不可重复读:别的事务更新操作导致的&lt;/li>
+&lt;li>幻读,别的事务插入或者删除导致的&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="数据库准备">数据库准备&lt;/h3>
+&lt;p>SQL:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">CREATE&lt;/span> &lt;span style="color:#66d9ef">TABLE&lt;/span> &lt;span style="color:#f92672">`&lt;/span>mytest&lt;span style="color:#f92672">`&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">`&lt;/span>id&lt;span style="color:#f92672">`&lt;/span> int &lt;span style="color:#66d9ef">NOT&lt;/span> &lt;span style="color:#66d9ef">NULL&lt;/span> AUTO_INCREMENT,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">`&lt;/span>name&lt;span style="color:#f92672">`&lt;/span> varchar(&lt;span style="color:#ae81ff">255&lt;/span>) &lt;span style="color:#66d9ef">DEFAULT&lt;/span> &lt;span style="color:#66d9ef">NULL&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">`&lt;/span>amount&lt;span style="color:#f92672">`&lt;/span> decimal(&lt;span style="color:#ae81ff">10&lt;/span>,&lt;span style="color:#ae81ff">2&lt;/span>) &lt;span style="color:#66d9ef">DEFAULT&lt;/span> &lt;span style="color:#66d9ef">NULL&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">PRIMARY&lt;/span> &lt;span style="color:#66d9ef">KEY&lt;/span> (&lt;span style="color:#f92672">`&lt;/span>id&lt;span style="color:#f92672">`&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>) ENGINE&lt;span style="color:#f92672">=&lt;/span>InnoDB;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">INSERT&lt;/span> &lt;span style="color:#66d9ef">INTO&lt;/span> &lt;span style="color:#f92672">`&lt;/span>lottery&lt;span style="color:#f92672">`&lt;/span>.&lt;span style="color:#f92672">`&lt;/span>mytest&lt;span style="color:#f92672">`&lt;/span> (&lt;span style="color:#f92672">`&lt;/span>id&lt;span style="color:#f92672">`&lt;/span>, &lt;span style="color:#f92672">`&lt;/span>name&lt;span style="color:#f92672">`&lt;/span>, &lt;span style="color:#f92672">`&lt;/span>amount&lt;span style="color:#f92672">`&lt;/span>) &lt;span style="color:#66d9ef">VALUES&lt;/span> (&lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;anthony&amp;#39;&lt;/span>, &lt;span style="color:#ae81ff">100&lt;/span>.&lt;span style="color:#ae81ff">00&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">INSERT&lt;/span> &lt;span style="color:#66d9ef">INTO&lt;/span> &lt;span style="color:#f92672">`&lt;/span>lottery&lt;span style="color:#f92672">`&lt;/span>.&lt;span style="color:#f92672">`&lt;/span>mytest&lt;span style="color:#f92672">`&lt;/span> (&lt;span style="color:#f92672">`&lt;/span>id&lt;span style="color:#f92672">`&lt;/span>, &lt;span style="color:#f92672">`&lt;/span>name&lt;span style="color:#f92672">`&lt;/span>, &lt;span style="color:#f92672">`&lt;/span>amount&lt;span style="color:#f92672">`&lt;/span>) &lt;span style="color:#66d9ef">VALUES&lt;/span> (&lt;span style="color:#ae81ff">2&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;nick&amp;#39;&lt;/span>, &lt;span style="color:#ae81ff">200&lt;/span>.&lt;span style="color:#ae81ff">00&lt;/span>);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>命令:设置会话登记&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">SET&lt;/span> &lt;span style="color:#66d9ef">SESSION&lt;/span> &lt;span style="color:#66d9ef">TRANSACTION&lt;/span> &lt;span style="color:#66d9ef">ISOLATION&lt;/span> &lt;span style="color:#66d9ef">LEVEL&lt;/span> &lt;span style="color:#66d9ef">READ&lt;/span> &lt;span style="color:#66d9ef">UNCOMMITTED&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">set&lt;/span> &lt;span style="color:#66d9ef">SESSION&lt;/span> &lt;span style="color:#66d9ef">TRANSACTION&lt;/span> &lt;span style="color:#66d9ef">ISOLATION&lt;/span> &lt;span style="color:#66d9ef">LEVEL&lt;/span> &lt;span style="color:#66d9ef">READ&lt;/span> &lt;span style="color:#66d9ef">COMMITTED&lt;/span>;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>演示过程都是,事务A先操作,然后事务B再操作&lt;/p>&lt;/blockquote>
+&lt;h3 id="读未提交">读未提交&lt;/h3>
+&lt;p>读未提交(read-uncommitted),演示一&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: right">&lt;/th>
+&lt;th style="text-align: center">事务A&lt;/th>
+&lt;th style="text-align: center">事务B&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: right">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td>anthony.amount=100&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: right">1&lt;/td>
+&lt;td style="text-align: center">BEGIN;&lt;/td>
+&lt;td style="text-align: center">BEGIN;&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: right">2&lt;/td>
+&lt;td style="text-align: center">UPDATE mytest &lt;br/> SET amount = amount + 500 &lt;br/> WHERE&lt;br/> id = 1;&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: right">3&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">BEGIN;&lt;br/> SELECT&lt;br/> * &lt;br/> FROM&lt;br/> mytest &lt;br/>WHERE&lt;br/> id = 1;&lt;/td>
+&lt;td>anthony.amount=600&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: right">4&lt;/td>
+&lt;td style="text-align: center">commit;&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: right">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">BEGIN;&lt;br/> SELECT&lt;br/> * &lt;br/> FROM&lt;br/> mytest &lt;br/>WHERE&lt;br/> id = 1;&lt;/td>
+&lt;td>anthony.amount=600&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: right">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>读未提交(read-uncommitted),演示二&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">&lt;/th>
+&lt;th style="text-align: center">事务A&lt;/th>
+&lt;th style="text-align: center">事务B&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td>anthony.amount=100&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">1&lt;/td>
+&lt;td style="text-align: center">BEGIN;&lt;/td>
+&lt;td style="text-align: center">BEGIN;&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">2&lt;/td>
+&lt;td style="text-align: center">UPDATE mytest &lt;br/> SET amount = amount + 500 &lt;br/> WHERE&lt;br/> id = 1;&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">3&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;br/> SELECT&lt;br/> * &lt;br/> FROM&lt;br/> mytest &lt;br/>WHERE&lt;br/> id = 1;&lt;/td>
+&lt;td>anthony.amount=600&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">4&lt;/td>
+&lt;td style="text-align: center">rollback;&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;br/> SELECT&lt;br/> * &lt;br/> FROM&lt;br/> mytest &lt;br/>WHERE&lt;br/> id = 1;&lt;/td>
+&lt;td>anthony.amount=100&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="读已提交">读已提交&lt;/h3>
+&lt;p>会话2,在一个事务你,查询到两次不同的金额&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: right">&lt;/th>
+&lt;th style="text-align: center">事务A&lt;/th>
+&lt;th style="text-align: center">事务B&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: right">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td>anthony.amount=100&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: right">1&lt;/td>
+&lt;td style="text-align: center">BEGIN;&lt;/td>
+&lt;td style="text-align: center">BEGIN;&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: right">2&lt;/td>
+&lt;td style="text-align: center">UPDATE mytest &lt;br/> SET amount = amount + 500 &lt;br/> WHERE&lt;br/> id = 1;&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: right">3&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;br/> SELECT&lt;br/> * &lt;br/> FROM&lt;br/> mytest &lt;br/>WHERE&lt;br/> id = 1;&lt;/td>
+&lt;td>anthony.amount=100&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: right">4&lt;/td>
+&lt;td style="text-align: center">commit;&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: right">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;br/> SELECT&lt;br/> * &lt;br/> FROM&lt;br/> mytest &lt;br/>WHERE&lt;br/> id = 1;&lt;/td>
+&lt;td>anthony.amount=600&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: right">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="可重复读">可重复读&lt;/h3>
+&lt;p>会话2,在一个事务里,查到的数据是不会变的&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: right">&lt;/th>
+&lt;th style="text-align: center">事务A&lt;/th>
+&lt;th style="text-align: center">事务B&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: right">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td>anthony.amount=100&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: right">1&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">BEGIN;&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: right">2&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">SELECT&lt;br/> * &lt;br/> FROM&lt;br/> mytest &lt;br/>WHERE&lt;br/> id = 1;&lt;/td>
+&lt;td>anthony.amount=100&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: right">3&lt;/td>
+&lt;td style="text-align: center">BEGIN;&lt;/td>
+&lt;td style="text-align: center">&lt;br/>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: right">4&lt;/td>
+&lt;td style="text-align: center">UPDATE mytest &lt;br/> SET amount = amount + 500 &lt;br/> WHERE&lt;br/> id = 1;&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: right">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;br/> SELECT&lt;br/> * &lt;br/> FROM&lt;br/> mytest &lt;br/>WHERE&lt;br/> id = 1;&lt;/td>
+&lt;td>anthony.amount=100&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: right">&lt;/td>
+&lt;td style="text-align: center">commit;&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: right">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">SELECT&lt;br/> * &lt;br/> FROM&lt;br/> mytest &lt;br/>WHERE&lt;br/> id = 1;&lt;/td>
+&lt;td>anthony.amount=100&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: right">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">commit;&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h4 id="可串行化">可串行化&lt;/h4>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: right">&lt;/th>
+&lt;th style="text-align: center">事务A&lt;/th>
+&lt;th style="text-align: center">事务B&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: right">&lt;/td>
+&lt;td style="text-align: center">BEGIN;&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td>anthony.amount=100&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: right">1&lt;/td>
+&lt;td style="text-align: center">UPDATE mytest &lt;br/> SET amount = amount + 500 &lt;br/> WHERE&lt;br/> id = 1;&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: right">2&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">BEGIN;&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: right">3&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">SELECT&lt;br/> * &lt;br/> FROM&lt;br/> mytest &lt;br/>WHERE&lt;br/> id = 1;&lt;br/>&lt;/td>
+&lt;td>阻塞中&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: right">4&lt;/td>
+&lt;td style="text-align: center">commit;&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: right">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;br/> SELECT&lt;br/> * &lt;br/> FROM&lt;br/> mytest &lt;br/>WHERE&lt;br/> id = 1;&lt;/td>
+&lt;td>anthony.amount=150&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;/th>
+&lt;th>事务A读操作&lt;/th>
+&lt;th>事务B写操作&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>事务B读操作&lt;/td>
+&lt;td>不阻塞&lt;/td>
+&lt;td>阻塞&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>事务B写操作&lt;/td>
+&lt;td>阻塞&lt;/td>
+&lt;td>阻塞&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>可串行化的实现原理:&lt;/p>
+&lt;p>在不加锁读的操作,会默认加的&lt;/p>
+&lt;p>读锁-共享锁-S锁:select * from mytest lock in share mode;&lt;/p>
+&lt;p>读锁是共享的,多个事务可以同时读取同一个资源,但不允许其他事务修改&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;/th>
+&lt;th>事务A&lt;/th>
+&lt;th>事务B&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td>Begin;&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>select * from mytest where id =1 lock in share mode;&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Begin;&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Update myset set xx=xx where id =1&lt;/td>
+&lt;td>这里会阻塞&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>commit;&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>然后事务B才会执行&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>写-排它锁-X锁:select * from mytest for update;&lt;/p>
+&lt;p>写锁是拍他,会阻塞其他的写锁和读锁,update,delete,insert都会加锁&lt;/p>
+&lt;h2 id="参考">参考&lt;/h2>
+&lt;blockquote>
+&lt;p>&lt;a href="https://learnku.com/articles/40258">https://learnku.com/articles/40258&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://blog.51cto.com/shijianfeng/2914313">https://blog.51cto.com/shijianfeng/2914313&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://www.zhihu.com/question/392569386">https://www.zhihu.com/question/392569386&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://juejin.cn/post/7136112451959848991">https://juejin.cn/post/7136112451959848991&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;h1 id="innodb">InnoDB&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- 查看缓存区的大小,单位是字节(Bytes)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">SHOW&lt;/span> &lt;span style="color:#66d9ef">GLOBAL&lt;/span> VARIABLES &lt;span style="color:#66d9ef">LIKE&lt;/span> &lt;span style="color:#e6db74">&amp;#39;innodb_buffer_pool_size&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- 缓冲池中的总页数：
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">SHOW&lt;/span> &lt;span style="color:#66d9ef">GLOBAL&lt;/span> STATUS &lt;span style="color:#66d9ef">LIKE&lt;/span> &lt;span style="color:#e6db74">&amp;#39;Innodb_buffer_pool_pages_total&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- 已经缓存的页数,需要✖️每一页的大小,通常是16KB每页
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">SHOW&lt;/span> &lt;span style="color:#66d9ef">GLOBAL&lt;/span> STATUS &lt;span style="color:#66d9ef">LIKE&lt;/span> &lt;span style="color:#e6db74">&amp;#39;Innodb_buffer_pool_pages_data&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- 缓冲池中的脏页数：
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- 脏页（即已修改但尚未写回磁盘的页）的页数。这也是一个重要的性能指标。
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- updat先修改缓存,这时候就成了脏也,然后msyql再开线程更新到磁盘
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">SHOW&lt;/span> &lt;span style="color:#66d9ef">GLOBAL&lt;/span> STATUS &lt;span style="color:#66d9ef">LIKE&lt;/span> &lt;span style="color:#e6db74">&amp;#39;Innodb_buffer_pool_pages_dirty&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- 清理binlog日志
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">show&lt;/span> variables &lt;span style="color:#66d9ef">like&lt;/span> &lt;span style="color:#e6db74">&amp;#39;%log_bin%&amp;#39;&lt;/span>; &lt;span style="color:#f92672">#&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">查看&lt;/span>binlog启用状态
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">show&lt;/span> binary logs; &lt;span style="color:#f92672">#&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">查看当前配置下已产生的&lt;/span>mysql&lt;span style="color:#f92672">-&lt;/span>binlog日志
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>purge master logs &lt;span style="color:#66d9ef">before&lt;/span> &lt;span style="color:#e6db74">&amp;#39;2023-09-22 00:00:00&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">reset&lt;/span> master; &lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">清理过一次&lt;/span>,&lt;span style="color:#960050;background-color:#1e0010">第二天又恢复了&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">-- 关闭binlog
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>[mysqld]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>skip&lt;span style="color:#f92672">-&lt;/span>log&lt;span style="color:#f92672">-&lt;/span>bin
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">#&lt;/span> &lt;span style="color:#960050;background-color:#1e0010">然后重启电脑&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>参考:https://juejin.cn/post/7234924083842220092&lt;/p>&lt;/blockquote></content></item><item><title>Mycat</title><link>https://connorzhangyu.com/posts/mycat/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/mycat/</guid><description>&lt;h1 id="主从复制">主从复制&lt;/h1>
+&lt;h1 id="启动">启动&lt;/h1>
+&lt;p>1 .下载jre包&lt;/p>
+&lt;p>2 下载mycat包&lt;/p>
+&lt;p>3 打包镜像&lt;/p>
+&lt;p>Dockerfile&lt;/p>
+&lt;pre tabindex="0">&lt;code>FROM centos
+# 解压这个包到home下面
+ADD server-jre-8u251-linux-x64.tar.gz /home/
+ADD ./Mycat-server-1.6.7.4-release-20200105164103-linux.tar.gz /home
+ENV WORKPATH /home/mycat/
+WORKDIR $WORKPATH
+ENV JAVA_HOME /home/jdk1.8.0_251
+ENV CLASSPATH $JAVA_HOME/dt.jar:$JAVA_HOME/lib/tools.jar
+ENV PATH $PATH:$JAVA_HOME/BIN:$CATALINA_HOME/lib:$CATALINA_HOME/bin
+# 暴露8066端口
+EXPOSE 8066
+CMD /home/mycat/bin/mycat console
+&lt;/code>&lt;/pre>&lt;p>把mycat里的conf 和 logs 从容器中拷贝出来&lt;/p>
+&lt;p>再挂在两个目录,并启动&lt;/p>
+&lt;pre tabindex="0">&lt;code>docker run -it \
+--name mycat \
+-p 8066:8066 \
+-v /home/anthony/mycat/conf:/home/mycat/conf/ \
+-v /home/anthony/mycat/logs:/home/mycat/logs/ \
+java1234/mycat:1.0
+Running Mycat-server...
+Removed stale pid file: /home/mycat/logs/mycat.pid
+wrapper | --&amp;gt; Wrapper Started as Console
+wrapper | Launching a JVM...
+jvm 1 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+jvm 1 | Copyright 1999-2006 Tanuki Software, Inc. All Rights Reserved.
+jvm 1 |
+jvm 1 | MyCAT Server startup successfully. see logs in logs/mycat.log
+&lt;/code>&lt;/pre>&lt;h1 id="配置">配置&lt;/h1>
+&lt;ul>
+&lt;li>schems.xml 定义逻辑库,表,分片节点等内容&lt;/li>
+&lt;li>rule.xml 定义分片规则&lt;/li>
+&lt;li>server.xml 定义用户以及系统相关变量&lt;/li>
+&lt;/ul>
+&lt;h1 id="安装mysql57">安装mysql5.7&lt;/h1>
+&lt;pre tabindex="0">&lt;code># 从容器中拷贝这些文件
+docker cp xxx:/etc/mysql/mysql.conf.d/ /home/anthony/mysql
+docker cp xxx:/var/log/ /home/anthony/mysql
+&lt;/code>&lt;/pre>&lt;p>启动的时候映射这些&lt;/p></description><content>&lt;h1 id="主从复制">主从复制&lt;/h1>
+&lt;h1 id="启动">启动&lt;/h1>
+&lt;p>1 .下载jre包&lt;/p>
+&lt;p>2 下载mycat包&lt;/p>
+&lt;p>3 打包镜像&lt;/p>
+&lt;p>Dockerfile&lt;/p>
+&lt;pre tabindex="0">&lt;code>FROM centos
+# 解压这个包到home下面
+ADD server-jre-8u251-linux-x64.tar.gz /home/
+ADD ./Mycat-server-1.6.7.4-release-20200105164103-linux.tar.gz /home
+ENV WORKPATH /home/mycat/
+WORKDIR $WORKPATH
+ENV JAVA_HOME /home/jdk1.8.0_251
+ENV CLASSPATH $JAVA_HOME/dt.jar:$JAVA_HOME/lib/tools.jar
+ENV PATH $PATH:$JAVA_HOME/BIN:$CATALINA_HOME/lib:$CATALINA_HOME/bin
+# 暴露8066端口
+EXPOSE 8066
+CMD /home/mycat/bin/mycat console
+&lt;/code>&lt;/pre>&lt;p>把mycat里的conf 和 logs 从容器中拷贝出来&lt;/p>
+&lt;p>再挂在两个目录,并启动&lt;/p>
+&lt;pre tabindex="0">&lt;code>docker run -it \
+--name mycat \
+-p 8066:8066 \
+-v /home/anthony/mycat/conf:/home/mycat/conf/ \
+-v /home/anthony/mycat/logs:/home/mycat/logs/ \
+java1234/mycat:1.0
+Running Mycat-server...
+Removed stale pid file: /home/mycat/logs/mycat.pid
+wrapper | --&amp;gt; Wrapper Started as Console
+wrapper | Launching a JVM...
+jvm 1 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+jvm 1 | Copyright 1999-2006 Tanuki Software, Inc. All Rights Reserved.
+jvm 1 |
+jvm 1 | MyCAT Server startup successfully. see logs in logs/mycat.log
+&lt;/code>&lt;/pre>&lt;h1 id="配置">配置&lt;/h1>
+&lt;ul>
+&lt;li>schems.xml 定义逻辑库,表,分片节点等内容&lt;/li>
+&lt;li>rule.xml 定义分片规则&lt;/li>
+&lt;li>server.xml 定义用户以及系统相关变量&lt;/li>
+&lt;/ul>
+&lt;h1 id="安装mysql57">安装mysql5.7&lt;/h1>
+&lt;pre tabindex="0">&lt;code># 从容器中拷贝这些文件
+docker cp xxx:/etc/mysql/mysql.conf.d/ /home/anthony/mysql
+docker cp xxx:/var/log/ /home/anthony/mysql
+&lt;/code>&lt;/pre>&lt;p>启动的时候映射这些&lt;/p>
+&lt;h1 id="创建网络">创建网络&lt;/h1>
+&lt;pre tabindex="0">&lt;code># 可以查看容器的虚拟ip
+docker inspect ac7
+# 查看网络
+docker network ls
+# 自定义一个网络模式
+# extnetwork 是网络模式的名字
+# 172.20.0.1 是网关
+docker network create --subnet=172.20.0.0/16 extnetwork
+&lt;/code>&lt;/pre>&lt;h1 id="mysqlmycat指定网路重建容器">mysql,mycat指定网路,重建容器&lt;/h1>
+&lt;pre tabindex="0">&lt;code># 指定网络模式和ip地址
+--net extnetwork --ip 172.20.0.2
+docker run -itd \
+--name mysql-master \
+-p 3306:3306 \
+-e MYSQL_ROOT_PASSWORD=123456 \
+-v /home/anthony/mysql/mysql.conf.d/:/etc/mysql/conf.d/ \
+-v /home/anthony/mysql/log/:/var/log/ \
+--net extnetwork --ip 172.20.0.2 \
+mysql:5.7
+docker run -itd \
+--name mysql-slave \
+-p 3307:3306 \
+-e MYSQL_ROOT_PASSWORD=123456 \
+-v /home/anthony/mysql2/mysql.conf.d/:/etc/mysql/conf.d/ \
+-v /home/anthony/mysql2/log/:/var/log/ \
+--net extnetwork --ip 172.20.0.3 \
+mysql:5.7
+docker run -it \
+--name mycat \
+-p 8066:8066 \
+-v /home/anthony/mycat/conf:/home/mycat/conf/ \
+-v /home/anthony/mycat/logs:/home/mycat/logs/ \
+--net extnetwork --ip 172.20.0.4 \
+java1234/mycat:1.0
+&lt;/code>&lt;/pre>&lt;h1 id="主从配置">主从配置&lt;/h1>
+&lt;p>主,在[mysqld]&lt;/p>
+&lt;pre tabindex="0">&lt;code># 主服务器ID,必须唯一
+server-id=2
+# 开启和设置二进制日志文件名称
+log_bin=mysql-bin
+# 要同步的数据库
+binlog-do-db=db_java1234
+# 不需要同步的数据库
+binlog-ignore_db=mysql
+binlog-ignore_db=information_schema
+binlog-ignore_db=performation_schema
+binlog_ignore_db=sys
+# 设置logbin格式,mysql默认采用statement,建议使用mixed
+binlog_format=MIXED
+&lt;/code>&lt;/pre>&lt;p>从,在[mysqld]&lt;/p>
+&lt;pre tabindex="0">&lt;code># 主服务器ID,必须唯一
+server-id=3
+# 这行是从库需要添加的
+relay-log=mysql-relay
+# 开启和设置二进制日志文件名称
+log_bin=mysql-bin
+# 要同步的数据库
+binlog-do-db=db_java1234
+# 不需要同步的数据库
+binlog-ignore_db=mysql
+binlog-ignore_db=information_schema
+binlog-ignore_db=performation_schema
+binlog_ignore_db=sys
+# 设置logbin格式,mysql默认采用statement,建议使用mixed
+binlog_format=MIXED
+&lt;/code>&lt;/pre>&lt;h1 id="测试">测试&lt;/h1>
+&lt;p>主从还没有生效&lt;/p>
+&lt;pre tabindex="0">&lt;code>mysql&amp;gt; show master status;
++------------------+----------+--------------+--------------------------------------------------+-------------------+
+| File | Position | Binlog_Do_DB | Binlog_Ignore_DB | Executed_Gtid_Set |
++------------------+----------+--------------+--------------------------------------------------+-------------------+
+| mysql-bin.000003 | 357 | db_java1234 | mysql,information_schema,performation_schema,sys | |
++------------------+----------+--------------+--------------------------------------------------+-------------------+
+1 row in set (0.01 sec)
+mysql&amp;gt; show slave status;
+Empty set
+&lt;/code>&lt;/pre>&lt;h1 id="设置用户名">设置用户名&lt;/h1>
+&lt;p>在master执行&lt;/p>
+&lt;pre tabindex="0">&lt;code># 创建用户名为slave1
+# 172.20.0.3从库ip
+# 123456 密码
+CREATE USER &amp;#39;slave1&amp;#39;@&amp;#39;172.20.0.3&amp;#39; IDENTIFIED BY &amp;#39;123456&amp;#39;;
+# 语法:GRANT privileges ON databasename.tablename TO &amp;#39;username&amp;#39;@&amp;#39;host&amp;#39;
+# 172.20.0.3 从库
+# 两个权限:REPLICATION和SLAVE
+# *.* 所有的库和表
+GRANT REPLICATION SLAVE ON *.* TO &amp;#39;slave1&amp;#39;@&amp;#39;172.20.0.3&amp;#39;;
+# 刷新权限
+FLUSH PRIVILEGES;
+&lt;/code>&lt;/pre>&lt;p>在slave执行&lt;/p>
+&lt;pre tabindex="0">&lt;code>CHANGE MASTER TO MASTER_HOST=&amp;#39;172.20.0.2&amp;#39;,MASTER_USER=&amp;#39;slave1&amp;#39;,MASTER_PASSWORD=&amp;#39;123456&amp;#39;,MASTER_LOG_FILE=&amp;#39;mysql-bin.000003&amp;#39;,MASTER_LOG_POS=964;
+# 开启主从
+start slave;
+&lt;/code>&lt;/pre>&lt;p>在从库执行&lt;/p>
+&lt;pre tabindex="0">&lt;code>show slave status;
+&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://image.runtimes.cc/202404051430859.png" alt="">&lt;/p>
+&lt;p>主要看Slave_io_running =yes&lt;/p>
+&lt;p>主要看Slave_sql_running =yes&lt;/p>
+&lt;h1 id="读写分离">读写分离&lt;/h1>
+&lt;h1 id="schemlxml">scheml.xml&lt;/h1>
+&lt;h3 id="schema标签">schema标签&lt;/h3>
+&lt;pre tabindex="0">&lt;code>&amp;lt;schema name=&amp;#34;TESTDB&amp;#34; checkSQLschema=&amp;#34;true&amp;#34; sqlMaxLimit=&amp;#34;100&amp;#34; randomDataNode=&amp;#34;dn1&amp;#34;&amp;gt;
+&amp;lt;!-- auto sharding by id (long) --&amp;gt;
+&amp;lt;!--splitTableNames 启用&amp;lt;table name 属性使用逗号分割配置多个表,即多个表使用这个配置--&amp;gt;
+&amp;lt;table name=&amp;#34;travelrecord,address&amp;#34; dataNode=&amp;#34;dn1,dn2,dn3&amp;#34; rule=&amp;#34;auto-sharding-long&amp;#34; splitTableNames =&amp;#34;true&amp;#34;/&amp;gt;
+&amp;lt;!-- &amp;lt;table name=&amp;#34;oc_call&amp;#34; primaryKey=&amp;#34;ID&amp;#34; dataNode=&amp;#34;dn1$0-743&amp;#34; rule=&amp;#34;latest-month-calldate&amp;#34;
+/&amp;gt; --&amp;gt;
+&amp;lt;/schema&amp;gt;
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>name: 配置逻辑库的名称&lt;/li>
+&lt;li>checkSQLschema: 当执行&lt;code>select * from T_Account.user&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>为true时,mycat会把sql转成&lt;code>select * from user&lt;/code>&lt;/p>
+&lt;p>false 会报错&lt;/p>
+&lt;ul>
+&lt;li>sqlMaxLimit:最大查询每页条数,如果sql指定了limit,就以sql为准,没有,就以配置为准&lt;/li>
+&lt;li>randomDataNode:这个先不用,先改成&lt;code>datanote='dn1'&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3 id="datanote标签">datanote标签&lt;/h3>
+&lt;pre tabindex="0">&lt;code>&amp;lt;dataNode name=&amp;#34;dn1&amp;#34; dataHost=&amp;#34;localhost1&amp;#34; database=&amp;#34;db1&amp;#34; /&amp;gt;
+&amp;lt;dataNode name=&amp;#34;dn2&amp;#34; dataHost=&amp;#34;localhost1&amp;#34; database=&amp;#34;db2&amp;#34; /&amp;gt;
+&amp;lt;dataNode name=&amp;#34;dn3&amp;#34; dataHost=&amp;#34;localhost1&amp;#34; database=&amp;#34;db3&amp;#34; /&amp;gt;
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>name:数据分片节点名称&lt;/li>
+&lt;li>dataHost:定义该数据分片节点属于哪台数据库主机&lt;/li>
+&lt;li>database:指定哪个数据库,db_java1234&lt;/li>
+&lt;/ul>
+&lt;h3 id="datahost标签">datahost标签&lt;/h3>
+&lt;pre tabindex="0">&lt;code>&amp;lt;dataHost name=&amp;#34;localhost1&amp;#34; maxCon=&amp;#34;1000&amp;#34; minCon=&amp;#34;10&amp;#34; balance=&amp;#34;3&amp;#34;
+writeType=&amp;#34;0&amp;#34; dbType=&amp;#34;mysql&amp;#34; dbDriver=&amp;#34;native&amp;#34; switchType=&amp;#34;1&amp;#34; slaveThreshold=&amp;#34;100&amp;#34;&amp;gt;
+&amp;lt;heartbeat&amp;gt;select user()&amp;lt;/heartbeat&amp;gt;
+&amp;lt;!-- can have multi write hosts --&amp;gt;
+&amp;lt;writeHost host=&amp;#34;hostM1&amp;#34; url=&amp;#34;localhost:3306&amp;#34; user=&amp;#34;root&amp;#34;
+password=&amp;#34;123456&amp;#34;&amp;gt;
+&amp;lt;/writeHost&amp;gt;
+&amp;lt;!-- &amp;lt;writeHost host=&amp;#34;hostM2&amp;#34; url=&amp;#34;localhost:3316&amp;#34; user=&amp;#34;root&amp;#34; password=&amp;#34;123456&amp;#34;/&amp;gt; --&amp;gt;
+&amp;lt;/dataHost&amp;gt;
+&lt;/code>&lt;/pre>&lt;ul>
+&lt;li>name:跟datanote标签的datahost对应&lt;/li>
+&lt;li>maxCon 指定每个读写实例连接池的的最大链接,write合readhost标签都会使用这个属性的值来实例化出连接池的最大连接数&lt;/li>
+&lt;li>min 最小的连接&lt;/li>
+&lt;li>balance:&lt;/li>
+&lt;li>0 不开启读写分离,所有读操作都发送到当前可用的writehost上&lt;/li>
+&lt;li>1&lt;/li>
+&lt;li>2 所有读操作都随机在writehost合readehost上分发&lt;/li>
+&lt;li>3 所有读请求随机分发到writehost合readhos&lt;/li>
+&lt;/ul>
+&lt;h1 id="双组双从">双组双从&lt;/h1>
+&lt;h1 id="第二套主从">第二套主从&lt;/h1>
+&lt;p>1.在mysql添加中添加&lt;/p>
+&lt;pre tabindex="0">&lt;code>log-slave-update=1
+auto-increment-increment=2
+auto-increment-offset=1
+&lt;/code>&lt;/pre>&lt;p>2.把mysql文件复制一份mysql3&lt;/p>
+&lt;p>3.把mysql3的配置文件修修改这些配置&lt;/p>
+&lt;pre tabindex="0">&lt;code># 主服务器ID,必须唯一
+server-id=5
+auto-increment-offset=2
+&lt;/code>&lt;/pre>&lt;p>4.再创建两个容器,m2 和 s2&lt;/p>
+&lt;h1 id="master-和-master同步">master 和 master同步&lt;/h1>
+&lt;p>就是相互slave&lt;/p>
+&lt;h1 id="测试读写分离">测试读写分离&lt;/h1>
+&lt;p>插入语句&lt;/p>
+&lt;pre tabindex="0">&lt;code>insert into test valus(@@hostname)
+&lt;/code>&lt;/pre></content></item></channel></rss>

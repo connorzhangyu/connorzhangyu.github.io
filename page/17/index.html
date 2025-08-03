@@ -1,0 +1,347 @@
+<!doctype html><html lang=zh><head><meta name=generator content="Hugo 0.148.2"><title>Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="记仇小本本"><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://connorzhangyu.com/><link rel=stylesheet href=https://connorzhangyu.com/styles.css><link rel="shortcut icon" href=https://connorzhangyu.com/img/theme-colors/orange.png><link rel=apple-touch-icon href=https://connorzhangyu.com/img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta name=twitter:site content><meta name=twitter:creator content><meta property="og:locale" content="zh"><meta property="og:type" content="website"><meta property="og:title" content="Hello World"><meta property="og:description" content="记仇小本本"><meta property="og:url" content="https://connorzhangyu.com/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="https://connorzhangyu.com/img/favicon/orange.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><link href=/index.xml rel=alternate type=application/rss+xml title="Hello World"><link href=/index.json rel=alternate type=application/json title="Hello World"></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></nav></header><div class=content><div class=posts><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/idea/>IDEA</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/mac/>Mac</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/idea/>IDEA</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051529089.png class=post-cover alt=IDEA title="Cover Image"><div class=post-content><h1 id=教程>教程</h1><h2 id=idea查看方法被调用>IDEA查看方法被调用</h2><p><img src=https://image.runtimes.cc/202404051423853.png alt></p><h2 id=修改光标所在行背景颜色>修改光标所在行背景颜色</h2><p><img src=https://image.runtimes.cc/202404051423630.png alt></p><h2 id=断点判断条件>断点判断条件</h2><p>在断点上点右键,正常的写判断代码就行</p><p><img src=https://image.runtimes.cc/202404051423731.png alt=image-20230803174451532></p><h2 id=插件>插件</h2><h3 id=rabinbow-brackets>Rabinbow Brackets</h3><p>作者:Zhihao Zhang</p><p>使用方法</p><p><code>Command</code>+右键,高亮选中部分</p><p><code>Alt</code>+右键,高亮选中部分,其余的代码变暗</p><h3 id=commitmessage>CommitMessage</h3><p>作者:郭翰林</p><p>使用方法,提交的时候,点击✈️的图标</p><h3 id=codeium>Codeium</h3><p>作者:Codeium</p><p>写代码的时候会有自动提示,按tab确定使用AI生成的代码</p><h3 id=key-promoter-x>Key Promoter X</h3><h3 id=translation>Translation</h3><p>作者:Yii.Guxing</p><p>选中要翻译的内容,右键选择翻译</p></div><div><a class="read-more button" href=/posts/idea/>Read more →</a></div></article><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/java/>Java</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/java/>Java</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/spring/>Spring</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051529974.png class=post-cover alt=Java title="Cover Image"><div class=post-content><h1 id=基础知识点>基础知识点</h1><p><strong>循环标签</strong></p><p>如果不在嵌套循环中使用,用了跳转,也就相当于<code>continue</code>一样,没有区别</p><p>在嵌套循环中使用才有效果,用了<code>innerLoop</code>之后,可以看到</p><ul><li>j=2 的时候是不打印</li><li>j=3,程序不会到j=3的时候,因为j=2的时候就已经跳出去了</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 0====0
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 0====1
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 1====0
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 1====1
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 2====0
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 2====1
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * -------------------
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 0====0
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 0====1
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 0====2
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 0====3
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 1====0
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 1====1
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 1====2
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 1====3
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 2====0
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 2====1
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 2====2
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 2====3
+</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>main</span>(String<span style=color:#f92672>[]</span> args) {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    innerLoop:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> 0; i <span style=color:#f92672>&lt;</span> 3; i<span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> j <span style=color:#f92672>=</span> 0; j <span style=color:#f92672>&lt;</span> 4; j<span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> (j <span style=color:#f92672>==</span> 2) {
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>continue</span> innerLoop;
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>            System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(i<span style=color:#f92672>+</span><span style=color:#e6db74>&#34;====&#34;</span><span style=color:#f92672>+</span>j);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h1 id=java常用的api方法>Java常用的API方法</h1><h2 id=集合列表数组map>集合/列表/数组/Map</h2><h3 id=数组拼接>数组拼接</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#75715e>// 把数组风格,再循环添加逗号</span>
+</span></span><span style=display:flex><span>String<span style=color:#f92672>[]</span> split <span style=color:#f92672>=</span> result.<span style=color:#a6e22e>split</span>(<span style=color:#e6db74>&#34; &#34;</span>);
+</span></span><span style=display:flex><span>StringJoiner stringJoiner <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> StringJoiner(<span style=color:#e6db74>&#34;,&#34;</span>);
+</span></span><span style=display:flex><span>Arrays.<span style=color:#a6e22e>stream</span>(split).<span style=color:#a6e22e>forEach</span>(stringJoiner::add);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 字符串数组数字,转成int类型,再转成数组</span>
+</span></span><span style=display:flex><span>Arrays.<span style=color:#a6e22e>stream</span>(split).<span style=color:#a6e22e>mapToInt</span>(Integer::parseInt).<span style=color:#a6e22e>toArray</span>()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// BigDecimal想加,然后如果为空,就给个0</span>
+</span></span><span style=display:flex><span>BigDecimal winAmount <span style=color:#f92672>=</span> list.<span style=color:#a6e22e>stream</span>()
+</span></span><span style=display:flex><span>                  .<span style=color:#a6e22e>map</span>(UserBetOrderRecord::getWinAmount)
+</span></span><span style=display:flex><span>                  .<span style=color:#a6e22e>reduce</span>(BigDecimal::add)
+</span></span><span style=display:flex><span>                  .<span style=color:#a6e22e>map</span>(bigDecimal <span style=color:#f92672>-&gt;</span> bigDecimal.<span style=color:#a6e22e>multiply</span>(<span style=color:#66d9ef>new</span> BigDecimal(<span style=color:#e6db74>&#34;-1&#34;</span>)))
+</span></span><span style=display:flex><span>                  .<span style=color:#a6e22e>orElse</span>(BigDecimal.<span style=color:#a6e22e>ZERO</span>);
+</span></span></code></pre></div><h3 id=数组转集合>数组转集合</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>test</span>() {
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>  	<span style=color:#66d9ef>int</span><span style=color:#f92672>[]</span> arr <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>int</span><span style=color:#f92672>[]</span>{4, 3, 2, 1, 12, 21, 11};
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  	<span style=color:#75715e>// 这样转是有问题的,不是想要的</span>
+</span></span><span style=display:flex><span>  	<span style=color:#75715e>// java.util.array</span>
+</span></span><span style=display:flex><span>    List<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>[]&gt;</span> list <span style=color:#f92672>=</span> Arrays.<span style=color:#a6e22e>asList</span>(arr);
+</span></span><span style=display:flex><span>    System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(list);
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>   	<span style=color:#75715e>// 使用Hutool的方法,也不死想要的</span>
+</span></span><span style=display:flex><span>  	<span style=color:#75715e>// cn.hutool.core.collection</span>
+</span></span><span style=display:flex><span>	  List<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>[]&gt;</span> ints <span style=color:#f92672>=</span> CollectionUtil.<span style=color:#a6e22e>newArrayList</span>(arr);
+</span></span><span style=display:flex><span>    System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(ints);
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  	<span style=color:#75715e>// 使用Spring的工具包,需要强转,强迫症受不了这种方法</span>
+</span></span><span style=display:flex><span>  	<span style=color:#75715e>// org.springframework.util.CollectionUtils</span>
+</span></span><span style=display:flex><span>    List<span style=color:#f92672>&lt;</span>Integer<span style=color:#f92672>&gt;</span> objects <span style=color:#f92672>=</span> (List<span style=color:#f92672>&lt;</span>Integer<span style=color:#f92672>&gt;</span>) CollectionUtils.<span style=color:#a6e22e>arrayToList</span>(arr);
+</span></span><span style=display:flex><span>    System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(objects);
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h3 id=打印数组集合map>打印数组/集合/Map</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>test</span>() {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span><span style=color:#f92672>[]</span> arr <span style=color:#f92672>=</span> {1, 2, 3, 4, 5};
+</span></span><span style=display:flex><span>    System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(arr);    <span style=color:#75715e>// [I@17211155</span>
+</span></span><span style=display:flex><span>    System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(Arrays.<span style=color:#a6e22e>toString</span>(arr));   <span style=color:#75715e>// [1, 2, 3, 4, 5]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    List<span style=color:#f92672>&lt;</span>Integer<span style=color:#f92672>&gt;</span> integers <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> ArrayList<span style=color:#f92672>&lt;&gt;</span>();
+</span></span><span style=display:flex><span>    integers.<span style=color:#a6e22e>add</span>(1);
+</span></span><span style=display:flex><span>    integers.<span style=color:#a6e22e>add</span>(2);
+</span></span><span style=display:flex><span>    integers.<span style=color:#a6e22e>add</span>(3);
+</span></span><span style=display:flex><span>    System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(integers);   <span style=color:#75715e>// [1, 2, 3]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    HashMap<span style=color:#f92672>&lt;</span>Integer, String<span style=color:#f92672>&gt;</span> integerStringHashMap <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> HashMap<span style=color:#f92672>&lt;&gt;</span>();
+</span></span><span style=display:flex><span>    integerStringHashMap.<span style=color:#a6e22e>put</span>(1, <span style=color:#e6db74>&#34;a&#34;</span>);
+</span></span><span style=display:flex><span>    integerStringHashMap.<span style=color:#a6e22e>put</span>(2, <span style=color:#e6db74>&#34;b&#34;</span>);
+</span></span><span style=display:flex><span>    integerStringHashMap.<span style=color:#a6e22e>put</span>(3, <span style=color:#e6db74>&#34;c&#34;</span>);
+</span></span><span style=display:flex><span>    System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(integerStringHashMap);   <span style=color:#75715e>// {1=a, 2=b, 3=c}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h3 id=数组截取>数组截取</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#75715e>// java.util.Arrays</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 从0开始,取出6个数</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>test</span>() {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span><span style=color:#f92672>[]</span> arr <span style=color:#f92672>=</span> {1, 2, 3, 4, 5, 6};
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span><span style=color:#f92672>[]</span> ints <span style=color:#f92672>=</span> Arrays.<span style=color:#a6e22e>copyOfRange</span>(arr, 0, 6);
+</span></span><span style=display:flex><span>    System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(Arrays.<span style=color:#a6e22e>toString</span>(ints));
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h2 id=格式化>格式化</h2><h3 id=数值格式化>数值格式化</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>test</span>() {
+</span></span><span style=display:flex><span>    String format <span style=color:#f92672>=</span> String.<span style=color:#a6e22e>format</span>(<span style=color:#e6db74>&#34;%02d&#34;</span>, 2);
+</span></span><span style=display:flex><span>    System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(format);  <span style=color:#75715e>// 02</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    String format2 <span style=color:#f92672>=</span> String.<span style=color:#a6e22e>format</span>(<span style=color:#e6db74>&#34;%02d&#34;</span>, 20);
+</span></span><span style=display:flex><span>    System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(format2);	<span style=color:#75715e>// 20</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h2 id=数学>数学</h2><h3 id=余数取模>余数/取模</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>test</span>() {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span> a <span style=color:#f92672>=</span> 5;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span> b <span style=color:#f92672>=</span> 3;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 使用 % 运算符取余数</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span> remainder <span style=color:#f92672>=</span> a <span style=color:#f92672>%</span> b;
+</span></span><span style=display:flex><span>    System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(remainder); <span style=color:#75715e>// 2</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 使用 Math.floorMod() 方法取余数</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span> floorMod <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>floorMod</span>(a, b);
+</span></span><span style=display:flex><span>    System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(floorMod); <span style=color:#75715e>// 2</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h3 id=bigdecimal比较>BigDecimal比较</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>main</span>(String<span style=color:#f92672>[]</span> args) {
+</span></span><span style=display:flex><span>      BigDecimal a <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> BigDecimal(10);
+</span></span><span style=display:flex><span>      BigDecimal b <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> BigDecimal(5);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> a.<span style=color:#a6e22e>compareTo</span>(b);
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>switch</span> (i) {
+</span></span><span style=display:flex><span>          <span style=color:#66d9ef>case</span> <span style=color:#f92672>-</span>1: <span style=color:#75715e>// 小于</span>
+</span></span><span style=display:flex><span>              System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;a &lt; b&#34;</span>);
+</span></span><span style=display:flex><span>              <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>          <span style=color:#66d9ef>case</span> 0: <span style=color:#75715e>// 等于</span>
+</span></span><span style=display:flex><span>              System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;a = b&#34;</span>);
+</span></span><span style=display:flex><span>              <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>          <span style=color:#66d9ef>case</span> 1: <span style=color:#75715e>// 大于</span>
+</span></span><span style=display:flex><span>              System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;a &gt; b&#34;</span>);
+</span></span><span style=display:flex><span>              <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> (a.<span style=color:#a6e22e>compareTo</span>(b) <span style=color:#f92672>!=</span> 0) {
+</span></span><span style=display:flex><span>          System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;a != b&#34;</span>);
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> (a.<span style=color:#a6e22e>compareTo</span>(b) <span style=color:#f92672>!=</span> <span style=color:#f92672>-</span>1){
+</span></span><span style=display:flex><span>          System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;a &gt;= b&#34;</span>);
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> (a.<span style=color:#a6e22e>compareTo</span>(b) <span style=color:#f92672>!=</span> 1) {
+</span></span><span style=display:flex><span>          System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;a &lt;= b&#34;</span>);
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>  }
+</span></span></code></pre></div><h2 id=时间类型比较>时间类型比较</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>main</span>(String<span style=color:#f92672>[]</span> args) <span style=color:#66d9ef>throws</span> ParseException {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      SimpleDateFormat sdf <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> SimpleDateFormat(<span style=color:#e6db74>&#34;yyyy-MM-dd HH:mm:ss&#34;</span>);
+</span></span><span style=display:flex><span>      Date begin <span style=color:#f92672>=</span> sdf.<span style=color:#a6e22e>parse</span>(<span style=color:#e6db74>&#34;2020-01-01 00:01:00&#34;</span>);
+</span></span><span style=display:flex><span>      Date end <span style=color:#f92672>=</span> sdf.<span style=color:#a6e22e>parse</span>(<span style=color:#e6db74>&#34;2020-01-01 00:02:00&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#75715e>// 使用compareTo方法</span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> begin.<span style=color:#a6e22e>compareTo</span>(end);
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>switch</span> (i) {
+</span></span><span style=display:flex><span>          <span style=color:#66d9ef>case</span> <span style=color:#f92672>-</span>1:
+</span></span><span style=display:flex><span>              System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;开始时间大于结束时间&#34;</span>);
+</span></span><span style=display:flex><span>              <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>          <span style=color:#66d9ef>case</span> 0:
+</span></span><span style=display:flex><span>              System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;开始时间等于结束时间&#34;</span>);
+</span></span><span style=display:flex><span>              <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>          <span style=color:#66d9ef>case</span> 1:
+</span></span><span style=display:flex><span>              System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;开始时间小于结束时间&#34;</span>);
+</span></span><span style=display:flex><span>              <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#75715e>// 使用before和after方法</span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>boolean</span> b <span style=color:#f92672>=</span> begin.<span style=color:#a6e22e>before</span>(end);
+</span></span><span style=display:flex><span>      System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(b);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>boolean</span> c <span style=color:#f92672>=</span> begin.<span style=color:#a6e22e>after</span>(end);
+</span></span><span style=display:flex><span>      System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(c);
+</span></span><span style=display:flex><span>  }
+</span></span></code></pre></div><h2 id=值传递和引用传递>值传递和引用传递</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Demo</span> {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>main</span>(String<span style=color:#f92672>[]</span> args) {
+</span></span><span style=display:flex><span>        HashMap<span style=color:#f92672>&lt;</span>Integer, User<span style=color:#f92672>&gt;</span> ingUserHashMap <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> HashMap<span style=color:#f92672>&lt;</span>Integer, User<span style=color:#f92672>&gt;</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        User user <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> User();
+</span></span><span style=display:flex><span>        user.<span style=color:#a6e22e>setId</span>(1);
+</span></span><span style=display:flex><span>        ingUserHashMap.<span style=color:#a6e22e>put</span>(1, user);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// {1=User(id=1, bigDecimal=10)}</span>
+</span></span><span style=display:flex><span>        System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(ingUserHashMap);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      	<span style=color:#75715e>// 从map里取值,然后再修改</span>
+</span></span><span style=display:flex><span>        User user1 <span style=color:#f92672>=</span> ingUserHashMap.<span style=color:#a6e22e>get</span>(1);
+</span></span><span style=display:flex><span>        user1.<span style=color:#a6e22e>setBigDecimal</span>(BigDecimal.<span style=color:#a6e22e>ONE</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      	<span style=color:#75715e>// 打印map是修改了的</span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// {1=User(id=1, bigDecimal=1)}</span>
+</span></span><span style=display:flex><span>        System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(ingUserHashMap);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Data</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@ToString</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>User</span>{
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span> id;
+</span></span><span style=display:flex><span>    BigDecimal bigDecimal <span style=color:#f92672>=</span> BigDecimal.<span style=color:#a6e22e>TEN</span>;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h2 id=lambda>Lambda</h2><p>给集合分组</p></div><div><a class="read-more button" href=/posts/java/>Read more →</a></div></article><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/%E5%89%8D%E7%AB%AF/javascript/>JavaScript</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/javascript/>JavaScript</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/%E5%89%8D%E7%AB%AF/>前端</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051529338.png class=post-cover alt=JavaScript title="Cover Image"><div class=post-content><h1 id=javascript>JavaScript</h1><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span><span style=color:#75715e>&lt;!DOCTYPE html&gt;</span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>html</span> <span style=color:#a6e22e>lang</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;en&#34;</span>&gt;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>head</span>&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>meta</span> <span style=color:#a6e22e>charset</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;UTF-8&#34;</span>&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>title</span>&gt;setTimeout&lt;/<span style=color:#f92672>title</span>&gt;
+</span></span><span style=display:flex><span>    &lt;/<span style=color:#f92672>head</span>&gt;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>body</span>&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>input</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;text&#34;</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;displayBox&#34;</span> <span style=color:#a6e22e>name</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;displayBox&#34;</span> <span style=color:#a6e22e>value</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;0&#34;</span>&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;content&#34;</span>&gt;&lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>button</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;button&#34;</span> <span style=color:#a6e22e>onclick</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;countSecond()&#34;</span>&gt;开始计数&lt;/<span style=color:#f92672>button</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>&lt;!--例子4--&gt;</span>
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>button</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;button&#34;</span> <span style=color:#a6e22e>onclick</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;clearTimeout(stop)&#34;</span>&gt;停止计数&lt;/<span style=color:#f92672>button</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>script</span>&gt;
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// 例子1
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>            <span style=color:#a6e22e>setTimeout</span>(<span style=color:#e6db74>&#34;alert(&#39;对不起, 要你久候&#39;)&#34;</span>, <span style=color:#ae81ff>3000</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// 例子2
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>            <span style=color:#a6e22e>setTimeout</span>(<span style=color:#e6db74>&#34;changeState()&#34;</span>, <span style=color:#ae81ff>1000</span>);
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>changeState</span>() {
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>content</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>getElementById</span>(<span style=color:#e6db74>&#39;content&#39;</span>);
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>content</span>.<span style=color:#a6e22e>innerHTML</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&lt;div style=&#39;color:red&#39;&gt;我是三秒后显示的内容！&lt;/div&gt;&#34;</span>;
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// 例子3
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>            <span style=color:#a6e22e>x</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>countSecond</span>()
+</span></span><span style=display:flex><span>            {
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>x</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>x</span><span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>                document.<span style=color:#a6e22e>getElementById</span>(<span style=color:#e6db74>&#34;displayBox&#34;</span>).<span style=color:#a6e22e>value</span><span style=color:#f92672>=</span><span style=color:#a6e22e>x</span>
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>stop</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>setTimeout</span>(<span style=color:#e6db74>&#34;countSecond()&#34;</span>, <span style=color:#ae81ff>1000</span>)
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// 例子5
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>            <span style=color:#a6e22e>setTimeout</span>(<span style=color:#a6e22e>demo5</span>, <span style=color:#ae81ff>3000</span>,<span style=color:#e6db74>&#34;1232&#34;</span>)
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>demo5</span>(<span style=color:#a6e22e>msg</span>) {
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>alert</span>(<span style=color:#a6e22e>msg</span>)
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        &lt;/<span style=color:#f92672>script</span>&gt;
+</span></span><span style=display:flex><span>    &lt;/<span style=color:#f92672>body</span>&gt;
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>html</span>&gt;
+</span></span></code></pre></div><h2 id=函数>函数</h2><p>{% tabs JS函数, 1 %}</p></div><div><a class="read-more button" href=/posts/%E5%89%8D%E7%AB%AF/javascript/>Read more →</a></div></article><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/jenkins/>Jenkins</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/mac/>Mac</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/%E9%83%A8%E7%BD%B2/>部署</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/maven/>Maven</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051529846.png class=post-cover alt=Jenkins title="Cover Image"><div class=post-content><h1 id=root用户权限启动jenkins>Root用户权限启动Jenkins</h1><p>适用于Ubuntu环境下通过<code>apt-get install -y jenkins</code>命令在线安装的Jenkins</p><p>1.修改配置文件</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>vim /etc/default/jenkins
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 将下面两个参数修改为root</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 修改前</span>
+</span></span><span style=display:flex><span>JENKINS_USER<span style=color:#f92672>=</span>$NAME
+</span></span><span style=display:flex><span>JENKINS_GROUP<span style=color:#f92672>=</span>$NAME
+</span></span><span style=display:flex><span><span style=color:#75715e># 修改后</span>
+</span></span><span style=display:flex><span>JENKINS_USER<span style=color:#f92672>=</span>root
+</span></span><span style=display:flex><span>JENKINS_GROUP<span style=color:#f92672>=</span>root
+</span></span></code></pre></div><p>2.更改目录权限</p><p>不知道这步有没有起作用</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>cd /var/lib/
+</span></span><span style=display:flex><span>chown -R root:root ./jenkins
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 重启</span>
+</span></span><span style=display:flex><span>systemctl restart jenkins.service
+</span></span></code></pre></div><h1 id=jenkins使用教程>Jenkins使用教程</h1><h2 id=配置jdk>配置JDK</h2><p>Manage Jenkins &ndash;> Global Tool Configuration</p><ol><li>自动安装</li><li>手动安装要注意,J<code>AVA_HOME</code>的输入框下面，不要有警告或者错误信息，否则就是路径不正确,取消勾选自动安装</li></ol><h2 id=配置maven>配置Maven</h2><ol><li>安装Maven Integration 插件</li><li>通常自动安装maven就行了,如果手动安装,<code>MAVEN_HOME</code> 输入框下面，不要有警告或者错误信息，否则就是路径不正确</li></ol><h2 id=获取当前项目名称>获取当前项目名称</h2><p>在脚本中输入 <code>$JOB_NAME</code>就能获取到了</p><h2 id=卸载jenkins>卸载jenkins</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>//服务
+</span></span><span style=display:flex><span>sudo apt-get remove jenkins
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>//安装包，注意这里如果不是ubuntu那就yum
+</span></span><span style=display:flex><span>sudo apt-get remove --auto-remove jenkins
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>//配置和数据
+</span></span><span style=display:flex><span>sudo apt-get purge jenkins
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>sudo apt-get purge --auto-remove jenkins
+</span></span></code></pre></div><h2 id=升级jenkins>升级jenkins</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># 适用于ubuntu安装的</span>
+</span></span><span style=display:flex><span>apt-get upgrade jenkins
+</span></span></code></pre></div><h2 id=同时构建任务的个数>同时构建任务的个数</h2><p>系统管理&ndash;>系统设置&ndash;>执行者数量</p></div><div><a class="read-more button" href=/posts/jenkins/>Read more →</a></div></article><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/linux%E8%BD%AF%E4%BB%B6/>Linux软件</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/linux/>Linux</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/%E8%BD%AF%E4%BB%B6/>软件</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051530296.jpeg class=post-cover alt=Linux软件 title="Cover Image"><div class=post-content><h1 id=jumpsserver>JumpSserver</h1><h2 id=设置sftp根目录>设置SFTP根目录</h2><p>3.0版本设置文件管理</p><p>克隆一份Linux平台</p><p><img src=https://image.runtimes.cc/202404051426282.png alt=image-20230917163307359></p><p><img src=https://image.runtimes.cc/202404051426865.png alt=image-20230917163359314></p><p><img src=https://image.runtimes.cc/202404051426331.png alt=image-20230917163415467></p><p>修改或者创建资产的时候,选择该克隆的平台,在资产这里不能设置SFTP路径</p><p><img src=https://image.runtimes.cc/202404051426116.png alt=image-20230917163519193></p><h1 id=安装vmware-tool>安装vmware tool</h1><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>运行 ./vmware-install.pl
+</span></span><span style=display:flex><span>一直按yes,按完一段之后就会有暂时的停顿
+</span></span><span style=display:flex><span>运行命令 reboot
+</span></span></code></pre></div><h1 id=安装wget>安装Wget</h1><p>最开始的Centos7 感觉什么都没有<code>wget</code>也没有</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span> <span style=color:#75715e>#远程下载的工具</span>
+</span></span><span style=display:flex><span> yum -y install wget
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span> <span style=color:#75715e>#bash: make: command not found 是因为缺少这些工具</span>
+</span></span><span style=display:flex><span> yum -y install gcc automake autoconf libtool make
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span> yum -y install wget
+</span></span></code></pre></div><h1 id=安装lnmp环境>安装LNMP环境</h1><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 更新源</span>
+</span></span><span style=display:flex><span>apt-get update <span style=color:#f92672>&amp;&amp;</span> apt-get dist-upgrade -y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 安装nginx</span>
+</span></span><span style=display:flex><span>apt-get install nginx
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 安装php-fpm和常用php扩展</span>
+</span></span><span style=display:flex><span>apt-get install php-fpm php-gd php-mbstring php-curl php-xml php-mcrypt php-mysql php-zip php-json php-redis php-memcached
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 安装mysql</span>
+</span></span><span style=display:flex><span>apt-get install mysql-server
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 建立测试站点</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 1.我们在/var/www下面新建一个test目录，作为站点目录。 运行以下命令：</span>
+</span></span><span style=display:flex><span>mkdir /var/www/test
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 2.新建php入口文件</span>
+</span></span><span style=display:flex><span>echo <span style=color:#e6db74>&#39;&lt;?php echo 1;&#39;</span>  &gt; /var/www/test/index.php
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 3.授权给fpm用户www-data，使fpm进程可以访问站点文件</span>
+</span></span><span style=display:flex><span>chown -R www-data:www-data /var/www/test <span style=color:#f92672>&amp;&amp;</span> chmod -R <span style=color:#ae81ff>755</span> /var/www/test
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 4.设置nginx站点配置,在/etc/nginx/conf.d新增一个test.conf文件，并写入以下内容</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 这个配置表示站点监听80端口，网站根目录为/var/www/test,入口文件为index.php,通过php-fpm进程来执行php脚本。</span>
+</span></span><span style=display:flex><span>server <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>        listen <span style=color:#ae81ff>80</span> default_server;
+</span></span><span style=display:flex><span>        listen <span style=color:#f92672>[</span>::<span style=color:#f92672>]</span>:80 default_server;
+</span></span><span style=display:flex><span>        root /var/www/test;
+</span></span><span style=display:flex><span>        index index.php index.html index.htm;
+</span></span><span style=display:flex><span>        server_name _;
+</span></span><span style=display:flex><span>        location / <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>                try_files $uri $uri/ <span style=color:#f92672>=</span>404;
+</span></span><span style=display:flex><span>        <span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>        location ~ <span style=color:#ae81ff>\.</span>php$ <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>               include snippets/fastcgi-php.conf;
+</span></span><span style=display:flex><span>               fastcgi_pass unix:/run/php/php7.0-fpm.sock;
+</span></span><span style=display:flex><span>        <span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 5.重新加载</span>
+</span></span><span style=display:flex><span>nginx -t <span style=color:#f92672>&amp;&amp;</span> nginx -s reload
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 6.访问试试看</span>
+</span></span></code></pre></div><h1 id=ubuntu卸载apache>Ubuntu卸载Apache</h1><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 删除apache</span>
+</span></span><span style=display:flex><span>$ sudo apt-get --purge remove apache2
+</span></span><span style=display:flex><span>$ sudo apt-get --purge remove apache2.2-common
+</span></span><span style=display:flex><span>$ sudo apt-get autoremove
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 找到没有删除掉的配置文件，一并删除</span>
+</span></span><span style=display:flex><span>$ sudo find  /etc -name <span style=color:#e6db74>&#34;*apache*&#34;</span> -exec  rm -rf <span style=color:#f92672>{}</span> <span style=color:#ae81ff>\;</span>
+</span></span><span style=display:flex><span>$ sudo rm -rf /var/www
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 重装apache2</span>
+</span></span><span style=display:flex><span>$ sudo apt-get install apache2
+</span></span><span style=display:flex><span>$ sudo /etc/init.d/apache2 restart
+</span></span></code></pre></div><p>Ubuntu安装软件指定版本号</p></div><div><a class="read-more button" href=/posts/linux%E8%BD%AF%E4%BB%B6/>Read more →</a></div></article><div class=pagination><div class=pagination__buttons><a href=/page/16/ class="button previous"><span class=button__icon>←</span>
+<span class=button__text>Newer posts</span>
+</a><a href=/page/18/ class="button next"><span class=button__text>Older posts</span>
+<span class=button__icon>→</span></a></div></div></div></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>
+<span>:: <a href=https://github.com/mirus-ua/hugo-theme-re-terminal target=_blank>Theme</a> made by <a href=https://github.com/mirus-ua target=_blank>Mirus</a></span></div></div></footer><script type=text/javascript src=/bundle.min.js></script></div></body></html>

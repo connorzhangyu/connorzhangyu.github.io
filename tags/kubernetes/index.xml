@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kubernetes on Hello World</title><link>https://connorzhangyu.com/tags/kubernetes/</link><description>Recent content in Kubernetes on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Tue, 07 Nov 2023 11:21:07 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/kubernetes/index.xml" rel="self" type="application/rss+xml"/><item><title>Kubernetes</title><link>https://connorzhangyu.com/posts/kubernetes/</link><pubDate>Tue, 07 Nov 2023 11:21:07 +0000</pubDate><guid>https://connorzhangyu.com/posts/kubernetes/</guid><description>&lt;h2 id="主节点上操作">主节点上操作&lt;/h2>
+&lt;p>定义主机名字&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sudo vim /etc/hosts
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>192.168.11.128 k8s-master
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>192.168.11.129 k8s-node01
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>192.168.11.130 k8s-node01
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>修改主机名&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 打印hostname&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>hostname
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 修改hostname,需要重新连接,才能看到变化&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sduo hostnamectl set-hostname xxx
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>下载k8s需要的镜像&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 打印所需要的镜像&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubeadm config images list
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># docker pull 上面命令的镜像&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 比如&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo docker pull registry.k8s.io/kube-apiserver:v1.28.3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo docker pull registry.k8s.io/kube-controller-manager:v1.28.3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo docker pull registry.k8s.io/kube-scheduler:v1.28.3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo docker pull registry.k8s.io/kube-proxy:v1.28.3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo docker pull registry.k8s.io/pause:3.9
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo docker pull registry.k8s.io/etcd:3.5.9-0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo docker pull registry.k8s.io/coredns/coredns:v1.10.1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>创建master节点&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sudo kubeadm init --apiserver-advertise-address&lt;span style="color:#f92672">=&lt;/span>192.168.110.128 --pod-network-cidr&lt;span style="color:#f92672">=&lt;/span>172.16.0.0/16
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 创建完之后会提示,并且执行&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mkdir -p $HOME/.kube
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo chown &lt;span style="color:#66d9ef">$(&lt;/span>id -u&lt;span style="color:#66d9ef">)&lt;/span>:&lt;span style="color:#66d9ef">$(&lt;/span>id -g&lt;span style="color:#66d9ef">)&lt;/span> $HOME/.kube/config
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>查看k8s状态&lt;/p></description><content>&lt;h2 id="主节点上操作">主节点上操作&lt;/h2>
+&lt;p>定义主机名字&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sudo vim /etc/hosts
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>192.168.11.128 k8s-master
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>192.168.11.129 k8s-node01
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>192.168.11.130 k8s-node01
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>修改主机名&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 打印hostname&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>hostname
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 修改hostname,需要重新连接,才能看到变化&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sduo hostnamectl set-hostname xxx
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>下载k8s需要的镜像&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 打印所需要的镜像&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubeadm config images list
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># docker pull 上面命令的镜像&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 比如&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo docker pull registry.k8s.io/kube-apiserver:v1.28.3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo docker pull registry.k8s.io/kube-controller-manager:v1.28.3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo docker pull registry.k8s.io/kube-scheduler:v1.28.3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo docker pull registry.k8s.io/kube-proxy:v1.28.3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo docker pull registry.k8s.io/pause:3.9
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo docker pull registry.k8s.io/etcd:3.5.9-0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo docker pull registry.k8s.io/coredns/coredns:v1.10.1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>创建master节点&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sudo kubeadm init --apiserver-advertise-address&lt;span style="color:#f92672">=&lt;/span>192.168.110.128 --pod-network-cidr&lt;span style="color:#f92672">=&lt;/span>172.16.0.0/16
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 创建完之后会提示,并且执行&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mkdir -p $HOME/.kube
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo chown &lt;span style="color:#66d9ef">$(&lt;/span>id -u&lt;span style="color:#66d9ef">)&lt;/span>:&lt;span style="color:#66d9ef">$(&lt;/span>id -g&lt;span style="color:#66d9ef">)&lt;/span> $HOME/.kube/config
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>查看k8s状态&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ kubectl get node
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>NAME STATUS ROLES AGE VERSION
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>k8s-node01 NotReady control-plane 4m9s v1.28.2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>使用网络插件&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>curl https://docs.projectcalico.org/manifests/calico.yaml -O
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kubectl apply -f calico.yaml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item></channel></rss>

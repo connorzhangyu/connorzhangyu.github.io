@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spring Boot on Hello World</title><link>https://connorzhangyu.com/categories/spring-boot/</link><description>Recent content in Spring Boot on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sat, 15 Jul 2023 14:58:26 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/categories/spring-boot/index.xml" rel="self" type="application/rss+xml"/><item><title>SpringBoot</title><link>https://connorzhangyu.com/posts/springboot/</link><pubDate>Sat, 15 Jul 2023 14:58:26 +0000</pubDate><guid>https://connorzhangyu.com/posts/springboot/</guid><description>&lt;h1 id="定时器">定时器&lt;/h1>
+&lt;p>定时器的数值放到配置文件,如果使用&lt;code>@Scheduled(fixedDelay = 类中的变量)&lt;/code>这种方式试过不行&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@Scheduled&lt;/span>(fixedDelayString &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;${fixedDelayString}&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">open&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">fixedDelayString&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">30000&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="rocketmq">RocketMQ&lt;/h1>
+&lt;p>下载源码或者二进制包&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 源码安装&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 解压文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>unzip rocketmq-all-5.2.0-source-release.zip
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd rocketmq-all-5.2.0-source-release/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 编译&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mvn -Prelease-all -DskipTests -Dspotbugs.skip&lt;span style="color:#f92672">=&lt;/span>true clean install -U
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 编译后的二进制的目录,配置文件在这里&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd ./distribution
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>修改配置文件&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 修改配置文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 修改内存配置,虚拟机的内存太小了&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># vim ./bin/runserver.sh&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>JAVA_OPT&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>JAVA_OPT&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> -server -Xms512m -Xmx521m -Xmn256g -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=320m&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># vim ./bin/runbroker.sh&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>JAVA_OPT&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>JAVA_OPT&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> -server -Xms512m -Xmx512m&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>启动&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 第一步.启动Name Server&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sh bin/mqnamesrv
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>The Name Server boot success...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 第二步.启动Broker&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sh bin/mqbroker -n localhost:9876
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> The broker&lt;span style="color:#f92672">[&lt;/span>%s, 172.30.30.233:10911&lt;span style="color:#f92672">]&lt;/span> boot success...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>测试发送消息&lt;/p></description><content>&lt;h1 id="定时器">定时器&lt;/h1>
+&lt;p>定时器的数值放到配置文件,如果使用&lt;code>@Scheduled(fixedDelay = 类中的变量)&lt;/code>这种方式试过不行&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@Scheduled&lt;/span>(fixedDelayString &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;${fixedDelayString}&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">open&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-properties" data-lang="properties">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">fixedDelayString&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">30000&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="rocketmq">RocketMQ&lt;/h1>
+&lt;p>下载源码或者二进制包&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 源码安装&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 解压文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>unzip rocketmq-all-5.2.0-source-release.zip
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd rocketmq-all-5.2.0-source-release/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 编译&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mvn -Prelease-all -DskipTests -Dspotbugs.skip&lt;span style="color:#f92672">=&lt;/span>true clean install -U
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 编译后的二进制的目录,配置文件在这里&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd ./distribution
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>修改配置文件&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 修改配置文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 修改内存配置,虚拟机的内存太小了&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># vim ./bin/runserver.sh&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>JAVA_OPT&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>JAVA_OPT&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> -server -Xms512m -Xmx521m -Xmn256g -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=320m&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># vim ./bin/runbroker.sh&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>JAVA_OPT&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>JAVA_OPT&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74"> -server -Xms512m -Xmx512m&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>启动&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 第一步.启动Name Server&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sh bin/mqnamesrv
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>The Name Server boot success...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 第二步.启动Broker&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sh bin/mqbroker -n localhost:9876
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> The broker&lt;span style="color:#f92672">[&lt;/span>%s, 172.30.30.233:10911&lt;span style="color:#f92672">]&lt;/span> boot success...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>测试发送消息&lt;/p>
+&lt;pre tabindex="0">&lt;code>export NAMESRV_ADDR=localhost:9876
+# 发送消息
+sh bin/tools.sh org.apache.rocketmq.example.quickstart.Producer
+# 接收消息
+sh bin/tools.sh org.apache.rocketmq.example.quickstart.Consumer
+&lt;/code>&lt;/pre>&lt;h2 id="关闭服务">关闭服务&lt;/h2>
+&lt;pre tabindex="0">&lt;code>sh bin/mqshutdown broker
+sh bin/mqshutdown namesrv
+&lt;/code>&lt;/pre>&lt;h2 id="监控">监控&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 记得checkout release-rocketmq-console-1.0.0分支&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git clone https://github.com/apache/rocketmq-externals/tree/release-rocketmq-console-1.0.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 修改配置文件里的rocketMQ远程地址&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>NameSvrAddrList &lt;span style="color:#f92672">=&lt;/span> 192.168.254.124:9876
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 或者&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rocketmq.config.namesrvAddr&lt;span style="color:#f92672">=&lt;/span>192.168.254.124:9876
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="代码">代码&lt;/h2>
+&lt;h3 id="单个生产者消费者">单个生产者消费者&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Provider&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>(String&lt;span style="color:#f92672">[]&lt;/span> args) &lt;span style="color:#66d9ef">throws&lt;/span> Exception {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> DefaultMQProducer producer &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> DefaultMQProducer(&lt;span style="color:#e6db74">&amp;#34;group1&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> producer.&lt;span style="color:#a6e22e">setNamesrvAddr&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;192.168.254.190:9876&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> producer.&lt;span style="color:#a6e22e">start&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String msg &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;什么鬼,咋莫名其妙就收到了&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Message message &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> Message(&lt;span style="color:#e6db74">&amp;#34;topic1&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;tag1&amp;#34;&lt;/span>, msg.&lt;span style="color:#a6e22e">getBytes&lt;/span>());
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> SendResult sendResult &lt;span style="color:#f92672">=&lt;/span> producer.&lt;span style="color:#a6e22e">send&lt;/span>(message);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;%s%n&amp;#34;&lt;/span>, sendResult);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> producer.&lt;span style="color:#a6e22e">shutdown&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Consumer&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>(String&lt;span style="color:#f92672">[]&lt;/span> args) &lt;span style="color:#66d9ef">throws&lt;/span> MQClientException {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> DefaultMQPushConsumer consumer &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> DefaultMQPushConsumer(&lt;span style="color:#e6db74">&amp;#34;group1&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> consumer.&lt;span style="color:#a6e22e">setNamesrvAddr&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;192.168.254.190:9876&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> consumer.&lt;span style="color:#a6e22e">subscribe&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;topic1&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;*&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> consumer.&lt;span style="color:#a6e22e">registerMessageListener&lt;/span>((MessageListenerConcurrently) (list, consumeConcurrentlyContext) &lt;span style="color:#f92672">-&amp;gt;&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 业务逻辑&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> list.&lt;span style="color:#a6e22e">forEach&lt;/span>(one&lt;span style="color:#f92672">-&amp;gt;&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">byte&lt;/span>&lt;span style="color:#f92672">[]&lt;/span> body &lt;span style="color:#f92672">=&lt;/span> one.&lt;span style="color:#a6e22e">getBody&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#66d9ef">new&lt;/span> String(body));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> ConsumeConcurrentlyStatus.&lt;span style="color:#a6e22e">CONSUME_SUCCESS&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> consumer.&lt;span style="color:#a6e22e">start&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;消费者启起来了&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="单个生产者多个消费者">单个生产者多个消费者&lt;/h2>
+&lt;h3 id="相同的topic相同的group-负载均衡">相同的Topic,相同的Group-负载均衡&lt;/h3>
+&lt;p>默认就是负载均衡,多个消费者,每个人收一条信息,不重复&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051459670.png" alt="">&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Provider&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>(String&lt;span style="color:#f92672">[]&lt;/span> args) &lt;span style="color:#66d9ef">throws&lt;/span> Exception {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> DefaultMQProducer producer &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> DefaultMQProducer(&lt;span style="color:#e6db74">&amp;#34;group2&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> producer.&lt;span style="color:#a6e22e">setNamesrvAddr&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;192.168.254.190:9876&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> producer.&lt;span style="color:#a6e22e">start&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> (&lt;span style="color:#66d9ef">int&lt;/span> i &lt;span style="color:#f92672">=&lt;/span> 0; i &lt;span style="color:#f92672">&amp;lt;&lt;/span> 10; i&lt;span style="color:#f92672">++&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String msg &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;默认接受者是负载均衡&amp;#34;&lt;/span>&lt;span style="color:#f92672">+&lt;/span>i;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Message message &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> Message(&lt;span style="color:#e6db74">&amp;#34;topic2&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;tag1&amp;#34;&lt;/span>, msg.&lt;span style="color:#a6e22e">getBytes&lt;/span>());
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> SendResult sendResult &lt;span style="color:#f92672">=&lt;/span> producer.&lt;span style="color:#a6e22e">send&lt;/span>(message);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;%s%n&amp;#34;&lt;/span>, sendResult);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> producer.&lt;span style="color:#a6e22e">shutdown&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Consumer&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>(String&lt;span style="color:#f92672">[]&lt;/span> args) &lt;span style="color:#66d9ef">throws&lt;/span> MQClientException {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 谁来收&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> DefaultMQPushConsumer consumer &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> DefaultMQPushConsumer(&lt;span style="color:#e6db74">&amp;#34;group2&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 从哪里收&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> consumer.&lt;span style="color:#a6e22e">setNamesrvAddr&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;192.168.254.190:9876&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 监听队列&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> consumer.&lt;span style="color:#a6e22e">subscribe&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;topic2&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;*&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 监听器&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> consumer.&lt;span style="color:#a6e22e">registerMessageListener&lt;/span>((MessageListenerConcurrently) (list, consumeConcurrentlyContext) &lt;span style="color:#f92672">-&amp;gt;&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 业务逻辑&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> list.&lt;span style="color:#a6e22e">forEach&lt;/span>(one&lt;span style="color:#f92672">-&amp;gt;&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">byte&lt;/span>&lt;span style="color:#f92672">[]&lt;/span> body &lt;span style="color:#f92672">=&lt;/span> one.&lt;span style="color:#a6e22e">getBody&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#66d9ef">new&lt;/span> String(body));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> ConsumeConcurrentlyStatus.&lt;span style="color:#a6e22e">CONSUME_SUCCESS&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> consumer.&lt;span style="color:#a6e22e">start&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;消费者启起来了&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// 第一个消费者&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡5
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡8
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡9
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// 第二个消费者&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡6
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡7
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="相同的topic相同的group-轮训">相同的Topic,相同的Group-轮训&lt;/h3>
+&lt;p>只是添加了消费者的一段代码:&lt;code>consumer.setMessageModel(MessageModel.BROADCASTING);&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051459646.png" alt="">&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Provider&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>(String&lt;span style="color:#f92672">[]&lt;/span> args) &lt;span style="color:#66d9ef">throws&lt;/span> Exception {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 谁来发&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> DefaultMQProducer producer &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> DefaultMQProducer(&lt;span style="color:#e6db74">&amp;#34;group3&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 发给谁&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> producer.&lt;span style="color:#a6e22e">setNamesrvAddr&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;192.168.254.190:9876&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> producer.&lt;span style="color:#a6e22e">start&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> (&lt;span style="color:#66d9ef">int&lt;/span> i &lt;span style="color:#f92672">=&lt;/span> 0; i &lt;span style="color:#f92672">&amp;lt;&lt;/span> 10; i&lt;span style="color:#f92672">++&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String msg &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;默认接受者是负载均衡&amp;#34;&lt;/span>&lt;span style="color:#f92672">+&lt;/span>i;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Message message &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> Message(&lt;span style="color:#e6db74">&amp;#34;topic3&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;tag1&amp;#34;&lt;/span>, msg.&lt;span style="color:#a6e22e">getBytes&lt;/span>());
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> SendResult sendResult &lt;span style="color:#f92672">=&lt;/span> producer.&lt;span style="color:#a6e22e">send&lt;/span>(message);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">printf&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;%s%n&amp;#34;&lt;/span>, sendResult);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> producer.&lt;span style="color:#a6e22e">shutdown&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Consumer&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>(String&lt;span style="color:#f92672">[]&lt;/span> args) &lt;span style="color:#66d9ef">throws&lt;/span> MQClientException {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> DefaultMQPushConsumer consumer &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> DefaultMQPushConsumer(&lt;span style="color:#e6db74">&amp;#34;group3&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> consumer.&lt;span style="color:#a6e22e">setNamesrvAddr&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;192.168.254.190:9876&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> consumer.&lt;span style="color:#a6e22e">subscribe&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;topic3&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;*&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> consumer.&lt;span style="color:#a6e22e">setMessageModel&lt;/span>(MessageModel.&lt;span style="color:#a6e22e">BROADCASTING&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 监听器&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> consumer.&lt;span style="color:#a6e22e">registerMessageListener&lt;/span>((MessageListenerConcurrently) (list, consumeConcurrentlyContext) &lt;span style="color:#f92672">-&amp;gt;&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 业务逻辑&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> list.&lt;span style="color:#a6e22e">forEach&lt;/span>(one&lt;span style="color:#f92672">-&amp;gt;&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">byte&lt;/span>&lt;span style="color:#f92672">[]&lt;/span> body &lt;span style="color:#f92672">=&lt;/span> one.&lt;span style="color:#a6e22e">getBody&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#66d9ef">new&lt;/span> String(body));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> ConsumeConcurrentlyStatus.&lt;span style="color:#a6e22e">CONSUME_SUCCESS&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> consumer.&lt;span style="color:#a6e22e">start&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;消费者启起来了&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// 两个消费者都是收到相同的消息&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡5
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡6
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡7
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡8
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡9
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="不同的topic不同的group">不同的Topic,不同的Group&lt;/h3>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051459641.png" alt="">&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// 消费者1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Consumer&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>(String&lt;span style="color:#f92672">[]&lt;/span> args) &lt;span style="color:#66d9ef">throws&lt;/span> MQClientException {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> DefaultMQPushConsumer consumer &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> DefaultMQPushConsumer(&lt;span style="color:#e6db74">&amp;#34;group4&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> consumer.&lt;span style="color:#a6e22e">setNamesrvAddr&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;192.168.254.190:9876&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> consumer.&lt;span style="color:#a6e22e">subscribe&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;topic4&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;*&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 监听器&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> consumer.&lt;span style="color:#a6e22e">registerMessageListener&lt;/span>((MessageListenerConcurrently) (list, consumeConcurrentlyContext) &lt;span style="color:#f92672">-&amp;gt;&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 业务逻辑&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> list.&lt;span style="color:#a6e22e">forEach&lt;/span>(one&lt;span style="color:#f92672">-&amp;gt;&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">byte&lt;/span>&lt;span style="color:#f92672">[]&lt;/span> body &lt;span style="color:#f92672">=&lt;/span> one.&lt;span style="color:#a6e22e">getBody&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#66d9ef">new&lt;/span> String(body));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> ConsumeConcurrentlyStatus.&lt;span style="color:#a6e22e">CONSUME_SUCCESS&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> consumer.&lt;span style="color:#a6e22e">start&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;消费者启起来了&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// 消费者2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Consumer&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>(String&lt;span style="color:#f92672">[]&lt;/span> args) &lt;span style="color:#66d9ef">throws&lt;/span> MQClientException {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> DefaultMQPushConsumer consumer &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> DefaultMQPushConsumer(&lt;span style="color:#e6db74">&amp;#34;group4&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> consumer.&lt;span style="color:#a6e22e">setNamesrvAddr&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;192.168.254.190:9876&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> consumer.&lt;span style="color:#a6e22e">subscribe&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;topic4&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;*&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 监听器&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> consumer.&lt;span style="color:#a6e22e">registerMessageListener&lt;/span>((MessageListenerConcurrently) (list, consumeConcurrentlyContext) &lt;span style="color:#f92672">-&amp;gt;&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 业务逻辑&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> list.&lt;span style="color:#a6e22e">forEach&lt;/span>(one&lt;span style="color:#f92672">-&amp;gt;&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">byte&lt;/span>&lt;span style="color:#f92672">[]&lt;/span> body &lt;span style="color:#f92672">=&lt;/span> one.&lt;span style="color:#a6e22e">getBody&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#66d9ef">new&lt;/span> String(body));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> ConsumeConcurrentlyStatus.&lt;span style="color:#a6e22e">CONSUME_SUCCESS&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> consumer.&lt;span style="color:#a6e22e">start&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;消费者启起来了&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// 消费者3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Consumer&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>(String&lt;span style="color:#f92672">[]&lt;/span> args) &lt;span style="color:#66d9ef">throws&lt;/span> MQClientException {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> DefaultMQPushConsumer consumer &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> DefaultMQPushConsumer(&lt;span style="color:#e6db74">&amp;#34;group4-1&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> consumer.&lt;span style="color:#a6e22e">setNamesrvAddr&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;192.168.254.190:9876&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> consumer.&lt;span style="color:#a6e22e">subscribe&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;topic4&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;*&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 监听器&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> consumer.&lt;span style="color:#a6e22e">registerMessageListener&lt;/span>((MessageListenerConcurrently) (list, consumeConcurrentlyContext) &lt;span style="color:#f92672">-&amp;gt;&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 业务逻辑&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> list.&lt;span style="color:#a6e22e">forEach&lt;/span>(one&lt;span style="color:#f92672">-&amp;gt;&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">byte&lt;/span>&lt;span style="color:#f92672">[]&lt;/span> body &lt;span style="color:#f92672">=&lt;/span> one.&lt;span style="color:#a6e22e">getBody&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#66d9ef">new&lt;/span> String(body));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> ConsumeConcurrentlyStatus.&lt;span style="color:#a6e22e">CONSUME_SUCCESS&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> consumer.&lt;span style="color:#a6e22e">start&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;消费者启起来了&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// 消费者1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡6
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡7
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// 消费者2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡5
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡8
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡9
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// 消费者3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡5
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡6
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡7
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡8
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>默认接受者是负载均衡9
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="swagger">Swagger&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;!-- 引入Swagger3依赖 --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>io.springfox&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>springfox-boot-starter&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>3.0.0&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> io.swagger.annotations.ApiOperation;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> org.springframework.context.annotation.Bean;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> org.springframework.context.annotation.Configuration;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> springfox.documentation.builders.ApiInfoBuilder;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> springfox.documentation.builders.PathSelectors;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> springfox.documentation.builders.RequestHandlerSelectors;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> springfox.documentation.oas.annotations.EnableOpenApi;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> springfox.documentation.service.ApiInfo;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> springfox.documentation.service.Contact;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> springfox.documentation.spi.DocumentationType;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> springfox.documentation.spring.web.plugins.Docket;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * Swagger配置类
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@EnableOpenApi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@Configuration&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">SwaggerConfig&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Bean&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> Docket &lt;span style="color:#a6e22e">docket&lt;/span>(){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> Docket(DocumentationType.&lt;span style="color:#a6e22e">OAS_30&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">apiInfo&lt;/span>(apiInfo()).&lt;span style="color:#a6e22e">enable&lt;/span>(&lt;span style="color:#66d9ef">true&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">select&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//apis： 添加swagger接口提取范围&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">apis&lt;/span>(RequestHandlerSelectors.&lt;span style="color:#a6e22e">basePackage&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;com.example.study.controller&amp;#34;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">apis&lt;/span>(RequestHandlerSelectors.&lt;span style="color:#a6e22e">withMethodAnnotation&lt;/span>(ApiOperation.&lt;span style="color:#a6e22e">class&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">paths&lt;/span>(PathSelectors.&lt;span style="color:#a6e22e">any&lt;/span>())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">build&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">private&lt;/span> ApiInfo &lt;span style="color:#a6e22e">apiInfo&lt;/span>(){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> ApiInfoBuilder()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">title&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;XX项目接口文档&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">description&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;XX项目描述&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">contact&lt;/span>(&lt;span style="color:#66d9ef">new&lt;/span> Contact(&lt;span style="color:#e6db74">&amp;#34;作者&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;作者URL&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;作者Email&amp;#34;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">version&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;1.0&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#a6e22e">build&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 原因是在springboot 2.6.0中将SpringMVC 默认路径匹配策略从AntPathMatcher&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 更改为PathPatternParser，导致出错，解决办法是切换回原先的AntPathMatcher&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>spring.mvc.pathmatch.matching-strategy=ant_path_matcher
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="knife4j">knife4j&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>com.github.xiaoymin&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>knife4j-spring-boot-starter&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>3.0.3&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>application.properties&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>spring.mvc.pathmatch.matching-strategy=ant_path_matcher
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>knife4j.enable: true
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@RestController&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@RequestMapping&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;/test&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@Api&lt;/span>(tags &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;测试2&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// 排序&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@ApiSort&lt;/span>(value &lt;span style="color:#f92672">=&lt;/span> 1)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">TestController2&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@GetMapping&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;/3&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@ApiOperation&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;3&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> String &lt;span style="color:#a6e22e">method&lt;/span>(){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">&amp;#34;hello wolrd&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@GetMapping&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;/4&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@ApiOperation&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;4&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> String &lt;span style="color:#a6e22e">method2&lt;/span>(){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">&amp;#34;hello wolrd&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="log4j2">Log4j2&lt;/h1>
+&lt;h2 id="log4j2-1">Log4j2&lt;/h2>
+&lt;p>日志所有级别级别从上到下 ,级别从低到高,报错(更重要)这种,级别最高,info,debug相对不怎么重要&lt;/p>
+&lt;ul>
+&lt;li>all&lt;/li>
+&lt;li>trace&lt;/li>
+&lt;li>debug&lt;/li>
+&lt;li>info&lt;/li>
+&lt;li>warn&lt;/li>
+&lt;li>error&lt;/li>
+&lt;li>fail&lt;/li>
+&lt;/ul>
+&lt;p>Log4j2.xml配置例子&lt;/p>
+&lt;p>{% tabs Log4j2 %}&lt;/p>
+&lt;!-- tab 抄网上的示例 -->
+&lt;pre tabindex="0">&lt;code>info级别输出到info.log
+warn级别输出warn.log
+error级别输出到error.log
+debug级别输出到debug.log
+&lt;/code>&lt;/pre>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;Configuration&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--&amp;lt;Configuration status=&amp;#34;WARN&amp;#34; monitorInterval=&amp;#34;30&amp;#34;&amp;gt; --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;properties&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;property&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;LOG_HOME&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>./service-logs&lt;span style="color:#f92672">&amp;lt;/property&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/properties&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Appenders&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--*********************控制台日志***********************--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Console&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;consoleAppender&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">target=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;SYSTEM_OUT&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--设置日志格式及颜色--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;PatternLayout&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">pattern=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;%style{%d{ISO8601}}{bright,green} %highlight{%-5level} [%style{%t}{bright,blue}] %style{%C{}}{bright,yellow}: %msg%n%style{%throwable}{red}&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">disableAnsi=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;false&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">noConsoleNoAnsi=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;false&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/Console&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--*********************文件日志***********************--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--all级别日志--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;RollingFile&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;allFileAppender&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fileName=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${LOG_HOME}/all.log&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">filePattern=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${LOG_HOME}/$${date:yyyy-MM}/all-%d{yyyy-MM-dd}-%i.log.gz&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--设置日志格式--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;PatternLayout&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;pattern&amp;gt;&lt;/span>%d %p %C{} [%t] %m%n&lt;span style="color:#f92672">&amp;lt;/pattern&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/PatternLayout&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Policies&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!-- 设置日志文件切分参数 --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--&amp;lt;OnStartupTriggeringPolicy/&amp;gt;--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--设置日志基础文件大小，超过该大小就触发日志文件滚动更新--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;SizeBasedTriggeringPolicy&lt;/span> &lt;span style="color:#a6e22e">size=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;100 MB&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--设置日志文件滚动更新的时间，依赖于文件命名filePattern的设置--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;TimeBasedTriggeringPolicy/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/Policies&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--设置日志的文件个数上限，不设置默认为7个，超过大小后会被覆盖；依赖于filePattern中的%i--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;DefaultRolloverStrategy&lt;/span> &lt;span style="color:#a6e22e">max=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;100&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/RollingFile&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--debug级别日志--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;RollingFile&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;debugFileAppender&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fileName=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${LOG_HOME}/debug.log&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">filePattern=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${LOG_HOME}/$${date:yyyy-MM}/debug-%d{yyyy-MM-dd}-%i.log.gz&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Filters&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--过滤掉info及更高级别日志--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;ThresholdFilter&lt;/span> &lt;span style="color:#a6e22e">level=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;info&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">onMatch=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;DENY&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">onMismatch=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;NEUTRAL&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/Filters&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--设置日志格式--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;PatternLayout&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;pattern&amp;gt;&lt;/span>%d %p %C{} [%t] %m%n&lt;span style="color:#f92672">&amp;lt;/pattern&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/PatternLayout&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Policies&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!-- 设置日志文件切分参数 --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--&amp;lt;OnStartupTriggeringPolicy/&amp;gt;--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--设置日志基础文件大小，超过该大小就触发日志文件滚动更新--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;SizeBasedTriggeringPolicy&lt;/span> &lt;span style="color:#a6e22e">size=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;100 MB&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--设置日志文件滚动更新的时间，依赖于文件命名filePattern的设置--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;TimeBasedTriggeringPolicy/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/Policies&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--设置日志的文件个数上限，不设置默认为7个，超过大小后会被覆盖；依赖于filePattern中的%i--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;DefaultRolloverStrategy&lt;/span> &lt;span style="color:#a6e22e">max=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;100&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/RollingFile&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--info级别日志--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;RollingFile&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;infoFileAppender&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fileName=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${LOG_HOME}/info.log&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">filePattern=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${LOG_HOME}/$${date:yyyy-MM}/info-%d{yyyy-MM-dd}-%i.log.gz&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Filters&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--过滤掉warn及更高级别日志--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;ThresholdFilter&lt;/span> &lt;span style="color:#a6e22e">level=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;warn&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">onMatch=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;DENY&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">onMismatch=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;NEUTRAL&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/Filters&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--设置日志格式--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;PatternLayout&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;pattern&amp;gt;&lt;/span>%d %p %C{} [%t] %m%n&lt;span style="color:#f92672">&amp;lt;/pattern&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/PatternLayout&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Policies&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!-- 设置日志文件切分参数 --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--&amp;lt;OnStartupTriggeringPolicy/&amp;gt;--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--设置日志基础文件大小，超过该大小就触发日志文件滚动更新--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;SizeBasedTriggeringPolicy&lt;/span> &lt;span style="color:#a6e22e">size=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;100 MB&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--设置日志文件滚动更新的时间，依赖于文件命名filePattern的设置--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;TimeBasedTriggeringPolicy&lt;/span> &lt;span style="color:#a6e22e">interval=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;1&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">modulate=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;true&amp;#34;&lt;/span> &lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/Policies&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--设置日志的文件个数上限，不设置默认为7个，超过大小后会被覆盖；依赖于filePattern中的%i--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--&amp;lt;DefaultRolloverStrategy max=&amp;#34;100&amp;#34;/&amp;gt;--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/RollingFile&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--warn级别日志--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;RollingFile&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;warnFileAppender&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fileName=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${LOG_HOME}/warn.log&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">filePattern=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${LOG_HOME}/$${date:yyyy-MM}/warn-%d{yyyy-MM-dd}-%i.log.gz&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Filters&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--过滤掉error及更高级别日志--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;ThresholdFilter&lt;/span> &lt;span style="color:#a6e22e">level=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;error&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">onMatch=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;DENY&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">onMismatch=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;NEUTRAL&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/Filters&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--设置日志格式--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;PatternLayout&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;pattern&amp;gt;&lt;/span>%d %p %C{} [%t] %m%n&lt;span style="color:#f92672">&amp;lt;/pattern&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/PatternLayout&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Policies&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!-- 设置日志文件切分参数 --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--&amp;lt;OnStartupTriggeringPolicy/&amp;gt;--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--设置日志基础文件大小，超过该大小就触发日志文件滚动更新--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;SizeBasedTriggeringPolicy&lt;/span> &lt;span style="color:#a6e22e">size=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;100 MB&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--设置日志文件滚动更新的时间，依赖于文件命名filePattern的设置--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;TimeBasedTriggeringPolicy/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/Policies&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--设置日志的文件个数上限，不设置默认为7个，超过大小后会被覆盖；依赖于filePattern中的%i--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;DefaultRolloverStrategy&lt;/span> &lt;span style="color:#a6e22e">max=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;100&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/RollingFile&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--error及更高级别日志--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;RollingFile&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;errorFileAppender&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fileName=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${LOG_HOME}/error.log&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">filePattern=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${LOG_HOME}/$${date:yyyy-MM}/error-%d{yyyy-MM-dd}-%i.log.gz&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--设置日志格式--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;PatternLayout&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;pattern&amp;gt;&lt;/span>%d %p %C{} [%t] %m%n&lt;span style="color:#f92672">&amp;lt;/pattern&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/PatternLayout&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Policies&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!-- 设置日志文件切分参数 --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--&amp;lt;OnStartupTriggeringPolicy/&amp;gt;--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--设置日志基础文件大小，超过该大小就触发日志文件滚动更新--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;SizeBasedTriggeringPolicy&lt;/span> &lt;span style="color:#a6e22e">size=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;100 MB&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--设置日志文件滚动更新的时间，依赖于文件命名filePattern的设置--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;TimeBasedTriggeringPolicy/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/Policies&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--设置日志的文件个数上限，不设置默认为7个，超过大小后会被覆盖；依赖于filePattern中的%i--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;DefaultRolloverStrategy&lt;/span> &lt;span style="color:#a6e22e">max=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;100&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/RollingFile&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--json格式error级别日志--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;RollingFile&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;errorJsonAppender&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">fileName=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${LOG_HOME}/error-json.log&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">filePattern=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;${LOG_HOME}/error-json-%d{yyyy-MM-dd}-%i.log.gz&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;JSONLayout&lt;/span> &lt;span style="color:#a6e22e">compact=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;true&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">eventEol=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;true&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">locationInfo=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;true&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Policies&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;SizeBasedTriggeringPolicy&lt;/span> &lt;span style="color:#a6e22e">size=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;100 MB&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;TimeBasedTriggeringPolicy&lt;/span> &lt;span style="color:#a6e22e">interval=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;1&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">modulate=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;true&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/Policies&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/RollingFile&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/Appenders&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Loggers&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!-- 根日志设置 --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Root&lt;/span> &lt;span style="color:#a6e22e">level=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;debug&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;AppenderRef&lt;/span> &lt;span style="color:#a6e22e">ref=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;allFileAppender&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">level=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;all&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;AppenderRef&lt;/span> &lt;span style="color:#a6e22e">ref=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;consoleAppender&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">level=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;debug&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;AppenderRef&lt;/span> &lt;span style="color:#a6e22e">ref=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;debugFileAppender&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">level=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;debug&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;AppenderRef&lt;/span> &lt;span style="color:#a6e22e">ref=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;infoFileAppender&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">level=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;info&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;AppenderRef&lt;/span> &lt;span style="color:#a6e22e">ref=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;warnFileAppender&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">level=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;warn&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;AppenderRef&lt;/span> &lt;span style="color:#a6e22e">ref=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;errorFileAppender&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">level=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;error&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;AppenderRef&lt;/span> &lt;span style="color:#a6e22e">ref=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;errorJsonAppender&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">level=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;error&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/Root&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--spring日志--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Logger&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;org.springframework&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">level=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;debug&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--druid数据源日志--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Logger&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;druid.sql.Statement&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">level=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;warn&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!-- mybatis日志 --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Logger&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;com.mybatis&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">level=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;warn&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Logger&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;org.hibernate&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">level=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;warn&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Logger&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;com.zaxxer.hikari&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">level=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;info&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Logger&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;org.quartz&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">level=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;info&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Logger&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;com.andya.demo&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">level=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;debug&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/Loggers&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/Configuration&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- endtab -->
+&lt;!-- tab 实际开发用的-->
+&lt;pre tabindex="0">&lt;code>error级别 打印error.log
+info级别 打印info,error 日志到info.log
+debug级别 打印info,error,debug日志到debug.log
+&lt;/code>&lt;/pre>&lt;!-- endtab -->
+&lt;p>{% endtabs %}&lt;/p>
+&lt;p>基本结构是:&lt;/p>
+&lt;ul>
+&lt;li>Configuration
+&lt;ul>
+&lt;li>properties 属性配置,可以在这里配置全局变量,可以在xml别的地方引入&lt;/li>
+&lt;li>Appenders 具体配置日志框架该如何收集日志的动作
+&lt;ul>
+&lt;li>Console 控制台输出&lt;/li>
+&lt;li>RollingFile 滚动日志文件&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Loggers
+&lt;ul>
+&lt;li>Root 理论上只有一个Root,level属性,是全局日志级别,如果AppenderRef没有配置level,就使用全局级别
+&lt;ul>
+&lt;li>AppenderRef 引用具体配置的动作,level 没有的话,就使用全局级别,就像&lt;code>CSS&lt;/code>属性那样,标签里的属性优先级最高&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Logger 单独配置一些类,level 没有的话,就使用全局级别,就像&lt;code>CSS&lt;/code>属性那样,标签里的属性优先级最高&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>过滤器的具体使用方法&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;Filters&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!--过滤掉info及更高级别日志--&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;ThresholdFilter&lt;/span> &lt;span style="color:#a6e22e">level=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;info&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">onMatch=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;DENY&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">onMismatch=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;NEUTRAL&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/Filters&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>level&lt;/code>指定日志等级的阈值。&lt;/p>
+&lt;p>&lt;code>onMatch&lt;/code> 定义当日志事件等级等于或高于 &lt;code>level&lt;/code> 属性指定的等级时的行为。&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>ACCEPT&lt;/code>：接受日志事件，让它通过过滤器。&lt;/li>
+&lt;li>&lt;code>DENY&lt;/code>：拒绝日志事件，不让它通过过滤器。&lt;/li>
+&lt;li>&lt;code>NEUTRAL&lt;/code>：对日志事件不做决定，继续应用其他的过滤规则。&lt;/li>
+&lt;/ul>
+&lt;p>&lt;code>onMismatch&lt;/code> 定义当日志事件等级低于 &lt;code>level&lt;/code> 属性指定的等级时的行为。&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>ACCEPT&lt;/code>：接受日志事件，让它通过过滤器。&lt;/li>
+&lt;li>&lt;code>DENY&lt;/code>：拒绝日志事件，不让它通过过滤器。&lt;/li>
+&lt;li>&lt;code>NEUTRAL&lt;/code>：对日志事件不做决定，继续应用其他的过滤规则。&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code>if 日志的级别 &amp;gt;= level配置的级别
+ACCEPT 接受日志
+DENY 拒绝日志
+NEUTRAL 对日志事件不做决定，继续应用其他的过滤规则
+if 日志的级别 &amp;lt; level配置的级别
+ACCEPT 接受日志
+DENY 拒绝日志
+NEUTRAL 对日志事件不做决定，继续应用其他的过滤规则
+&lt;/code>&lt;/pre>&lt;blockquote>
+&lt;p>还是没有搞清楚 onMismatch=&amp;ldquo;NEUTRAL&amp;rdquo; 的作用是怎样的&lt;/p>
+&lt;p>使用ChatGPT提供的demo,没有验证&lt;/p>
+&lt;p>info级别 记录到info.log
+error级别 记录到error.log
+info级别和error级别 记录到dev.log&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;Configuration&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Appenders&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!-- Info 级别日志的 Appender --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;File&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;InfoAppender&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">fileName=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;logs/info.log&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;ThresholdFilter&lt;/span> &lt;span style="color:#a6e22e">level=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;INFO&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">onMatch=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;ACCEPT&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">onMismatch=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;DENY&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;PatternLayout&lt;/span> &lt;span style="color:#a6e22e">pattern=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/File&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!-- Error 级别日志的 Appender --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;File&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;ErrorAppender&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">fileName=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;logs/error.log&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;ThresholdFilter&lt;/span> &lt;span style="color:#a6e22e">level=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;ERROR&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">onMatch=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;ACCEPT&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">onMismatch=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;DENY&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;PatternLayout&lt;/span> &lt;span style="color:#a6e22e">pattern=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/File&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!-- 同时记录 Info 和 Error 级别日志的 Appender --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;File&lt;/span> &lt;span style="color:#a6e22e">name=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;DevAppender&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">fileName=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;logs/dev.log&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Filters&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;ThresholdFilter&lt;/span> &lt;span style="color:#a6e22e">level=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;INFO&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">onMatch=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;ACCEPT&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">onMismatch=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;DENY&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;ThresholdFilter&lt;/span> &lt;span style="color:#a6e22e">level=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;ERROR&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">onMatch=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;ACCEPT&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">onMismatch=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;NEUTRAL&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/Filters&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;PatternLayout&lt;/span> &lt;span style="color:#a6e22e">pattern=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/File&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/Appenders&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Loggers&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;Root&lt;/span> &lt;span style="color:#a6e22e">level=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;DEBUG&amp;#34;&lt;/span>&lt;span style="color:#f92672">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;AppenderRef&lt;/span> &lt;span style="color:#a6e22e">ref=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;InfoAppender&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;AppenderRef&lt;/span> &lt;span style="color:#a6e22e">ref=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;ErrorAppender&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;AppenderRef&lt;/span> &lt;span style="color:#a6e22e">ref=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;DevAppender&amp;#34;&lt;/span>&lt;span style="color:#f92672">/&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/Root&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;/Loggers&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/Configuration&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/blockquote>
+&lt;h2 id="只是引入web框架">只是引入web框架&lt;/h2>
+&lt;p>只是引入web框架&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.springframework.boot&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>spring-boot-starter-web&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@GetMapping&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;/test&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> String &lt;span style="color:#a6e22e">test&lt;/span>(){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 格式化当前日期时间&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String formattedDateTime &lt;span style="color:#f92672">=&lt;/span> LocalDateTime.&lt;span style="color:#a6e22e">now&lt;/span>().&lt;span style="color:#a6e22e">format&lt;/span>(DateTimeFormatter.&lt;span style="color:#a6e22e">ofPattern&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;yyyy-MM-dd HH:mm:ss&amp;#34;&lt;/span>));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> log.&lt;span style="color:#a6e22e">debug&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;当前日期时间：{}&amp;#34;&lt;/span>, formattedDateTime);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> log.&lt;span style="color:#a6e22e">info&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;当前日期时间：{}&amp;#34;&lt;/span>, formattedDateTime);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> log.&lt;span style="color:#a6e22e">error&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;当前日期时间：{}&amp;#34;&lt;/span>, formattedDateTime);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> log.&lt;span style="color:#a6e22e">warn&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;当前日期时间：{}&amp;#34;&lt;/span>, formattedDateTime);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> log.&lt;span style="color:#a6e22e">trace&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;当前日期时间：{}&amp;#34;&lt;/span>, formattedDateTime);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> formattedDateTime;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 控制台打印&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>INFO &lt;span style="color:#ae81ff">64710&lt;/span> --- &lt;span style="color:#f92672">[&lt;/span>nio-8080-exec-1&lt;span style="color:#f92672">]&lt;/span> c.e.s.controller.IndexController : 当前日期时间：2024-03-03 21:37:40
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ERROR &lt;span style="color:#ae81ff">64710&lt;/span> --- &lt;span style="color:#f92672">[&lt;/span>nio-8080-exec-1&lt;span style="color:#f92672">]&lt;/span> c.e.s.controller.IndexController : 当前日期时间：2024-03-03 21:37:40
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>WARN &lt;span style="color:#ae81ff">64710&lt;/span> --- &lt;span style="color:#f92672">[&lt;/span>nio-8080-exec-1&lt;span style="color:#f92672">]&lt;/span> c.e.s.controller.IndexController : 当前日期时间：2024-03-03 21:37:40
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 为什么控制台没有打印 trace和debug日志&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item></channel></rss>

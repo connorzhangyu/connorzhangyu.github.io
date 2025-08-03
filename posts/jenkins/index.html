@@ -1,0 +1,184 @@
+<!doctype html><html lang=zh><head><title>Jenkins :: Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Root用户权限启动Jenkins 适用于Ubuntu环境下通过apt-get install -y jenkins命令在线安装的Jenkins
+1.修改配置文件
+vim /etc/default/jenkins # 将下面两个参数修改为root # 修改前 JENKINS_USER=$NAME JENKINS_GROUP=$NAME # 修改后 JENKINS_USER=root JENKINS_GROUP=root 2.更改目录权限
+不知道这步有没有起作用
+cd /var/lib/ chown -R root:root ./jenkins # 重启 systemctl restart jenkins.service Jenkins使用教程 配置JDK Manage Jenkins &ndash;> Global Tool Configuration
+自动安装 手动安装要注意,JAVA_HOME的输入框下面，不要有警告或者错误信息，否则就是路径不正确,取消勾选自动安装 配置Maven 安装Maven Integration 插件 通常自动安装maven就行了,如果手动安装,MAVEN_HOME 输入框下面，不要有警告或者错误信息，否则就是路径不正确 获取当前项目名称 在脚本中输入 $JOB_NAME就能获取到了
+卸载jenkins //服务 sudo apt-get remove jenkins //安装包，注意这里如果不是ubuntu那就yum sudo apt-get remove --auto-remove jenkins //配置和数据 sudo apt-get purge jenkins sudo apt-get purge --auto-remove jenkins 升级jenkins # 适用于ubuntu安装的 apt-get upgrade jenkins 同时构建任务的个数 系统管理&ndash;>系统设置&ndash;>执行者数量
+"><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://connorzhangyu.com/posts/jenkins/><link rel=stylesheet href=https://connorzhangyu.com/styles.css><link rel="shortcut icon" href=https://connorzhangyu.com/img/theme-colors/orange.png><link rel=apple-touch-icon href=https://connorzhangyu.com/img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta name=twitter:site content><meta name=twitter:creator content="Anthony"><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="og:title" content="Jenkins"><meta property="og:description" content="Root用户权限启动Jenkins 适用于Ubuntu环境下通过apt-get install -y jenkins命令在线安装的Jenkins
+1.修改配置文件
+vim /etc/default/jenkins # 将下面两个参数修改为root # 修改前 JENKINS_USER=$NAME JENKINS_GROUP=$NAME # 修改后 JENKINS_USER=root JENKINS_GROUP=root 2.更改目录权限
+不知道这步有没有起作用
+cd /var/lib/ chown -R root:root ./jenkins # 重启 systemctl restart jenkins.service Jenkins使用教程 配置JDK Manage Jenkins &ndash;> Global Tool Configuration
+自动安装 手动安装要注意,JAVA_HOME的输入框下面，不要有警告或者错误信息，否则就是路径不正确,取消勾选自动安装 配置Maven 安装Maven Integration 插件 通常自动安装maven就行了,如果手动安装,MAVEN_HOME 输入框下面，不要有警告或者错误信息，否则就是路径不正确 获取当前项目名称 在脚本中输入 $JOB_NAME就能获取到了
+卸载jenkins //服务 sudo apt-get remove jenkins //安装包，注意这里如果不是ubuntu那就yum sudo apt-get remove --auto-remove jenkins //配置和数据 sudo apt-get purge jenkins sudo apt-get purge --auto-remove jenkins 升级jenkins # 适用于ubuntu安装的 apt-get upgrade jenkins 同时构建任务的个数 系统管理&ndash;>系统设置&ndash;>执行者数量
+"><meta property="og:url" content="https://connorzhangyu.com/posts/jenkins/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="https://image.runtimes.cc/202404051529846.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><meta property="article:section" content="Java"><meta property="article:published_time" content="2022-11-19 18:25:00 +0000 UTC"></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></nav></header><div class=content><article class=post><h1 class=post-title><a href=https://connorzhangyu.com/posts/jenkins/>Jenkins</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/mac/>Mac</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/%E9%83%A8%E7%BD%B2/>部署</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/maven/>Maven</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051529846.png class=post-cover alt=" " title="Cover Image"><div class=post-content><div><h1 id=root用户权限启动jenkins>Root用户权限启动Jenkins<a href=#root用户权限启动jenkins class=hanchor arialabel=Anchor>&#8983;</a></h1><p>适用于Ubuntu环境下通过<code>apt-get install -y jenkins</code>命令在线安装的Jenkins</p><p>1.修改配置文件</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>vim /etc/default/jenkins
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 将下面两个参数修改为root</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 修改前</span>
+</span></span><span style=display:flex><span>JENKINS_USER<span style=color:#f92672>=</span>$NAME
+</span></span><span style=display:flex><span>JENKINS_GROUP<span style=color:#f92672>=</span>$NAME
+</span></span><span style=display:flex><span><span style=color:#75715e># 修改后</span>
+</span></span><span style=display:flex><span>JENKINS_USER<span style=color:#f92672>=</span>root
+</span></span><span style=display:flex><span>JENKINS_GROUP<span style=color:#f92672>=</span>root
+</span></span></code></pre></div><p>2.更改目录权限</p><p>不知道这步有没有起作用</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>cd /var/lib/
+</span></span><span style=display:flex><span>chown -R root:root ./jenkins
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 重启</span>
+</span></span><span style=display:flex><span>systemctl restart jenkins.service
+</span></span></code></pre></div><h1 id=jenkins使用教程>Jenkins使用教程<a href=#jenkins使用教程 class=hanchor arialabel=Anchor>&#8983;</a></h1><h2 id=配置jdk>配置JDK<a href=#配置jdk class=hanchor arialabel=Anchor>&#8983;</a></h2><p>Manage Jenkins &ndash;> Global Tool Configuration</p><ol><li>自动安装</li><li>手动安装要注意,J<code>AVA_HOME</code>的输入框下面，不要有警告或者错误信息，否则就是路径不正确,取消勾选自动安装</li></ol><h2 id=配置maven>配置Maven<a href=#配置maven class=hanchor arialabel=Anchor>&#8983;</a></h2><ol><li>安装Maven Integration 插件</li><li>通常自动安装maven就行了,如果手动安装,<code>MAVEN_HOME</code> 输入框下面，不要有警告或者错误信息，否则就是路径不正确</li></ol><h2 id=获取当前项目名称>获取当前项目名称<a href=#获取当前项目名称 class=hanchor arialabel=Anchor>&#8983;</a></h2><p>在脚本中输入 <code>$JOB_NAME</code>就能获取到了</p><h2 id=卸载jenkins>卸载jenkins<a href=#卸载jenkins class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>//服务
+</span></span><span style=display:flex><span>sudo apt-get remove jenkins
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>//安装包，注意这里如果不是ubuntu那就yum
+</span></span><span style=display:flex><span>sudo apt-get remove --auto-remove jenkins
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>//配置和数据
+</span></span><span style=display:flex><span>sudo apt-get purge jenkins
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>sudo apt-get purge --auto-remove jenkins
+</span></span></code></pre></div><h2 id=升级jenkins>升级jenkins<a href=#升级jenkins class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># 适用于ubuntu安装的</span>
+</span></span><span style=display:flex><span>apt-get upgrade jenkins
+</span></span></code></pre></div><h2 id=同时构建任务的个数>同时构建任务的个数<a href=#同时构建任务的个数 class=hanchor arialabel=Anchor>&#8983;</a></h2><p>系统管理&ndash;>系统设置&ndash;>执行者数量</p><h2 id=构建成功才继续发包>构建成功才继续发包<a href=#构建成功才继续发包 class=hanchor arialabel=Anchor>&#8983;</a></h2><p>只是个不大不小的功能,很容易忽略了,在 任务的配置&ndash;>Post Steps &ndash;> Run only if build succeeds</p><p><img src=https://image.runtimes.cc/202405280938281.png alt=image-20240528093819570></p><h2 id=修改时区>修改时区<a href=#修改时区 class=hanchor arialabel=Anchor>&#8983;</a></h2><p><img src=https://image.runtimes.cc/202408091744504.png alt=image-20240809174451156></p><p><img src=https://image.runtimes.cc/202408091746778.png alt=image-20240809174606994></p><h2 id=webhook>WebHook<a href=#webhook class=hanchor arialabel=Anchor>&#8983;</a></h2><p>使用的场景,Github Push代码之后,自动构建</p><p>第一步.jenkins的配置</p><p><img src=https://image.runtimes.cc/202408091740783.png alt=image-20240809174000506></p><p>第二步.Github的配置</p><p><img src=https://image.runtimes.cc/202408091741395.png alt=image-20240809174111087></p><p><img src=https://image.runtimes.cc/202408091742218.png alt=image-20240809174235801></p><p>第三步.返回jenkins设置</p><p><img src=https://image.runtimes.cc/202408091743820.png alt=image-20240809174324197></p><p>第四步.push代码,查看有没有正常构建</p><h1 id=jenkinsdocker部署maven聚合工程>Jenkins+Docker部署Maven聚合工程<a href=#jenkinsdocker部署maven聚合工程 class=hanchor arialabel=Anchor>&#8983;</a></h1><p>安装Jenkins</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>docker run <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    -v /var/run/docker.sock:/var/run/docker.sock <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    -v <span style=color:#66d9ef>$(</span>which docker<span style=color:#66d9ef>)</span>:/usr/bin/docker <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    -v /root/jenkins:/var/jenkins_home <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    --name jenkins <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    --user<span style=color:#f92672>=</span>root <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    -p 8080:8080 <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    -p 50000:50000 <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    -d <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    -u <span style=color:#ae81ff>0</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    jenkins/jenkins:jdk11
+</span></span></code></pre></div><ul><li>第2行是将宿主机的/var/run/docker.sock映射到容器中，这样在容器中运行的docker命令，就会在宿主机上来执行。</li><li>第3行是将宿主机的docker程序映射进容器中，这样本身没有安装docker的jenkins容器就可以执行docker命令了（事实上容器里是没有运行docker的服务的，我们只是用这个映射进容器的docker来作为客户端发送docker的指令到/var/run/docker.sock而已，而/var/run/docker.sock已经被链接到宿主机了)</li></ul><p>Dockerfile</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-dockerfile data-lang=dockerfile><span style=display:flex><span><span style=color:#66d9ef>FROM</span><span style=color:#e6db74> openjdk:8-jdk-alpine</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>VOLUME</span><span style=color:#e6db74> /tmp</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>ADD</span> admin-server-0.0.1-SNAPSHOT.jar app.jar<span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>ENTRYPOINT</span> [<span style=color:#e6db74>&#34;java&#34;</span>,<span style=color:#e6db74>&#34;-Djava.security.egd=file:/dev/./urandom&#34;</span>,<span style=color:#e6db74>&#34;-jar&#34;</span>,<span style=color:#e6db74>&#34;/app.jar&#34;</span>]<span style=color:#960050;background-color:#1e0010>
+</span></span></span></code></pre></div><p>Maven的pom.xml配置</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;plugin&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;groupId&gt;</span>com.spotify<span style=color:#f92672>&lt;/groupId&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;artifactId&gt;</span>docker-maven-plugin<span style=color:#f92672>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;version&gt;</span>0.4.13<span style=color:#f92672>&lt;/version&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;configuration&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;imageName&gt;</span>springboot/${project.artifactId}<span style=color:#f92672>&lt;/imageName&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;dockerDirectory&gt;</span>src/main/docker<span style=color:#f92672>&lt;/dockerDirectory&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;resources&gt;</span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>&lt;resource&gt;</span>
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&lt;targetPath&gt;</span>/<span style=color:#f92672>&lt;/targetPath&gt;</span>
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&lt;directory&gt;</span>${project.build.directory}<span style=color:#f92672>&lt;/directory&gt;</span>
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&lt;include&gt;</span>${project.build.finalName}.jar<span style=color:#f92672>&lt;/include&gt;</span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>&lt;/resource&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;/resources&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/configuration&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/plugin&gt;</span>
+</span></span></code></pre></div><ul><li><code>imageName</code>打的镜像名称,这里的镜像名称是:springboot/admin-server</li><li><code>dockerDirectory</code>指定docker文件夹的位置</li></ul><p>Job配置</p><p><img src=https://image.runtimes.cc/202404051423837.png alt></p><p><img src=https://image.runtimes.cc/202404051424832.png alt></p><p><img src=https://image.runtimes.cc/202404051424206.png alt></p><p><img src=https://image.runtimes.cc/202404051424089.png alt></p><p>• <code>-e “SPRING_PROFILES_ACTIVE=prerelease”</code> ,可以看成是启动jar的时候的,java -jar admin-server.jar –spring.profiles.active=prerelease ,指定运行环境</p><h1 id=脚本>脚本<a href=#脚本 class=hanchor arialabel=Anchor>&#8983;</a></h1><h2 id=检测容器的运行>检测容器的运行<a href=#检测容器的运行 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># &#34;=&#34; 两边不能有空格</span>
+</span></span><span style=display:flex><span>count<span style=color:#f92672>=</span><span style=color:#e6db74>`</span>docker ps -a | grep sabong-admin-controlfront |awk <span style=color:#e6db74>&#39;{print $1}&#39;</span><span style=color:#e6db74>`</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> <span style=color:#f92672>[</span> -n <span style=color:#e6db74>&#34;</span>$count<span style=color:#e6db74>&#34;</span> <span style=color:#f92672>]</span>; <span style=color:#66d9ef>then</span>
+</span></span><span style=display:flex><span>        docker stop $count
+</span></span><span style=display:flex><span>        docker rm $count
+</span></span><span style=display:flex><span>        echo <span style=color:#e6db74>&#34;停止并删除容器&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>fi</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>docker run <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>	-itd <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>	-p 9011:9011 <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>	-e “SPRING_PROFILES_ACTIVE<span style=color:#f92672>=</span>prerelease” <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>	--name admin-server <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>	springboot/admin-server
+</span></span></code></pre></div><h2 id=推送镜像到harbor>推送镜像到harbor<a href=#推送镜像到harbor class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 打标签</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># sabong/sabong-controller-manager:latest 已经build成功了的镜像名字</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 10.0.0.7/library/sabong/sabong-controller-manager:latest   新的镜像名字</span>
+</span></span><span style=display:flex><span>docker tag sabong/sabong-controller-manager:latest 10.0.0.7/library/sabong/sabong-controller-manager:latest
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 登录私有仓库</span>
+</span></span><span style=display:flex><span>docker login -u admin -p <span style=color:#ae81ff>123456</span> 10.0.0.7
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 推送镜像</span>
+</span></span><span style=display:flex><span>docker push 10.0.0.7/library/sabong/sabong-controller-manager:latest
+</span></span></code></pre></div><h2 id=vue打包成镜像>Vue打包成镜像<a href=#vue打包成镜像 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>npm install
+</span></span><span style=display:flex><span>npm run build:prod
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># build</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># sabong/sabong-admin-controlfront  随便起的</span>
+</span></span><span style=display:flex><span>docker build -t sabong/sabong-admin-controlfront --no-cache . 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 打标签</span>
+</span></span><span style=display:flex><span>docker tag sabong/sabong-admin-controlfront:latest 10.0.0.7/library/sabong/sabong-admin-controlfront:latest
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 登录私有仓库</span>
+</span></span><span style=display:flex><span>docker login -u admin -p <span style=color:#ae81ff>123456</span> 10.0.0.7
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 推送镜像</span>
+</span></span><span style=display:flex><span>docker push 10.0.0.7/library/sabong/sabong-admin-controlfront:latest
+</span></span></code></pre></div><p>Dockerfile</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-docker data-lang=docker><span style=display:flex><span><span style=color:#66d9ef>From</span><span style=color:#e6db74> nginx</span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>
+</span></span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>COPY</span> dist/ /usr/share/nginx/html/<span style=color:#960050;background-color:#1e0010>
+</span></span></span></code></pre></div><p>⛔ 这里用的是nginx容器里默认的nginx配置文件,所以这里没有使用自定义的nginx配置</p><h2 id=springboot项目脚本>SpringBoot项目脚本<a href=#springboot项目脚本 class=hanchor arialabel=Anchor>&#8983;</a></h2><p>适用于ssh传输文件,启动脚本</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e>#!/bin/bash
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 具体不知道是干啥的,加上这个,这个看情况加</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># BUILD_ID=DONTKILLME</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>APP_NAME<span style=color:#f92672>=</span>xxx.jar
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 杀进程</span>
+</span></span><span style=display:flex><span>pid<span style=color:#f92672>=</span><span style=color:#e6db74>`</span>ps -ef|grep $APP_NAME|grep -v grep|awk <span style=color:#e6db74>&#39;{print $2}&#39;</span> <span style=color:#e6db74>`</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> <span style=color:#f92672>[</span> -n <span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>pid<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span> <span style=color:#f92672>]</span>; <span style=color:#66d9ef>then</span>
+</span></span><span style=display:flex><span>    kill -9 $pid
+</span></span><span style=display:flex><span><span style=color:#66d9ef>fi</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>echo <span style=color:#e6db74>&#39;准备启动jar包&#39;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>nohup java -jar /root/$APP_NAME --spring.profiles.active<span style=color:#f92672>=</span>prod &amp;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>sleep <span style=color:#ae81ff>3</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>echo <span style=color:#e6db74>&#39;启动成功&#39;</span>
+</span></span></code></pre></div><h1 id=maven多模块打包>Maven多模块打包<a href=#maven多模块打包 class=hanchor arialabel=Anchor>&#8983;</a></h1><p>指定打包项目名</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>clean package -pl 模块名 -am
+</span></span></code></pre></div><p>配置SSH server</p><p>在系统管理&ndash;>System&mdash;>SSH Server配置</p><p><img src=https://image.runtimes.cc/202404051424215.png alt=image-20240319175903145></p><p>配置SSH Over FTP publish</p><p><img src=https://image.runtimes.cc/202404051424247.png alt=image-20240319184601103></p><p>这里<code>Verbose output in console</code>的作用是把远程的步骤,和远程的shell执行的结果也打印出来</p><p>这里<code>Exec in pty</code> 要勾选,不然项目启动完成了,也不会停止SSH链接</p><p><img src=https://image.runtimes.cc/202404051424187.png alt=image-20240319175519104></p><h1 id=前端打包>前端打包<a href=#前端打包 class=hanchor arialabel=Anchor>&#8983;</a></h1><p>选择已经配置的node版本</p><p><strong>构建环境</strong></p><p><img src=https://image.runtimes.cc/202404051424037.png alt=image-20240319183930032></p><p><strong>Build Steps</strong></p><p>选择执行shell</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>npm install
+</span></span><span style=display:flex><span>npm run build:prod
+</span></span><span style=display:flex><span>pwd
+</span></span><span style=display:flex><span><span style=color:#75715e># 删除上一次构建打的包,然后dist文件夹打包成dist.zip文件</span>
+</span></span><span style=display:flex><span>rm -f dist.zip <span style=color:#f92672>&amp;&amp;</span> zip -r dist.zip dist
+</span></span></code></pre></div><p><img src=https://image.runtimes.cc/202404051424098.png alt=image-20240319184412134></p><h1 id=各种问题报错>各种问题报错<a href=#各种问题报错 class=hanchor arialabel=Anchor>&#8983;</a></h1><p>1.HTTP ERROR 403 No valid crumb was included in the request</p><p>解决办法:网上都是要去关闭CSRF，很明确的是我这里的全局安全配置里面根本就没有选项，我的版本是<code>jenkins 2.293</code>。所以百度出来的都是一堆垃圾，无奈自己解决，尝试一番之后，找到了方法，如</p><p><img src=https://image.runtimes.cc/202404051425841.png alt=image-20231201155420918></p><p>下图所示：还是在全局安全配置里面，勾选上这个参数即可。</p><hr><p>2.Jenkins配置中安装插件时提示<code>No such plugin: cloudbees-folder</code></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>sudo systemctl start jenkins
+</span></span></code></pre></div><hr><p>2.Jenkins和Github personal access token</p><ul><li>登录到您的 Jenkins 服务器。</li><li>选择“Jenkins”>“Manage Jenkins”>“Configure System”。</li><li>滚动到“GitHub”部分。</li><li>点击“Add GitHub Server”按钮。</li><li>在“API URL”字段中输入您的 Github API URL（例如 <a href="https://link.juejin.cn/?target=https%3A%2F%2Fapi.github.com%EF%BC%89%E3%80%82">api.github.com）。</a></li><li>在“Credentials”字段中选择“Add”。</li><li>选择“Kind”为“Username with password”。</li><li>在“Username”字段中输入您的 Github 用户名。</li><li>在“Password”字段中输入您的 Github 个人访问令牌。</li><li>点击“Verify credentials”按钮以验证凭据是否有效。</li><li>如果验证成功，请点击“Save”按钮保存更改。</li></ul><p>3.jenkins映射docker</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 如果docker run jenkins 没有指定</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 这里就不能打包,就是因为在jenkins里的容器中,没有安装对象,使用了-v </span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 就是把jenkins里所需要的docker映射到宿主docker中</span>
+</span></span><span style=display:flex><span>-v /var/run/docker.sock:/var/run/docker.sock <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>-v <span style=color:#66d9ef>$(</span>which docker<span style=color:#66d9ef>)</span>:/usr/bin/docker
+</span></span></code></pre></div><p>4.安装插件没有成功</p><p><img src=https://image.runtimes.cc/202404051425983.png alt>
+需要到插件中心,在可更新和可选插件里,一个一个手动去搜索安装,如果还有问题,就需要更新jenkins</p><p>5.<code>npm install</code>需要权限</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>Unable to save binary /var/lib/jenkins/workspace/mymanager-/node_modules/node-sass/vendor/linux-x64-83 : Error: EACCES: permission denied, mkdir <span style=color:#e6db74>&#39;/var/lib/jenkins/workspace/lottery-web-24kai-ausk3/node_modules/node-sass/vendor&#39;</span>
+</span></span></code></pre></div><h1 id=修改端口>修改端口<a href=#修改端口 class=hanchor arialabel=Anchor>&#8983;</a></h1><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># 第一步</span>
+</span></span><span style=display:flex><span>sudo vim /etc/init.d/jenkins
+</span></span><span style=display:flex><span><span style=color:#75715e># 8088改成想要的</span>
+</span></span><span style=display:flex><span>check_tcp_port <span style=color:#e6db74>&#34;http&#34;</span> <span style=color:#e6db74>&#34;</span>$HTTP_PORT<span style=color:#e6db74>&#34;</span> <span style=color:#e6db74>&#34;8088&#34;</span> <span style=color:#f92672>||</span> <span style=color:#66d9ef>return</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 第二步</span>
+</span></span><span style=display:flex><span>sudo vim /etc/default/jenkins
+</span></span><span style=display:flex><span><span style=color:#75715e># 8088改成想要的</span>
+</span></span><span style=display:flex><span>HTTP_PORT<span style=color:#f92672>=</span><span style=color:#ae81ff>8088</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 第三步</span>
+</span></span><span style=display:flex><span>vim /lib/systemd/system/jenkins.service
+</span></span><span style=display:flex><span>Environment<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;JENKINS_PORT=80&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 执行</span>
+</span></span><span style=display:flex><span>sudo systemctl daemon-reload
+</span></span><span style=display:flex><span>sudo systemctl start jenkins
+</span></span><span style=display:flex><span>sudo systemctl status jenkins
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 这个时候就启动报错,然后接着修改</span>
+</span></span><span style=display:flex><span>vim /lib/systemd/system/jenkins.service
+</span></span><span style=display:flex><span><span style=color:#75715e># 本来是jenkins的,改成root</span>
+</span></span><span style=display:flex><span>User<span style=color:#f92672>=</span>root
+</span></span><span style=display:flex><span>Group<span style=color:#f92672>=</span>root
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 执行,就可以了,不知道为啥</span>
+</span></span><span style=display:flex><span>sudo systemctl daemon-reload
+</span></span><span style=display:flex><span>sudo systemctl start jenkins
+</span></span><span style=display:flex><span>sudo systemctl status jenkins
+</span></span></code></pre></div><h1 id=jenkins使用root账号登录>jenkins使用root账号登录<a href=#jenkins使用root账号登录 class=hanchor arialabel=Anchor>&#8983;</a></h1><p><a href=https://www.baimeidashu.com/13094.html>设置1</a></p><p><a href=https://www.cnblogs.com/fieldtianye/p/17852160.html>设置2</a></p><h1 id=权限管理>权限管理<a href=#权限管理 class=hanchor arialabel=Anchor>&#8983;</a></h1><p>1.安装插件,<code>Role-based Authorization Strategy</code></p><p><img src=https://image.runtimes.cc/202408081650831.png alt=image-20240808165032732></p><p>2.点击 管理系统&ndash;>安全段落下的&ndash;>全局安全配置,选中</p><p><img src=https://image.runtimes.cc/202408081652851.png alt=image-20240808165220186></p><p>3.管理系统&ndash;>安全段落下的 就会多一个功能</p><p><img src=https://image.runtimes.cc/202408081653465.png alt=image-20240808165321957></p></div></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Read other posts</span><hr></div><div class=pagination__buttons><span class="button previous"><a href=https://connorzhangyu.com/posts/%E5%89%8D%E7%AB%AF/javascript/><span class=button__icon>←</span>
+<span class=button__text>JavaScript</span>
+</a></span><span class="button next"><a href=https://connorzhangyu.com/posts/linux%E8%BD%AF%E4%BB%B6/><span class=button__text>Linux软件</span>
+<span class=button__icon>→</span></a></span></div></div></article></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>
+<span>:: <a href=https://github.com/mirus-ua/hugo-theme-re-terminal target=_blank>Theme</a> made by <a href=https://github.com/mirus-ua target=_blank>Mirus</a></span></div></div></footer><script type=text/javascript src=/bundle.min.js></script></div></body></html>

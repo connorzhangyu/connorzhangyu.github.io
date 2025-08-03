@@ -1,0 +1,65 @@
+<!doctype html><html lang=zh><head><title>nexus3 :: Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content='Docker仓库 类型 端口 仓库名字 Host 9083 My-docker-host proxy My-docker-proxy group 9082 My-docker-group 创建一个存储目录
+名字随便起,没有太多影响
+![image-20240917104642184](../../../../../../Library/Application Support/typora-user-images/image-20240917104642184.png)
+创建docker host仓库
+![image-20240917104411323](../../../../../../Library/Application Support/typora-user-images/image-20240917104411323.png)
+![image-20240917104515460](../../../../../../Library/Application Support/typora-user-images/image-20240917104515460.png)
+![image-20240917104240181](../../../../../../Library/Application Support/typora-user-images/image-20240917104240181.png)
+创建proxy仓库
+![image-20240917113108378](../../../../../../Library/Application Support/typora-user-images/image-20240917113108378.png)
+![image-20240917113128237](../../../../../../Library/Application Support/typora-user-images/image-20240917113128237.png)
+group
+![image-20240917113647416](../../../../../../Library/Application Support/typora-user-images/image-20240917113647416.png)
+docker客户端配置
+# vim /etc/docker/daemon.json { "insecure-registries": ["54.255.206.44:9082", "54.255.206.44:9083"] } # 需要重启 systemctl daemon-reload systemctl restart docker 登录
+登录之后凭证保存在/.docker/config.json或者是在,部署的时候遇到一个问题,就是jenkins打包之后docker login可以,但是push的时候就提示没有授权,暂时的解决办法是,宿主机docker login下,保存凭证,然后jenkins容器挂载/root/.docker/config.json这个文件,jenkins打包就可以不用登录,直接推送
+root@anthony:~# docker login http://54.255.206.44:9083 Username: admin Password: Error response from daemon: login attempt to http://54.255.206.44:9083/v2/ failed with status: 401 Unauthorized # ---------------------------------------------------------------------------- root@anthony:~# docker login http://54.255.206.44:9082 Username: admin Password: WARNING! Your password will be stored unencrypted in /root/.docker/config.json. Configure a credential helper to remove this warning. See https://docs.docker.com/engine/reference/commandline/login/#credentials-store Login Succeeded # 镜像操作 # pull镜像 docker pull nginx:latest # 给镜像打tag docker tag nginx:latest 54.255.206.44:9082/my-docker-host/nginx:latest # 推送镜像 docker push 54.255.206.44:9082/my-docker-host/nginx:latest '><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://connorzhangyu.com/posts/%E8%AE%B0%E5%BD%95/nexus-3/><link rel=stylesheet href=https://connorzhangyu.com/styles.css><link rel="shortcut icon" href=https://connorzhangyu.com/img/theme-colors/orange.png><link rel=apple-touch-icon href=https://connorzhangyu.com/img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta name=twitter:site content><meta name=twitter:creator content="Anthony"><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="og:title" content="nexus3"><meta property="og:description" content='Docker仓库 类型 端口 仓库名字 Host 9083 My-docker-host proxy My-docker-proxy group 9082 My-docker-group 创建一个存储目录
+名字随便起,没有太多影响
+![image-20240917104642184](../../../../../../Library/Application Support/typora-user-images/image-20240917104642184.png)
+创建docker host仓库
+![image-20240917104411323](../../../../../../Library/Application Support/typora-user-images/image-20240917104411323.png)
+![image-20240917104515460](../../../../../../Library/Application Support/typora-user-images/image-20240917104515460.png)
+![image-20240917104240181](../../../../../../Library/Application Support/typora-user-images/image-20240917104240181.png)
+创建proxy仓库
+![image-20240917113108378](../../../../../../Library/Application Support/typora-user-images/image-20240917113108378.png)
+![image-20240917113128237](../../../../../../Library/Application Support/typora-user-images/image-20240917113128237.png)
+group
+![image-20240917113647416](../../../../../../Library/Application Support/typora-user-images/image-20240917113647416.png)
+docker客户端配置
+# vim /etc/docker/daemon.json { "insecure-registries": ["54.255.206.44:9082", "54.255.206.44:9083"] } # 需要重启 systemctl daemon-reload systemctl restart docker 登录
+登录之后凭证保存在/.docker/config.json或者是在,部署的时候遇到一个问题,就是jenkins打包之后docker login可以,但是push的时候就提示没有授权,暂时的解决办法是,宿主机docker login下,保存凭证,然后jenkins容器挂载/root/.docker/config.json这个文件,jenkins打包就可以不用登录,直接推送
+root@anthony:~# docker login http://54.255.206.44:9083 Username: admin Password: Error response from daemon: login attempt to http://54.255.206.44:9083/v2/ failed with status: 401 Unauthorized # ---------------------------------------------------------------------------- root@anthony:~# docker login http://54.255.206.44:9082 Username: admin Password: WARNING! Your password will be stored unencrypted in /root/.docker/config.json. Configure a credential helper to remove this warning. See https://docs.docker.com/engine/reference/commandline/login/#credentials-store Login Succeeded # 镜像操作 # pull镜像 docker pull nginx:latest # 给镜像打tag docker tag nginx:latest 54.255.206.44:9082/my-docker-host/nginx:latest # 推送镜像 docker push 54.255.206.44:9082/my-docker-host/nginx:latest '><meta property="og:url" content="https://connorzhangyu.com/posts/%E8%AE%B0%E5%BD%95/nexus-3/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="https://image.runtimes.cc/202409151814537.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><meta property="article:section" content="记录"><meta property="article:published_time" content="2024-03-12 18:52:43 +0000 UTC"></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></nav></header><div class=content><article class=post><h1 class=post-title><a href=https://connorzhangyu.com/posts/%E8%AE%B0%E5%BD%95/nexus-3/>nexus3</a></h1><div class=post-meta><time class=post-date>2024-03-12</time><span class=post-author>Anthony</span></div><img src=https://image.runtimes.cc/202409151814537.png class=post-cover alt=" " title="Cover Image"><div class=post-content><div><h1 id=docker仓库>Docker仓库<a href=#docker仓库 class=hanchor arialabel=Anchor>&#8983;</a></h1><table><thead><tr><th>类型</th><th>端口</th><th>仓库名字</th></tr></thead><tbody><tr><td>Host</td><td>9083</td><td>My-docker-host</td></tr><tr><td>proxy</td><td></td><td>My-docker-proxy</td></tr><tr><td>group</td><td>9082</td><td>My-docker-group</td></tr></tbody></table><p><strong>创建一个存储目录</strong></p><p>名字随便起,没有太多影响</p><p>![image-20240917104642184](../../../../../../Library/Application Support/typora-user-images/image-20240917104642184.png)</p><p>创建docker host仓库</p><p>![image-20240917104411323](../../../../../../Library/Application Support/typora-user-images/image-20240917104411323.png)</p><p>![image-20240917104515460](../../../../../../Library/Application Support/typora-user-images/image-20240917104515460.png)</p><p>![image-20240917104240181](../../../../../../Library/Application Support/typora-user-images/image-20240917104240181.png)</p><p>创建proxy仓库</p><p>![image-20240917113108378](../../../../../../Library/Application Support/typora-user-images/image-20240917113108378.png)</p><p>![image-20240917113128237](../../../../../../Library/Application Support/typora-user-images/image-20240917113128237.png)</p><p>group</p><p>![image-20240917113647416](../../../../../../Library/Application Support/typora-user-images/image-20240917113647416.png)</p><p>docker客户端配置</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># vim /etc/docker/daemon.json</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;insecure-registries&#34;</span>: <span style=color:#f92672>[</span><span style=color:#e6db74>&#34;54.255.206.44:9082&#34;</span>, <span style=color:#e6db74>&#34;54.255.206.44:9083&#34;</span><span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 需要重启</span>
+</span></span><span style=display:flex><span>systemctl daemon-reload
+</span></span><span style=display:flex><span>systemctl restart docker
+</span></span></code></pre></div><p>登录</p><p>登录之后凭证保存在<code>/.docker/config.json</code>或者是在,部署的时候遇到一个问题,就是jenkins打包之后docker login可以,但是push的时候就提示没有授权,暂时的解决办法是,宿主机docker login下,保存凭证,然后jenkins容器挂载<code>/root/.docker/config.json</code>这个文件,jenkins打包就可以不用登录,直接推送</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>root@anthony:~# docker login http://54.255.206.44:9083
+</span></span><span style=display:flex><span>Username: admin
+</span></span><span style=display:flex><span>Password:
+</span></span><span style=display:flex><span>Error response from daemon: login attempt to http://54.255.206.44:9083/v2/ failed with status: <span style=color:#ae81ff>401</span> Unauthorized
+</span></span><span style=display:flex><span><span style=color:#75715e># ----------------------------------------------------------------------------</span>
+</span></span><span style=display:flex><span>root@anthony:~# docker login http://54.255.206.44:9082
+</span></span><span style=display:flex><span>Username: admin
+</span></span><span style=display:flex><span>Password:
+</span></span><span style=display:flex><span>WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
+</span></span><span style=display:flex><span>Configure a credential helper to remove this warning. See
+</span></span><span style=display:flex><span>https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Login Succeeded
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># 镜像操作</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># pull镜像</span>
+</span></span><span style=display:flex><span>docker pull nginx:latest
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 给镜像打tag</span>
+</span></span><span style=display:flex><span>docker tag nginx:latest 54.255.206.44:9082/my-docker-host/nginx:latest
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 推送镜像</span>
+</span></span><span style=display:flex><span>docker push 54.255.206.44:9082/my-docker-host/nginx:latest
+</span></span></code></pre></div></div></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Read other posts</span><hr></div><div class=pagination__buttons><span class="button previous"><a href=https://connorzhangyu.com/posts/pinia/><span class=button__icon>←</span>
+<span class=button__text>Pinia</span>
+</a></span><span class="button next"><a href=https://connorzhangyu.com/posts/springcloud/><span class=button__text>SpringCloud</span>
+<span class=button__icon>→</span></a></span></div></div></article></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>
+<span>:: <a href=https://github.com/mirus-ua/hugo-theme-re-terminal target=_blank>Theme</a> made by <a href=https://github.com/mirus-ua target=_blank>Mirus</a></span></div></div></footer><script type=text/javascript src=/bundle.min.js></script></div></body></html>

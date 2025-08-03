@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>区块链 on Hello World</title><link>https://connorzhangyu.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/</link><description>Recent content in 区块链 on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Thu, 29 May 2025 10:23:17 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/index.xml" rel="self" type="application/rss+xml"/><item><title>Dapp</title><link>https://connorzhangyu.com/posts/dapp/</link><pubDate>Thu, 29 May 2025 10:23:17 +0000</pubDate><guid>https://connorzhangyu.com/posts/dapp/</guid><description>&lt;h1 id="helloworld合约">HelloWorld合约&lt;/h1>
+&lt;p>&lt;a href="https://remix.ethereum.org">Remix编辑器&lt;/a>&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202505281038720.png" alt="image-20250524144934373">&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-solidity" data-lang="solidity">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// SPDX-License-Identifier: MIT
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">pragma solidity&lt;/span> &lt;span style="color:#f92672">^&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">8&lt;/span>.&lt;span style="color:#ae81ff">13&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">contract&lt;/span> &lt;span style="color:#a6e22e">helloworld&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">helloWorld&lt;/span>() &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">pure&lt;/span> &lt;span style="color:#66d9ef">returns&lt;/span> (&lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#66d9ef">memory&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Hello, World!&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://image.runtimes.cc/202505281038400.png" alt="image-20250524145024856">&lt;/p>
+&lt;h1 id="发行代币">发行代币&lt;/h1>
+&lt;p>在闲鱼,淘宝上买些测试币,也可以通过水龙头获取(只是有点要求和门槛,不如直接买),这里我买了两笔
+&lt;img src="https://image.runtimes.cc/202505281036642.webp" alt="">&lt;/p>
+&lt;p>新建合约文件&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202505291022584.png" alt="image-20250529101100930">&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-solidity" data-lang="solidity">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// SPDX-License-Identifier: MIT
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">pragma solidity&lt;/span> &lt;span style="color:#f92672">^&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">8&lt;/span>.&lt;span style="color:#ae81ff">13&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> &lt;span style="color:#e6db74">&amp;#34;@openzeppelin/contracts/token/ERC20/ERC20.sol&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">contract&lt;/span> &lt;span style="color:#a6e22e">MyError20Token&lt;/span> &lt;span style="color:#66d9ef">is&lt;/span> ERC20{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">constructor&lt;/span>(&lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#66d9ef">memory&lt;/span> _name,&lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#66d9ef">memory&lt;/span> _symbol) ERC20(_name,_symbol){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _mint(msg.sender,&lt;span style="color:#ae81ff">10000&lt;/span> &lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#ae81ff">10&lt;/span> &lt;span style="color:#f92672">**&lt;/span> &lt;span style="color:#ae81ff">18&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://image.runtimes.cc/202505291022541.png" alt="image-20250529101412816">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202505291022024.png" alt="image-20250529101510973">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202505291022071.png" alt="image-20250529101815851">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202505291022160.png" alt="image-20250529102052827">&lt;/p></description><content>&lt;h1 id="helloworld合约">HelloWorld合约&lt;/h1>
+&lt;p>&lt;a href="https://remix.ethereum.org">Remix编辑器&lt;/a>&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202505281038720.png" alt="image-20250524144934373">&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-solidity" data-lang="solidity">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// SPDX-License-Identifier: MIT
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">pragma solidity&lt;/span> &lt;span style="color:#f92672">^&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">8&lt;/span>.&lt;span style="color:#ae81ff">13&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">contract&lt;/span> &lt;span style="color:#a6e22e">helloworld&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">helloWorld&lt;/span>() &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">pure&lt;/span> &lt;span style="color:#66d9ef">returns&lt;/span> (&lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#66d9ef">memory&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Hello, World!&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://image.runtimes.cc/202505281038400.png" alt="image-20250524145024856">&lt;/p>
+&lt;h1 id="发行代币">发行代币&lt;/h1>
+&lt;p>在闲鱼,淘宝上买些测试币,也可以通过水龙头获取(只是有点要求和门槛,不如直接买),这里我买了两笔
+&lt;img src="https://image.runtimes.cc/202505281036642.webp" alt="">&lt;/p>
+&lt;p>新建合约文件&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202505291022584.png" alt="image-20250529101100930">&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-solidity" data-lang="solidity">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// SPDX-License-Identifier: MIT
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">pragma solidity&lt;/span> &lt;span style="color:#f92672">^&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">8&lt;/span>.&lt;span style="color:#ae81ff">13&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> &lt;span style="color:#e6db74">&amp;#34;@openzeppelin/contracts/token/ERC20/ERC20.sol&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">contract&lt;/span> &lt;span style="color:#a6e22e">MyError20Token&lt;/span> &lt;span style="color:#66d9ef">is&lt;/span> ERC20{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">constructor&lt;/span>(&lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#66d9ef">memory&lt;/span> _name,&lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#66d9ef">memory&lt;/span> _symbol) ERC20(_name,_symbol){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _mint(msg.sender,&lt;span style="color:#ae81ff">10000&lt;/span> &lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#ae81ff">10&lt;/span> &lt;span style="color:#f92672">**&lt;/span> &lt;span style="color:#ae81ff">18&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://image.runtimes.cc/202505291022541.png" alt="image-20250529101412816">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202505291022024.png" alt="image-20250529101510973">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202505291022071.png" alt="image-20250529101815851">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202505291022160.png" alt="image-20250529102052827">&lt;/p></content></item><item><title>Tron</title><link>https://connorzhangyu.com/posts/tron/</link><pubDate>Wed, 20 Dec 2023 20:48:19 +0000</pubDate><guid>https://connorzhangyu.com/posts/tron/</guid><description>&lt;blockquote>
+&lt;p>&lt;a href="https://cn.developers.tron.network/reference/quickstart">波场官方trident-java文档&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://blog.csdn.net/u013903024/article/details/121263515">m1 mac Android protobuf 遇到的问题&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://tronprotocol.github.io/documentation-zh/api/http/#walletcreateaccount">tron中文文档&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://blog.csdn.net/sail331x/article/details/112972860">trc20离线签名的demo,有trxdent-java,就不需要这个了,使用http的方式可以看看&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://blog.csdn.net/sail331x/article/details/114765892?spm=1001.2101.3001.6650.4&amp;amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-4-114765892-blog-112972860.235%5Ev39%5Epc_relevant_anti_t3&amp;amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-4-114765892-blog-112972860.235%5Ev39%5Epc_relevant_anti_t3&amp;amp;utm_relevant_index=5">trc20离线签名的demo,有trxdent-java,就不需要这个了,使用http的方式可以看看,另外一个demo&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://liukay.com/">要继续学习tron可以看看&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;p>打包依赖&lt;/p>
+&lt;p>&lt;a href="https://github.com/tronprotocol/trident">下载源文件trident-java&lt;/a>&lt;/p>
+&lt;p>这里选择&lt;code>main&lt;/code>分支&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051500865.png" alt="在这里插入图片描述">&lt;/p>
+&lt;p>进入trident-java文件夹,可以看到有build.gradle,如果是mac系统,修改一下依赖&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-gradle" data-lang="gradle">&lt;span style="display:flex;">&lt;span>protoc &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 原来的依赖
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> artifact &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;com.google.protobuf:protoc:3.12.0&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 修改之后的依赖
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> artifact &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;com.google.protobuf:protoc:3.12.0:osx-x86_64&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> plugins &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> grpc &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 原来的依赖
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> artifact &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;io.grpc:protoc-gen-grpc-java:1.31.0&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 修改之后的依赖
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> artifact &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;io.grpc:protoc-gen-grpc-java:1.31.0:osx-x86_64&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>IDEA打包&lt;img src="https://image.runtimes.cc/202404051500207.png" alt="image-20231220205836156">&lt;/p>
+&lt;p>打包之后,在每个子模块的&lt;code>build/libs/xxx-jar&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051500763.png" alt="image-20231220210042662">&lt;/p>
+&lt;p>下面的操作就可以跟着开发文档了,创建项目&lt;/p>
+&lt;p>pom.xml&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.tron.trident&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>abi&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>0.8.0&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;scope&amp;gt;&lt;/span>system&lt;span style="color:#f92672">&amp;lt;/scope&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;systemPath&amp;gt;&lt;/span>${project.basedir}/src/main/resources/jar/abi-0.8.0.jar&lt;span style="color:#f92672">&amp;lt;/systemPath&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.tron.trident&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>utils&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>0.8.0&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;scope&amp;gt;&lt;/span>system&lt;span style="color:#f92672">&amp;lt;/scope&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;systemPath&amp;gt;&lt;/span>${project.basedir}/src/main/resources/jar/utils-0.8.0.jar&lt;span style="color:#f92672">&amp;lt;/systemPath&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.tron.trident&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>core&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>0.8.0&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;scope&amp;gt;&lt;/span>system&lt;span style="color:#f92672">&amp;lt;/scope&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;systemPath&amp;gt;&lt;/span>${project.basedir}/src/main/resources/jar/core-0.8.0.jar&lt;span style="color:#f92672">&amp;lt;/systemPath&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>io.grpc&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>grpc-all&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>1.48.1&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>查询余额的代码&lt;/p></description><content>&lt;blockquote>
+&lt;p>&lt;a href="https://cn.developers.tron.network/reference/quickstart">波场官方trident-java文档&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://blog.csdn.net/u013903024/article/details/121263515">m1 mac Android protobuf 遇到的问题&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://tronprotocol.github.io/documentation-zh/api/http/#walletcreateaccount">tron中文文档&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://blog.csdn.net/sail331x/article/details/112972860">trc20离线签名的demo,有trxdent-java,就不需要这个了,使用http的方式可以看看&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://blog.csdn.net/sail331x/article/details/114765892?spm=1001.2101.3001.6650.4&amp;amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-4-114765892-blog-112972860.235%5Ev39%5Epc_relevant_anti_t3&amp;amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-4-114765892-blog-112972860.235%5Ev39%5Epc_relevant_anti_t3&amp;amp;utm_relevant_index=5">trc20离线签名的demo,有trxdent-java,就不需要这个了,使用http的方式可以看看,另外一个demo&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://liukay.com/">要继续学习tron可以看看&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;p>打包依赖&lt;/p>
+&lt;p>&lt;a href="https://github.com/tronprotocol/trident">下载源文件trident-java&lt;/a>&lt;/p>
+&lt;p>这里选择&lt;code>main&lt;/code>分支&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051500865.png" alt="在这里插入图片描述">&lt;/p>
+&lt;p>进入trident-java文件夹,可以看到有build.gradle,如果是mac系统,修改一下依赖&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-gradle" data-lang="gradle">&lt;span style="display:flex;">&lt;span>protoc &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 原来的依赖
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> artifact &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;com.google.protobuf:protoc:3.12.0&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 修改之后的依赖
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> artifact &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;com.google.protobuf:protoc:3.12.0:osx-x86_64&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> plugins &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> grpc &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 原来的依赖
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> artifact &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;io.grpc:protoc-gen-grpc-java:1.31.0&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// 修改之后的依赖
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span> artifact &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;io.grpc:protoc-gen-grpc-java:1.31.0:osx-x86_64&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>IDEA打包&lt;img src="https://image.runtimes.cc/202404051500207.png" alt="image-20231220205836156">&lt;/p>
+&lt;p>打包之后,在每个子模块的&lt;code>build/libs/xxx-jar&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051500763.png" alt="image-20231220210042662">&lt;/p>
+&lt;p>下面的操作就可以跟着开发文档了,创建项目&lt;/p>
+&lt;p>pom.xml&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.tron.trident&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>abi&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>0.8.0&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;scope&amp;gt;&lt;/span>system&lt;span style="color:#f92672">&amp;lt;/scope&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;systemPath&amp;gt;&lt;/span>${project.basedir}/src/main/resources/jar/abi-0.8.0.jar&lt;span style="color:#f92672">&amp;lt;/systemPath&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.tron.trident&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>utils&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>0.8.0&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;scope&amp;gt;&lt;/span>system&lt;span style="color:#f92672">&amp;lt;/scope&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;systemPath&amp;gt;&lt;/span>${project.basedir}/src/main/resources/jar/utils-0.8.0.jar&lt;span style="color:#f92672">&amp;lt;/systemPath&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>org.tron.trident&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>core&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>0.8.0&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;scope&amp;gt;&lt;/span>system&lt;span style="color:#f92672">&amp;lt;/scope&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;systemPath&amp;gt;&lt;/span>${project.basedir}/src/main/resources/jar/core-0.8.0.jar&lt;span style="color:#f92672">&amp;lt;/systemPath&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>io.grpc&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>grpc-all&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;version&amp;gt;&lt;/span>1.48.1&lt;span style="color:#f92672">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;/dependency&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>查询余额的代码&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> String privateKey &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;私钥&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> String apiKey &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;apiKey&amp;#34;&lt;/span>;&lt;span style="color:#75715e">//波场申请&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Test&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">getCount&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//生成密钥对&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> KeyPair keyPair &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> KeyPair(privateKey);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//地址转换&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(keyPair.&lt;span style="color:#a6e22e">toHexAddress&lt;/span>());
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ApiWrapper wrapper &lt;span style="color:#f92672">=&lt;/span> ApiWrapper.&lt;span style="color:#a6e22e">ofMainnet&lt;/span>(privateKey,apiKey);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//账号查询&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Account account &lt;span style="color:#f92672">=&lt;/span> wrapper.&lt;span style="color:#a6e22e">getAccount&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;账户地址&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//查询余额&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(account.&lt;span style="color:#a6e22e">getBalance&lt;/span>());
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(account.&lt;span style="color:#a6e22e">getCreateTime&lt;/span>());
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>转账示例&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> String &lt;span style="color:#a6e22e">transferTrc&lt;/span>(String fromAddress, String toAddress, String amount, String contractAddress, String privateKey) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ApiWrapper wrapper &lt;span style="color:#f92672">=&lt;/span> ApiWrapper.&lt;span style="color:#a6e22e">ofNile&lt;/span>(privateKey);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> String ret &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">try&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//根据合约地址获取封装好的合约&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Contract contract &lt;span style="color:#f92672">=&lt;/span> wrapper.&lt;span style="color:#a6e22e">getContract&lt;/span>(contractAddress);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//创建一个TRC20合约对象&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Trc20Contract token &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> Trc20Contract(contract, fromAddress, wrapper);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//获取想要转移的数量&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> BigInteger sunAmountValue &lt;span style="color:#f92672">=&lt;/span> Convert.&lt;span style="color:#a6e22e">toSun&lt;/span>(amount, Convert.&lt;span style="color:#a6e22e">Unit&lt;/span>.&lt;span style="color:#a6e22e">TRX&lt;/span>).&lt;span style="color:#a6e22e">toBigInteger&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//设置最大手续费&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">long&lt;/span> maxTrx &lt;span style="color:#f92672">=&lt;/span> Convert.&lt;span style="color:#a6e22e">toSun&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;17&amp;#34;&lt;/span>, Convert.&lt;span style="color:#a6e22e">Unit&lt;/span>.&lt;span style="color:#a6e22e">TRX&lt;/span>).&lt;span style="color:#a6e22e">longValue&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ret &lt;span style="color:#f92672">=&lt;/span> token.&lt;span style="color:#a6e22e">transfer&lt;/span>(toAddress, sunAmountValue.&lt;span style="color:#a6e22e">longValue&lt;/span>(), 0, &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span>, maxTrx);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;哈希：&amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> ret);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#66d9ef">catch&lt;/span> (Exception e) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;转移失败:&amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> e.&lt;span style="color:#a6e22e">getMessage&lt;/span>().&lt;span style="color:#a6e22e">toString&lt;/span>());
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#66d9ef">finally&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> wrapper.&lt;span style="color:#a6e22e">close&lt;/span>();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> ret;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item></channel></rss>

@@ -1,0 +1,73 @@
+<!doctype html><html lang=zh><head><title>安全框架 :: Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://connorzhangyu.com/tags/%E5%AE%89%E5%85%A8%E6%A1%86%E6%9E%B6/><link rel=stylesheet href=https://connorzhangyu.com/styles.css><link rel="shortcut icon" href=https://connorzhangyu.com/img/theme-colors/orange.png><link rel=apple-touch-icon href=https://connorzhangyu.com/img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta name=twitter:site content><meta name=twitter:creator content><meta property="og:locale" content="zh"><meta property="og:type" content="website"><meta property="og:title" content="安全框架"><meta property="og:description" content><meta property="og:url" content="https://connorzhangyu.com/tags/%E5%AE%89%E5%85%A8%E6%A1%86%E6%9E%B6/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="https://connorzhangyu.com/img/favicon/orange.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><link href=/tags/%E5%AE%89%E5%85%A8%E6%A1%86%E6%9E%B6/index.xml rel=alternate type=application/rss+xml title="Hello World"></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></nav></header><div class=content><h1>Posts for: #安全框架</h1><div class=posts><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/spring-security/>Spring Security</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/spring-security/>Spring Security</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/>权限控制</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/%E5%AE%89%E5%85%A8%E6%A1%86%E6%9E%B6/>安全框架</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/spring/>Spring</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/java/>Java</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051525605.jpg class=post-cover alt="Spring Security" title="Cover Image"><div class=post-content><h1 id=spring-security>Spring Security</h1><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>&lt;dependency&gt;
+</span></span><span style=display:flex><span>    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+</span></span><span style=display:flex><span>    &lt;artifactId&gt;spring-boot-starter-security&lt;/artifactId&gt;
+</span></span><span style=display:flex><span>&lt;/dependency&gt;
+</span></span></code></pre></div><p>登录业务</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#a6e22e>@Service</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>LoginService</span> {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> Map<span style=color:#f92672>&lt;</span>String, RedisUser<span style=color:#f92672>&gt;</span> map <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> HashMap<span style=color:#f92672>&lt;&gt;</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Resource</span>
+</span></span><span style=display:flex><span>    AuthenticationManager authenticationManager;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>login</span>(SysUser sysUser) {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// AuthenticationManager 进行用户认证</span>
+</span></span><span style=display:flex><span>        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> UsernamePasswordAuthenticationToken(sysUser.<span style=color:#a6e22e>getUsername</span>(), sysUser.<span style=color:#a6e22e>getPassword</span>());
+</span></span><span style=display:flex><span>        Authentication authenticate <span style=color:#f92672>=</span> authenticationManager.<span style=color:#a6e22e>authenticate</span>(usernamePasswordAuthenticationToken);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// 如果认证不通过,给出对应的提示</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (Objects.<span style=color:#a6e22e>isNull</span>(authenticate)) {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> RuntimeException(<span style=color:#e6db74>&#34;登录失败&#34;</span>);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// 如果认证通过,使用username给jwt生成一个</span>
+</span></span><span style=display:flex><span>        RedisUser principal <span style=color:#f92672>=</span> (RedisUser) authenticate.<span style=color:#a6e22e>getPrincipal</span>();
+</span></span><span style=display:flex><span>        map.<span style=color:#a6e22e>put</span>(principal.<span style=color:#a6e22e>getUsername</span>(), principal);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> createJWT(<span style=color:#e6db74>&#34;1234567&#34;</span>, 9990000,  principal.<span style=color:#a6e22e>getUsername</span>());
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>logout</span>() {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        UsernamePasswordAuthenticationToken authentication <span style=color:#f92672>=</span> (UsernamePasswordAuthenticationToken) SecurityContextHolder.<span style=color:#a6e22e>getContext</span>().<span style=color:#a6e22e>getAuthentication</span>();
+</span></span><span style=display:flex><span>        RedisUser principal <span style=color:#f92672>=</span> (RedisUser) authentication.<span style=color:#a6e22e>getPrincipal</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        String username <span style=color:#f92672>=</span> principal.<span style=color:#a6e22e>getUsername</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// 从redis里删除</span>
+</span></span><span style=display:flex><span>        map.<span style=color:#a6e22e>remove</span>(username);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#a6e22e>@RestController</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@RequestMapping</span>(<span style=color:#e6db74>&#34;/&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>LoginController</span> {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Resource</span>
+</span></span><span style=display:flex><span>    LoginService loginService;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@PostMapping</span>(<span style=color:#e6db74>&#34;/user/login&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> ResponseEntity<span style=color:#f92672>&lt;</span>HashMap<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>login</span>(<span style=color:#a6e22e>@RequestParam</span>(<span style=color:#e6db74>&#34;username&#34;</span>) String username,<span style=color:#a6e22e>@RequestParam</span>(<span style=color:#e6db74>&#34;password&#34;</span>) String password){
+</span></span><span style=display:flex><span>        SysUser sysUser <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> SysUser();
+</span></span><span style=display:flex><span>        sysUser.<span style=color:#a6e22e>setUsername</span>(username);
+</span></span><span style=display:flex><span>        sysUser.<span style=color:#a6e22e>setPassword</span>(password);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        HashMap<span style=color:#f92672>&lt;</span>String, Object<span style=color:#f92672>&gt;</span> stringObjectHashMap <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> HashMap<span style=color:#f92672>&lt;&gt;</span>();
+</span></span><span style=display:flex><span>        stringObjectHashMap.<span style=color:#a6e22e>put</span>(<span style=color:#e6db74>&#34;token&#34;</span>, loginService.<span style=color:#a6e22e>login</span>(sysUser));
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> ResponseEntity.<span style=color:#a6e22e>status</span>(200).<span style=color:#a6e22e>body</span>(stringObjectHashMap);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@PostMapping</span>(<span style=color:#e6db74>&#34;/user/logout&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> ResponseEntity<span style=color:#f92672>&lt;</span>String<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>logout</span>(){
+</span></span><span style=display:flex><span>        loginService.<span style=color:#a6e22e>logout</span>();
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> ResponseEntity.<span style=color:#a6e22e>ok</span>(<span style=color:#e6db74>&#34;success&#34;</span>);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>验证账户</p></div><div><a class="read-more button" href=/posts/spring-security/>Read more →</a></div></article><div class=pagination><div class=pagination__buttons></div></div></div></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>
+<span>:: <a href=https://github.com/mirus-ua/hugo-theme-re-terminal target=_blank>Theme</a> made by <a href=https://github.com/mirus-ua target=_blank>Mirus</a></span></div></div></footer><script type=text/javascript src=/bundle.min.js></script></div></body></html>
