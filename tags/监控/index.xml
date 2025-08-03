@@ -1,47 +1,47 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>监控 on Hello World</title><link>https://connorzhangyu.com/tags/%E7%9B%91%E6%8E%A7/</link><description>Recent content in 监控 on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Sat, 19 Nov 2022 18:25:00 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/%E7%9B%91%E6%8E%A7/index.xml" rel="self" type="application/rss+xml"/><item><title>Grafana</title><link>https://connorzhangyu.com/posts/grafana/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/grafana/</guid><description>&lt;h1 id="监控主机">监控主机&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>监控 on Hello World</title><link>https://connorzhangyu.com/tags/%E7%9B%91%E6%8E%A7/</link><description>Recent content in 监控 on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sat, 19 Nov 2022 18:25:00 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/%E7%9B%91%E6%8E%A7/index.xml" rel="self" type="application/rss+xml"/><item><title>Grafana</title><link>https://connorzhangyu.com/posts/grafana/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/grafana/</guid><description>&lt;h1 id="监控主机">监控主机&lt;/h1>
 &lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>HostName&lt;/th>
- &lt;th>IP&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>master&lt;/td>
- &lt;td>10.0.0.6&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>node1&lt;/td>
- &lt;td>10.0.0.9&lt;/td>
- &lt;/tr>
- &lt;/tbody>
+&lt;thead>
+&lt;tr>
+&lt;th>HostName&lt;/th>
+&lt;th>IP&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>master&lt;/td>
+&lt;td>10.0.0.6&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>node1&lt;/td>
+&lt;td>10.0.0.9&lt;/td>
+&lt;/tr>
+&lt;/tbody>
 &lt;/table>
 &lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>服务&lt;/th>
- &lt;th>端口&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>Grafana&lt;/td>
- &lt;td>3000&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Prometheus&lt;/td>
- &lt;td>9090&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>node-exporter&lt;/td>
- &lt;td>9100&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>Cadvisor&lt;/td>
- &lt;td>8080&lt;/td>
- &lt;/tr>
- &lt;/tbody>
+&lt;thead>
+&lt;tr>
+&lt;th>服务&lt;/th>
+&lt;th>端口&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Grafana&lt;/td>
+&lt;td>3000&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Prometheus&lt;/td>
+&lt;td>9090&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>node-exporter&lt;/td>
+&lt;td>9100&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Cadvisor&lt;/td>
+&lt;td>8080&lt;/td>
+&lt;/tr>
+&lt;/tbody>
 &lt;/table>
 &lt;h2 id="部署prometheusmaster机器">部署Prometheus(master机器)&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>docker run -d &lt;span style="color:#ae81ff">\
@@ -56,11 +56,11 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">static_configs&lt;/span>:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">targets&lt;/span>: [&lt;span style="color:#e6db74">&amp;#39;10.0.0.6:9090&amp;#39;&lt;/span>]
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 	&lt;span style="color:#75715e">#添加master及node节点添加&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">#添加master及node节点添加&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">job_name&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;master&amp;#39;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">static_configs&lt;/span>:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">targets&lt;/span>: [&lt;span style="color:#e6db74">&amp;#39;10.0.0.6:9100&amp;#39;&lt;/span>]
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">job_name&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;node&amp;#39;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">static_configs&lt;/span>:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">targets&lt;/span>: [&lt;span style="color:#e6db74">&amp;#39;10.0.0.9:9100&amp;#39;&lt;/span>]
@@ -120,4 +120,200 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 设置为开机自动启动&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo systemctl enable node_exporter
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- endtab -->
-&lt;p>{% endtabs %}&lt;/p></description></item></channel></rss>
+&lt;p>{% endtabs %}&lt;/p></description><content>&lt;h1 id="监控主机">监控主机&lt;/h1>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>HostName&lt;/th>
+&lt;th>IP&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>master&lt;/td>
+&lt;td>10.0.0.6&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>node1&lt;/td>
+&lt;td>10.0.0.9&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>服务&lt;/th>
+&lt;th>端口&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Grafana&lt;/td>
+&lt;td>3000&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Prometheus&lt;/td>
+&lt;td>9090&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>node-exporter&lt;/td>
+&lt;td>9100&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Cadvisor&lt;/td>
+&lt;td>8080&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="部署prometheusmaster机器">部署Prometheus(master机器)&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>docker run -d &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --name&lt;span style="color:#f92672">=&lt;/span>prometheus &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --restart&lt;span style="color:#f92672">=&lt;/span>always &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> -p 9090:9090 &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> -v /root/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> prom/prometheus
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>编辑prometheus.yml配置文件&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">scrape_configs&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">job_name&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;prometheus&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">static_configs&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">targets&lt;/span>: [&lt;span style="color:#e6db74">&amp;#39;10.0.0.6:9090&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">#添加master及node节点添加&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">job_name&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;master&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">static_configs&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">targets&lt;/span>: [&lt;span style="color:#e6db74">&amp;#39;10.0.0.6:9100&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">job_name&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;node&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">static_configs&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">targets&lt;/span>: [&lt;span style="color:#e6db74">&amp;#39;10.0.0.9:9100&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>这里只是提前编辑好,之后如果要添加新的机器,再后面添加&lt;/p>&lt;/blockquote>
+&lt;p>访问master的9090端口,&lt;code>http://10.0.0.6:9090/&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051421127.png" alt="">&lt;/p>
+&lt;h2 id="部署node_exportermaster和node">部署node_exporter(master和node)&lt;/h2>
+&lt;p>看需求,master不部署也可以&lt;/p>
+&lt;p>{% tabs docker %}&lt;/p>
+&lt;!-- tab docker安装-->
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>docker run -d &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --name node-exporter &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --restart&lt;span style="color:#f92672">=&lt;/span>always &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> -p 9100:9100 &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> -v &lt;span style="color:#e6db74">&amp;#34;/proc:/host/proc:ro&amp;#34;&lt;/span> &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> -v &lt;span style="color:#e6db74">&amp;#34;/sys:/host/sys:ro&amp;#34;&lt;/span> &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> -v &lt;span style="color:#e6db74">&amp;#34;/:/rootfs:ro&amp;#34;&lt;/span> &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> prom/node-exporter
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- endtab -->
+&lt;!-- tab 源码安装-->
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 下载最新的node_exporter版本&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>wget https://github.com/prometheus/node_exporter/releases/download/v1.6.1/node_exporter-1.6.1.linux-amd64.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 解压缩下载的文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tar xvfz node_exporter-1.6.1.linux-amd64.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 将可执行文件移动到 /usr/local/bin&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo mv node_exporter-1.6.1.linux-amd64/node_exporter /usr/local/bin/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 创建 node_exporter 用户&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>useradd -rs /bin/false node_exporter
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 创建 systemd 服务&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>vim /etc/systemd/system/node_exporter.service
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>Unit&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Description&lt;span style="color:#f92672">=&lt;/span>Node Exporter
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Wants&lt;span style="color:#f92672">=&lt;/span>network-online.target
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>After&lt;span style="color:#f92672">=&lt;/span>network-online.target
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>Service&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>User&lt;span style="color:#f92672">=&lt;/span>node_exporter
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Group&lt;span style="color:#f92672">=&lt;/span>node_exporter
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Type&lt;span style="color:#f92672">=&lt;/span>simple
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ExecStart&lt;span style="color:#f92672">=&lt;/span>/usr/local/bin/node_exporter
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>Install&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>WantedBy&lt;span style="color:#f92672">=&lt;/span>multi-user.target
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 重新加载 systemd 配置&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo systemctl daemon-reload
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 启动 node_exporter 服务&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo systemctl start node_exporter
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 设置为开机自动启动&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo systemctl enable node_exporter
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;!-- endtab -->
+&lt;p>{% endtabs %}&lt;/p>
+&lt;p>验证访问&lt;code>http://&amp;lt;你的服务器IP&amp;gt;:9100/metrics&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051421323.png" alt="">&lt;/p>
+&lt;p>点击Mertrics,下图为node通过9100端口暴露出的监控指标&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051421669.png" alt="">&lt;/p>
+&lt;p>再次访问master的9090端口,就会显示上面的 &lt;code>UP&lt;/code> 状态&lt;/p>
+&lt;p>再修改&lt;code>prometheus.yml&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">scrape_configs&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">job_name&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;node_exporter&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">static_configs&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">targets&lt;/span>: [&lt;span style="color:#e6db74">&amp;#39;&amp;lt;你的服务器IP&amp;gt;:9100&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="部署grafana">部署Grafana&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 新建空文件夹grafana,用来存储数据&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mkdir /root/grafana
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 设置权限&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>chmod &lt;span style="color:#ae81ff">777&lt;/span> -R /root/grafana
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 运行&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker run -d &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> -p 3000:3000 &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --name&lt;span style="color:#f92672">=&lt;/span>grafana &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> -e &lt;span style="color:#e6db74">&amp;#34;GF_SECURITY_ADMIN_PASSWORD=admin&amp;#34;&lt;/span> &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> -v /root/grafana:/var/lib/grafana &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> grafana/grafana
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>访问master的3000端口 默认账号密码都为admin&lt;/p>
+&lt;p>创建数据源&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051421951.png" alt="">&lt;/p>
+&lt;p>联接&lt;code>Prometheus&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051421144.png" alt="">&lt;/p>
+&lt;p>点击Save &amp;amp; Test&lt;/p>
+&lt;p>创建面板&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051421239.png" alt="">&lt;/p>
+&lt;ul>
+&lt;li>点击Import&lt;/li>
+&lt;li>输入模板代码9276&lt;/li>
+&lt;li>点击Load&lt;/li>
+&lt;li>再下拉框选中&lt;code>Prometheus&lt;/code>&lt;/li>
+&lt;li>点击Import&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051421239.png" alt="">&lt;/p>
+&lt;p>查看,选中要查看的主机&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051421087.png" alt="">&lt;/p>
+&lt;h1 id="监控节点主机的容器">监控节点主机的容器&lt;/h1>
+&lt;p>&lt;code>cAdvisor&lt;/code>（Container Advisor）用于采集正在运行的容器资源使用和性能信息。&lt;/p>
+&lt;p>&lt;code>cAdvisor&lt;/code>可以对节点机器上的资源及容器进行实时监控和性能数据采集，包括&lt;code>CPU使用情况内存使用情况 网络吞吐量&lt;/code>及&lt;code>文件系统使用情况&lt;/code>&lt;/p>
+&lt;h2 id="部署cadvisor">部署Cadvisor&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>docker run -d &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --volume&lt;span style="color:#f92672">=&lt;/span>/:/rootfs:ro &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --volume&lt;span style="color:#f92672">=&lt;/span>/var/run:/var/run:ro &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --volume&lt;span style="color:#f92672">=&lt;/span>/sys:/sys:ro &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --volume&lt;span style="color:#f92672">=&lt;/span>/var/lib/docker/:/var/lib/docker:ro &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --volume&lt;span style="color:#f92672">=&lt;/span>/dev/disk/:/dev/disk:ro &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --publish&lt;span style="color:#f92672">=&lt;/span>8080:8080 &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --detach&lt;span style="color:#f92672">=&lt;/span>true &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> --name&lt;span style="color:#f92672">=&lt;/span>cadvisor &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> google/cadvisor:latest
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>访问节点IP+端口&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051422766.png" alt="">&lt;/p>
+&lt;p>修改prometheus.yml,在末尾添加,修改玩之后要重启&lt;code>Prometheus&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>- &lt;span style="color:#f92672">job_name&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;docker&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">static_configs&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">targets&lt;/span>: [&lt;span style="color:#e6db74">&amp;#39;10.0.09:8080&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>访问节点IP+9090&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051422992.png" alt="">&lt;/p>
+&lt;p>&lt;strong>然&lt;/strong>后在master主机登录Grafana，导入Docker监模板，id：193&lt;/p>
+&lt;p>&lt;a href="https://juejin.cn/post/6982487112624898062">在docker中搭建micrometer + grafana + prometheus的jvm监控 - 掘金&lt;/a>&lt;/p>
+&lt;h1 id="监控mysql">监控Mysql&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">docker run -d \&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --&lt;span style="color:#ae81ff">name mysql_exporter \&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --&lt;span style="color:#ae81ff">restart always \&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -&lt;span style="color:#ae81ff">p 9104:9104 \&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -&lt;span style="color:#ae81ff">e DATA_SOURCE_NAME=&amp;#34;root:123456@(10.0.0.8:3306)/&amp;#34; \&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ae81ff">prom/mysqld-exporter&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>模板ID:&lt;strong>7362&lt;/strong>&lt;/p></content></item></channel></rss>

@@ -1,0 +1,225 @@
+<!doctype html><html lang=zh><head><title>Element-UI :: Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://connorzhangyu.com/categories/element-ui/><link rel=stylesheet href=https://connorzhangyu.com/styles.css><link rel="shortcut icon" href=https://connorzhangyu.com/img/theme-colors/orange.png><link rel=apple-touch-icon href=https://connorzhangyu.com/img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta name=twitter:site content><meta name=twitter:creator content><meta property="og:locale" content="zh"><meta property="og:type" content="website"><meta property="og:title" content="Element-UI"><meta property="og:description" content><meta property="og:url" content="https://connorzhangyu.com/categories/element-ui/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="https://connorzhangyu.com/img/favicon/orange.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><link href=/categories/element-ui/index.xml rel=alternate type=application/rss+xml title="Hello World"></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></nav></header><div class=content><h1>Posts for: #Element-UI</h1><div class=posts><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/%E5%89%8D%E7%AB%AF/element-ui/>Element-UI</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/%E5%89%8D%E7%AB%AF/>前端</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/%E6%95%99%E7%A8%8B/>教程</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/%E7%AC%94%E8%AE%B0/>笔记</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/vue.js/>Vue.js</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/element-ui/>Element-UI</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051527979.jpg class=post-cover alt=Element-UI title="Cover Image"><div class=post-content><h1 id=表单验证>表单验证</h1><h2 id=简单版>简单版</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>&lt;<span style=color:#f92672>template</span>&gt;
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;login&#34;</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>el-card</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;box-card&#34;</span>&gt;
+</span></span><span style=display:flex><span>      &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>slot</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;header&#34;</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;clearfix&#34;</span>&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>span</span>&gt;通用后台管理系统&lt;/<span style=color:#f92672>span</span>&gt;
+</span></span><span style=display:flex><span>      &lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      &lt;<span style=color:#f92672>el-form</span>
+</span></span><span style=display:flex><span>          <span style=color:#a6e22e>label-width</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;80px&#34;</span>
+</span></span><span style=display:flex><span>          <span style=color:#a6e22e>:model</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;form&#34;</span>
+</span></span><span style=display:flex><span>          <span style=color:#a6e22e>ref</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;form&#34;</span>&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>el-form-item</span> <span style=color:#a6e22e>label</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;用户名&#34;</span> <span style=color:#a6e22e>prop</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;username&#34;</span>
+</span></span><span style=display:flex><span>                      <span style=color:#a6e22e>:rules</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;[
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            {required:true,message:&#39;请输入用户名&#39;,trigger:&#39;blur&#39;},
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            {min:6,max:12,message:&#39;长度在6-12位字符&#39;,trigger:&#39;blur&#39;},
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        ]&#34;</span>&gt;
+</span></span><span style=display:flex><span>          &lt;<span style=color:#f92672>el-input</span> <span style=color:#a6e22e>v-model</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;form.username&#34;</span>&gt;&lt;/<span style=color:#f92672>el-input</span>&gt;
+</span></span><span style=display:flex><span>        &lt;/<span style=color:#f92672>el-form-item</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>el-form-item</span> <span style=color:#a6e22e>label</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;密码&#34;</span> <span style=color:#a6e22e>prop</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;password&#34;</span>
+</span></span><span style=display:flex><span>                      <span style=color:#a6e22e>:rules</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;[
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            {required:true,message:&#39;请输入密码&#39;,trigger:&#39;blur&#39;},
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            {min:6,max:12,message:&#39;长度在6-12位字符&#39;,trigger:&#39;blur&#39;},
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        ]&#34;</span>&gt;
+</span></span><span style=display:flex><span>          &lt;<span style=color:#f92672>el-input</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;password&#34;</span> <span style=color:#a6e22e>v-model</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;form.password&#34;</span>&gt;&lt;/<span style=color:#f92672>el-input</span>&gt;
+</span></span><span style=display:flex><span>        &lt;/<span style=color:#f92672>el-form-item</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>el-form-item</span>&gt;
+</span></span><span style=display:flex><span>          &lt;<span style=color:#f92672>el-button</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;primary&#34;</span> <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>click</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;login(&#39;form&#39;)&#34;</span>&gt;登录&lt;/<span style=color:#f92672>el-button</span>&gt;
+</span></span><span style=display:flex><span>        &lt;/<span style=color:#f92672>el-form-item</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      &lt;/<span style=color:#f92672>el-form</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    &lt;/<span style=color:#f92672>el-card</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  &lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>template</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>script</span>&gt;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>export</span> <span style=color:#66d9ef>default</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>data</span>() {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> {
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>form</span><span style=color:#f92672>:</span> {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>username</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>password</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;&#34;</span>
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>methods</span><span style=color:#f92672>:</span>{
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>login</span>(<span style=color:#a6e22e>form</span>){
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>$refs</span>[<span style=color:#a6e22e>form</span>].<span style=color:#a6e22e>validate</span>((<span style=color:#a6e22e>valid</span>)=&gt;{
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>valid</span>){
+</span></span><span style=display:flex><span>          <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;验证通过&#34;</span>)
+</span></span><span style=display:flex><span>          <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>axios</span>.<span style=color:#a6e22e>post</span>(<span style=color:#e6db74>&#34;http://localhost&#34;</span>,<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>form</span>).<span style=color:#a6e22e>then</span>(
+</span></span><span style=display:flex><span>              <span style=color:#a6e22e>res</span>=&gt;{
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>res</span>)
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>res</span>.<span style=color:#a6e22e>data</span>.<span style=color:#a6e22e>status</span> <span style=color:#f92672>===</span> <span style=color:#ae81ff>200</span>){
+</span></span><span style=display:flex><span>                  <span style=color:#a6e22e>localStorage</span>.<span style=color:#a6e22e>setItem</span>(<span style=color:#e6db74>&#34;username&#34;</span>,<span style=color:#a6e22e>res</span>.<span style=color:#a6e22e>data</span>.<span style=color:#a6e22e>username</span>)
+</span></span><span style=display:flex><span>                  <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>$message</span>({
+</span></span><span style=display:flex><span>                    <span style=color:#a6e22e>message</span><span style=color:#f92672>:</span><span style=color:#a6e22e>res</span>.<span style=color:#a6e22e>data</span>.<span style=color:#a6e22e>message</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#a6e22e>type</span><span style=color:#f92672>:</span><span style=color:#e6db74>&#39;success&#39;</span>
+</span></span><span style=display:flex><span>                  })
+</span></span><span style=display:flex><span>                  <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>$router</span>.<span style=color:#a6e22e>push</span>(<span style=color:#e6db74>&#39;/home&#39;</span>)
+</span></span><span style=display:flex><span>                }
+</span></span><span style=display:flex><span>              }
+</span></span><span style=display:flex><span>          )
+</span></span><span style=display:flex><span>              .<span style=color:#66d9ef>catch</span>(<span style=color:#a6e22e>err</span>=&gt;{
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>error</span>(<span style=color:#a6e22e>err</span>)
+</span></span><span style=display:flex><span>              })
+</span></span><span style=display:flex><span>        }<span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>          <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>&#34;验证不通过&#34;</span>)
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>      })
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>script</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>style</span> <span style=color:#a6e22e>scoped</span> <span style=color:#a6e22e>lang</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;scss&#34;</span>&gt;
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>login</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>width</span>: <span style=color:#ae81ff>100</span><span style=color:#66d9ef>%</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>height</span>: <span style=color:#ae81ff>100</span><span style=color:#66d9ef>%</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>position</span>: <span style=color:#66d9ef>absolute</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>background</span>: <span style=color:#66d9ef>cadetblue</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#960050;background-color:#1e0010>.box-card</span> <span style=color:#960050;background-color:#1e0010>{</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>width</span>: <span style=color:#ae81ff>450</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>margin</span>: <span style=color:#ae81ff>200</span><span style=color:#66d9ef>px</span> <span style=color:#66d9ef>auto</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#960050;background-color:#1e0010>.el-button</span> <span style=color:#960050;background-color:#1e0010>{</span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>width</span>: <span style=color:#ae81ff>100</span><span style=color:#66d9ef>%</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  <span style=color:#960050;background-color:#1e0010>}</span>
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>style</span>&gt;
+</span></span></code></pre></div><h2 id=自定义校验>自定义校验</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>&lt;<span style=color:#f92672>template</span>&gt;
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;login&#34;</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>el-card</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;box-card&#34;</span>&gt;
+</span></span><span style=display:flex><span>      &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>slot</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;header&#34;</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;clearfix&#34;</span>&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>span</span>&gt;通用后台管理系统&lt;/<span style=color:#f92672>span</span>&gt;
+</span></span><span style=display:flex><span>      &lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      &lt;<span style=color:#f92672>el-form</span>
+</span></span><span style=display:flex><span>          <span style=color:#a6e22e>label-width</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;80px&#34;</span>
+</span></span><span style=display:flex><span>          <span style=color:#a6e22e>:model</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;form&#34;</span>
+</span></span><span style=display:flex><span>          <span style=color:#a6e22e>:rules</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;rules&#34;</span>
+</span></span><span style=display:flex><span>          <span style=color:#a6e22e>ref</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;form&#34;</span>&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>el-form-item</span> <span style=color:#a6e22e>label</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;用户名&#34;</span> <span style=color:#a6e22e>prop</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;username&#34;</span>&gt;
+</span></span><span style=display:flex><span>          &lt;<span style=color:#f92672>el-input</span> <span style=color:#a6e22e>v-model</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;form.username&#34;</span>&gt;&lt;/<span style=color:#f92672>el-input</span>&gt;
+</span></span><span style=display:flex><span>        &lt;/<span style=color:#f92672>el-form-item</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>el-form-item</span> <span style=color:#a6e22e>label</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;密码&#34;</span> <span style=color:#a6e22e>prop</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;password&#34;</span>&gt;
+</span></span><span style=display:flex><span>          &lt;<span style=color:#f92672>el-input</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;password&#34;</span> <span style=color:#a6e22e>v-model</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;form.password&#34;</span>&gt;&lt;/<span style=color:#f92672>el-input</span>&gt;
+</span></span><span style=display:flex><span>        &lt;/<span style=color:#f92672>el-form-item</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>el-form-item</span>&gt;
+</span></span><span style=display:flex><span>          &lt;<span style=color:#f92672>el-button</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;primary&#34;</span> <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>click</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;login(&#39;form&#39;)&#34;</span>&gt;登录&lt;/<span style=color:#f92672>el-button</span>&gt;
+</span></span><span style=display:flex><span>        &lt;/<span style=color:#f92672>el-form-item</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      &lt;/<span style=color:#f92672>el-form</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    &lt;/<span style=color:#f92672>el-card</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  &lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>template</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>script</span>&gt;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>export</span> <span style=color:#66d9ef>default</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>data</span>() {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 验证用户名
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>validateName</span> <span style=color:#f92672>=</span> (<span style=color:#a6e22e>rule</span>, <span style=color:#a6e22e>value</span>, <span style=color:#a6e22e>callback</span>) =&gt; {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>value</span> <span style=color:#f92672>===</span> <span style=color:#e6db74>&#39;&#39;</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>callback</span>(<span style=color:#66d9ef>new</span> Error(<span style=color:#e6db74>&#34;请输入用户名&#34;</span>))
+</span></span><span style=display:flex><span>      } <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>value</span> <span style=color:#f92672>===</span> <span style=color:#e6db74>&#39;123456&#39;</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;11111111111&#34;</span>)
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>callback</span>(<span style=color:#66d9ef>new</span> Error(<span style=color:#e6db74>&#39;换个用户名,猜到啦&#39;</span>))
+</span></span><span style=display:flex><span>      } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>callback</span>()
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>validatePassword</span> <span style=color:#f92672>=</span> (<span style=color:#a6e22e>rule</span>, <span style=color:#a6e22e>value</span>, <span style=color:#a6e22e>callback</span>) =&gt; {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>value</span> <span style=color:#f92672>===</span> <span style=color:#e6db74>&#39;&#39;</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>callback</span>(<span style=color:#66d9ef>new</span> Error(<span style=color:#e6db74>&#34;请输入密码&#34;</span>))
+</span></span><span style=display:flex><span>      } <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span><span style=color:#a6e22e>value</span> <span style=color:#f92672>===</span> <span style=color:#e6db74>&#39;123456&#39;</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>callback</span>(<span style=color:#66d9ef>new</span> Error(<span style=color:#e6db74>&#39;换个密码,猜到啦&#39;</span>))
+</span></span><span style=display:flex><span>      } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>callback</span>()
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> {
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>form</span><span style=color:#f92672>:</span> {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>username</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>password</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;&#34;</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>rules</span><span style=color:#f92672>:</span> {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>username</span><span style=color:#f92672>:</span> [{<span style=color:#a6e22e>validator</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>validateName</span>, <span style=color:#a6e22e>trigger</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;blur&#39;</span>}],
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>password</span><span style=color:#f92672>:</span> [{<span style=color:#a6e22e>validator</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>validatePassword</span>, <span style=color:#a6e22e>trigger</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;blur&#39;</span>}],
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>methods</span><span style=color:#f92672>:</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>login</span>(<span style=color:#a6e22e>form</span>) {
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>$refs</span>[<span style=color:#a6e22e>form</span>].<span style=color:#a6e22e>validate</span>((<span style=color:#a6e22e>valid</span>) =&gt; {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>valid</span>) {
+</span></span><span style=display:flex><span>          <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;验证通过&#34;</span>)
+</span></span><span style=display:flex><span>          <span style=color:#75715e>// this.axios.post(&#34;http://localhost&#34;, this.form).then(
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>          <span style=color:#75715e>//     res =&gt; {
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>          <span style=color:#75715e>//       console.log(res)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>          <span style=color:#75715e>//       if (res.data.status === 200) {
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>          <span style=color:#75715e>//         localStorage.setItem(&#34;username&#34;, res.data.username)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>          <span style=color:#75715e>//         this.$message({
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>          <span style=color:#75715e>//           message: res.data.message,
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>          <span style=color:#75715e>//           type: &#39;success&#39;
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>          <span style=color:#75715e>//         })
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>          <span style=color:#75715e>//         this.$router.push(&#39;/home&#39;)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>          <span style=color:#75715e>//       }
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>          <span style=color:#75715e>//     }
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>          <span style=color:#75715e>// )
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>          <span style=color:#75715e>//     .catch(err =&gt; {
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>          <span style=color:#75715e>//       console.error(err)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>          <span style=color:#75715e>//     })
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>          <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>&#34;验证不通过&#34;</span>)
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>      })
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>script</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>style</span> <span style=color:#a6e22e>scoped</span> <span style=color:#a6e22e>lang</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;scss&#34;</span>&gt;
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>login</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>width</span>: <span style=color:#ae81ff>100</span><span style=color:#66d9ef>%</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>height</span>: <span style=color:#ae81ff>100</span><span style=color:#66d9ef>%</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>position</span>: <span style=color:#66d9ef>absolute</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>background</span>: <span style=color:#66d9ef>cadetblue</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#960050;background-color:#1e0010>.box-card</span> <span style=color:#960050;background-color:#1e0010>{</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>width</span>: <span style=color:#ae81ff>450</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>margin</span>: <span style=color:#ae81ff>200</span><span style=color:#66d9ef>px</span> <span style=color:#66d9ef>auto</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#960050;background-color:#1e0010>.el-button</span> <span style=color:#960050;background-color:#1e0010>{</span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>width</span>: <span style=color:#ae81ff>100</span><span style=color:#66d9ef>%</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  <span style=color:#960050;background-color:#1e0010>}</span>
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>style</span>&gt;
+</span></span></code></pre></div><h2 id=自定义校验封装>自定义校验封装</h2><p>新建一个vaildate.js</p></div><div><a class="read-more button" href=/posts/%E5%89%8D%E7%AB%AF/element-ui/>Read more →</a></div></article><div class=pagination><div class=pagination__buttons></div></div></div></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>
+<span>:: <a href=https://github.com/mirus-ua/hugo-theme-re-terminal target=_blank>Theme</a> made by <a href=https://github.com/mirus-ua target=_blank>Mirus</a></span></div></div></footer><script type=text/javascript src=/bundle.min.js></script></div></body></html>

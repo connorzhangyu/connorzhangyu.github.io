@@ -1,0 +1,427 @@
+<!doctype html><html lang=zh><head><title>designpattern :: Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="设计模式 说一下你熟悉的设计模式？ 单例模式 简单点说，就是一个应用程序中，某个类的实例对象只有一个，你没有办法去new，因为构造器是被private修饰的，一般通过getInstance()的方法来获取它们的实例。
+getInstance()的返回值是一个对象的引用，并不是一个新的实例，所以不要错误的理解成多个对象。单例模式实现起来也很容易，直接看demo吧
+基本写法 public class Singleton { private static Singleton singleton; private Singleton() { } public static Singleton getInstance() { if (singleton == null) { singleton = new Singleton(); } return singleton; } } 按照我的习惯，我恨不得写满注释，怕你们看不懂，但是这个代码实在太简单了，所以我没写任何注释，如果这几行代码你都看不明白的话，那你可以洗洗睡了，等你睡醒了再来看我的博客说不定能看懂。
+上面的是最基本的写法，也叫懒汉写法（线程不安全）下面我再公布几种单例模式的写法：
+懒汉式写法（线程安全） public class Singleton { private static Singleton instance; private Singleton (){} public static synchronized Singleton getInstance() { if (instance == null) { instance = new Singleton(); } return instance; } } 饿汉式写法 public class Singleton { private static Singleton instance = new Singleton(); private Singleton (){} public static Singleton getInstance() { return instance; } } 静态内部类 public class Singleton { private static class SingletonHolder { private static final Singleton INSTANCE = new Singleton(); } private Singleton (){} public static final Singleton getInstance() { return SingletonHolder.INSTANCE; } } 枚举 public enum Singleton { INSTANCE; public void whateverMethod() { } } 这种方式是Effective Java作者Josh Bloch 提倡的方式，它不仅能避免多线程同步问题，而且还能防止反序列化重新创建新的对象，可谓是很坚强的壁垒啊，不过，个人认为由于1.5中才加入enum特性，用这种方式写不免让人感觉生疏。
+"><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://connorzhangyu.com/posts/designpattern/><link rel=stylesheet href=https://connorzhangyu.com/styles.css><link rel="shortcut icon" href=https://connorzhangyu.com/img/theme-colors/orange.png><link rel=apple-touch-icon href=https://connorzhangyu.com/img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta name=twitter:site content><meta name=twitter:creator content="Connor"><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="og:title" content="designpattern"><meta property="og:description" content="设计模式 说一下你熟悉的设计模式？ 单例模式 简单点说，就是一个应用程序中，某个类的实例对象只有一个，你没有办法去new，因为构造器是被private修饰的，一般通过getInstance()的方法来获取它们的实例。
+getInstance()的返回值是一个对象的引用，并不是一个新的实例，所以不要错误的理解成多个对象。单例模式实现起来也很容易，直接看demo吧
+基本写法 public class Singleton { private static Singleton singleton; private Singleton() { } public static Singleton getInstance() { if (singleton == null) { singleton = new Singleton(); } return singleton; } } 按照我的习惯，我恨不得写满注释，怕你们看不懂，但是这个代码实在太简单了，所以我没写任何注释，如果这几行代码你都看不明白的话，那你可以洗洗睡了，等你睡醒了再来看我的博客说不定能看懂。
+上面的是最基本的写法，也叫懒汉写法（线程不安全）下面我再公布几种单例模式的写法：
+懒汉式写法（线程安全） public class Singleton { private static Singleton instance; private Singleton (){} public static synchronized Singleton getInstance() { if (instance == null) { instance = new Singleton(); } return instance; } } 饿汉式写法 public class Singleton { private static Singleton instance = new Singleton(); private Singleton (){} public static Singleton getInstance() { return instance; } } 静态内部类 public class Singleton { private static class SingletonHolder { private static final Singleton INSTANCE = new Singleton(); } private Singleton (){} public static final Singleton getInstance() { return SingletonHolder.INSTANCE; } } 枚举 public enum Singleton { INSTANCE; public void whateverMethod() { } } 这种方式是Effective Java作者Josh Bloch 提倡的方式，它不仅能避免多线程同步问题，而且还能防止反序列化重新创建新的对象，可谓是很坚强的壁垒啊，不过，个人认为由于1.5中才加入enum特性，用这种方式写不免让人感觉生疏。
+"><meta property="og:url" content="https://connorzhangyu.com/posts/designpattern/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="https://connorzhangyu.com/"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><meta property="article:published_time" content="2025-01-04 04:08:55 +0000 UTC"></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></nav></header><div class=content><article class=post><h1 class=post-title><a href=https://connorzhangyu.com/posts/designpattern/>designpattern</a></h1><div class=post-meta><time class=post-date>2025-01-04</time><span class=post-author>Connor</span></div><div class=post-content><div><h1 id=设计模式>设计模式<a href=#设计模式 class=hanchor arialabel=Anchor>&#8983;</a></h1><h2 id=说一下你熟悉的设计模式>说一下你熟悉的设计模式？<a href=#说一下你熟悉的设计模式 class=hanchor arialabel=Anchor>&#8983;</a></h2><h2 id=单例模式>单例模式<a href=#单例模式 class=hanchor arialabel=Anchor>&#8983;</a></h2><p>简单点说，就是一个应用程序中，某个类的实例对象只有一个，你没有办法去new，因为构造器是被private修饰的，一般通过getInstance()的方法来获取它们的实例。</p><p>getInstance()的返回值是一个对象的引用，并不是一个新的实例，所以不要错误的理解成多个对象。单例模式实现起来也很容易，直接看demo吧</p><h2 id=基本写法>基本写法<a href=#基本写法 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Singleton</span> {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> Singleton singleton;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> <span style=color:#a6e22e>Singleton</span>() {
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> Singleton <span style=color:#a6e22e>getInstance</span>() {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (singleton <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span>) {
+</span></span><span style=display:flex><span>        singleton <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Singleton();
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> singleton;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>按照我的习惯，我恨不得写满注释，怕你们看不懂，但是这个代码实在太简单了，所以我没写任何注释，如果这几行代码你都看不明白的话，那你可以洗洗睡了，等你睡醒了再来看我的博客说不定能看懂。</p><p>上面的是最基本的写法，也叫懒汉写法（线程不安全）下面我再公布几种单例模式的写法：</p><h2 id=懒汉式写法线程安全>懒汉式写法（线程安全）<a href=#懒汉式写法线程安全 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Singleton</span> {  
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> Singleton instance;  
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>private</span> <span style=color:#a6e22e>Singleton</span> (){}  
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>synchronized</span> Singleton <span style=color:#a6e22e>getInstance</span>() {  
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>if</span> (instance <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span>) {  
+</span></span><span style=display:flex><span>       instance <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Singleton();  
+</span></span><span style=display:flex><span>   }  
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>return</span> instance;  
+</span></span><span style=display:flex><span>   }  
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h2 id=饿汉式写法>饿汉式写法<a href=#饿汉式写法 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Singleton</span> {  
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> Singleton instance <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Singleton();  
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>private</span> <span style=color:#a6e22e>Singleton</span> (){}  
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> Singleton <span style=color:#a6e22e>getInstance</span>() {  
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>return</span> instance;  
+</span></span><span style=display:flex><span>   }  
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h2 id=静态内部类>静态内部类<a href=#静态内部类 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Singleton</span> {  
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>SingletonHolder</span> {  
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>final</span> Singleton INSTANCE <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Singleton();  
+</span></span><span style=display:flex><span>   }  
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>private</span> <span style=color:#a6e22e>Singleton</span> (){}  
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>final</span> Singleton <span style=color:#a6e22e>getInstance</span>() {  
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>return</span> SingletonHolder.<span style=color:#a6e22e>INSTANCE</span>;  
+</span></span><span style=display:flex><span>   }  
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h2 id=枚举>枚举<a href=#枚举 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>enum</span> Singleton {  
+</span></span><span style=display:flex><span>   INSTANCE;  
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>whateverMethod</span>() {  
+</span></span><span style=display:flex><span>   }  
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>这种方式是Effective Java作者Josh Bloch 提倡的方式，它不仅能避免多线程同步问题，而且还能防止反序列化重新创建新的对象，可谓是很坚强的壁垒啊，不过，个人认为由于1.5中才加入enum特性，用这种方式写不免让人感觉生疏。</p><h2 id=双重校验锁>双重校验锁<a href=#双重校验锁 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Singleton</span> {  
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>volatile</span> <span style=color:#66d9ef>static</span> Singleton singleton;  
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>private</span> <span style=color:#a6e22e>Singleton</span> (){}  
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> Singleton <span style=color:#a6e22e>getSingleton</span>() {  
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>if</span> (singleton <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span>) {  
+</span></span><span style=display:flex><span>       <span style=color:#66d9ef>synchronized</span> (Singleton.<span style=color:#a6e22e>class</span>) {  
+</span></span><span style=display:flex><span>       <span style=color:#66d9ef>if</span> (singleton <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span>) {  
+</span></span><span style=display:flex><span>           singleton <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Singleton();  
+</span></span><span style=display:flex><span>       }  
+</span></span><span style=display:flex><span>       }  
+</span></span><span style=display:flex><span>   }  
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>return</span> singleton;  
+</span></span><span style=display:flex><span>   }  
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p><strong>总结：我个人比较喜欢静态内部类写法和饿汉式写法，其实这两种写法能够应付绝大多数情况了。其他写法也可以选择，主要还是看业务需求吧。</strong></p><h2 id=观察者模式>观察者模式<a href=#观察者模式 class=hanchor arialabel=Anchor>&#8983;</a></h2><p>对象间一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都得到通知并被自动更新。</p><p><img src="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/bd66c7d69a0917299f0b841c3b111564fe93b923859d0a8999e58fabf9afbeccdc95d2e7101440382d9669d8113b2dcc?pictype=scale&amp;from=30113&amp;version=3.3.3.3&amp;uin=495869333&amp;fname=%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F.png&amp;size=750" alt=观察者模式UML图></p><p>看不懂图的人端着小板凳到这里来，给你举个栗子：假设有三个人，小美（女，22），小王和小李。小美很漂亮，小王和小李是两个程序猿，时刻关注着小美的一举一动。有一天，小美说了一句：“谁来陪我打游戏啊。”这句话被小王和小李听到了，结果乐坏了，蹭蹭蹭，没一会儿，小王就冲到小美家门口了，在这里，小美是被观察者，小王和小李是观察者，被观察者发出一条信息，然后观察者们进行相应的处理，看代码：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>interface</span> <span style=color:#a6e22e>Person</span> {
+</span></span><span style=display:flex><span>   <span style=color:#75715e>//小王和小李通过这个接口可以接收到小美发过来的消息</span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>getMessage</span>(String s);
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>这个接口相当于小王和小李的电话号码，小美发送通知的时候就会拨打getMessage这个电话，拨打电话就是调用接口，看不懂没关系，先往下看</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>LaoWang</span> <span style=color:#66d9ef>implements</span> Person {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>private</span> String name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;小王&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#a6e22e>LaoWang</span>() {
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>   <span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>getMessage</span>(String s) {
+</span></span><span style=display:flex><span>       System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(name <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;接到了小美打过来的电话，电话内容是：&#34;</span> <span style=color:#f92672>+</span> s);
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>LaoLi</span> <span style=color:#66d9ef>implements</span> Person {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>private</span> String name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;小李&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#a6e22e>LaoLi</span>() {
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>   <span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>getMessage</span>(String s) {
+</span></span><span style=display:flex><span>       System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(name <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;接到了小美打过来的电话，电话内容是：-&gt;&#34;</span> <span style=color:#f92672>+</span> s);
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>代码很简单，我们再看看小美的代码：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>XiaoMei</span> {
+</span></span><span style=display:flex><span>   List<span style=color:#f92672>&lt;</span>Person<span style=color:#f92672>&gt;</span> list <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> ArrayList<span style=color:#f92672>&lt;</span>Person<span style=color:#f92672>&gt;</span>();
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#a6e22e>XiaoMei</span>(){
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>addPerson</span>(Person person){
+</span></span><span style=display:flex><span>        list.<span style=color:#a6e22e>add</span>(person);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//遍历list，把自己的通知发送给所有暗恋自己的人</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>notifyPerson</span>() {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span>(Person person:list){
+</span></span><span style=display:flex><span>            person.<span style=color:#a6e22e>getMessage</span>(<span style=color:#e6db74>&#34;你们过来吧，谁先过来谁就能陪我一起玩儿游戏!&#34;</span>);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>我们写一个测试类来看一下结果对不对</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Test</span> {
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>main</span>(String<span style=color:#f92672>[]</span> args) {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>       XiaoMei xiao_mei <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> XiaoMei();
+</span></span><span style=display:flex><span>       LaoWang lao_wang <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> LaoWang();
+</span></span><span style=display:flex><span>       LaoLi lao_li <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> LaoLi();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>       <span style=color:#75715e>//小王和小李在小美那里都注册了一下</span>
+</span></span><span style=display:flex><span>       xiao_mei.<span style=color:#a6e22e>addPerson</span>(lao_wang);
+</span></span><span style=display:flex><span>       xiao_mei.<span style=color:#a6e22e>addPerson</span>(lao_li);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>       <span style=color:#75715e>//小美向小王和小李发送通知</span>
+</span></span><span style=display:flex><span>       xiao_mei.<span style=color:#a6e22e>notifyPerson</span>();
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>完美～</p><h2 id=装饰者模式>装饰者模式<a href=#装饰者模式 class=hanchor arialabel=Anchor>&#8983;</a></h2><p>对已有的业务逻辑进一步的封装，使其增加额外的功能，如Java中的IO流就使用了装饰者模式，用户在使用的时候，可以任意组装，达到自己想要的效果。 举个栗子，我想吃三明治，首先我需要一根大大的香肠，我喜欢吃奶油，在香肠上面加一点奶油，再放一点蔬菜，最后再用两片面包夹一下，很丰盛的一顿午饭，营养又健康。（ps：不知道上海哪里有卖好吃的三明治的，求推荐～）那我们应该怎么来写代码呢？ 首先，我们需要写一个Food类，让其他所有食物都来继承这个类，看代码：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Food</span> {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>private</span> String food_name;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#a6e22e>Food</span>() {
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#a6e22e>Food</span>(String food_name) {
+</span></span><span style=display:flex><span>       <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>food_name</span> <span style=color:#f92672>=</span> food_name;
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>make</span>() {
+</span></span><span style=display:flex><span>       <span style=color:#66d9ef>return</span> food_name;
+</span></span><span style=display:flex><span>   };
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>代码很简单，我就不解释了，然后我们写几个子类继承它：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#75715e>//面包类</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Bread</span> <span style=color:#66d9ef>extends</span> Food {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>private</span> Food basic_food;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#a6e22e>Bread</span>(Food basic_food) {
+</span></span><span style=display:flex><span>       <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>basic_food</span> <span style=color:#f92672>=</span> basic_food;
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>make</span>() {
+</span></span><span style=display:flex><span>       <span style=color:#66d9ef>return</span> basic_food.<span style=color:#a6e22e>make</span>()<span style=color:#f92672>+</span><span style=color:#e6db74>&#34;+面包&#34;</span>;
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//奶油类</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Cream</span> <span style=color:#66d9ef>extends</span> Food {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>private</span> Food basic_food;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#a6e22e>Cream</span>(Food basic_food) {
+</span></span><span style=display:flex><span>       <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>basic_food</span> <span style=color:#f92672>=</span> basic_food;
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>make</span>() {
+</span></span><span style=display:flex><span>       <span style=color:#66d9ef>return</span> basic_food.<span style=color:#a6e22e>make</span>()<span style=color:#f92672>+</span><span style=color:#e6db74>&#34;+奶油&#34;</span>;
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//蔬菜类</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Vegetable</span> <span style=color:#66d9ef>extends</span> Food {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>private</span> Food basic_food;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#a6e22e>Vegetable</span>(Food basic_food) {
+</span></span><span style=display:flex><span>       <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>basic_food</span> <span style=color:#f92672>=</span> basic_food;
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>make</span>() {
+</span></span><span style=display:flex><span>       <span style=color:#66d9ef>return</span> basic_food.<span style=color:#a6e22e>make</span>()<span style=color:#f92672>+</span><span style=color:#e6db74>&#34;+蔬菜&#34;</span>;
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>这几个类都是差不多的，构造方法传入一个Food类型的参数，然后在make方法中加入一些自己的逻辑，如果你还是看不懂为什么这么写，不急，你看看我的Test类是怎么写的，一看你就明白了</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Test</span> {
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>main</span>(String<span style=color:#f92672>[]</span> args) {
+</span></span><span style=display:flex><span>       Food food <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Bread(<span style=color:#66d9ef>new</span> Vegetable(<span style=color:#66d9ef>new</span> Cream(<span style=color:#66d9ef>new</span> Food(<span style=color:#e6db74>&#34;香肠&#34;</span>))));
+</span></span><span style=display:flex><span>       System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(food.<span style=color:#a6e22e>make</span>());
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>看到没有，一层一层封装，我们从里往外看：最里面我new了一个香肠，在香肠的外面我包裹了一层奶油，在奶油的外面我又加了一层蔬菜，最外面我放的是面包，是不是很形象，哈哈~ 这个设计模式简直跟现实生活中一摸一样，看懂了吗？ 我们看看运行结果吧</p><p>运行结果:</p><pre><code>香肠+奶油+蔬菜+面包
+</code></pre><p>一个三明治就做好了～</p><h2 id=适配器模式>适配器模式<a href=#适配器模式 class=hanchor arialabel=Anchor>&#8983;</a></h2><p>将两种完全不同的事物联系到一起，就像现实生活中的变压器。假设一个手机充电器需要的电压是20V，但是正常的电压是220V，这时候就需要一个变压器，将220V的电压转换成20V的电压，这样，变压器就将20V的电压和手机联系起来了。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Test</span> {
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>main</span>(String<span style=color:#f92672>[]</span> args) {
+</span></span><span style=display:flex><span>       Phone phone <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Phone();
+</span></span><span style=display:flex><span>       VoltageAdapter adapter <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> VoltageAdapter();
+</span></span><span style=display:flex><span>       phone.<span style=color:#a6e22e>setAdapter</span>(adapter);
+</span></span><span style=display:flex><span>       phone.<span style=color:#a6e22e>charge</span>();
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 手机类</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Phone</span> {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>final</span> <span style=color:#66d9ef>int</span> V <span style=color:#f92672>=</span> 220;<span style=color:#75715e>// 正常电压220v，是一个常量</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>private</span> VoltageAdapter adapter;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>   <span style=color:#75715e>// 充电</span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>charge</span>() {
+</span></span><span style=display:flex><span>       adapter.<span style=color:#a6e22e>changeVoltage</span>();
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setAdapter</span>(VoltageAdapter adapter) {
+</span></span><span style=display:flex><span>       <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>adapter</span> <span style=color:#f92672>=</span> adapter;
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 变压器</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>VoltageAdapter</span> {
+</span></span><span style=display:flex><span>   <span style=color:#75715e>// 改变电压的功能</span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>changeVoltage</span>() {
+</span></span><span style=display:flex><span>       System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;正在充电...&#34;</span>);
+</span></span><span style=display:flex><span>       System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;原始电压：&#34;</span> <span style=color:#f92672>+</span> Phone.<span style=color:#a6e22e>V</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;V&#34;</span>);
+</span></span><span style=display:flex><span>       System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;经过变压器转换之后的电压:&#34;</span> <span style=color:#f92672>+</span> (Phone.<span style=color:#a6e22e>V</span> <span style=color:#f92672>-</span> 200) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;V&#34;</span>);
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>运行结果:</p><pre><code>正在充电...
+原始电压：220V
+经过变压器转换之后的电压:20V
+</code></pre><h2 id=工厂模式>工厂模式<a href=#工厂模式 class=hanchor arialabel=Anchor>&#8983;</a></h2><h2 id=简单工厂模式>简单工厂模式：<a href=#简单工厂模式 class=hanchor arialabel=Anchor>&#8983;</a></h2><p>一个抽象的接口，多个抽象接口的实现类，一个工厂类，用来实例化抽象的接口</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-JAVA data-lang=JAVA><span style=display:flex><span><span style=color:#75715e>// 抽象产品类</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>abstract</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Car</span> {
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>run</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>stop</span>();
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 具体实现类</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Benz</span> <span style=color:#66d9ef>implements</span> Car {
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>run</span>() {
+</span></span><span style=display:flex><span>       System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;Benz开始启动了。。。。。&#34;</span>);
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>stop</span>() {
+</span></span><span style=display:flex><span>       System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;Benz停车了。。。。。&#34;</span>);
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Ford</span> <span style=color:#66d9ef>implements</span> Car {
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>run</span>() {
+</span></span><span style=display:flex><span>       System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;Ford开始启动了。。。&#34;</span>);
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>stop</span>() {
+</span></span><span style=display:flex><span>       System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;Ford停车了。。。。&#34;</span>);
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 工厂类</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Factory</span> {
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> Car <span style=color:#a6e22e>getCarInstance</span>(String type) {
+</span></span><span style=display:flex><span>       Car c <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>;
+</span></span><span style=display:flex><span>       <span style=color:#66d9ef>if</span> (<span style=color:#e6db74>&#34;Benz&#34;</span>.<span style=color:#a6e22e>equals</span>(type)) {
+</span></span><span style=display:flex><span>           c <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Benz();
+</span></span><span style=display:flex><span>       }
+</span></span><span style=display:flex><span>       <span style=color:#66d9ef>if</span> (<span style=color:#e6db74>&#34;Ford&#34;</span>.<span style=color:#a6e22e>equals</span>(type)) {
+</span></span><span style=display:flex><span>           c <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Ford();
+</span></span><span style=display:flex><span>       }
+</span></span><span style=display:flex><span>       <span style=color:#66d9ef>return</span> c;
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Test</span> {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>main</span>(String<span style=color:#f92672>[]</span> args) {
+</span></span><span style=display:flex><span>       Car c <span style=color:#f92672>=</span> Factory.<span style=color:#a6e22e>getCarInstance</span>(<span style=color:#e6db74>&#34;Benz&#34;</span>);
+</span></span><span style=display:flex><span>       <span style=color:#66d9ef>if</span> (c <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span>) {
+</span></span><span style=display:flex><span>           c.<span style=color:#a6e22e>run</span>();
+</span></span><span style=display:flex><span>           c.<span style=color:#a6e22e>stop</span>();
+</span></span><span style=display:flex><span>       } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>           System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;造不了这种汽车。。。&#34;</span>);
+</span></span><span style=display:flex><span>       }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h2 id=工厂方法模式>工厂方法模式：<a href=#工厂方法模式 class=hanchor arialabel=Anchor>&#8983;</a></h2><p>有四个角色，抽象工厂模式，具体工厂模式，抽象产品模式，具体产品模式。不再是由一个工厂类去实例化具体的产品，而是由抽象工厂的子类去实例化产品</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#75715e>// 抽象产品角色</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>interface</span> <span style=color:#a6e22e>Moveable</span> {
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>run</span>();
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 具体产品角色</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Plane</span> <span style=color:#66d9ef>implements</span> Moveable {
+</span></span><span style=display:flex><span>   <span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>run</span>() {
+</span></span><span style=display:flex><span>       System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;plane....&#34;</span>);
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Broom</span> <span style=color:#66d9ef>implements</span> Moveable {
+</span></span><span style=display:flex><span>   <span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>run</span>() {
+</span></span><span style=display:flex><span>       System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;broom.....&#34;</span>);
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 抽象工厂</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>abstract</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>VehicleFactory</span> {
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>abstract</span> Moveable <span style=color:#a6e22e>create</span>();
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 具体工厂</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>PlaneFactory</span> <span style=color:#66d9ef>extends</span> VehicleFactory {
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> Moveable <span style=color:#a6e22e>create</span>() {
+</span></span><span style=display:flex><span>       <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> Plane();
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>BroomFactory</span> <span style=color:#66d9ef>extends</span> VehicleFactory {
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> Moveable <span style=color:#a6e22e>create</span>() {
+</span></span><span style=display:flex><span>       <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> Broom();
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 测试类</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Test</span> {
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>main</span>(String<span style=color:#f92672>[]</span> args) {
+</span></span><span style=display:flex><span>       VehicleFactory factory <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> BroomFactory();
+</span></span><span style=display:flex><span>       Moveable m <span style=color:#f92672>=</span> factory.<span style=color:#a6e22e>create</span>();
+</span></span><span style=display:flex><span>       m.<span style=color:#a6e22e>run</span>();
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h2 id=抽象工厂模式>抽象工厂模式：<a href=#抽象工厂模式 class=hanchor arialabel=Anchor>&#8983;</a></h2><p>与工厂方法模式不同的是，工厂方法模式中的工厂只生产单一的产品，而抽象工厂模式中的工厂生产多个产品</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#f92672>/</span>抽象工厂类
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>abstract</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>AbstractFactory</span> {
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>abstract</span> Vehicle <span style=color:#a6e22e>createVehicle</span>();
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>abstract</span> Weapon <span style=color:#a6e22e>createWeapon</span>();
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>abstract</span> Food <span style=color:#a6e22e>createFood</span>();
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#75715e>//具体工厂类，其中Food,Vehicle，Weapon是抽象类，</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>DefaultFactory</span> <span style=color:#66d9ef>extends</span> AbstractFactory{
+</span></span><span style=display:flex><span>   <span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> Food <span style=color:#a6e22e>createFood</span>() {
+</span></span><span style=display:flex><span>       <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> Apple();
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>   <span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> Vehicle <span style=color:#a6e22e>createVehicle</span>() {
+</span></span><span style=display:flex><span>       <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> Car();
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>   <span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> Weapon <span style=color:#a6e22e>createWeapon</span>() {
+</span></span><span style=display:flex><span>       <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> AK47();
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#75715e>//测试类</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Test</span> {
+</span></span><span style=display:flex><span>   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>main</span>(String<span style=color:#f92672>[]</span> args) {
+</span></span><span style=display:flex><span>       AbstractFactory f <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> DefaultFactory();
+</span></span><span style=display:flex><span>       Vehicle v <span style=color:#f92672>=</span> f.<span style=color:#a6e22e>createVehicle</span>();
+</span></span><span style=display:flex><span>       v.<span style=color:#a6e22e>run</span>();
+</span></span><span style=display:flex><span>       Weapon w <span style=color:#f92672>=</span> f.<span style=color:#a6e22e>createWeapon</span>();
+</span></span><span style=display:flex><span>       w.<span style=color:#a6e22e>shoot</span>();
+</span></span><span style=display:flex><span>       Food a <span style=color:#f92672>=</span> f.<span style=color:#a6e22e>createFood</span>();
+</span></span><span style=display:flex><span>       a.<span style=color:#a6e22e>printName</span>();
+</span></span><span style=display:flex><span>   }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h2 id=代理模式proxy>代理模式（proxy）<a href=#代理模式proxy class=hanchor arialabel=Anchor>&#8983;</a></h2><p>有两种，静态代理和动态代理。</p><h2 id=静态代理>静态代理:<a href=#静态代理 class=hanchor arialabel=Anchor>&#8983;</a></h2><p>很多理论性的东西我不讲，我就算讲了，你们也看不懂。什么真实角色，抽象角色，代理角色，委托角色。。。乱七八糟的，我是看不懂。之前学代理模式的时候，去网上翻一下，资料一大堆，打开链接一看，基本上都是给你分析有什么什么角色，理论一大堆，看起来很费劲，不信的话你们可以去看看，我是看不懂他们在说什么。咱不来虚的，直接用生活中的例子说话。（注意：我这里并不是否定理论知识，我只是觉得有时候理论知识晦涩难懂，喜欢挑刺的人一边去，你是来学习知识的，不是来挑刺的）</p><p>到了一定的年龄，我们就要结婚，结婚是一件很麻烦的事情，（包括那些被父母催婚的）。有钱的家庭可能会找司仪来主持婚礼，显得热闹，洋气～好了，现在婚庆公司的生意来了，我们只需要给钱，婚庆公司就会帮我们安排一整套结婚的流程。整个流程大概是这样的：家里人催婚->男女双方家庭商定结婚的黄道即日->找一家靠谱的婚庆公司->在约定的时间举行结婚仪式->结婚完毕
+婚庆公司打算怎么安排婚礼的节目，在婚礼完毕以后婚庆公司会做什么，我们一概不知。。。别担心，不是黑中介，我们只要把钱给人家，人家会把事情给我们做好。所以，这里的婚庆公司相当于代理角色，现在明白什么是代理角色了吧。</p><p>代码实现请看：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#75715e>//代理接口</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>interface</span> <span style=color:#a6e22e>ProxyInterface</span> {
+</span></span><span style=display:flex><span><span style=color:#75715e>//需要代理的是结婚这件事，如果还有其他事情需要代理，比如吃饭睡觉上厕所，也可以写</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>marry</span>();
+</span></span><span style=display:flex><span><span style=color:#75715e>//代理吃饭(自己的饭，让别人吃去吧)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//void eat();</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//代理拉屎，自己的屎，让别人拉去吧</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//void shit();</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>文明社会，代理吃饭，代理拉屎什么的我就不写了，有伤社会风化～～～能明白就好</p><p>好了，我们看看婚庆公司的代码:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>WeddingCompany</span> <span style=color:#66d9ef>implements</span> ProxyInterface {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> ProxyInterface proxyInterface;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#a6e22e>WeddingCompany</span>(ProxyInterface proxyInterface) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>proxyInterface</span> <span style=color:#f92672>=</span> proxyInterface;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>marry</span>() {
+</span></span><span style=display:flex><span>        System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;我们是婚庆公司的&#34;</span>);
+</span></span><span style=display:flex><span>        System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;我们在做结婚前的准备工作&#34;</span>);
+</span></span><span style=display:flex><span>        System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;节目彩排...&#34;</span>);
+</span></span><span style=display:flex><span>        System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;礼物购买...&#34;</span>);
+</span></span><span style=display:flex><span>        System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;工作人员分工...&#34;</span>);
+</span></span><span style=display:flex><span>        System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;可以开始结婚了&#34;</span>);
+</span></span><span style=display:flex><span>        proxyInterface.<span style=color:#a6e22e>marry</span>();
+</span></span><span style=display:flex><span>        System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;结婚完毕，我们需要做后续处理，你们可以回家了，其余的事情我们公司来做&#34;</span>);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>看到没有，婚庆公司需要做的事情很多，我们再看看结婚家庭的代码:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>NormalHome</span> <span style=color:#66d9ef>implements</span> ProxyInterface{
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>marry</span>() {
+</span></span><span style=display:flex><span>        System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;我们结婚啦～&#34;</span>);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>这个已经很明显了，结婚家庭只需要结婚，而婚庆公司要包揽一切，前前后后的事情都是婚庆公司来做，听说现在婚庆公司很赚钱的，这就是原因，干的活多，能不赚钱吗？</p><p>来看看测试类代码：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Test</span> {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>main</span>(String<span style=color:#f92672>[]</span> args) {
+</span></span><span style=display:flex><span>        ProxyInterface proxyInterface <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> WeddingCompany(<span style=color:#66d9ef>new</span> NormalHome());
+</span></span><span style=display:flex><span>        proxyInterface.<span style=color:#a6e22e>marry</span>();
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>运行结果如下：</p><pre><code>我们是婚庆公司的
+我们在做结婚前的准备工作
+节目彩排...
+礼物购买...
+工作人员分工...
+可以开始结婚了
+我们结婚啦～
+结婚完毕，我们需要做后续处理，你们可以回家了，其余的事情我们公司来做
+</code></pre><p>在我们预料中，结果正确，这就是静态代理</p><h2 id=动态代理>动态代理:<a href=#动态代理 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#75715e>//TODO 跟java反射有关系，网上资料很多，我以后有时间再更新。</span>
+</span></span></code></pre></div><h2 id=简单工厂和抽象工厂有什么区别>简单工厂和抽象工厂有什么区别？<a href=#简单工厂和抽象工厂有什么区别 class=hanchor arialabel=Anchor>&#8983;</a></h2><h2 id=简单工厂模式-1>简单工厂模式：<a href=#简单工厂模式-1 class=hanchor arialabel=Anchor>&#8983;</a></h2><p>这个模式本身很简单而且使用在业务较简单的情况下。一般用于小项目或者具体产品很少扩展的情况（这样工厂类才不用经常更改）。<br>它由三种角色组成：</p><ol><li>工厂类角色：这是本模式的核心，含有一定的商业逻辑和判断逻辑，根据逻辑不同，产生具体的工厂产品。如例子中的Driver类。</li><li>抽象产品角色：它一般是具体产品继承的父类或者实现的接口。由接口或者抽象类来实现。如例中的Car接口。</li><li>具体产品角色：工厂类所创建的对象就是此角色的实例。在java中由一个具体类实现，如例子中的Benz、Bmw类。</li></ol><p>来用类图来清晰的表示下的它们之间的关系：</p><p><img src="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/b9f3320f7b7d3bf3899e1e42b35545f70c196840b3c2adc00122518267a947dc8ab4c0d1afa5bfb6f502c5d8cda7c546?pictype=scale&amp;from=30113&amp;version=3.3.3.3&amp;uin=495869333&amp;fname=%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.png&amp;size=750" alt=简单工厂模式></p><h2 id=抽象工厂模式-1>抽象工厂模式：<a href=#抽象工厂模式-1 class=hanchor arialabel=Anchor>&#8983;</a></h2><p>先来认识下什么是产品族： 位于不同产品等级结构中，功能相关联的产品组成的家族。</p><p><img src="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/02dc42fabe6a29078dd912b3543d49dbb356b2b3cdb20486d0e9c99cc55f948dae44b32d861b847f53cc63bb5069521d?pictype=scale&amp;from=30113&amp;version=3.3.3.3&amp;uin=495869333&amp;fname=%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.png&amp;size=750" alt=抽象工厂模式></p><p>图中的BmwCar和BenzCar就是两个产品树（产品层次结构）；而如图所示的BenzSportsCar和BmwSportsCar就是一个产品族。他们都可以放到跑车家族中，因此功能有所关联。同理BmwBussinessCar和BenzBusinessCar也是一个产品族。</p><p>可以这么说，它和工厂方法模式的区别就在于需要创建对象的复杂程度上。而且抽象工厂模式是三个里面最为抽象、最具一般性的。抽象工厂模式的用意为：给客户端提供一个接口，可以创建多个产品族中的产品对象。</p><p>而且使用抽象工厂模式还要满足一下条件：<br>系统中有多个产品族，而系统一次只可能消费其中一族产品<br>同属于同一个产品族的产品以其使用。</p><p>来看看抽象工厂模式的各个角色（和工厂方法的如出一辙）：</p><ol><li>抽象工厂角色： 这是工厂方法模式的核心，它与应用程序无关。是具体工厂角色必须实现的接口或者必须继承的父类。在java中它由抽象类或者接口来实现。</li><li>具体工厂角色：它含有和具体业务逻辑有关的代码。由应用程序调用以创建对应的具体产品的对象。在java中它由具体的类来实现。</li><li>抽象产品角色：它是具体产品继承的父类或者是实现的接口。在java中一般有抽象类或者接口来实现。</li><li>具体产品角色：具体工厂角色所创建的对象就是此角色的实例。在java中由具体的类来实现。</li></ol><h2 id=目录>目录<a href=#目录 class=hanchor arialabel=Anchor>&#8983;</a></h2><ul><li><a href=/java/javaBase.md>Java基础</a></li><li><a href=/java/collection.md>容器</a></li><li><a href=/java/thread.md>线程</a></li><li><a href=/java/reflection.md>反射</a></li><li><a href=/java/cloneable.md>对象克隆</a></li><li><a href=/java/javaWeb.md>JavaWeb</a></li><li><a href=/java/exception.md>异常</a></li><li><a href=/java/netWork.md>网络服务</a></li><li><a href=/java/designpattern.md>设计模式</a></li><li><a href=/java/spring.md>Spring</a></li><li><a href=/java/springMVC.md>Spring MVC</a></li><li><a href=/java/springBoot.md>Spring Boot</a></li><li><a href=/java/springCloud.md>Spring Cloud</a></li><li><a href=/java/hibernate.md>Hibernate</a></li><li><a href=/java/mybatis.md>Mybatis</a></li><li><a href=/java/mq.md>队列</a></li><li><a href=/java/zookeeper.md>Zookeeper</a></li><li><a href=/java/mySql.md>MySql</a></li><li><a href=/java/redis.md>Redis</a></li><li><a href=/java/jvm.md>Jvm</a></li></ul></div></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Read other posts</span><hr></div><div class=pagination__buttons><span class="button previous"><a href=https://connorzhangyu.com/posts/collection/><span class=button__icon>←</span>
+<span class=button__text>collection</span>
+</a></span><span class="button next"><a href=https://connorzhangyu.com/posts/exception/><span class=button__text>exception</span>
+<span class=button__icon>→</span></a></span></div></div></article></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>
+<span>:: <a href=https://github.com/mirus-ua/hugo-theme-re-terminal target=_blank>Theme</a> made by <a href=https://github.com/mirus-ua target=_blank>Mirus</a></span></div></div></footer><script type=text/javascript src=/bundle.min.js></script></div></body></html>

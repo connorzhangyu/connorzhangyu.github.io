@@ -1,0 +1,547 @@
+<!doctype html><html lang=zh><head><title>Java :: Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://connorzhangyu.com/categories/java/><link rel=stylesheet href=https://connorzhangyu.com/styles.css><link rel="shortcut icon" href=https://connorzhangyu.com/img/theme-colors/orange.png><link rel=apple-touch-icon href=https://connorzhangyu.com/img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta name=twitter:site content><meta name=twitter:creator content><meta property="og:locale" content="zh"><meta property="og:type" content="website"><meta property="og:title" content="Java"><meta property="og:description" content><meta property="og:url" content="https://connorzhangyu.com/categories/java/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="https://connorzhangyu.com/img/favicon/orange.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><link href=/categories/java/index.xml rel=alternate type=application/rss+xml title="Hello World"></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></nav></header><div class=content><h1>Posts for: #Java</h1><div class=posts><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/elasticsearch/>ElasticSearch</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/mac/>Mac</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051527399.jpg class=post-cover alt=ElasticSearch title="Cover Image"><div class=post-content><h1 id=手动安装7x>手动安装7.x</h1><h2 id=手动安装单机elasticsearch7x>手动安装单机ElasticSearch7.x</h2><pre tabindex=0><code># 下载tar包,(6.6.2)
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.6.2.tar.gz
+
+# 解压缩之后修改配置文件
+vi /elasticsearch-7.10.1/config/elasticsearch.yml
+network.host: 0.0.0.0 #设置成外网也可以访问
+
+# 追加内容,修改系统环境该变量,修改完需要重启才能生效
+vi /etc/sysctl.conf
+vm.max_map_count=262144
+
+# 加载参数
+anthony@base:/usr/local/elasticsearch-6.6.2$ sudo sysctl -p
+vm.max_map_count = 262144
+
+# 允许打开的最大文件描述,加入
+vim /etc/security/limits.conf
+* soft nofile 65536
+* hard nofile 65536
+* soft nproc 4096 或者(65536)
+* hard nproc 4096 或者(65536)
+
+# 修改JVM分配大小 这两个值要一致
+vi config/jvm.options
+-Xms4g
+-Xmx4g
+
+# 启动
+bin/elasticsearch
+bin/elasticsearch -d  #后台启动
+</code></pre><ol><li>安装分词器下载解压缩的哦elasticsearch的plugin目录下IK分词器<a href=https://github.com/medcl/elasticsearch-analysis-ik/releases/tag/v6.6.2>https://github.com/medcl/elasticsearch-analysis-ik/releases/tag/v6.6.2</a></li></ol><pre tabindex=0><code>POST /_analyze { &#34;analyzer&#34;: &#34;ik_smart&#34;, &#34;text&#34;: &#34; 程序员 }
+</code></pre><p>拼音分词器<a href=https://github.com/medcl/elasticsearch-analysis-pinyin/releases/tag/v6.6.2>https://github.com/medcl/elasticsearch-analysis-pinyin/releases/tag/v6.6.2</a></p></div><div><a class="read-more button" href=/posts/elasticsearch/>Read more →</a></div></article><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/flink/>Flink</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/java/>Java</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/>大数据</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051527464.png class=post-cover alt=Flink title="Cover Image"><div class=post-content><h1 id=flink>Flink</h1><h2 id=尝试flink>尝试flink</h2><h3 id=本地安装>本地安装</h3><p>步骤一:下载</p><p>为了能够运行Flink，唯一的要求是安装有效的<strong>Java 8或11</strong>。您可以通过发出以下命令来检查Java的正确安装：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># 要安装java环境</span>
+</span></span><span style=display:flex><span>java -version
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 下载解压flink</span>
+</span></span><span style=display:flex><span>tar -xzf flink-1.11.2-bin-scala_2.11.tgz
+</span></span><span style=display:flex><span>cd flink-1.11.2-bin-scala_2.11
+</span></span></code></pre></div><p>步骤二:启动本地集群</p><pre tabindex=0><code>$ ./bin/start-cluster.sh
+Starting cluster.
+Starting standalonesession daemon on host.
+Starting taskexecutor daemon on host.
+</code></pre><p>步骤三:提交一个job</p><pre tabindex=0><code>$ ./bin/flink run examples/streaming/WordCount.jar
+$ tail log/flink-*-taskexecutor-*.out
+  (to,1)
+  (be,1)
+  (or,1)
+  (not,1)
+  (to,2)
+  (be,2)
+</code></pre><p>步骤四:停止集群</p><pre tabindex=0><code>$ ./bin/stop-cluster.sh
+</code></pre><h2 id=使用datastream-api进行欺诈检测>使用DataStream API进行欺诈检测</h2><h3 id=java环境>Java环境</h3><pre tabindex=0><code>&lt;project xmlns=&#34;http://maven.apache.org/POM/4.0.0&#34; xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34;
+		 xsi:schemaLocation=&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;&gt;
+	&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+	&lt;groupId&gt;frauddetection&lt;/groupId&gt;
+	&lt;artifactId&gt;frauddetection&lt;/artifactId&gt;
+	&lt;version&gt;0.1&lt;/version&gt;
+	&lt;packaging&gt;jar&lt;/packaging&gt;
+
+	&lt;name&gt;Flink Walkthrough DataStream Java&lt;/name&gt;
+	&lt;url&gt;https://flink.apache.org&lt;/url&gt;
+
+	&lt;properties&gt;
+		&lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+		&lt;flink.version&gt;1.10.2&lt;/flink.version&gt;
+		&lt;java.version&gt;1.8&lt;/java.version&gt;
+		&lt;scala.binary.version&gt;2.11&lt;/scala.binary.version&gt;
+		&lt;maven.compiler.source&gt;${java.version}&lt;/maven.compiler.source&gt;
+		&lt;maven.compiler.target&gt;${java.version}&lt;/maven.compiler.target&gt;
+	&lt;/properties&gt;
+
+	&lt;dependencies&gt;
+		&lt;dependency&gt;
+			&lt;groupId&gt;org.apache.flink&lt;/groupId&gt;
+			&lt;artifactId&gt;flink-walkthrough-common_${scala.binary.version}&lt;/artifactId&gt;
+			&lt;version&gt;${flink.version}&lt;/version&gt;
+		&lt;/dependency&gt;
+
+		&lt;!-- This dependency is provided, because it should not be packaged into the JAR file. --&gt;
+		&lt;dependency&gt;
+			&lt;groupId&gt;org.apache.flink&lt;/groupId&gt;
+			&lt;artifactId&gt;flink-streaming-java_${scala.binary.version}&lt;/artifactId&gt;
+			&lt;version&gt;${flink.version}&lt;/version&gt;
+&lt;!--			&lt;scope&gt;provided&lt;/scope&gt;--&gt;
+		&lt;/dependency&gt;
+
+		&lt;dependency&gt;
+			&lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+			&lt;artifactId&gt;lombok&lt;/artifactId&gt;
+			&lt;version&gt;1.18.0&lt;/version&gt;
+			&lt;scope&gt;provided&lt;/scope&gt;
+		&lt;/dependency&gt;
+
+		&lt;!-- Add connector dependencies here. They must be in the default scope (compile). --&gt;
+
+		&lt;dependency&gt;
+			&lt;groupId&gt;org.apache.flink&lt;/groupId&gt;
+			&lt;artifactId&gt;flink-connector-kafka-0.10_${scala.binary.version}&lt;/artifactId&gt;
+			&lt;version&gt;${flink.version}&lt;/version&gt;
+		&lt;/dependency&gt;
+
+		&lt;!-- Add logging framework, to produce console output when running in the IDE. --&gt;
+		&lt;!-- These dependencies are excluded from the application JAR by default. --&gt;
+		&lt;dependency&gt;
+			&lt;groupId&gt;org.slf4j&lt;/groupId&gt;
+			&lt;artifactId&gt;slf4j-log4j12&lt;/artifactId&gt;
+			&lt;version&gt;1.7.7&lt;/version&gt;
+			&lt;scope&gt;runtime&lt;/scope&gt;
+		&lt;/dependency&gt;
+		&lt;dependency&gt;
+			&lt;groupId&gt;log4j&lt;/groupId&gt;
+			&lt;artifactId&gt;log4j&lt;/artifactId&gt;
+			&lt;version&gt;1.2.17&lt;/version&gt;
+			&lt;scope&gt;runtime&lt;/scope&gt;
+		&lt;/dependency&gt;
+	&lt;/dependencies&gt;
+
+	&lt;build&gt;
+		&lt;plugins&gt;
+
+			&lt;!-- Java Compiler --&gt;
+			&lt;plugin&gt;
+				&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+				&lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+				&lt;version&gt;3.1&lt;/version&gt;
+				&lt;configuration&gt;
+					&lt;source&gt;${java.version}&lt;/source&gt;
+					&lt;target&gt;${java.version}&lt;/target&gt;
+				&lt;/configuration&gt;
+			&lt;/plugin&gt;
+
+			&lt;!-- We use the maven-shade plugin to create a fat jar that contains all necessary dependencies. --&gt;
+			&lt;!-- Change the value of &lt;mainClass&gt;...&lt;/mainClass&gt; if your program entry point changes. --&gt;
+			&lt;plugin&gt;
+				&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+				&lt;artifactId&gt;maven-shade-plugin&lt;/artifactId&gt;
+				&lt;version&gt;3.0.0&lt;/version&gt;
+				&lt;executions&gt;
+					&lt;!-- Run shade goal on package phase --&gt;
+					&lt;execution&gt;
+						&lt;phase&gt;package&lt;/phase&gt;
+						&lt;goals&gt;
+							&lt;goal&gt;shade&lt;/goal&gt;
+						&lt;/goals&gt;
+						&lt;configuration&gt;
+							&lt;artifactSet&gt;
+								&lt;excludes&gt;
+									&lt;exclude&gt;org.apache.flink:force-shading&lt;/exclude&gt;
+									&lt;exclude&gt;com.google.code.findbugs:jsr305&lt;/exclude&gt;
+									&lt;exclude&gt;org.slf4j:*&lt;/exclude&gt;
+									&lt;exclude&gt;log4j:*&lt;/exclude&gt;
+								&lt;/excludes&gt;
+							&lt;/artifactSet&gt;
+							&lt;filters&gt;
+								&lt;filter&gt;
+									&lt;!-- Do not copy the signatures in the META-INF folder.
+                                    Otherwise, this might cause SecurityExceptions when using the JAR. --&gt;
+									&lt;artifact&gt;*:*&lt;/artifact&gt;
+									&lt;excludes&gt;
+										&lt;exclude&gt;META-INF/*.SF&lt;/exclude&gt;
+										&lt;exclude&gt;META-INF/*.DSA&lt;/exclude&gt;
+										&lt;exclude&gt;META-INF/*.RSA&lt;/exclude&gt;
+									&lt;/excludes&gt;
+								&lt;/filter&gt;
+							&lt;/filters&gt;
+							&lt;transformers&gt;
+								&lt;transformer implementation=&#34;org.apache.maven.plugins.shade.resource.ManifestResourceTransformer&#34;&gt;
+									&lt;mainClass&gt;spendreport.FraudDetectionJob&lt;/mainClass&gt;
+								&lt;/transformer&gt;
+							&lt;/transformers&gt;
+						&lt;/configuration&gt;
+					&lt;/execution&gt;
+				&lt;/executions&gt;
+			&lt;/plugin&gt;
+		&lt;/plugins&gt;
+
+		&lt;pluginManagement&gt;
+			&lt;plugins&gt;
+
+				&lt;!-- This improves the out-of-the-box experience in Eclipse by resolving some warnings. --&gt;
+				&lt;plugin&gt;
+					&lt;groupId&gt;org.eclipse.m2e&lt;/groupId&gt;
+					&lt;artifactId&gt;lifecycle-mapping&lt;/artifactId&gt;
+					&lt;version&gt;1.0.0&lt;/version&gt;
+					&lt;configuration&gt;
+						&lt;lifecycleMappingMetadata&gt;
+							&lt;pluginExecutions&gt;
+								&lt;pluginExecution&gt;
+									&lt;pluginExecutionFilter&gt;
+										&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+										&lt;artifactId&gt;maven-shade-plugin&lt;/artifactId&gt;
+										&lt;versionRange&gt;[3.0.0,)&lt;/versionRange&gt;
+										&lt;goals&gt;
+											&lt;goal&gt;shade&lt;/goal&gt;
+										&lt;/goals&gt;
+									&lt;/pluginExecutionFilter&gt;
+									&lt;action&gt;
+										&lt;ignore/&gt;
+									&lt;/action&gt;
+								&lt;/pluginExecution&gt;
+								&lt;pluginExecution&gt;
+									&lt;pluginExecutionFilter&gt;
+										&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+										&lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+										&lt;versionRange&gt;[3.1,)&lt;/versionRange&gt;
+										&lt;goals&gt;
+											&lt;goal&gt;testCompile&lt;/goal&gt;
+											&lt;goal&gt;compile&lt;/goal&gt;
+										&lt;/goals&gt;
+									&lt;/pluginExecutionFilter&gt;
+									&lt;action&gt;
+										&lt;ignore/&gt;
+									&lt;/action&gt;
+								&lt;/pluginExecution&gt;
+							&lt;/pluginExecutions&gt;
+						&lt;/lifecycleMappingMetadata&gt;
+					&lt;/configuration&gt;
+				&lt;/plugin&gt;
+			&lt;/plugins&gt;
+		&lt;/pluginManagement&gt;
+	&lt;/build&gt;
+&lt;/project&gt;
+</code></pre><h2 id=输入>输入</h2><h3 id=file输入>File输入</h3><pre tabindex=0><code>public static void main(String[] args) throws Exception {
+    final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+    final DataStream&lt;String&gt; stringDataStreamSource = env.readTextFile(&#34;Sensor.txt&#34;);
+    stringDataStreamSource.print(&#34;data&#34;);
+    env.execute();
+}
+</code></pre><h2 id=kafka>Kafka</h2><p>需要引入包</p></div><div><a class="read-more button" href=/posts/flink/>Read more →</a></div></article><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/java/>Java</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/java/>Java</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/spring/>Spring</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051529974.png class=post-cover alt=Java title="Cover Image"><div class=post-content><h1 id=基础知识点>基础知识点</h1><p><strong>循环标签</strong></p><p>如果不在嵌套循环中使用,用了跳转,也就相当于<code>continue</code>一样,没有区别</p><p>在嵌套循环中使用才有效果,用了<code>innerLoop</code>之后,可以看到</p><ul><li>j=2 的时候是不打印</li><li>j=3,程序不会到j=3的时候,因为j=2的时候就已经跳出去了</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 0====0
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 0====1
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 1====0
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 1====1
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 2====0
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 2====1
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * -------------------
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 0====0
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 0====1
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 0====2
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 0====3
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 1====0
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 1====1
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 1====2
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 1====3
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 2====0
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 2====1
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 2====2
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 2====3
+</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>main</span>(String<span style=color:#f92672>[]</span> args) {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    innerLoop:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> 0; i <span style=color:#f92672>&lt;</span> 3; i<span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>int</span> j <span style=color:#f92672>=</span> 0; j <span style=color:#f92672>&lt;</span> 4; j<span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> (j <span style=color:#f92672>==</span> 2) {
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>continue</span> innerLoop;
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>            System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(i<span style=color:#f92672>+</span><span style=color:#e6db74>&#34;====&#34;</span><span style=color:#f92672>+</span>j);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h1 id=java常用的api方法>Java常用的API方法</h1><h2 id=集合列表数组map>集合/列表/数组/Map</h2><h3 id=数组拼接>数组拼接</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#75715e>// 把数组风格,再循环添加逗号</span>
+</span></span><span style=display:flex><span>String<span style=color:#f92672>[]</span> split <span style=color:#f92672>=</span> result.<span style=color:#a6e22e>split</span>(<span style=color:#e6db74>&#34; &#34;</span>);
+</span></span><span style=display:flex><span>StringJoiner stringJoiner <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> StringJoiner(<span style=color:#e6db74>&#34;,&#34;</span>);
+</span></span><span style=display:flex><span>Arrays.<span style=color:#a6e22e>stream</span>(split).<span style=color:#a6e22e>forEach</span>(stringJoiner::add);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 字符串数组数字,转成int类型,再转成数组</span>
+</span></span><span style=display:flex><span>Arrays.<span style=color:#a6e22e>stream</span>(split).<span style=color:#a6e22e>mapToInt</span>(Integer::parseInt).<span style=color:#a6e22e>toArray</span>()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// BigDecimal想加,然后如果为空,就给个0</span>
+</span></span><span style=display:flex><span>BigDecimal winAmount <span style=color:#f92672>=</span> list.<span style=color:#a6e22e>stream</span>()
+</span></span><span style=display:flex><span>                  .<span style=color:#a6e22e>map</span>(UserBetOrderRecord::getWinAmount)
+</span></span><span style=display:flex><span>                  .<span style=color:#a6e22e>reduce</span>(BigDecimal::add)
+</span></span><span style=display:flex><span>                  .<span style=color:#a6e22e>map</span>(bigDecimal <span style=color:#f92672>-&gt;</span> bigDecimal.<span style=color:#a6e22e>multiply</span>(<span style=color:#66d9ef>new</span> BigDecimal(<span style=color:#e6db74>&#34;-1&#34;</span>)))
+</span></span><span style=display:flex><span>                  .<span style=color:#a6e22e>orElse</span>(BigDecimal.<span style=color:#a6e22e>ZERO</span>);
+</span></span></code></pre></div><h3 id=数组转集合>数组转集合</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>test</span>() {
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>  	<span style=color:#66d9ef>int</span><span style=color:#f92672>[]</span> arr <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>int</span><span style=color:#f92672>[]</span>{4, 3, 2, 1, 12, 21, 11};
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  	<span style=color:#75715e>// 这样转是有问题的,不是想要的</span>
+</span></span><span style=display:flex><span>  	<span style=color:#75715e>// java.util.array</span>
+</span></span><span style=display:flex><span>    List<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>[]&gt;</span> list <span style=color:#f92672>=</span> Arrays.<span style=color:#a6e22e>asList</span>(arr);
+</span></span><span style=display:flex><span>    System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(list);
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>   	<span style=color:#75715e>// 使用Hutool的方法,也不死想要的</span>
+</span></span><span style=display:flex><span>  	<span style=color:#75715e>// cn.hutool.core.collection</span>
+</span></span><span style=display:flex><span>	  List<span style=color:#f92672>&lt;</span><span style=color:#66d9ef>int</span><span style=color:#f92672>[]&gt;</span> ints <span style=color:#f92672>=</span> CollectionUtil.<span style=color:#a6e22e>newArrayList</span>(arr);
+</span></span><span style=display:flex><span>    System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(ints);
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  	<span style=color:#75715e>// 使用Spring的工具包,需要强转,强迫症受不了这种方法</span>
+</span></span><span style=display:flex><span>  	<span style=color:#75715e>// org.springframework.util.CollectionUtils</span>
+</span></span><span style=display:flex><span>    List<span style=color:#f92672>&lt;</span>Integer<span style=color:#f92672>&gt;</span> objects <span style=color:#f92672>=</span> (List<span style=color:#f92672>&lt;</span>Integer<span style=color:#f92672>&gt;</span>) CollectionUtils.<span style=color:#a6e22e>arrayToList</span>(arr);
+</span></span><span style=display:flex><span>    System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(objects);
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h3 id=打印数组集合map>打印数组/集合/Map</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>test</span>() {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span><span style=color:#f92672>[]</span> arr <span style=color:#f92672>=</span> {1, 2, 3, 4, 5};
+</span></span><span style=display:flex><span>    System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(arr);    <span style=color:#75715e>// [I@17211155</span>
+</span></span><span style=display:flex><span>    System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(Arrays.<span style=color:#a6e22e>toString</span>(arr));   <span style=color:#75715e>// [1, 2, 3, 4, 5]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    List<span style=color:#f92672>&lt;</span>Integer<span style=color:#f92672>&gt;</span> integers <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> ArrayList<span style=color:#f92672>&lt;&gt;</span>();
+</span></span><span style=display:flex><span>    integers.<span style=color:#a6e22e>add</span>(1);
+</span></span><span style=display:flex><span>    integers.<span style=color:#a6e22e>add</span>(2);
+</span></span><span style=display:flex><span>    integers.<span style=color:#a6e22e>add</span>(3);
+</span></span><span style=display:flex><span>    System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(integers);   <span style=color:#75715e>// [1, 2, 3]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    HashMap<span style=color:#f92672>&lt;</span>Integer, String<span style=color:#f92672>&gt;</span> integerStringHashMap <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> HashMap<span style=color:#f92672>&lt;&gt;</span>();
+</span></span><span style=display:flex><span>    integerStringHashMap.<span style=color:#a6e22e>put</span>(1, <span style=color:#e6db74>&#34;a&#34;</span>);
+</span></span><span style=display:flex><span>    integerStringHashMap.<span style=color:#a6e22e>put</span>(2, <span style=color:#e6db74>&#34;b&#34;</span>);
+</span></span><span style=display:flex><span>    integerStringHashMap.<span style=color:#a6e22e>put</span>(3, <span style=color:#e6db74>&#34;c&#34;</span>);
+</span></span><span style=display:flex><span>    System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(integerStringHashMap);   <span style=color:#75715e>// {1=a, 2=b, 3=c}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h3 id=数组截取>数组截取</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#75715e>// java.util.Arrays</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 从0开始,取出6个数</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>test</span>() {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span><span style=color:#f92672>[]</span> arr <span style=color:#f92672>=</span> {1, 2, 3, 4, 5, 6};
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span><span style=color:#f92672>[]</span> ints <span style=color:#f92672>=</span> Arrays.<span style=color:#a6e22e>copyOfRange</span>(arr, 0, 6);
+</span></span><span style=display:flex><span>    System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(Arrays.<span style=color:#a6e22e>toString</span>(ints));
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h2 id=格式化>格式化</h2><h3 id=数值格式化>数值格式化</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>test</span>() {
+</span></span><span style=display:flex><span>    String format <span style=color:#f92672>=</span> String.<span style=color:#a6e22e>format</span>(<span style=color:#e6db74>&#34;%02d&#34;</span>, 2);
+</span></span><span style=display:flex><span>    System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(format);  <span style=color:#75715e>// 02</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    String format2 <span style=color:#f92672>=</span> String.<span style=color:#a6e22e>format</span>(<span style=color:#e6db74>&#34;%02d&#34;</span>, 20);
+</span></span><span style=display:flex><span>    System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(format2);	<span style=color:#75715e>// 20</span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h2 id=数学>数学</h2><h3 id=余数取模>余数/取模</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>test</span>() {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span> a <span style=color:#f92672>=</span> 5;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span> b <span style=color:#f92672>=</span> 3;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 使用 % 运算符取余数</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span> remainder <span style=color:#f92672>=</span> a <span style=color:#f92672>%</span> b;
+</span></span><span style=display:flex><span>    System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(remainder); <span style=color:#75715e>// 2</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 使用 Math.floorMod() 方法取余数</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span> floorMod <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>floorMod</span>(a, b);
+</span></span><span style=display:flex><span>    System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(floorMod); <span style=color:#75715e>// 2</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h3 id=bigdecimal比较>BigDecimal比较</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>main</span>(String<span style=color:#f92672>[]</span> args) {
+</span></span><span style=display:flex><span>      BigDecimal a <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> BigDecimal(10);
+</span></span><span style=display:flex><span>      BigDecimal b <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> BigDecimal(5);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> a.<span style=color:#a6e22e>compareTo</span>(b);
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>switch</span> (i) {
+</span></span><span style=display:flex><span>          <span style=color:#66d9ef>case</span> <span style=color:#f92672>-</span>1: <span style=color:#75715e>// 小于</span>
+</span></span><span style=display:flex><span>              System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;a &lt; b&#34;</span>);
+</span></span><span style=display:flex><span>              <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>          <span style=color:#66d9ef>case</span> 0: <span style=color:#75715e>// 等于</span>
+</span></span><span style=display:flex><span>              System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;a = b&#34;</span>);
+</span></span><span style=display:flex><span>              <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>          <span style=color:#66d9ef>case</span> 1: <span style=color:#75715e>// 大于</span>
+</span></span><span style=display:flex><span>              System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;a &gt; b&#34;</span>);
+</span></span><span style=display:flex><span>              <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> (a.<span style=color:#a6e22e>compareTo</span>(b) <span style=color:#f92672>!=</span> 0) {
+</span></span><span style=display:flex><span>          System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;a != b&#34;</span>);
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> (a.<span style=color:#a6e22e>compareTo</span>(b) <span style=color:#f92672>!=</span> <span style=color:#f92672>-</span>1){
+</span></span><span style=display:flex><span>          System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;a &gt;= b&#34;</span>);
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> (a.<span style=color:#a6e22e>compareTo</span>(b) <span style=color:#f92672>!=</span> 1) {
+</span></span><span style=display:flex><span>          System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;a &lt;= b&#34;</span>);
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>  }
+</span></span></code></pre></div><h2 id=时间类型比较>时间类型比较</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>main</span>(String<span style=color:#f92672>[]</span> args) <span style=color:#66d9ef>throws</span> ParseException {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      SimpleDateFormat sdf <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> SimpleDateFormat(<span style=color:#e6db74>&#34;yyyy-MM-dd HH:mm:ss&#34;</span>);
+</span></span><span style=display:flex><span>      Date begin <span style=color:#f92672>=</span> sdf.<span style=color:#a6e22e>parse</span>(<span style=color:#e6db74>&#34;2020-01-01 00:01:00&#34;</span>);
+</span></span><span style=display:flex><span>      Date end <span style=color:#f92672>=</span> sdf.<span style=color:#a6e22e>parse</span>(<span style=color:#e6db74>&#34;2020-01-01 00:02:00&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#75715e>// 使用compareTo方法</span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> begin.<span style=color:#a6e22e>compareTo</span>(end);
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>switch</span> (i) {
+</span></span><span style=display:flex><span>          <span style=color:#66d9ef>case</span> <span style=color:#f92672>-</span>1:
+</span></span><span style=display:flex><span>              System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;开始时间大于结束时间&#34;</span>);
+</span></span><span style=display:flex><span>              <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>          <span style=color:#66d9ef>case</span> 0:
+</span></span><span style=display:flex><span>              System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;开始时间等于结束时间&#34;</span>);
+</span></span><span style=display:flex><span>              <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>          <span style=color:#66d9ef>case</span> 1:
+</span></span><span style=display:flex><span>              System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(<span style=color:#e6db74>&#34;开始时间小于结束时间&#34;</span>);
+</span></span><span style=display:flex><span>              <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#75715e>// 使用before和after方法</span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>boolean</span> b <span style=color:#f92672>=</span> begin.<span style=color:#a6e22e>before</span>(end);
+</span></span><span style=display:flex><span>      System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(b);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>boolean</span> c <span style=color:#f92672>=</span> begin.<span style=color:#a6e22e>after</span>(end);
+</span></span><span style=display:flex><span>      System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(c);
+</span></span><span style=display:flex><span>  }
+</span></span></code></pre></div><h2 id=值传递和引用传递>值传递和引用传递</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Demo</span> {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>main</span>(String<span style=color:#f92672>[]</span> args) {
+</span></span><span style=display:flex><span>        HashMap<span style=color:#f92672>&lt;</span>Integer, User<span style=color:#f92672>&gt;</span> ingUserHashMap <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> HashMap<span style=color:#f92672>&lt;</span>Integer, User<span style=color:#f92672>&gt;</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        User user <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> User();
+</span></span><span style=display:flex><span>        user.<span style=color:#a6e22e>setId</span>(1);
+</span></span><span style=display:flex><span>        ingUserHashMap.<span style=color:#a6e22e>put</span>(1, user);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// {1=User(id=1, bigDecimal=10)}</span>
+</span></span><span style=display:flex><span>        System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(ingUserHashMap);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      	<span style=color:#75715e>// 从map里取值,然后再修改</span>
+</span></span><span style=display:flex><span>        User user1 <span style=color:#f92672>=</span> ingUserHashMap.<span style=color:#a6e22e>get</span>(1);
+</span></span><span style=display:flex><span>        user1.<span style=color:#a6e22e>setBigDecimal</span>(BigDecimal.<span style=color:#a6e22e>ONE</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      	<span style=color:#75715e>// 打印map是修改了的</span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// {1=User(id=1, bigDecimal=1)}</span>
+</span></span><span style=display:flex><span>        System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(ingUserHashMap);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Data</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@ToString</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>User</span>{
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span> id;
+</span></span><span style=display:flex><span>    BigDecimal bigDecimal <span style=color:#f92672>=</span> BigDecimal.<span style=color:#a6e22e>TEN</span>;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h2 id=lambda>Lambda</h2><p>给集合分组</p></div><div><a class="read-more button" href=/posts/java/>Read more →</a></div></article><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/jenkins/>Jenkins</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/mac/>Mac</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/%E9%83%A8%E7%BD%B2/>部署</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/maven/>Maven</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051529846.png class=post-cover alt=Jenkins title="Cover Image"><div class=post-content><h1 id=root用户权限启动jenkins>Root用户权限启动Jenkins</h1><p>适用于Ubuntu环境下通过<code>apt-get install -y jenkins</code>命令在线安装的Jenkins</p><p>1.修改配置文件</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>vim /etc/default/jenkins
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 将下面两个参数修改为root</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 修改前</span>
+</span></span><span style=display:flex><span>JENKINS_USER<span style=color:#f92672>=</span>$NAME
+</span></span><span style=display:flex><span>JENKINS_GROUP<span style=color:#f92672>=</span>$NAME
+</span></span><span style=display:flex><span><span style=color:#75715e># 修改后</span>
+</span></span><span style=display:flex><span>JENKINS_USER<span style=color:#f92672>=</span>root
+</span></span><span style=display:flex><span>JENKINS_GROUP<span style=color:#f92672>=</span>root
+</span></span></code></pre></div><p>2.更改目录权限</p><p>不知道这步有没有起作用</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>cd /var/lib/
+</span></span><span style=display:flex><span>chown -R root:root ./jenkins
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 重启</span>
+</span></span><span style=display:flex><span>systemctl restart jenkins.service
+</span></span></code></pre></div><h1 id=jenkins使用教程>Jenkins使用教程</h1><h2 id=配置jdk>配置JDK</h2><p>Manage Jenkins &ndash;> Global Tool Configuration</p><ol><li>自动安装</li><li>手动安装要注意,J<code>AVA_HOME</code>的输入框下面，不要有警告或者错误信息，否则就是路径不正确,取消勾选自动安装</li></ol><h2 id=配置maven>配置Maven</h2><ol><li>安装Maven Integration 插件</li><li>通常自动安装maven就行了,如果手动安装,<code>MAVEN_HOME</code> 输入框下面，不要有警告或者错误信息，否则就是路径不正确</li></ol><h2 id=获取当前项目名称>获取当前项目名称</h2><p>在脚本中输入 <code>$JOB_NAME</code>就能获取到了</p><h2 id=卸载jenkins>卸载jenkins</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>//服务
+</span></span><span style=display:flex><span>sudo apt-get remove jenkins
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>//安装包，注意这里如果不是ubuntu那就yum
+</span></span><span style=display:flex><span>sudo apt-get remove --auto-remove jenkins
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>//配置和数据
+</span></span><span style=display:flex><span>sudo apt-get purge jenkins
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>sudo apt-get purge --auto-remove jenkins
+</span></span></code></pre></div><h2 id=升级jenkins>升级jenkins</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># 适用于ubuntu安装的</span>
+</span></span><span style=display:flex><span>apt-get upgrade jenkins
+</span></span></code></pre></div><h2 id=同时构建任务的个数>同时构建任务的个数</h2><p>系统管理&ndash;>系统设置&ndash;>执行者数量</p></div><div><a class="read-more button" href=/posts/jenkins/>Read more →</a></div></article><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/mybatis/>Mybatis</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/java/>Java</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/mybatis/>Mybatis</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/%E7%AC%94%E8%AE%B0/>笔记</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051530595.jpeg class=post-cover alt=Mybatis title="Cover Image"><div class=post-content><h1 id=教程>教程</h1><blockquote><p>参考:</p><p><a href=https://mybatis.org/mybatis-3/>官方文档</a></p><p><a href=https://github.com/mybatis>源码</a></p></blockquote><h2 id=provider的使用>Provider的使用</h2><p>1.一定要注意type的类名.class 和 method方法名,还要注意形参也得是一样的</p><p>2.Provider的方法,大概就三个方法sql.SELECT,sql.WHERE,sql.FROM</p><p>3.SQL 对象里的方法名跟别的不一样,小写的不行,idea也识别不到,要用大写,比如SLELECT</p><p>4.Provider里返回的是String</p><p><img src=https://image.runtimes.cc/202404051427670.png alt></p><p><img src=https://image.runtimes.cc/202404051427490.png alt></p><h2 id=注解-一对多查询多个参数>注解 一对多查询(多个参数)</h2><p><img src=https://image.runtimes.cc/202404051427839.png alt></p><p><img src=https://image.runtimes.cc/202404051428785.png alt></p><p><img src=https://image.runtimes.cc/202404051429441.png alt></p><h2 id=注解-一对多查询多个参数-1>注解 一对多查询(多个参数)</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#a6e22e>@SelectProvider</span>(method<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;queryPageFloors&#34;</span>,type<span style=color:#f92672>=</span>BarterGroupProvider.<span style=color:#a6e22e>class</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Results</span>({
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@Result</span>(property <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;userId&#34;</span>,column<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;user_id&#34;</span>),
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@Result</span>(property <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;floorNum&#34;</span>,column<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;floor_num&#34;</span>),
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@Result</span>(property <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;floorSecond&#34;</span>,column<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;id&#34;</span>),
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@Result</span>(property <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;say&#34;</span>,column<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;note&#34;</span>),
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@Result</span>(property <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;joinOrPublish&#34;</span>,column<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;join_or_publish&#34;</span>),
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@Result</span>(property<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;categorys&#34;</span>,javaType <span style=color:#f92672>=</span> List.<span style=color:#a6e22e>class</span>,column<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;id&#34;</span>,many<span style=color:#f92672>=</span><span style=color:#a6e22e>@Many</span>(select<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;com.ecloud.hobay.marketing.service.infrastructure.mapper.bartergroup.BarterGroupMapper.queryCategory&#34;</span>)),
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@Result</span>(property<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;productIds&#34;</span>,javaType <span style=color:#f92672>=</span> List.<span style=color:#a6e22e>class</span>,column<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;id&#34;</span>,many<span style=color:#f92672>=</span><span style=color:#a6e22e>@Many</span>(select<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;com.ecloud.hobay.marketing.service.infrastructure.mapper.bartergroup.BarterGroupMapper.queryProducts&#34;</span>)),
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@Result</span>(property<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;beforeResult&#34;</span>,javaType <span style=color:#f92672>=</span> List.<span style=color:#a6e22e>class</span>,column<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;id&#34;</span>,many<span style=color:#f92672>=</span><span style=color:#a6e22e>@Many</span>(select<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;com.ecloud.hobay.marketing.service.infrastructure.mapper.bartergroup.BarterGroupEvaluationMapper.queryAll&#34;</span>)),
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@Result</span>(property<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;barterGroupUser&#34;</span>,javaType <span style=color:#f92672>=</span> BarterGroupUser.<span style=color:#a6e22e>class</span>,column<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{user_id=user_id,id = barter_group_id }&#34;</span>,many<span style=color:#f92672>=</span><span style=color:#a6e22e>@Many</span>(select<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;com.ecloud.hobay.marketing.service.infrastructure.mapper.bartergroup.BarterGroupMapper.isHead&#34;</span>)),
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@Result</span>(property<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;futureResultNum&#34;</span>,column<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;id&#34;</span>,many<span style=color:#f92672>=</span><span style=color:#a6e22e>@Many</span>(select<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;com.ecloud.hobay.marketing.service.infrastructure.mapper.bartergroup.BarterGroupMapper.futureResultNum&#34;</span>))
+</span></span><span style=display:flex><span>})
+</span></span><span style=display:flex><span>List<span style=color:#f92672>&lt;</span>QueryFloors<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>queryFloors3</span>(Page<span style=color:#f92672>&lt;</span>QueryFloors<span style=color:#f92672>&gt;</span> page);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 分类
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param id
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * @return
+</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Select</span>(<span style=color:#e6db74>&#34;SELECT * FROM ecloud_marketing.barter_group_category WHERE barter_group_details_id = #{id} limit 0,7 &#34;</span>)
+</span></span><span style=display:flex><span>List<span style=color:#f92672>&lt;</span>BarterGroupCategory<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>queryCategory</span>(<span style=color:#a6e22e>@Param</span>(<span style=color:#e6db74>&#34;id&#34;</span>) Long id);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 产品
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param id
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * @return
+</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Select</span>(<span style=color:#e6db74>&#34;SELECT product_id from ecloud_marketing.barter_group_product_category WHERE barter_group_details_id = #{id} limit 0,3 &#34;</span>)
+</span></span><span style=display:flex><span>List<span style=color:#f92672>&lt;</span>Long<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>queryProducts</span>(<span style=color:#a6e22e>@Param</span>(<span style=color:#e6db74>&#34;id&#34;</span>) Long id);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 团员
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param userId
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param id
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * @return
+</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Select</span>(<span style=color:#e6db74>&#34;SELECT * FROM ecloud_marketing.barter_group_user WHERE user_id =#{user_id} and barter_group_id = #{id} and status = 1&#34;</span>)
+</span></span><span style=display:flex><span>BarterGroupUser <span style=color:#a6e22e>isHead</span>(Map<span style=color:#f92672>&lt;</span>String,Object<span style=color:#f92672>&gt;</span> map);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Select</span>(<span style=color:#e6db74>&#34;SELECT count(*) from ecloud_marketing.barter_group_evaluation WHERE barter_group_details_id = #{id}&#34;</span>)
+</span></span><span style=display:flex><span>Integer <span style=color:#a6e22e>futureResultNum</span>(<span style=color:#a6e22e>@Param</span>(<span style=color:#e6db74>&#34;id&#34;</span>) Long id);
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>QueryFloors</span> <span style=color:#66d9ef>implements</span> Serializable {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(<span style=color:#e6db74>&#34;我有的产品的id&#34;</span>)
+</span></span><span style=display:flex><span>    List<span style=color:#f92672>&lt;</span>ProductBarter<span style=color:#f92672>&gt;</span> list;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(<span style=color:#e6db74>&#34;封装前的评论数据&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> List<span style=color:#f92672>&lt;</span>BarterGroupEvaluation<span style=color:#f92672>&gt;</span> beforeResult;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(<span style=color:#e6db74>&#34;封装后的评论数据有分页给功能&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> Page<span style=color:#f92672>&lt;</span>BarterGroupEvaluation<span style=color:#f92672>&gt;</span> beforeResultPage;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(<span style=color:#e6db74>&#34;封装后的评论数据&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> List<span style=color:#f92672>&lt;</span>BarterGroupEvaluationResult<span style=color:#f92672>&gt;</span> futureResult;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(<span style=color:#e6db74>&#34;剩余评论条数&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> Integer futureResultNum;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(<span style=color:#e6db74>&#34;分类&#34;</span>)
+</span></span><span style=display:flex><span>    List<span style=color:#f92672>&lt;</span>BarterGroupCategory<span style=color:#f92672>&gt;</span> categorys;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(value<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;楼层数&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> Integer floorNum;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(value<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;楼层id&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> Long floorSecond;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(value<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;要说的&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> String say;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(value<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;加入或者是发布&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> Integer joinOrPublish;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(<span style=color:#e6db74>&#34;会员表&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> BarterGroupUser barterGroupUser;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(value<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;加入时间&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> Long joinData;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h2 id=注解-一对多查询一个参数>注解 一对多查询(一个参数)</h2><p><img src=https://image.runtimes.cc/202404051430732.png alt></p></div><div><a class="read-more button" href=/posts/mybatis/>Read more →</a></div></article><div class=pagination><div class=pagination__buttons><a href=/categories/java/ class="button previous"><span class=button__icon>←</span>
+<span class=button__text>Newer posts</span>
+</a><a href=/categories/java/page/3/ class="button next"><span class=button__text>Older posts</span>
+<span class=button__icon>→</span></a></div></div></div></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>
+<span>:: <a href=https://github.com/mirus-ua/hugo-theme-re-terminal target=_blank>Theme</a> made by <a href=https://github.com/mirus-ua target=_blank>Mirus</a></span></div></div></footer><script type=text/javascript src=/bundle.min.js></script></div></body></html>

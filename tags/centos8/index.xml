@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Centos8 on Hello World</title><link>https://connorzhangyu.com/tags/centos8/</link><description>Recent content in Centos8 on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Fri, 18 Nov 2022 18:25:00 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/centos8/index.xml" rel="self" type="application/rss+xml"/><item><title>虚拟机</title><link>https://connorzhangyu.com/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%99%9A%E6%8B%9F%E6%9C%BA/</link><pubDate>Fri, 18 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%99%9A%E6%8B%9F%E6%9C%BA/</guid><description>&lt;h1 id="virtualbox增强功能centos8">VirtualBox增强功能Centos8&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Centos8 on Hello World</title><link>https://connorzhangyu.com/tags/centos8/</link><description>Recent content in Centos8 on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Fri, 18 Nov 2022 18:25:00 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/centos8/index.xml" rel="self" type="application/rss+xml"/><item><title>虚拟机</title><link>https://connorzhangyu.com/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%99%9A%E6%8B%9F%E6%9C%BA/</link><pubDate>Fri, 18 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%99%9A%E6%8B%9F%E6%9C%BA/</guid><description>&lt;h1 id="virtualbox增强功能centos8">VirtualBox增强功能Centos8&lt;/h1>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Shell" data-lang="Shell">&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 需要安装一定的依赖，例如：make gcc perl&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo yum install gcc perl make tar bzip2 elfutils-libelf-devel
@@ -8,7 +8,17 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 或者通过DNF安装所有：&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dnf install tar bzip2 kernel-devel-&lt;span style="color:#66d9ef">$(&lt;/span>uname -r&lt;span style="color:#66d9ef">)&lt;/span> kernel-headers perl gcc make elfutils-libelf-devel
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>虚拟机</title><link>https://connorzhangyu.com/posts/%E8%99%9A%E6%8B%9F%E6%9C%BA/</link><pubDate>Fri, 18 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/%E8%99%9A%E6%8B%9F%E6%9C%BA/</guid><description>&lt;h1 id="virtualbox增强功能centos8">VirtualBox增强功能Centos8&lt;/h1>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description><content>&lt;h1 id="virtualbox增强功能centos8">VirtualBox增强功能Centos8&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Shell" data-lang="Shell">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 需要安装一定的依赖，例如：make gcc perl&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo yum install gcc perl make tar bzip2 elfutils-libelf-devel
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#同时安装的kernel-devel版本要和内核版本一致，安装对应版本&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo yum install -y &lt;span style="color:#e6db74">&amp;#34;kernel-devel-uname-r == &lt;/span>&lt;span style="color:#66d9ef">$(&lt;/span>uname -r&lt;span style="color:#66d9ef">)&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 或者通过DNF安装所有：&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dnf install tar bzip2 kernel-devel-&lt;span style="color:#66d9ef">$(&lt;/span>uname -r&lt;span style="color:#66d9ef">)&lt;/span> kernel-headers perl gcc make elfutils-libelf-devel
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>虚拟机</title><link>https://connorzhangyu.com/posts/%E8%99%9A%E6%8B%9F%E6%9C%BA/</link><pubDate>Fri, 18 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/%E8%99%9A%E6%8B%9F%E6%9C%BA/</guid><description>&lt;h1 id="virtualbox增强功能centos8">VirtualBox增强功能Centos8&lt;/h1>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Shell" data-lang="Shell">&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 需要安装一定的依赖，例如：make gcc perl&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo yum install gcc perl make tar bzip2 elfutils-libelf-devel
@@ -42,4 +52,51 @@
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051341481.png" alt="image-20240106174310837">&lt;/p>
 &lt;p>然后系统就行回重启,然后又回到设置Windown的设置开始,这是正常的,然后就一直都是配置,正常配置就好,选择没有连接,就可以创建本地账号&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051341581.png" alt="image-20240106174320712">&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051341019.png" alt="image-20240106174335945">&lt;/p></description></item></channel></rss>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051341019.png" alt="image-20240106174335945">&lt;/p></description><content>&lt;h1 id="virtualbox增强功能centos8">VirtualBox增强功能Centos8&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Shell" data-lang="Shell">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 需要安装一定的依赖，例如：make gcc perl&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo yum install gcc perl make tar bzip2 elfutils-libelf-devel
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#同时安装的kernel-devel版本要和内核版本一致，安装对应版本&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo yum install -y &lt;span style="color:#e6db74">&amp;#34;kernel-devel-uname-r == &lt;/span>&lt;span style="color:#66d9ef">$(&lt;/span>uname -r&lt;span style="color:#66d9ef">)&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 或者通过DNF安装所有：&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dnf install tar bzip2 kernel-devel-&lt;span style="color:#66d9ef">$(&lt;/span>uname -r&lt;span style="color:#66d9ef">)&lt;/span> kernel-headers perl gcc make elfutils-libelf-devel
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="mac-apple芯片安装win11">Mac Apple芯片安装Win11&lt;/h1>
+&lt;blockquote>
+&lt;p>&lt;a href="https://blog.csdn.net/weixin_52799373/article/details/129658881">M1/M2 Pro VMware Fusion虚拟机安装Win11教程(超详细)_m1装win11_七维大脑的博客-CSDN博客&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://blog.csdn.net/m0_72489515/article/details/128036581">M用户使用VM虚拟机安装win11连不上网，怎么解决_mac_xwz的博客-CSDN博客&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051338314.png" alt="image-20240106171142746">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051338837.png" alt="image-20240106171214171">&lt;/p>
+&lt;blockquote>
+&lt;p>记得要下载ARM版本的&lt;/p>&lt;/blockquote>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051338380.png" alt="image-20240106171222884">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051339250.png" alt="image-20240106171238651">&lt;/p>
+&lt;p>这里设置的密码,后面不会再用了,可以设置个简单点的就行&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051339063.png" alt="image-20240106171316780">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051340279.png" alt="image-20240106171329023">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051340353.png" alt="image-20240106171353840">&lt;/p>
+&lt;p>内存设置4GB,硬盘设置成80GB&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051340025.png" alt="image-20240106171404594">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051341339.png" alt="image-20240106171419408">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051341466.png" alt="image-20240106171447630">&lt;/p>
+&lt;p>这里要快速按回车,不然就提示EFI Network,如果是这个提示,重新启动虚拟机就行,之后就是正常安装Window系统的步骤,然后就会遇到连接到网络的问题&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051341301.png" alt="image-20240106172001913">&lt;/p>
+&lt;p>&lt;code>Shift + F10&lt;/code>打开命令行,输入&lt;code>OOBE\BYPASSNRO&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051341481.png" alt="image-20240106174310837">&lt;/p>
+&lt;p>然后系统就行回重启,然后又回到设置Windown的设置开始,这是正常的,然后就一直都是配置,正常配置就好,选择没有连接,就可以创建本地账号&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051341581.png" alt="image-20240106174320712">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051341019.png" alt="image-20240106174335945">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051341025.png" alt="image-20240106174424437">&lt;/p>
+&lt;p>安装完成之后,是没有网络的,需要安装vm-tools&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051345365.png" alt="image-20240106174524696">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051346760.png" alt="image-20240106174545175">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051347491.png" alt="image-20240106174556748">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051348197.png" alt="image-20240106174616569">&lt;/p>
+&lt;p>正常安装软件的步骤就可以了&lt;/p>
+&lt;h1 id="固定ip">固定IP&lt;/h1>
+&lt;p>配置完了,最好是重启下vmware和虚拟机,和禁用开启 win10上的vmare8网卡&lt;/p>
+&lt;p>1.vmare配置
+&lt;img src="https://image.runtimes.cc/202404051348330.png" alt="">&lt;/p>
+&lt;p>2.电脑配置,虚拟机配置&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051349925.png" alt="">&lt;/p></content></item></channel></rss>

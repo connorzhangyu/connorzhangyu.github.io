@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>命令行 on Hello World</title><link>https://connorzhangyu.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/</link><description>Recent content in 命令行 on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Sat, 19 Nov 2022 18:25:00 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/index.xml" rel="self" type="application/rss+xml"/><item><title>Windows</title><link>https://connorzhangyu.com/posts/windows/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/windows/</guid><description>&lt;h1 id="windows-server">Windows Server&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>命令行 on Hello World</title><link>https://connorzhangyu.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/</link><description>Recent content in 命令行 on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sat, 19 Nov 2022 18:25:00 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/index.xml" rel="self" type="application/rss+xml"/><item><title>Windows</title><link>https://connorzhangyu.com/posts/windows/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/windows/</guid><description>&lt;h1 id="windows-server">Windows Server&lt;/h1>
 &lt;h2 id="开放指定端口">开放指定端口&lt;/h2>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051353354.webp" alt="1">&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051353503.webp" alt="2">&lt;/p>
@@ -58,7 +58,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>del &lt;span style="color:#e6db74">&amp;#34;%userprofile%\AppData\Local\iconcache.db&amp;#34;&lt;/span> /f /q
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>start explorer
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pause
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>复制上面的代码。新建一个文本文件。粘贴后另存为.bat文件，然后以管理员身份打开。&lt;/p></description></item><item><title>Windows</title><link>https://connorzhangyu.com/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/windows/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/windows/</guid><description>&lt;h1 id="windows-server">Windows Server&lt;/h1>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>复制上面的代码。新建一个文本文件。粘贴后另存为.bat文件，然后以管理员身份打开。&lt;/p></description><content>&lt;h1 id="windows-server">Windows Server&lt;/h1>
 &lt;h2 id="开放指定端口">开放指定端口&lt;/h2>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051353354.webp" alt="1">&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051353503.webp" alt="2">&lt;/p>
@@ -118,4 +118,399 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>del &lt;span style="color:#e6db74">&amp;#34;%userprofile%\AppData\Local\iconcache.db&amp;#34;&lt;/span> /f /q
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>start explorer
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pause
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>复制上面的代码。新建一个文本文件。粘贴后另存为.bat文件，然后以管理员身份打开。&lt;/p></description></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>复制上面的代码。新建一个文本文件。粘贴后另存为.bat文件，然后以管理员身份打开。&lt;/p>
+&lt;h1 id="win10安装concfg用来清空掉命令行和powershell的多配置文件">Win10安装concfg,用来清空掉命令行和powershell的多配置文件&lt;/h1>
+&lt;p>github仓库:&lt;code>https://github.com/lukesampson/concfg&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 安装concfg软件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>scoop install concfg
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 删除掉多余的配置文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>concfg clean
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 导入内置的主题配置,还有别的配置&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>concfg import solarized-dark
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="cmd和powershell的默认值和属性的区别">Cmd和Powershell的默认值和属性的区别&lt;/h1>
+&lt;p>默认值和属性的不同设置,从哪里启动有关系,比如用开始菜单的 和 从shift + 右键,加载的命令行不一样,还是安装好concfg软件,把多余的都删掉,只留一个&lt;/p>
+&lt;p>如果你打开 PowerShell 快捷方式时不小心右键修改它的“属性”中的设置项的话，那么它的表现又会不同了。所以如果想一直保持一致，最好不要动任何一个控制台实例的“属性”。&lt;code>https://www.zhihu.com/question/63867578/answer/220101109&lt;/code>&lt;/p>
+&lt;h1 id="powershell美化教程">Powershell美化教程&lt;/h1>
+&lt;p>用的是这三个地址,等下回安装的时候再写的详细点&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>https://zhuanlan.zhihu.com/p/51901035
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>https://blog.walterlv.com/post/beautify-powershell-like-zsh.html
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>https://coolcode.org/2018/03/16/how-to-make-your-powershell-beautiful/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="把软件加入到自启动">把软件加入到自启动&lt;/h1>
+&lt;p>在运行里输入&lt;code>shell:startup&lt;/code>,把快捷键拖到打开的文件夹里&lt;/p>
+&lt;h1 id="wsl2安装">WSL2安装&lt;/h1>
+&lt;p>1.开启
+&lt;img src="https://image.runtimes.cc/202404051355619.png" alt="">
+2.下载安装镜像
+&lt;img src="https://image.runtimes.cc/202404051357406.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051357977.png" alt="">
+3.设置wsl2&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051358316.png" alt="">&lt;/p>
+&lt;pre tabindex="0">&lt;code>PS C:\Users\anthony&amp;gt; wsl -l -v
+NAME STATE VERSION
+* Ubuntu-20.04 Stopped 2
+&lt;/code>&lt;/pre>&lt;h1 id="docker和vmware的虚拟机冲突">Docker和VMware的虚拟机冲突&lt;/h1>
+&lt;p>把Windows自带虚拟机删除掉
+&lt;img src="https://image.runtimes.cc/202404051358708.png" alt="">&lt;/p>
+&lt;p>再用管理员的powershell执行&lt;code>bcdedit /set hypervisorlaunchtype off&lt;/code>&lt;/p>
+&lt;h1 id="everythingtoolbar">EverythingToolbar&lt;/h1>
+&lt;p>&lt;code>https://github.com/stnkl/EverythingToolbar&lt;/code>&lt;/p>
+&lt;h1 id="picgogithub">PicGO+Github&lt;/h1>
+&lt;p>生成token:&lt;code>在github-&amp;gt;setting-&amp;gt;developer settings 选择generate new token&lt;/code>
+&lt;img src="https://image.runtimes.cc/202404051358110.png" alt="">&lt;/p>
+&lt;p>&lt;code>记得保存好密码,只会创建成功后显示,以后就看不到了&lt;/code>&lt;/p>
+&lt;p>PicGo设置&lt;/p>
+&lt;pre tabindex="0">&lt;code>仓库名:YangAnLin/images
+分支名:master
+设定token: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
+设定自定义域名:https://cdn.jsdelivr.net/gh/YangAnLin/images
+&lt;/code>&lt;/pre>&lt;h1 id="通过修改注册表更改ie浏览器的代理设置">通过修改注册表更改IE浏览器的代理设置&lt;/h1>
+&lt;p>打开注册表&lt;/p>
+&lt;pre tabindex="0">&lt;code>regedit或regedit.exe、regedt32或regedt32.exe
+&lt;/code>&lt;/pre>&lt;h1 id="xshell输入删除回车变成h">Xshell输入删除回车变成^H&lt;/h1>
+&lt;p>File&amp;ndash;&amp;gt;Properties&amp;ndash;&amp;gt;Terminl里选择Keyboard，然后在Backspace key sequence里选择&lt;code>ASCII 127&lt;/code>&lt;/p>
+&lt;h1 id="whatsapp">WhatsApp&lt;/h1>
+&lt;p>&lt;a href="https://faq.whatsapp.com/web/download-and-installation/how-to-join-or-leave-the-multi-device-beta/?lang=zh_cn">申请测试版&lt;/a>&lt;/p>
+&lt;h1 id="vscode">Vscode&lt;/h1>
+&lt;h2 id="快捷键">快捷键&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Win命令&lt;/th>
+&lt;th>Mac命令&lt;/th>
+&lt;th>描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>Ctrl + J&lt;/code>&lt;/td>
+&lt;td>&lt;code>Command + J&lt;/code>&lt;/td>
+&lt;td>隐藏/显示终端&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Ctrl + P&lt;/code>&lt;/td>
+&lt;td>&lt;code>Command + P&lt;/code>&lt;/td>
+&lt;td>快速打开文件&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;code>Alt + Shift&lt;/code>+鼠标移动&lt;/td>
+&lt;td>列编辑&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;code>Alt&lt;/code>+鼠标点选&lt;/td>
+&lt;td>列编辑+点选&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="设置">设置&lt;/h2>
+&lt;h3 id="python自动补全函数">Python自动补全函数&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">settings&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">—&lt;/span>&amp;gt;&lt;span style="color:#a6e22e">addBrackets&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="go自动补全函数">Go自动补全函数&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 这个选项打勾&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>useCodeSnippetsOnMethodSuggest&lt;span style="color:#e6db74">&amp;#34;:true
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"># 或者搜索suggest相关的设置
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="隐藏目录">隐藏目录&lt;/h3>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051358058.png" alt="">&lt;/p>
+&lt;h3 id="文本乱码和重新编码">文本乱码和重新编码&lt;/h3>
+&lt;p>比如打开的一个文本是GBK编码的文件,用vscode打开的是乱码
+如果想要正常显示,先选择文件本来的编码
+&lt;img src="https://image.runtimes.cc/202404051358762.webp" alt="">
+&lt;img src="https://image.runtimes.cc/202404051519153.webp" alt="">&lt;/p>
+&lt;p>如果想要把GBK编码的文件,转成UTF-8的编码格式,再保存
+&lt;img src="https://image.runtimes.cc/202404051358732.webp" alt="">
+&lt;img src="https://image.runtimes.cc/202404051519346.webp" alt="">&lt;/p>
+&lt;h3 id="使用制表符而不是空格">使用制表符而不是空格&lt;/h3>
+&lt;p>在设置你搜索&lt;code>indent&lt;/code>，找到 &lt;code>Editor:Detect Indexntation&lt;/code> 和 &lt;code>Editor：Insert Spaces&lt;/code> 两个勾选框，取消勾选&lt;/p>
+&lt;h3 id="显示空格和制表符">显示空格和制表符&lt;/h3>
+&lt;p>打开setting&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>在搜索框中输入renderControlCharacters,选中勾选框,即可显示tab.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在搜索框中输入renderWhitespace,选择all,即可显示空格.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="设置制表符为4个空格">设置制表符为4个空格&lt;/h3>
+&lt;p>打开setting，搜索&lt;code>tab size&lt;/code>为4，如果不起作用，接下来要设置&lt;/p>
+&lt;p>搜索&lt;code>Detect Indentation&lt;/code> 取消勾选，或者勾选试试&lt;/p>
+&lt;h2 id="插件">插件&lt;/h2>
+&lt;h3 id="write-timestamp">Write Timestamp&lt;/h3>
+&lt;p>作用:插入当前时间
+&lt;code>Ctrl + Shift + T&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051359789.png" alt="Write Timestamp">&lt;/p>
+&lt;p>也可以自己修改时间格式:
+&lt;img src="https://image.runtimes.cc/202404051359630.png" alt="">&lt;/p>
+&lt;h3 id="picgo">PicGO&lt;/h3>
+&lt;p>1.在插件那搜索picgo,安装好插件在插件那里点设置2.配置阿里云oss,参考:&lt;code>https://picgo.github.io/PicGo-Doc/&lt;/code>&lt;/p>
+&lt;pre tabindex="0">&lt;code>{
+&amp;#34;accessKeyId&amp;#34;: &amp;#34;&amp;#34;,
+&amp;#34;accessKeySecret&amp;#34;: &amp;#34;&amp;#34;,
+&amp;#34;bucket&amp;#34;: &amp;#34;&amp;#34;, // 存储空间名
+&amp;#34;area&amp;#34;: &amp;#34;&amp;#34;, // 存储区域代号
+&amp;#34;path&amp;#34;: &amp;#34;&amp;#34;, // 自定义存储路径
+&amp;#34;customUrl&amp;#34;: &amp;#34;&amp;#34; // 自定义域名，注意要加http://或者https://
+}
+&lt;/code>&lt;/pre>&lt;p>3.通过三个组合键，可以分别从：1.（Ctrl+alt+U）剪切板 2.（Ctrl+alt+E）文件夹 3.（Ctrl+alt+O）指定路径&lt;/p></content></item><item><title>Windows</title><link>https://connorzhangyu.com/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/windows/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/windows/</guid><description>&lt;h1 id="windows-server">Windows Server&lt;/h1>
+&lt;h2 id="开放指定端口">开放指定端口&lt;/h2>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051353354.webp" alt="1">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051353503.webp" alt="2">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051353919.webp" alt="3">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051353502.webp" alt="4">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051354921.webp" alt="6">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051355944.webp" alt="7">&lt;/p>
+&lt;h2 id="服务器禁用ipv6">服务器禁用IPV6&lt;/h2>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051355530.png" alt="">&lt;/p>
+&lt;p>⛔ 一定要重启&lt;/p>
+&lt;p>&lt;a href="https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/configure-ipv6-in-windows">官方文档&lt;/a>&lt;/p>
+&lt;h2 id="ie浏览器允许下载">IE浏览器允许下载&lt;/h2>
+&lt;p>通常服务器不允许乱下载软件,所以一般默认被禁用,下面两种方法都行&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051355878.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051355807.png" alt="">&lt;/p>
+&lt;h1 id="安装win10系统创建本地账号">安装win10系统,创建本地账号&lt;/h1>
+&lt;p>在提示需要账号登录的时候,按&lt;code>Shift + F10&lt;/code>打开命令行,输入&lt;code>oobe\bypassnro.cmd&lt;/code>，就会重启,再安装，就不会要求输入微软账号了；也有例外的情况，用过win11商业版的镜像安装的时候,用这个命令不起作用
+&lt;img src="https://image.runtimes.cc/202404051355254.png" alt="win11">&lt;/p>
+&lt;blockquote>
+&lt;p>参考:&lt;a href="https://blog.csdn.net/qq_33427869/article/details/127573950">系统安装跳过登录&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;h1 id="powershell改变默认编码">Powershell改变默认编码&lt;/h1>
+&lt;p>中文版Powershell默认编码为GB2312，而编程,运维,开发中常用编码格式为UTF-8。&lt;/p>
+&lt;h2 id="临时修改">临时修改&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Powershell" data-lang="Powershell">&lt;span style="display:flex;">&lt;span>chcp &lt;span style="color:#ae81ff">65001&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="永久修改">永久修改&lt;/h2>
+&lt;p>进入注册表&lt;code>win+R-&amp;gt;输入regedit&lt;/code>在&lt;code>HKEY_CURRENT_USER\Console&lt;/code>，双击&lt;code>CodePage&lt;/code>修改键值为&lt;code>65001&lt;/code>
+&lt;img src="https://image.runtimes.cc/202404051355297.png" alt="">
+检查是否生效: 新开一个PowerShell,或者重启&lt;/p>
+&lt;h1 id="win10杀线程">Win10杀线程&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-nix" data-lang="nix">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 查找5091的端口&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>netstat &lt;span style="color:#960050;background-color:#1e0010">-&lt;/span>aon &lt;span style="color:#960050;background-color:#1e0010">|&lt;/span> find &lt;span style="color:#e6db74">&amp;#34;5091&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 杀5091的PID&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>taskkill &lt;span style="color:#e6db74">/f&lt;/span> &lt;span style="color:#e6db74">/pid&lt;/span> &lt;span style="color:#ae81ff">6880&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="win10安装scoop包管理器">Win10安装Scoop包管理器&lt;/h1>
+&lt;p>Scoop是windows的包管理器&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 使用了PowerShell在你当前Windows的账户下&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>set-executionpolicy remotesigned -s cu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 在PowerShell下输入&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>iex &lt;span style="color:#f92672">(&lt;/span>new-object net.webclient&lt;span style="color:#f92672">)&lt;/span>.downloadstring&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#39;https://get.scoop.sh&amp;#39;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="windows-terminal策略">Windows Terminal策略&lt;/h1>
+&lt;p>以管理员身份打开PowerShell 输入&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>set-executionpolicy remotesigned
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="win10去掉小箭头">Win10去掉小箭头&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 去掉小箭头&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>reg add &lt;span style="color:#e6db74">&amp;#34;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons&amp;#34;&lt;/span> /v &lt;span style="color:#ae81ff">29&lt;/span> /d &lt;span style="color:#e6db74">&amp;#34;%systemroot%\system32\imageres.dll,197&amp;#34;&lt;/span> /t reg_sz /f
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>taskkill /f /im explorer.exe
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>attrib -s -r -h &lt;span style="color:#e6db74">&amp;#34;%userprofile%\AppData\Local\iconcache.db&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>del &lt;span style="color:#e6db74">&amp;#34;%userprofile%\AppData\Local\iconcache.db&amp;#34;&lt;/span> /f /q
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>start explorer
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pause
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 回复小箭头&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>reg delete &lt;span style="color:#e6db74">&amp;#34;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons&amp;#34;&lt;/span> /v &lt;span style="color:#ae81ff">29&lt;/span> /f
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>taskkill /f /im explorer.exe
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>attrib -s -r -h &lt;span style="color:#e6db74">&amp;#34;%userprofile%\AppData\Local\iconcache.db&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>del &lt;span style="color:#e6db74">&amp;#34;%userprofile%\AppData\Local\iconcache.db&amp;#34;&lt;/span> /f /q
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>start explorer
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pause
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>复制上面的代码。新建一个文本文件。粘贴后另存为.bat文件，然后以管理员身份打开。&lt;/p></description><content>&lt;h1 id="windows-server">Windows Server&lt;/h1>
+&lt;h2 id="开放指定端口">开放指定端口&lt;/h2>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051353354.webp" alt="1">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051353503.webp" alt="2">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051353919.webp" alt="3">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051353502.webp" alt="4">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051354921.webp" alt="6">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051355944.webp" alt="7">&lt;/p>
+&lt;h2 id="服务器禁用ipv6">服务器禁用IPV6&lt;/h2>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051355530.png" alt="">&lt;/p>
+&lt;p>⛔ 一定要重启&lt;/p>
+&lt;p>&lt;a href="https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/configure-ipv6-in-windows">官方文档&lt;/a>&lt;/p>
+&lt;h2 id="ie浏览器允许下载">IE浏览器允许下载&lt;/h2>
+&lt;p>通常服务器不允许乱下载软件,所以一般默认被禁用,下面两种方法都行&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051355878.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051355807.png" alt="">&lt;/p>
+&lt;h1 id="安装win10系统创建本地账号">安装win10系统,创建本地账号&lt;/h1>
+&lt;p>在提示需要账号登录的时候,按&lt;code>Shift + F10&lt;/code>打开命令行,输入&lt;code>oobe\bypassnro.cmd&lt;/code>，就会重启,再安装，就不会要求输入微软账号了；也有例外的情况，用过win11商业版的镜像安装的时候,用这个命令不起作用
+&lt;img src="https://image.runtimes.cc/202404051355254.png" alt="win11">&lt;/p>
+&lt;blockquote>
+&lt;p>参考:&lt;a href="https://blog.csdn.net/qq_33427869/article/details/127573950">系统安装跳过登录&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;h1 id="powershell改变默认编码">Powershell改变默认编码&lt;/h1>
+&lt;p>中文版Powershell默认编码为GB2312，而编程,运维,开发中常用编码格式为UTF-8。&lt;/p>
+&lt;h2 id="临时修改">临时修改&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Powershell" data-lang="Powershell">&lt;span style="display:flex;">&lt;span>chcp &lt;span style="color:#ae81ff">65001&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="永久修改">永久修改&lt;/h2>
+&lt;p>进入注册表&lt;code>win+R-&amp;gt;输入regedit&lt;/code>在&lt;code>HKEY_CURRENT_USER\Console&lt;/code>，双击&lt;code>CodePage&lt;/code>修改键值为&lt;code>65001&lt;/code>
+&lt;img src="https://image.runtimes.cc/202404051355297.png" alt="">
+检查是否生效: 新开一个PowerShell,或者重启&lt;/p>
+&lt;h1 id="win10杀线程">Win10杀线程&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-nix" data-lang="nix">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 查找5091的端口&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>netstat &lt;span style="color:#960050;background-color:#1e0010">-&lt;/span>aon &lt;span style="color:#960050;background-color:#1e0010">|&lt;/span> find &lt;span style="color:#e6db74">&amp;#34;5091&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 杀5091的PID&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>taskkill &lt;span style="color:#e6db74">/f&lt;/span> &lt;span style="color:#e6db74">/pid&lt;/span> &lt;span style="color:#ae81ff">6880&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="win10安装scoop包管理器">Win10安装Scoop包管理器&lt;/h1>
+&lt;p>Scoop是windows的包管理器&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 使用了PowerShell在你当前Windows的账户下&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>set-executionpolicy remotesigned -s cu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 在PowerShell下输入&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>iex &lt;span style="color:#f92672">(&lt;/span>new-object net.webclient&lt;span style="color:#f92672">)&lt;/span>.downloadstring&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#39;https://get.scoop.sh&amp;#39;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="windows-terminal策略">Windows Terminal策略&lt;/h1>
+&lt;p>以管理员身份打开PowerShell 输入&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>set-executionpolicy remotesigned
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="win10去掉小箭头">Win10去掉小箭头&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 去掉小箭头&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>reg add &lt;span style="color:#e6db74">&amp;#34;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons&amp;#34;&lt;/span> /v &lt;span style="color:#ae81ff">29&lt;/span> /d &lt;span style="color:#e6db74">&amp;#34;%systemroot%\system32\imageres.dll,197&amp;#34;&lt;/span> /t reg_sz /f
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>taskkill /f /im explorer.exe
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>attrib -s -r -h &lt;span style="color:#e6db74">&amp;#34;%userprofile%\AppData\Local\iconcache.db&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>del &lt;span style="color:#e6db74">&amp;#34;%userprofile%\AppData\Local\iconcache.db&amp;#34;&lt;/span> /f /q
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>start explorer
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pause
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 回复小箭头&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>reg delete &lt;span style="color:#e6db74">&amp;#34;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons&amp;#34;&lt;/span> /v &lt;span style="color:#ae81ff">29&lt;/span> /f
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>taskkill /f /im explorer.exe
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>attrib -s -r -h &lt;span style="color:#e6db74">&amp;#34;%userprofile%\AppData\Local\iconcache.db&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>del &lt;span style="color:#e6db74">&amp;#34;%userprofile%\AppData\Local\iconcache.db&amp;#34;&lt;/span> /f /q
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>start explorer
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pause
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>复制上面的代码。新建一个文本文件。粘贴后另存为.bat文件，然后以管理员身份打开。&lt;/p>
+&lt;h1 id="win10安装concfg用来清空掉命令行和powershell的多配置文件">Win10安装concfg,用来清空掉命令行和powershell的多配置文件&lt;/h1>
+&lt;p>github仓库:&lt;code>https://github.com/lukesampson/concfg&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 安装concfg软件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>scoop install concfg
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 删除掉多余的配置文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>concfg clean
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 导入内置的主题配置,还有别的配置&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>concfg import solarized-dark
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="cmd和powershell的默认值和属性的区别">Cmd和Powershell的默认值和属性的区别&lt;/h1>
+&lt;p>默认值和属性的不同设置,从哪里启动有关系,比如用开始菜单的 和 从shift + 右键,加载的命令行不一样,还是安装好concfg软件,把多余的都删掉,只留一个&lt;/p>
+&lt;p>如果你打开 PowerShell 快捷方式时不小心右键修改它的“属性”中的设置项的话，那么它的表现又会不同了。所以如果想一直保持一致，最好不要动任何一个控制台实例的“属性”。&lt;code>https://www.zhihu.com/question/63867578/answer/220101109&lt;/code>&lt;/p>
+&lt;h1 id="powershell美化教程">Powershell美化教程&lt;/h1>
+&lt;p>用的是这三个地址,等下回安装的时候再写的详细点&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>https://zhuanlan.zhihu.com/p/51901035
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>https://blog.walterlv.com/post/beautify-powershell-like-zsh.html
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>https://coolcode.org/2018/03/16/how-to-make-your-powershell-beautiful/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="把软件加入到自启动">把软件加入到自启动&lt;/h1>
+&lt;p>在运行里输入&lt;code>shell:startup&lt;/code>,把快捷键拖到打开的文件夹里&lt;/p>
+&lt;h1 id="wsl2安装">WSL2安装&lt;/h1>
+&lt;p>1.开启
+&lt;img src="https://image.runtimes.cc/202404051355619.png" alt="">
+2.下载安装镜像
+&lt;img src="https://image.runtimes.cc/202404051357406.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051357977.png" alt="">
+3.设置wsl2&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051358316.png" alt="">&lt;/p>
+&lt;pre tabindex="0">&lt;code>PS C:\Users\anthony&amp;gt; wsl -l -v
+NAME STATE VERSION
+* Ubuntu-20.04 Stopped 2
+&lt;/code>&lt;/pre>&lt;h1 id="docker和vmware的虚拟机冲突">Docker和VMware的虚拟机冲突&lt;/h1>
+&lt;p>把Windows自带虚拟机删除掉
+&lt;img src="https://image.runtimes.cc/202404051358708.png" alt="">&lt;/p>
+&lt;p>再用管理员的powershell执行&lt;code>bcdedit /set hypervisorlaunchtype off&lt;/code>&lt;/p>
+&lt;h1 id="everythingtoolbar">EverythingToolbar&lt;/h1>
+&lt;p>&lt;code>https://github.com/stnkl/EverythingToolbar&lt;/code>&lt;/p>
+&lt;h1 id="picgogithub">PicGO+Github&lt;/h1>
+&lt;p>生成token:&lt;code>在github-&amp;gt;setting-&amp;gt;developer settings 选择generate new token&lt;/code>
+&lt;img src="https://image.runtimes.cc/202404051358110.png" alt="">&lt;/p>
+&lt;p>&lt;code>记得保存好密码,只会创建成功后显示,以后就看不到了&lt;/code>&lt;/p>
+&lt;p>PicGo设置&lt;/p>
+&lt;pre tabindex="0">&lt;code>仓库名:YangAnLin/images
+分支名:master
+设定token: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
+设定自定义域名:https://cdn.jsdelivr.net/gh/YangAnLin/images
+&lt;/code>&lt;/pre>&lt;h1 id="通过修改注册表更改ie浏览器的代理设置">通过修改注册表更改IE浏览器的代理设置&lt;/h1>
+&lt;p>打开注册表&lt;/p>
+&lt;pre tabindex="0">&lt;code>regedit或regedit.exe、regedt32或regedt32.exe
+&lt;/code>&lt;/pre>&lt;h1 id="xshell输入删除回车变成h">Xshell输入删除回车变成^H&lt;/h1>
+&lt;p>File&amp;ndash;&amp;gt;Properties&amp;ndash;&amp;gt;Terminl里选择Keyboard，然后在Backspace key sequence里选择&lt;code>ASCII 127&lt;/code>&lt;/p>
+&lt;h1 id="whatsapp">WhatsApp&lt;/h1>
+&lt;p>&lt;a href="https://faq.whatsapp.com/web/download-and-installation/how-to-join-or-leave-the-multi-device-beta/?lang=zh_cn">申请测试版&lt;/a>&lt;/p>
+&lt;h1 id="vscode">Vscode&lt;/h1>
+&lt;h2 id="不同的窗口配置不同的主题">不同的窗口配置不同的主题&lt;/h2>
+&lt;p>在&lt;code>settings.json&lt;/code>中添加&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#34;workbench.colorTheme&amp;#34;&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">:&lt;/span> &lt;span style="color:#e6db74">&amp;#34;GitHub Light&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="快捷键">快捷键&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Win命令&lt;/th>
+&lt;th>Mac命令&lt;/th>
+&lt;th>描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>Ctrl + J&lt;/code>&lt;/td>
+&lt;td>&lt;code>Command + J&lt;/code>&lt;/td>
+&lt;td>隐藏/显示终端&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>Ctrl + P&lt;/code>&lt;/td>
+&lt;td>&lt;code>Command + P&lt;/code>&lt;/td>
+&lt;td>快速打开文件&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;code>Alt + Shift&lt;/code>+鼠标移动&lt;/td>
+&lt;td>列编辑&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;/td>
+&lt;td>&lt;code>Alt&lt;/code>+鼠标点选&lt;/td>
+&lt;td>列编辑+点选&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="设置">设置&lt;/h2>
+&lt;h3 id="python自动补全函数">Python自动补全函数&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">settings&lt;/span>&lt;span style="color:#960050;background-color:#1e0010">—&lt;/span>&amp;gt;&lt;span style="color:#a6e22e">addBrackets&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="go自动补全函数">Go自动补全函数&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 这个选项打勾&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>useCodeSnippetsOnMethodSuggest&lt;span style="color:#e6db74">&amp;#34;:true
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"># 或者搜索suggest相关的设置
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="隐藏目录">隐藏目录&lt;/h3>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051358058.png" alt="">&lt;/p>
+&lt;h3 id="文本乱码和重新编码">文本乱码和重新编码&lt;/h3>
+&lt;p>比如打开的一个文本是GBK编码的文件,用vscode打开的是乱码
+如果想要正常显示,先选择文件本来的编码
+&lt;img src="https://image.runtimes.cc/202404051358762.webp" alt="">
+&lt;img src="https://image.runtimes.cc/202404051519153.webp" alt="">&lt;/p>
+&lt;p>如果想要把GBK编码的文件,转成UTF-8的编码格式,再保存
+&lt;img src="https://image.runtimes.cc/202404051358732.webp" alt="">
+&lt;img src="https://image.runtimes.cc/202404051519346.webp" alt="">&lt;/p>
+&lt;h3 id="使用制表符而不是空格">使用制表符而不是空格&lt;/h3>
+&lt;p>在设置你搜索&lt;code>indent&lt;/code>，找到 &lt;code>Editor:Detect Indexntation&lt;/code> 和 &lt;code>Editor：Insert Spaces&lt;/code> 两个勾选框，取消勾选&lt;/p>
+&lt;h3 id="显示空格和制表符">显示空格和制表符&lt;/h3>
+&lt;p>打开setting&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>在搜索框中输入renderControlCharacters,选中勾选框,即可显示tab.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在搜索框中输入renderWhitespace,选择all,即可显示空格.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="设置制表符为4个空格">设置制表符为4个空格&lt;/h3>
+&lt;p>打开setting，搜索&lt;code>tab size&lt;/code>为4，如果不起作用，接下来要设置&lt;/p>
+&lt;p>搜索&lt;code>Detect Indentation&lt;/code> 取消勾选，或者勾选试试&lt;/p>
+&lt;h2 id="插件">插件&lt;/h2>
+&lt;h3 id="write-timestamp">Write Timestamp&lt;/h3>
+&lt;p>作用:插入当前时间
+&lt;code>Ctrl + Shift + T&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051359789.png" alt="Write Timestamp">&lt;/p>
+&lt;p>也可以自己修改时间格式:
+&lt;img src="https://image.runtimes.cc/202404051359630.png" alt="">&lt;/p>
+&lt;h3 id="picgo">PicGO&lt;/h3>
+&lt;p>1.在插件那搜索picgo,安装好插件在插件那里点设置2.配置阿里云oss,参考:&lt;code>https://picgo.github.io/PicGo-Doc/&lt;/code>&lt;/p>
+&lt;pre tabindex="0">&lt;code>{
+&amp;#34;accessKeyId&amp;#34;: &amp;#34;&amp;#34;,
+&amp;#34;accessKeySecret&amp;#34;: &amp;#34;&amp;#34;,
+&amp;#34;bucket&amp;#34;: &amp;#34;&amp;#34;, // 存储空间名
+&amp;#34;area&amp;#34;: &amp;#34;&amp;#34;, // 存储区域代号
+&amp;#34;path&amp;#34;: &amp;#34;&amp;#34;, // 自定义存储路径
+&amp;#34;customUrl&amp;#34;: &amp;#34;&amp;#34; // 自定义域名，注意要加http://或者https://
+}
+&lt;/code>&lt;/pre>&lt;p>3.通过三个组合键，可以分别从：1.（Ctrl+alt+U）剪切板 2.（Ctrl+alt+E）文件夹 3.（Ctrl+alt+O）指定路径&lt;/p></content></item></channel></rss>

@@ -1,7 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>软件 on Hello World</title><link>https://connorzhangyu.com/tags/%E8%BD%AF%E4%BB%B6/</link><description>Recent content in 软件 on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Fri, 23 May 2025 21:21:46 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/%E8%BD%AF%E4%BB%B6/index.xml" rel="self" type="application/rss+xml"/><item><title>Draw.io</title><link>https://connorzhangyu.com/posts/draw.io/</link><pubDate>Fri, 23 May 2025 21:21:46 +0000</pubDate><guid>https://connorzhangyu.com/posts/draw.io/</guid><description>&lt;p>连线滚动
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>软件 on Hello World</title><link>https://connorzhangyu.com/tags/%E8%BD%AF%E4%BB%B6/</link><description>Recent content in 软件 on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Fri, 23 May 2025 21:21:46 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/%E8%BD%AF%E4%BB%B6/index.xml" rel="self" type="application/rss+xml"/><item><title>Draw.io</title><link>https://connorzhangyu.com/posts/draw.io/</link><pubDate>Fri, 23 May 2025 21:21:46 +0000</pubDate><guid>https://connorzhangyu.com/posts/draw.io/</guid><description>&lt;p>连线滚动
 &lt;img src="https://image.runtimes.cc/202505281524485.gif" alt="连线滚动">&lt;/p>
 &lt;p>Tree Folding折叠
-&lt;img src="https://image.runtimes.cc/202505281524649.gif" alt="Tree Folding">&lt;/p></description></item><item><title>好用的软件</title><link>https://connorzhangyu.com/posts/%E8%AE%B0%E5%BD%95/%E5%A5%BD%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6/</link><pubDate>Fri, 23 May 2025 17:59:24 +0000</pubDate><guid>https://connorzhangyu.com/posts/%E8%AE%B0%E5%BD%95/%E5%A5%BD%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6/</guid><description>&lt;h1 id="图片">图片&lt;/h1>
+&lt;img src="https://image.runtimes.cc/202505281524649.gif" alt="Tree Folding">&lt;/p></description><content>&lt;p>连线滚动
+&lt;img src="https://image.runtimes.cc/202505281524485.gif" alt="连线滚动">&lt;/p>
+&lt;p>Tree Folding折叠
+&lt;img src="https://image.runtimes.cc/202505281524649.gif" alt="Tree Folding">&lt;/p></content></item><item><title>好用的软件</title><link>https://connorzhangyu.com/posts/%E8%AE%B0%E5%BD%95/%E5%A5%BD%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6/</link><pubDate>Fri, 23 May 2025 17:59:24 +0000</pubDate><guid>https://connorzhangyu.com/posts/%E8%AE%B0%E5%BD%95/%E5%A5%BD%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6/</guid><description>&lt;h1 id="图片">图片&lt;/h1>
 &lt;p>截图软件
 &lt;a href="https://www.snipaste.com/">Snipaste&lt;/a>&lt;/p>
 &lt;p>图片上传到图床
@@ -9,7 +12,15 @@
 &lt;p>录屏软件
 &lt;a href="https://screenity.io/">Screenity&lt;/a>&lt;/p>
 &lt;h1 id="文件">文件&lt;/h1>
-&lt;p>&lt;a href="https://localsend.org/">LocalSend&lt;/a>&lt;/p></description></item><item><title>WordPress</title><link>https://connorzhangyu.com/posts/wordpress/</link><pubDate>Fri, 16 Jun 2023 13:39:21 +0000</pubDate><guid>https://connorzhangyu.com/posts/wordpress/</guid><description>&lt;h1 id="搭建">搭建&lt;/h1>
+&lt;p>&lt;a href="https://localsend.org/">LocalSend&lt;/a>&lt;/p></description><content>&lt;h1 id="图片">图片&lt;/h1>
+&lt;p>截图软件
+&lt;a href="https://www.snipaste.com/">Snipaste&lt;/a>&lt;/p>
+&lt;p>图片上传到图床
+&lt;a href="https://github.com/Molunerfinn/PicGo">PicGo&lt;/a>&lt;/p>
+&lt;p>录屏软件
+&lt;a href="https://screenity.io/">Screenity&lt;/a>&lt;/p>
+&lt;h1 id="文件">文件&lt;/h1>
+&lt;p>&lt;a href="https://localsend.org/">LocalSend&lt;/a>&lt;/p></content></item><item><title>WordPress</title><link>https://connorzhangyu.com/posts/wordpress/</link><pubDate>Fri, 16 Jun 2023 13:39:21 +0000</pubDate><guid>https://connorzhangyu.com/posts/wordpress/</guid><description>&lt;h1 id="搭建">搭建&lt;/h1>
 &lt;p>使用阿里云,或者腾讯等轻量云服务器,一键搭建&lt;/p>
 &lt;h1 id="教程">教程&lt;/h1>
 &lt;h2 id="wordpress地址和站点地址的含义和区别">WordPress地址和站点地址的含义和区别&lt;/h2>
@@ -24,29 +35,66 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rm -f /www/server/data/mysql-bin*
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="常用的插件">常用的插件&lt;/h2>
 &lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th style="text-align: left">插件&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td style="text-align: left">Elementor&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td style="text-align: left">Essential Addons for Elementor&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td style="text-align: left">SMTP Mailer&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td style="text-align: left">Starter Templates&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td style="text-align: left">Yoast SEO&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table></description></item><item><title>Linux软件</title><link>https://connorzhangyu.com/posts/linux%E8%BD%AF%E4%BB%B6/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/linux%E8%BD%AF%E4%BB%B6/</guid><description>&lt;h1 id="jumpsserver">JumpSserver&lt;/h1>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: left">插件&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: left">Elementor&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">Essential Addons for Elementor&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">SMTP Mailer&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">Starter Templates&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">Yoast SEO&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description><content>&lt;h1 id="搭建">搭建&lt;/h1>
+&lt;p>使用阿里云,或者腾讯等轻量云服务器,一键搭建&lt;/p>
+&lt;h1 id="教程">教程&lt;/h1>
+&lt;h2 id="wordpress地址和站点地址的含义和区别">WordPress地址和站点地址的含义和区别&lt;/h2>
+&lt;p>WordPress 地址
+没有子站点就忽略,和站点地址一样就行
+站点地址
+就是浏览器地址栏输入的地址&lt;/p>
+&lt;p>如果地址填入错误,导致不能进入网站,需要手动修改数据库&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">select&lt;/span> option_name,option_value &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#66d9ef">options&lt;/span> &lt;span style="color:#66d9ef">where&lt;/span> option_name &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;siteurl&amp;#39;&lt;/span> &lt;span style="color:#66d9ef">or&lt;/span> option_name&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;home&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="在云服务器控制面板强制重启导致数据无法启动">在云服务器控制面板强制重启,导致数据无法启动&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>rm -f /www/server/data/ib_*
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rm -f /www/server/data/mysql-bin*
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="常用的插件">常用的插件&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: left">插件&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: left">Elementor&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">Essential Addons for Elementor&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">SMTP Mailer&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">Starter Templates&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">Yoast SEO&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></content></item><item><title>Linux软件</title><link>https://connorzhangyu.com/posts/linux%E8%BD%AF%E4%BB%B6/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/linux%E8%BD%AF%E4%BB%B6/</guid><description>&lt;h1 id="jumpsserver">JumpSserver&lt;/h1>
 &lt;h2 id="设置sftp根目录">设置SFTP根目录&lt;/h2>
 &lt;p>3.0版本设置文件管理&lt;/p>
 &lt;p>克隆一份Linux平台&lt;/p>
@@ -125,4 +173,398 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 重装apache2&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo apt-get install apache2
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo /etc/init.d/apache2 restart
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Ubuntu安装软件指定版本号&lt;/p></description></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Ubuntu安装软件指定版本号&lt;/p></description><content>&lt;h1 id="jumpsserver">JumpSserver&lt;/h1>
+&lt;h2 id="设置sftp根目录">设置SFTP根目录&lt;/h2>
+&lt;p>3.0版本设置文件管理&lt;/p>
+&lt;p>克隆一份Linux平台&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051426282.png" alt="image-20230917163307359">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051426865.png" alt="image-20230917163359314">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051426331.png" alt="image-20230917163415467">&lt;/p>
+&lt;p>修改或者创建资产的时候,选择该克隆的平台,在资产这里不能设置SFTP路径&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051426116.png" alt="image-20230917163519193">&lt;/p>
+&lt;h1 id="安装vmware-tool">安装vmware tool&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>运行 ./vmware-install.pl
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>一直按yes,按完一段之后就会有暂时的停顿
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>运行命令 reboot
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="安装wget">安装Wget&lt;/h1>
+&lt;p>最开始的Centos7 感觉什么都没有&lt;code>wget&lt;/code>也没有&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">#远程下载的工具&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> yum -y install wget
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">#bash: make: command not found 是因为缺少这些工具&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> yum -y install gcc automake autoconf libtool make
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> yum -y install wget
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="安装lnmp环境">安装LNMP环境&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 更新源&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>apt-get update &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> apt-get dist-upgrade -y
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 安装nginx&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>apt-get install nginx
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 安装php-fpm和常用php扩展&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>apt-get install php-fpm php-gd php-mbstring php-curl php-xml php-mcrypt php-mysql php-zip php-json php-redis php-memcached
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 安装mysql&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>apt-get install mysql-server
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 建立测试站点&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 1.我们在/var/www下面新建一个test目录，作为站点目录。 运行以下命令：&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mkdir /var/www/test
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 2.新建php入口文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo &lt;span style="color:#e6db74">&amp;#39;&amp;lt;?php echo 1;&amp;#39;&lt;/span> &amp;gt; /var/www/test/index.php
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 3.授权给fpm用户www-data，使fpm进程可以访问站点文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>chown -R www-data:www-data /var/www/test &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> chmod -R &lt;span style="color:#ae81ff">755&lt;/span> /var/www/test
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 4.设置nginx站点配置,在/etc/nginx/conf.d新增一个test.conf文件，并写入以下内容&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 这个配置表示站点监听80端口，网站根目录为/var/www/test,入口文件为index.php,通过php-fpm进程来执行php脚本。&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>server &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> listen &lt;span style="color:#ae81ff">80&lt;/span> default_server;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> listen &lt;span style="color:#f92672">[&lt;/span>::&lt;span style="color:#f92672">]&lt;/span>:80 default_server;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> root /var/www/test;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> index index.php index.html index.htm;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server_name _;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> location / &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> try_files $uri $uri/ &lt;span style="color:#f92672">=&lt;/span>404;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> location ~ &lt;span style="color:#ae81ff">\.&lt;/span>php$ &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> include snippets/fastcgi-php.conf;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fastcgi_pass unix:/run/php/php7.0-fpm.sock;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 5.重新加载&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>nginx -t &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> nginx -s reload
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 6.访问试试看&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="ubuntu卸载apache">Ubuntu卸载Apache&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 删除apache&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo apt-get --purge remove apache2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo apt-get --purge remove apache2.2-common
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo apt-get autoremove
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 找到没有删除掉的配置文件，一并删除&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo find /etc -name &lt;span style="color:#e6db74">&amp;#34;*apache*&amp;#34;&lt;/span> -exec rm -rf &lt;span style="color:#f92672">{}&lt;/span> &lt;span style="color:#ae81ff">\;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo rm -rf /var/www
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 重装apache2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo apt-get install apache2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo /etc/init.d/apache2 restart
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Ubuntu安装软件指定版本号&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 安装软件的时候,机器上安装的依赖版本可能高于软件本身需要的&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>The following packages have unmet dependencies:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> libpcre3-dev : Depends: libpcre3 &lt;span style="color:#f92672">(=&lt;/span> 2:8.39-12build1&lt;span style="color:#f92672">)&lt;/span> but 2:8.44-1+ubuntu18.04.1+deb.sury.org+1 is to be installed
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Depends: libpcrecpp0v5 &lt;span style="color:#f92672">(=&lt;/span> 2:8.39-12build1&lt;span style="color:#f92672">)&lt;/span> but 2:8.44-1+ubuntu18.04.1+deb.sury.org+1 is to be installed
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo apt install libpcrecpp0v5&lt;span style="color:#f92672">=&lt;/span>2:8.39-12build1 libpcre3&lt;span style="color:#f92672">=&lt;/span>2:8.39-12build1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="gitlab安装">Gitlab安装&lt;/h1>
+&lt;p>&lt;a href="https://ken.io/note/centos7-gitlab-install-tutorial#H3-11">https://ken.io/note/centos7-gitlab-install-tutorial#H3-11&lt;/a>&lt;/p>
+&lt;h1 id="zsh安装">Zsh安装&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sudo apt-get install zsh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 验证是否安装成功&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ zsh --version
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 将 Zsh 设为默认 Shell&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo chsh -s &lt;span style="color:#66d9ef">$(&lt;/span>which zsh&lt;span style="color:#66d9ef">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 安装oh my zsh&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>https://ohmyz.sh/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 注销当前用户重新登录&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 若输出为 /bin/zsh 或者 /usr/bin/zsh 则表示当前默认 Shell 是 Zsh&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ echo $SHELL
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="安装confluence">安装confluence&lt;/h1>
+&lt;p>&lt;a href="https://www.atlassian.com/purchase/?utm_source=pocket_mylist">atlassian的相关软件&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://3reality.tech/downloads/atlassian/?utm_source=pocket_mylist">confluence下载地址&lt;/a>&lt;/p>
+&lt;p>安装:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>docker run &lt;span style="color:#f92672">-&lt;/span>v \
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">/&lt;/span>root&lt;span style="color:#f92672">/&lt;/span>confluence&lt;span style="color:#f92672">/&lt;/span>:&lt;span style="color:#f92672">/&lt;/span>var&lt;span style="color:#f92672">/&lt;/span>atlassian&lt;span style="color:#f92672">/&lt;/span>application&lt;span style="color:#f92672">-&lt;/span>data&lt;span style="color:#f92672">/&lt;/span>confluence&lt;span style="color:#f92672">/&lt;/span> \
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">--&lt;/span>name&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;confluence&amp;#34;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">-&lt;/span>d \
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">-&lt;/span>p &lt;span style="color:#ae81ff">8090&lt;/span>:&lt;span style="color:#ae81ff">8090&lt;/span> \
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">-&lt;/span>p &lt;span style="color:#ae81ff">8091&lt;/span>:&lt;span style="color:#ae81ff">8091&lt;/span> \
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> atlassian&lt;span style="color:#f92672">/&lt;/span>confluence&lt;span style="color:#f92672">-&lt;/span>server
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>破解:&lt;/p>
+&lt;p>1./opt/atlassian/confluence/confluence/WEB-INF/lib/atlassian-extras-decoder-v2-3.4.1.jar备份
+2.atlassian-extras-decoder-v2-3.4.1.jar重命名为atlassian-extras-2.4.jar并下载到本地 （和破解工具放在同一目录）
+3.下载破解工具confluence_keygen.jar,在上面的超链接下载&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051426404.png" alt="">&lt;/p>
+&lt;p>4.将已被破解的jar包atlassian-extras-2.4.jar重名为atlassian-extras-decoder-v2-3.4.1.jar&lt;/p>
+&lt;p>并放置在原路径/opt/atlassian/confluence/confluence/WEB-INF/lib&lt;/p>
+&lt;p>5.下载mysql-connector-java-5.1.32-bin.jar 上传/opt/atlassian/confluence/confluence/WEB-INF/lib&lt;/p>
+&lt;p>6.开始安装到需要授权码&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051426338.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051427340.png" alt="">&lt;/p>
+&lt;p>相关报错:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>启动发生报错 &lt;span style="color:#e6db74">&amp;#34;Spring Application context has not been set&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rm &lt;span style="color:#f92672">-&lt;/span>f &lt;span style="color:#f92672">/&lt;/span>var&lt;span style="color:#f92672">/&lt;/span>atlassian&lt;span style="color:#f92672">/&lt;/span>application&lt;span style="color:#f92672">-&lt;/span>data&lt;span style="color:#f92672">/&lt;/span>confluence&lt;span style="color:#f92672">/&lt;/span>confluence&lt;span style="color:#f92672">.&lt;/span>cfg&lt;span style="color:#f92672">.&lt;/span>xml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="nmap">Nmap&lt;/h1>
+&lt;h2 id="找出活跃的主机">找出活跃的主机&lt;/h2>
+&lt;pre tabindex="0">&lt;code>nmap -sP 192.168.41.136
+nping --echo-client &amp;#34;public&amp;#34; echo.nmap.org
+&lt;/code>&lt;/pre>&lt;h2 id="查看打开的端口">查看打开的端口&lt;/h2>
+&lt;p>nmap 192.168.41.136&lt;/p>
+&lt;h1 id="网络软件">网络软件&lt;/h1>
+&lt;p>&lt;a href="https://one.one.one.one/purge-cache/">清理网络DNS缓存&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://dnschecker.org/ns-lookup.php?query=55lukcy.in&amp;amp;dns=cloudflare">检查nameserver有没有生效&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://www.whatsmydns.net/#CNAME/whatsmydns.net">DNS生效的国家&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://www.ip2location.com/demo/92.98.82.166">IP查询&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://www.amazon.com/sendtokindle">发送文件到Kindle&lt;/a>&lt;/p>
+&lt;h1 id="vim">VIM&lt;/h1>
+&lt;h2 id="vim的配置文件设置">vim的配置文件设置&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 先复制一份vim配置模板到个人目录下&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cp /usr/share/vim/vimrc ~/.vimrc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 编辑&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>vi ~/.vimrc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 添加&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>syntax on &lt;span style="color:#75715e"># 开启高亮&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>set nu! &lt;span style="color:#75715e"># 默认开启行号&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="行号">行号&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>set nu
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="过滤注释">过滤注释&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span> cat redis.conf |grep -v &lt;span style="color:#e6db74">&amp;#39;#&amp;#39;&lt;/span> |grep -v &lt;span style="color:#e6db74">&amp;#39;^$&amp;#39;&lt;/span> &amp;gt;redis-6237.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="多行注释">多行注释&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">1&lt;/span> Ctrl+v进入v模式
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">2&lt;/span> 上下方向键选中要注释的行
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">3&lt;/span> shift+i（即大写的I）行首插入
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">4&lt;/span> 输入注释符//
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">5&lt;/span> 按esc返回
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="反注释">反注释&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">1&lt;/span> Ctrl+v进入v模式
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">2&lt;/span> 上下方向键选中要注释的行，左右键选择要删除的字符//
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">3&lt;/span> 按d删除
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="格式化">格式化&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># gg 跳转到第一行&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># shift+v 转到可视模式&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># shift+g 全选&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 按下=号&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="删除开头的行">删除#开头的行&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>:g/^#/d
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="ssh">SSH&lt;/h1>
+&lt;h2 id="安装ssh">安装ssh&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 判断Ubuntu是否安装了ssh服务,检查有没有可以看到“sshd”&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ps -e | grep ssh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 安装ssh服务，输入命令&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo apt-get install openssh-server
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 启动服务&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo /etc/init.d/ssh start
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="ssh配置文件设置">SSH配置文件设置&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>vim /etc/ssh/sshd_config
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 这是设置允许root登陆&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>PermitRootLogin prohibit-password &lt;span style="color:#f92672">===&lt;/span>&amp;gt; PermitRootLogin yes
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 这是设置允许使用账号密码登录&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 不能只注释,注释会不起作用,还是可以用密码登录&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>PasswordAuthentication no &lt;span style="color:#f92672">===&lt;/span>&amp;gt; PasswordAuthentication yes
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 允许用证书登录方式&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>PubkeyAuthentication yes
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 重启ssh服务&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo service ssh reload
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="ssh连接key失效">SSH连接,key失效&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>λ ssh root@10.19.44.12
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>@ WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! @
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Someone could be eavesdropping on you right now &lt;span style="color:#f92672">(&lt;/span>man-in-the-middle attack&lt;span style="color:#f92672">)&lt;/span>!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>It is also possible that a host key has just been changed.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>The fingerprint &lt;span style="color:#66d9ef">for&lt;/span> the ECDSA key sent by the remote host is
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SHA256:RIqSp3Pd94k4PPQcDtKAzK0sQbf4VWffKGwy/nvO8Kw.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Please contact your system administrator.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Add correct host key in C:&lt;span style="color:#ae81ff">\\&lt;/span>Users&lt;span style="color:#ae81ff">\\&lt;/span>Owner/.ssh/known_hosts to get rid of this message.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Offending ECDSA key in C:&lt;span style="color:#ae81ff">\\&lt;/span>Users&lt;span style="color:#ae81ff">\\&lt;/span>Owner/.ssh/known_hosts:12
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ECDSA host key &lt;span style="color:#66d9ef">for&lt;/span> 10.19.44.12 has changed and you have requested strict checking.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Host key verification failed.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>解决方法:找到.ssh文件下的known_hosts,删除相关ip的行&lt;/p>
+&lt;h2 id="生成证书">生成证书&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 客户端生成秘钥&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ssh-keygen
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># ssh目录的文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># id_rsa,私钥文件。不应该分享给任何人。私钥文件通常以 PEM 格式存储。&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># id_rsa.pub,公钥文件。公钥可以公开分享，用于配置在你需要访问的服务器上。服务器使用公钥来加密信息，私钥可以解密。&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># known_hosts, 文件存储了你之前连接过的所有服务器的主机密钥。这些密钥用于验证服务器的身份，以防止中间人攻击。每次你连接一个新的服务器，服务器的公钥会被添加到这个文件中。&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># known_hosts.old,是 `known_hosts` 文件的备份。每当 `known_hosts` 文件更新时，旧版本会被保存为 `known_hosts.old`。这可以作为一个安全机制，如果新的 `known_hosts` 文件出现问题，可以回滚到旧版本。&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>➜ .ssh ll /Users/anthony/.ssh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-rw-------@ &lt;span style="color:#ae81ff">1&lt;/span> anthony staff 1.6K &lt;span style="color:#ae81ff">6&lt;/span> &lt;span style="color:#ae81ff">8&lt;/span> 21:50 id_rsa
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-rw-r--r--@ &lt;span style="color:#ae81ff">1&lt;/span> anthony staff 425B &lt;span style="color:#ae81ff">6&lt;/span> &lt;span style="color:#ae81ff">8&lt;/span> 21:50 id_rsa.pub
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-rw-------@ &lt;span style="color:#ae81ff">1&lt;/span> anthony staff 3.0K &lt;span style="color:#ae81ff">6&lt;/span> &lt;span style="color:#ae81ff">8&lt;/span> 21:24 known_hosts
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-rw-------@ &lt;span style="color:#ae81ff">1&lt;/span> anthony staff 2.3K &lt;span style="color:#ae81ff">6&lt;/span> &lt;span style="color:#ae81ff">8&lt;/span> 21:23 known_hosts.old
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 把公钥拷贝到服务器,这次是要输入密码&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ssh-copy-id -i ~/.ssh/id_rsa.pub user@remote_host
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 使用证书登录服务器&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 实验的时候有个问题,如果不指定证书登录的命令,还是会提示输入密码&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ssh -i ~/.ssh/id_rsa_server2 ubuntu@your_server_ip2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="root账号登录并且配置证书">root账号登录并且配置证书&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 已经使用别的用户(账户名是:anthony)登录了服务器之后,再执行&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo passwd root
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 第一次输入anthony用户的密码&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 第二次输入新密码&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 第三次再次输入新密码&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 修改配置文件,让root用户可以登录,看上面的配置&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 客户端上传rsa公钥,留意这里是root的账户的路径&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cat ~/.ssh/id_rsa.pub | ssh root@172.16.147.129 &lt;span style="color:#e6db74">&amp;#39;cat &amp;gt;&amp;gt; /root/.ssh/authorized_keys&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 然后就可以使用root账户和证书登录了&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 证书本身是不区分用户名,只认是不是一对公钥还是私钥&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="root登录之后没有高亮">root登录之后没有高亮&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>cp /home/kali/.bashrc /root
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>source .bashrc
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="oh-my-zsh">oh-my-zsh&lt;/h2>
+&lt;h3 id="安装oh-my-zsh">安装oh-my-zsh&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 配置文件位置&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>vim ~/.zshrc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 配置主题&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># jonathan 是主题的名字&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ZSH_THEME&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;jonathan&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 配置插件,空格分开 插件的名字&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>plugins&lt;span style="color:#f92672">=(&lt;/span>git zsh-syntax-highlighting zsh-autosuggestions&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="oh-my-zsh插件">oh my zsh插件&lt;/h3>
+&lt;h4 id="zsh-syntax-highlighting">zsh-syntax-highlighting&lt;/h4>
+&lt;p>高亮语法，如图，输入正确语法会显示绿色，错误的会显示红色，使得我们无需运行该命令即可知道此命令语法是否正确&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git clone https://github.com/zsh-users/zsh-syntax-highlighting.git &lt;span style="color:#e6db74">${&lt;/span>ZSH_CUSTOM&lt;span style="color:#66d9ef">:-&lt;/span>~/.oh-my-zsh/custom&lt;span style="color:#e6db74">}&lt;/span>/plugins/zsh-syntax-highlighting
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>plugins=(其他的插件 zsh-syntax-highlighting)&lt;/p>
+&lt;h4 id="zsh-autosuggestions">zsh-autosuggestions&lt;/h4>
+&lt;p>自动补全&lt;/p>
+&lt;p>只需输入部分命令即可根据之前输入过的命令提示，按右键→即可补全&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git clone https://github.com/zsh-users/zsh-autosuggestions &lt;span style="color:#e6db74">${&lt;/span>ZSH_CUSTOM&lt;span style="color:#66d9ef">:-&lt;/span>~/.oh-my-zsh/custom&lt;span style="color:#e6db74">}&lt;/span>/plugins/zsh-autosuggestions
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>plugins=(其他的插件 zsh-syntax-highlighting)&lt;/p>
+&lt;h1 id="shell">Shell&lt;/h1>
+&lt;h2 id="设置别名">设置别名&lt;/h2>
+&lt;p>经常要用命令行,进入到某个目录&lt;/p>
+&lt;ol>
+&lt;li>编辑你的 Shell 配置文件，例如 Bash 的配置文件是 &lt;code>~/.bashrc&lt;/code> 或 &lt;code>~/.bash_profile&lt;/code>，Zsh 的配置文件是 &lt;code>~/.zshrc&lt;/code>。&lt;/li>
+&lt;li>添加 &lt;code>alias work='cd /path/to/your/work/directory'&lt;/code>&lt;/li>
+&lt;li>运行 &lt;code>source ~/.bashrc&lt;/code> 或 &lt;code>source ~/.zshrc&lt;/code> 来使配置生效。&lt;/li>
+&lt;li>终端中输入 &lt;code>work&lt;/code> 命令，就会进入你设置的工作目录&lt;/li>
+&lt;/ol>
+&lt;h2 id="设置环境变量">设置环境变量&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 设置环境变量&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export http_proxy&lt;span style="color:#f92672">=&lt;/span>http://127.0.0.1:3128
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 删除环境变量&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>unset http_proxy
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="curl换行">curl换行&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>curl http://www.baidu.com -w &lt;span style="color:#e6db74">&amp;#39;\n&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="curl请求不校验证书">curl请求不校验证书&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 报错信息&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># curl failed to verify the legitimacy of the server and therefore could not&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># establish a secure connection to it. To learn more about this situation and&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># how to fix it, please visit the web page mentioned above.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>curl -k https://random.com
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 或者&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>curl -insecure https://random.com
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="脚本首行">脚本首行&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#!/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="脚本变量">脚本变量&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># shell脚本给变量赋值的时候 = 两边不能加空格&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>your_name&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;runoob&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 使用双引号拼接&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>greeting&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;hello, &amp;#34;&lt;/span>$your_name&lt;span style="color:#e6db74">&amp;#34; !&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="判断">判断&lt;/h2>
+&lt;p>&lt;a href="https://blog.csdn.net/doiido/article/details/43966819">Linux shell脚本之 if条件判断_doiido的专栏-CSDN博客&lt;/a>&lt;/p>
+&lt;h2 id="判断数值">判断数值&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>命令&lt;/th>
+&lt;th>解释&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>[ INT1 -eq INT2 ]&lt;/td>
+&lt;td>INT1和INT2两数相等返回为真 ,=&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>[ INT1 -ne INT2 ]&lt;/td>
+&lt;td>INT1和INT2两数不等返回为真 ,&amp;lt;&amp;gt;&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>[ INT1 -gt INT2 ]&lt;/td>
+&lt;td>INT1大于INT2返回为真 ,&amp;gt;&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>[ INT1 -ge INT2 ]&lt;/td>
+&lt;td>INT1大于等于INT2返回为真,&amp;gt;=&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>[ INT1 -lt INT2 ]&lt;/td>
+&lt;td>INT1小于INT2返回为真 ,&amp;lt;&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>[ INT1 -le INT2 ]&lt;/td>
+&lt;td>INT1小于等于INT2返回为真,&amp;lt;=&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="字符串判断">字符串判断&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>命令&lt;/th>
+&lt;th>解释&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>[ -z STRING ]&lt;/td>
+&lt;td>如果STRING的长度为零则返回为真，即空是真&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>[ -n STRING ]&lt;/td>
+&lt;td>如果STRING的长度非零则返回为真，即非空是真&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>[ STRING1 ]&lt;/td>
+&lt;td>如果字符串不为空则返回为真,与-n类似&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>[ STRING1 == STRING2 ]&lt;/td>
+&lt;td>如果两个字符串相同则返回为真&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>[ STRING1 != STRING2 ]&lt;/td>
+&lt;td>如果字符串不相同则返回为真&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>[ STRING1 &amp;lt; STRING2 ]&lt;/td>
+&lt;td>如果 “STRING1”字典排序在“STRING2”前面则返回为真。&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>[ STRING1 &amp;gt; STRING2 ]&lt;/td>
+&lt;td>如果 “STRING1”字典排序在“STRING2”后面则返回为真。&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#!/bin/sh
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>STRING&lt;span style="color:#f92672">=&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">[&lt;/span> -z &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$STRING&lt;span style="color:#e6db74">&amp;#34;&lt;/span> &lt;span style="color:#f92672">]&lt;/span>; &lt;span style="color:#66d9ef">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo &lt;span style="color:#e6db74">&amp;#34;STRING is empty&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">[&lt;/span> -n &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$STRING&lt;span style="color:#e6db74">&amp;#34;&lt;/span> &lt;span style="color:#f92672">]&lt;/span>; &lt;span style="color:#66d9ef">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo &lt;span style="color:#e6db74">&amp;#34;STRING is not empty&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 结果是:STRING is empty&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item></channel></rss>

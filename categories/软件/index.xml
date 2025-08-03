@@ -1,7 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>软件 on Hello World</title><link>https://connorzhangyu.com/categories/%E8%BD%AF%E4%BB%B6/</link><description>Recent content in 软件 on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Fri, 23 May 2025 21:21:46 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/categories/%E8%BD%AF%E4%BB%B6/index.xml" rel="self" type="application/rss+xml"/><item><title>Draw.io</title><link>https://connorzhangyu.com/posts/draw.io/</link><pubDate>Fri, 23 May 2025 21:21:46 +0000</pubDate><guid>https://connorzhangyu.com/posts/draw.io/</guid><description>&lt;p>连线滚动
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>软件 on Hello World</title><link>https://connorzhangyu.com/categories/%E8%BD%AF%E4%BB%B6/</link><description>Recent content in 软件 on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Fri, 23 May 2025 21:21:46 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/categories/%E8%BD%AF%E4%BB%B6/index.xml" rel="self" type="application/rss+xml"/><item><title>Draw.io</title><link>https://connorzhangyu.com/posts/draw.io/</link><pubDate>Fri, 23 May 2025 21:21:46 +0000</pubDate><guid>https://connorzhangyu.com/posts/draw.io/</guid><description>&lt;p>连线滚动
 &lt;img src="https://image.runtimes.cc/202505281524485.gif" alt="连线滚动">&lt;/p>
 &lt;p>Tree Folding折叠
-&lt;img src="https://image.runtimes.cc/202505281524649.gif" alt="Tree Folding">&lt;/p></description></item><item><title>Telegram Bot</title><link>https://connorzhangyu.com/posts/telegrambot/</link><pubDate>Sat, 08 Jul 2023 15:09:14 +0000</pubDate><guid>https://connorzhangyu.com/posts/telegrambot/</guid><description>&lt;h1 id="机器人设置">机器人设置&lt;/h1>
+&lt;img src="https://image.runtimes.cc/202505281524649.gif" alt="Tree Folding">&lt;/p></description><content>&lt;p>连线滚动
+&lt;img src="https://image.runtimes.cc/202505281524485.gif" alt="连线滚动">&lt;/p>
+&lt;p>Tree Folding折叠
+&lt;img src="https://image.runtimes.cc/202505281524649.gif" alt="Tree Folding">&lt;/p></content></item><item><title>Telegram Bot</title><link>https://connorzhangyu.com/posts/telegrambot/</link><pubDate>Sat, 08 Jul 2023 15:09:14 +0000</pubDate><guid>https://connorzhangyu.com/posts/telegrambot/</guid><description>&lt;h1 id="机器人设置">机器人设置&lt;/h1>
 &lt;h2 id="消息分类">消息分类&lt;/h2>
 &lt;p>消息分两种:&lt;/p>
 &lt;ol>
@@ -9,7 +12,15 @@
 &lt;li>命令消息(以&lt;code>'/'&lt;/code>开头的文本,比如 &lt;code>/test&lt;/code> )&lt;/li>
 &lt;/ol>
 &lt;p>默认在群里只能收到命令消息,和机器人私聊可以接收到全部的消息,如果想让机器人在群里也能接收到全部的消息,操作如下
-访问&lt;code>BotFather&lt;/code>,输入&lt;code>/setprivacy&lt;/code>,选择自己的机器人,选择&lt;code>DISABLED&lt;/code>,就可以了&lt;/p></description></item><item><title>Rime</title><link>https://connorzhangyu.com/posts/rime/</link><pubDate>Sun, 02 Jul 2023 22:37:34 +0000</pubDate><guid>https://connorzhangyu.com/posts/rime/</guid><description>&lt;h1 id="基本概念">基本概念&lt;/h1>
+访问&lt;code>BotFather&lt;/code>,输入&lt;code>/setprivacy&lt;/code>,选择自己的机器人,选择&lt;code>DISABLED&lt;/code>,就可以了&lt;/p></description><content>&lt;h1 id="机器人设置">机器人设置&lt;/h1>
+&lt;h2 id="消息分类">消息分类&lt;/h2>
+&lt;p>消息分两种:&lt;/p>
+&lt;ol>
+&lt;li>普通文本消息(比如&lt;code>test&lt;/code>)&lt;/li>
+&lt;li>命令消息(以&lt;code>'/'&lt;/code>开头的文本,比如 &lt;code>/test&lt;/code> )&lt;/li>
+&lt;/ol>
+&lt;p>默认在群里只能收到命令消息,和机器人私聊可以接收到全部的消息,如果想让机器人在群里也能接收到全部的消息,操作如下
+访问&lt;code>BotFather&lt;/code>,输入&lt;code>/setprivacy&lt;/code>,选择自己的机器人,选择&lt;code>DISABLED&lt;/code>,就可以了&lt;/p></content></item><item><title>Rime</title><link>https://connorzhangyu.com/posts/rime/</link><pubDate>Sun, 02 Jul 2023 22:37:34 +0000</pubDate><guid>https://connorzhangyu.com/posts/rime/</guid><description>&lt;h1 id="基本概念">基本概念&lt;/h1>
 &lt;p>Rime 是一个输入法框架，并不是狭义上的“输入法”，而是将各种输入法的共性抽象出来的算法框架。通过不同的配置文件，Rime 可以支持多种输入方案（Schema），这个所谓的输入方案就是我们狭义上的“输入法”。比如朙月拼音输入法就是 Rime 自带的一种输入方案，另外还有比如四叶草输入法（https://github.com/fkxxyz/rime-cloverpinyin）等等。鼠须管、小狼毫、中州韵分别是 Rime 在不同操作系统下的实现程序。Rime 的配置、词库文件均使用文本方式，便于修改。所有文件均要求以 UTF-8 编码。在配置文件中，以 # 号开头表示注释。&lt;/p>
 &lt;h1 id="配置文件所在的目录">配置文件所在的目录&lt;/h1>
 &lt;p>Rime 有两个重要的配置目录：&lt;/p>
@@ -45,7 +56,79 @@
 &lt;p>&lt;code>sync&lt;/code> 目录是用来做用户数据同步的。每个 &lt;code>sync/installation_id&lt;/code> 目录对应不同电脑上的 Rime 程序的用户数据。（如果你由多台电脑安装了 Rime，并设置了同步。）按照作者的说法，Rime 的用户词典同步原理是：&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>手工从其他电脑复制或者从网盘自动同步 ⇒ &lt;code>sync/*/*.userdb.txt&lt;/code> ⇒ 合并到本地 &lt;code>*.userdb&lt;/code> ⇒ 导出到 &lt;code>sync/&amp;lt;installation_id&amp;gt;/*.userdb.txt&lt;/code>。&lt;/p></description></item><item><title>Hexo</title><link>https://connorzhangyu.com/posts/hexo/</link><pubDate>Sun, 04 Dec 2022 01:26:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/hexo/</guid><description>&lt;h1 id="内链">内链&lt;/h1>
+&lt;p>手工从其他电脑复制或者从网盘自动同步 ⇒ &lt;code>sync/*/*.userdb.txt&lt;/code> ⇒ 合并到本地 &lt;code>*.userdb&lt;/code> ⇒ 导出到 &lt;code>sync/&amp;lt;installation_id&amp;gt;/*.userdb.txt&lt;/code>。&lt;/p></description><content>&lt;h1 id="基本概念">基本概念&lt;/h1>
+&lt;p>Rime 是一个输入法框架，并不是狭义上的“输入法”，而是将各种输入法的共性抽象出来的算法框架。通过不同的配置文件，Rime 可以支持多种输入方案（Schema），这个所谓的输入方案就是我们狭义上的“输入法”。比如朙月拼音输入法就是 Rime 自带的一种输入方案，另外还有比如四叶草输入法（https://github.com/fkxxyz/rime-cloverpinyin）等等。鼠须管、小狼毫、中州韵分别是 Rime 在不同操作系统下的实现程序。Rime 的配置、词库文件均使用文本方式，便于修改。所有文件均要求以 UTF-8 编码。在配置文件中，以 # 号开头表示注释。&lt;/p>
+&lt;h1 id="配置文件所在的目录">配置文件所在的目录&lt;/h1>
+&lt;p>Rime 有两个重要的配置目录：&lt;/p>
+&lt;h2 id="共享配置目录">共享配置目录&lt;/h2>
+&lt;ul>
+&lt;li>【中州韻】 &lt;code>/usr/share/rime-data/&lt;/code>&lt;/li>
+&lt;li>【小狼毫】 &lt;code>&amp;quot;安裝目錄\data&amp;quot;&lt;/code>&lt;/li>
+&lt;li>【鼠鬚管】 &lt;code>&amp;quot;/Library/Input Methods/Squirrel.app/Contents/SharedSupport/&amp;quot;&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="用户配置目录">用户配置目录&lt;/h2>
+&lt;ul>
+&lt;li>【中州韻】 &lt;code>~/.config/ibus/rime/&lt;/code> （0.9.1 以下版本爲 &lt;code>~/.ibus/rime/&lt;/code>）&lt;/li>
+&lt;li>【小狼毫】 &lt;code>%APPDATA%\Rime&lt;/code>&lt;/li>
+&lt;li>【鼠鬚管】 &lt;code>~/Library/Rime/&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>共享目录下放置的是 Rime 的预设配置，在软件版本更新时候，也会自动更新该目录下的文件。所以请不要修改该目录下的文件。&lt;/p>
+&lt;p>用户目录则放置用户自定义的配置文件。我们要做的修改都放在用户目录下。&lt;/p>
+&lt;p>对于鼠须管而言，用户目录初始时只有如下几个文件。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>installion.yaml&lt;/code> 文件记录的是当前 Rime 程序的版本信息。其中有一个字段 &lt;code>installation_id&lt;/code> 用来在同步用户词典时唯一标记当前 Rime 程序。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>user.yaml&lt;/code> 文件记录用户的使用状态。比如上次“重新部署”的时间戳，上次选择的输入方案等。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>build&lt;/code> 目录下放的是每次“重新部署”后生成的文件。包括字典文件编译后生成的「.bin」文件，包括与自定义配置合并后生成的各种 yaml 配置文件。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>xxx.userdb&lt;/code> 目录下放的是对应输入方案的用户词典。即用户在使用时候选择的词组、词频等动态信息，这个目录是实时更新的。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>sync&lt;/code> 目录是用来做用户数据同步的。每个 &lt;code>sync/installation_id&lt;/code> 目录对应不同电脑上的 Rime 程序的用户数据。（如果你由多台电脑安装了 Rime，并设置了同步。）按照作者的说法，Rime 的用户词典同步原理是：&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>手工从其他电脑复制或者从网盘自动同步 ⇒ &lt;code>sync/*/*.userdb.txt&lt;/code> ⇒ 合并到本地 &lt;code>*.userdb&lt;/code> ⇒ 导出到 &lt;code>sync/&amp;lt;installation_id&amp;gt;/*.userdb.txt&lt;/code>。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="关于调试">关于调试&lt;/h2>
+&lt;p>Rime 的日志目录放在如下为止：&lt;/p>
+&lt;ul>
+&lt;li>【中州韻】 &lt;code>/tmp/rime.ibus.*&lt;/code>&lt;/li>
+&lt;li>【小狼毫】 &lt;code>%TEMP%\rime.weasel.*&lt;/code>&lt;/li>
+&lt;li>【鼠鬚管】 &lt;code>$TMPDIR/rime.squirrel.*&lt;/code>&lt;/li>
+&lt;li>早期版本 &lt;code>用户配置目录/rime.log&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h1 id="修改配置">修改配置&lt;/h1>
+&lt;p>如果想要修改配置，请不要直接修改原有的 &lt;code>xxx.yaml&lt;/code> 文件，而是应该新建一份 &lt;code>xxx.custom.yaml&lt;/code> 文件，其中 &lt;code>xxx&lt;/code> 与原文件名相同。&lt;/p>
+&lt;p>在 &lt;code>.custom.yaml&lt;/code> 文件中对于要修改的配置项，都需要放在 &lt;code>patch&lt;/code> 根节点下面。&lt;/p>
+&lt;p>每次修改配置，都需要在鼠须管的菜单中选择“重新部署”后才能生效。&lt;/p>
+&lt;h2 id="修改候选词个数">修改候选词个数&lt;/h2>
+&lt;p>Rime 默认每次出现的候选词个数为 5 个，我们可以将其修改为 1~9 之间的任意数。&lt;/p>
+&lt;p>在用户目录下新建一个 &lt;code>default.custom.yaml&lt;/code> 文件（&lt;code>default.yaml&lt;/code> 文件可以在共享配置目录下找到），写入如下内容：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">patch&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#34;menu/page_size&amp;#34;: &lt;/span>&lt;span style="color:#ae81ff">9&lt;/span> &lt;span style="color:#75715e"># 字段名加不加双引号都可以&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 或者是這樣&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">patch&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">menu&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">page_size&lt;/span>: &lt;span style="color:#ae81ff">8&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 但是注意这种写法是覆盖整个 menu 字段。好在默认情况下，menu 下一级也只有 page_size 字段，如果是有多个下级字段，请不要这么写。 &lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>上面的 &lt;code>default&lt;/code> 文件是修改所有输入方案的候选词个数，如果只想针对某个输入方案做调整，比如对于朙月输入方案，那么只需要在用户目录下建立 &lt;code>luna_pinyin.custom.yaml&lt;/code> 文件并写入如上内容，再重新部署即可。（注意，对输入方案定义文件 &lt;code>xxx.schema.yaml&lt;/code> 的修改，新建的文件名只需要是 &lt;code>xxx.custom.yaml&lt;/code>，并不需要加上 &lt;code>schema&lt;/code>，写成 &lt;code>xxx.schema.custom.yaml&lt;/code> 这样。）&lt;/p>
+&lt;p>使用，使用快捷键&lt;code>F4&lt;/code>，然后像拼音打字选候选字一样，选择就好&lt;/p>
+&lt;p>输入方案的可切换状态，请参考后续的 &lt;code>switches&lt;/code> 章节&lt;/p>
+&lt;h2 id="主题">主题&lt;/h2>
+&lt;p>鼠须管的外观配置文件是 &lt;code>squirrel.yaml&lt;/code>（小狼毫的外观配置文件是 &lt;code>weasel.yaml&lt;/code>）。所以我们需要在用户配置目录下新建一个 &lt;code>squirrel.custom.yaml&lt;/code>，参考或者拷贝开源项目的写法，通常有很多个主题，我们可以通过 &lt;code>style/color_scheme&lt;/code> 来选择一个主题&lt;/p>
+&lt;p>&lt;a href="https://github.dev/ssnhd/rime/blob/25462b6e887a3c3ff9b77d193a4cf3d18c334c7f/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/luna_pinyin_simp.custom.yaml">开源项目的主题文件&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>参考:&lt;/p>
+&lt;p>&lt;a href="https://www.hawu.me/others/2666">鼠须管输入法配置 - 哈呜.王 (hawu.me)&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://zhuanlan.zhihu.com/p/474994157">Rime Squirrel 鼠须管输入法配置详解 - 知乎 (zhihu.com)&lt;/a>&lt;/p>&lt;/blockquote></content></item><item><title>Hexo</title><link>https://connorzhangyu.com/posts/hexo/</link><pubDate>Sun, 04 Dec 2022 01:26:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/hexo/</guid><description>&lt;h1 id="内链">内链&lt;/h1>
 &lt;h2 id="内链图片">内链图片&lt;/h2>
 &lt;h3 id="相对路径">相对路径&lt;/h3>
 &lt;p>在&lt;code>source/&lt;/code>下创建一个图片的目录,比如起名叫&lt;code>img&lt;/code>的文件夹
@@ -67,7 +150,29 @@
 &lt;li>&lt;code>../&lt;/code> 相对路径,不是md文件的相对路径,是生成的public文件夹你的文章和内链文章的相对路径&lt;/li>
 &lt;li>310 是指&lt;code>abbrlink: 310&lt;/code>,如果没有就使用标题&lt;/li>
 &lt;li>&lt;code>#CloudFront加速Vercel&lt;/code> 是指 310这篇文章的&lt;code>#CloudFront加速Vercel&lt;/code>这个标题,也可以不用写,如果写了,就会自动跳到页面的这个锚点&lt;/li>
-&lt;/ul></description></item><item><title>DataGrip</title><link>https://connorzhangyu.com/posts/datagrip/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/datagrip/</guid><description>&lt;h1 id="查看ddl和复制为insert语句">查看ddl和复制为insert语句&lt;/h1>
+&lt;/ul></description><content>&lt;h1 id="内链">内链&lt;/h1>
+&lt;h2 id="内链图片">内链图片&lt;/h2>
+&lt;h3 id="相对路径">相对路径&lt;/h3>
+&lt;p>在&lt;code>source/&lt;/code>下创建一个图片的目录,比如起名叫&lt;code>img&lt;/code>的文件夹
+在文章中引入 &lt;code>![图片的备注](图片的相对路径)&lt;/code>
+比如&lt;code>![测试](./2020.png)&lt;/code>&lt;/p>
+&lt;h3 id="第二种相对路径">第二种相对路径&lt;/h3>
+&lt;p>将&lt;code>_config.yml&lt;/code>文件中的配置项&lt;code>post_asset_folder&lt;/code>设为true后，执行命令&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ hexo new post_name
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>在source/_posts中会生成文章post_name.md和同名文件夹post_name。
+将图片资源放在post_name中，文章就可以使用相对路径引用图片资源了。&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>!&lt;span style="color:#f92672">[](&lt;/span>image.jpg&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>如果有遇到问题参考:&lt;a href="https://yanyinhong.github.io/2017/05/02/How-to-insert-image-in-hexo-post/">Hexo博客搭建之在文章中插入图片&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;h2 id="内链文章">内链文章&lt;/h2>
+&lt;h3 id="相对路径-1">相对路径&lt;/h3>
+&lt;p>比如我的博客:
+&lt;code>[需要显示的文字](../310/#CloudFront加速Vercel)&lt;/code>&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>../&lt;/code> 相对路径,不是md文件的相对路径,是生成的public文件夹你的文章和内链文章的相对路径&lt;/li>
+&lt;li>310 是指&lt;code>abbrlink: 310&lt;/code>,如果没有就使用标题&lt;/li>
+&lt;li>&lt;code>#CloudFront加速Vercel&lt;/code> 是指 310这篇文章的&lt;code>#CloudFront加速Vercel&lt;/code>这个标题,也可以不用写,如果写了,就会自动跳到页面的这个锚点&lt;/li>
+&lt;/ul></content></item><item><title>DataGrip</title><link>https://connorzhangyu.com/posts/datagrip/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/datagrip/</guid><description>&lt;h1 id="查看ddl和复制为insert语句">查看ddl和复制为insert语句&lt;/h1>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051411320.png" alt="">&lt;/p>
 &lt;h1 id="显示">显示&lt;/h1>
 &lt;h2 id="设置数据库颜色">设置数据库颜色&lt;/h2>
@@ -119,7 +224,59 @@
 &lt;p>要在库名上点右键&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051414735.png" alt="image-20231201154603739">&lt;/p>
 &lt;p>这个功能类似于&lt;/p>
-&lt;img src="https://image.runtimes.cc/202404051414049.png" alt="image-20231201154745846" style="zoom:50%;" /></description></item><item><title>Excel</title><link>https://connorzhangyu.com/posts/excel/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/excel/</guid><description>&lt;h1 id="行和列">行和列&lt;/h1>
+&lt;img src="https://image.runtimes.cc/202404051414049.png" alt="image-20231201154745846" style="zoom:50%;" /></description><content>&lt;h1 id="查看ddl和复制为insert语句">查看ddl和复制为insert语句&lt;/h1>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051411320.png" alt="">&lt;/p>
+&lt;h1 id="显示">显示&lt;/h1>
+&lt;h2 id="设置数据库颜色">设置数据库颜色&lt;/h2>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051411473.png" alt="image-20230723151325737">&lt;/p>
+&lt;h2 id="显示树状结构">显示树状结构&lt;/h2>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051412133.png" alt="image-20230726133150472">&lt;/p>
+&lt;h2 id="显示表的commnet">显示表的commnet&lt;/h2>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051412038.png" alt="image-20230726133353607">&lt;/p>
+&lt;h2 id="显示数据库ddl最后一次更新的时间">显示数据库DDL最后一次更新的时间&lt;/h2>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051412291.png" alt="image-20230726133451693">&lt;/p>
+&lt;h1 id="同步比较两个表的数据结构">同步/比较两个表的数据结构&lt;/h1>
+&lt;p>用command 选中 两个想要比较的表,然后在其中一个表,选择&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051412792.png" alt="image-20230723151708711">&lt;/p>
+&lt;p>只显示不一样的字段
+&lt;img src="https://image.runtimes.cc/202404051412925.png" alt="image-20230723151821734">&lt;/p>
+&lt;p>显示全部字段,绿色表示不一样&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051412733.png" alt="image-20230723151913910">&lt;/p>
+&lt;p>也可以比较两个库,还是刚才的方法,选中两个库,再比较&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051412216.png" alt="image-20230723153819424">&lt;/p>
+&lt;p>相当于Navicat的这个功能&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051413066.png" alt="image-20230723153427586">&lt;/p>
+&lt;h1 id="复制功能">复制功能&lt;/h1>
+&lt;p>标记1,选中表,&lt;code>Command + c&lt;/code> 就是复制的表名&lt;/p>
+&lt;p>标记2,选中库,&lt;code>Command + c&lt;/code> 就是复制的库名&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051414322.png" alt="image-20230726133739963">&lt;/p>
+&lt;p>右边的选项,让你复制出的SQL格式是什么样的,比如复制出insert的sql,或者update的sql,或者导出xml 或者,多条记录复制出一条sql语句,简单使用可以尝试&lt;/p>
+&lt;p>build-in:&lt;/p>
+&lt;ul>
+&lt;li>sql inserts&lt;/li>
+&lt;li>sql updates&lt;/li>
+&lt;/ul>
+&lt;p>scripted:&lt;/p>
+&lt;ul>
+&lt;li>sql-insert-multirow&lt;/li>
+&lt;li>Sql-insert-statements&lt;/li>
+&lt;li>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051414566.png" alt="image-20230726133946342">&lt;/p>
+&lt;h1 id="导出的功能">导出的功能&lt;/h1>
+&lt;p>使用mysqldump,导出整个库&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051414556.png" alt="image-20230726134405227">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051414094.png" alt="image-20230726134504395">&lt;/p>
+&lt;p>Mac电脑需要安装,&lt;code>mysql-client&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>brew install mysql-client
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 二进制目录(需要手动复制到上图的路径):&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/opt/homebrew/opt/mysql-client/bin/mysqldump
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="导入sql">导入SQL&lt;/h1>
+&lt;p>要在库名上点右键&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051414735.png" alt="image-20231201154603739">&lt;/p>
+&lt;p>这个功能类似于&lt;/p>
+&lt;img src="https://image.runtimes.cc/202404051414049.png" alt="image-20231201154745846" style="zoom:50%;" /></content></item><item><title>Excel</title><link>https://connorzhangyu.com/posts/excel/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/excel/</guid><description>&lt;h1 id="行和列">行和列&lt;/h1>
 &lt;h2 id="隐藏或显示行和列">隐藏或显示行和列&lt;/h2>
 &lt;p>在电子表格中隐藏或取消隐藏列，以仅显示需要查看或打印的数据&lt;/p>
 &lt;blockquote>
@@ -145,7 +302,33 @@
 &lt;img src="https://image.runtimes.cc/202404051416110.png" alt="">&lt;/p>
 &lt;p>📌 这样设置之后,比如在单元格里值设置的是 2021-01-02
 实际上显现的会是 2021年1月2日 星期几&lt;/p>
-&lt;p>✅ 参考:&lt;a href="https://support.microsoft.com/zh-cn/office/%E6%8C%89%E6%83%B3%E8%A6%81%E7%9A%84%E6%96%B9%E5%BC%8F%E8%AE%BE%E7%BD%AE%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F-8e10019e-d5d8-47a1-ba95-db95123d273e">微软官方文档&lt;/a>&lt;/p></description></item><item><title>IDEA</title><link>https://connorzhangyu.com/posts/idea/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/idea/</guid><description>&lt;h1 id="教程">教程&lt;/h1>
+&lt;p>✅ 参考:&lt;a href="https://support.microsoft.com/zh-cn/office/%E6%8C%89%E6%83%B3%E8%A6%81%E7%9A%84%E6%96%B9%E5%BC%8F%E8%AE%BE%E7%BD%AE%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F-8e10019e-d5d8-47a1-ba95-db95123d273e">微软官方文档&lt;/a>&lt;/p></description><content>&lt;h1 id="行和列">行和列&lt;/h1>
+&lt;h2 id="隐藏或显示行和列">隐藏或显示行和列&lt;/h2>
+&lt;p>在电子表格中隐藏或取消隐藏列，以仅显示需要查看或打印的数据&lt;/p>
+&lt;blockquote>
+&lt;p>📌 不影响计算&lt;/p>&lt;/blockquote>
+&lt;h3 id="隐藏列">隐藏列&lt;/h3>
+&lt;ol>
+&lt;li>选择一个或多个列，然后按 Ctrl 选择不相邻的其他列。&lt;/li>
+&lt;li>右键单击选定的列，然后选择&lt;code>隐藏&lt;/code>。
+📌 两列之间的双线表示隐藏了一个列。&lt;/li>
+&lt;/ol>
+&lt;p>✅ 参考:&lt;a href="https://support.microsoft.com/zh-cn/office/%E9%9A%90%E8%97%8F%E6%88%96%E6%98%BE%E7%A4%BA%E8%A1%8C%E6%88%96%E5%88%97-659c2cad-802e-44ee-a614-dde8443579f8">微软官方文档&lt;/a>&lt;/p>
+&lt;h3 id="取消隐藏列">取消隐藏列&lt;/h3>
+&lt;ol>
+&lt;li>选择隐藏列的&lt;code>相邻左列和相邻右列&lt;/code>。&lt;/li>
+&lt;li>右键单击选定的列，然后选择“&lt;strong>取消隐藏&lt;/strong>”。&lt;/li>
+&lt;/ol>
+&lt;p>或双击隐藏列所存在的两列之间的双线。&lt;/p>
+&lt;h2 id="自定义列的格式">自定义列的格式&lt;/h2>
+&lt;p>比如这里要设置列的格式是 年月日星期几&lt;/p>
+&lt;p>默认的日期和时间是没有符合要求的
+&lt;img src="https://image.runtimes.cc/202404051416398.png" alt="">&lt;/p>
+&lt;p>自定义设置
+&lt;img src="https://image.runtimes.cc/202404051416110.png" alt="">&lt;/p>
+&lt;p>📌 这样设置之后,比如在单元格里值设置的是 2021-01-02
+实际上显现的会是 2021年1月2日 星期几&lt;/p>
+&lt;p>✅ 参考:&lt;a href="https://support.microsoft.com/zh-cn/office/%E6%8C%89%E6%83%B3%E8%A6%81%E7%9A%84%E6%96%B9%E5%BC%8F%E8%AE%BE%E7%BD%AE%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F-8e10019e-d5d8-47a1-ba95-db95123d273e">微软官方文档&lt;/a>&lt;/p></content></item><item><title>IDEA</title><link>https://connorzhangyu.com/posts/idea/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/idea/</guid><description>&lt;h1 id="教程">教程&lt;/h1>
 &lt;h2 id="idea查看方法被调用">IDEA查看方法被调用&lt;/h2>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051423853.png" alt="">&lt;/p>
 &lt;h2 id="修改光标所在行背景颜色">修改光标所在行背景颜色&lt;/h2>
@@ -168,7 +351,30 @@
 &lt;h3 id="key-promoter-x">Key Promoter X&lt;/h3>
 &lt;h3 id="translation">Translation&lt;/h3>
 &lt;p>作者:Yii.Guxing&lt;/p>
-&lt;p>选中要翻译的内容,右键选择翻译&lt;/p></description></item><item><title>Obsidian</title><link>https://connorzhangyu.com/posts/obsidian/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/obsidian/</guid><description>&lt;h1 id="插件">插件&lt;/h1>
+&lt;p>选中要翻译的内容,右键选择翻译&lt;/p></description><content>&lt;h1 id="教程">教程&lt;/h1>
+&lt;h2 id="idea查看方法被调用">IDEA查看方法被调用&lt;/h2>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051423853.png" alt="">&lt;/p>
+&lt;h2 id="修改光标所在行背景颜色">修改光标所在行背景颜色&lt;/h2>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051423630.png" alt="">&lt;/p>
+&lt;h2 id="断点判断条件">断点判断条件&lt;/h2>
+&lt;p>在断点上点右键,正常的写判断代码就行&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051423731.png" alt="image-20230803174451532">&lt;/p>
+&lt;h2 id="插件">插件&lt;/h2>
+&lt;h3 id="rabinbow-brackets">Rabinbow Brackets&lt;/h3>
+&lt;p>作者:Zhihao Zhang&lt;/p>
+&lt;p>使用方法&lt;/p>
+&lt;p>&lt;code>Command&lt;/code>+右键,高亮选中部分&lt;/p>
+&lt;p>&lt;code>Alt&lt;/code>+右键,高亮选中部分,其余的代码变暗&lt;/p>
+&lt;h3 id="commitmessage">CommitMessage&lt;/h3>
+&lt;p>作者:郭翰林&lt;/p>
+&lt;p>使用方法,提交的时候,点击✈️的图标&lt;/p>
+&lt;h3 id="codeium">Codeium&lt;/h3>
+&lt;p>作者:Codeium&lt;/p>
+&lt;p>写代码的时候会有自动提示,按tab确定使用AI生成的代码&lt;/p>
+&lt;h3 id="key-promoter-x">Key Promoter X&lt;/h3>
+&lt;h3 id="translation">Translation&lt;/h3>
+&lt;p>作者:Yii.Guxing&lt;/p>
+&lt;p>选中要翻译的内容,右键选择翻译&lt;/p></content></item><item><title>Obsidian</title><link>https://connorzhangyu.com/posts/obsidian/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/obsidian/</guid><description>&lt;h1 id="插件">插件&lt;/h1>
 &lt;p>1.安装git插件
 2.运行命令,才能在界面上显示Git
 &lt;img src="https://image.runtimes.cc/202404051446974.png" alt="">&lt;/p>
@@ -178,4 +384,14 @@
 &lt;h2 id="本地图片的格式">本地图片的格式&lt;/h2>
 &lt;p>使用 Obsidian 时，粘贴的图片路径会变成&lt;code>[[]]&lt;/code> 的格式，在像 Typora 的软件上，就不适配。
 可以在设置里，关闭 Wiki 链接的选项，粘贴图片后的格式就会自动变成了。
-&lt;img src="https://image.runtimes.cc/202404051451913.png" alt="">&lt;/p></description></item></channel></rss>
+&lt;img src="https://image.runtimes.cc/202404051451913.png" alt="">&lt;/p></description><content>&lt;h1 id="插件">插件&lt;/h1>
+&lt;p>1.安装git插件
+2.运行命令,才能在界面上显示Git
+&lt;img src="https://image.runtimes.cc/202404051446974.png" alt="">&lt;/p>
+&lt;h1 id="设置">设置&lt;/h1>
+&lt;h2 id="打开文件的时候显示的模式">打开文件的时候,显示的模式&lt;/h2>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051447844.png" alt="">&lt;/p>
+&lt;h2 id="本地图片的格式">本地图片的格式&lt;/h2>
+&lt;p>使用 Obsidian 时，粘贴的图片路径会变成&lt;code>[[]]&lt;/code> 的格式，在像 Typora 的软件上，就不适配。
+可以在设置里，关闭 Wiki 链接的选项，粘贴图片后的格式就会自动变成了。
+&lt;img src="https://image.runtimes.cc/202404051451913.png" alt="">&lt;/p></content></item></channel></rss>

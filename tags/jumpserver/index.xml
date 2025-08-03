@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>JumpServer on Hello World</title><link>https://connorzhangyu.com/tags/jumpserver/</link><description>Recent content in JumpServer on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Wed, 25 Oct 2023 09:30:33 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/jumpserver/index.xml" rel="self" type="application/rss+xml"/><item><title>JumpServer</title><link>https://connorzhangyu.com/posts/jumpserver/</link><pubDate>Wed, 25 Oct 2023 09:30:33 +0000</pubDate><guid>https://connorzhangyu.com/posts/jumpserver/</guid><description>&lt;h1 id="笔记">笔记&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>JumpServer on Hello World</title><link>https://connorzhangyu.com/tags/jumpserver/</link><description>Recent content in JumpServer on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Wed, 25 Oct 2023 09:30:33 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/jumpserver/index.xml" rel="self" type="application/rss+xml"/><item><title>JumpServer</title><link>https://connorzhangyu.com/posts/jumpserver/</link><pubDate>Wed, 25 Oct 2023 09:30:33 +0000</pubDate><guid>https://connorzhangyu.com/posts/jumpserver/</guid><description>&lt;h1 id="笔记">笔记&lt;/h1>
 &lt;h2 id="安装jumpserver">安装JumpServer&lt;/h2>
 &lt;p>&lt;a href="https://community.fit2cloud.com/#/products/jumpserver/getstarted">官网一键安装&lt;/a>&lt;/p>
 &lt;h2 id="修改配置远程访问的端口">修改配置远程访问的端口&lt;/h2>
@@ -39,4 +39,46 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd /opt/jumpserver-installer-v3.6.3
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./jmsctl.sh start
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="配置ssh超时时间">配置SSH超时时间&lt;/h2>
-&lt;p>默认的时间好像半个小时不操作了,就会自动断开,改成最大值&lt;/p></description></item></channel></rss>
+&lt;p>默认的时间好像半个小时不操作了,就会自动断开,改成最大值&lt;/p></description><content>&lt;h1 id="笔记">笔记&lt;/h1>
+&lt;h2 id="安装jumpserver">安装JumpServer&lt;/h2>
+&lt;p>&lt;a href="https://community.fit2cloud.com/#/products/jumpserver/getstarted">官网一键安装&lt;/a>&lt;/p>
+&lt;h2 id="修改配置远程访问的端口">修改配置远程访问的端口&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 进入到jp的配置文件目录&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd /opt/jumpserver/config
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 修改配置文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>vim config.txt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 修改配置,对外提供服务端口, 如果与现有服务冲突请自行修改&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>HTTP_PORT&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">8083&lt;/span> &lt;span style="color:#75715e"># 修改这个端口&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 重新启动&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd /opt/jumpserver-installer-v3.6.3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./jmsctl.sh restart
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="修改系统管理员密码">修改系统管理员密码&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 进入Docker容器&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ docker exec -it jms_core /bin/bash
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 进入根目录,如果不是Docker,进入cd /opt/jumpserver/apps&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ cd apps/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ python manage.py changepassword admin
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 输入新的密码&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ password
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="nginx反向代理">Nginx反向代理&lt;/h2>
+&lt;p>&lt;a href="../9355/#%E4%BB%A3%E7%90%86JumpServer">Nginx反向代理&lt;/a>&lt;/p>
+&lt;h2 id="配置ssl">配置SSL&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 先停止服务&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd /opt/jumpserver-installer-v3.6.3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./jmsctl.sh stop
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 把证书移动到这个目录&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/opt/jumpserver/config/nginx/cert
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 修改配置文件,域名和ssl证书的文职&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/opt/jumpserver/config/config.txt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 启动服务&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd /opt/jumpserver-installer-v3.6.3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./jmsctl.sh start
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="配置ssh超时时间">配置SSH超时时间&lt;/h2>
+&lt;p>默认的时间好像半个小时不操作了,就会自动断开,改成最大值&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202406151603157.png" alt="image-20240615160327165">&lt;/p></content></item></channel></rss>

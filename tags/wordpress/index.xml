@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>WordPress on Hello World</title><link>https://connorzhangyu.com/tags/wordpress/</link><description>Recent content in WordPress on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Fri, 16 Jun 2023 13:39:21 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/wordpress/index.xml" rel="self" type="application/rss+xml"/><item><title>WordPress</title><link>https://connorzhangyu.com/posts/wordpress/</link><pubDate>Fri, 16 Jun 2023 13:39:21 +0000</pubDate><guid>https://connorzhangyu.com/posts/wordpress/</guid><description>&lt;h1 id="搭建">搭建&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>WordPress on Hello World</title><link>https://connorzhangyu.com/tags/wordpress/</link><description>Recent content in WordPress on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Fri, 16 Jun 2023 13:39:21 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/wordpress/index.xml" rel="self" type="application/rss+xml"/><item><title>WordPress</title><link>https://connorzhangyu.com/posts/wordpress/</link><pubDate>Fri, 16 Jun 2023 13:39:21 +0000</pubDate><guid>https://connorzhangyu.com/posts/wordpress/</guid><description>&lt;h1 id="搭建">搭建&lt;/h1>
 &lt;p>使用阿里云,或者腾讯等轻量云服务器,一键搭建&lt;/p>
 &lt;h1 id="教程">教程&lt;/h1>
 &lt;h2 id="wordpress地址和站点地址的含义和区别">WordPress地址和站点地址的含义和区别&lt;/h2>
@@ -13,26 +13,63 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rm -f /www/server/data/mysql-bin*
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="常用的插件">常用的插件&lt;/h2>
 &lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th style="text-align: left">插件&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td style="text-align: left">Elementor&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td style="text-align: left">Essential Addons for Elementor&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td style="text-align: left">SMTP Mailer&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td style="text-align: left">Starter Templates&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td style="text-align: left">Yoast SEO&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table></description></item></channel></rss>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: left">插件&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: left">Elementor&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">Essential Addons for Elementor&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">SMTP Mailer&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">Starter Templates&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">Yoast SEO&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description><content>&lt;h1 id="搭建">搭建&lt;/h1>
+&lt;p>使用阿里云,或者腾讯等轻量云服务器,一键搭建&lt;/p>
+&lt;h1 id="教程">教程&lt;/h1>
+&lt;h2 id="wordpress地址和站点地址的含义和区别">WordPress地址和站点地址的含义和区别&lt;/h2>
+&lt;p>WordPress 地址
+没有子站点就忽略,和站点地址一样就行
+站点地址
+就是浏览器地址栏输入的地址&lt;/p>
+&lt;p>如果地址填入错误,导致不能进入网站,需要手动修改数据库&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">select&lt;/span> option_name,option_value &lt;span style="color:#66d9ef">from&lt;/span> &lt;span style="color:#66d9ef">options&lt;/span> &lt;span style="color:#66d9ef">where&lt;/span> option_name &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;siteurl&amp;#39;&lt;/span> &lt;span style="color:#66d9ef">or&lt;/span> option_name&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;home&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="在云服务器控制面板强制重启导致数据无法启动">在云服务器控制面板强制重启,导致数据无法启动&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>rm -f /www/server/data/ib_*
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rm -f /www/server/data/mysql-bin*
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="常用的插件">常用的插件&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: left">插件&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: left">Elementor&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">Essential Addons for Elementor&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">SMTP Mailer&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">Starter Templates&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: left">Yoast SEO&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></content></item></channel></rss>

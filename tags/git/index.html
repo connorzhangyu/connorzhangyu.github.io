@@ -1,0 +1,48 @@
+<!doctype html><html lang=zh><head><title>Git :: Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://connorzhangyu.com/tags/git/><link rel=stylesheet href=https://connorzhangyu.com/styles.css><link rel="shortcut icon" href=https://connorzhangyu.com/img/theme-colors/orange.png><link rel=apple-touch-icon href=https://connorzhangyu.com/img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta name=twitter:site content><meta name=twitter:creator content><meta property="og:locale" content="zh"><meta property="og:type" content="website"><meta property="og:title" content="Git"><meta property="og:description" content><meta property="og:url" content="https://connorzhangyu.com/tags/git/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="https://connorzhangyu.com/img/favicon/orange.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><link href=/tags/git/index.xml rel=alternate type=application/rss+xml title="Hello World"></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></nav></header><div class=content><h1>Posts for: #Git</h1><div class=posts><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/git/>Git</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/git/>Git</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051527622.jpg class=post-cover alt=Git title="Cover Image"><div class=post-content><h1 id=分支管理>分支管理</h1><h2 id=切一个新的本地分支>切一个新的本地分支</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># 先切换到需要复制的分支,比如想从prod分支,切一个新的分支</span>
+</span></span><span style=display:flex><span>git checkout prod   <span style=color:#75715e># 先到prod分支</span>
+</span></span><span style=display:flex><span>git checkout -b prod-fix  <span style=color:#75715e># 从prod分支拷贝一个新的分支叫prod-fix</span>
+</span></span></code></pre></div><h2></h2><h1 id=用命令pull-request代码>用命令pull request代码</h1><pre tabindex=0><code># 把本地的代码切换到master
+git checkout -b theme-next-master master
+# https://github.com/theme-next/hexo-theme-next.git 是要合并的代码
+git pull https://github.com/theme-next/hexo-theme-next.git master
+</code></pre><h1 id=git-key>Git Key</h1><pre tabindex=0><code>cd ~/.ssh
+ssh-keygen
+cat ~/.ssh/id_rsa.pub
+</code></pre><h1 id=git-bash启动慢>Git Bash启动慢</h1><pre tabindex=0><code>git config --global core.preloadindex true
+git config --global core.fscache true
+git config --global gc.auto 256
+</code></pre><h1 id=推送到远程>推送到远程</h1><pre tabindex=0><code>git init
+git add README.md
+git commit -m &#34;first commit&#34;
+git remote add origin git@github.com:YangAnLin/bbs.git
+git push -u origin master
+</code></pre><h1 id=创建新的分支推送到远程>创建新的分支推送到远程</h1><ol><li>先创建本地分支<code>git checkout -b &lt;branch-name></code></li><li>本地分支推送到远程服务器时，远程分支自动创建，推送本地分支到远程</li></ol><pre tabindex=0><code>git push --set-upstream &lt;remote-name&gt; &lt;local-branch-name&gt;:&lt;remote-branch-name&gt;
+
+&lt;remote-name&gt;：远程git服务器名称，一般设为origin
+&lt;local-branch-name&gt;：本地分支名称
+&lt;remote-branch-name&gt;：远程分支名称
+
+最后的结果是: git push --set-upstream origin prerelease:prerelease
+prerelease是分支的名字
+
+也可以这样操作:本地有个master_anthony,服务器中没有这个分支,
+git push -u origin master_anthony
+这个命令,就是把master_anthony分支的代码,提交到远程,还要在远程创建这个分支
+</code></pre><h1 id=删除远程仓库文件>删除远程仓库文件</h1><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 加上 -n 这个参数，执行命令时，是不会删除任何文件，而是展示此命令要删除的文件列表预览。</span>
+</span></span><span style=display:flex><span>git rm -r -n --cached 文件/文件夹名称
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>git rm -r --cached 文件/文件夹名称
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>git commit -m <span style=color:#e6db74>&#34;提交说明&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>git push
+</span></span></code></pre></div><h1 id=撤销修改>撤销修改</h1><pre tabindex=0><code># 工作区修改过了,恢复工作区
+git checkout -- file
+
+# 已经commit了,但是还没有push
+git reset --soft HEAD^
+
+# 现在就已经把暂存区恢复到工作了
+</code></pre><h1 id=版本回退reset>版本回退reset</h1><p>reset用于回退版本，可以遗弃不再使用的提交</p></div><div><a class="read-more button" href=/posts/git/>Read more →</a></div></article><div class=pagination><div class=pagination__buttons></div></div></div></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>
+<span>:: <a href=https://github.com/mirus-ua/hugo-theme-re-terminal target=_blank>Theme</a> made by <a href=https://github.com/mirus-ua target=_blank>Mirus</a></span></div></div></footer><script type=text/javascript src=/bundle.min.js></script></div></body></html>

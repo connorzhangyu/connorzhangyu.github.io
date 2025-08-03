@@ -1,33 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>使用 on Hello World</title><link>https://connorzhangyu.com/tags/%E4%BD%BF%E7%94%A8/</link><description>Recent content in 使用 on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Sat, 19 Nov 2022 18:25:00 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/%E4%BD%BF%E7%94%A8/index.xml" rel="self" type="application/rss+xml"/><item><title>Mac</title><link>https://connorzhangyu.com/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/mac/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/mac/</guid><description>&lt;h1 id="快捷键">快捷键&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>使用 on Hello World</title><link>https://connorzhangyu.com/tags/%E4%BD%BF%E7%94%A8/</link><description>Recent content in 使用 on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sat, 19 Nov 2022 18:25:00 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/%E4%BD%BF%E7%94%A8/index.xml" rel="self" type="application/rss+xml"/><item><title>Mac</title><link>https://connorzhangyu.com/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/mac/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/mac/</guid><description>&lt;h1 id="快捷键">快捷键&lt;/h1>
 &lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>描述&lt;/th>
- &lt;th>命令&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>一个应用多个窗口 切换&lt;/td>
- &lt;td>command+`&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>录屏幕&lt;/td>
- &lt;td>shift+command+5&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>截图&lt;/td>
- &lt;td>shift+command+4&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>重装系统&lt;/td>
- &lt;td>先一直按住不要松手:Common+R,&lt;br />再按开机键;非苹果键盘,按住微软键+R&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>上一级目录&lt;/td>
- &lt;td>command+↑&lt;/td>
- &lt;/tr>
- &lt;/tbody>
+&lt;thead>
+&lt;tr>
+&lt;th>描述&lt;/th>
+&lt;th>命令&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>一个应用多个窗口 切换&lt;/td>
+&lt;td>command+`&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>录屏幕&lt;/td>
+&lt;td>shift+command+5&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>截图&lt;/td>
+&lt;td>shift+command+4&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>重装系统&lt;/td>
+&lt;td>先一直按住不要松手:Common+R,&lt;br />再按开机键;非苹果键盘,按住微软键+R&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>上一级目录&lt;/td>
+&lt;td>command+↑&lt;/td>
+&lt;/tr>
+&lt;/tbody>
 &lt;/table>
 &lt;h1 id="网站链接">网站链接&lt;/h1>
 &lt;ul>
@@ -69,4 +69,118 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>defaults write com.apple.dock ResetLaunchPad -bool TRUE
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>killall Dock
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="mac-os-x-访问-windows共享文件夹">Mac OS X 访问 Windows共享文件夹&lt;/h1>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051351999.png" alt="">&lt;/p></description></item></channel></rss>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051351999.png" alt="">&lt;/p></description><content>&lt;h1 id="快捷键">快捷键&lt;/h1>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>描述&lt;/th>
+&lt;th>命令&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>一个应用多个窗口 切换&lt;/td>
+&lt;td>command+`&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>录屏幕&lt;/td>
+&lt;td>shift+command+5&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>截图&lt;/td>
+&lt;td>shift+command+4&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>重装系统&lt;/td>
+&lt;td>先一直按住不要松手:Common+R,&lt;br />再按开机键;非苹果键盘,按住微软键+R&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>上一级目录&lt;/td>
+&lt;td>command+↑&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h1 id="网站链接">网站链接&lt;/h1>
+&lt;ul>
+&lt;li>&lt;a href="https://www.iplaysoft.com/fix-chrome-slow.html">一招解决 Chrome / Edge 浏览器卡顿变慢视频掉帧问题 - 让浏览器重回丝般流畅&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://alt-tab-macos.netlify.app/">AltTab&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h1 id="iphone强制重启">iphone强制重启&lt;/h1>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051349933.webp" alt="">&lt;/p>
+&lt;h1 id="浏览器返回手势">浏览器返回手势&lt;/h1>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051350113.png" alt="">&lt;/p>
+&lt;h1 id="放歌有噪音">放歌有噪音&lt;/h1>
+&lt;p>通过【活动监视器】程序终止【coreaudiod】进程：&lt;/p>
+&lt;ol>
+&lt;li>聚焦搜索】中输入【activity monitor】&lt;/li>
+&lt;li>在窗口右上角的搜索栏里输入【coreaudiod】&lt;/li>
+&lt;li>选择【coreaudiod】进程后，点击窗口上方工具栏中的【停止按钮】（按钮图标为X）&lt;/li>
+&lt;/ol>
+&lt;h1 id="只有mac不能访问github">只有mac不能访问github&lt;/h1>
+&lt;ol>
+&lt;li>
+&lt;p>打开&lt;code>https://github.com.ipaddress.com/&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>打开&lt;code>https://fastly.net.ipaddress.com/github.global.ssl.fastly.net#ipinfo&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>sudo vim /etc/hosts&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Shell" data-lang="Shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 这个ip从第一步获取到的&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>140.82.112.4 github.com
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 这个ip从第二步获取到的&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>199.232.69.194 github.global.ssl.fastly.net
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>刷新:&lt;code>sudo killall -HUP mDNSResponder;say DNS cache has been flushed&lt;/code>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h1 id="启动台有问号的图标点击没反应">启动台有问号的图标,点击没反应&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 执行了之后,自己新建的文件夹会重置&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>defaults write com.apple.dock ResetLaunchPad -bool TRUE
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>killall Dock
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="mac-os-x-访问-windows共享文件夹">Mac OS X 访问 Windows共享文件夹&lt;/h1>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051351999.png" alt="">&lt;/p>
+&lt;p>在Mac中，点击 Finder菜单的“前往” &amp;gt; “前往服务器”。在弹出的连接服务器对话框中输入「smb://Windows主机的IP地址」，点击“连接”。&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051352087.png" alt="">&lt;/p>
+&lt;p>一般需要输入Windows对应用户的名称和密码，然后弹出如下窗口，选择对应的文件夹，点击“好”即可进行远程访问&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051352069.png" alt="">&lt;/p>
+&lt;h1 id="只使用搜狗输入法">只使用搜狗输入法&lt;/h1>
+&lt;p>系统偏好设置 &amp;raquo; 键盘 &amp;raquo; 快捷键 &amp;raquo; 反选切换输入法的快捷键&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051353563.png" alt="示例图片">&lt;/p>
+&lt;h1 id="网络踪迹">网络踪迹&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>traceroute ap-southeast-1.signin.aws.amazon.com
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="安装mysql客户端">安装mysql客户端&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>brew install mysql-client
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 安装目录在&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/opt/homebrew/Cellar/mysql-client/8.0.33_1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># mysqldump的目录&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/opt/homebrew/opt/mysql-client/bin/mysqldump
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="iterm2">Iterm2&lt;/h1>
+&lt;h2 id="iterm2多窗口同时输入命令">Iterm2多窗口同时输入命令&lt;/h2>
+&lt;p>&lt;code>只需要输入快捷键 ⌘(command) + ⇧(shift) + i&lt;/code>&lt;/p>
+&lt;h2 id="调出复制过的文本历史">调出复制过的文本历史&lt;/h2>
+&lt;p>快捷键：“shift+cmd+h”&lt;/p>
+&lt;h2 id="按键回放">按键回放&lt;/h2>
+&lt;p>回放一段时间内的你敲过的所有字符。
+快捷键：“cmd+alt+b”，如图会弹出一个进度条，按左右键就可以实现按键回放了。&lt;/p>
+&lt;h1 id="cheatsheet">CheatSheet&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>brew install cheatsheet
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 使用&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>随便在一个软件中 长按&lt;span style="color:#e6db74">`&lt;/span>command&lt;span style="color:#e6db74">`&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="navicat破解">Navicat破解&lt;/h1>
+&lt;p>&lt;a href="https://gitee.com/ProgHub/unlimited_trial_navicat_premium">gitee脚本&lt;/a>&lt;/p>
+&lt;h1 id="mac安装-protobuf">mac安装 protobuf&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>brew install protobuf
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>protoc --version
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/opt/homebrew/share/emacs/site-lisp/protobuf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="视频格式转换">视频格式转换&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>brew install ffmpeg
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 使用这个命令&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ffmpeg -i input.mov -c copy output.mp4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 不要用这个命令,网上说是速度很慢&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ffmpeg -i input.mov output.mp4
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item></channel></rss>

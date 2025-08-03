@@ -1,0 +1,430 @@
+<!doctype html><html lang=zh><head><title>Flink :: Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content='Flink 尝试flink 本地安装 步骤一:下载
+为了能够运行Flink，唯一的要求是安装有效的Java 8或11。您可以通过发出以下命令来检查Java的正确安装：
+# 要安装java环境 java -version # 下载解压flink tar -xzf flink-1.11.2-bin-scala_2.11.tgz cd flink-1.11.2-bin-scala_2.11 步骤二:启动本地集群
+$ ./bin/start-cluster.sh Starting cluster. Starting standalonesession daemon on host. Starting taskexecutor daemon on host. 步骤三:提交一个job
+$ ./bin/flink run examples/streaming/WordCount.jar $ tail log/flink-*-taskexecutor-*.out (to,1) (be,1) (or,1) (not,1) (to,2) (be,2) 步骤四:停止集群
+$ ./bin/stop-cluster.sh 使用DataStream API进行欺诈检测 Java环境 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"> <modelVersion>4.0.0</modelVersion> <groupId>frauddetection</groupId> <artifactId>frauddetection</artifactId> <version>0.1</version> <packaging>jar</packaging> <name>Flink Walkthrough DataStream Java</name> <url>https://flink.apache.org</url> <properties> <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> <flink.version>1.10.2</flink.version> <java.version>1.8</java.version> <scala.binary.version>2.11</scala.binary.version> <maven.compiler.source>${java.version}</maven.compiler.source> <maven.compiler.target>${java.version}</maven.compiler.target> </properties> <dependencies> <dependency> <groupId>org.apache.flink</groupId> <artifactId>flink-walkthrough-common_${scala.binary.version}</artifactId> <version>${flink.version}</version> </dependency> <!-- This dependency is provided, because it should not be packaged into the JAR file. --> <dependency> <groupId>org.apache.flink</groupId> <artifactId>flink-streaming-java_${scala.binary.version}</artifactId> <version>${flink.version}</version> <!--	<scope>provided</scope>--> </dependency> <dependency> <groupId>org.projectlombok</groupId> <artifactId>lombok</artifactId> <version>1.18.0</version> <scope>provided</scope> </dependency> <!-- Add connector dependencies here. They must be in the default scope (compile). --> <dependency> <groupId>org.apache.flink</groupId> <artifactId>flink-connector-kafka-0.10_${scala.binary.version}</artifactId> <version>${flink.version}</version> </dependency> <!-- Add logging framework, to produce console output when running in the IDE. --> <!-- These dependencies are excluded from the application JAR by default. --> <dependency> <groupId>org.slf4j</groupId> <artifactId>slf4j-log4j12</artifactId> <version>1.7.7</version> <scope>runtime</scope> </dependency> <dependency> <groupId>log4j</groupId> <artifactId>log4j</artifactId> <version>1.2.17</version> <scope>runtime</scope> </dependency> </dependencies> <build> <plugins> <!-- Java Compiler --> <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-compiler-plugin</artifactId> <version>3.1</version> <configuration> <source>${java.version}</source> <target>${java.version}</target> </configuration> </plugin> <!-- We use the maven-shade plugin to create a fat jar that contains all necessary dependencies. --> <!-- Change the value of <mainClass>...</mainClass> if your program entry point changes. --> <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-shade-plugin</artifactId> <version>3.0.0</version> <executions> <!-- Run shade goal on package phase --> <execution> <phase>package</phase> <goals> <goal>shade</goal> </goals> <configuration> <artifactSet> <excludes> <exclude>org.apache.flink:force-shading</exclude> <exclude>com.google.code.findbugs:jsr305</exclude> <exclude>org.slf4j:*</exclude> <exclude>log4j:*</exclude> </excludes> </artifactSet> <filters> <filter> <!-- Do not copy the signatures in the META-INF folder. Otherwise, this might cause SecurityExceptions when using the JAR. --> <artifact>*:*</artifact> <excludes> <exclude>META-INF/*.SF</exclude> <exclude>META-INF/*.DSA</exclude> <exclude>META-INF/*.RSA</exclude> </excludes> </filter> </filters> <transformers> <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer"> <mainClass>spendreport.FraudDetectionJob</mainClass> </transformer> </transformers> </configuration> </execution> </executions> </plugin> </plugins> <pluginManagement> <plugins> <!-- This improves the out-of-the-box experience in Eclipse by resolving some warnings. --> <plugin> <groupId>org.eclipse.m2e</groupId> <artifactId>lifecycle-mapping</artifactId> <version>1.0.0</version> <configuration> <lifecycleMappingMetadata> <pluginExecutions> <pluginExecution> <pluginExecutionFilter> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-shade-plugin</artifactId> <versionRange>[3.0.0,)</versionRange> <goals> <goal>shade</goal> </goals> </pluginExecutionFilter> <action> <ignore/> </action> </pluginExecution> <pluginExecution> <pluginExecutionFilter> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-compiler-plugin</artifactId> <versionRange>[3.1,)</versionRange> <goals> <goal>testCompile</goal> <goal>compile</goal> </goals> </pluginExecutionFilter> <action> <ignore/> </action> </pluginExecution> </pluginExecutions> </lifecycleMappingMetadata> </configuration> </plugin> </plugins> </pluginManagement> </build> </project> 输入 File输入 public static void main(String[] args) throws Exception { final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment(); final DataStream<String> stringDataStreamSource = env.readTextFile("Sensor.txt"); stringDataStreamSource.print("data"); env.execute(); } Kafka 需要引入包
+'><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://connorzhangyu.com/posts/flink/><link rel=stylesheet href=https://connorzhangyu.com/styles.css><link rel="shortcut icon" href=https://connorzhangyu.com/img/theme-colors/orange.png><link rel=apple-touch-icon href=https://connorzhangyu.com/img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta name=twitter:site content><meta name=twitter:creator content="Anthony"><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="og:title" content="Flink"><meta property="og:description" content='Flink 尝试flink 本地安装 步骤一:下载
+为了能够运行Flink，唯一的要求是安装有效的Java 8或11。您可以通过发出以下命令来检查Java的正确安装：
+# 要安装java环境 java -version # 下载解压flink tar -xzf flink-1.11.2-bin-scala_2.11.tgz cd flink-1.11.2-bin-scala_2.11 步骤二:启动本地集群
+$ ./bin/start-cluster.sh Starting cluster. Starting standalonesession daemon on host. Starting taskexecutor daemon on host. 步骤三:提交一个job
+$ ./bin/flink run examples/streaming/WordCount.jar $ tail log/flink-*-taskexecutor-*.out (to,1) (be,1) (or,1) (not,1) (to,2) (be,2) 步骤四:停止集群
+$ ./bin/stop-cluster.sh 使用DataStream API进行欺诈检测 Java环境 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"> <modelVersion>4.0.0</modelVersion> <groupId>frauddetection</groupId> <artifactId>frauddetection</artifactId> <version>0.1</version> <packaging>jar</packaging> <name>Flink Walkthrough DataStream Java</name> <url>https://flink.apache.org</url> <properties> <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> <flink.version>1.10.2</flink.version> <java.version>1.8</java.version> <scala.binary.version>2.11</scala.binary.version> <maven.compiler.source>${java.version}</maven.compiler.source> <maven.compiler.target>${java.version}</maven.compiler.target> </properties> <dependencies> <dependency> <groupId>org.apache.flink</groupId> <artifactId>flink-walkthrough-common_${scala.binary.version}</artifactId> <version>${flink.version}</version> </dependency> <!-- This dependency is provided, because it should not be packaged into the JAR file. --> <dependency> <groupId>org.apache.flink</groupId> <artifactId>flink-streaming-java_${scala.binary.version}</artifactId> <version>${flink.version}</version> <!--	<scope>provided</scope>--> </dependency> <dependency> <groupId>org.projectlombok</groupId> <artifactId>lombok</artifactId> <version>1.18.0</version> <scope>provided</scope> </dependency> <!-- Add connector dependencies here. They must be in the default scope (compile). --> <dependency> <groupId>org.apache.flink</groupId> <artifactId>flink-connector-kafka-0.10_${scala.binary.version}</artifactId> <version>${flink.version}</version> </dependency> <!-- Add logging framework, to produce console output when running in the IDE. --> <!-- These dependencies are excluded from the application JAR by default. --> <dependency> <groupId>org.slf4j</groupId> <artifactId>slf4j-log4j12</artifactId> <version>1.7.7</version> <scope>runtime</scope> </dependency> <dependency> <groupId>log4j</groupId> <artifactId>log4j</artifactId> <version>1.2.17</version> <scope>runtime</scope> </dependency> </dependencies> <build> <plugins> <!-- Java Compiler --> <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-compiler-plugin</artifactId> <version>3.1</version> <configuration> <source>${java.version}</source> <target>${java.version}</target> </configuration> </plugin> <!-- We use the maven-shade plugin to create a fat jar that contains all necessary dependencies. --> <!-- Change the value of <mainClass>...</mainClass> if your program entry point changes. --> <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-shade-plugin</artifactId> <version>3.0.0</version> <executions> <!-- Run shade goal on package phase --> <execution> <phase>package</phase> <goals> <goal>shade</goal> </goals> <configuration> <artifactSet> <excludes> <exclude>org.apache.flink:force-shading</exclude> <exclude>com.google.code.findbugs:jsr305</exclude> <exclude>org.slf4j:*</exclude> <exclude>log4j:*</exclude> </excludes> </artifactSet> <filters> <filter> <!-- Do not copy the signatures in the META-INF folder. Otherwise, this might cause SecurityExceptions when using the JAR. --> <artifact>*:*</artifact> <excludes> <exclude>META-INF/*.SF</exclude> <exclude>META-INF/*.DSA</exclude> <exclude>META-INF/*.RSA</exclude> </excludes> </filter> </filters> <transformers> <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer"> <mainClass>spendreport.FraudDetectionJob</mainClass> </transformer> </transformers> </configuration> </execution> </executions> </plugin> </plugins> <pluginManagement> <plugins> <!-- This improves the out-of-the-box experience in Eclipse by resolving some warnings. --> <plugin> <groupId>org.eclipse.m2e</groupId> <artifactId>lifecycle-mapping</artifactId> <version>1.0.0</version> <configuration> <lifecycleMappingMetadata> <pluginExecutions> <pluginExecution> <pluginExecutionFilter> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-shade-plugin</artifactId> <versionRange>[3.0.0,)</versionRange> <goals> <goal>shade</goal> </goals> </pluginExecutionFilter> <action> <ignore/> </action> </pluginExecution> <pluginExecution> <pluginExecutionFilter> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-compiler-plugin</artifactId> <versionRange>[3.1,)</versionRange> <goals> <goal>testCompile</goal> <goal>compile</goal> </goals> </pluginExecutionFilter> <action> <ignore/> </action> </pluginExecution> </pluginExecutions> </lifecycleMappingMetadata> </configuration> </plugin> </plugins> </pluginManagement> </build> </project> 输入 File输入 public static void main(String[] args) throws Exception { final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment(); final DataStream<String> stringDataStreamSource = env.readTextFile("Sensor.txt"); stringDataStreamSource.print("data"); env.execute(); } Kafka 需要引入包
+'><meta property="og:url" content="https://connorzhangyu.com/posts/flink/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="https://image.runtimes.cc/202404051527464.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><meta property="article:section" content="Java"><meta property="article:published_time" content="2022-11-19 18:25:00 +0000 UTC"></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></nav></header><div class=content><article class=post><h1 class=post-title><a href=https://connorzhangyu.com/posts/flink/>Flink</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/java/>Java</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/>大数据</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051527464.png class=post-cover alt=" " title="Cover Image"><div class=post-content><div><h1 id=flink>Flink<a href=#flink class=hanchor arialabel=Anchor>&#8983;</a></h1><h2 id=尝试flink>尝试flink<a href=#尝试flink class=hanchor arialabel=Anchor>&#8983;</a></h2><h3 id=本地安装>本地安装<a href=#本地安装 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>步骤一:下载</p><p>为了能够运行Flink，唯一的要求是安装有效的<strong>Java 8或11</strong>。您可以通过发出以下命令来检查Java的正确安装：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># 要安装java环境</span>
+</span></span><span style=display:flex><span>java -version
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 下载解压flink</span>
+</span></span><span style=display:flex><span>tar -xzf flink-1.11.2-bin-scala_2.11.tgz
+</span></span><span style=display:flex><span>cd flink-1.11.2-bin-scala_2.11
+</span></span></code></pre></div><p>步骤二:启动本地集群</p><pre tabindex=0><code>$ ./bin/start-cluster.sh
+Starting cluster.
+Starting standalonesession daemon on host.
+Starting taskexecutor daemon on host.
+</code></pre><p>步骤三:提交一个job</p><pre tabindex=0><code>$ ./bin/flink run examples/streaming/WordCount.jar
+$ tail log/flink-*-taskexecutor-*.out
+  (to,1)
+  (be,1)
+  (or,1)
+  (not,1)
+  (to,2)
+  (be,2)
+</code></pre><p>步骤四:停止集群</p><pre tabindex=0><code>$ ./bin/stop-cluster.sh
+</code></pre><h2 id=使用datastream-api进行欺诈检测>使用DataStream API进行欺诈检测<a href=#使用datastream-api进行欺诈检测 class=hanchor arialabel=Anchor>&#8983;</a></h2><h3 id=java环境>Java环境<a href=#java环境 class=hanchor arialabel=Anchor>&#8983;</a></h3><pre tabindex=0><code>&lt;project xmlns=&#34;http://maven.apache.org/POM/4.0.0&#34; xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34;
+		 xsi:schemaLocation=&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;&gt;
+	&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+	&lt;groupId&gt;frauddetection&lt;/groupId&gt;
+	&lt;artifactId&gt;frauddetection&lt;/artifactId&gt;
+	&lt;version&gt;0.1&lt;/version&gt;
+	&lt;packaging&gt;jar&lt;/packaging&gt;
+
+	&lt;name&gt;Flink Walkthrough DataStream Java&lt;/name&gt;
+	&lt;url&gt;https://flink.apache.org&lt;/url&gt;
+
+	&lt;properties&gt;
+		&lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+		&lt;flink.version&gt;1.10.2&lt;/flink.version&gt;
+		&lt;java.version&gt;1.8&lt;/java.version&gt;
+		&lt;scala.binary.version&gt;2.11&lt;/scala.binary.version&gt;
+		&lt;maven.compiler.source&gt;${java.version}&lt;/maven.compiler.source&gt;
+		&lt;maven.compiler.target&gt;${java.version}&lt;/maven.compiler.target&gt;
+	&lt;/properties&gt;
+
+	&lt;dependencies&gt;
+		&lt;dependency&gt;
+			&lt;groupId&gt;org.apache.flink&lt;/groupId&gt;
+			&lt;artifactId&gt;flink-walkthrough-common_${scala.binary.version}&lt;/artifactId&gt;
+			&lt;version&gt;${flink.version}&lt;/version&gt;
+		&lt;/dependency&gt;
+
+		&lt;!-- This dependency is provided, because it should not be packaged into the JAR file. --&gt;
+		&lt;dependency&gt;
+			&lt;groupId&gt;org.apache.flink&lt;/groupId&gt;
+			&lt;artifactId&gt;flink-streaming-java_${scala.binary.version}&lt;/artifactId&gt;
+			&lt;version&gt;${flink.version}&lt;/version&gt;
+&lt;!--			&lt;scope&gt;provided&lt;/scope&gt;--&gt;
+		&lt;/dependency&gt;
+
+		&lt;dependency&gt;
+			&lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+			&lt;artifactId&gt;lombok&lt;/artifactId&gt;
+			&lt;version&gt;1.18.0&lt;/version&gt;
+			&lt;scope&gt;provided&lt;/scope&gt;
+		&lt;/dependency&gt;
+
+		&lt;!-- Add connector dependencies here. They must be in the default scope (compile). --&gt;
+
+		&lt;dependency&gt;
+			&lt;groupId&gt;org.apache.flink&lt;/groupId&gt;
+			&lt;artifactId&gt;flink-connector-kafka-0.10_${scala.binary.version}&lt;/artifactId&gt;
+			&lt;version&gt;${flink.version}&lt;/version&gt;
+		&lt;/dependency&gt;
+
+		&lt;!-- Add logging framework, to produce console output when running in the IDE. --&gt;
+		&lt;!-- These dependencies are excluded from the application JAR by default. --&gt;
+		&lt;dependency&gt;
+			&lt;groupId&gt;org.slf4j&lt;/groupId&gt;
+			&lt;artifactId&gt;slf4j-log4j12&lt;/artifactId&gt;
+			&lt;version&gt;1.7.7&lt;/version&gt;
+			&lt;scope&gt;runtime&lt;/scope&gt;
+		&lt;/dependency&gt;
+		&lt;dependency&gt;
+			&lt;groupId&gt;log4j&lt;/groupId&gt;
+			&lt;artifactId&gt;log4j&lt;/artifactId&gt;
+			&lt;version&gt;1.2.17&lt;/version&gt;
+			&lt;scope&gt;runtime&lt;/scope&gt;
+		&lt;/dependency&gt;
+	&lt;/dependencies&gt;
+
+	&lt;build&gt;
+		&lt;plugins&gt;
+
+			&lt;!-- Java Compiler --&gt;
+			&lt;plugin&gt;
+				&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+				&lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+				&lt;version&gt;3.1&lt;/version&gt;
+				&lt;configuration&gt;
+					&lt;source&gt;${java.version}&lt;/source&gt;
+					&lt;target&gt;${java.version}&lt;/target&gt;
+				&lt;/configuration&gt;
+			&lt;/plugin&gt;
+
+			&lt;!-- We use the maven-shade plugin to create a fat jar that contains all necessary dependencies. --&gt;
+			&lt;!-- Change the value of &lt;mainClass&gt;...&lt;/mainClass&gt; if your program entry point changes. --&gt;
+			&lt;plugin&gt;
+				&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+				&lt;artifactId&gt;maven-shade-plugin&lt;/artifactId&gt;
+				&lt;version&gt;3.0.0&lt;/version&gt;
+				&lt;executions&gt;
+					&lt;!-- Run shade goal on package phase --&gt;
+					&lt;execution&gt;
+						&lt;phase&gt;package&lt;/phase&gt;
+						&lt;goals&gt;
+							&lt;goal&gt;shade&lt;/goal&gt;
+						&lt;/goals&gt;
+						&lt;configuration&gt;
+							&lt;artifactSet&gt;
+								&lt;excludes&gt;
+									&lt;exclude&gt;org.apache.flink:force-shading&lt;/exclude&gt;
+									&lt;exclude&gt;com.google.code.findbugs:jsr305&lt;/exclude&gt;
+									&lt;exclude&gt;org.slf4j:*&lt;/exclude&gt;
+									&lt;exclude&gt;log4j:*&lt;/exclude&gt;
+								&lt;/excludes&gt;
+							&lt;/artifactSet&gt;
+							&lt;filters&gt;
+								&lt;filter&gt;
+									&lt;!-- Do not copy the signatures in the META-INF folder.
+                                    Otherwise, this might cause SecurityExceptions when using the JAR. --&gt;
+									&lt;artifact&gt;*:*&lt;/artifact&gt;
+									&lt;excludes&gt;
+										&lt;exclude&gt;META-INF/*.SF&lt;/exclude&gt;
+										&lt;exclude&gt;META-INF/*.DSA&lt;/exclude&gt;
+										&lt;exclude&gt;META-INF/*.RSA&lt;/exclude&gt;
+									&lt;/excludes&gt;
+								&lt;/filter&gt;
+							&lt;/filters&gt;
+							&lt;transformers&gt;
+								&lt;transformer implementation=&#34;org.apache.maven.plugins.shade.resource.ManifestResourceTransformer&#34;&gt;
+									&lt;mainClass&gt;spendreport.FraudDetectionJob&lt;/mainClass&gt;
+								&lt;/transformer&gt;
+							&lt;/transformers&gt;
+						&lt;/configuration&gt;
+					&lt;/execution&gt;
+				&lt;/executions&gt;
+			&lt;/plugin&gt;
+		&lt;/plugins&gt;
+
+		&lt;pluginManagement&gt;
+			&lt;plugins&gt;
+
+				&lt;!-- This improves the out-of-the-box experience in Eclipse by resolving some warnings. --&gt;
+				&lt;plugin&gt;
+					&lt;groupId&gt;org.eclipse.m2e&lt;/groupId&gt;
+					&lt;artifactId&gt;lifecycle-mapping&lt;/artifactId&gt;
+					&lt;version&gt;1.0.0&lt;/version&gt;
+					&lt;configuration&gt;
+						&lt;lifecycleMappingMetadata&gt;
+							&lt;pluginExecutions&gt;
+								&lt;pluginExecution&gt;
+									&lt;pluginExecutionFilter&gt;
+										&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+										&lt;artifactId&gt;maven-shade-plugin&lt;/artifactId&gt;
+										&lt;versionRange&gt;[3.0.0,)&lt;/versionRange&gt;
+										&lt;goals&gt;
+											&lt;goal&gt;shade&lt;/goal&gt;
+										&lt;/goals&gt;
+									&lt;/pluginExecutionFilter&gt;
+									&lt;action&gt;
+										&lt;ignore/&gt;
+									&lt;/action&gt;
+								&lt;/pluginExecution&gt;
+								&lt;pluginExecution&gt;
+									&lt;pluginExecutionFilter&gt;
+										&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+										&lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+										&lt;versionRange&gt;[3.1,)&lt;/versionRange&gt;
+										&lt;goals&gt;
+											&lt;goal&gt;testCompile&lt;/goal&gt;
+											&lt;goal&gt;compile&lt;/goal&gt;
+										&lt;/goals&gt;
+									&lt;/pluginExecutionFilter&gt;
+									&lt;action&gt;
+										&lt;ignore/&gt;
+									&lt;/action&gt;
+								&lt;/pluginExecution&gt;
+							&lt;/pluginExecutions&gt;
+						&lt;/lifecycleMappingMetadata&gt;
+					&lt;/configuration&gt;
+				&lt;/plugin&gt;
+			&lt;/plugins&gt;
+		&lt;/pluginManagement&gt;
+	&lt;/build&gt;
+&lt;/project&gt;
+</code></pre><h2 id=输入>输入<a href=#输入 class=hanchor arialabel=Anchor>&#8983;</a></h2><h3 id=file输入>File输入<a href=#file输入 class=hanchor arialabel=Anchor>&#8983;</a></h3><pre tabindex=0><code>public static void main(String[] args) throws Exception {
+    final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+    final DataStream&lt;String&gt; stringDataStreamSource = env.readTextFile(&#34;Sensor.txt&#34;);
+    stringDataStreamSource.print(&#34;data&#34;);
+    env.execute();
+}
+</code></pre><h2 id=kafka>Kafka<a href=#kafka class=hanchor arialabel=Anchor>&#8983;</a></h2><p>需要引入包</p><pre tabindex=0><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.apache.flink&lt;/groupId&gt;
+    &lt;artifactId&gt;flink-connector-kafka-0.10_${scala.binary.version}&lt;/artifactId&gt;
+    &lt;version&gt;${flink.version}&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre><pre tabindex=0><code>public static void main(String[] args) throws Exception {
+    final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+    // 配置kafka,账号密码
+    final Properties properties = new Properties();
+    final DataStreamSource&lt;String&gt; sensor = env.addSource(new FlinkKafkaConsumer010&lt;String&gt;(&#34;sensor&#34;, new SimpleStringSchema(), properties));
+    sensor.print(&#34;data&#34;);
+    env.execute();
+}
+</code></pre><h2 id=集合获取>集合获取<a href=#集合获取 class=hanchor arialabel=Anchor>&#8983;</a></h2><pre tabindex=0><code>public static void main(String[] args) throws Exception {
+
+    final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+
+    DataStream&lt;SensorReading&gt; dataStreamSource = env.fromCollection(Arrays.asList(
+        new SensorReading(&#34;sen1&#34;, 1l, 37.5),
+        new SensorReading(&#34;sen2&#34;, 2l, 38.5),
+        new SensorReading(&#34;sen3&#34;, 3l, 39.5),
+        new SensorReading(&#34;sen4&#34;, 4l, 40.5)));
+
+    final DataStreamSource&lt;Integer&gt; integerDataStreamSource = env.fromElements(11, 12, 13, 14, 15);
+    dataStreamSource.print(&#34;data&#34;);
+    integerDataStreamSource.print(&#34;my list&#34;);
+    env.execute();
+}
+</code></pre><h2 id=输出>输出<a href=#输出 class=hanchor arialabel=Anchor>&#8983;</a></h2><h2 id=自定义数据源>自定义数据源<a href=#自定义数据源 class=hanchor arialabel=Anchor>&#8983;</a></h2><p>模拟从kafka中获取</p><pre tabindex=0><code>public static void main(String[] args) throws Exception {
+    final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+    // kafka配置
+    final Properties properties = new Properties();
+    // 加入自定义的数据源
+    final DataStreamSource sensor = env.addSource(new MySensorce());
+    sensor.print(&#34;data&#34;);
+    env.execute();
+}
+</code></pre><p>自定义数据源</p><pre tabindex=0><code>public class MySensorce implements SourceFunction&lt;SensorReading&gt; {
+
+    private boolean running = true;
+
+    @Override
+    public void run(SourceContext&lt;SensorReading&gt; sourceContext) throws Exception {
+
+        final Random random = new Random();
+
+        final HashMap&lt;String, Double&gt; stringDoubleHashMap = new HashMap&lt;&gt;();
+
+        for (int i = 1; i &lt; 11; i++) {
+            stringDoubleHashMap.put(i + &#34;&#34;, random.nextGaussian());
+        }
+
+        while (running) {
+
+            for (String id : stringDoubleHashMap.keySet()) {
+                final double v = stringDoubleHashMap.get(id) + random.nextGaussian();
+                final SensorReading sensorReading = new SensorReading(id, System.currentTimeMillis(), v);
+                sourceContext.collect(sensorReading);
+            }
+
+            Thread.sleep(1000);
+
+        }
+    }
+
+    @Override
+    public void cancel() {
+        running = false;
+    }
+}
+</code></pre><h2 id=算子>算子<a href=#算子 class=hanchor arialabel=Anchor>&#8983;</a></h2><h3 id=基本算子>基本算子<a href=#基本算子 class=hanchor arialabel=Anchor>&#8983;</a></h3><h4 id=map>map<a href=#map class=hanchor arialabel=Anchor>&#8983;</a></h4><pre tabindex=0><code>final SingleOutputStreamOperator&lt;Integer&gt; map = inputStream.map(new MapFunction&lt;String, Integer&gt;() {
+    @Override
+    public Integer map(String s) throws Exception {
+        return s.length();
+    }
+});
+</code></pre><h4 id=flatmap>flatmap<a href=#flatmap class=hanchor arialabel=Anchor>&#8983;</a></h4><pre tabindex=0><code>final SingleOutputStreamOperator&lt;String&gt; stringSingleOutputStreamOperator = inputStream.flatMap(new FlatMapFunction&lt;String, String&gt;() {
+    @Override
+    public void flatMap(String s, Collector&lt;String&gt; collector) throws Exception {
+        Arrays.stream(s.split(&#34;,&#34;)).forEach(collector::collect);
+    }
+});
+</code></pre><h4 id=filter>filter<a href=#filter class=hanchor arialabel=Anchor>&#8983;</a></h4><pre tabindex=0><code>final SingleOutputStreamOperator&lt;String&gt; filter = inputStream.filter(new FilterFunction&lt;String&gt;() {
+    @Override
+    public boolean filter(String s) throws Exception {
+        return s.startsWith(&#34;sen&#34;);
+    }
+});
+</code></pre><h3 id=分流合流>分流,合流<a href=#分流合流 class=hanchor arialabel=Anchor>&#8983;</a></h3><pre tabindex=0><code>public static void main(String[] args) throws Exception {
+
+    final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+
+    final DataStream&lt;String&gt; inputStream = env.readTextFile(&#34;Sensor.txt&#34;);
+
+    final DataStream&lt;SensorReading&gt; map = inputStream.map(line -&gt; {
+        final String[] split = line.split(&#34;,&#34;);
+        return new SensorReading(split[0], Long.parseLong(split[1]), Double.parseDouble(split[2]));
+    });
+
+    // 分流
+    final SplitStream&lt;SensorReading&gt; split = map.split(new OutputSelector&lt;SensorReading&gt;() {
+        @Override
+        public Iterable&lt;String&gt; select(SensorReading value) {
+            return value.getTemp() &gt; 30 ? Collections.singletonList(&#34;hight&#34;) : Collections.singletonList(&#34;low&#34;);
+        }
+    });
+
+    final DataStream&lt;SensorReading&gt; hight = split.select(&#34;hight&#34;);
+    final DataStream&lt;SensorReading&gt; low = split.select(&#34;low&#34;);
+    final DataStream&lt;SensorReading&gt; all = split.select(&#34;low&#34;,&#34;hight&#34;);
+
+    hight.print(&#34;hight&#34;);
+    low.print(&#34;low&#34;);
+    all.print(&#34;all&#34;);
+
+    final SingleOutputStreamOperator&lt;Tuple2&lt;String, Double&gt;&gt; warningStream = hight.map(new MapFunction&lt;SensorReading, Tuple2&lt;String, Double&gt;&gt;() {
+        @Override
+        public Tuple2&lt;String, Double&gt; map(SensorReading sensorReading) throws Exception {
+            return new Tuple2&lt;&gt;(sensorReading.getId(), sensorReading.getTemp());
+        }
+    });
+
+    final ConnectedStreams&lt;Tuple2&lt;String, Double&gt;, SensorReading&gt; connectedStreams = warningStream.connect(low);
+
+    // 合流
+    final SingleOutputStreamOperator&lt;Object&gt; result = connectedStreams.map(new CoMapFunction&lt;Tuple2&lt;String, Double&gt;, SensorReading, Object&gt;() {
+        @Override
+        public Object map1(Tuple2&lt;String, Double&gt; value) throws Exception {
+            return new Tuple3&lt;&gt;(value.f0, value.f1, &#34;高温报警&#34;);
+        }
+
+        @Override
+        public Object map2(SensorReading value) throws Exception {
+            return new Tuple2&lt;&gt;(value.getId(), &#34;正常&#34;);
+        }
+    });
+
+    // 第二种方法,ubion
+    final DataStream&lt;SensorReading&gt; union = hight.union(low);
+
+    result.print();
+    union.print(&#34;ubion&#34;);
+    env.execute();
+}
+</code></pre><h3 id=富函数>富函数<a href=#富函数 class=hanchor arialabel=Anchor>&#8983;</a></h3><pre tabindex=0><code>public static void main(String[] args) throws Exception {
+
+    final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+
+    final DataStream&lt;String&gt; inputStream = env.readTextFile(&#34;Sensor.txt&#34;);
+
+    final DataStream&lt;SensorReading&gt; map = inputStream.map(line -&gt; {
+        final String[] split = line.split(&#34;,&#34;);
+        return new SensorReading(split[0], Long.parseLong(split[1]), Double.parseDouble(split[2]));
+    });
+
+    DataStream&lt;Tuple2&lt;String, Integer&gt;&gt; resultStream = map.map(new RichMyMapper());
+    resultStream.print();
+    env.execute();
+}
+
+public static class MyMapper implements MapFunction&lt;SensorReading, Tuple2&lt;String, Integer&gt;&gt; {
+    @Override
+    public Tuple2&lt;String, Integer&gt; map(SensorReading sensorReading) throws Exception {
+        return new Tuple2&lt;&gt;(sensorReading.getId(), sensorReading.getId().length());
+    }
+}
+
+// 自定义富函数
+public static class RichMyMapper extends RichMapFunction&lt;SensorReading, Tuple2&lt;String, Integer&gt;&gt; {
+
+    @Override
+    public Tuple2&lt;String, Integer&gt; map(SensorReading value) throws Exception {
+        // getRuntimeContext().getState();
+        return new Tuple2&lt;&gt;(value.getId(), getRuntimeContext().getIndexOfThisSubtask());
+    }
+
+    @Override
+    public void open(Configuration parameters) throws Exception {
+        // 用来建立数据库连接
+        super.open(parameters);
+    }
+
+    @Override
+    public void close() throws Exception {
+        // 关闭数据库
+        super.close();
+    }
+}
+</code></pre><h3 id=分组聚合>分组,聚合<a href=#分组聚合 class=hanchor arialabel=Anchor>&#8983;</a></h3><pre tabindex=0><code>public static void main(String[] args) throws Exception {
+
+    final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+
+    final DataStream&lt;String&gt; inputStream = env.readTextFile(&#34;Sensor.txt&#34;);
+
+    final DataStream&lt;SensorReading&gt; map = inputStream.map(line -&gt; {
+        final String[] split = line.split(&#34;,&#34;);
+        return new SensorReading(split[0], Long.parseLong(split[1]), Double.parseDouble(split[2]));
+    });
+
+    // 分组
+    //  final KeyedStream&lt;SensorReading, Tuple&gt; id = map.keyBy(&#34;id&#34;);
+    final KeyedStream&lt;SensorReading, String&gt; keyedStream = map.keyBy(SensorReading::getId);
+
+    // reduce
+    final SingleOutputStreamOperator&lt;SensorReading&gt; reduce = keyedStream.reduce(new ReduceFunction&lt;SensorReading&gt;() {
+        @Override
+        public SensorReading reduce(SensorReading valu1, SensorReading valu2) throws Exception {
+            return new SensorReading(valu1.getId(), valu2.getTimestamp(), Math.max(valu1.getTemp(), valu2.getTemp()));
+        }
+    });
+
+    reduce.print();
+    env.execute();
+}
+</code></pre></div></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Read other posts</span><hr></div><div class=pagination__buttons><span class="button previous"><a href=https://connorzhangyu.com/posts/excel/><span class=button__icon>←</span>
+<span class=button__text>Excel</span>
+</a></span><span class="button next"><a href=https://connorzhangyu.com/posts/git/><span class=button__text>Git</span>
+<span class=button__icon>→</span></a></span></div></div></article></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>
+<span>:: <a href=https://github.com/mirus-ua/hugo-theme-re-terminal target=_blank>Theme</a> made by <a href=https://github.com/mirus-ua target=_blank>Mirus</a></span></div></div></footer><script type=text/javascript src=/bundle.min.js></script></div></body></html>

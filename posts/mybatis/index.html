@@ -1,0 +1,1144 @@
+<!doctype html><html lang=zh><head><title>Mybatis :: Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content='教程 参考:
+官方文档
+源码
+Provider的使用 1.一定要注意type的类名.class 和 method方法名,还要注意形参也得是一样的
+2.Provider的方法,大概就三个方法sql.SELECT,sql.WHERE,sql.FROM
+3.SQL 对象里的方法名跟别的不一样,小写的不行,idea也识别不到,要用大写,比如SLELECT
+4.Provider里返回的是String
+注解 一对多查询(多个参数) 注解 一对多查询(多个参数) @SelectProvider(method="queryPageFloors",type=BarterGroupProvider.class) @Results({ @Result(property = "userId",column="user_id"), @Result(property = "floorNum",column="floor_num"), @Result(property = "floorSecond",column="id"), @Result(property = "say",column="note"), @Result(property = "joinOrPublish",column="join_or_publish"), @Result(property="categorys",javaType = List.class,column="id",many=@Many(select="com.ecloud.hobay.marketing.service.infrastructure.mapper.bartergroup.BarterGroupMapper.queryCategory")), @Result(property="productIds",javaType = List.class,column="id",many=@Many(select="com.ecloud.hobay.marketing.service.infrastructure.mapper.bartergroup.BarterGroupMapper.queryProducts")), @Result(property="beforeResult",javaType = List.class,column="id",many=@Many(select="com.ecloud.hobay.marketing.service.infrastructure.mapper.bartergroup.BarterGroupEvaluationMapper.queryAll")), @Result(property="barterGroupUser",javaType = BarterGroupUser.class,column="{user_id=user_id,id = barter_group_id }",many=@Many(select="com.ecloud.hobay.marketing.service.infrastructure.mapper.bartergroup.BarterGroupMapper.isHead")), @Result(property="futureResultNum",column="id",many=@Many(select="com.ecloud.hobay.marketing.service.infrastructure.mapper.bartergroup.BarterGroupMapper.futureResultNum")) }) List<QueryFloors> queryFloors3(Page<QueryFloors> page); /** * 分类 * @param id * @return */ @Select("SELECT * FROM ecloud_marketing.barter_group_category WHERE barter_group_details_id = #{id} limit 0,7 ") List<BarterGroupCategory> queryCategory(@Param("id") Long id); /** * 产品 * @param id * @return */ @Select("SELECT product_id from ecloud_marketing.barter_group_product_category WHERE barter_group_details_id = #{id} limit 0,3 ") List<Long> queryProducts(@Param("id") Long id); /** * 团员 * @param userId * @param id * @return */ @Select("SELECT * FROM ecloud_marketing.barter_group_user WHERE user_id =#{user_id} and barter_group_id = #{id} and status = 1") BarterGroupUser isHead(Map<String,Object> map); @Select("SELECT count(*) from ecloud_marketing.barter_group_evaluation WHERE barter_group_details_id = #{id}") Integer futureResultNum(@Param("id") Long id); public class QueryFloors implements Serializable { @ApiModelProperty("我有的产品的id") List<ProductBarter> list; @ApiModelProperty("封装前的评论数据") private List<BarterGroupEvaluation> beforeResult; @ApiModelProperty("封装后的评论数据有分页给功能") private Page<BarterGroupEvaluation> beforeResultPage; @ApiModelProperty("封装后的评论数据") private List<BarterGroupEvaluationResult> futureResult; @ApiModelProperty("剩余评论条数") private Integer futureResultNum; @ApiModelProperty("分类") List<BarterGroupCategory> categorys; @ApiModelProperty(value="楼层数") private Integer floorNum; @ApiModelProperty(value="楼层id") private Long floorSecond; @ApiModelProperty(value="要说的") private String say; @ApiModelProperty(value="加入或者是发布") private Integer joinOrPublish; @ApiModelProperty("会员表") private BarterGroupUser barterGroupUser; @ApiModelProperty(value="加入时间") private Long joinData; } 注解 一对多查询(一个参数) '><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://connorzhangyu.com/posts/mybatis/><link rel=stylesheet href=https://connorzhangyu.com/styles.css><link rel="shortcut icon" href=https://connorzhangyu.com/img/theme-colors/orange.png><link rel=apple-touch-icon href=https://connorzhangyu.com/img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta name=twitter:site content><meta name=twitter:creator content="Anthony"><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="og:title" content="Mybatis"><meta property="og:description" content='教程 参考:
+官方文档
+源码
+Provider的使用 1.一定要注意type的类名.class 和 method方法名,还要注意形参也得是一样的
+2.Provider的方法,大概就三个方法sql.SELECT,sql.WHERE,sql.FROM
+3.SQL 对象里的方法名跟别的不一样,小写的不行,idea也识别不到,要用大写,比如SLELECT
+4.Provider里返回的是String
+注解 一对多查询(多个参数) 注解 一对多查询(多个参数) @SelectProvider(method="queryPageFloors",type=BarterGroupProvider.class) @Results({ @Result(property = "userId",column="user_id"), @Result(property = "floorNum",column="floor_num"), @Result(property = "floorSecond",column="id"), @Result(property = "say",column="note"), @Result(property = "joinOrPublish",column="join_or_publish"), @Result(property="categorys",javaType = List.class,column="id",many=@Many(select="com.ecloud.hobay.marketing.service.infrastructure.mapper.bartergroup.BarterGroupMapper.queryCategory")), @Result(property="productIds",javaType = List.class,column="id",many=@Many(select="com.ecloud.hobay.marketing.service.infrastructure.mapper.bartergroup.BarterGroupMapper.queryProducts")), @Result(property="beforeResult",javaType = List.class,column="id",many=@Many(select="com.ecloud.hobay.marketing.service.infrastructure.mapper.bartergroup.BarterGroupEvaluationMapper.queryAll")), @Result(property="barterGroupUser",javaType = BarterGroupUser.class,column="{user_id=user_id,id = barter_group_id }",many=@Many(select="com.ecloud.hobay.marketing.service.infrastructure.mapper.bartergroup.BarterGroupMapper.isHead")), @Result(property="futureResultNum",column="id",many=@Many(select="com.ecloud.hobay.marketing.service.infrastructure.mapper.bartergroup.BarterGroupMapper.futureResultNum")) }) List<QueryFloors> queryFloors3(Page<QueryFloors> page); /** * 分类 * @param id * @return */ @Select("SELECT * FROM ecloud_marketing.barter_group_category WHERE barter_group_details_id = #{id} limit 0,7 ") List<BarterGroupCategory> queryCategory(@Param("id") Long id); /** * 产品 * @param id * @return */ @Select("SELECT product_id from ecloud_marketing.barter_group_product_category WHERE barter_group_details_id = #{id} limit 0,3 ") List<Long> queryProducts(@Param("id") Long id); /** * 团员 * @param userId * @param id * @return */ @Select("SELECT * FROM ecloud_marketing.barter_group_user WHERE user_id =#{user_id} and barter_group_id = #{id} and status = 1") BarterGroupUser isHead(Map<String,Object> map); @Select("SELECT count(*) from ecloud_marketing.barter_group_evaluation WHERE barter_group_details_id = #{id}") Integer futureResultNum(@Param("id") Long id); public class QueryFloors implements Serializable { @ApiModelProperty("我有的产品的id") List<ProductBarter> list; @ApiModelProperty("封装前的评论数据") private List<BarterGroupEvaluation> beforeResult; @ApiModelProperty("封装后的评论数据有分页给功能") private Page<BarterGroupEvaluation> beforeResultPage; @ApiModelProperty("封装后的评论数据") private List<BarterGroupEvaluationResult> futureResult; @ApiModelProperty("剩余评论条数") private Integer futureResultNum; @ApiModelProperty("分类") List<BarterGroupCategory> categorys; @ApiModelProperty(value="楼层数") private Integer floorNum; @ApiModelProperty(value="楼层id") private Long floorSecond; @ApiModelProperty(value="要说的") private String say; @ApiModelProperty(value="加入或者是发布") private Integer joinOrPublish; @ApiModelProperty("会员表") private BarterGroupUser barterGroupUser; @ApiModelProperty(value="加入时间") private Long joinData; } 注解 一对多查询(一个参数) '><meta property="og:url" content="https://connorzhangyu.com/posts/mybatis/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="https://image.runtimes.cc/202404051530595.jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><meta property="article:section" content="Java"><meta property="article:section" content="Mybatis"><meta property="article:published_time" content="2022-11-19 18:25:00 +0000 UTC"></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></nav></header><div class=content><article class=post><h1 class=post-title><a href=https://connorzhangyu.com/posts/mybatis/>Mybatis</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/java/>Java</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/mybatis/>Mybatis</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/%E7%AC%94%E8%AE%B0/>笔记</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051530595.jpeg class=post-cover alt=" " title="Cover Image"><div class=post-content><div><h1 id=教程>教程<a href=#教程 class=hanchor arialabel=Anchor>&#8983;</a></h1><blockquote><p>参考:</p><p><a href=https://mybatis.org/mybatis-3/>官方文档</a></p><p><a href=https://github.com/mybatis>源码</a></p></blockquote><h2 id=provider的使用>Provider的使用<a href=#provider的使用 class=hanchor arialabel=Anchor>&#8983;</a></h2><p>1.一定要注意type的类名.class 和 method方法名,还要注意形参也得是一样的</p><p>2.Provider的方法,大概就三个方法sql.SELECT,sql.WHERE,sql.FROM</p><p>3.SQL 对象里的方法名跟别的不一样,小写的不行,idea也识别不到,要用大写,比如SLELECT</p><p>4.Provider里返回的是String</p><p><img src=https://image.runtimes.cc/202404051427670.png alt></p><p><img src=https://image.runtimes.cc/202404051427490.png alt></p><h2 id=注解-一对多查询多个参数>注解 一对多查询(多个参数)<a href=#注解-一对多查询多个参数 class=hanchor arialabel=Anchor>&#8983;</a></h2><p><img src=https://image.runtimes.cc/202404051427839.png alt></p><p><img src=https://image.runtimes.cc/202404051428785.png alt></p><p><img src=https://image.runtimes.cc/202404051429441.png alt></p><h2 id=注解-一对多查询多个参数-1>注解 一对多查询(多个参数)<a href=#注解-一对多查询多个参数-1 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#a6e22e>@SelectProvider</span>(method<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;queryPageFloors&#34;</span>,type<span style=color:#f92672>=</span>BarterGroupProvider.<span style=color:#a6e22e>class</span>)
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Results</span>({
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@Result</span>(property <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;userId&#34;</span>,column<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;user_id&#34;</span>),
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@Result</span>(property <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;floorNum&#34;</span>,column<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;floor_num&#34;</span>),
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@Result</span>(property <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;floorSecond&#34;</span>,column<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;id&#34;</span>),
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@Result</span>(property <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;say&#34;</span>,column<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;note&#34;</span>),
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@Result</span>(property <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;joinOrPublish&#34;</span>,column<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;join_or_publish&#34;</span>),
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@Result</span>(property<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;categorys&#34;</span>,javaType <span style=color:#f92672>=</span> List.<span style=color:#a6e22e>class</span>,column<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;id&#34;</span>,many<span style=color:#f92672>=</span><span style=color:#a6e22e>@Many</span>(select<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;com.ecloud.hobay.marketing.service.infrastructure.mapper.bartergroup.BarterGroupMapper.queryCategory&#34;</span>)),
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@Result</span>(property<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;productIds&#34;</span>,javaType <span style=color:#f92672>=</span> List.<span style=color:#a6e22e>class</span>,column<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;id&#34;</span>,many<span style=color:#f92672>=</span><span style=color:#a6e22e>@Many</span>(select<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;com.ecloud.hobay.marketing.service.infrastructure.mapper.bartergroup.BarterGroupMapper.queryProducts&#34;</span>)),
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@Result</span>(property<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;beforeResult&#34;</span>,javaType <span style=color:#f92672>=</span> List.<span style=color:#a6e22e>class</span>,column<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;id&#34;</span>,many<span style=color:#f92672>=</span><span style=color:#a6e22e>@Many</span>(select<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;com.ecloud.hobay.marketing.service.infrastructure.mapper.bartergroup.BarterGroupEvaluationMapper.queryAll&#34;</span>)),
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@Result</span>(property<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;barterGroupUser&#34;</span>,javaType <span style=color:#f92672>=</span> BarterGroupUser.<span style=color:#a6e22e>class</span>,column<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{user_id=user_id,id = barter_group_id }&#34;</span>,many<span style=color:#f92672>=</span><span style=color:#a6e22e>@Many</span>(select<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;com.ecloud.hobay.marketing.service.infrastructure.mapper.bartergroup.BarterGroupMapper.isHead&#34;</span>)),
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@Result</span>(property<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;futureResultNum&#34;</span>,column<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;id&#34;</span>,many<span style=color:#f92672>=</span><span style=color:#a6e22e>@Many</span>(select<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;com.ecloud.hobay.marketing.service.infrastructure.mapper.bartergroup.BarterGroupMapper.futureResultNum&#34;</span>))
+</span></span><span style=display:flex><span>})
+</span></span><span style=display:flex><span>List<span style=color:#f92672>&lt;</span>QueryFloors<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>queryFloors3</span>(Page<span style=color:#f92672>&lt;</span>QueryFloors<span style=color:#f92672>&gt;</span> page);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 分类
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param id
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * @return
+</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Select</span>(<span style=color:#e6db74>&#34;SELECT * FROM ecloud_marketing.barter_group_category WHERE barter_group_details_id = #{id} limit 0,7 &#34;</span>)
+</span></span><span style=display:flex><span>List<span style=color:#f92672>&lt;</span>BarterGroupCategory<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>queryCategory</span>(<span style=color:#a6e22e>@Param</span>(<span style=color:#e6db74>&#34;id&#34;</span>) Long id);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 产品
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param id
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * @return
+</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Select</span>(<span style=color:#e6db74>&#34;SELECT product_id from ecloud_marketing.barter_group_product_category WHERE barter_group_details_id = #{id} limit 0,3 &#34;</span>)
+</span></span><span style=display:flex><span>List<span style=color:#f92672>&lt;</span>Long<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>queryProducts</span>(<span style=color:#a6e22e>@Param</span>(<span style=color:#e6db74>&#34;id&#34;</span>) Long id);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * 团员
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param userId
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param id
+</span></span></span><span style=display:flex><span><span style=color:#75715e> * @return
+</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Select</span>(<span style=color:#e6db74>&#34;SELECT * FROM ecloud_marketing.barter_group_user WHERE user_id =#{user_id} and barter_group_id = #{id} and status = 1&#34;</span>)
+</span></span><span style=display:flex><span>BarterGroupUser <span style=color:#a6e22e>isHead</span>(Map<span style=color:#f92672>&lt;</span>String,Object<span style=color:#f92672>&gt;</span> map);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Select</span>(<span style=color:#e6db74>&#34;SELECT count(*) from ecloud_marketing.barter_group_evaluation WHERE barter_group_details_id = #{id}&#34;</span>)
+</span></span><span style=display:flex><span>Integer <span style=color:#a6e22e>futureResultNum</span>(<span style=color:#a6e22e>@Param</span>(<span style=color:#e6db74>&#34;id&#34;</span>) Long id);
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>QueryFloors</span> <span style=color:#66d9ef>implements</span> Serializable {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(<span style=color:#e6db74>&#34;我有的产品的id&#34;</span>)
+</span></span><span style=display:flex><span>    List<span style=color:#f92672>&lt;</span>ProductBarter<span style=color:#f92672>&gt;</span> list;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(<span style=color:#e6db74>&#34;封装前的评论数据&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> List<span style=color:#f92672>&lt;</span>BarterGroupEvaluation<span style=color:#f92672>&gt;</span> beforeResult;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(<span style=color:#e6db74>&#34;封装后的评论数据有分页给功能&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> Page<span style=color:#f92672>&lt;</span>BarterGroupEvaluation<span style=color:#f92672>&gt;</span> beforeResultPage;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(<span style=color:#e6db74>&#34;封装后的评论数据&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> List<span style=color:#f92672>&lt;</span>BarterGroupEvaluationResult<span style=color:#f92672>&gt;</span> futureResult;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(<span style=color:#e6db74>&#34;剩余评论条数&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> Integer futureResultNum;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(<span style=color:#e6db74>&#34;分类&#34;</span>)
+</span></span><span style=display:flex><span>    List<span style=color:#f92672>&lt;</span>BarterGroupCategory<span style=color:#f92672>&gt;</span> categorys;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(value<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;楼层数&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> Integer floorNum;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(value<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;楼层id&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> Long floorSecond;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(value<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;要说的&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> String say;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(value<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;加入或者是发布&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> Integer joinOrPublish;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(<span style=color:#e6db74>&#34;会员表&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> BarterGroupUser barterGroupUser;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@ApiModelProperty</span>(value<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;加入时间&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> Long joinData;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h2 id=注解-一对多查询一个参数>注解 一对多查询(一个参数)<a href=#注解-一对多查询一个参数 class=hanchor arialabel=Anchor>&#8983;</a></h2><p><img src=https://image.runtimes.cc/202404051430732.png alt></p><p><img src=https://image.runtimes.cc/202404051430867.png alt></p><h2 id=标签>标签<a href=#标签 class=hanchor arialabel=Anchor>&#8983;</a></h2><p>mybatis的xml的常用标签:</p><p><strong>include</strong>和<strong>sql</strong>标签</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span>	<span style=color:#f92672>&lt;sql</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;query_column&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>		id,user_no
+</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;/sql&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;select</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;test&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>		select <span style=color:#f92672>&lt;include</span> <span style=color:#a6e22e>refid=</span><span style=color:#e6db74>&#34;query_column&#34;</span><span style=color:#f92672>&gt;&lt;/include&gt;</span>
+</span></span><span style=display:flex><span>		from user_info
+</span></span><span style=display:flex><span>	<span style=color:#f92672>&lt;/select&gt;</span>
+</span></span></code></pre></div><p><strong>where标签</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;select</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;test&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>  select * from user_info
+</span></span><span style=display:flex><span>  where
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;if</span> <span style=color:#a6e22e>test=</span><span style=color:#e6db74>&#34;userName != null and userName != &#39;&#39;&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>    user_name = #{userName}
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;/if&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;if</span> <span style=color:#a6e22e>test=</span><span style=color:#e6db74>&#34;password != null and password != &#39;&#39;&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>    and password = #{password}
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;/if&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/select&gt;</span>
+</span></span></code></pre></div><p>如果userName= null，则sql语句就变成</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>select</span> <span style=color:#f92672>*</span> <span style=color:#66d9ef>from</span> user_info <span style=color:#66d9ef>where</span> <span style=color:#66d9ef>and</span> password <span style=color:#f92672>=</span> <span style=color:#f92672>#</span><span style=color:#960050;background-color:#1e0010>{</span>password<span style=color:#960050;background-color:#1e0010>}</span>
+</span></span></code></pre></div><p><code>where</code>标签可以去除where语句中的第一个and 或 or。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;select</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;test&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>  select * from user_info
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;where&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;if</span> <span style=color:#a6e22e>test=</span><span style=color:#e6db74>&#34;userName != null and userName != &#39;&#39;&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>      and user_name = #{userName}
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/if&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;if</span> <span style=color:#a6e22e>test=</span><span style=color:#e6db74>&#34;password != null and password != &#39;&#39;&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>      and password = #{password}
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/if&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;/where&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/select&gt;</span>
+</span></span></code></pre></div><p><strong>set标签</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;update</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;myupdate&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>    update user_info
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;set&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;if</span> <span style=color:#a6e22e>test=</span><span style=color:#e6db74>&#34;userName != null&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>        user_name = #{userName},
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;/if&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;if</span> <span style=color:#a6e22e>test=</span><span style=color:#e6db74>&#34;password != null&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>        password = #{password,jdbcType=VARCHAR},
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;/if&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/set&gt;</span>
+</span></span><span style=display:flex><span>    where id = #{id,jdbcType=INTEGER}
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;/update&gt;</span>
+</span></span></code></pre></div><p><strong>trim标签</strong></p><p><code>where</code>标签只能去除第一个and或or，不够灵活，trim标签功能更加强大。
+trim标签的属性如下：</p><ul><li><strong>prefix</strong> 在trim标签内容前面加上前缀</li><li><strong>suffix</strong> 在trim标签内容后面加上后缀</li><li><strong>prefixOverrides</strong> 移除前缀内容。即 属性会忽略通过管道分隔的文本序列，多个忽略序列用 “|” 隔开。它带来的结果就是所有在 prefixOverrides 属性中指定的内容将被移除。</li><li><strong>suffixOverrides</strong> 移除前缀内容。</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;trim</span> <span style=color:#a6e22e>prefix=</span><span style=color:#e6db74>&#34;where&#34;</span> <span style=color:#a6e22e>prefixOverrides=</span><span style=color:#e6db74>&#34;and&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;if</span> <span style=color:#a6e22e>test=</span><span style=color:#e6db74>&#34;userId != null&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>        user_id=#{userId}
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/if&gt;</span>
+</span></span><span style=display:flex><span>   <span style=color:#f92672>&lt;if</span> <span style=color:#a6e22e>test=</span><span style=color:#e6db74>&#34;pwd != null and pwd !=&#39;&#39;&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>        user_id=#{userId}
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/if&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/trim&gt;</span>
+</span></span></code></pre></div><p><strong>foreach标签</strong></p><p>foreach元素的属性主要有item，index，collection，open，separator，close.</p><ul><li><strong>collection</strong> 要做foreach的对象，作为入参时，List对象默认用"list"代替作为键，数组对象有"array"代替作为键，Map对象没有默认的键。当然在作为入参时可以使用@Param(&ldquo;keyName&rdquo;)来设置键，设置keyName后，list,array将会失效。 除了入参这种情况外，还有一种作为参数对象的某个字段的时候。举个例子：如果User有属性List ids。入参是User对象，那么这个collection = &ldquo;ids&rdquo;.如果User有属性Ids ids;其中Ids是个对象，Ids有个属性List id;入参是User对象，那么collection = &ldquo;<a href="https://links.jianshu.com/go?to=http%3A%2F%2Fids.id">ids.id</a>"，必填</li><li><strong>item</strong> 合中元素迭代时的别名，必选</li><li><strong>index</strong> 在list和数组中,index是元素的序号，在map中，index是元素的key，可选</li><li><strong>open</strong> foreach代码的开始符号，一般是(和close=&rdquo;)&ldquo;合用。常用在in(),values()时。可选</li><li><strong>separator</strong> 元素之间的分隔符，例如在in()的时候，separator=&rdquo;,&ldquo;会自动在元素中间用“,“隔开，避免手动输入逗号导致sql错误，如in(1,2,)这样，可选。</li><li><strong>close</strong> foreach代码的关闭符号，一般是)和open=&rdquo;(&ldquo;合用。常用在in(),values()时。可选</li></ul><p><strong>choose，when，otherwise标签</strong></p><p>功能有点类似于Java中的 swicth - case - default</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;select</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;getUser&#34;</span> <span style=color:#a6e22e>resultType=</span><span style=color:#e6db74>&#34;com.cat.pojo.User&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>  SELECT * FROM user 
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;where&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;choose&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;when</span> <span style=color:#a6e22e>test=</span><span style=color:#e6db74>&#34;id != null and test.trim() != &#39;&#39; &#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>      id = #{id}
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/when&gt;</span> 
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;when</span> <span style=color:#a6e22e>test=</span><span style=color:#e6db74>&#34;name != null and name.trim() != &#39;&#39; &#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>      name = #{name}
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/when&gt;</span> 
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;otherwise&gt;</span>
+</span></span><span style=display:flex><span>      age = 17  
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/otherwise&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;/choose&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/where&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/select&gt;</span>
+</span></span></code></pre></div><p><strong>if标签</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#75715e>&lt;!-- 判断字符串--&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;if</span> <span style=color:#a6e22e>test=</span><span style=color:#e6db74>&#34;item != null and item != &#39;&#39;&#34;</span><span style=color:#f92672>&gt;&lt;/if&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>&lt;!-- 如果是Integer类型的需要把and后面去掉或是加上or--&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;if</span> <span style=color:#a6e22e>test=</span><span style=color:#e6db74>&#34;item != null&#34;</span><span style=color:#f92672>&gt;&lt;/if&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;if</span> <span style=color:#a6e22e>test=</span><span style=color:#e6db74>&#34;item != null and item != &#39;&#39; or item == 0&#34;</span><span style=color:#f92672>&gt;&lt;/if&gt;</span>
+</span></span></code></pre></div><h2 id=存过函数>存过/函数<a href=#存过函数 class=hanchor arialabel=Anchor>&#8983;</a></h2><p>存过</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;select</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;pNextSupperUsers&#34;</span> <span style=color:#a6e22e>parameterType=</span><span style=color:#e6db74>&#34;map&#34;</span> <span style=color:#a6e22e>statementType=</span><span style=color:#e6db74>&#34;CALLABLE&#34;</span> <span style=color:#a6e22e>resultType=</span><span style=color:#e6db74>&#34;vo.UserAgentVO&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        call p_next_supper_users(
+</span></span><span style=display:flex><span>            #{type,mode=IN,jdbcType=INTEGER},
+</span></span><span style=display:flex><span>            #{userId,mode=IN,jdbcType=BIGINT}
+</span></span><span style=display:flex><span>        )
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/select&gt;</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>List<span style=color:#f92672>&lt;</span>UserAgentVO<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>pNextSupperUsers</span>(Map<span style=color:#f92672>&lt;</span>String, Object<span style=color:#f92672>&gt;</span> param);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Map<span style=color:#f92672>&lt;</span>String, Object<span style=color:#f92672>&gt;</span> param <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> HashMap<span style=color:#f92672>&lt;&gt;</span>();
+</span></span><span style=display:flex><span>param.<span style=color:#a6e22e>put</span>(<span style=color:#e6db74>&#34;type&#34;</span>, 1);
+</span></span><span style=display:flex><span>param.<span style=color:#a6e22e>put</span>(<span style=color:#e6db74>&#34;userId&#34;</span>, userId);
+</span></span><span style=display:flex><span>List<span style=color:#f92672>&lt;</span>UserAgentVO<span style=color:#f92672>&gt;</span> list <span style=color:#f92672>=</span> userInfoMapper.<span style=color:#a6e22e>pNextSupperUsers</span>(param);
+</span></span></code></pre></div><p>函数</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>SELECT</span>
+</span></span><span style=display:flex><span>  fn_next_user_count ( <span style=color:#ae81ff>1</span>, u.id ) <span style=color:#66d9ef>AS</span> teamCount,
+</span></span><span style=display:flex><span><span style=color:#66d9ef>FROM</span>
+</span></span><span style=display:flex><span>user_info
+</span></span></code></pre></div><h1 id=源码>源码<a href=#源码 class=hanchor arialabel=Anchor>&#8983;</a></h1><h2 id=参考>参考<a href=#参考 class=hanchor arialabel=Anchor>&#8983;</a></h2><blockquote><p><a href="https://www.bilibili.com/video/BV1R14y1W7yS?p=1&amp;vd_source=6f5cde8de02ba80d9974b12cabbbdddb">b站博学谷</a></p></blockquote><p>架构设计</p><p><img src=https://image.runtimes.cc/202404051430309.png alt=img></p><h2 id=启动测试方法>启动测试方法<a href=#启动测试方法 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>#</span> 第一种调用方法
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>test</span>(){
+</span></span><span style=display:flex><span>    String resource <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;com/analyze/mybatis/mybatis-config.xml&#34;</span>;
+</span></span><span style=display:flex><span>    InputStream inputStream <span style=color:#f92672>=</span> Resources.<span style=color:#a6e22e>getResourceAsStream</span>(resource);
+</span></span><span style=display:flex><span>    SqlSessionFactory sqlSessionFactory <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> SqlSessionFactoryBuilder().<span style=color:#a6e22e>build</span>(inputStream);
+</span></span><span style=display:flex><span>    SqlSession sqlSession <span style=color:#f92672>=</span> sqlSessionFactory.<span style=color:#a6e22e>openSession</span>();
+</span></span><span style=display:flex><span>    Map map <span style=color:#f92672>=</span> sqlSession.<span style=color:#a6e22e>selectOne</span>(<span style=color:#e6db74>&#34;com.analyze.mybatis.mapper.UserMapper.getUA&#34;</span>);
+</span></span><span style=display:flex><span>    sqlSession.<span style=color:#a6e22e>close</span>();
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>#</span> 第二种调用方法
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>test2</span>(){
+</span></span><span style=display:flex><span>    String resource <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;com/analyze/mybatis/mybatis-config.xml&#34;</span>;
+</span></span><span style=display:flex><span>    InputStream inputStream <span style=color:#f92672>=</span> Resources.<span style=color:#a6e22e>getResourceAsStream</span>(resource);
+</span></span><span style=display:flex><span>    SqlSessionFactory sqlSessionFactory <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> SqlSessionFactoryBuilder().<span style=color:#a6e22e>build</span>(inputStream);
+</span></span><span style=display:flex><span>    SqlSession sqlSession <span style=color:#f92672>=</span> sqlSessionFactory.<span style=color:#a6e22e>openSession</span>();
+</span></span><span style=display:flex><span>    UserMapper userMapper <span style=color:#f92672>=</span> sqlSession.<span style=color:#a6e22e>getMapper</span>(UserMapper.<span style=color:#a6e22e>class</span>);
+</span></span><span style=display:flex><span>    Map map <span style=color:#f92672>=</span> userMapper.<span style=color:#a6e22e>getUA</span>();
+</span></span><span style=display:flex><span>    sqlSession.<span style=color:#a6e22e>close</span>();
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>下面的代码,大概意思就是能加载的配置文件的信息,解释</p><p><code>InputStream inputStream = Resources.getResourceAsStream(resource);</code>这行代码的作用</p><h2 id=读取mybatis的配置文件>读取mybatis的配置文件<a href=#读取mybatis的配置文件 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.io.Resources#getResourceAsStream(java.lang.String)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> InputStream <span style=color:#a6e22e>getResourceAsStream</span>(String resource) <span style=color:#66d9ef>throws</span> IOException {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> getResourceAsStream(<span style=color:#66d9ef>null</span>, resource);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.io.Resources#getResourceAsStream(java.lang.ClassLoader, java.lang.String)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> InputStream <span style=color:#a6e22e>getResourceAsStream</span>(ClassLoader loader, String resource) <span style=color:#66d9ef>throws</span> IOException {
+</span></span><span style=display:flex><span>  InputStream in <span style=color:#f92672>=</span> classLoaderWrapper.<span style=color:#a6e22e>getResourceAsStream</span>(resource, loader);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> (in <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> IOException(<span style=color:#e6db74>&#34;Could not find resource &#34;</span> <span style=color:#f92672>+</span> resource);
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> in;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.io.ClassLoaderWrapper#getResourceAsStream(java.lang.String, java.lang.ClassLoader)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> InputStream <span style=color:#a6e22e>getResourceAsStream</span>(String resource, ClassLoader classLoader) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> getResourceAsStream(resource, getClassLoaders(classLoader));
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.io.ClassLoaderWrapper#getClassLoaders</span>
+</span></span><span style=display:flex><span>ClassLoader<span style=color:#f92672>[]</span> <span style=color:#a6e22e>getClassLoaders</span>(ClassLoader classLoader) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> ClassLoader<span style=color:#f92672>[]</span>{
+</span></span><span style=display:flex><span>        classLoader,
+</span></span><span style=display:flex><span>        defaultClassLoader,
+</span></span><span style=display:flex><span>        Thread.<span style=color:#a6e22e>currentThread</span>().<span style=color:#a6e22e>getContextClassLoader</span>(),
+</span></span><span style=display:flex><span>        getClass().<span style=color:#a6e22e>getClassLoader</span>(),
+</span></span><span style=display:flex><span>        systemClassLoader};
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.io.ClassLoaderWrapper#getResourceAsStream(java.lang.String, java.lang.ClassLoader[])</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 找到一个可以用的Classloader</span>
+</span></span><span style=display:flex><span>InputStream <span style=color:#a6e22e>getResourceAsStream</span>(String resource, ClassLoader<span style=color:#f92672>[]</span> classLoader) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> (ClassLoader cl : classLoader) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (<span style=color:#66d9ef>null</span> <span style=color:#f92672>!=</span> cl) {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#75715e>// try to find the resource as passed</span>
+</span></span><span style=display:flex><span>      InputStream returnValue <span style=color:#f92672>=</span> cl.<span style=color:#a6e22e>getResourceAsStream</span>(resource);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> (<span style=color:#66d9ef>null</span> <span style=color:#f92672>==</span> returnValue) {
+</span></span><span style=display:flex><span>        returnValue <span style=color:#f92672>=</span> cl.<span style=color:#a6e22e>getResourceAsStream</span>(<span style=color:#e6db74>&#34;/&#34;</span> <span style=color:#f92672>+</span> resource);
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> (<span style=color:#66d9ef>null</span> <span style=color:#f92672>!=</span> returnValue) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> returnValue;
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>null</span>;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>下面的代码,解释<code>SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);</code>,用来解析全局配置文件和解析mapper文件</p><p>下面是解析全局配置文件</p><h2 id=解析全局配置文件>解析全局配置文件<a href=#解析全局配置文件 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.session.SqlSessionFactoryBuilder#build(java.io.InputStream)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> SqlSessionFactory <span style=color:#a6e22e>build</span>(InputStream inputStream) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> build(inputStream, <span style=color:#66d9ef>null</span>, <span style=color:#66d9ef>null</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.session.SqlSessionFactoryBuilder#build(java.io.InputStream, java.lang.String, java.util.Properties)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> SqlSessionFactory <span style=color:#a6e22e>build</span>(InputStream inputStream, String environment, Properties properties) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 1.创建XpathParse解析器对象,根据inputStream解析成Document对象</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 2.创建全局配置Configuration对象</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 使用构建者模式,好处降低偶尔,分离复杂对象的创建</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 构建XMLConfig</span>
+</span></span><span style=display:flex><span>    XMLConfigBuilder parser <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> XMLConfigBuilder(inputStream, environment, properties);
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 根据Xpath解析xml配置文件,将配置文件封装到Configuration对象</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 返回DefaultSqlSessionFactory对象</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// parse() 就是配置文件解析完成了</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> build(parser.<span style=color:#a6e22e>parse</span>());
+</span></span><span style=display:flex><span>  } <span style=color:#66d9ef>catch</span> (Exception e) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>throw</span> ExceptionFactory.<span style=color:#a6e22e>wrapException</span>(<span style=color:#e6db74>&#34;Error building SqlSession.&#34;</span>, e);
+</span></span><span style=display:flex><span>  } <span style=color:#66d9ef>finally</span> {
+</span></span><span style=display:flex><span>    ErrorContext.<span style=color:#a6e22e>instance</span>().<span style=color:#a6e22e>reset</span>();
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>      inputStream.<span style=color:#a6e22e>close</span>();
+</span></span><span style=display:flex><span>    } <span style=color:#66d9ef>catch</span> (IOException e) {
+</span></span><span style=display:flex><span>      <span style=color:#75715e>// Intentionally ignore. Prefer previous error.</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.session.SqlSessionFactoryBuilder#build(org.apache.ibatis.session.Configuration)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 最终返回</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> SqlSessionFactory <span style=color:#a6e22e>build</span>(Configuration config) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> DefaultSqlSessionFactory(config);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.builder.xml.XMLConfigBuilder#XMLConfigBuilder(java.io.InputStream, java.lang.String, java.util.Properties)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#a6e22e>XMLConfigBuilder</span>(InputStream inputStream, String environment, Properties props) {
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// 点this,查看代码</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>this</span>(<span style=color:#66d9ef>new</span> XPathParser(inputStream, <span style=color:#66d9ef>true</span>, props, <span style=color:#66d9ef>new</span> XMLMapperEntityResolver()), environment, props);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.builder.xml.XMLConfigBuilder#XMLConfigBuilder(org.apache.ibatis.parsing.XPathParser, java.lang.String, java.util.Properties)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>private</span> <span style=color:#a6e22e>XMLConfigBuilder</span>(XPathParser parser, String environment, Properties props) {
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// 创建Configuration对象，并通过TypeAliasRegistry注册一些Mybatis内部相关类的别名</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>super</span>(<span style=color:#66d9ef>new</span> Configuration());
+</span></span><span style=display:flex><span>  ErrorContext.<span style=color:#a6e22e>instance</span>().<span style=color:#a6e22e>resource</span>(<span style=color:#e6db74>&#34;SQL Mapper Configuration&#34;</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>configuration</span>.<span style=color:#a6e22e>setVariables</span>(props);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>parsed</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>environment</span> <span style=color:#f92672>=</span> environment;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>parser</span> <span style=color:#f92672>=</span> parser;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.parsing.XPathParser#XPathParser(java.io.InputStream, boolean, java.util.Properties, org.xml.sax.EntityResolver)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#a6e22e>XPathParser</span>(InputStream inputStream, <span style=color:#66d9ef>boolean</span> validation, Properties variables, EntityResolver entityResolver) {
+</span></span><span style=display:flex><span>  commonConstructor(validation, variables, entityResolver);
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// 创建解析器</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>document</span> <span style=color:#f92672>=</span> createDocument(<span style=color:#66d9ef>new</span> InputSource(inputStream));
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.parsing.XPathParser#createDocument</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 不用太关系,只是创建一个解析器的对象,顺便检查xml文档有没有写错</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>private</span> Document <span style=color:#a6e22e>createDocument</span>(InputSource inputSource) {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// important: this must only be called AFTER common constructor</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>      DocumentBuilderFactory factory <span style=color:#f92672>=</span> DocumentBuilderFactory.<span style=color:#a6e22e>newInstance</span>();
+</span></span><span style=display:flex><span>      factory.<span style=color:#a6e22e>setValidating</span>(validation);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      factory.<span style=color:#a6e22e>setNamespaceAware</span>(<span style=color:#66d9ef>false</span>);
+</span></span><span style=display:flex><span>      factory.<span style=color:#a6e22e>setIgnoringComments</span>(<span style=color:#66d9ef>true</span>);
+</span></span><span style=display:flex><span>      factory.<span style=color:#a6e22e>setIgnoringElementContentWhitespace</span>(<span style=color:#66d9ef>false</span>);
+</span></span><span style=display:flex><span>      factory.<span style=color:#a6e22e>setCoalescing</span>(<span style=color:#66d9ef>false</span>);
+</span></span><span style=display:flex><span>      factory.<span style=color:#a6e22e>setExpandEntityReferences</span>(<span style=color:#66d9ef>true</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      DocumentBuilder builder <span style=color:#f92672>=</span> factory.<span style=color:#a6e22e>newDocumentBuilder</span>();
+</span></span><span style=display:flex><span>      builder.<span style=color:#a6e22e>setEntityResolver</span>(entityResolver);
+</span></span><span style=display:flex><span>      builder.<span style=color:#a6e22e>setErrorHandler</span>(<span style=color:#66d9ef>new</span> ErrorHandler() {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>error</span>(SAXParseException exception) <span style=color:#66d9ef>throws</span> SAXException {
+</span></span><span style=display:flex><span>          <span style=color:#66d9ef>throw</span> exception;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>fatalError</span>(SAXParseException exception) <span style=color:#66d9ef>throws</span> SAXException {
+</span></span><span style=display:flex><span>          <span style=color:#66d9ef>throw</span> exception;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>warning</span>(SAXParseException exception) <span style=color:#66d9ef>throws</span> SAXException {
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>      });
+</span></span><span style=display:flex><span>      <span style=color:#75715e>// 解析器的源码了,跟mybatis没有关系了</span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>return</span> builder.<span style=color:#a6e22e>parse</span>(inputSource);
+</span></span><span style=display:flex><span>    } <span style=color:#66d9ef>catch</span> (Exception e) {
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> BuilderException(<span style=color:#e6db74>&#34;Error creating document instance.  Cause: &#34;</span> <span style=color:#f92672>+</span> e, e);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.builder.xml.XMLConfigBuilder#parse</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> Configuration <span style=color:#a6e22e>parse</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> (parsed) {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 每一个配置文件,只能解析一次</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> BuilderException(<span style=color:#e6db74>&#34;Each XMLConfigBuilder can only be used once.&#34;</span>);
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  parsed <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>;
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// 从根节点开始解析,最终封装到Configuration对象</span>
+</span></span><span style=display:flex><span>  parseConfiguration(parser.<span style=color:#a6e22e>evalNode</span>(<span style=color:#e6db74>&#34;/configuration&#34;</span>));
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> configuration;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.parsing.XPathParser#evalNode(java.lang.String)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> XNode <span style=color:#a6e22e>evalNode</span>(String expression) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> evalNode(document, expression);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.parsing.XPathParser#evalNode(java.lang.Object, java.lang.String)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> XNode <span style=color:#a6e22e>evalNode</span>(Object root, String expression) {
+</span></span><span style=display:flex><span>  Node node <span style=color:#f92672>=</span> (Node) evaluate(expression, root, XPathConstants.<span style=color:#a6e22e>NODE</span>);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> (node <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>null</span>;
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> XNode(<span style=color:#66d9ef>this</span>, node, variables);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.builder.xml.XMLConfigBuilder#parseConfiguration</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 可以配置这些信息:https://mybatis.org/mybatis-3/zh/configuration.html</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>private</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>parseConfiguration</span>(XNode root) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//issue #117 read properties first</span>
+</span></span><span style=display:flex><span>    propertiesElement(root.<span style=color:#a6e22e>evalNode</span>(<span style=color:#e6db74>&#34;properties&#34;</span>));
+</span></span><span style=display:flex><span>    Properties settings <span style=color:#f92672>=</span> settingsAsProperties(root.<span style=color:#a6e22e>evalNode</span>(<span style=color:#e6db74>&#34;settings&#34;</span>));
+</span></span><span style=display:flex><span>    loadCustomVfs(settings);
+</span></span><span style=display:flex><span>    loadCustomLogImpl(settings);
+</span></span><span style=display:flex><span>    typeAliasesElement(root.<span style=color:#a6e22e>evalNode</span>(<span style=color:#e6db74>&#34;typeAliases&#34;</span>));
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 插件</span>
+</span></span><span style=display:flex><span>    pluginElement(root.<span style=color:#a6e22e>evalNode</span>(<span style=color:#e6db74>&#34;plugins&#34;</span>));
+</span></span><span style=display:flex><span>    objectFactoryElement(root.<span style=color:#a6e22e>evalNode</span>(<span style=color:#e6db74>&#34;objectFactory&#34;</span>));
+</span></span><span style=display:flex><span>    objectWrapperFactoryElement(root.<span style=color:#a6e22e>evalNode</span>(<span style=color:#e6db74>&#34;objectWrapperFactory&#34;</span>));
+</span></span><span style=display:flex><span>    reflectorFactoryElement(root.<span style=color:#a6e22e>evalNode</span>(<span style=color:#e6db74>&#34;reflectorFactory&#34;</span>));
+</span></span><span style=display:flex><span>    settingsElement(settings);
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// read it after objectFactory and objectWrapperFactory issue #631</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 重点</span>
+</span></span><span style=display:flex><span>    environmentsElement(root.<span style=color:#a6e22e>evalNode</span>(<span style=color:#e6db74>&#34;environments&#34;</span>));
+</span></span><span style=display:flex><span>    databaseIdProviderElement(root.<span style=color:#a6e22e>evalNode</span>(<span style=color:#e6db74>&#34;databaseIdProvider&#34;</span>));
+</span></span><span style=display:flex><span>    typeHandlerElement(root.<span style=color:#a6e22e>evalNode</span>(<span style=color:#e6db74>&#34;typeHandlers&#34;</span>));
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 重点</span>
+</span></span><span style=display:flex><span>    mapperElement(root.<span style=color:#a6e22e>evalNode</span>(<span style=color:#e6db74>&#34;mappers&#34;</span>));
+</span></span><span style=display:flex><span>  } <span style=color:#66d9ef>catch</span> (Exception e) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> BuilderException(<span style=color:#e6db74>&#34;Error parsing SQL Mapper Configuration. Cause: &#34;</span> <span style=color:#f92672>+</span> e, e);
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.builder.xml.XMLConfigBuilder#mapperElement</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>private</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>mapperElement</span>(XNode parent) <span style=color:#66d9ef>throws</span> Exception {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> (parent <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> (XNode child : parent.<span style=color:#a6e22e>getChildren</span>()) {
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> (<span style=color:#e6db74>&#34;package&#34;</span>.<span style=color:#a6e22e>equals</span>(child.<span style=color:#a6e22e>getName</span>())) {
+</span></span><span style=display:flex><span>        String mapperPackage <span style=color:#f92672>=</span> child.<span style=color:#a6e22e>getStringAttribute</span>(<span style=color:#e6db74>&#34;name&#34;</span>);
+</span></span><span style=display:flex><span>        configuration.<span style=color:#a6e22e>addMappers</span>(mapperPackage);
+</span></span><span style=display:flex><span>      } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>        String resource <span style=color:#f92672>=</span> child.<span style=color:#a6e22e>getStringAttribute</span>(<span style=color:#e6db74>&#34;resource&#34;</span>);
+</span></span><span style=display:flex><span>        String url <span style=color:#f92672>=</span> child.<span style=color:#a6e22e>getStringAttribute</span>(<span style=color:#e6db74>&#34;url&#34;</span>);
+</span></span><span style=display:flex><span>        String mapperClass <span style=color:#f92672>=</span> child.<span style=color:#a6e22e>getStringAttribute</span>(<span style=color:#e6db74>&#34;class&#34;</span>);
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// 三个值是互斥的</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (resource <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>&amp;&amp;</span> url <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>&amp;&amp;</span> mapperClass <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span>) {
+</span></span><span style=display:flex><span>          ErrorContext.<span style=color:#a6e22e>instance</span>().<span style=color:#a6e22e>resource</span>(resource);
+</span></span><span style=display:flex><span>          InputStream inputStream <span style=color:#f92672>=</span> Resources.<span style=color:#a6e22e>getResourceAsStream</span>(resource);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>          XMLMapperBuilder mapperParser <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> XMLMapperBuilder(inputStream, configuration, resource, configuration.<span style=color:#a6e22e>getSqlFragments</span>());
+</span></span><span style=display:flex><span>          mapperParser.<span style=color:#a6e22e>parse</span>();
+</span></span><span style=display:flex><span>        } <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (resource <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>&amp;&amp;</span> url <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>&amp;&amp;</span> mapperClass <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span>) {
+</span></span><span style=display:flex><span>          ErrorContext.<span style=color:#a6e22e>instance</span>().<span style=color:#a6e22e>resource</span>(url);
+</span></span><span style=display:flex><span>          <span style=color:#75715e>// 专门用来解析mapper映射文件</span>
+</span></span><span style=display:flex><span>          InputStream inputStream <span style=color:#f92672>=</span> Resources.<span style=color:#a6e22e>getUrlAsStream</span>(url);
+</span></span><span style=display:flex><span>          <span style=color:#75715e>// 重点</span>
+</span></span><span style=display:flex><span>          XMLMapperBuilder mapperParser <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> XMLMapperBuilder(inputStream, configuration, url, configuration.<span style=color:#a6e22e>getSqlFragments</span>());
+</span></span><span style=display:flex><span>          mapperParser.<span style=color:#a6e22e>parse</span>();
+</span></span><span style=display:flex><span>        } <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (resource <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>&amp;&amp;</span> url <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>&amp;&amp;</span> mapperClass <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span>) {
+</span></span><span style=display:flex><span>          Class<span style=color:#f92672>&lt;?&gt;</span> mapperInterface <span style=color:#f92672>=</span> Resources.<span style=color:#a6e22e>classForName</span>(mapperClass);
+</span></span><span style=display:flex><span>          configuration.<span style=color:#a6e22e>addMapper</span>(mapperInterface);
+</span></span><span style=display:flex><span>        } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>          <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> BuilderException(<span style=color:#e6db74>&#34;A mapper element may only specify a url, resource or class, but not more than one.&#34;</span>);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>解释下environment作用,就是<code>&lt;environment id="development"></code>这里的,不同的环境不同的配置</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;configuration&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;environments</span> <span style=color:#a6e22e>default=</span><span style=color:#e6db74>&#34;development&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;environment</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;development&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>&lt;transactionManager</span> <span style=color:#a6e22e>type=</span><span style=color:#e6db74>&#34;JDBC&#34;</span><span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>&lt;dataSource</span> <span style=color:#a6e22e>type=</span><span style=color:#e6db74>&#34;POOLED&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;driver&#34;</span> <span style=color:#a6e22e>value=</span><span style=color:#e6db74>&#34;com.mysql.cj.jdbc.Driver&#34;</span><span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;url&#34;</span> <span style=color:#a6e22e>value=</span><span style=color:#e6db74>&#34;jdbc:mysql://192.168.3.12:3306/orangedb&#34;</span><span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;username&#34;</span> <span style=color:#a6e22e>value=</span><span style=color:#e6db74>&#34;root&#34;</span><span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;password&#34;</span> <span style=color:#a6e22e>value=</span><span style=color:#e6db74>&#34;abcd2022&#34;</span><span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>&lt;/dataSource&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;/environment&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;environment</span> <span style=color:#a6e22e>id=</span><span style=color:#e6db74>&#34;test&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>&lt;transactionManager</span> <span style=color:#a6e22e>type=</span><span style=color:#e6db74>&#34;JDBC&#34;</span><span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>&lt;dataSource</span> <span style=color:#a6e22e>type=</span><span style=color:#e6db74>&#34;POOLED&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;driver&#34;</span> <span style=color:#a6e22e>value=</span><span style=color:#e6db74>&#34;com.mysql.cj.jdbc.Driver&#34;</span><span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;url&#34;</span> <span style=color:#a6e22e>value=</span><span style=color:#e6db74>&#34;jdbc:mysql://192.168.3.12:3306/orangedb&#34;</span><span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;username&#34;</span> <span style=color:#a6e22e>value=</span><span style=color:#e6db74>&#34;root&#34;</span><span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>                <span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;password&#34;</span> <span style=color:#a6e22e>value=</span><span style=color:#e6db74>&#34;abcd2022&#34;</span><span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>&lt;/dataSource&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&lt;/environment&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/environments&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/configuration&gt;</span>
+</span></span></code></pre></div><p>用法:如下代码</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>SqlSessionFactory sqlSessionFactory <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> SqlSessionFactoryBuilder().<span style=color:#a6e22e>build</span>(inputStream,<span style=color:#e6db74>&#34;development&#34;</span>);
+</span></span></code></pre></div><p>下面是解析mapper文件,配置的属性,参考:<code>https://mybatis.org/mybatis-3/zh/sqlmap-xml.html</code></p><h2 id=解析mapper配置文件>解析mapper配置文件<a href=#解析mapper配置文件 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.builder.xml.XMLMapperBuilder#XMLMapperBuilder(java.io.InputStream, org.apache.ibatis.session.Configuration, java.lang.String, java.util.Map&lt;java.lang.String,org.apache.ibatis.parsing.XNode&gt;)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 这个方法,前面已经用过了</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>public</span> <span style=color:#a6e22e>XMLMapperBuilder</span>(InputStream inputStream, Configuration configuration, String resource, Map<span style=color:#f92672>&lt;</span>String, XNode<span style=color:#f92672>&gt;</span> sqlFragments) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>this</span>(<span style=color:#66d9ef>new</span> XPathParser(inputStream, <span style=color:#66d9ef>true</span>, configuration.<span style=color:#a6e22e>getVariables</span>(), <span style=color:#66d9ef>new</span> XMLMapperEntityResolver()),
+</span></span><span style=display:flex><span>        configuration, resource, sqlFragments);
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.builder.xml.XMLMapperBuilder#parse</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>parse</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// mapper映射文件是否已经加载过</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span>configuration.<span style=color:#a6e22e>isResourceLoaded</span>(resource)) {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 从根节点解析</span>
+</span></span><span style=display:flex><span>    configurationElement(parser.<span style=color:#a6e22e>evalNode</span>(<span style=color:#e6db74>&#34;/mapper&#34;</span>));
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 标记已经解析</span>
+</span></span><span style=display:flex><span>    configuration.<span style=color:#a6e22e>addLoadedResource</span>(resource);
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 为命名空间绑定映射</span>
+</span></span><span style=display:flex><span>    bindMapperForNamespace();
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// </span>
+</span></span><span style=display:flex><span>  parsePendingResultMaps();
+</span></span><span style=display:flex><span>  parsePendingCacheRefs();
+</span></span><span style=display:flex><span>  parsePendingStatements();
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.builder.xml.XMLMapperBuilder#configurationElement</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>private</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>configurationElement</span>(XNode context) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 获取命名空间</span>
+</span></span><span style=display:flex><span>    String namespace <span style=color:#f92672>=</span> context.<span style=color:#a6e22e>getStringAttribute</span>(<span style=color:#e6db74>&#34;namespace&#34;</span>);
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 命名空间不能为空</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (namespace <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>||</span> namespace.<span style=color:#a6e22e>equals</span>(<span style=color:#e6db74>&#34;&#34;</span>)) {
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> BuilderException(<span style=color:#e6db74>&#34;Mapper&#39;s namespace cannot be empty&#34;</span>);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 设置当前的命名空间的值</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 构建mappedStatement对象</span>
+</span></span><span style=display:flex><span>    builderAssistant.<span style=color:#a6e22e>setCurrentNamespace</span>(namespace);
+</span></span><span style=display:flex><span>    cacheRefElement(context.<span style=color:#a6e22e>evalNode</span>(<span style=color:#e6db74>&#34;cache-ref&#34;</span>));
+</span></span><span style=display:flex><span>    cacheElement(context.<span style=color:#a6e22e>evalNode</span>(<span style=color:#e6db74>&#34;cache&#34;</span>));
+</span></span><span style=display:flex><span>    parameterMapElement(context.<span style=color:#a6e22e>evalNodes</span>(<span style=color:#e6db74>&#34;/mapper/parameterMap&#34;</span>));
+</span></span><span style=display:flex><span>    resultMapElements(context.<span style=color:#a6e22e>evalNodes</span>(<span style=color:#e6db74>&#34;/mapper/resultMap&#34;</span>));
+</span></span><span style=display:flex><span>    sqlElement(context.<span style=color:#a6e22e>evalNodes</span>(<span style=color:#e6db74>&#34;/mapper/sql&#34;</span>));
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 重点</span>
+</span></span><span style=display:flex><span>    buildStatementFromContext(context.<span style=color:#a6e22e>evalNodes</span>(<span style=color:#e6db74>&#34;select|insert|update|delete&#34;</span>));
+</span></span><span style=display:flex><span>  } <span style=color:#66d9ef>catch</span> (Exception e) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> BuilderException(<span style=color:#e6db74>&#34;Error parsing Mapper XML. The XML location is &#39;&#34;</span> <span style=color:#f92672>+</span> resource <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;&#39;. Cause: &#34;</span> <span style=color:#f92672>+</span> e, e);
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.builder.xml.XMLMapperBuilder#buildStatementFromContext(java.util.List&lt;org.apache.ibatis.parsing.XNode&gt;)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>private</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>buildStatementFromContext</span>(List<span style=color:#f92672>&lt;</span>XNode<span style=color:#f92672>&gt;</span> list) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> (configuration.<span style=color:#a6e22e>getDatabaseId</span>() <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span>) {
+</span></span><span style=display:flex><span>    buildStatementFromContext(list, configuration.<span style=color:#a6e22e>getDatabaseId</span>());
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// 没有配置过getDatabaseId,所以走这里</span>
+</span></span><span style=display:flex><span>  buildStatementFromContext(list, <span style=color:#66d9ef>null</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.builder.xml.XMLMapperBuilder#buildStatementFromContext(java.util.List&lt;org.apache.ibatis.parsing.XNode&gt;, java.lang.String)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>private</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>buildStatementFromContext</span>(List<span style=color:#f92672>&lt;</span>XNode<span style=color:#f92672>&gt;</span> list, String requiredDatabaseId) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> (XNode context : list) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>final</span> XMLStatementBuilder statementParser <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> XMLStatementBuilder(configuration, builderAssistant, context, requiredDatabaseId);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>      statementParser.<span style=color:#a6e22e>parseStatementNode</span>();
+</span></span><span style=display:flex><span>    } <span style=color:#66d9ef>catch</span> (IncompleteElementException e) {
+</span></span><span style=display:flex><span>      configuration.<span style=color:#a6e22e>addIncompleteStatement</span>(statementParser);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.builder.xml.XMLStatementBuilder#parseStatementNode</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>parseStatementNode</span>() {
+</span></span><span style=display:flex><span>    String id <span style=color:#f92672>=</span> context.<span style=color:#a6e22e>getStringAttribute</span>(<span style=color:#e6db74>&#34;id&#34;</span>);
+</span></span><span style=display:flex><span>    String databaseId <span style=color:#f92672>=</span> context.<span style=color:#a6e22e>getStringAttribute</span>(<span style=color:#e6db74>&#34;databaseId&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	  <span style=color:#75715e>// 没有设置过databaseId</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span>databaseIdMatchesCurrent(id, databaseId, <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>requiredDatabaseId</span>)) {
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>return</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    String nodeName <span style=color:#f92672>=</span> context.<span style=color:#a6e22e>getNode</span>().<span style=color:#a6e22e>getNodeName</span>();
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  	<span style=color:#75715e>// 解析Sql命令类型是什么,确实是 Select,update,insert,delete 类型</span>
+</span></span><span style=display:flex><span>    SqlCommandType sqlCommandType <span style=color:#f92672>=</span> SqlCommandType.<span style=color:#a6e22e>valueOf</span>(nodeName.<span style=color:#a6e22e>toUpperCase</span>(Locale.<span style=color:#a6e22e>ENGLISH</span>));
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>boolean</span> isSelect <span style=color:#f92672>=</span> sqlCommandType <span style=color:#f92672>==</span> SqlCommandType.<span style=color:#a6e22e>SELECT</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>boolean</span> flushCache <span style=color:#f92672>=</span> context.<span style=color:#a6e22e>getBooleanAttribute</span>(<span style=color:#e6db74>&#34;flushCache&#34;</span>, <span style=color:#f92672>!</span>isSelect);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>boolean</span> useCache <span style=color:#f92672>=</span> context.<span style=color:#a6e22e>getBooleanAttribute</span>(<span style=color:#e6db74>&#34;useCache&#34;</span>, isSelect);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>boolean</span> resultOrdered <span style=color:#f92672>=</span> context.<span style=color:#a6e22e>getBooleanAttribute</span>(<span style=color:#e6db74>&#34;resultOrdered&#34;</span>, <span style=color:#66d9ef>false</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Include Fragments before parsing</span>
+</span></span><span style=display:flex><span>    XMLIncludeTransformer includeParser <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> XMLIncludeTransformer(configuration, builderAssistant);
+</span></span><span style=display:flex><span>    includeParser.<span style=color:#a6e22e>applyIncludes</span>(context.<span style=color:#a6e22e>getNode</span>());
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    String parameterType <span style=color:#f92672>=</span> context.<span style=color:#a6e22e>getStringAttribute</span>(<span style=color:#e6db74>&#34;parameterType&#34;</span>);
+</span></span><span style=display:flex><span>    Class<span style=color:#f92672>&lt;?&gt;</span> parameterTypeClass <span style=color:#f92672>=</span> resolveClass(parameterType);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	  <span style=color:#75715e>// 配置语言驱动</span>
+</span></span><span style=display:flex><span>    String lang <span style=color:#f92672>=</span> context.<span style=color:#a6e22e>getStringAttribute</span>(<span style=color:#e6db74>&#34;lang&#34;</span>);
+</span></span><span style=display:flex><span>    LanguageDriver langDriver <span style=color:#f92672>=</span> getLanguageDriver(lang);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Parse selectKey after includes and remove them.</span>
+</span></span><span style=display:flex><span>    processSelectKeyNodes(id, parameterTypeClass, langDriver);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Parse the SQL (pre: &lt;selectKey&gt; and &lt;include&gt; were parsed and removed)</span>
+</span></span><span style=display:flex><span>    KeyGenerator keyGenerator;
+</span></span><span style=display:flex><span>    String keyStatementId <span style=color:#f92672>=</span> id <span style=color:#f92672>+</span> SelectKeyGenerator.<span style=color:#a6e22e>SELECT_KEY_SUFFIX</span>;
+</span></span><span style=display:flex><span>    keyStatementId <span style=color:#f92672>=</span> builderAssistant.<span style=color:#a6e22e>applyCurrentNamespace</span>(keyStatementId, <span style=color:#66d9ef>true</span>);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (configuration.<span style=color:#a6e22e>hasKeyGenerator</span>(keyStatementId)) {
+</span></span><span style=display:flex><span>      keyGenerator <span style=color:#f92672>=</span> configuration.<span style=color:#a6e22e>getKeyGenerator</span>(keyStatementId);
+</span></span><span style=display:flex><span>    } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>      keyGenerator <span style=color:#f92672>=</span> context.<span style=color:#a6e22e>getBooleanAttribute</span>(<span style=color:#e6db74>&#34;useGeneratedKeys&#34;</span>,
+</span></span><span style=display:flex><span>          configuration.<span style=color:#a6e22e>isUseGeneratedKeys</span>() <span style=color:#f92672>&amp;&amp;</span> SqlCommandType.<span style=color:#a6e22e>INSERT</span>.<span style=color:#a6e22e>equals</span>(sqlCommandType))
+</span></span><span style=display:flex><span>          <span style=color:#f92672>?</span> Jdbc3KeyGenerator.<span style=color:#a6e22e>INSTANCE</span> : NoKeyGenerator.<span style=color:#a6e22e>INSTANCE</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  	<span style=color:#75715e>// 替换占位符?,保存#{}里面的内容</span>
+</span></span><span style=display:flex><span>    SqlSource sqlSource <span style=color:#f92672>=</span> langDriver.<span style=color:#a6e22e>createSqlSource</span>(configuration, context, parameterTypeClass);
+</span></span><span style=display:flex><span>    StatementType statementType <span style=color:#f92672>=</span> StatementType.<span style=color:#a6e22e>valueOf</span>(context.<span style=color:#a6e22e>getStringAttribute</span>(<span style=color:#e6db74>&#34;statementType&#34;</span>, StatementType.<span style=color:#a6e22e>PREPARED</span>.<span style=color:#a6e22e>toString</span>()));
+</span></span><span style=display:flex><span>    Integer fetchSize <span style=color:#f92672>=</span> context.<span style=color:#a6e22e>getIntAttribute</span>(<span style=color:#e6db74>&#34;fetchSize&#34;</span>);
+</span></span><span style=display:flex><span>    Integer timeout <span style=color:#f92672>=</span> context.<span style=color:#a6e22e>getIntAttribute</span>(<span style=color:#e6db74>&#34;timeout&#34;</span>);
+</span></span><span style=display:flex><span>    String parameterMap <span style=color:#f92672>=</span> context.<span style=color:#a6e22e>getStringAttribute</span>(<span style=color:#e6db74>&#34;parameterMap&#34;</span>);
+</span></span><span style=display:flex><span>    String resultType <span style=color:#f92672>=</span> context.<span style=color:#a6e22e>getStringAttribute</span>(<span style=color:#e6db74>&#34;resultType&#34;</span>);
+</span></span><span style=display:flex><span>    Class<span style=color:#f92672>&lt;?&gt;</span> resultTypeClass <span style=color:#f92672>=</span> resolveClass(resultType);
+</span></span><span style=display:flex><span>    String resultMap <span style=color:#f92672>=</span> context.<span style=color:#a6e22e>getStringAttribute</span>(<span style=color:#e6db74>&#34;resultMap&#34;</span>);
+</span></span><span style=display:flex><span>    String resultSetType <span style=color:#f92672>=</span> context.<span style=color:#a6e22e>getStringAttribute</span>(<span style=color:#e6db74>&#34;resultSetType&#34;</span>);
+</span></span><span style=display:flex><span>    ResultSetType resultSetTypeEnum <span style=color:#f92672>=</span> resolveResultSetType(resultSetType);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (resultSetTypeEnum <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span>) {
+</span></span><span style=display:flex><span>      resultSetTypeEnum <span style=color:#f92672>=</span> configuration.<span style=color:#a6e22e>getDefaultResultSetType</span>();
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    String keyProperty <span style=color:#f92672>=</span> context.<span style=color:#a6e22e>getStringAttribute</span>(<span style=color:#e6db74>&#34;keyProperty&#34;</span>);
+</span></span><span style=display:flex><span>    String keyColumn <span style=color:#f92672>=</span> context.<span style=color:#a6e22e>getStringAttribute</span>(<span style=color:#e6db74>&#34;keyColumn&#34;</span>);
+</span></span><span style=display:flex><span>    String resultSets <span style=color:#f92672>=</span> context.<span style=color:#a6e22e>getStringAttribute</span>(<span style=color:#e6db74>&#34;resultSets&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  	<span style=color:#75715e>// 通过构建者助手,创建mappedstatement对象</span>
+</span></span><span style=display:flex><span>    builderAssistant.<span style=color:#a6e22e>addMappedStatement</span>(id, sqlSource, statementType, sqlCommandType,
+</span></span><span style=display:flex><span>        fetchSize, timeout, parameterMap, parameterTypeClass, resultMap, resultTypeClass,
+</span></span><span style=display:flex><span>        resultSetTypeEnum, flushCache, useCache, resultOrdered,
+</span></span><span style=display:flex><span>        keyGenerator, keyProperty, keyColumn, databaseId, langDriver, resultSets);
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.builder.MapperBuilderAssistant#addMappedStatement(java.lang.String, org.apache.ibatis.mapping.SqlSource, org.apache.ibatis.mapping.StatementType, org.apache.ibatis.mapping.SqlCommandType, java.lang.Integer, java.lang.Integer, java.lang.String, java.lang.Class&lt;?&gt;, java.lang.String, java.lang.Class&lt;?&gt;, org.apache.ibatis.mapping.ResultSetType, boolean, boolean, boolean, org.apache.ibatis.executor.keygen.KeyGenerator, java.lang.String, java.lang.String, java.lang.String, org.apache.ibatis.scripting.LanguageDriver, java.lang.String)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> MappedStatement <span style=color:#a6e22e>addMappedStatement</span>(
+</span></span><span style=display:flex><span>      String id,
+</span></span><span style=display:flex><span>      SqlSource sqlSource,
+</span></span><span style=display:flex><span>      StatementType statementType,
+</span></span><span style=display:flex><span>      SqlCommandType sqlCommandType,
+</span></span><span style=display:flex><span>      Integer fetchSize,
+</span></span><span style=display:flex><span>      Integer timeout,
+</span></span><span style=display:flex><span>      String parameterMap,
+</span></span><span style=display:flex><span>      Class<span style=color:#f92672>&lt;?&gt;</span> parameterType,
+</span></span><span style=display:flex><span>      String resultMap,
+</span></span><span style=display:flex><span>      Class<span style=color:#f92672>&lt;?&gt;</span> resultType,
+</span></span><span style=display:flex><span>      ResultSetType resultSetType,
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>boolean</span> flushCache,
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>boolean</span> useCache,
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>boolean</span> resultOrdered,
+</span></span><span style=display:flex><span>      KeyGenerator keyGenerator,
+</span></span><span style=display:flex><span>      String keyProperty,
+</span></span><span style=display:flex><span>      String keyColumn,
+</span></span><span style=display:flex><span>      String databaseId,
+</span></span><span style=display:flex><span>      LanguageDriver lang,
+</span></span><span style=display:flex><span>      String resultSets) {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (unresolvedCacheRef) {
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> IncompleteElementException(<span style=color:#e6db74>&#34;Cache-ref not yet resolved&#34;</span>);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    id <span style=color:#f92672>=</span> applyCurrentNamespace(id, <span style=color:#66d9ef>false</span>);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>boolean</span> isSelect <span style=color:#f92672>=</span> sqlCommandType <span style=color:#f92672>==</span> SqlCommandType.<span style=color:#a6e22e>SELECT</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  	<span style=color:#75715e>// 创建MappedStatement对象</span>
+</span></span><span style=display:flex><span>    MappedStatement.<span style=color:#a6e22e>Builder</span> statementBuilder <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> MappedStatement.<span style=color:#a6e22e>Builder</span>(configuration, id, sqlSource, sqlCommandType)
+</span></span><span style=display:flex><span>        .<span style=color:#a6e22e>resource</span>(resource)
+</span></span><span style=display:flex><span>        .<span style=color:#a6e22e>fetchSize</span>(fetchSize)
+</span></span><span style=display:flex><span>        .<span style=color:#a6e22e>timeout</span>(timeout)
+</span></span><span style=display:flex><span>        .<span style=color:#a6e22e>statementType</span>(statementType)
+</span></span><span style=display:flex><span>        .<span style=color:#a6e22e>keyGenerator</span>(keyGenerator)
+</span></span><span style=display:flex><span>        .<span style=color:#a6e22e>keyProperty</span>(keyProperty)
+</span></span><span style=display:flex><span>        .<span style=color:#a6e22e>keyColumn</span>(keyColumn)
+</span></span><span style=display:flex><span>        .<span style=color:#a6e22e>databaseId</span>(databaseId)
+</span></span><span style=display:flex><span>        .<span style=color:#a6e22e>lang</span>(lang)
+</span></span><span style=display:flex><span>        .<span style=color:#a6e22e>resultOrdered</span>(resultOrdered)
+</span></span><span style=display:flex><span>        .<span style=color:#a6e22e>resultSets</span>(resultSets)
+</span></span><span style=display:flex><span>        .<span style=color:#a6e22e>resultMaps</span>(getStatementResultMaps(resultMap, resultType, id))
+</span></span><span style=display:flex><span>        .<span style=color:#a6e22e>resultSetType</span>(resultSetType)
+</span></span><span style=display:flex><span>        .<span style=color:#a6e22e>flushCacheRequired</span>(valueOrDefault(flushCache, <span style=color:#f92672>!</span>isSelect))
+</span></span><span style=display:flex><span>        .<span style=color:#a6e22e>useCache</span>(valueOrDefault(useCache, isSelect))
+</span></span><span style=display:flex><span>        .<span style=color:#a6e22e>cache</span>(currentCache);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    ParameterMap statementParameterMap <span style=color:#f92672>=</span> getStatementParameterMap(parameterMap, parameterType, id);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (statementParameterMap <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span>) {
+</span></span><span style=display:flex><span>      statementBuilder.<span style=color:#a6e22e>parameterMap</span>(statementParameterMap);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  	<span style=color:#75715e>// 封装好MappedStatement,并返回</span>
+</span></span><span style=display:flex><span>    MappedStatement statement <span style=color:#f92672>=</span> statementBuilder.<span style=color:#a6e22e>build</span>();
+</span></span><span style=display:flex><span>    configuration.<span style=color:#a6e22e>addMappedStatement</span>(statement);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> statement;
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.builder.MapperBuilderAssistant#applyCurrentNamespace</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>applyCurrentNamespace</span>(String base, <span style=color:#66d9ef>boolean</span> isReference) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (base <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span>) {
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>null</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (isReference) {
+</span></span><span style=display:flex><span>      <span style=color:#75715e>// is it qualified with any namespace yet?</span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> (base.<span style=color:#a6e22e>contains</span>(<span style=color:#e6db74>&#34;.&#34;</span>)) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> base;
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>      <span style=color:#75715e>// is it qualified with this namespace yet?</span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> (base.<span style=color:#a6e22e>startsWith</span>(currentNamespace <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;.&#34;</span>)) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> base;
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> (base.<span style=color:#a6e22e>contains</span>(<span style=color:#e6db74>&#34;.&#34;</span>)) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> BuilderException(<span style=color:#e6db74>&#34;Dots are not allowed in element names, please remove it from &#34;</span> <span style=color:#f92672>+</span> base);
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  	<span style=color:#75715e>// namespacename+点+方法名</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> currentNamespace <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;.&#34;</span> <span style=color:#f92672>+</span> base;
+</span></span><span style=display:flex><span>  }
+</span></span></code></pre></div><p>到这里,配置文件就解析完成了,下面是创建SqlSessionFactory对象</p><h2 id=sqlsession>SqlSession<a href=#sqlsession class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span> <span style=color:#75715e>// org.apache.ibatis.session.SqlSessionFactoryBuilder#build(org.apache.ibatis.session.Configuration)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> SqlSessionFactory <span style=color:#a6e22e>build</span>(Configuration config) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> DefaultSqlSessionFactory(config);
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>下面是mybatis创建sql的流程</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#75715e>// /Users/anthony/.m2/repository/org/mybatis/mybatis/3.5.2/mybatis-3.5.2-sources.jar!/org/apache/ibatis/builder/xml/XMLStatementBuilder.java:96</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 占位符是如果进行替换的?动态sql如果进行的解析</span>
+</span></span><span style=display:flex><span>String lang <span style=color:#f92672>=</span> context.<span style=color:#a6e22e>getStringAttribute</span>(<span style=color:#e6db74>&#34;lang&#34;</span>);
+</span></span><span style=display:flex><span>LanguageDriver langDriver <span style=color:#f92672>=</span> getLanguageDriver(lang);
+</span></span><span style=display:flex><span>SqlSource sqlSource <span style=color:#f92672>=</span> langDriver.<span style=color:#a6e22e>createSqlSource</span>(configuration, context, parameterTypeClass);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.builder.xml.XMLStatementBuilder#getLanguageDriver</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>private</span> LanguageDriver <span style=color:#a6e22e>getLanguageDriver</span>(String lang) {
+</span></span><span style=display:flex><span>  Class<span style=color:#f92672>&lt;?</span> <span style=color:#66d9ef>extends</span> LanguageDriver<span style=color:#f92672>&gt;</span> langClass <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> (lang <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span>) {
+</span></span><span style=display:flex><span>    langClass <span style=color:#f92672>=</span> resolveClass(lang);
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> configuration.<span style=color:#a6e22e>getLanguageDriver</span>(langClass);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.session.Configuration#getLanguageDriver</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> LanguageDriver <span style=color:#a6e22e>getLanguageDriver</span>(Class<span style=color:#f92672>&lt;?</span> <span style=color:#66d9ef>extends</span> LanguageDriver<span style=color:#f92672>&gt;</span> langClass) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> (langClass <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> languageRegistry.<span style=color:#a6e22e>getDefaultDriver</span>();
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  languageRegistry.<span style=color:#a6e22e>register</span>(langClass);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> languageRegistry.<span style=color:#a6e22e>getDriver</span>(langClass);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.scripting.LanguageDriverRegistry#getDefaultDriver</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 打断点可以看到是:XMLLanguageDriver</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> LanguageDriver <span style=color:#a6e22e>getDefaultDriver</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> getDriver(getDefaultDriverClass());
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> Class<span style=color:#f92672>&lt;?</span> <span style=color:#66d9ef>extends</span> LanguageDriver<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>getDefaultDriverClass</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> defaultDriverClass;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.scripting.xmltags.XMLLanguageDriver#createSqlSource(org.apache.ibatis.session.Configuration, org.apache.ibatis.parsing.XNode, java.lang.Class&lt;?&gt;)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> SqlSource <span style=color:#a6e22e>createSqlSource</span>(Configuration configuration, XNode script, Class<span style=color:#f92672>&lt;?&gt;</span> parameterType) {
+</span></span><span style=display:flex><span>  XMLScriptBuilder builder <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> XMLScriptBuilder(configuration, script, parameterType);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> builder.<span style=color:#a6e22e>parseScriptNode</span>();
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.scripting.xmltags.XMLScriptBuilder#XMLScriptBuilder(org.apache.ibatis.session.Configuration, org.apache.ibatis.parsing.XNode, java.lang.Class&lt;?&gt;)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#a6e22e>XMLScriptBuilder</span>(Configuration configuration, XNode context, Class<span style=color:#f92672>&lt;?&gt;</span> parameterType) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>super</span>(configuration);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>context</span> <span style=color:#f92672>=</span> context;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>parameterType</span> <span style=color:#f92672>=</span> parameterType;
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// 初始化动态sql的节点处理器结合</span>
+</span></span><span style=display:flex><span>  initNodeHandlerMap();
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.scripting.xmltags.XMLScriptBuilder#initNodeHandlerMap</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>initNodeHandlerMap</span>() {
+</span></span><span style=display:flex><span>    nodeHandlerMap.<span style=color:#a6e22e>put</span>(<span style=color:#e6db74>&#34;trim&#34;</span>, <span style=color:#66d9ef>new</span> TrimHandler());
+</span></span><span style=display:flex><span>    nodeHandlerMap.<span style=color:#a6e22e>put</span>(<span style=color:#e6db74>&#34;where&#34;</span>, <span style=color:#66d9ef>new</span> WhereHandler());
+</span></span><span style=display:flex><span>    nodeHandlerMap.<span style=color:#a6e22e>put</span>(<span style=color:#e6db74>&#34;set&#34;</span>, <span style=color:#66d9ef>new</span> SetHandler());
+</span></span><span style=display:flex><span>    nodeHandlerMap.<span style=color:#a6e22e>put</span>(<span style=color:#e6db74>&#34;foreach&#34;</span>, <span style=color:#66d9ef>new</span> ForEachHandler());
+</span></span><span style=display:flex><span>    nodeHandlerMap.<span style=color:#a6e22e>put</span>(<span style=color:#e6db74>&#34;if&#34;</span>, <span style=color:#66d9ef>new</span> IfHandler());
+</span></span><span style=display:flex><span>    nodeHandlerMap.<span style=color:#a6e22e>put</span>(<span style=color:#e6db74>&#34;choose&#34;</span>, <span style=color:#66d9ef>new</span> ChooseHandler());
+</span></span><span style=display:flex><span>    nodeHandlerMap.<span style=color:#a6e22e>put</span>(<span style=color:#e6db74>&#34;when&#34;</span>, <span style=color:#66d9ef>new</span> IfHandler());
+</span></span><span style=display:flex><span>    nodeHandlerMap.<span style=color:#a6e22e>put</span>(<span style=color:#e6db74>&#34;otherwise&#34;</span>, <span style=color:#66d9ef>new</span> OtherwiseHandler());
+</span></span><span style=display:flex><span>    nodeHandlerMap.<span style=color:#a6e22e>put</span>(<span style=color:#e6db74>&#34;bind&#34;</span>, <span style=color:#66d9ef>new</span> BindHandler());
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.scripting.xmltags.XMLScriptBuilder#parseScriptNode</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 解析sql,还有参数类型和结果集类型</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> SqlSource <span style=color:#a6e22e>parseScriptNode</span>() {
+</span></span><span style=display:flex><span>  MixedSqlNode rootSqlNode <span style=color:#f92672>=</span> parseDynamicTags(context);
+</span></span><span style=display:flex><span>  SqlSource sqlSource;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> (isDynamic) {
+</span></span><span style=display:flex><span>    sqlSource <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> DynamicSqlSource(configuration, rootSqlNode);
+</span></span><span style=display:flex><span>  } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>    sqlSource <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> RawSqlSource(configuration, rootSqlNode, parameterType);
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> sqlSource;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>全部就解析完成了,接下来</p><p><img src=https://image.runtimes.cc/202404051430408.png alt=image-20230813213519036></p><p>看看<code>session = sqlSessionFactory.openSession();</code></p><ul><li>创建事务对象</li><li>创建了执行器对象CasheingExecutor</li><li>创建DefaultSqlSession对象</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.session.defaults.DefaultSqlSessionFactory#openSession()</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> SqlSession <span style=color:#a6e22e>openSession</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> openSessionFromDataSource(configuration.<span style=color:#a6e22e>getDefaultExecutorType</span>(), <span style=color:#66d9ef>null</span>, <span style=color:#66d9ef>false</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.session.Configuration#getDefaultExecutorType</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// protected ExecutorType defaultExecutorType = ExecutorType.SIMPLE;</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> ExecutorType <span style=color:#a6e22e>getDefaultExecutorType</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> defaultExecutorType;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.session.defaults.DefaultSqlSessionFactory#openSessionFromDataSource</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 参数一:执行器,参数二:隔离级别</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>private</span> SqlSession <span style=color:#a6e22e>openSessionFromDataSource</span>(ExecutorType execType, TransactionIsolationLevel level, <span style=color:#66d9ef>boolean</span> autoCommit) {
+</span></span><span style=display:flex><span>  Transaction tx <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 获取数据源环境信息</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>final</span> Environment environment <span style=color:#f92672>=</span> configuration.<span style=color:#a6e22e>getEnvironment</span>();
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 获取事务工厂</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>final</span> TransactionFactory transactionFactory <span style=color:#f92672>=</span> getTransactionFactoryFromEnvironment(environment);
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 获取JdbcTransaction或者ManagedTransaction</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// ManagedTransaction 就相当于没有事务</span>
+</span></span><span style=display:flex><span>    tx <span style=color:#f92672>=</span> transactionFactory.<span style=color:#a6e22e>newTransaction</span>(environment.<span style=color:#a6e22e>getDataSource</span>(), level, autoCommit);
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 创建Executor执行器</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>final</span> Executor executor <span style=color:#f92672>=</span> configuration.<span style=color:#a6e22e>newExecutor</span>(tx, execType);
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 创建DefaultSqlSession</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> DefaultSqlSession(configuration, executor, autoCommit);
+</span></span><span style=display:flex><span>  } <span style=color:#66d9ef>catch</span> (Exception e) {
+</span></span><span style=display:flex><span>    closeTransaction(tx); <span style=color:#75715e>// may have fetched a connection so lets call close()</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>throw</span> ExceptionFactory.<span style=color:#a6e22e>wrapException</span>(<span style=color:#e6db74>&#34;Error opening session.  Cause: &#34;</span> <span style=color:#f92672>+</span> e, e);
+</span></span><span style=display:flex><span>  } <span style=color:#66d9ef>finally</span> {
+</span></span><span style=display:flex><span>    ErrorContext.<span style=color:#a6e22e>instance</span>().<span style=color:#a6e22e>reset</span>();
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory#newTransaction(java.sql.Connection)</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> Transaction <span style=color:#a6e22e>newTransaction</span>(DataSource ds, TransactionIsolationLevel level, <span style=color:#66d9ef>boolean</span> autoCommit) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> JdbcTransaction(ds, level, autoCommit);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.session.Configuration#newExecutor(org.apache.ibatis.transaction.Transaction, org.apache.ibatis.session.ExecutorType)</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>public</span> Executor <span style=color:#a6e22e>newExecutor</span>(Transaction transaction, ExecutorType executorType) {
+</span></span><span style=display:flex><span>    executorType <span style=color:#f92672>=</span> executorType <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>?</span> defaultExecutorType : executorType;
+</span></span><span style=display:flex><span>    executorType <span style=color:#f92672>=</span> executorType <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>?</span> ExecutorType.<span style=color:#a6e22e>SIMPLE</span> : executorType;
+</span></span><span style=display:flex><span>    Executor executor;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (ExecutorType.<span style=color:#a6e22e>BATCH</span> <span style=color:#f92672>==</span> executorType) {
+</span></span><span style=display:flex><span>      executor <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> BatchExecutor(<span style=color:#66d9ef>this</span>, transaction);
+</span></span><span style=display:flex><span>    } <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (ExecutorType.<span style=color:#a6e22e>REUSE</span> <span style=color:#f92672>==</span> executorType) {
+</span></span><span style=display:flex><span>      executor <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> ReuseExecutor(<span style=color:#66d9ef>this</span>, transaction);
+</span></span><span style=display:flex><span>    } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>      executor <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> SimpleExecutor(<span style=color:#66d9ef>this</span>, transaction);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 如果允许缓存,会通过CachingExecutor去代理一层</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (cacheEnabled) {
+</span></span><span style=display:flex><span>      executor <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> CachingExecutor(executor);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 拦截器插件</span>
+</span></span><span style=display:flex><span>    executor <span style=color:#f92672>=</span> (Executor) interceptorChain.<span style=color:#a6e22e>pluginAll</span>(executor);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> executor;
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.executor.CachingExecutor#CachingExecutor</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#a6e22e>CachingExecutor</span>(Executor delegate) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>delegate</span> <span style=color:#f92672>=</span> delegate;
+</span></span><span style=display:flex><span>  delegate.<span style=color:#a6e22e>setExecutorWrapper</span>(<span style=color:#66d9ef>this</span>);
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h2 id=调用具体的api进行查询>调用具体的API进行查询<a href=#调用具体的api进行查询 class=hanchor arialabel=Anchor>&#8983;</a></h2><p>用<code>启动类</code>中的方法,对比可以发现两段代码不同之处为:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>Map map <span style=color:#f92672>=</span> sqlSession.<span style=color:#a6e22e>selectOne</span>(<span style=color:#e6db74>&#34;com.analyze.mybatis.mapper.UserMapper.getUA&#34;</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>UserMapper userMapper <span style=color:#f92672>=</span> sqlSession.<span style=color:#a6e22e>getMapper</span>(UserMapper.<span style=color:#a6e22e>class</span>);
+</span></span><span style=display:flex><span>Map map <span style=color:#f92672>=</span> userMapper.<span style=color:#a6e22e>getUA</span>();
+</span></span></code></pre></div><p>在查看<code>DefaultSqlSession</code>中的<code>selectOne</code>方法,会执行以下的调用链</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.session.defaults.DefaultSqlSession#selectOne(java.lang.String, java.lang.Object)</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#f92672>&lt;</span>T<span style=color:#f92672>&gt;</span> T <span style=color:#a6e22e>selectOne</span>(String statement, Object parameter) {
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// Popular vote was to return null on 0 results and throw exception on too many.</span>
+</span></span><span style=display:flex><span>  List<span style=color:#f92672>&lt;</span>T<span style=color:#f92672>&gt;</span> list <span style=color:#f92672>=</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>selectList</span>(statement, parameter);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> (list.<span style=color:#a6e22e>size</span>() <span style=color:#f92672>==</span> 1) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> list.<span style=color:#a6e22e>get</span>(0);
+</span></span><span style=display:flex><span>  } <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (list.<span style=color:#a6e22e>size</span>() <span style=color:#f92672>&gt;</span> 1) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> TooManyResultsException(<span style=color:#e6db74>&#34;Expected one result (or null) to be returned by selectOne(), but found: &#34;</span> <span style=color:#f92672>+</span> list.<span style=color:#a6e22e>size</span>());
+</span></span><span style=display:flex><span>  } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>null</span>;
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.session.defaults.DefaultSqlSession#selectList(java.lang.String, java.lang.Object)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// RowBounds 分页对象</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#f92672>&lt;</span>E<span style=color:#f92672>&gt;</span> List<span style=color:#f92672>&lt;</span>E<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>selectList</span>(String statement, Object parameter) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>selectList</span>(statement, parameter, RowBounds.<span style=color:#a6e22e>DEFAULT</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.session.defaults.DefaultSqlSession#selectList(java.lang.String, java.lang.Object, org.apache.ibatis.session.RowBounds)</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#f92672>&lt;</span>E<span style=color:#f92672>&gt;</span> List<span style=color:#f92672>&lt;</span>E<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>selectList</span>(String statement, Object parameter, RowBounds rowBounds) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 根据传入的statementId,获取mapperStatement对象</span>
+</span></span><span style=display:flex><span>    MappedStatement ms <span style=color:#f92672>=</span> configuration.<span style=color:#a6e22e>getMappedStatement</span>(statement);
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 调用执行器的方法</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> executor.<span style=color:#a6e22e>query</span>(ms, wrapCollection(parameter), rowBounds, Executor.<span style=color:#a6e22e>NO_RESULT_HANDLER</span>);
+</span></span><span style=display:flex><span>  } <span style=color:#66d9ef>catch</span> (Exception e) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>throw</span> ExceptionFactory.<span style=color:#a6e22e>wrapException</span>(<span style=color:#e6db74>&#34;Error querying database.  Cause: &#34;</span> <span style=color:#f92672>+</span> e, e);
+</span></span><span style=display:flex><span>  } <span style=color:#66d9ef>finally</span> {
+</span></span><span style=display:flex><span>    ErrorContext.<span style=color:#a6e22e>instance</span>().<span style=color:#a6e22e>reset</span>();
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.executor.CachingExecutor#query(org.apache.ibatis.mapping.MappedStatement, java.lang.Object, org.apache.ibatis.session.RowBounds, org.apache.ibatis.session.ResultHandler)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 注意这里是CachingExecutor,默认的</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#f92672>&lt;</span>E<span style=color:#f92672>&gt;</span> List<span style=color:#f92672>&lt;</span>E<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>query</span>(MappedStatement ms, Object parameterObject, RowBounds rowBounds, ResultHandler resultHandler) <span style=color:#66d9ef>throws</span> SQLException {
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// 获取带问号的sql语句,比如 select * from user_info where id = ?</span>
+</span></span><span style=display:flex><span>  BoundSql boundSql <span style=color:#f92672>=</span> ms.<span style=color:#a6e22e>getBoundSql</span>(parameterObject);
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// 生成缓存key</span>
+</span></span><span style=display:flex><span>  CacheKey key <span style=color:#f92672>=</span> createCacheKey(ms, parameterObject, rowBounds, boundSql);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> query(ms, parameterObject, rowBounds, resultHandler, key, boundSql);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.executor.CachingExecutor#query(org.apache.ibatis.mapping.MappedStatement, java.lang.Object, org.apache.ibatis.session.RowBounds, org.apache.ibatis.session.ResultHandler, org.apache.ibatis.cache.CacheKey, org.apache.ibatis.mapping.BoundSql)</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#f92672>&lt;</span>E<span style=color:#f92672>&gt;</span> List<span style=color:#f92672>&lt;</span>E<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>query</span>(MappedStatement ms, Object parameterObject, RowBounds rowBounds, ResultHandler resultHandler, CacheKey key, BoundSql boundSql)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>throws</span> SQLException {
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// 二级缓存</span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// usermapper的标签里可以设置&lt;Cache&gt;缓存标签</span>
+</span></span><span style=display:flex><span>  Cache cache <span style=color:#f92672>=</span> ms.<span style=color:#a6e22e>getCache</span>();
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> (cache <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 刷新二级缓存,在&lt;select&gt; 标签里可以配置flushcache</span>
+</span></span><span style=display:flex><span>    flushCacheIfRequired(ms);
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 在&lt;select&gt; 标签里可以配置usecache</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (ms.<span style=color:#a6e22e>isUseCache</span>() <span style=color:#f92672>&amp;&amp;</span> resultHandler <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span>) {
+</span></span><span style=display:flex><span>      <span style=color:#75715e>// 判断是不是存过</span>
+</span></span><span style=display:flex><span>      ensureNoOutParams(ms, boundSql);
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>@SuppressWarnings</span>(<span style=color:#e6db74>&#34;unchecked&#34;</span>)
+</span></span><span style=display:flex><span>      <span style=color:#75715e>// 从二级缓存中查询数据</span>
+</span></span><span style=display:flex><span>      List<span style=color:#f92672>&lt;</span>E<span style=color:#f92672>&gt;</span> list <span style=color:#f92672>=</span> (List<span style=color:#f92672>&lt;</span>E<span style=color:#f92672>&gt;</span>) tcm.<span style=color:#a6e22e>getObject</span>(cache, key);
+</span></span><span style=display:flex><span>      <span style=color:#75715e>// 如果从二级缓存没有查询到数据</span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> (list <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// 委托给BaseExecutor执行</span>
+</span></span><span style=display:flex><span>        list <span style=color:#f92672>=</span> delegate.<span style=color:#a6e22e>query</span>(ms, parameterObject, rowBounds, resultHandler, key, boundSql);
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// 将查询结果保存到二级缓存中,这里只是存到map集合中,没有真正存到二级缓存中</span>
+</span></span><span style=display:flex><span>        tcm.<span style=color:#a6e22e>putObject</span>(cache, key, list); <span style=color:#75715e>// issue #578 and #116</span>
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>return</span> list;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> delegate.<span style=color:#a6e22e>query</span>(ms, parameterObject, rowBounds, resultHandler, key, boundSql);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.executor.BaseExecutor#query(org.apache.ibatis.mapping.MappedStatement, java.lang.Object, org.apache.ibatis.session.RowBounds, org.apache.ibatis.session.ResultHandler, org.apache.ibatis.cache.CacheKey, org.apache.ibatis.mapping.BoundSql)</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#f92672>&lt;</span>E<span style=color:#f92672>&gt;</span> List<span style=color:#f92672>&lt;</span>E<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>query</span>(MappedStatement ms, Object parameter, RowBounds rowBounds, ResultHandler resultHandler, CacheKey key, BoundSql boundSql) <span style=color:#66d9ef>throws</span> SQLException {
+</span></span><span style=display:flex><span>  ErrorContext.<span style=color:#a6e22e>instance</span>().<span style=color:#a6e22e>resource</span>(ms.<span style=color:#a6e22e>getResource</span>()).<span style=color:#a6e22e>activity</span>(<span style=color:#e6db74>&#34;executing a query&#34;</span>).<span style=color:#a6e22e>object</span>(ms.<span style=color:#a6e22e>getId</span>());
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> (closed) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> ExecutorException(<span style=color:#e6db74>&#34;Executor was closed.&#34;</span>);
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// 如果配置了FlushCacheRequired为true,则会在执行器执行之前就清空本地一级缓存</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> (queryStack <span style=color:#f92672>==</span> 0 <span style=color:#f92672>&amp;&amp;</span> ms.<span style=color:#a6e22e>isFlushCacheRequired</span>()) {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 清空缓存</span>
+</span></span><span style=display:flex><span>    clearLocalCache();
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  List<span style=color:#f92672>&lt;</span>E<span style=color:#f92672>&gt;</span> list;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>    queryStack<span style=color:#f92672>++</span>;
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 从一级缓存中获取数据</span>
+</span></span><span style=display:flex><span>    list <span style=color:#f92672>=</span> resultHandler <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>?</span> (List<span style=color:#f92672>&lt;</span>E<span style=color:#f92672>&gt;</span>) localCache.<span style=color:#a6e22e>getObject</span>(key) : <span style=color:#66d9ef>null</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (list <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span>) {
+</span></span><span style=display:flex><span>      <span style=color:#75715e>// 如果有数据,则处理本地缓存结果给输出参数</span>
+</span></span><span style=display:flex><span>      <span style=color:#75715e>// 还是处理存过</span>
+</span></span><span style=display:flex><span>      handleLocallyCachedOutputParameters(ms, key, parameter, boundSql);
+</span></span><span style=display:flex><span>    } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>      <span style=color:#75715e>// 没有缓存结果,则从数据库查询结果</span>
+</span></span><span style=display:flex><span>      list <span style=color:#f92672>=</span> queryFromDatabase(ms, parameter, rowBounds, resultHandler, key, boundSql);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  } <span style=color:#66d9ef>finally</span> {
+</span></span><span style=display:flex><span>    queryStack<span style=color:#f92672>--</span>;
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> (queryStack <span style=color:#f92672>==</span> 0) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> (DeferredLoad deferredLoad : deferredLoads) {
+</span></span><span style=display:flex><span>      deferredLoad.<span style=color:#a6e22e>load</span>();
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// issue #601</span>
+</span></span><span style=display:flex><span>    deferredLoads.<span style=color:#a6e22e>clear</span>();
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (configuration.<span style=color:#a6e22e>getLocalCacheScope</span>() <span style=color:#f92672>==</span> LocalCacheScope.<span style=color:#a6e22e>STATEMENT</span>) {
+</span></span><span style=display:flex><span>      <span style=color:#75715e>// issue #482</span>
+</span></span><span style=display:flex><span>      clearLocalCache();
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> list;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.executor.BaseExecutor#queryFromDatabase</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>private</span> <span style=color:#f92672>&lt;</span>E<span style=color:#f92672>&gt;</span> List<span style=color:#f92672>&lt;</span>E<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>queryFromDatabase</span>(MappedStatement ms, Object parameter, RowBounds rowBounds, ResultHandler resultHandler, CacheKey key, BoundSql boundSql) <span style=color:#66d9ef>throws</span> SQLException {
+</span></span><span style=display:flex><span>  List<span style=color:#f92672>&lt;</span>E<span style=color:#f92672>&gt;</span> list;
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// 向本地缓存中存入一个ExecutionPlaceholder的枚举类占位</span>
+</span></span><span style=display:flex><span>  localCache.<span style=color:#a6e22e>putObject</span>(key, EXECUTION_PLACEHOLDER);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 执行查询</span>
+</span></span><span style=display:flex><span>    list <span style=color:#f92672>=</span> doQuery(ms, parameter, rowBounds, resultHandler, boundSql);
+</span></span><span style=display:flex><span>  } <span style=color:#66d9ef>finally</span> {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 执行玩移除这个key</span>
+</span></span><span style=display:flex><span>    localCache.<span style=color:#a6e22e>removeObject</span>(key);
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  localCache.<span style=color:#a6e22e>putObject</span>(key, list);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> (ms.<span style=color:#a6e22e>getStatementType</span>() <span style=color:#f92672>==</span> StatementType.<span style=color:#a6e22e>CALLABLE</span>) {
+</span></span><span style=display:flex><span>    localOutputParameterCache.<span style=color:#a6e22e>putObject</span>(key, parameter);
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> list;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.executor.SimpleExecutor#doQuery</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#f92672>&lt;</span>E<span style=color:#f92672>&gt;</span> List<span style=color:#f92672>&lt;</span>E<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>doQuery</span>(MappedStatement ms, Object parameter, RowBounds rowBounds, ResultHandler resultHandler, BoundSql boundSql) <span style=color:#66d9ef>throws</span> SQLException {
+</span></span><span style=display:flex><span>  Statement stmt <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 获取全局配置文件实例</span>
+</span></span><span style=display:flex><span>    Configuration configuration <span style=color:#f92672>=</span> ms.<span style=color:#a6e22e>getConfiguration</span>();
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// new一个statementHandler实例</span>
+</span></span><span style=display:flex><span>    StatementHandler handler <span style=color:#f92672>=</span> configuration.<span style=color:#a6e22e>newStatementHandler</span>(wrapper, ms, parameter, rowBounds, resultHandler, boundSql);
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 准备处理器,主要包括创建statement以及动态参数的设置</span>
+</span></span><span style=display:flex><span>    stmt <span style=color:#f92672>=</span> prepareStatement(handler, ms.<span style=color:#a6e22e>getStatementLog</span>());
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 执行真正的数据库操作调用</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> handler.<span style=color:#a6e22e>query</span>(stmt, resultHandler);
+</span></span><span style=display:flex><span>  } <span style=color:#66d9ef>finally</span> {
+</span></span><span style=display:flex><span>    closeStatement(stmt);
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.session.Configuration#newStatementHandler</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> StatementHandler <span style=color:#a6e22e>newStatementHandler</span>(Executor executor, MappedStatement mappedStatement, Object parameterObject, RowBounds rowBounds, ResultHandler resultHandler, BoundSql boundSql) {
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// 创建路由功能的StatementHanlder,根据MappedStatement中的StetementType</span>
+</span></span><span style=display:flex><span>  StatementHandler statementHandler <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> RoutingStatementHandler(executor, mappedStatement, parameterObject, rowBounds, resultHandler, boundSql);
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// 插件机制:对核心对象进行拦截</span>
+</span></span><span style=display:flex><span>  statementHandler <span style=color:#f92672>=</span> (StatementHandler) interceptorChain.<span style=color:#a6e22e>pluginAll</span>(statementHandler);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> statementHandler;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.executor.statement.RoutingStatementHandler#RoutingStatementHandler</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#a6e22e>RoutingStatementHandler</span>(Executor executor, MappedStatement ms, Object parameter, RowBounds rowBounds, ResultHandler resultHandler, BoundSql boundSql) {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>switch</span> (ms.<span style=color:#a6e22e>getStatementType</span>()) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>case</span> STATEMENT:
+</span></span><span style=display:flex><span>      delegate <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> SimpleStatementHandler(executor, ms, parameter, rowBounds, resultHandler, boundSql);
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>case</span> PREPARED:
+</span></span><span style=display:flex><span>      delegate <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> PreparedStatementHandler(executor, ms, parameter, rowBounds, resultHandler, boundSql);
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>case</span> CALLABLE:
+</span></span><span style=display:flex><span>      delegate <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> CallableStatementHandler(executor, ms, parameter, rowBounds, resultHandler, boundSql);
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>default</span>:
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> ExecutorException(<span style=color:#e6db74>&#34;Unknown statement type: &#34;</span> <span style=color:#f92672>+</span> ms.<span style=color:#a6e22e>getStatementType</span>());
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.executor.SimpleExecutor#prepareStatement</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>private</span> Statement <span style=color:#a6e22e>prepareStatement</span>(StatementHandler handler, Log statementLog){
+</span></span><span style=display:flex><span>  Statement stmt;
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// 获取代理后,增加日志功能的Connection对象</span>
+</span></span><span style=display:flex><span>  Connection connection <span style=color:#f92672>=</span> getConnection(statementLog);
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// 创建Statement对象</span>
+</span></span><span style=display:flex><span>  stmt <span style=color:#f92672>=</span> handler.<span style=color:#a6e22e>prepare</span>(connection, transaction.<span style=color:#a6e22e>getTimeout</span>());
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// 参数化处理</span>
+</span></span><span style=display:flex><span>  handler.<span style=color:#a6e22e>parameterize</span>(stmt);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> stmt;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.executor.statement.PreparedStatementHandler#query</span>
+</span></span><span style=display:flex><span> <span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#f92672>&lt;</span>E<span style=color:#f92672>&gt;</span> List<span style=color:#f92672>&lt;</span>E<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>query</span>(Statement statement, ResultHandler resultHandler) <span style=color:#66d9ef>throws</span> SQLException {
+</span></span><span style=display:flex><span>  PreparedStatement ps <span style=color:#f92672>=</span> (PreparedStatement) statement;
+</span></span><span style=display:flex><span>  ps.<span style=color:#a6e22e>execute</span>();
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> resultSetHandler.<span style=color:#a6e22e>handleResultSets</span>(ps);
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p><img src=https://image.runtimes.cc/202404051430956.png alt=image-20230816183741743></p><h2 id=解析结果>解析结果<a href=#解析结果 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.executor.resultset.DefaultResultSetHandler#handleResultSets</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> List<span style=color:#f92672>&lt;</span>Object<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>handleResultSets</span>(Statement stmt) <span style=color:#66d9ef>throws</span> SQLException {
+</span></span><span style=display:flex><span>  ErrorContext.<span style=color:#a6e22e>instance</span>().<span style=color:#a6e22e>activity</span>(<span style=color:#e6db74>&#34;handling results&#34;</span>).<span style=color:#a6e22e>object</span>(mappedStatement.<span style=color:#a6e22e>getId</span>());
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>final</span> List<span style=color:#f92672>&lt;</span>Object<span style=color:#f92672>&gt;</span> multipleResults <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> ArrayList<span style=color:#f92672>&lt;&gt;</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>int</span> resultSetCount <span style=color:#f92672>=</span> 0;
+</span></span><span style=display:flex><span>  ResultSetWrapper rsw <span style=color:#f92672>=</span> getFirstResultSet(stmt);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  List<span style=color:#f92672>&lt;</span>ResultMap<span style=color:#f92672>&gt;</span> resultMaps <span style=color:#f92672>=</span> mappedStatement.<span style=color:#a6e22e>getResultMaps</span>();
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>int</span> resultMapCount <span style=color:#f92672>=</span> resultMaps.<span style=color:#a6e22e>size</span>();
+</span></span><span style=display:flex><span>  validateResultMapsCount(rsw, resultMapCount);
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>while</span> (rsw <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>&amp;&amp;</span> resultMapCount <span style=color:#f92672>&gt;</span> resultSetCount) {
+</span></span><span style=display:flex><span>    ResultMap resultMap <span style=color:#f92672>=</span> resultMaps.<span style=color:#a6e22e>get</span>(resultSetCount);
+</span></span><span style=display:flex><span>    handleResultSet(rsw, resultMap, multipleResults, <span style=color:#66d9ef>null</span>);
+</span></span><span style=display:flex><span>    rsw <span style=color:#f92672>=</span> getNextResultSet(stmt);
+</span></span><span style=display:flex><span>    cleanUpAfterHandlingResultSet();
+</span></span><span style=display:flex><span>    resultSetCount<span style=color:#f92672>++</span>;
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  String<span style=color:#f92672>[]</span> resultSets <span style=color:#f92672>=</span> mappedStatement.<span style=color:#a6e22e>getResultSets</span>();
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> (resultSets <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>while</span> (rsw <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>&amp;&amp;</span> resultSetCount <span style=color:#f92672>&lt;</span> resultSets.<span style=color:#a6e22e>length</span>) {
+</span></span><span style=display:flex><span>      ResultMapping parentMapping <span style=color:#f92672>=</span> nextResultMaps.<span style=color:#a6e22e>get</span>(resultSets<span style=color:#f92672>[</span>resultSetCount<span style=color:#f92672>]</span>);
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> (parentMapping <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span>) {
+</span></span><span style=display:flex><span>        String nestedResultMapId <span style=color:#f92672>=</span> parentMapping.<span style=color:#a6e22e>getNestedResultMapId</span>();
+</span></span><span style=display:flex><span>        ResultMap resultMap <span style=color:#f92672>=</span> configuration.<span style=color:#a6e22e>getResultMap</span>(nestedResultMapId);
+</span></span><span style=display:flex><span>        handleResultSet(rsw, resultMap, <span style=color:#66d9ef>null</span>, parentMapping);
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>      rsw <span style=color:#f92672>=</span> getNextResultSet(stmt);
+</span></span><span style=display:flex><span>      cleanUpAfterHandlingResultSet();
+</span></span><span style=display:flex><span>      resultSetCount<span style=color:#f92672>++</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> collapseSingleResultList(multipleResults);
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h2 id=缓存>缓存<a href=#缓存 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.executor.CachingExecutor#createCacheKey</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// CacheKey重新了 hacode和equals方法</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> CacheKey <span style=color:#a6e22e>createCacheKey</span>(MappedStatement ms, Object parameterObject, RowBounds rowBounds, BoundSql boundSql) {
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// delegate 是具体类型的执行器的应用</span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// 默认是SimpleExecutor</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> delegate.<span style=color:#a6e22e>createCacheKey</span>(ms, parameterObject, rowBounds, boundSql);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// org.apache.ibatis.executor.BaseExecutor#createCacheKey</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> CacheKey <span style=color:#a6e22e>createCacheKey</span>(MappedStatement ms, Object parameterObject, RowBounds rowBounds, BoundSql boundSql) {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> (closed) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> ExecutorException(<span style=color:#e6db74>&#34;Executor was closed.&#34;</span>);
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// 通过构造器创建</span>
+</span></span><span style=display:flex><span>  CacheKey cacheKey <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> CacheKey();
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// id</span>
+</span></span><span style=display:flex><span>  cacheKey.<span style=color:#a6e22e>update</span>(ms.<span style=color:#a6e22e>getId</span>());
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// 分页参数</span>
+</span></span><span style=display:flex><span>  cacheKey.<span style=color:#a6e22e>update</span>(rowBounds.<span style=color:#a6e22e>getOffset</span>());
+</span></span><span style=display:flex><span>  cacheKey.<span style=color:#a6e22e>update</span>(rowBounds.<span style=color:#a6e22e>getLimit</span>());
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// sql</span>
+</span></span><span style=display:flex><span>  cacheKey.<span style=color:#a6e22e>update</span>(boundSql.<span style=color:#a6e22e>getSql</span>());
+</span></span><span style=display:flex><span>  List<span style=color:#f92672>&lt;</span>ParameterMapping<span style=color:#f92672>&gt;</span> parameterMappings <span style=color:#f92672>=</span> boundSql.<span style=color:#a6e22e>getParameterMappings</span>();
+</span></span><span style=display:flex><span>  TypeHandlerRegistry typeHandlerRegistry <span style=color:#f92672>=</span> ms.<span style=color:#a6e22e>getConfiguration</span>().<span style=color:#a6e22e>getTypeHandlerRegistry</span>();
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// mimic DefaultParameterHandler logic</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> (ParameterMapping parameterMapping : parameterMappings) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (parameterMapping.<span style=color:#a6e22e>getMode</span>() <span style=color:#f92672>!=</span> ParameterMode.<span style=color:#a6e22e>OUT</span>) {
+</span></span><span style=display:flex><span>      Object value;
+</span></span><span style=display:flex><span>      String propertyName <span style=color:#f92672>=</span> parameterMapping.<span style=color:#a6e22e>getProperty</span>();
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> (boundSql.<span style=color:#a6e22e>hasAdditionalParameter</span>(propertyName)) {
+</span></span><span style=display:flex><span>        value <span style=color:#f92672>=</span> boundSql.<span style=color:#a6e22e>getAdditionalParameter</span>(propertyName);
+</span></span><span style=display:flex><span>      } <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (parameterObject <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span>) {
+</span></span><span style=display:flex><span>        value <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>;
+</span></span><span style=display:flex><span>      } <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (typeHandlerRegistry.<span style=color:#a6e22e>hasTypeHandler</span>(parameterObject.<span style=color:#a6e22e>getClass</span>())) {
+</span></span><span style=display:flex><span>        value <span style=color:#f92672>=</span> parameterObject;
+</span></span><span style=display:flex><span>      } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>        MetaObject metaObject <span style=color:#f92672>=</span> configuration.<span style=color:#a6e22e>newMetaObject</span>(parameterObject);
+</span></span><span style=display:flex><span>        value <span style=color:#f92672>=</span> metaObject.<span style=color:#a6e22e>getValue</span>(propertyName);
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>      <span style=color:#75715e>// 参数的值</span>
+</span></span><span style=display:flex><span>      cacheKey.<span style=color:#a6e22e>update</span>(value);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> (configuration.<span style=color:#a6e22e>getEnvironment</span>() <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// issue #176</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 当前环境的值</span>
+</span></span><span style=display:flex><span>    cacheKey.<span style=color:#a6e22e>update</span>(configuration.<span style=color:#a6e22e>getEnvironment</span>().<span style=color:#a6e22e>getId</span>());
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> cacheKey;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h1 id=面试题>面试题<a href=#面试题 class=hanchor arialabel=Anchor>&#8983;</a></h1></div></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Read other posts</span><hr></div><div class=pagination__buttons><span class="button previous"><a href=https://connorzhangyu.com/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/mac/><span class=button__icon>←</span>
+<span class=button__text>Mac</span>
+</a></span><span class="button next"><a href=https://connorzhangyu.com/posts/mycat/><span class=button__text>Mycat</span>
+<span class=button__icon>→</span></a></span></div></div></article></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>
+<span>:: <a href=https://github.com/mirus-ua/hugo-theme-re-terminal target=_blank>Theme</a> made by <a href=https://github.com/mirus-ua target=_blank>Mirus</a></span></div></div></footer><script type=text/javascript src=/bundle.min.js></script></div></body></html>

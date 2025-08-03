@@ -1,67 +1,49 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on Hello World</title><link>https://connorzhangyu.com/tags/python/</link><description>Recent content in Python on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Sat, 19 Nov 2022 18:25:00 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>Python</title><link>https://connorzhangyu.com/posts/python/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/python/</guid><description>&lt;h1 id="安装">安装&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on Hello World</title><link>https://connorzhangyu.com/tags/python/</link><description>Recent content in Python on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sat, 19 Nov 2022 18:25:00 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>Python</title><link>https://connorzhangyu.com/posts/python/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/python/</guid><description>&lt;h1 id="安装">安装&lt;/h1>
 &lt;h1 id="虚拟环境">虚拟环境&lt;/h1>
 &lt;pre tabindex="0">&lt;code># 判断有没有虚拟环境
 virtualenv -V
-
 # 安装虚拟环境
 # 需要sudo
 pip install virtualenv
 pip install virtualenvwrapper
-
 # 查看有多少虚拟环境的文件夹
 workon
-
 # 创建虚拟环境文件夹
 mkvirtualenv 文件夹名字
-
 # 从虚拟文件夹退出
 deactiave
-
 # 进入虚拟环境中
 workon 虚拟环境名称
-
 # 删除虚拟环境
 rmvirutalenv
-
 # 查看虚拟环境有哪些框架,要在虚拟环境中执行
 pip freeze
-
 # 安装软件指定版本,要在虚拟环境中执行
 pip install flask==10.0.0.0
-
 # 导出虚拟环境中的所有扩展,要在虚拟环境中执行
 pip freeze &amp;gt; requirements.txt
-
 # 安装,要在虚拟环境中执行
 pip install -r requirements.txt
 &lt;/code>&lt;/pre>&lt;h1 id="centos7安装python3">centos7安装python3&lt;/h1>
 &lt;p>特别是在喜欢环境中已经安装的python2.x的版本中&lt;/p>
 &lt;pre tabindex="0">&lt;code># 这个可能不一定要装
 sudo yum -y groupinstall &amp;#34;Development tools&amp;#34;
-
 # 需要的
 sudo yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel libffi-devel
-
 # 下载安装包
 wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0a1.tar.xz
-
 # 解压
 tar -xvxf Python-3.7.0a1.tar.xz
-
 # 复制文件夹
 mv Python-3.7.0 /usr/local
-
 # 进入到文件夹
 cd /usr/local/Python-3.7.0/
-
 # 编译,一定需要后面的参数
 ./configure --prefix=/usr/local/bin/python3
 make &amp;amp; make install
-
 # 添加软连接
 ln -s /usr/local/bin/python3/bin/python3 /usr/bin/python3
 ln -s /usr/local/bin/python3/bin/pip3 /usr/bin/pip3
-
 # 验证
 python3
 pip3
@@ -77,4 +59,1669 @@ pip3
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#34;&amp;#34;&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#e6db74">&amp;#34;这是多行注释&amp;#34;&lt;/span>)
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="2算数运算符">2.算数运算符&lt;/h1>
-&lt;p>乘法的使用,用&lt;code>*&lt;/code>可以拼接字符串&lt;/p></description></item></channel></rss>
+&lt;p>乘法的使用,用&lt;code>*&lt;/code>可以拼接字符串&lt;/p></description><content>&lt;h1 id="安装">安装&lt;/h1>
+&lt;h1 id="虚拟环境">虚拟环境&lt;/h1>
+&lt;pre tabindex="0">&lt;code># 判断有没有虚拟环境
+virtualenv -V
+# 安装虚拟环境
+# 需要sudo
+pip install virtualenv
+pip install virtualenvwrapper
+# 查看有多少虚拟环境的文件夹
+workon
+# 创建虚拟环境文件夹
+mkvirtualenv 文件夹名字
+# 从虚拟文件夹退出
+deactiave
+# 进入虚拟环境中
+workon 虚拟环境名称
+# 删除虚拟环境
+rmvirutalenv
+# 查看虚拟环境有哪些框架,要在虚拟环境中执行
+pip freeze
+# 安装软件指定版本,要在虚拟环境中执行
+pip install flask==10.0.0.0
+# 导出虚拟环境中的所有扩展,要在虚拟环境中执行
+pip freeze &amp;gt; requirements.txt
+# 安装,要在虚拟环境中执行
+pip install -r requirements.txt
+&lt;/code>&lt;/pre>&lt;h1 id="centos7安装python3">centos7安装python3&lt;/h1>
+&lt;p>特别是在喜欢环境中已经安装的python2.x的版本中&lt;/p>
+&lt;pre tabindex="0">&lt;code># 这个可能不一定要装
+sudo yum -y groupinstall &amp;#34;Development tools&amp;#34;
+# 需要的
+sudo yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel libffi-devel
+# 下载安装包
+wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0a1.tar.xz
+# 解压
+tar -xvxf Python-3.7.0a1.tar.xz
+# 复制文件夹
+mv Python-3.7.0 /usr/local
+# 进入到文件夹
+cd /usr/local/Python-3.7.0/
+# 编译,一定需要后面的参数
+./configure --prefix=/usr/local/bin/python3
+make &amp;amp; make install
+# 添加软连接
+ln -s /usr/local/bin/python3/bin/python3 /usr/bin/python3
+ln -s /usr/local/bin/python3/bin/pip3 /usr/bin/pip3
+# 验证
+python3
+pip3
+&lt;/code>&lt;/pre>&lt;h1 id="基础">基础&lt;/h1>
+&lt;h1 id="1注释">1.注释&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 注释后面需要一个空格&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#e6db74">&amp;#34;单行注释&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#e6db74">&amp;#34;单行注释&amp;#34;&lt;/span>) &lt;span style="color:#75715e"># 单行注释和代码之间至少要有两个空格&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#34;&amp;#34;&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">多行注释
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#e6db74">&amp;#34;这是多行注释&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="2算数运算符">2.算数运算符&lt;/h1>
+&lt;p>乘法的使用,用&lt;code>*&lt;/code>可以拼接字符串&lt;/p>
+&lt;pre tabindex="0">&lt;code>In [1]: &amp;#34;A&amp;#34; * 30
+Out[1]: &amp;#39;AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA&amp;#39;
+In [2]: 1 * 30
+Out[2]: 30
+&lt;/code>&lt;/pre>&lt;p>优先级&lt;/p>
+&lt;p>&lt;code>幂&lt;/code> &amp;gt;&lt;code>*&lt;/code> &amp;gt; &lt;code>/&lt;/code>  &amp;gt; &lt;code>%&lt;/code> &amp;gt; &lt;code>//&lt;/code> &amp;gt;&lt;code>+&lt;/code> &amp;gt; &lt;code>-&lt;/code>&lt;/p>
+&lt;h1 id="3变量">3.变量&lt;/h1>
+&lt;h3 id="31变量的类型">3.1.变量的类型&lt;/h3>
+&lt;p>数字型&lt;/p>
+&lt;ul>
+&lt;li>整数 int&lt;/li>
+&lt;li>浮点 float(&lt;code>计算要小心&lt;/code>)&lt;/li>
+&lt;li>布尔
+&lt;ul>
+&lt;li>布尔值可以用 &lt;code>and&lt;/code>、&lt;code>or&lt;/code> 和 &lt;code>not&lt;/code> 运算&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>复数(用于科学技术的)&lt;/li>
+&lt;/ul>
+&lt;p>非数字型&lt;/p>
+&lt;ul>
+&lt;li>String（字符串）&lt;/li>
+&lt;li>List（列表）&lt;/li>
+&lt;li>Tuple（元组）&lt;/li>
+&lt;li>Dictionary（字典）&lt;/li>
+&lt;/ul>
+&lt;h3 id="32type函数">3.2.type函数&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 整数&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(type(&lt;span style="color:#ae81ff">1&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 浮点数&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(type(&lt;span style="color:#ae81ff">1.5&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 字符串&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(type(&lt;span style="color:#e6db74">&amp;#34;hello world&amp;#34;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 空值&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(type(&lt;span style="color:#66d9ef">None&lt;/span>))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="33不同类型的变量之间的计算">3.3.不同类型的变量之间的计算&lt;/h3>
+&lt;pre tabindex="0">&lt;code>In [10]: age =13
+In [11]: sex =True
+In [12]: height = 180.1
+In [13]: age + sex
+Out[13]: 14
+In [14]: age + height
+Out[14]: 193.1
+In [15]: age + height
+Out[15]: 193.1
+# 字符串的拼接
+In [17]: first_name =&amp;#34;东尼&amp;#34;
+In [18]: last_name=&amp;#34;安&amp;#34;
+In [19]: last_name+first_name
+Out[19]: &amp;#39;安东尼&amp;#39;
+# 字符串不能和数字相加
+In [20]: last_name + 10
+---------------------------------------------------------------------------
+TypeError Traceback (most recent call last)
+&amp;lt;ipython-input-20-45feb354f2d0&amp;gt; in &amp;lt;module&amp;gt;
+----&amp;gt; 1 last_name + 10
+TypeError: can only concatenate str (not &amp;#34;int&amp;#34;) to str
+&lt;/code>&lt;/pre>&lt;h3 id="34变量的输入">3.4.变量的输入&lt;/h3>
+&lt;pre tabindex="0">&lt;code># 可以不需要参数
+In [24]: input()
+123
+# 加参数,做提示
+In [27]: pwd = input(&amp;#34;输入数字&amp;#34;)
+输入数字123
+In [28]: pwd + &amp;#34;456&amp;#34;
+Out[28]: &amp;#39;123456&amp;#39;
+&lt;/code>&lt;/pre>&lt;h3 id="35数据类型转换">3.5.数据类型转换&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>方法名&lt;/th>
+&lt;th>含义&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>str()&lt;/td>
+&lt;td>转成字符串&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>float()&lt;/td>
+&lt;td>转成浮点&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>int()&lt;/td>
+&lt;td>转成int&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;pre tabindex="0">&lt;code># 数字和字符串相互转
+In [3]: age = 23
+In [4]: type(age)
+Out[4]: int
+In [5]: age_str = str(age)
+In [6]: type(age_str)
+Out[6]: str
+In [7]: type(int(age_str))
+Out[7]: int
+# 浮点转数值,缺失精度
+In [9]: pi = &amp;#34;3.14&amp;#34;
+In [10]: pi
+Out[10]: &amp;#39;3.14&amp;#39;
+In [13]: type(float(pi))
+Out[13]: float
+In [15]: int(float(pi))
+Out[15]: 3
+&lt;/code>&lt;/pre>&lt;h3 id="36变量的格式化输出">3.6.变量的格式化输出&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>符号&lt;/th>
+&lt;th>描述&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>%c&lt;/td>
+&lt;td>格式化字符(输出数值对应的ASCII码)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>%s&lt;/td>
+&lt;td>格式化字符串&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>%d&lt;/td>
+&lt;td>格式化整数(%06d,不足的补0)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>%x&lt;/td>
+&lt;td>格式化十六进制数（小写）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>%X&lt;/td>
+&lt;td>格式化十六进制数（大写）&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>%o&lt;/td>
+&lt;td>格式化八进制数&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>%f&lt;/td>
+&lt;td>格式化浮点数字，可以指定小数点精度(%.2f)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>%%&lt;/td>
+&lt;td>输出%号&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#34;&amp;#34;&amp;#34;&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">我的名字是:anthony,请多多关照
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">我的学号是:000001,请多多关照
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">单价是:1.00,购买了2.00斤,总价是:2.000
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">数据的比例是:20%
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#e6db74">&amp;#34;我的名字是:&lt;/span>&lt;span style="color:#e6db74">%s&lt;/span>&lt;span style="color:#e6db74">,请多多关照&amp;#34;&lt;/span> &lt;span style="color:#f92672">%&lt;/span> &lt;span style="color:#e6db74">&amp;#34;anthony&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#e6db74">&amp;#34;我的学号是:&lt;/span>&lt;span style="color:#e6db74">%06d&lt;/span>&lt;span style="color:#e6db74">,请多多关照&amp;#34;&lt;/span> &lt;span style="color:#f92672">%&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#e6db74">&amp;#34;单价是:&lt;/span>&lt;span style="color:#e6db74">%.2f&lt;/span>&lt;span style="color:#e6db74">,购买了&lt;/span>&lt;span style="color:#e6db74">%.2f&lt;/span>&lt;span style="color:#e6db74">斤,总价是:&lt;/span>&lt;span style="color:#e6db74">%.3f&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span> &lt;span style="color:#f92672">%&lt;/span> (&lt;span style="color:#ae81ff">1&lt;/span>,&lt;span style="color:#ae81ff">2&lt;/span>,&lt;span style="color:#ae81ff">2&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#e6db74">&amp;#34;数据的比例是:&lt;/span>&lt;span style="color:#e6db74">%02d%%&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span> &lt;span style="color:#f92672">%&lt;/span> &lt;span style="color:#ae81ff">20&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="37变量的命名">3.7.变量的命名&lt;/h3>
+&lt;ol>
+&lt;li>字母,和下划线和数字组成&lt;/li>
+&lt;li>不能以数字开始&lt;/li>
+&lt;li>不能与关键字重名&lt;/li>
+&lt;li>其余的符号都不行&lt;/li>
+&lt;li>区分大小写&lt;/li>
+&lt;li>&lt;code>=&lt;/code>左右都要添加空格&lt;/li>
+&lt;li>两个单词之间用&lt;code>_&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;h1 id="4条件控制">4.条件控制&lt;/h1>
+&lt;h3 id="41if">4.1.if&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>age &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">15&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> age &lt;span style="color:#f92672">&amp;gt;=&lt;/span> &lt;span style="color:#ae81ff">18&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;成年了&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;在一个缩进的,是一个代码块&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">elif&lt;/span> age&lt;span style="color:#f92672">&amp;lt;=&lt;/span>&lt;span style="color:#ae81ff">18&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;没有成年&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;输入错误&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#e6db74">&amp;#34;结束了&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="42逻辑运算符">4.2.逻辑运算符&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#66d9ef">True&lt;/span> &lt;span style="color:#f92672">and&lt;/span> &lt;span style="color:#66d9ef">False&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#66d9ef">True&lt;/span> &lt;span style="color:#f92672">or&lt;/span> &lt;span style="color:#66d9ef">False&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#f92672">not&lt;/span> &lt;span style="color:#66d9ef">True&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="43随机数">4.3.随机数&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>In [&lt;span style="color:#ae81ff">17&lt;/span>]: &lt;span style="color:#f92672">import&lt;/span> random
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>In [&lt;span style="color:#ae81ff">18&lt;/span>]: random&lt;span style="color:#f92672">.&lt;/span>randint(&lt;span style="color:#ae81ff">12&lt;/span>,&lt;span style="color:#ae81ff">20&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Out[&lt;span style="color:#ae81ff">18&lt;/span>]: &lt;span style="color:#ae81ff">12&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="43while">4.3.while&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>i &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">while&lt;/span> i &lt;span style="color:#f92672">&amp;lt;&lt;/span> &lt;span style="color:#ae81ff">5&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;....&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#f92672">+=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="44continue-和-break">4.4.continue 和 break&lt;/h3>
+&lt;p>如果是嵌套循环,用这个两个关键字,也只是结束当前的循环,不会影响外层的循环&lt;/p>
+&lt;h1 id="5函数">5.函数&lt;/h1>
+&lt;h3 id="51函数注释">5.1.函数注释&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 这个也是可以注释的&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">test&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&amp;#34;这个也是可以注释的&amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;打印乘法表&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="52函数调用">5.2.函数调用&lt;/h3>
+&lt;p>index.py&lt;/p>
+&lt;pre tabindex="0">&lt;code>def chengfabiao():
+print(&amp;#34;打印乘法表&amp;#34;)
+&lt;/code>&lt;/pre>&lt;p>test.py&lt;/p>
+&lt;pre tabindex="0">&lt;code>import index
+index.chengfabiao()
+&lt;/code>&lt;/pre>&lt;h3 id="53局部方法修改全局变量">5.3.局部方法修改全局变量&lt;/h3>
+&lt;pre tabindex="0">&lt;code>num =10
+def mo():
+# 声明num是全部变量
+global num
+num=100
+print(num)
+mo()
+print(num)
+&lt;/code>&lt;/pre>&lt;h3 id="54多个返回值">5.4.多个返回值&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">change&lt;/span>(x,y):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> y,x
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>x &lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>y&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>x,y &lt;span style="color:#f92672">=&lt;/span> change(&lt;span style="color:#ae81ff">1&lt;/span>,&lt;span style="color:#ae81ff">2&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(x)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(y)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="55缺省函数">5.5.缺省函数&lt;/h3>
+&lt;pre tabindex="0">&lt;code>def measure(age,gender=1):
+print(age)
+print(gender)
+def measure2(age,gender=1,name=&amp;#34;anthony&amp;#34;):
+print(age)
+print(gender)
+print(name)
+measure(1)
+measure(1,2)
+# 有多个缺省的时候,需要指定参数名称
+measure2(1,name=&amp;#34;anthonyyang&amp;#34;,gender=2)
+# 拆包
+measure(1,*(2,3,4),**{&amp;#34;name&amp;#34;:&amp;#34;anthony&amp;#34;})
+&lt;/code>&lt;/pre>&lt;h3 id="56多值参数">5.6.多值参数&lt;/h3>
+&lt;p>习惯存元祖的使用用&lt;code>*args&lt;/code>,存字典的时候用&lt;code>**args&lt;/code>&lt;/p>
+&lt;h3 id="57函数的参数-默认参数">5.7.函数的参数-默认参数&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">my_print&lt;/span>(name,age):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(name,age)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">my_print2&lt;/span>(name,age&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">13&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(name,age)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 有默认值的形参,不能放在前面,会报错&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># def my_print3(age=13,name):&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># print(name,age)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>my_print(&lt;span style="color:#e6db74">&amp;#34;anthony&amp;#34;&lt;/span>,&lt;span style="color:#ae81ff">12&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>my_print2(&lt;span style="color:#e6db74">&amp;#34;anthony2&amp;#34;&lt;/span>,&lt;span style="color:#ae81ff">123&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>my_print2(&lt;span style="color:#e6db74">&amp;#34;anthony2&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="58函数的参数-关键字参数">5.8.函数的参数-关键字参数&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">my_print&lt;/span>(name,address):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(name,address)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>my_print(&lt;span style="color:#e6db74">&amp;#34;anthony&amp;#34;&lt;/span>,&lt;span style="color:#e6db74">&amp;#34;广东&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>my_print(&lt;span style="color:#e6db74">&amp;#34;广东&amp;#34;&lt;/span>,&lt;span style="color:#e6db74">&amp;#34;anthony&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>my_print(name&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;anthony&amp;#34;&lt;/span>,address&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;广东&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>my_print(address&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;广东&amp;#34;&lt;/span>,name&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;anthony&amp;#34;&lt;/span>,)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># ----------------**kw是关键字参数，且 hobby 就是一个 dict （字典）-------------&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">my_print2&lt;/span>(name,address,&lt;span style="color:#f92672">**&lt;/span>kw):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#e6db74">&amp;#39;age&amp;#39;&lt;/span> &lt;span style="color:#f92672">in&lt;/span> kw:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;age=&amp;#34;&lt;/span>,kw[&lt;span style="color:#e6db74">&amp;#34;age&amp;#34;&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>my_print2(&lt;span style="color:#e6db74">&amp;#34;anthony&amp;#34;&lt;/span>,&lt;span style="color:#e6db74">&amp;#34;广东&amp;#34;&lt;/span>,age&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">123&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>my_print2(&lt;span style="color:#e6db74">&amp;#34;anthony&amp;#34;&lt;/span>,&lt;span style="color:#e6db74">&amp;#34;广东&amp;#34;&lt;/span>,kw&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#e6db74">&amp;#34;age&amp;#34;&lt;/span>:&lt;span style="color:#ae81ff">123&lt;/span>})
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="58函数的参数-只接受关键字参数">5.8.函数的参数-&lt;strong>只接受关键字参数&lt;/strong>&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">my_print&lt;/span>(name,&lt;span style="color:#f92672">*&lt;/span>,address):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(name,address)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 报错&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># my_print(&amp;#34;anthony&amp;#34;,&amp;#34;广东&amp;#34;)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># my_print(&amp;#34;广东&amp;#34;,&amp;#34;anthony&amp;#34;)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>my_print(&lt;span style="color:#e6db74">&amp;#34;anthony&amp;#34;&lt;/span>,address&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;广东&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>my_print(address&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;广东&amp;#34;&lt;/span>,name&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;anthony&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="58函数的参数-不定长参数">5.8.函数的参数-&lt;strong>不定长参数&lt;/strong>&lt;/h3>
+&lt;p>&lt;code>hobby&lt;/code>是可变参数，且 hobby 其实就是一个 tuple （元祖)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">print_user_info&lt;/span>( name , age , sex &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;男&amp;#39;&lt;/span> , &lt;span style="color:#f92672">*&lt;/span> hobby):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 打印用户信息&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#39;昵称：&lt;/span>&lt;span style="color:#e6db74">{}&lt;/span>&lt;span style="color:#e6db74">&amp;#39;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>format(name) , end &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39; &amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#39;年龄：&lt;/span>&lt;span style="color:#e6db74">{}&lt;/span>&lt;span style="color:#e6db74">&amp;#39;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>format(age) , end &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39; &amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#39;性别：&lt;/span>&lt;span style="color:#e6db74">{}&lt;/span>&lt;span style="color:#e6db74">&amp;#39;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>format(sex) ,end &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39; &amp;#39;&lt;/span> )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#39;爱好：&lt;/span>&lt;span style="color:#e6db74">{}&lt;/span>&lt;span style="color:#e6db74">&amp;#39;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>format(hobby))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 调用 print_user_info 函数&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print_user_info( &lt;span style="color:#e6db74">&amp;#39;两点水&amp;#39;&lt;/span> ,&lt;span style="color:#ae81ff">18&lt;/span> , &lt;span style="color:#e6db74">&amp;#39;女&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;打篮球&amp;#39;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;打羽毛球&amp;#39;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;跑步&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="6容器">6.容器&lt;/h1>
+&lt;h3 id="61列表">6.1.列表&lt;/h3>
+&lt;p>虽然列表可以存储不同类型的数据,但是在开发中,存储的都是相同类型数据,因为要迭代&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>mylist&lt;span style="color:#f92672">=&lt;/span>[&lt;span style="color:#e6db74">&amp;#34;a&amp;#34;&lt;/span>,&lt;span style="color:#e6db74">&amp;#34;b&amp;#34;&lt;/span>,&lt;span style="color:#e6db74">&amp;#34;c&amp;#34;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(mylist)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 通过索引,访问列表中的值&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(mylist[&lt;span style="color:#ae81ff">1&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 通过方括号的形式来截取列表中的数据,访问列表中的值&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 就是从第 0 个开始取，取到第 2 个，但是不包含第 2 个&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(mylist[&lt;span style="color:#ae81ff">0&lt;/span>:&lt;span style="color:#ae81ff">2&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 通过索引对列表的数据项进行修改或更新&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mylist[&lt;span style="color:#ae81ff">1&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;bb&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(mylist)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 使用 append() 方法来添加列表项&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mylist&lt;span style="color:#f92672">.&lt;/span>append(&lt;span style="color:#e6db74">&amp;#34;d&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(mylist)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 使用 del 语句来删除列表的的元素&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">del&lt;/span> mylist[&lt;span style="color:#ae81ff">3&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(mylist)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 列表长度&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(len(mylist))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="62元祖">6.2.元祖&lt;/h3>
+&lt;p>元祖用的是括号&lt;/p>
+&lt;p>与列表比较,元祖元素不能修改&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 创建元祖方法1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tuple1&lt;span style="color:#f92672">=&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;两点水&amp;#39;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;twowter&amp;#39;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;liangdianshui&amp;#39;&lt;/span>,&lt;span style="color:#ae81ff">123&lt;/span>,&lt;span style="color:#ae81ff">456&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tuple2&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;两点水&amp;#39;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;twowter&amp;#39;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;liangdianshui&amp;#39;&lt;/span>,&lt;span style="color:#ae81ff">123&lt;/span>,&lt;span style="color:#ae81ff">456&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 创建元祖方法2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tuple3 &lt;span style="color:#f92672">=&lt;/span> ()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 创建元祖方法3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tuple4 &lt;span style="color:#f92672">=&lt;/span> (&lt;span style="color:#ae81ff">123&lt;/span>,)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(tuple1)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(tuple2)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(tuple3)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(tuple4)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 访问元祖&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(tuple1[&lt;span style="color:#ae81ff">1&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 修改元祖的值&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mylist&lt;span style="color:#f92672">=&lt;/span>[&lt;span style="color:#ae81ff">1&lt;/span>,&lt;span style="color:#ae81ff">2&lt;/span>,&lt;span style="color:#ae81ff">3&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tuple5&lt;span style="color:#f92672">=&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;ddd&amp;#34;&lt;/span>,mylist)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(tuple5)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mylist[&lt;span style="color:#ae81ff">1&lt;/span>]&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">43&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(tuple5)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 删除元祖,tuple 元组中的元素值是不允许删除的，但我们可以使用 del 语句来删除整个元组&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">del&lt;/span> tuple1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>元祖和列表相互转换&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 声明元祖&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>In [&lt;span style="color:#ae81ff">54&lt;/span>]: num_list &lt;span style="color:#f92672">=&lt;/span> (&lt;span style="color:#ae81ff">1&lt;/span>,&lt;span style="color:#ae81ff">2&lt;/span>,&lt;span style="color:#ae81ff">3&lt;/span>,&lt;span style="color:#ae81ff">4&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>In [&lt;span style="color:#ae81ff">55&lt;/span>]: type(num_list)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Out[&lt;span style="color:#ae81ff">55&lt;/span>]: tuple
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 元祖转成列表&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>In [&lt;span style="color:#ae81ff">56&lt;/span>]: my_list &lt;span style="color:#f92672">=&lt;/span> list(num_list)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 修改值&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>In [&lt;span style="color:#ae81ff">57&lt;/span>]: my_list[&lt;span style="color:#ae81ff">0&lt;/span>]&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 再转成元祖&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>In [&lt;span style="color:#ae81ff">58&lt;/span>]: print(tuple(my_list))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#ae81ff">5&lt;/span>, &lt;span style="color:#ae81ff">2&lt;/span>, &lt;span style="color:#ae81ff">3&lt;/span>, &lt;span style="color:#ae81ff">4&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="62字典">6.2.字典&lt;/h3>
+&lt;p>列表是有序的&lt;/p>
+&lt;p>字典是无序的&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>names&lt;span style="color:#f92672">=&lt;/span>{&lt;span style="color:#e6db74">&amp;#34;name&amp;#34;&lt;/span>:&lt;span style="color:#e6db74">&amp;#34;xiaoming&amp;#34;&lt;/span>,&lt;span style="color:#e6db74">&amp;#34;age&amp;#34;&lt;/span>:&lt;span style="color:#e6db74">&amp;#34;23&amp;#34;&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 取值&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(names[&lt;span style="color:#e6db74">&amp;#34;name&amp;#34;&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 新增和修改(key存在,就是新增,不存在就是修改)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>names[&lt;span style="color:#e6db74">&amp;#34;address&amp;#34;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;feilvb&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>names[&lt;span style="color:#e6db74">&amp;#34;name&amp;#34;&lt;/span>] &lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;anthony123&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(names)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 删除&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>names&lt;span style="color:#f92672">.&lt;/span>pop(&lt;span style="color:#e6db74">&amp;#34;name&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(names)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 统计键值对的数量&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(len(names))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 合并键值对,如果合并的时候有相同的key,那个value就是更新值&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>temp &lt;span style="color:#f92672">=&lt;/span> {&lt;span style="color:#e6db74">&amp;#34;a&amp;#34;&lt;/span>:&lt;span style="color:#e6db74">&amp;#34;b&amp;#34;&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>names&lt;span style="color:#f92672">.&lt;/span>update(temp)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(names)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 遍历字典&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> k &lt;span style="color:#f92672">in&lt;/span> names:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;遍历&amp;#34;&lt;/span>,k,names[k])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 清空字典&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>names&lt;span style="color:#f92672">.&lt;/span>clear()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="63set">6.3.set&lt;/h3>
+&lt;p>set可以理解为只有key的字典&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 创建set&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>set1 &lt;span style="color:#f92672">=&lt;/span> set([&lt;span style="color:#ae81ff">1&lt;/span>,&lt;span style="color:#ae81ff">2&lt;/span>,&lt;span style="color:#ae81ff">3&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 添加元素&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>set1&lt;span style="color:#f92672">.&lt;/span>add(&lt;span style="color:#ae81ff">200&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 删除元素&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>set1&lt;span style="color:#f92672">.&lt;/span>remove(&lt;span style="color:#ae81ff">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="64字符串">6.4.字符串&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>str &lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;hello hello&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#e6db74">&amp;#34;字符串长度&amp;#34;&lt;/span>,len(str))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#e6db74">&amp;#34;字符串出现次数&amp;#34;&lt;/span>,str&lt;span style="color:#f92672">.&lt;/span>count(&lt;span style="color:#e6db74">&amp;#34;llo&amp;#34;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#e6db74">&amp;#34;取索引&amp;#34;&lt;/span>,str&lt;span style="color:#f92672">.&lt;/span>index(&lt;span style="color:#e6db74">&amp;#34;llo&amp;#34;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#e6db74">&amp;#34;取值&amp;#34;&lt;/span>,str[&lt;span style="color:#ae81ff">1&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 换行符,都是空白字符&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#e6db74">&amp;#34;判断空白字符&amp;#34;&lt;/span>,str&lt;span style="color:#f92672">.&lt;/span>isspace())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#e6db74">&amp;#34;是否以指定字符串开始&amp;#34;&lt;/span>,str&lt;span style="color:#f92672">.&lt;/span>startswith(&lt;span style="color:#e6db74">&amp;#34;hello&amp;#34;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#e6db74">&amp;#34;是否以指定字符串结束&amp;#34;&lt;/span>,str&lt;span style="color:#f92672">.&lt;/span>endswith(&lt;span style="color:#e6db74">&amp;#34;LLO&amp;#34;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#e6db74">&amp;#34;查找指定字符串&amp;#34;&lt;/span>,str&lt;span style="color:#f92672">.&lt;/span>find(&lt;span style="color:#e6db74">&amp;#34;llo&amp;#34;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#e6db74">&amp;#34;替换字符串&amp;#34;&lt;/span>,str&lt;span style="color:#f92672">.&lt;/span>replace(&lt;span style="color:#e6db74">&amp;#34;hello&amp;#34;&lt;/span>,&lt;span style="color:#e6db74">&amp;#34;HELLO&amp;#34;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(str[&lt;span style="color:#ae81ff">0&lt;/span>:&lt;span style="color:#ae81ff">9&lt;/span>:&lt;span style="color:#ae81ff">2&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># bytes转字符串&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(&lt;span style="color:#e6db74">b&lt;/span>&lt;span style="color:#e6db74">&amp;#34;abcde&amp;#34;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>decode(&lt;span style="color:#e6db74">&amp;#34;utf-8&amp;#34;&lt;/span>))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>字符串前加 b:b 前缀代表的就是bytes&lt;/p>
+&lt;p>字符串前加 r:r/R:非转义的原始字符串&lt;/p>
+&lt;h1 id="7公共方法">7.公共方法&lt;/h1>
+&lt;ol>
+&lt;li>内置函数:&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>len&lt;/li>
+&lt;li>max 只能比较字典的key&lt;/li>
+&lt;li>min 只能比较字典的key&lt;/li>
+&lt;/ul>
+&lt;p>2.字符串,列表,元祖都可以切片&lt;/p>
+&lt;p>3.查看地址值&lt;/p>
+&lt;pre tabindex="0">&lt;code>id(str)
+&lt;/code>&lt;/pre>&lt;h1 id="面向对象">面向对象&lt;/h1>
+&lt;p>类名需要大驼峰命名法&lt;/p>
+&lt;h1 id="1基本语法">1.基本语法&lt;/h1>
+&lt;h3 id="11创建对象">1.1.创建对象&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Cat&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">eat&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;小猫爱吃鱼&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">drink&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;小猫爱喝水&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tom &lt;span style="color:#f92672">=&lt;/span> Cat()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tom&lt;span style="color:#f92672">.&lt;/span>eat()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tom&lt;span style="color:#f92672">.&lt;/span>drink()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="12对象内置方法魔术方法">1.2.对象内置方法(魔术方法)&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Cat&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 构造方法&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">__init__&lt;/span>(self,name):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;初始化方法&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>name&lt;span style="color:#f92672">=&lt;/span>name
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 成员方法&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">eat&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(self&lt;span style="color:#f92672">.&lt;/span>name&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#e6db74">&amp;#34;爱吃鱼&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 成员方法&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">drink&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(self&lt;span style="color:#f92672">.&lt;/span>name&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#e6db74">&amp;#34;爱喝水&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 魔术方法&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">__del__&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;销毁方法&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 魔术方法&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">__str__&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">&amp;#34;重写tostring&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tom &lt;span style="color:#f92672">=&lt;/span> Cat(&lt;span style="color:#e6db74">&amp;#34;Tom&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tom&lt;span style="color:#f92672">.&lt;/span>eat()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tom&lt;span style="color:#f92672">.&lt;/span>drink()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(tom)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="13私有属性和方法">1.3.私有属性和方法&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Cat&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 构造方法&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">__init__&lt;/span>(self,name):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;初始化方法&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>name&lt;span style="color:#f92672">=&lt;/span>name
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>__age &lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">18&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">eat&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(self&lt;span style="color:#f92672">.&lt;/span>name&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#e6db74">&amp;#34;爱吃鱼&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">drink&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(self&lt;span style="color:#f92672">.&lt;/span>name&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#e6db74">&amp;#34;爱喝水&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">say_age&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;年纪是:&amp;#34;&lt;/span>&lt;span style="color:#f92672">+&lt;/span>str(self&lt;span style="color:#f92672">.&lt;/span>__age))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 调用私有方法&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>__private_method()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">__private_method&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;私有方法&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">__del__&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;销毁方法&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">__str__&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">&amp;#34;重写tostring&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tom &lt;span style="color:#f92672">=&lt;/span> Cat(&lt;span style="color:#e6db74">&amp;#34;Tom&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tom&lt;span style="color:#f92672">.&lt;/span>eat()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tom&lt;span style="color:#f92672">.&lt;/span>drink()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tom&lt;span style="color:#f92672">.&lt;/span>say_age()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(tom)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 这种访问方式,也是可以访问到私有的属性和方法的&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(tom&lt;span style="color:#f92672">.&lt;/span>_Cat__age)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="14继承和重写">1.4.继承和重写&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Animal&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">__init__&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>name1 &lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">100&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>__num2 &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">200&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">eat&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;动物吃&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">run&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;动物跑&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 子类不允许调用私有方法&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">__test&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;父类可以访问到私有属性和私有方法&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Dog&lt;/span>(Animal):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">run&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;子类打印,开始调用父类方法&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> super()&lt;span style="color:#f92672">.&lt;/span>run()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;调用完父类方法&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># animal = Animal()&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># animal.eat()&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># animal.run()&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dog &lt;span style="color:#f92672">=&lt;/span> Dog()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dog&lt;span style="color:#f92672">.&lt;/span>eat()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dog&lt;span style="color:#f92672">.&lt;/span>run()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="15多继承">1.5.多继承&lt;/h3>
+&lt;p>尽量避免使用多继承,如果继承了两个累,两个类有相同的方法和属性,容易混淆&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Animal&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">__init__&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>name1 &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">100&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>__num2 &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">200&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">eat&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;动物吃&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">run&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;动物跑&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 子类不允许调用私有方法&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">__test&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;父类可以访问到私有属性和私有方法&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Zoo&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">eat&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;动物园吃饭&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Dog&lt;/span>(Animal, Zoo):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">run&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;子类打印,开始调用父类方法&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> super()&lt;span style="color:#f92672">.&lt;/span>run()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;调用完父类方法&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dog &lt;span style="color:#f92672">=&lt;/span> Dog()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dog&lt;span style="color:#f92672">.&lt;/span>eat()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="16多态">1.6.多态&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Dog&lt;/span>(object):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">__init__&lt;/span>(self,name):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>name &lt;span style="color:#f92672">=&lt;/span> name
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">game&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;蹦蹦跳跳&amp;#34;&lt;/span>,self&lt;span style="color:#f92672">.&lt;/span>name)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Xiaotianquan&lt;/span>(Dog):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">game&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;哮天犬&amp;#34;&lt;/span>,self&lt;span style="color:#f92672">.&lt;/span>name)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Person&lt;/span>(object):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">__init__&lt;/span>(self,name):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>name &lt;span style="color:#f92672">=&lt;/span> name
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">game_with_dog&lt;/span>(self,dog):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;人和狗玩耍&amp;#34;&lt;/span>,self&lt;span style="color:#f92672">.&lt;/span>name,dog&lt;span style="color:#f92672">.&lt;/span>name)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dog&lt;span style="color:#f92672">.&lt;/span>game()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># dog = Dog(&amp;#34;旺财&amp;#34;)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dog &lt;span style="color:#f92672">=&lt;/span> Xiaotianquan(&lt;span style="color:#e6db74">&amp;#34;旺财&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>xiaoming &lt;span style="color:#f92672">=&lt;/span> Person(&lt;span style="color:#e6db74">&amp;#34;xiaoming&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>xiaoming&lt;span style="color:#f92672">.&lt;/span>game_with_dog(dog)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="17类属性和类方法和静态方法">1.7.类属性和类方法和静态方法&lt;/h3>
+&lt;p>类属性 相当于静态变量&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Dog&lt;/span>(object):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 类属性&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> age &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">12&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">__init__&lt;/span>(self,name):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>name &lt;span style="color:#f92672">=&lt;/span> name
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>类方法&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Dog&lt;/span>(object):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 类属性&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> age &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">12&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 类方法&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@classmethod&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">show_age&lt;/span>(cls):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;静态方法&amp;#34;&lt;/span>,cls&lt;span style="color:#f92672">.&lt;/span>age)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dog &lt;span style="color:#f92672">=&lt;/span> Dog()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dog&lt;span style="color:#f92672">.&lt;/span>show_age()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>静态方法,在不用方法类属性和静态属性的时候,可以定义成静态方法&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Dog&lt;/span>(object):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 类属性&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> age &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">12&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 类方法&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@classmethod&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">show_age&lt;/span>(cls):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;类方法&amp;#34;&lt;/span>,cls&lt;span style="color:#f92672">.&lt;/span>age)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@staticmethod&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">static_method&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;静态方法&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dog &lt;span style="color:#f92672">=&lt;/span> Dog()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 调用类方法&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dog&lt;span style="color:#f92672">.&lt;/span>show_age()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 调用静态方法&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Dog&lt;span style="color:#f92672">.&lt;/span>static_method()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="2异常">2.异常&lt;/h1>
+&lt;h3 id="21异常的完整语法">2.1.异常的完整语法&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">try&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> num &lt;span style="color:#f92672">=&lt;/span> int(input(&lt;span style="color:#e6db74">&amp;#34;输入一个整数:&amp;#34;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ae81ff">10&lt;/span> &lt;span style="color:#f92672">/&lt;/span> num
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">except&lt;/span> &lt;span style="color:#a6e22e">ZeroDivisionError&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;请不要输入数字0&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">except&lt;/span> &lt;span style="color:#a6e22e">Exception&lt;/span> &lt;span style="color:#66d9ef">as&lt;/span> result:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;未知错误 &lt;/span>&lt;span style="color:#e6db74">%s&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span> &lt;span style="color:#f92672">%&lt;/span> result)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;没有异常才会执行的代码&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">finally&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;无论是否有异常,都会异常的代码&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="22主动抛异常">2.2.主动抛异常&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">check&lt;/span>(name):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(name &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#34;anthony&amp;#34;&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">&amp;#34;是安东尼&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 主动抛异常&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">raise&lt;/span> &lt;span style="color:#a6e22e">Exception&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;不是安东尼&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 捕获异常&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">try&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(check(&lt;span style="color:#e6db74">&amp;#34;anthony2&amp;#34;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">except&lt;/span> &lt;span style="color:#a6e22e">Exception&lt;/span> &lt;span style="color:#66d9ef">as&lt;/span> result:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(result)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="3模块">3.模块&lt;/h1>
+&lt;p>导入的语法如下：
+[&lt;code>from&lt;/code> 模块名】&lt;code>import&lt;/code> [模块 1类1变量1函数1x[as别名]
+常用的组合形式如：&lt;/p>
+&lt;ul>
+&lt;li>import 模块名&lt;/li>
+&lt;li>from 模块名 import 类、变量、方法等&lt;/li>
+&lt;li>from 模块名 import *&lt;/li>
+&lt;li>import 模块名 as 别名&lt;/li>
+&lt;li>from 模块名import 功能名 as 别名&lt;/li>
+&lt;/ul>
+&lt;h3 id="31导入模块">3.1.导入模块&lt;/h3>
+&lt;p>不推荐使用&lt;code>,&lt;/code>&lt;/p>
+&lt;pre tabindex="0">&lt;code>import pkg1
+import pkg2
+&lt;/code>&lt;/pre>&lt;h3 id="32简单的使用">3.2.简单的使用&lt;/h3>
+&lt;p>my_module.py&lt;/p>
+&lt;pre tabindex="0">&lt;code>title = &amp;#34;模块2&amp;#34;
+def say_hello():
+print(&amp;#34;i am module : %s &amp;#34; % title)
+class Cat:
+pass
+&lt;/code>&lt;/pre>&lt;p>index.py&lt;/p>
+&lt;pre tabindex="0">&lt;code>import my_module
+# use module method
+my_module.say_hello()
+dog = my_module.Cat()
+print(dog)
+&lt;/code>&lt;/pre>&lt;h3 id="33导入的时候也可以起别名">3.3.导入的时候也可以起别名&lt;/h3>
+&lt;p>别名要使用大驼峰命名&lt;/p>
+&lt;pre tabindex="0">&lt;code>import my_module as MyModule
+&lt;/code>&lt;/pre>&lt;h3 id="34fromimport">3.4.from&amp;hellip;import&lt;/h3>
+&lt;p>导入一部分工具&lt;/p>
+&lt;p>使用的时候,就不需要写那个模块名了,直接使用&lt;/p>
+&lt;pre tabindex="0">&lt;code>from my_module import say_hello
+from my_module import Cat
+say_hello()
+cat = Cat()
+&lt;/code>&lt;/pre>&lt;h3 id="35作为模块的正常写法">3.5.作为模块的正常写法&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">pass&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 有了这个之后,被别的模块调用的时候&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> __name__ &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;__main__&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> main
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="36包">3.6.包&lt;/h3>
+&lt;p>包 包含多个模块&lt;/p>
+&lt;p>创建一个新的文件夹,在文件夹里面创建&lt;code>__init__.py&lt;/code>&lt;/p>
+&lt;pre tabindex="0">&lt;code># . 是相对路径名
+from . import send_message
+from . import receive_message
+&lt;/code>&lt;/pre>&lt;p>在文件夹里面创建两个模块&lt;/p>
+&lt;p>receive_message.py&lt;/p>
+&lt;pre tabindex="0">&lt;code>def receive():
+print(&amp;#34;接受信息&amp;#34;)
+&lt;/code>&lt;/pre>&lt;p>send_message.py&lt;/p>
+&lt;pre tabindex="0">&lt;code>def send(text):
+print(&amp;#34;发送 %s&amp;#34; % text)
+&lt;/code>&lt;/pre>&lt;p>调用模块&lt;/p>
+&lt;pre tabindex="0">&lt;code>import hm_message
+hm_message.send_message.send(&amp;#39;hello&amp;#39;)
+hm_message.receive_message.receive()
+&lt;/code>&lt;/pre>&lt;h3 id="37发布模块">3.7.发布模块&lt;/h3>
+&lt;p>1.创建setup.py&lt;/p>
+&lt;pre tabindex="0">&lt;code>from distutils.core import setup
+setup(name=&amp;#34;hm_message&amp;#34;,
+version=&amp;#34;1.0&amp;#34;,
+description=&amp;#34;push&amp;#34;,
+py_modules=[&amp;#34;hm_message.send_message&amp;#34;,
+&amp;#34;hm_message.receive_message&amp;#34;])
+&lt;/code>&lt;/pre>&lt;p>2.命令&lt;/p>
+&lt;pre tabindex="0">&lt;code>python setup.py build
+python setup.py sdist
+&lt;/code>&lt;/pre>&lt;h3 id="38安装模块">3.8.安装模块&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 手动安装模块&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tar xxx.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python setup.py install
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="pymssql">pymssql&lt;/h1>
+&lt;p>访问&lt;code>https://www.lfd.uci.edu/~gohlke/pythonlibs/#pymssql&lt;/code>&lt;/p>
+&lt;p>下载&lt;code>[pymssql‑2.1.4‑cp38‑cp38‑win32.whl]&lt;/code>&lt;/p>
+&lt;h1 id="网络编程">网络编程&lt;/h1>
+&lt;h1 id="0socket的历史">0.&lt;strong>&lt;strong>socket的历史&lt;/strong>&lt;/strong>&lt;/h1>
+&lt;p>套接字起源于 20 世纪 70 年代加利福尼亚大学伯克利分校版本的 Unix,即人们所说的 BSD Unix。 因此,有时人们也把套接字称为“伯克利套接字”或“BSD 套接字”。&lt;/p>
+&lt;p>一开始,套接字被设计用在同 一台主机上多个应用程序之间的通讯。这也被称进程间通讯或IPC。&lt;/p>
+&lt;p>套接字有两种（或者称为有两个种族）,分别是基于文件型的和基于网络型的。&lt;/p>
+&lt;p>基于文件类型的套接字家族 - 套接字家族的名字：AF_UNIX unix一切皆文件，基于文件的套接字调用的就是底层的文件系统来取数据，两个套接字进程运行在同一机器，可以通过访问同一个文件系统间接完成通信&lt;/p>
+&lt;p>基于网络类型的套接字家族 - 套接字家族的名字：AF_INET (还有AF_INET6被用于ipv6，&lt;/p>
+&lt;p>还有一些其他的地址家族，不过，他们要么是只用于某个平台，要么就是已经被废弃，或者是很少被使用，或者是根本没有实现，所有地址家族中，AF_INET是使用最广泛的一个，python支持很多种地址家族，但是由于我们只关心网络编程，所以大部分时候我么只使用AF_INET)&lt;/p>
+&lt;p>套接字把复杂的TCP/IP协议族隐藏在Socket接口后面，对用户来说，一组简单的接口就是全部，让Socket去组织数据，以符合指定的协议。&lt;/p>
+&lt;p>所以，我们无需深入理解tcp/udp协议，socket已经为我们封装好了，我们只需要遵循socket的规定去编程，写出的程序自然就是遵循tcp/udp标准的&lt;/p>
+&lt;h1 id="1udp">1.udp&lt;/h1>
+&lt;p>发送端&lt;/p>
+&lt;pre tabindex="0">&lt;code>import socket
+def main():
+# 创建一个udp套接字
+udp_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+while True:
+send_data = str = input(&amp;#34;输入要发送的数据&amp;#34;)
+if send_data == &amp;#34;exit&amp;#34;:
+break
+# udp_socket.sendto(b&amp;#34;这是消息&amp;#34;,(&amp;#34;192.169.0.1&amp;#34;,8000))
+udp_socket.sendto(send_data.encode(&amp;#34;utf-8&amp;#34;),(&amp;#34;127.0.0.1&amp;#34;,7788))
+# 关闭套接字
+udp_socket.close()
+if __name__ == &amp;#39;__main__&amp;#39;:
+main()
+&lt;/code>&lt;/pre>&lt;p>接受者&lt;/p>
+&lt;pre tabindex="0">&lt;code>import socket
+def main():
+# 创建一个udp套接字
+udp_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+# 绑定本地相关信息
+local_addr = (&amp;#34;&amp;#34;,7788)
+udp_socket.bind(local_addr)
+while True:
+# 等待接收对方发送的数据
+recv_data = udp_socket.recvfrom(1024)
+print(recv_data[0].decode(&amp;#34;gbk&amp;#34;))
+# 关闭套接字
+udp_socket.close()
+if __name__ == &amp;#39;__main__&amp;#39;:
+main()
+&lt;/code>&lt;/pre>&lt;h1 id="2tcp">2.tcp&lt;/h1>
+&lt;h1 id="3socket">3.socket&lt;/h1>
+&lt;p>使用socket访问redis&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> socket
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>host &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;10.0.2.110&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>port &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">6379&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>buf_size &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>conn &lt;span style="color:#f92672">=&lt;/span> socket&lt;span style="color:#f92672">.&lt;/span>socket(socket&lt;span style="color:#f92672">.&lt;/span>AF_INET, socket&lt;span style="color:#f92672">.&lt;/span>SOCK_STREAM)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>conn&lt;span style="color:#f92672">.&lt;/span>connect((host, port))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cmd &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;SELECT 2&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#39;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>encode(&lt;span style="color:#e6db74">&amp;#39;utf-8&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>r &lt;span style="color:#f92672">=&lt;/span> conn&lt;span style="color:#f92672">.&lt;/span>sendall(cmd)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cmd &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;PING&lt;/span>&lt;span style="color:#ae81ff">\n&lt;/span>&lt;span style="color:#e6db74">&amp;#39;&lt;/span>&lt;span style="color:#f92672">.&lt;/span>encode(&lt;span style="color:#e6db74">&amp;#39;utf-8&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>conn&lt;span style="color:#f92672">.&lt;/span>sendall(cmd)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">while&lt;/span> &lt;span style="color:#66d9ef">True&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#f92672">=&lt;/span> conn&lt;span style="color:#f92672">.&lt;/span>recv(buf_size)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(res)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">not&lt;/span> res:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>conn&lt;span style="color:#f92672">.&lt;/span>close()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>服务端套接字函数&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>s&lt;span style="color:#f92672">.&lt;/span>bind() &lt;span style="color:#75715e">#绑定(主机,端口号)到套接字&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>s&lt;span style="color:#f92672">.&lt;/span>listen() &lt;span style="color:#75715e">#开始TCP监听&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>s&lt;span style="color:#f92672">.&lt;/span>accept() &lt;span style="color:#75715e">#被动接受TCP客户的连接,(阻塞式)等待连接的到来&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">**&lt;/span>客户端套接字函数&lt;span style="color:#f92672">**&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>s&lt;span style="color:#f92672">.&lt;/span>connect() &lt;span style="color:#75715e">#主动初始化TCP服务器连接&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>s&lt;span style="color:#f92672">.&lt;/span>connect_ex() &lt;span style="color:#75715e">#connect()函数的扩展版本,出错时返回出错码,而不是抛出异常&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">**&lt;/span>公共用途的套接字函数(客户端和服务端都能使用)&lt;span style="color:#f92672">**&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>s&lt;span style="color:#f92672">.&lt;/span>recv() &lt;span style="color:#75715e">#接收TCP数据&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>s&lt;span style="color:#f92672">.&lt;/span>send() &lt;span style="color:#75715e">#发送TCP数据(send在待发送数据量大于己端缓存区剩余空间时,数据丢失,不会发完)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>s&lt;span style="color:#f92672">.&lt;/span>sendall() &lt;span style="color:#75715e">#发送完整的TCP数据(本质就是循环调用send,sendall在待发送数据量大于己端缓存区剩余空间时,数据不丢失,循环调用send直到发完)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>s&lt;span style="color:#f92672">.&lt;/span>recvfrom() &lt;span style="color:#75715e">#接收UDP数据&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>s&lt;span style="color:#f92672">.&lt;/span>sendto() &lt;span style="color:#75715e">#发送UDP数据&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>s&lt;span style="color:#f92672">.&lt;/span>getpeername() &lt;span style="color:#75715e">#连接到当前套接字的远端的地址&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>s&lt;span style="color:#f92672">.&lt;/span>getsockname() &lt;span style="color:#75715e">#当前套接字的地址&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>s&lt;span style="color:#f92672">.&lt;/span>getsockopt() &lt;span style="color:#75715e">#返回指定套接字的参数&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>s&lt;span style="color:#f92672">.&lt;/span>setsockopt() &lt;span style="color:#75715e">#设置指定套接字的参数&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>s&lt;span style="color:#f92672">.&lt;/span>close() &lt;span style="color:#75715e">#关闭套接字&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="request">Request&lt;/h1>
+&lt;h1 id="post请求参数">post请求参数&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 表单提交&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> requests
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>data &lt;span style="color:#f92672">=&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;name&amp;#34;&lt;/span>:&lt;span style="color:#e6db74">&amp;#34;anthony&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;age&amp;#34;&lt;/span>:&lt;span style="color:#e6db74">&amp;#34;12&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>requests&lt;span style="color:#f92672">.&lt;/span>post(url&lt;span style="color:#f92672">=&lt;/span>url,data&lt;span style="color:#f92672">=&lt;/span>data)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># json提交&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> requests
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>json_data &lt;span style="color:#f92672">=&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;name&amp;#34;&lt;/span>:&lt;span style="color:#e6db74">&amp;#34;anthony&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;age&amp;#34;&lt;/span>:&lt;span style="color:#e6db74">&amp;#34;12&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>requests&lt;span style="color:#f92672">.&lt;/span>post(url&lt;span style="color:#f92672">=&lt;/span>url,json&lt;span style="color:#f92672">=&lt;/span>json_data)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="cookie操作">cookie操作&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>cookies&lt;span style="color:#f92672">=&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;auther&amp;#39;&lt;/span>:&lt;span style="color:#e6db74">&amp;#39;11223&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>request&lt;span style="color:#f92672">.&lt;/span>post(url&lt;span style="color:#f92672">=&lt;/span>url,data&lt;span style="color:#f92672">=&lt;/span>data,cookies&lt;span style="color:#f92672">=&lt;/span>cookies)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="headers">headers&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>headers &lt;span style="color:#f92672">=&lt;/span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;auth&amp;#39;&lt;/span>:&lt;span style="color:#e6db74">&amp;#39;123&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>request&lt;span style="color:#f92672">.&lt;/span>post(url&lt;span style="color:#f92672">=&lt;/span>url,data&lt;span style="color:#f92672">=&lt;/span>data,cookies&lt;span style="color:#f92672">=&lt;/span>cookies,headers&lt;span style="color:#f92672">=&lt;/span>headers)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="请求超时">请求超时&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 如果超过2s就超时报错&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>requests&lt;span style="color:#f92672">.&lt;/span>post(url&lt;span style="color:#f92672">=&lt;/span>url,timeout&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="鉴权">鉴权&lt;/h1>
+&lt;p>有些页面,需要,比如spring secuity的页面&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>requests&lt;span style="color:#f92672">.&lt;/span>post(url&lt;span style="color:#f92672">=&lt;/span>url,timeout&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span>,auth&lt;span style="color:#f92672">=&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;anthony&amp;#39;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;123456&amp;#39;&lt;/span>))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="编码">编码&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 先编码 再解码&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>r&lt;span style="color:#f92672">.&lt;/span>text&lt;span style="color:#f92672">.&lt;/span>encode(&lt;span style="color:#e6db74">&amp;#39;utf-8&amp;#39;&lt;/span>)&lt;span style="color:#f92672">.&lt;/span>decode(unicode_escape)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="下载流2">下载流2&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>url &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;http://wx4.sinaimg.cn/large/d030806aly1fq1vn8j0ajj21ho28bduy.jpg&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rsp &lt;span style="color:#f92672">=&lt;/span> requests&lt;span style="color:#f92672">.&lt;/span>get(url, stream&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">True&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">with&lt;/span> open(&lt;span style="color:#e6db74">&amp;#39;1.jpg&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;wb&amp;#39;&lt;/span>) &lt;span style="color:#66d9ef">as&lt;/span> f:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 边下载边存硬盘, chunk_size 可以自由调整为可以更好地适合您的用例的数字&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> i &lt;span style="color:#f92672">in&lt;/span> rsp&lt;span style="color:#f92672">.&lt;/span>iter_content(chunk_size&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">1024&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> f&lt;span style="color:#f92672">.&lt;/span>write(i)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>requests.get(url)&lt;/code>默认是下载在&lt;strong>内存&lt;/strong>中的，下载完成才存到硬盘上&lt;/p>
+&lt;p>&lt;code>Response.iter_content&lt;/code>来边下载边存硬盘&lt;/p>
+&lt;h1 id="flask">Flask&lt;/h1>
+&lt;h1 id="路由">路由&lt;/h1>
+&lt;h3 id="入门">入门&lt;/h3>
+&lt;pre tabindex="0">&lt;code>from flask import Flask
+app = Flask(__name__)
+@app.route(&amp;#39;/login&amp;#39;)
+def hello_world():
+return &amp;#39;Hello World!&amp;#39;
+if __name__ == &amp;#39;__main__&amp;#39;:
+app.run()
+&lt;/code>&lt;/pre>&lt;h3 id="url上动态参数">URL上动态参数&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> flask &lt;span style="color:#f92672">import&lt;/span> Flask
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>app &lt;span style="color:#f92672">=&lt;/span> Flask(__name__)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@app.route&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;/&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">hello_world&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">&amp;#34;hello world&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@app.route&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;/&amp;lt;int:age&amp;gt;&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">play_game&lt;/span>(age):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">&amp;#34;hello world&amp;#34;&lt;/span>&lt;span style="color:#f92672">+&lt;/span>str(age)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> __name__ &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#39;__main__&amp;#39;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> app&lt;span style="color:#f92672">.&lt;/span>run(debug&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">True&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="自定义转换器">自定义转换器&lt;/h3>
+&lt;pre tabindex="0">&lt;code>from flask import Flask
+from werkzeug.routing import BaseConverter
+app = Flask(__name__)
+# 自定义,并且继承BaseConverter
+class MyConverter(BaseConverter):
+def __init__(self, map, regex):
+# map 就是app.url_map 也就是请求路径
+# regex,就是d{3}, 也就是自定义的规则
+super(MyConverter, self).__init__(map)
+self.regex = regex
+app.url_map.converters[&amp;#34;haha&amp;#34;] = MyConverter
+@app.route(&amp;#39;/&amp;lt;haha(&amp;#34;\d{3}&amp;#34;):age&amp;gt;&amp;#39;)
+def play_game2(age):
+return &amp;#34;自定义转换器,接收3位&amp;#34; + str(age)
+@app.route(&amp;#39;/&amp;lt;haha(&amp;#34;\d{4}&amp;#34;):age&amp;gt;&amp;#39;)
+def play_game3(age):
+return &amp;#34;自定义转换器,接收4位&amp;#34; + str(age)
+if __name__ == &amp;#39;__main__&amp;#39;:
+app.run(debug=True)
+&lt;/code>&lt;/pre>&lt;h3 id="给路由添加请求方式">给路由添加请求方式&lt;/h3>
+&lt;pre tabindex="0">&lt;code>from flask import Flask
+app = Flask(__name__)
+@app.route(&amp;#39;/&amp;#39;,methods=[&amp;#39;POST&amp;#39;])
+def play_game2(age):
+return &amp;#34;自定义转换器,接收3位&amp;#34; + str(age)
+if __name__ == &amp;#39;__main__&amp;#39;:
+app.run(debug=True)
+&lt;/code>&lt;/pre>&lt;h3 id="返回响应体">返回响应体&lt;/h3>
+&lt;pre tabindex="0">&lt;code>from flask import Flask
+app = Flask(__name__)
+@app.route(&amp;#39;/&amp;#39;)
+def method1():
+&amp;#34;&amp;#34;&amp;#34;直接返回字符串信息&amp;#34;&amp;#34;&amp;#34;
+return &amp;#34;返回字符串信息&amp;#34;
+@app.route(&amp;#39;/2&amp;#39;)
+def method2():
+&amp;#34;&amp;#34;&amp;#34;直接返回字符串信息&amp;#34;&amp;#34;&amp;#34;
+return &amp;#34;返回字符串信息&amp;#34;,666
+@app.route(&amp;#39;/3&amp;#39;)
+def method3():
+&amp;#34;&amp;#34;&amp;#34;直接返回字符串信息&amp;#34;&amp;#34;&amp;#34;
+return {&amp;#34;name&amp;#34;:&amp;#34;anthony&amp;#34;},200,{&amp;#34;Content-Type&amp;#34;:&amp;#34;application/json&amp;#34;,&amp;#34;token&amp;#34;:&amp;#34;123456&amp;#34;}
+if __name__ == &amp;#39;__main__&amp;#39;:
+app.run(debug=True)
+&lt;/code>&lt;/pre>&lt;h3 id="重定向">重定向&lt;/h3>
+&lt;pre tabindex="0">&lt;code>from flask import Flask,redirect
+app = Flask(__name__)
+@app.route(&amp;#39;/&amp;#39;)
+def method1():
+return redirect(&amp;#34;http://baidu.com&amp;#34;)
+if __name__ == &amp;#39;__main__&amp;#39;:
+app.run(debug=True)
+&lt;/code>&lt;/pre>&lt;h3 id="跳转页面">跳转页面&lt;/h3>
+&lt;pre tabindex="0">&lt;code>from flask import Flask, render_template, request,redirect
+app = Flask(__name__)
+@app.route(&amp;#39;/login&amp;#39;, methods=[&amp;#39;GET&amp;#39;, &amp;#39;POST&amp;#39;])
+def hello_world():
+print(&amp;#34;请求来了&amp;#34;)
+# 获取post传过来的值
+user = request.form.get(&amp;#34;user&amp;#34;)
+pwd = request.form.get(&amp;#34;pwd&amp;#34;)
+if user == &amp;#34;anthony&amp;#34; and pwd == &amp;#34;123456&amp;#34;:
+# return render_template(&amp;#34;login.html&amp;#34;, **{&amp;#34;msg&amp;#34;: &amp;#34;登录成功&amp;#34;})
+return redirect(&amp;#34;/index&amp;#34;)
+else:
+return render_template(&amp;#34;login.html&amp;#34;, **{&amp;#34;msg&amp;#34;: &amp;#34;用户名或者密码错误&amp;#34;})
+@app.route(&amp;#34;/index&amp;#34;)
+def index():
+return &amp;#34;欢迎登录&amp;#34;
+if __name__ == &amp;#39;__main__&amp;#39;:
+app.run()
+&lt;/code>&lt;/pre>&lt;h3 id="异常捕获">异常捕获&lt;/h3>
+&lt;pre tabindex="0">&lt;code>from flask import Flask,abort
+app = Flask(__name__)
+@app.route(&amp;#39;/&amp;#39;)
+def method1():
+&amp;#34;&amp;#34;&amp;#34;abort 异常抛出&amp;#34;&amp;#34;&amp;#34;
+abort(404)
+return &amp;#34;hello world&amp;#34;
+&amp;#34;&amp;#34;&amp;#34;捕获异常&amp;#34;&amp;#34;&amp;#34;
+@app.errorhandler(404)
+def method1(e):
+print(e)
+return &amp;#34;页面找不到&amp;#34;
+if __name__ == &amp;#39;__main__&amp;#39;:
+app.run(debug=True)
+&lt;/code>&lt;/pre>&lt;h3 id="获取请求参数form">获取请求参数Form&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> flask &lt;span style="color:#f92672">import&lt;/span> Flask, render_template, request
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>app &lt;span style="color:#f92672">=&lt;/span> Flask(__name__)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@app.route&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;/login&amp;#39;&lt;/span>, methods&lt;span style="color:#f92672">=&lt;/span>[&lt;span style="color:#e6db74">&amp;#39;GET&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;POST&amp;#39;&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">hello_world&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#e6db74">&amp;#34;请求来了&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 获取post传过来的值&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> user &lt;span style="color:#f92672">=&lt;/span> request&lt;span style="color:#f92672">.&lt;/span>form&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#34;user&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pwd &lt;span style="color:#f92672">=&lt;/span> request&lt;span style="color:#f92672">.&lt;/span>form&lt;span style="color:#f92672">.&lt;/span>get(&lt;span style="color:#e6db74">&amp;#34;pwd&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> user &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#34;anthony&amp;#34;&lt;/span> &lt;span style="color:#f92672">and&lt;/span> pwd &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#34;123456&amp;#34;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> render_template(&lt;span style="color:#e6db74">&amp;#34;login.html&amp;#34;&lt;/span>, &lt;span style="color:#f92672">**&lt;/span>{&lt;span style="color:#e6db74">&amp;#34;msg&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;登录成功&amp;#34;&lt;/span>})
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> render_template(&lt;span style="color:#e6db74">&amp;#34;login.html&amp;#34;&lt;/span>, &lt;span style="color:#f92672">**&lt;/span>{&lt;span style="color:#e6db74">&amp;#34;msg&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;用户名或者密码错误&amp;#34;&lt;/span>})
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> __name__ &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#39;__main__&amp;#39;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> app&lt;span style="color:#f92672">.&lt;/span>run()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="获取请求参数body">获取请求参数Body&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> flask &lt;span style="color:#f92672">import&lt;/span> Flask, request
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>app &lt;span style="color:#f92672">=&lt;/span> Flask(__name__)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@app.route&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;/callback&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">hello_world&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> data &lt;span style="color:#f92672">=&lt;/span> request&lt;span style="color:#f92672">.&lt;/span>get_data()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(data)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">&amp;#39;Hello, World!&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> __name__ &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#34;__main__&amp;#34;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> app&lt;span style="color:#f92672">.&lt;/span>run(debug&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">True&lt;/span>, port&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">10086&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="环境变量配置文件">环境变量/配置文件&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> flask &lt;span style="color:#f92672">import&lt;/span> Flask,redirect,request
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>app &lt;span style="color:#f92672">=&lt;/span> Flask(__name__)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 1.从配置类中加载&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">MyConfig&lt;/span>(object):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> DEBUG &lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># app.config.from_object(MyConfig)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 2.从配置文件中加载&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># app.config.from_pyfile(&amp;#34;Config.ini&amp;#34;)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 在项目的根目录创建个Config.ini文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 3.从环境变量&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># app.config.from_envvar(&amp;#34;&amp;#34;)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@app.route&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;/&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">method1&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">pass&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> __name__ &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#39;__main__&amp;#39;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> app&lt;span style="color:#f92672">.&lt;/span>run()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="钩子类似拦截器">钩子,类似拦截器&lt;/h3>
+&lt;pre tabindex="0">&lt;code>from flask import Flask,redirect,request
+app = Flask(__name__)
+@app.before_first_request
+def before_first_request():
+&amp;#34;&amp;#34;&amp;#34;只请求一次&amp;#34;&amp;#34;&amp;#34;
+print(&amp;#34;before_first_request&amp;#34;)
+@app.before_request
+def before_request():
+&amp;#34;&amp;#34;&amp;#34;每次都会请求&amp;#34;&amp;#34;&amp;#34;
+print(&amp;#34;before_request&amp;#34;)
+@app.after_request
+def after_request(resp):
+&amp;#34;&amp;#34;&amp;#34;比如做json统一的返回格式&amp;#34;&amp;#34;&amp;#34;
+print(&amp;#34;after_request&amp;#34;)
+return resp
+@app.teardown_request
+def teardown_request(e):
+&amp;#34;&amp;#34;&amp;#34;最后会请求到这里,适合做异常信息统计&amp;#34;&amp;#34;&amp;#34;
+print(&amp;#34;teardown_request&amp;#34;)
+@app.route(&amp;#39;/&amp;#39;)
+def method1():
+return &amp;#34;hello world&amp;#34;
+if __name__ == &amp;#39;__main__&amp;#39;:
+app.run(debug=True)
+&lt;/code>&lt;/pre>&lt;h1 id="视图内容和模板">视图内容和模板&lt;/h1>
+&lt;h3>&lt;/h3>
+&lt;pre tabindex="0">&lt;code>from flask import Flask, make_response, request
+app = Flask(__name__)
+# 设置cookie
+@app.route(&amp;#34;/set_cookie&amp;#34;)
+def set_cookie():
+response = make_response(&amp;#34;set cookie&amp;#34;)
+response.set_cookie(&amp;#34;computer&amp;#34;,&amp;#34;macbook pro&amp;#34;)
+response.set_cookie(&amp;#34;age&amp;#34;,&amp;#34;13 pro&amp;#34;,1000)
+return response
+@app.route(&amp;#34;/get_cookie&amp;#34;)
+def get_cookie():
+name = request.cookies.get(&amp;#34;computer&amp;#34;)
+age = request.cookies.get(&amp;#34;age&amp;#34;)
+return &amp;#34;name:%s,age:%s&amp;#34;%(name,age)
+if __name__ == &amp;#39;__main__&amp;#39;:
+app.run(debug=True)
+&lt;/code>&lt;/pre>&lt;h3 id="session">Session&lt;/h3>
+&lt;pre tabindex="0">&lt;code>from flask import Flask, make_response, request, session
+app = Flask(__name__)
+app.config[&amp;#34;SECRET_KEY&amp;#34;]=&amp;#34;123456&amp;#34;
+# 设置cookie
+@app.route(&amp;#34;/set_session/&amp;lt;path:name&amp;gt;&amp;#34;)
+def set_session(name):
+session[&amp;#34;name&amp;#34;] =name
+return &amp;#34;set session&amp;#34;
+@app.route(&amp;#34;/get_session&amp;#34;)
+def get_session():
+value = session.get(&amp;#34;name&amp;#34;)
+return &amp;#34;value:%s&amp;#34;%(value)
+if __name__ == &amp;#39;__main__&amp;#39;:
+app.run(debug=True)
+&lt;/code>&lt;/pre>&lt;h1 id="orm">orm&lt;/h1>
+&lt;h3 id="入门-1">入门&lt;/h3>
+&lt;pre tabindex="0">&lt;code>pip install flask_sqlalchemy
+pip install pymysql
+&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>from flask import Flask,render_template
+from flask_sqlalchemy import SQLAlchemy
+app = Flask(__name__)
+# 设置数据库的配置信息
+app.config[&amp;#34;SQLALCHEMY_DATABASE_URI&amp;#34;] = &amp;#34;mysql+pymysql://Rong:Zming1213!@192.168.254.153:3306/data36&amp;#34;
+app.config[&amp;#34;SQLALCHEMY_TRACK_MODIFICATIONS&amp;#34;] = False
+# 创建sqlAlchemy对象,关联app
+db = SQLAlchemy(app)
+# 创建模型类
+class Role(db.Model):
+__tablename__ = &amp;#34;roles&amp;#34;
+id =db.Column(db.Integer,primary_key=True)
+name = db.Column(db.String(32))
+class Users(db.Model):
+__tablename__ = &amp;#34;users&amp;#34;
+id =db.Column(db.Integer,primary_key=True)
+name = db.Column(db.String(32))
+# 建立外键
+role_id =db.Column(db.Integer,db.ForeignKey(Role.id))
+@app.route(&amp;#34;/&amp;#34;)
+def demo():
+return &amp;#34;response&amp;#34;
+if __name__ == &amp;#39;__main__&amp;#39;:
+# 创建数据库的表
+db.drop_all()
+db.create_all()
+app.run(debug=True)
+&lt;/code>&lt;/pre>&lt;h3 id="蓝图基本使用">蓝图基本使用&lt;/h3>
+&lt;p>demo01.py&lt;/p>
+&lt;pre tabindex="0">&lt;code>from flask import Flask, Blueprint
+from demo02 import blue
+app = Flask(__name__)
+# 讲蓝图注册到app中
+app.register_blueprint(blue)
+if __name__ == &amp;#39;__main__&amp;#39;:
+app.run(debug=True)
+&lt;/code>&lt;/pre>&lt;p>demo02.py&lt;/p>
+&lt;pre tabindex="0">&lt;code>from flask import Blueprint
+# 创建蓝图对象
+blue = Blueprint(&amp;#34;my_blue&amp;#34;, __name__)
+@blue.route(&amp;#34;/&amp;#34;)
+def demo():
+return &amp;#34;response&amp;#34;
+@blue.route(&amp;#34;/2&amp;#34;)
+def demo2():
+return &amp;#34;response2&amp;#34;
+&lt;/code>&lt;/pre>&lt;h3 id="蓝图包的使用">蓝图包的使用&lt;/h3>
+&lt;p>目录结构:|&amp;mdash;&lt;code>demo.py&lt;/code>|&amp;mdash;-|user||&amp;mdash;-|user|&amp;ndash;&lt;code>__init__.py&lt;/code>|&amp;mdash;-|user|&amp;ndash;&lt;code>views.py&lt;/code>&lt;/p>
+&lt;p>demo.py&lt;/p>
+&lt;pre tabindex="0">&lt;code>from flask import Flask
+from user import user_blue
+app = Flask(__name__)
+# 讲蓝图注册到app中
+app.register_blueprint(user_blue)
+if __name__ == &amp;#39;__main__&amp;#39;:
+print(app.url_map)
+app.run(debug=True)
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>init&lt;/strong>.py&lt;/p>
+&lt;pre tabindex="0">&lt;code>from flask import Blueprint
+# 创建蓝图对象
+user_blue = Blueprint(&amp;#34;user&amp;#34;, __name__)
+from user import views
+&lt;/code>&lt;/pre>&lt;p>views.py&lt;/p>
+&lt;pre tabindex="0">&lt;code>from user import user_blue
+@user_blue.route(&amp;#34;/&amp;#34;)
+def demo():
+return &amp;#34;response&amp;#34;
+@user_blue.route(&amp;#34;/2&amp;#34;)
+def demo2():
+return &amp;#34;response2&amp;#34;
+&lt;/code>&lt;/pre>&lt;h1 id="django">Django&lt;/h1>
+&lt;h1 id="命令">命令&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 安装django&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pip install django
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 生成数据库 迁移文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python manage.py makemigrations
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 执行迁移生成表&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python manage.py migrate
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="pycharm和django-admin创建的项目不一样">PyCharm和Django-admin创建的项目不一样&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 项目创建&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>django-admin startproject 项目名
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 结构&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>项目名
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>|----|manage.py &lt;span style="color:#f92672">[&lt;/span>项目管理,启动项目,创建app,数据管理&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>|----|项目名同名文件夹
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>|----|----|__init__.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>|----|----|asgi.py &lt;span style="color:#f92672">[&lt;/span>项目配置&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>|----|----|settings.py &lt;span style="color:#f92672">[&lt;/span>路由&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>|----|----|urls.py &lt;span style="color:#f92672">[&lt;/span>接收网路请求,异步&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>|----|----|wsgi.py &lt;span style="color:#f92672">[&lt;/span>接收网路请求,同步&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 用PyCharm创建的目录结构&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>项目名
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>|----|manage.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>|----|templates文件夹
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>|----|项目名同名文件夹
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>|----|----|__init__.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>|----|----|asgi.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>|----|----|settings.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>|----|----|urls.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>|----|----|wsgi.py
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>PyCharm创建的根目录下有一个templates目录
+Django-admin 是没有的,要在app下的目录创建&lt;code>templates&lt;/code>&lt;/p>
+&lt;p>settings.py&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># PyCharm创建的&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>TEMPLATES &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;BACKEND&amp;#39;&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;django.template.backends.django.DjangoTemplates&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;DIRS&amp;#39;&lt;/span>: &lt;span style="color:#f92672">[&lt;/span>BASE_DIR / &lt;span style="color:#e6db74">&amp;#39;templates&amp;#39;&lt;/span>&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;APP_DIRS&amp;#39;&lt;/span>: True,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;OPTIONS&amp;#39;&lt;/span>: &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;context_processors&amp;#39;&lt;/span>: &lt;span style="color:#f92672">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;django.template.context_processors.debug&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;django.template.context_processors.request&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;django.contrib.auth.context_processors.auth&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;django.contrib.messages.context_processors.messages&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">]&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 命令行创建的&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>TEMPLATES &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#f92672">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;BACKEND&amp;#39;&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;django.template.backends.django.DjangoTemplates&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;DIRS&amp;#39;&lt;/span>: &lt;span style="color:#f92672">[]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;APP_DIRS&amp;#39;&lt;/span>: True,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;OPTIONS&amp;#39;&lt;/span>: &lt;span style="color:#f92672">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;context_processors&amp;#39;&lt;/span>: &lt;span style="color:#f92672">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;django.template.context_processors.debug&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;django.template.context_processors.request&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;django.contrib.auth.context_processors.auth&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;django.contrib.messages.context_processors.messages&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">]&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">}&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="创建应用">创建应用&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>|项目|
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>|----|app,后台系统&lt;span style="color:#f92672">[&lt;/span>独立的表结构,模板,不相互影响&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>|----|app,前台系统&lt;span style="color:#f92672">[&lt;/span>独立的表结构,模板,不相互影响&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 创建app&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python manage.py startapp app名字
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>djangoProject
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── app01 &lt;span style="color:#f92672">[&lt;/span>刚创建的app&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   ├── __init__.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   ├── admin.py &lt;span style="color:#f92672">[&lt;/span>django默认admin后台,不用动&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   ├── apps.py &lt;span style="color:#f92672">[&lt;/span>app启动类,不用动&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   ├── migrations &lt;span style="color:#f92672">[&lt;/span>数据库的迁移的,数据库变更记录&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   │   └── __init__.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   ├── models.py &lt;span style="color:#f92672">[&lt;/span>重要,对数据库进行操作&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   ├── tests.py &lt;span style="color:#f92672">[&lt;/span>单元测试&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   └── views.py &lt;span style="color:#f92672">[&lt;/span>重要,函数&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── djangoProject
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   ├── __init__.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   ├── asgi.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   ├── settings.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   ├── urls.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   └── wsgi.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── manage.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>└── templates
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="注册app">注册APP&lt;/h2>
+&lt;p>项目名→项目名同名文件夹→settings.py&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>INSTALLED_APPS &lt;span style="color:#f92672">=&lt;/span> [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;django.contrib.admin&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;django.contrib.auth&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;django.contrib.contenttypes&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;django.contrib.sessions&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;django.contrib.messages&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;django.contrib.staticfiles&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 添加下面一行的配置,下面这个是怎么来的呢?看下面&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#39;app01.apps.App01Config&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>项目名→APP文件夹→apps.py&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> django.apps &lt;span style="color:#f92672">import&lt;/span> AppConfig
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">App01Config&lt;/span>(AppConfig):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> default_auto_field &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;django.db.models.BigAutoField&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> name &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;app01&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="编写url和视图函数对应关系">编写URL和视图函数对应关系&lt;/h2>
+&lt;p>编辑urls.py&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051452032.png" alt="">&lt;/p>
+&lt;p>在app文件夹下的views.py&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> django.http &lt;span style="color:#f92672">import&lt;/span> HttpResponse
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> django.shortcuts &lt;span style="color:#f92672">import&lt;/span> render
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Create your views here.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># request 必须要的&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">index&lt;/span>(request):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> HttpResponse(&lt;span style="color:#e6db74">&amp;#34;欢迎使用&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="启动">启动&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 命令行启动&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python ./manage.py runserver
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="templates模板">templates模板&lt;/h2>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051452463.png" alt="">&lt;/p>
+&lt;h2 id="静态资源">静态资源&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>djangoProject
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── app01
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   ├── __init__.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   ├── admin.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   ├── apps.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   ├── migrations
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   │   └── __init__.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   ├── models.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   ├── static [手动创建的]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   │   ├── css [手动创建的]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   │   ├── img [手动创建的]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   │   │   └── 1.png
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   │   └── js
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   ├── tests.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   └── views.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── db.sqlite3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── djangoProject
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   ├── __init__.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   ├── asgi.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   ├── settings.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   ├── urls.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   └── wsgi.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── manage.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>└── templates
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └── user_list.html
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>{% load static %}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;!DOCTYPE html&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">html&lt;/span> &lt;span style="color:#a6e22e">lang&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;en&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">meta&lt;/span> &lt;span style="color:#a6e22e">charset&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;UTF-8&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">title&lt;/span>&amp;gt;用户列表&amp;lt;/&lt;span style="color:#f92672">title&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">h1&lt;/span>&amp;gt;用户列表&amp;lt;/&lt;span style="color:#f92672">h1&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>加载静态资源
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>写法一:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">img&lt;/span> &lt;span style="color:#a6e22e">src&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/static/img/1.png&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>写法二:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">img&lt;/span> &lt;span style="color:#a6e22e">src&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;{% static &amp;#39;img/1.png&amp;#39; %}&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="数据库">数据库&lt;/h2>
+&lt;p>主意:app需要先注册&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>python ./manage.py makemigrations
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python ./manage.py migrate
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Pycharm-&amp;gt;tools-&amp;gt;Run manager.py Task 开启,可以替代python manager.py 这个前缀&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>pip3 install pymysql
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> pymysql &lt;span style="color:#f92672">import&lt;/span> connect
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>con &lt;span style="color:#f92672">=&lt;/span> connect(host&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;43.240.30.52&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> port&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">3306&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> user&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;yanganli_github&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> password&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;yanganli_github&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> database&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;yanganli_github&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> charset&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;utf8&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cursor &lt;span style="color:#f92672">=&lt;/span> con&lt;span style="color:#f92672">.&lt;/span>cursor()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 查询出条数&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(cursor&lt;span style="color:#f92672">.&lt;/span>execute(&lt;span style="color:#e6db74">&amp;#34;select * from post&amp;#34;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">for&lt;/span> one &lt;span style="color:#f92672">in&lt;/span> cursor&lt;span style="color:#f92672">.&lt;/span>fetchall():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(one)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cursor&lt;span style="color:#f92672">.&lt;/span>close()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>con&lt;span style="color:#f92672">.&lt;/span>close()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="自动化测试">自动化测试&lt;/h1>
+&lt;h1 id="安装和命令">安装和命令&lt;/h1>
+&lt;pre tabindex="0">&lt;code># 安装pytest
+pip install pytest
+# 安装python-html包,生成html报告
+pip install pytest-html
+# 生成allure报告
+pip install allure-pytest
+# -s 打印print
+pytest -s test_auth.py
+# 只测试这一个文件
+pytest -q -s test_auth.py
+&lt;/code>&lt;/pre>&lt;h1 id="pycharm识别pytest">Pycharm识别pytest&lt;/h1>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051452441.png" alt="">&lt;/p>
+&lt;h1 id="规范">规范&lt;/h1>
+&lt;p>测试文件已test_开头&lt;/p>
+&lt;p>测试类已Test开头,并且不能带有init方法&lt;/p>
+&lt;p>测试函数以test_开头&lt;/p>
+&lt;p>断言基本使用assert&lt;/p>
+&lt;h1 id="生成报告">生成报告&lt;/h1>
+&lt;pre tabindex="0">&lt;code># 生成html
+&amp;#39;--html=../report/report.html&amp;#39;
+# 生成xml格式的报告
+&amp;#39;--junitxml=./report/report.xml&amp;#39;
+# 生成allure报告
+&amp;#39;--alluredir&amp;#39;,&amp;#39;../report/reportallure&amp;#39;
+# 生成allure报告,在report的文件夹执行
+pytest.main([&amp;#39;../test_case/&amp;#39;,&amp;#39;--alluredir&amp;#39;,&amp;#39;../report/allure_raw/&amp;#39;])
+./allure serve /myitem/autotest/report/allure_raw
+&lt;/code>&lt;/pre>&lt;h1 id="locust">Locust&lt;/h1>
+&lt;pre tabindex="0">&lt;code>pip install locust
+# centos需要添加环境变量
+# 如果locust在哪个目录,如果python安装在这个目录:/usr/local/bin/python3
+ln -s /usr/local/bin/python3/bin/locust /usr/bin/locust
+locust --version
+&lt;/code>&lt;/pre>&lt;h1 id="快速入门">快速入门&lt;/h1>
+&lt;p>新建一个redis.py&lt;/p>
+&lt;pre tabindex="0">&lt;code>class QuickstartUser(HttpUser):
+wait_time = between(1, 10)
+@task
+def index_page(self):
+self.client.get(&amp;#34;/hello&amp;#34;)
+self.client.get(&amp;#34;/world&amp;#34;)
+@task(3)
+def view_item(self):
+for item_id in range(10):
+self.client.get(f&amp;#34;/item?id={item_id}&amp;#34;, name=&amp;#34;/item&amp;#34;)
+time.sleep(1)
+def on_start(self):
+self.client.post(&amp;#34;/login&amp;#34;, json={&amp;#34;username&amp;#34;: &amp;#34;foo&amp;#34;, &amp;#34;password&amp;#34;: &amp;#34;bar&amp;#34;})
+&lt;/code>&lt;/pre>&lt;p>在文件目录,执行&lt;/p>
+&lt;pre tabindex="0">&lt;code>locust -f redis.py
+# 启动成功后,访问 http://localhost:8089
+&lt;/code>&lt;/pre>&lt;h1 id="写一个locust文件">写一个Locust文件&lt;/h1>
+&lt;p>Locust文件是一个普通的python文件,唯一的要求就是至少有一个类继承的&lt;code>User&lt;/code>类&lt;/p>
+&lt;h1 id="user">User&lt;/h1>
+&lt;p>一个User类标识一个用户,Locust会给每个用户模拟一个User实例,公共的属性通常在User类里被定义&lt;/p>
+&lt;h3 id="wait_time-属性">wait_time 属性&lt;/h3>
+&lt;p>用户的wwait_time方法通常作用于执行的任务简直等待多长时间&lt;/p>
+&lt;p>这里有三个内建的等待时间的函数&lt;/p>
+&lt;ul>
+&lt;li>constant 一段固定的时间&lt;/li>
+&lt;li>between 最小和最大数之间的随机时间&lt;/li>
+&lt;li>constant_pacing 确保任务运行一次最多不超过x秒的适应时间&lt;/li>
+&lt;/ul>
+&lt;p>举个例子,让每个用户在每个任务执行之间等待0.5s到10s&lt;/p>
+&lt;pre tabindex="0">&lt;code>from locust import User, task, between
+class MyUser(User):
+@task
+def my_task(self):
+print(&amp;#34;executing my_task&amp;#34;)
+wait_time = between(0.5, 10)
+&lt;/code>&lt;/pre>&lt;p>也可以直接在你的类里声明wait_time方法,举个例子,下面的User类,会睡眠1s,2s&amp;hellip;&lt;/p>
+&lt;pre tabindex="0">&lt;code>class MyUser(User):
+last_wait_time = 0
+def wait_time(self):
+self.last_wait_time += 1
+return self.last_wait_time
+...
+&lt;/code>&lt;/pre>&lt;h3 id="weight-属性">weight 属性&lt;/h3>
+&lt;p>如果文件中存在多个用户类，并且在命令行中没有指定用户类，则Locust将生成每个用户类的相同数量。您还可以通过将用户类作为命令行参数传递来指定从同一个locustfile中使用哪些用户类&lt;/p>
+&lt;pre tabindex="0">&lt;code>locust -f locust_file.py WebUser MobileUser
+&lt;/code>&lt;/pre>&lt;p>如果希望模拟某种类型的更多用户，可以在这些类上设置权重属性,比方说,web用户是移动用户的三倍多&lt;/p>
+&lt;pre tabindex="0">&lt;code>class WebUser(User):
+weight = 3
+...
+class MobileUser(User):
+weight = 1
+...
+&lt;/code>&lt;/pre>&lt;h3 id="host-属性">host 属性&lt;/h3>
+&lt;p>host属性是host的URL前缀,通常,当locust启动的时候,在locust的web界面或者在命令上中使用&lt;code>--hosts&lt;/code>选项中使用&lt;/p>
+&lt;p>如果一个类声明了声明的host属性,它将在没有使用&lt;code>--host&lt;/code>命令行或web请求仲使用&lt;/p>
+&lt;h3 id="tasks属性">tasks属性&lt;/h3>
+&lt;p>用户类可以使用&lt;code>@task&lt;/code>装饰器,将任务声明为方法,但是也可以使用下面详细描述的tasks属性来指定任务。&lt;/p>
+&lt;h3 id="environment-属性">environment 属性&lt;/h3>
+&lt;p>对用户正在其中运行的环境的引用,使用它影响这环境,或者是运行着在它的容器中,比如去停止运行从任务方法中&lt;/p>
+&lt;pre tabindex="0">&lt;code>self.environment.runner.quit()
+&lt;/code>&lt;/pre>&lt;p>如果运行的是独立的locust实例,它将停止全部,如果是运行在工作节点,它将停止节点&lt;/p>
+&lt;h3 id="on_start-和-on_stop-方法">on_start 和 on_stop 方法&lt;/h3>
+&lt;p>用户 或者是任务集合可以声明``on_start&lt;code>方法或者&lt;/code>on_stop&lt;code>方法,用户将调用它自己的&lt;/code>on_start&lt;code>方法在它将要开始运行的时候,&lt;/code>on_stop&lt;code>方法,将在停止运行的时候调用,比如TaskSet,&lt;/code>on_start&lt;code>方法被调用在模拟的用户开始执行任务,&lt;/code>on_stop&lt;code>方法在停止模拟的用户执行任务的时候调用(或者被&lt;/code>interrupt()`方法调用,或者是用被用杀掉)&lt;/p>
+&lt;h1 id="tasks">Tasks&lt;/h1>
+&lt;p>当启动负载测试,一个用户实例将被创建,&lt;/p>
+&lt;p>下载mp4&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> os
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> time
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> requests
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> tqdm &lt;span style="color:#f92672">import&lt;/span> tqdm &lt;span style="color:#75715e"># 进度条模块&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">down_from_url&lt;/span>(url, dst):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 设置stream=True参数读取大文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> response &lt;span style="color:#f92672">=&lt;/span> requests&lt;span style="color:#f92672">.&lt;/span>get(url, stream&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">True&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 通过header的content-length属性可以获取文件的总容量&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> file_size &lt;span style="color:#f92672">=&lt;/span> int(response&lt;span style="color:#f92672">.&lt;/span>headers[&lt;span style="color:#e6db74">&amp;#39;content-length&amp;#39;&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> os&lt;span style="color:#f92672">.&lt;/span>path&lt;span style="color:#f92672">.&lt;/span>exists(dst):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 获取本地已经下载的部分文件的容量，方便继续下载，如果不存在就从头开始下载。&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> first_byte &lt;span style="color:#f92672">=&lt;/span> os&lt;span style="color:#f92672">.&lt;/span>path&lt;span style="color:#f92672">.&lt;/span>getsize(dst)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> first_byte &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 如果大于或者等于则表示已经下载完成，否则继续&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> first_byte &lt;span style="color:#f92672">&amp;gt;=&lt;/span> file_size:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> file_size
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> header &lt;span style="color:#f92672">=&lt;/span> {&lt;span style="color:#e6db74">&amp;#34;Range&amp;#34;&lt;/span>: &lt;span style="color:#e6db74">f&lt;/span>&lt;span style="color:#e6db74">&amp;#34;bytes=&lt;/span>&lt;span style="color:#e6db74">{&lt;/span>first_byte&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">-&lt;/span>&lt;span style="color:#e6db74">{&lt;/span>file_size&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pbar &lt;span style="color:#f92672">=&lt;/span> tqdm(total&lt;span style="color:#f92672">=&lt;/span>file_size,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> initial&lt;span style="color:#f92672">=&lt;/span>first_byte,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> unit&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;B&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> unit_scale&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">True&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> desc&lt;span style="color:#f92672">=&lt;/span>dst)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> req &lt;span style="color:#f92672">=&lt;/span> requests&lt;span style="color:#f92672">.&lt;/span>get(url, headers&lt;span style="color:#f92672">=&lt;/span>header, stream&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">True&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">with&lt;/span> open(dst, &lt;span style="color:#e6db74">&amp;#39;ab&amp;#39;&lt;/span>) &lt;span style="color:#66d9ef">as&lt;/span> f:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 每次读取一个1024个字节&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">for&lt;/span> chunk &lt;span style="color:#f92672">in&lt;/span> req&lt;span style="color:#f92672">.&lt;/span>iter_content(chunk_size&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">1024&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> chunk:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> f&lt;span style="color:#f92672">.&lt;/span>write(chunk)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pbar&lt;span style="color:#f92672">.&lt;/span>update(&lt;span style="color:#ae81ff">1024&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pbar&lt;span style="color:#f92672">.&lt;/span>close()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> file_size
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> __name__ &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#39;__main__&amp;#39;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> url &lt;span style="color:#f92672">=&lt;/span> input(&lt;span style="color:#e6db74">&amp;#34;请输入.mp4格式的视频链接地址，按回车键确认&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># 根据时间戳生成文件名&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> down_from_url(url, str(time&lt;span style="color:#f92672">.&lt;/span>time()) &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#e6db74">&amp;#34;.mp4&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>SSH下载服务器文件&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> paramiko
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">LinuxFile&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">__init__&lt;/span>(self, ip, port, username, password):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">try&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>ip &lt;span style="color:#f92672">=&lt;/span> ip
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>port &lt;span style="color:#f92672">=&lt;/span> port
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>username &lt;span style="color:#f92672">=&lt;/span> username
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>password &lt;span style="color:#f92672">=&lt;/span> password
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>transport &lt;span style="color:#f92672">=&lt;/span> paramiko&lt;span style="color:#f92672">.&lt;/span>Transport((str(self&lt;span style="color:#f92672">.&lt;/span>ip), int(self&lt;span style="color:#f92672">.&lt;/span>port)))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>transport&lt;span style="color:#f92672">.&lt;/span>connect(username&lt;span style="color:#f92672">=&lt;/span>self&lt;span style="color:#f92672">.&lt;/span>username, password&lt;span style="color:#f92672">=&lt;/span>self&lt;span style="color:#f92672">.&lt;/span>password)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>sftp &lt;span style="color:#f92672">=&lt;/span> paramiko&lt;span style="color:#f92672">.&lt;/span>SFTPClient&lt;span style="color:#f92672">.&lt;/span>from_transport(self&lt;span style="color:#f92672">.&lt;/span>transport)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">except&lt;/span> &lt;span style="color:#a6e22e">Exception&lt;/span> &lt;span style="color:#66d9ef">as&lt;/span> e:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">raise&lt;/span> e
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">up_file&lt;/span>(self, localhost_file, server_file):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> 将本地文件上传至服务器
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> :param localhost_file: 本地文件路径
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> :param server_file: 服务器保存路径
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> :return:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>sftp&lt;span style="color:#f92672">.&lt;/span>put(localhost_file, server_file)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">down_file&lt;/span>(self, localhost_file, server_file):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> 将服务器文件下载至本地
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> :param localhost_file: 本地文件路径
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> :param server_file: 服务器保存路径
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> :return:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>sftp&lt;span style="color:#f92672">.&lt;/span>get(localhost_file, server_file)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">close&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> 关闭服务器
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> :return:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#f92672">.&lt;/span>transport&lt;span style="color:#f92672">.&lt;/span>close()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> __name__ &lt;span style="color:#f92672">==&lt;/span> &lt;span style="color:#e6db74">&amp;#39;__main__&amp;#39;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> test &lt;span style="color:#f92672">=&lt;/span> LinuxFile(&lt;span style="color:#e6db74">&amp;#39;47.242.218.75&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;22&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;root&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;Qwer1234&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># test.up_file(&amp;#39;../2020-10-11_20-21-28.py&amp;#39;, &amp;#39;/root/2020-10-11_20-21-28.py&amp;#39;)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> test&lt;span style="color:#f92672">.&lt;/span>down_file(&lt;span style="color:#e6db74">&amp;#39;/var/log/nginx/access.log&amp;#39;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;a.log&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item></channel></rss>

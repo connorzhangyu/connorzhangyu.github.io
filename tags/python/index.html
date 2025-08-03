@@ -1,0 +1,77 @@
+<!doctype html><html lang=zh><head><title>Python :: Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://connorzhangyu.com/tags/python/><link rel=stylesheet href=https://connorzhangyu.com/styles.css><link rel="shortcut icon" href=https://connorzhangyu.com/img/theme-colors/orange.png><link rel=apple-touch-icon href=https://connorzhangyu.com/img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta name=twitter:site content><meta name=twitter:creator content><meta property="og:locale" content="zh"><meta property="og:type" content="website"><meta property="og:title" content="Python"><meta property="og:description" content><meta property="og:url" content="https://connorzhangyu.com/tags/python/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="https://connorzhangyu.com/img/favicon/orange.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><link href=/tags/python/index.xml rel=alternate type=application/rss+xml title="Hello World"></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></nav></header><div class=content><h1>Posts for: #Python</h1><div class=posts><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/python/>Python</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/python/>Python</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/%E6%95%99%E7%A8%8B/>教程</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/%E7%AC%94%E8%AE%B0/>笔记</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051532070.png class=post-cover alt=Python title="Cover Image"><div class=post-content><h1 id=安装>安装</h1><h1 id=虚拟环境>虚拟环境</h1><pre tabindex=0><code># 判断有没有虚拟环境
+virtualenv -V
+
+# 安装虚拟环境
+# 需要sudo
+pip install virtualenv
+pip install virtualenvwrapper
+
+# 查看有多少虚拟环境的文件夹
+workon
+
+# 创建虚拟环境文件夹
+mkvirtualenv 文件夹名字
+
+# 从虚拟文件夹退出
+deactiave
+
+# 进入虚拟环境中
+workon 虚拟环境名称
+
+# 删除虚拟环境
+rmvirutalenv
+
+# 查看虚拟环境有哪些框架,要在虚拟环境中执行
+pip freeze
+
+# 安装软件指定版本,要在虚拟环境中执行
+pip install flask==10.0.0.0
+
+# 导出虚拟环境中的所有扩展,要在虚拟环境中执行
+pip freeze &gt; requirements.txt
+
+# 安装,要在虚拟环境中执行
+pip install -r requirements.txt
+</code></pre><h1 id=centos7安装python3>centos7安装python3</h1><p>特别是在喜欢环境中已经安装的python2.x的版本中</p><pre tabindex=0><code># 这个可能不一定要装
+sudo yum -y groupinstall &#34;Development tools&#34;
+
+# 需要的
+sudo yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel libffi-devel
+
+# 下载安装包
+wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0a1.tar.xz
+
+# 解压
+tar -xvxf  Python-3.7.0a1.tar.xz
+
+# 复制文件夹
+mv Python-3.7.0 /usr/local
+
+# 进入到文件夹
+cd /usr/local/Python-3.7.0/
+
+# 编译,一定需要后面的参数
+./configure --prefix=/usr/local/bin/python3
+make &amp; make install
+
+# 添加软连接
+ln -s /usr/local/bin/python3/bin/python3 /usr/bin/python3
+ln -s /usr/local/bin/python3/bin/pip3 /usr/bin/pip3
+
+# 验证
+python3
+pip3
+</code></pre><h1 id=基础>基础</h1><h1 id=1注释>1.注释</h1><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># 注释后面需要一个空格</span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;单行注释&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;单行注释&#34;</span>)  <span style=color:#75715e># 单行注释和代码之间至少要有两个空格</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>多行注释
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>&#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;这是多行注释&#34;</span>)
+</span></span></code></pre></div><h1 id=2算数运算符>2.算数运算符</h1><p>乘法的使用,用<code>*</code>可以拼接字符串</p></div><div><a class="read-more button" href=/posts/python/>Read more →</a></div></article><div class=pagination><div class=pagination__buttons></div></div></div></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>
+<span>:: <a href=https://github.com/mirus-ua/hugo-theme-re-terminal target=_blank>Theme</a> made by <a href=https://github.com/mirus-ua target=_blank>Mirus</a></span></div></div></footer><script type=text/javascript src=/bundle.min.js></script></div></body></html>
