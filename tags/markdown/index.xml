@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Markdown on Hello World</title><link>https://connorzhangyu.com/tags/markdown/</link><description>Recent content in Markdown on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sat, 19 Nov 2022 18:25:00 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/markdown/index.xml" rel="self" type="application/rss+xml"/><item><title>Obsidian</title><link>https://connorzhangyu.com/posts/obsidian/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/obsidian/</guid><description>&lt;h1 id="插件">插件&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Markdown on Hello World</title><link>https://connorzhangyu.com/tags/markdown/</link><description>Recent content in Markdown on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Sat, 19 Nov 2022 18:25:00 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/markdown/index.xml" rel="self" type="application/rss+xml"/><item><title>Obsidian</title><link>https://connorzhangyu.com/posts/obsidian/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/obsidian/</guid><description>&lt;h1 id="插件">插件&lt;/h1>
 &lt;p>1.安装git插件
 2.运行命令,才能在界面上显示Git
 &lt;img src="https://image.runtimes.cc/202404051446974.png" alt="">&lt;/p>
@@ -8,14 +8,4 @@
 &lt;h2 id="本地图片的格式">本地图片的格式&lt;/h2>
 &lt;p>使用 Obsidian 时，粘贴的图片路径会变成&lt;code>[[]]&lt;/code> 的格式，在像 Typora 的软件上，就不适配。
 可以在设置里，关闭 Wiki 链接的选项，粘贴图片后的格式就会自动变成了。
-&lt;img src="https://image.runtimes.cc/202404051451913.png" alt="">&lt;/p></description><content>&lt;h1 id="插件">插件&lt;/h1>
-&lt;p>1.安装git插件
-2.运行命令,才能在界面上显示Git
-&lt;img src="https://image.runtimes.cc/202404051446974.png" alt="">&lt;/p>
-&lt;h1 id="设置">设置&lt;/h1>
-&lt;h2 id="打开文件的时候显示的模式">打开文件的时候,显示的模式&lt;/h2>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051447844.png" alt="">&lt;/p>
-&lt;h2 id="本地图片的格式">本地图片的格式&lt;/h2>
-&lt;p>使用 Obsidian 时，粘贴的图片路径会变成&lt;code>[[]]&lt;/code> 的格式，在像 Typora 的软件上，就不适配。
-可以在设置里，关闭 Wiki 链接的选项，粘贴图片后的格式就会自动变成了。
-&lt;img src="https://image.runtimes.cc/202404051451913.png" alt="">&lt;/p></content></item></channel></rss>
+&lt;img src="https://image.runtimes.cc/202404051451913.png" alt="">&lt;/p></description></item></channel></rss>

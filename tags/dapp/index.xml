@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dapp on Hello World</title><link>https://connorzhangyu.com/tags/dapp/</link><description>Recent content in Dapp on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Thu, 29 May 2025 10:23:17 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/dapp/index.xml" rel="self" type="application/rss+xml"/><item><title>Dapp</title><link>https://connorzhangyu.com/posts/dapp/</link><pubDate>Thu, 29 May 2025 10:23:17 +0000</pubDate><guid>https://connorzhangyu.com/posts/dapp/</guid><description>&lt;h1 id="helloworld合约">HelloWorld合约&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dapp on Hello World</title><link>https://connorzhangyu.com/tags/dapp/</link><description>Recent content in Dapp on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Thu, 29 May 2025 10:23:17 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/dapp/index.xml" rel="self" type="application/rss+xml"/><item><title>Dapp</title><link>https://connorzhangyu.com/posts/dapp/</link><pubDate>Thu, 29 May 2025 10:23:17 +0000</pubDate><guid>https://connorzhangyu.com/posts/dapp/</guid><description>&lt;h1 id="helloworld合约">HelloWorld合约&lt;/h1>
 &lt;p>&lt;a href="https://remix.ethereum.org">Remix编辑器&lt;/a>&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202505281038720.png" alt="image-20250524144934373">&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-solidity" data-lang="solidity">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// SPDX-License-Identifier: MIT
@@ -6,7 +6,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">contract&lt;/span> &lt;span style="color:#a6e22e">helloworld&lt;/span>{
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">helloWorld&lt;/span>() &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">pure&lt;/span> &lt;span style="color:#66d9ef">returns&lt;/span> (&lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#66d9ef">memory&lt;/span>) {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Hello, World!&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Hello, World!&amp;#34;&lt;/span>; 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://image.runtimes.cc/202505281038400.png" alt="image-20250524145024856">&lt;/p>
@@ -29,35 +29,4 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://image.runtimes.cc/202505291022541.png" alt="image-20250529101412816">&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202505291022024.png" alt="image-20250529101510973">&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202505291022071.png" alt="image-20250529101815851">&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202505291022160.png" alt="image-20250529102052827">&lt;/p></description><content>&lt;h1 id="helloworld合约">HelloWorld合约&lt;/h1>
-&lt;p>&lt;a href="https://remix.ethereum.org">Remix编辑器&lt;/a>&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202505281038720.png" alt="image-20250524144934373">&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-solidity" data-lang="solidity">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// SPDX-License-Identifier: MIT
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">pragma solidity&lt;/span> &lt;span style="color:#f92672">^&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">8&lt;/span>.&lt;span style="color:#ae81ff">13&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">contract&lt;/span> &lt;span style="color:#a6e22e">helloworld&lt;/span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">helloWorld&lt;/span>() &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">pure&lt;/span> &lt;span style="color:#66d9ef">returns&lt;/span> (&lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#66d9ef">memory&lt;/span>) {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Hello, World!&amp;#34;&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://image.runtimes.cc/202505281038400.png" alt="image-20250524145024856">&lt;/p>
-&lt;h1 id="发行代币">发行代币&lt;/h1>
-&lt;p>在闲鱼,淘宝上买些测试币,也可以通过水龙头获取(只是有点要求和门槛,不如直接买),这里我买了两笔
-&lt;img src="https://image.runtimes.cc/202505281036642.webp" alt="">&lt;/p>
-&lt;p>新建合约文件&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202505291022584.png" alt="image-20250529101100930">&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-solidity" data-lang="solidity">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// SPDX-License-Identifier: MIT
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">pragma solidity&lt;/span> &lt;span style="color:#f92672">^&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>.&lt;span style="color:#ae81ff">8&lt;/span>.&lt;span style="color:#ae81ff">13&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> &lt;span style="color:#e6db74">&amp;#34;@openzeppelin/contracts/token/ERC20/ERC20.sol&amp;#34;&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">contract&lt;/span> &lt;span style="color:#a6e22e">MyError20Token&lt;/span> &lt;span style="color:#66d9ef">is&lt;/span> ERC20{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">constructor&lt;/span>(&lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#66d9ef">memory&lt;/span> _name,&lt;span style="color:#66d9ef">string&lt;/span> &lt;span style="color:#66d9ef">memory&lt;/span> _symbol) ERC20(_name,_symbol){
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _mint(msg.sender,&lt;span style="color:#ae81ff">10000&lt;/span> &lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#ae81ff">10&lt;/span> &lt;span style="color:#f92672">**&lt;/span> &lt;span style="color:#ae81ff">18&lt;/span>);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://image.runtimes.cc/202505291022541.png" alt="image-20250529101412816">&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202505291022024.png" alt="image-20250529101510973">&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202505291022071.png" alt="image-20250529101815851">&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202505291022160.png" alt="image-20250529102052827">&lt;/p></content></item></channel></rss>
+&lt;p>&lt;img src="https://image.runtimes.cc/202505291022160.png" alt="image-20250529102052827">&lt;/p></description></item></channel></rss>

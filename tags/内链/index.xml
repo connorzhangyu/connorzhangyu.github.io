@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>内链 on Hello World</title><link>https://connorzhangyu.com/tags/%E5%86%85%E9%93%BE/</link><description>Recent content in 内链 on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sun, 04 Dec 2022 01:26:00 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/%E5%86%85%E9%93%BE/index.xml" rel="self" type="application/rss+xml"/><item><title>Hexo</title><link>https://connorzhangyu.com/posts/hexo/</link><pubDate>Sun, 04 Dec 2022 01:26:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/hexo/</guid><description>&lt;h1 id="内链">内链&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>内链 on Hello World</title><link>https://connorzhangyu.com/tags/%E5%86%85%E9%93%BE/</link><description>Recent content in 内链 on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Sun, 04 Dec 2022 01:26:00 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/%E5%86%85%E9%93%BE/index.xml" rel="self" type="application/rss+xml"/><item><title>Hexo</title><link>https://connorzhangyu.com/posts/hexo/</link><pubDate>Sun, 04 Dec 2022 01:26:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/hexo/</guid><description>&lt;h1 id="内链">内链&lt;/h1>
 &lt;h2 id="内链图片">内链图片&lt;/h2>
 &lt;h3 id="相对路径">相对路径&lt;/h3>
 &lt;p>在&lt;code>source/&lt;/code>下创建一个图片的目录,比如起名叫&lt;code>img&lt;/code>的文件夹
@@ -20,26 +20,4 @@
 &lt;li>&lt;code>../&lt;/code> 相对路径,不是md文件的相对路径,是生成的public文件夹你的文章和内链文章的相对路径&lt;/li>
 &lt;li>310 是指&lt;code>abbrlink: 310&lt;/code>,如果没有就使用标题&lt;/li>
 &lt;li>&lt;code>#CloudFront加速Vercel&lt;/code> 是指 310这篇文章的&lt;code>#CloudFront加速Vercel&lt;/code>这个标题,也可以不用写,如果写了,就会自动跳到页面的这个锚点&lt;/li>
-&lt;/ul></description><content>&lt;h1 id="内链">内链&lt;/h1>
-&lt;h2 id="内链图片">内链图片&lt;/h2>
-&lt;h3 id="相对路径">相对路径&lt;/h3>
-&lt;p>在&lt;code>source/&lt;/code>下创建一个图片的目录,比如起名叫&lt;code>img&lt;/code>的文件夹
-在文章中引入 &lt;code>![图片的备注](图片的相对路径)&lt;/code>
-比如&lt;code>![测试](./2020.png)&lt;/code>&lt;/p>
-&lt;h3 id="第二种相对路径">第二种相对路径&lt;/h3>
-&lt;p>将&lt;code>_config.yml&lt;/code>文件中的配置项&lt;code>post_asset_folder&lt;/code>设为true后，执行命令&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ hexo new post_name
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>在source/_posts中会生成文章post_name.md和同名文件夹post_name。
-将图片资源放在post_name中，文章就可以使用相对路径引用图片资源了。&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>!&lt;span style="color:#f92672">[](&lt;/span>image.jpg&lt;span style="color:#f92672">)&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
-&lt;p>如果有遇到问题参考:&lt;a href="https://yanyinhong.github.io/2017/05/02/How-to-insert-image-in-hexo-post/">Hexo博客搭建之在文章中插入图片&lt;/a>&lt;/p>&lt;/blockquote>
-&lt;h2 id="内链文章">内链文章&lt;/h2>
-&lt;h3 id="相对路径-1">相对路径&lt;/h3>
-&lt;p>比如我的博客:
-&lt;code>[需要显示的文字](../310/#CloudFront加速Vercel)&lt;/code>&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>../&lt;/code> 相对路径,不是md文件的相对路径,是生成的public文件夹你的文章和内链文章的相对路径&lt;/li>
-&lt;li>310 是指&lt;code>abbrlink: 310&lt;/code>,如果没有就使用标题&lt;/li>
-&lt;li>&lt;code>#CloudFront加速Vercel&lt;/code> 是指 310这篇文章的&lt;code>#CloudFront加速Vercel&lt;/code>这个标题,也可以不用写,如果写了,就会自动跳到页面的这个锚点&lt;/li>
-&lt;/ul></content></item></channel></rss>
+&lt;/ul></description></item></channel></rss>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IDEA on Hello World</title><link>https://connorzhangyu.com/tags/idea/</link><description>Recent content in IDEA on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sat, 19 Nov 2022 18:25:00 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/idea/index.xml" rel="self" type="application/rss+xml"/><item><title>IDEA</title><link>https://connorzhangyu.com/posts/idea/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/idea/</guid><description>&lt;h1 id="教程">教程&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IDEA on Hello World</title><link>https://connorzhangyu.com/tags/idea/</link><description>Recent content in IDEA on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Sat, 19 Nov 2022 18:25:00 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/idea/index.xml" rel="self" type="application/rss+xml"/><item><title>IDEA</title><link>https://connorzhangyu.com/posts/idea/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/idea/</guid><description>&lt;h1 id="教程">教程&lt;/h1>
 &lt;h2 id="idea查看方法被调用">IDEA查看方法被调用&lt;/h2>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051423853.png" alt="">&lt;/p>
 &lt;h2 id="修改光标所在行背景颜色">修改光标所在行背景颜色&lt;/h2>
@@ -21,27 +21,4 @@
 &lt;h3 id="key-promoter-x">Key Promoter X&lt;/h3>
 &lt;h3 id="translation">Translation&lt;/h3>
 &lt;p>作者:Yii.Guxing&lt;/p>
-&lt;p>选中要翻译的内容,右键选择翻译&lt;/p></description><content>&lt;h1 id="教程">教程&lt;/h1>
-&lt;h2 id="idea查看方法被调用">IDEA查看方法被调用&lt;/h2>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051423853.png" alt="">&lt;/p>
-&lt;h2 id="修改光标所在行背景颜色">修改光标所在行背景颜色&lt;/h2>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051423630.png" alt="">&lt;/p>
-&lt;h2 id="断点判断条件">断点判断条件&lt;/h2>
-&lt;p>在断点上点右键,正常的写判断代码就行&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051423731.png" alt="image-20230803174451532">&lt;/p>
-&lt;h2 id="插件">插件&lt;/h2>
-&lt;h3 id="rabinbow-brackets">Rabinbow Brackets&lt;/h3>
-&lt;p>作者:Zhihao Zhang&lt;/p>
-&lt;p>使用方法&lt;/p>
-&lt;p>&lt;code>Command&lt;/code>+右键,高亮选中部分&lt;/p>
-&lt;p>&lt;code>Alt&lt;/code>+右键,高亮选中部分,其余的代码变暗&lt;/p>
-&lt;h3 id="commitmessage">CommitMessage&lt;/h3>
-&lt;p>作者:郭翰林&lt;/p>
-&lt;p>使用方法,提交的时候,点击✈️的图标&lt;/p>
-&lt;h3 id="codeium">Codeium&lt;/h3>
-&lt;p>作者:Codeium&lt;/p>
-&lt;p>写代码的时候会有自动提示,按tab确定使用AI生成的代码&lt;/p>
-&lt;h3 id="key-promoter-x">Key Promoter X&lt;/h3>
-&lt;h3 id="translation">Translation&lt;/h3>
-&lt;p>作者:Yii.Guxing&lt;/p>
-&lt;p>选中要翻译的内容,右键选择翻译&lt;/p></content></item></channel></rss>
+&lt;p>选中要翻译的内容,右键选择翻译&lt;/p></description></item></channel></rss>
