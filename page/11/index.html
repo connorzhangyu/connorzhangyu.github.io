@@ -1,4 +1,69 @@
-<!doctype html><html lang=zh><head><meta name=generator content="Hugo 0.148.2"><title>Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="记仇小本本"><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://connorzhangyu.com/><link rel=stylesheet href=https://connorzhangyu.com/styles.css><link rel="shortcut icon" href=https://connorzhangyu.com/img/theme-colors/orange.png><link rel=apple-touch-icon href=https://connorzhangyu.com/img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta name=twitter:site content><meta name=twitter:creator content><meta property="og:locale" content="zh"><meta property="og:type" content="website"><meta property="og:title" content="Hello World"><meta property="og:description" content="记仇小本本"><meta property="og:url" content="https://connorzhangyu.com/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="https://connorzhangyu.com/img/favicon/orange.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><link href=/index.xml rel=alternate type=application/rss+xml title="Hello World"><link href=/index.json rel=alternate type=application/json title="Hello World"></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></nav></header><div class=content><div class=posts><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/kubernetes/>Kubernetes</a></h1><div class=post-meta><time class=post-date>2023-11-07</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/kubernetes/>Kubernetes</a>&nbsp;
+<!doctype html><html lang=zh><head><meta name=generator content="Hugo 0.148.2"><title>Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="记仇小本本"><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://connorzhangyu.com/><link rel=stylesheet href=https://connorzhangyu.com/styles.css><link rel="shortcut icon" href=https://connorzhangyu.com/img/theme-colors/orange.png><link rel=apple-touch-icon href=https://connorzhangyu.com/img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta name=twitter:site content><meta name=twitter:creator content><meta property="og:locale" content="zh"><meta property="og:type" content="website"><meta property="og:title" content="Hello World"><meta property="og:description" content="记仇小本本"><meta property="og:url" content="https://connorzhangyu.com/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="https://connorzhangyu.com/img/favicon/orange.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><link href=/index.xml rel=alternate type=application/rss+xml title="Hello World"><link href=/index.json rel=alternate type=application/json title="Hello World"></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></nav></header><div class=content><div class=posts><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/netty/>Netty</a></h1><div class=post-meta><time class=post-date>2023-12-10</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/java/>Java</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/spring/>Spring</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/netty/>Netty</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051531898.png class=post-cover alt=Netty title="Cover Image"><div class=post-content><p>Server</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#75715e>// 把 NettyServer 的创建交给 Spring 管理</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>@Component</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>NettyServer</span> {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> Logger logger <span style=color:#f92672>=</span> LoggerFactory.<span style=color:#a6e22e>getLogger</span>(getClass());
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Value</span>(<span style=color:#e6db74>&#34;${netty.port}&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> Integer port;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Resource</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> NettyServerHandlerInitializer nettyServerHandlerInitializer;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// boss 线程组，用于服务端接受客户端的连接</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> EventLoopGroup bossGroup <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> NioEventLoopGroup();
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// worker 线程组，用于服务端接受客户端的数据读写</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> EventLoopGroup workerGroup <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> NioEventLoopGroup();
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Netty Server Channel</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> Channel channel;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 启动 Netty Server</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@PostConstruct</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>start</span>() <span style=color:#66d9ef>throws</span> InterruptedException {
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// 创建 ServerBootstrap 对象，用于 Netty Server 启动</span>
+</span></span><span style=display:flex><span>        ServerBootstrap bootstrap <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> ServerBootstrap();
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// 设置 ServerBootstrap 的各种属性</span>
+</span></span><span style=display:flex><span>      	<span style=color:#75715e>// 设置两个 EventLoopGroup 对象</span>
+</span></span><span style=display:flex><span>        bootstrap.<span style=color:#a6e22e>group</span>(bossGroup, workerGroup)
+</span></span><span style=display:flex><span>          			<span style=color:#75715e>// 指定 Channel 为服务端 NioServerSocketChannel</span>
+</span></span><span style=display:flex><span>                .<span style=color:#a6e22e>channel</span>(NioServerSocketChannel.<span style=color:#a6e22e>class</span>)
+</span></span><span style=display:flex><span>          			<span style=color:#75715e>// 设置 Netty Server 的端口</span>
+</span></span><span style=display:flex><span>                .<span style=color:#a6e22e>localAddress</span>(<span style=color:#66d9ef>new</span> InetSocketAddress(port)) 
+</span></span><span style=display:flex><span>          			<span style=color:#75715e>// 服务端 accept 队列的大小</span>
+</span></span><span style=display:flex><span>                .<span style=color:#a6e22e>option</span>(ChannelOption.<span style=color:#a6e22e>SO_BACKLOG</span>, 1024) 
+</span></span><span style=display:flex><span>          			<span style=color:#75715e>// TCP Keepalive 机制，实现 TCP 层级的心跳保活功能</span>
+</span></span><span style=display:flex><span>                .<span style=color:#a6e22e>childOption</span>(ChannelOption.<span style=color:#a6e22e>SO_KEEPALIVE</span>, <span style=color:#66d9ef>true</span>) 
+</span></span><span style=display:flex><span>          			<span style=color:#75715e>// 允许较小的数据包的发送，降低延迟</span>
+</span></span><span style=display:flex><span>                .<span style=color:#a6e22e>childOption</span>(ChannelOption.<span style=color:#a6e22e>TCP_NODELAY</span>, <span style=color:#66d9ef>true</span>)
+</span></span><span style=display:flex><span>          			<span style=color:#75715e>// 处理器</span>
+</span></span><span style=display:flex><span>                .<span style=color:#a6e22e>childHandler</span>(nettyServerHandlerInitializer);
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// 绑定端口，并同步等待成功，即启动服务端</span>
+</span></span><span style=display:flex><span>        ChannelFuture future <span style=color:#f92672>=</span> bootstrap.<span style=color:#a6e22e>bind</span>().<span style=color:#a6e22e>sync</span>();
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (future.<span style=color:#a6e22e>isSuccess</span>()) {
+</span></span><span style=display:flex><span>            channel <span style=color:#f92672>=</span> future.<span style=color:#a6e22e>channel</span>();
+</span></span><span style=display:flex><span>            logger.<span style=color:#a6e22e>info</span>(<span style=color:#e6db74>&#34;[start][Netty Server 启动在 {} 端口]&#34;</span>, port);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 关闭 Netty Server</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@PreDestroy</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>shutdown</span>() {
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// 关闭 Netty Server</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (channel <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span>) {
+</span></span><span style=display:flex><span>            channel.<span style=color:#a6e22e>close</span>();
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// &lt;3.2&gt; 优雅关闭两个 EventLoopGroup 对象</span>
+</span></span><span style=display:flex><span>        bossGroup.<span style=color:#a6e22e>shutdownGracefully</span>();
+</span></span><span style=display:flex><span>        workerGroup.<span style=color:#a6e22e>shutdownGracefully</span>();
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>NettyServerHandlerInitializer</p></div><div><a class="read-more button" href=/posts/netty/>Read more →</a></div></article><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/kubernetes/>Kubernetes</a></h1><div class=post-meta><time class=post-date>2023-11-07</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/kubernetes/>Kubernetes</a>&nbsp;
 #<a href=https://connorzhangyu.com/tags/docker/>Docker</a>&nbsp;
 </span><img src=https://image.runtimes.cc/202404051530299.png class=post-cover alt=Kubernetes title="Cover Image"><div class=post-content><h2 id=主节点上操作>主节点上操作</h2><p>定义主机名字</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>sudo vim /etc/hosts
 </span></span><span style=display:flex><span>
@@ -294,7 +359,7 @@
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// //初始化springmvc的配置</span>
 </span></span><span style=display:flex><span>		initStrategies(context);
 </span></span><span style=display:flex><span>	}
-</span></span></code></pre></div><p>总体流程:</p></div><div><a class="read-more button" href=/posts/spring/>Read more →</a></div></article><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/%E8%AE%B0%E5%BD%95/%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/>面试记录</a></h1><div class=post-meta><time class=post-date>2023-08-01</time><span class=post-author>Anthony</span></div><img src=https://image.runtimes.cc/202505232149082.webp class=post-cover alt=面试记录 title="Cover Image"><div class=post-content><p>{% timeline 至今 ,color %}</p><ol><li>mysql 主从复制异常怎么办</li><li>ThreadLocal 没有答上来</li><li>强应用,弱引用</li><li>mybatis源码,myabtis怎么通过接口调用到sql的</li><li>RabbitMQ 和 RocketMQ的区别</li><li>Redis的数据结构有哪些</li><li>重构代码用了哪些设计模式</li><li>Spring Cloud的常用组件</li><li>violate关键字</li><li>实现多数据源</li><li>Spring事务传播</li></ol><p>{% endtimeline %}</p></div><div><a class="read-more button" href=/posts/%E8%AE%B0%E5%BD%95/%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/>Read more →</a></div></article><div class=pagination><div class=pagination__buttons><a href=/page/10/ class="button previous"><span class=button__icon>←</span>
+</span></span></code></pre></div><p>总体流程:</p></div><div><a class="read-more button" href=/posts/spring/>Read more →</a></div></article><div class=pagination><div class=pagination__buttons><a href=/page/10/ class="button previous"><span class=button__icon>←</span>
 <span class=button__text>Newer posts</span>
 </a><a href=/page/12/ class="button next"><span class=button__text>Older posts</span>
 <span class=button__icon>→</span></a></div></div></div></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>

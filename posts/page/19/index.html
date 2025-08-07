@@ -1,4 +1,222 @@
-<!doctype html><html lang=zh><head><title>Posts :: Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://connorzhangyu.com/posts/><link rel=stylesheet href=https://connorzhangyu.com/styles.css><link rel="shortcut icon" href=https://connorzhangyu.com/img/theme-colors/orange.png><link rel=apple-touch-icon href=https://connorzhangyu.com/img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta name=twitter:site content><meta name=twitter:creator content><meta property="og:locale" content="zh"><meta property="og:type" content="website"><meta property="og:title" content="Posts"><meta property="og:description" content><meta property="og:url" content="https://connorzhangyu.com/posts/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="https://connorzhangyu.com/img/favicon/orange.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><link href=/posts/index.xml rel=alternate type=application/rss+xml title="Hello World"></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></nav></header><div class=content><div class=posts><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/nodejs/>NodeJs</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/nodejs/>NodeJs</a>&nbsp;
+<!doctype html><html lang=zh><head><title>Posts :: Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://connorzhangyu.com/posts/><link rel=stylesheet href=https://connorzhangyu.com/styles.css><link rel="shortcut icon" href=https://connorzhangyu.com/img/theme-colors/orange.png><link rel=apple-touch-icon href=https://connorzhangyu.com/img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta name=twitter:site content><meta name=twitter:creator content><meta property="og:locale" content="zh"><meta property="og:type" content="website"><meta property="og:title" content="Posts"><meta property="og:description" content><meta property="og:url" content="https://connorzhangyu.com/posts/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="https://connorzhangyu.com/img/favicon/orange.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><link href=/posts/index.xml rel=alternate type=application/rss+xml title="Hello World"></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></nav></header><div class=content><div class=posts><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/nginx/>Nginx</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/mac/>Mac</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051531732.png class=post-cover alt=Nginx title="Cover Image"><div class=post-content><h2 id=docker安装-nginx>Docker安装 Nginx</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># 简单的</span>
+</span></span><span style=display:flex><span>docker run --name nginx-test <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>     -p 8080:80 <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>     -d <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>     nginx
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 正式的</span>
+</span></span><span style=display:flex><span>docker run -d <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>           -p 443:443 <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>           -p 80:80 <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>           --name nginx <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>           -v /home/nginx/www:/usr/share/nginx/html <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>           -v /home/nginx/conf/nginx.conf:/etc/nginx/nginx.conf <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>           -v /home/nginx/logs:/var/log/nginx <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>           nginx
+</span></span></code></pre></div><h2 id=ubuntu安装nginx>Ubuntu安装Nginx</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># Ubuntu安装依赖</span>
+</span></span><span style=display:flex><span>sudo apt-get install libpcre3 libpcre3-dev openssl libssl-dev zlib1g-dev
+</span></span><span style=display:flex><span><span style=color:#75715e># Ubuntu 如果还缺少依赖</span>
+</span></span><span style=display:flex><span>apt-get install build-essential
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Centos安装依赖</span>
+</span></span><span style=display:flex><span>yum install -y gcc-c++ pcre pcre-devel  zlib zlib-devel  openssl openssl-devel
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 进入到解压的文件</span>
+</span></span><span style=display:flex><span>cd ./nginx-1.16
+</span></span><span style=display:flex><span>./configure --prefix<span style=color:#f92672>=</span>/url/local/nginx
+</span></span><span style=display:flex><span><span style=color:#75715e>#或者</span>
+</span></span><span style=display:flex><span>./configure
+</span></span><span style=display:flex><span><span style=color:#75715e># 如果需要指定模块</span>
+</span></span><span style=display:flex><span>./configure --add-module<span style=color:#f92672>=</span>../nginx-rtmp-module
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#然后目录下就多了一个nginx文件</span>
+</span></span><span style=display:flex><span>make <span style=color:#f92672>&amp;&amp;</span> make install
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#启动</span>
+</span></span><span style=display:flex><span>cd ../nginx/sbin
+</span></span><span style=display:flex><span>./nginx
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 配置文件目录</span>
+</span></span><span style=display:flex><span>所有的配置文件都在/etc/nginx下，并且每个虚拟主机已经安排在了/etc/nginx/sites-available下
+</span></span><span style=display:flex><span>程序文件在/usr/sbin/nginx
+</span></span><span style=display:flex><span>日志放在了/var/log/nginx中
+</span></span><span style=display:flex><span>并已经在/etc/init.d/下创建了启动脚本nginx
+</span></span><span style=display:flex><span>默认的虚拟主机的目录设置在了/var/www/nginx-default <span style=color:#f92672>(</span>有的版本 默认的虚拟主机的目录设置在了/var/www, 请参考/etc/nginx/sites-available里的配置<span style=color:#f92672>)</span>
+</span></span></code></pre></div><h2 id=nginx-常用命令>Nginx 常用命令</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 启动nginx</span>
+</span></span><span style=display:flex><span>start nginx
+</span></span><span style=display:flex><span><span style=color:#75715e># 或者</span>
+</span></span><span style=display:flex><span>nginx
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 修改配置后重新加载生效</span>
+</span></span><span style=display:flex><span>nginx -s reload
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 重新打开日志文件</span>
+</span></span><span style=display:flex><span>nginx -s reopen
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 测试nginx配置文件是否正确</span>
+</span></span><span style=display:flex><span>nginx -t -c /path/to/nginx.conf
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 快速停止nginx</span>
+</span></span><span style=display:flex><span>nginx -s stop
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 完整有序的停止nginx</span>
+</span></span><span style=display:flex><span>nginx -s quit
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 指定配置文件启动</span>
+</span></span><span style=display:flex><span>nginx -c /home/anthony/nginx.conf
+</span></span></code></pre></div><h2 id=nginx-配置模板>Nginx 配置模板</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#75715e>#user  nobody;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 设置 &lt;= cpu核数,一般设置成cpu*核数</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>worker_processes  1;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 指定错误日志文件存放路径，错误日志级别可选项为【debug|info|notice|warn|error|crit】</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>error_log  logs/warn.log  warn;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 指定pid存放路径 nginx启动后的进程ID</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>pid        logs/nginx.pid;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 工作模式及连接数上限</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#user  nobody;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 设置 &lt;= cpu核数</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>worker_processes  1;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 指定错误日志文件存放路径，错误日志级别可选项为【debug|info|notice|warn|error|crit】</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># error_log  logs/error.log  error;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 指定pid存放路径 nginx启动后的进程ID</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># pid        logs/nginx.pid;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 工作模式及连接数上限</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>events {</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 使用网络I/O模型，Linux系统推荐使用epoll模型，FreeBSD系统推荐使用kqueue;window下不指定</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># user epoll;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 允许的最大连接数</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>worker_connections  1024;</span>
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 设定http服务器，利用他的反向代理功能提供负载均衡支持</span>
+</span></span><span style=display:flex><span><span style=color:#ae81ff>http {</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 设定mime类型</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>include       mime.types;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>default_type  application/octet-stream;</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 设定日志格式</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>log_format  main  &#39;$remote_addr - $remote_user [$time_local] &#34;$request&#34; &#39;</span>
+</span></span><span style=display:flex><span>                      <span style=color:#e6db74>&#39;$status $body_bytes_sent &#34;$http_referer&#34; &#39;</span>
+</span></span><span style=display:flex><span>                      <span style=color:#e6db74>&#39;&#34;$http_user_agent&#34; &#34;$http_x_forwarded_for&#34;&#39;</span><span style=color:#ae81ff>;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>client_header_buffer_size 1k;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>large_client_header_buffers 4 4k;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># access_log  logs/info.log  main;</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># # 设定access log</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>send_timeout 3m;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>sendfile on;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>tcp_nopush on;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>tcp_nodelay on;</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 这个参数表示http连接超时时间，默认是65s。要是上传文件比较大，在规定时间内没有上传完成，就会自动断开连接！所以适当调大这个时间。</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>keepalive_timeout  0;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>keepalive_timeout  5000;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 开启gzip模块</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>gzip  on;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>gzip_min_length 1100;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>gzip_buffers 4 8k;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>gzip_types text/plain application/x-javascript text/css application/xml text/javascript application/x-httpd-php application/javascript application/json;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>output_buffers 1 32k;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>postpone_output 1460;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>server_names_hash_bucket_size 128;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>client_header_timeout 3m;       </span> <span style=color:#75715e>#调大点</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>client_body_timeout 3m;         </span> <span style=color:#75715e>#调大点</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>client_max_body_size 200m;        </span> <span style=color:#75715e>#主要是这个参数，限制了上传文件大大小</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>#client_body_buffer_size 1024;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>fastcgi_connect_timeout 300;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>fastcgi_send_timeout 300;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>fastcgi_read_timeout 300;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>fastcgi_buffer_size 64k;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>fastcgi_buffers 4 64k;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>fastcgi_busy_buffers_size 128k;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>fastcgi_temp_file_write_size 128k;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>gzip_http_version 1.1;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>gzip_comp_level 2;</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>gzip_vary on;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span> <span style=color:#75715e>#设定虚拟主机</span>
+</span></span><span style=display:flex><span>    <span style=color:#ae81ff>server {</span>
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>listen      80;</span>
+</span></span><span style=display:flex><span>     <span style=color:#ae81ff>server_name  ap.mmzcg.com;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># 设置url编码格式，解决参数中文乱码问题</span>
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>charset UTF-8;</span>
+</span></span><span style=display:flex><span>     <span style=color:#75715e># 设定本虚拟主机的访问日志</span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># access_log  logs/host.access.log  main;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># 对 &#34;/&#34; 启用负载均衡</span>
+</span></span><span style=display:flex><span>        <span style=color:#ae81ff>location / {</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># 设定代理访问地址</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>proxy_pass http://127.0.0.1:30000/;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># 配置SSL证书</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># ssl_certificate /etc/nginx/conf.d/ssl/STAR.huihuang200.com.crt;</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># ssl_certificate_key  /etc/nginx/conf.d/ssl/STAR.huihuang200.com.key;</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># ssl_session_timeout 5m;</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># ssl_session_cache shared:SSL:10m;</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># ssl_protocols TLSv1 TLSv1.1 TLSv1.2 SSLv2 SSLv3;</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># ssl_ciphers ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP;</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># ssl_prefer_server_ciphers on;</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># ssl_verify_client off;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># 解决ajax跨域问题</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>add_header &#39;Access-Control-Allow-Origin&#39; &#39;*&#39;;</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>add_header &#39;Access-Control-Allow-Credentials&#39; &#39;true&#39;;</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>add_header &#39;Access-Control-Allow-Methods&#39; &#39;GET, POST, OPTIONS&#39;;</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>add_header &#39;Access-Control-Allow-Headers&#39; &#39;DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type&#39;;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>         <span style=color:#75715e># 保留用户真实信息</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>proxy_set_header Host $host:$server_port;</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>proxy_set_header X-Real-IP $remote_addr;</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># 允许客户端请求的最大单个文件字节数</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>client_max_body_size 100m;</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># 缓冲区代理缓冲用户端请求的最大字节数，可以理解为先保存到本地再传给用户</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>client_body_buffer_size 1280k;</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># nginx跟后端服务器连接超时时间，发起握手等候响应超时时间(代理连接超时)</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>proxy_connect_timeout 5;</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># 连接成功后 等待后端服务器响应时间 其实已进入后端的排队之中等候处理</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>proxy_read_timeout 60;</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># 代理请求缓存区 这个缓存区间会保存用户的头信息一共Nginx进行规则处理 一般只要能保存下头信息即可</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>proxy_send_timeout 30;</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># 同上 告诉Nginx保存单个用的几个Buffer最大用多大空间</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>proxy_buffer_size 256k;</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>proxy_buffers 4 256k;</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># 如果系统很忙的时候可以申请国内各大的proxy_buffers 官方推荐 *2</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>proxy_busy_buffers_size 256k;</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># proxy 缓存临时文件的大小</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>proxy_temp_file_write_size 256k;</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>proxy_next_upstream error timeout invalid_header http_500 http_503 http_404;</span>
+</span></span><span style=display:flex><span>            <span style=color:#ae81ff>proxy_max_temp_file_size 128m;</span>
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h2 id=nginx日志管理>Nginx日志管理</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-nginx data-lang=nginx><span style=display:flex><span><span style=color:#75715e>#access_log  logs/access.log  main;
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e># nginx的默认配置,如果在安装的nginx里没有看到这个,也没有关系
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#log_format  main  &#39;$remote_addr - $remote_user [$time_local] &#34;$request&#34; &#39;
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#                  &#39;$status $body_bytes_sent &#34;$http_referer&#34; &#39;
+</span></span></span><span style=display:flex><span><span style=color:#75715e>#                  &#39;&#34;$http_user_agent&#34; &#34;$http_x_forwarded_for&#34;&#39;;
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>server</span> {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>listen</span>  <span style=color:#ae81ff>80</span>;
+</span></span><span style=display:flex><span>    <span style=color:#f92672>location</span> <span style=color:#e6db74>/</span> {
+</span></span><span style=display:flex><span>        <span style=color:#f92672>root</span> <span style=color:#e6db74>my</span>;
+</span></span><span style=display:flex><span>        <span style=color:#f92672>index</span> <span style=color:#e6db74>index.html</span>
+</span></span><span style=display:flex><span>    <span style=color:#960050;background-color:#1e0010>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>#配置日志, main 就是log_format 后面的名字
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  	<span style=color:#75715e># 该server的访问日志的文件是logs/access.log,使用的是main格式
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#e6db74>access_log</span>  <span style=color:#e6db74>logs/access.log</span>  <span style=color:#e6db74>main</span>;
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>推荐的配置</p></div><div><a class="read-more button" href=/posts/nginx/>Read more →</a></div></article><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/nodejs/>NodeJs</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/nodejs/>NodeJs</a>&nbsp;
 #<a href=https://connorzhangyu.com/tags/%E5%89%8D%E7%AB%AF/>前端</a>&nbsp;
 </span><img src=https://image.runtimes.cc/202404051531669.png class=post-cover alt=NodeJs title="Cover Image"><div class=post-content><h1 id=语法>语法</h1><h1 id=基本使用>基本使用</h1><h1 id=初始化项目>初始化项目</h1><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>npm init -y 
 </span></span></code></pre></div><h1 id=创建文件>创建文件</h1><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 新建src文件夹</span>
@@ -194,16 +412,7 @@ pip3
 </span></span></span><span style=display:flex><span><span style=color:#e6db74>多行注释
 </span></span></span><span style=display:flex><span><span style=color:#e6db74>&#34;&#34;&#34;</span>
 </span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;这是多行注释&#34;</span>)
-</span></span></code></pre></div><h1 id=2算数运算符>2.算数运算符</h1><p>乘法的使用,用<code>*</code>可以拼接字符串</p></div><div><a class="read-more button" href=/posts/python/>Read more →</a></div></article><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/redis/>Redis</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/redis/>Redis</a>&nbsp;
-</span><img src=https://image.runtimes.cc/202404051532701.jpg class=post-cover alt=Redis title="Cover Image"><div class=post-content><h1 id=安装redis>安装Redis</h1><h2 id=安装单机redis>安装单机Redis</h2><p>{% tabs 安装单机Redis %}</p><p><a href=https://github.com/tporadowski/redis/releases>Releases · tporadowski/redis</a></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>docker run <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>       -p 6379:6379 <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>       --name myredis <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>       -v $PWD/redis.conf:/etc/redis/redis.conf <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>       -v $PWD/data:/data <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>       -d redis:3.2 redis-server /etc/redis/redis.conf <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>       --restart<span style=color:#f92672>=</span>always <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>       --appendonly yes
-</span></span></code></pre></div><p>命令说明：</p><ul><li><code>-name myredis</code> : 指定容器名称，这个最好加上，不然在看docker进程的时候会很尴尬。</li><li><code>p 6699:6379</code> ： 端口映射，默认redis启动的是6379,外部端口(6699)。</li><li><code>v $PWD/redis.conf:/etc/redis/redis.conf</code> ： 将主机中当前目录下的redis.conf配置文件映射。</li><li><code>v $PWD/data:/data -d redis:latest</code>： 将主机中当前目录下的data挂载到容器的/data</li><li><code>-redis-server --appendonly yes</code> :在容器执行redis-server启动命令，并打开redis持久化配置</li><li><code>-restart=always</code>:自动启动</li><li>注意事项：</li><li>如果不需要指定配置，<code>v $PWD/redis.conf:/etc/redis/redis.conf</code> 可以不用</li><li>redis-server 后面的那段 <code>/etc/redis/redis.conf</code> 也可以不用。</li><li><code>$PWD</code> 在window系统下貌似不能用,可以用相对路径<code>/</code></li></ul><p>客户端连接</p></div><div><a class="read-more button" href=/posts/redis/>Read more →</a></div></article><div class=pagination><div class=pagination__buttons><a href=/posts/page/18/ class="button previous"><span class=button__icon>←</span>
+</span></span></code></pre></div><h1 id=2算数运算符>2.算数运算符</h1><p>乘法的使用,用<code>*</code>可以拼接字符串</p></div><div><a class="read-more button" href=/posts/python/>Read more →</a></div></article><div class=pagination><div class=pagination__buttons><a href=/posts/page/18/ class="button previous"><span class=button__icon>←</span>
 <span class=button__text>Newer posts</span>
 </a><a href=/posts/page/20/ class="button next"><span class=button__text>Older posts</span>
 <span class=button__icon>→</span></a></div></div></div></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>
