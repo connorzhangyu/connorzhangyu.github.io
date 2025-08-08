@@ -1,4 +1,227 @@
-<!doctype html><html lang=zh><head><meta name=generator content="Hugo 0.148.2"><title>Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="记仇小本本"><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://connorzhangyu.com/><link rel=stylesheet href=https://connorzhangyu.com/styles.css><link rel="shortcut icon" href=https://connorzhangyu.com/img/theme-colors/orange.png><link rel=apple-touch-icon href=https://connorzhangyu.com/img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta name=twitter:site content><meta name=twitter:creator content><meta property="og:locale" content="zh"><meta property="og:type" content="website"><meta property="og:title" content="Hello World"><meta property="og:description" content="记仇小本本"><meta property="og:url" content="https://connorzhangyu.com/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="https://connorzhangyu.com/img/favicon/orange.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><link href=/index.xml rel=alternate type=application/rss+xml title="Hello World"><link href=/index.json rel=alternate type=application/json title="Hello World"></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></nav></header><div class=content><div class=posts><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/excel/>Excel</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/mac/>Mac</a>&nbsp;
+<!doctype html><html lang=zh><head><meta name=generator content="Hugo 0.148.2"><title>Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="记仇小本本"><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://connorzhangyu.com/><link rel=stylesheet href=https://connorzhangyu.com/styles.css><link rel="shortcut icon" href=https://connorzhangyu.com/img/theme-colors/orange.png><link rel=apple-touch-icon href=https://connorzhangyu.com/img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta name=twitter:site content><meta name=twitter:creator content><meta property="og:locale" content="zh"><meta property="og:type" content="website"><meta property="og:title" content="Hello World"><meta property="og:description" content="记仇小本本"><meta property="og:url" content="https://connorzhangyu.com/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="https://connorzhangyu.com/img/favicon/orange.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><link href=/index.xml rel=alternate type=application/rss+xml title="Hello World"><link href=/index.json rel=alternate type=application/json title="Hello World"></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></nav></header><div class=content><div class=posts><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/%E5%89%8D%E7%AB%AF/element-ui/>Element-UI</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/%E5%89%8D%E7%AB%AF/>前端</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/%E6%95%99%E7%A8%8B/>教程</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/%E7%AC%94%E8%AE%B0/>笔记</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/vue.js/>Vue.js</a>&nbsp;
+#<a href=https://connorzhangyu.com/tags/element-ui/>Element-UI</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051527979.jpg class=post-cover alt=Element-UI title="Cover Image"><div class=post-content><h1 id=表单验证>表单验证</h1><h2 id=简单版>简单版</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>&lt;<span style=color:#f92672>template</span>&gt;
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;login&#34;</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>el-card</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;box-card&#34;</span>&gt;
+</span></span><span style=display:flex><span>      &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>slot</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;header&#34;</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;clearfix&#34;</span>&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>span</span>&gt;通用后台管理系统&lt;/<span style=color:#f92672>span</span>&gt;
+</span></span><span style=display:flex><span>      &lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      &lt;<span style=color:#f92672>el-form</span>
+</span></span><span style=display:flex><span>          <span style=color:#a6e22e>label-width</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;80px&#34;</span>
+</span></span><span style=display:flex><span>          <span style=color:#a6e22e>:model</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;form&#34;</span>
+</span></span><span style=display:flex><span>          <span style=color:#a6e22e>ref</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;form&#34;</span>&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>el-form-item</span> <span style=color:#a6e22e>label</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;用户名&#34;</span> <span style=color:#a6e22e>prop</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;username&#34;</span>
+</span></span><span style=display:flex><span>                      <span style=color:#a6e22e>:rules</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;[
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            {required:true,message:&#39;请输入用户名&#39;,trigger:&#39;blur&#39;},
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            {min:6,max:12,message:&#39;长度在6-12位字符&#39;,trigger:&#39;blur&#39;},
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        ]&#34;</span>&gt;
+</span></span><span style=display:flex><span>          &lt;<span style=color:#f92672>el-input</span> <span style=color:#a6e22e>v-model</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;form.username&#34;</span>&gt;&lt;/<span style=color:#f92672>el-input</span>&gt;
+</span></span><span style=display:flex><span>        &lt;/<span style=color:#f92672>el-form-item</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>el-form-item</span> <span style=color:#a6e22e>label</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;密码&#34;</span> <span style=color:#a6e22e>prop</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;password&#34;</span>
+</span></span><span style=display:flex><span>                      <span style=color:#a6e22e>:rules</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;[
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            {required:true,message:&#39;请输入密码&#39;,trigger:&#39;blur&#39;},
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>            {min:6,max:12,message:&#39;长度在6-12位字符&#39;,trigger:&#39;blur&#39;},
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        ]&#34;</span>&gt;
+</span></span><span style=display:flex><span>          &lt;<span style=color:#f92672>el-input</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;password&#34;</span> <span style=color:#a6e22e>v-model</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;form.password&#34;</span>&gt;&lt;/<span style=color:#f92672>el-input</span>&gt;
+</span></span><span style=display:flex><span>        &lt;/<span style=color:#f92672>el-form-item</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>el-form-item</span>&gt;
+</span></span><span style=display:flex><span>          &lt;<span style=color:#f92672>el-button</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;primary&#34;</span> <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>click</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;login(&#39;form&#39;)&#34;</span>&gt;登录&lt;/<span style=color:#f92672>el-button</span>&gt;
+</span></span><span style=display:flex><span>        &lt;/<span style=color:#f92672>el-form-item</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      &lt;/<span style=color:#f92672>el-form</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    &lt;/<span style=color:#f92672>el-card</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  &lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>template</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>script</span>&gt;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>export</span> <span style=color:#66d9ef>default</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>data</span>() {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> {
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>form</span><span style=color:#f92672>:</span> {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>username</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>password</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;&#34;</span>
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>methods</span><span style=color:#f92672>:</span>{
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>login</span>(<span style=color:#a6e22e>form</span>){
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>$refs</span>[<span style=color:#a6e22e>form</span>].<span style=color:#a6e22e>validate</span>((<span style=color:#a6e22e>valid</span>)=&gt;{
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>valid</span>){
+</span></span><span style=display:flex><span>          <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;验证通过&#34;</span>)
+</span></span><span style=display:flex><span>          <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>axios</span>.<span style=color:#a6e22e>post</span>(<span style=color:#e6db74>&#34;http://localhost&#34;</span>,<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>form</span>).<span style=color:#a6e22e>then</span>(
+</span></span><span style=display:flex><span>              <span style=color:#a6e22e>res</span>=&gt;{
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>res</span>)
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>res</span>.<span style=color:#a6e22e>data</span>.<span style=color:#a6e22e>status</span> <span style=color:#f92672>===</span> <span style=color:#ae81ff>200</span>){
+</span></span><span style=display:flex><span>                  <span style=color:#a6e22e>localStorage</span>.<span style=color:#a6e22e>setItem</span>(<span style=color:#e6db74>&#34;username&#34;</span>,<span style=color:#a6e22e>res</span>.<span style=color:#a6e22e>data</span>.<span style=color:#a6e22e>username</span>)
+</span></span><span style=display:flex><span>                  <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>$message</span>({
+</span></span><span style=display:flex><span>                    <span style=color:#a6e22e>message</span><span style=color:#f92672>:</span><span style=color:#a6e22e>res</span>.<span style=color:#a6e22e>data</span>.<span style=color:#a6e22e>message</span>,
+</span></span><span style=display:flex><span>                    <span style=color:#a6e22e>type</span><span style=color:#f92672>:</span><span style=color:#e6db74>&#39;success&#39;</span>
+</span></span><span style=display:flex><span>                  })
+</span></span><span style=display:flex><span>                  <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>$router</span>.<span style=color:#a6e22e>push</span>(<span style=color:#e6db74>&#39;/home&#39;</span>)
+</span></span><span style=display:flex><span>                }
+</span></span><span style=display:flex><span>              }
+</span></span><span style=display:flex><span>          )
+</span></span><span style=display:flex><span>              .<span style=color:#66d9ef>catch</span>(<span style=color:#a6e22e>err</span>=&gt;{
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>error</span>(<span style=color:#a6e22e>err</span>)
+</span></span><span style=display:flex><span>              })
+</span></span><span style=display:flex><span>        }<span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>          <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>&#34;验证不通过&#34;</span>)
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>      })
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>script</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>style</span> <span style=color:#a6e22e>scoped</span> <span style=color:#a6e22e>lang</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;scss&#34;</span>&gt;
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>login</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>width</span>: <span style=color:#ae81ff>100</span><span style=color:#66d9ef>%</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>height</span>: <span style=color:#ae81ff>100</span><span style=color:#66d9ef>%</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>position</span>: <span style=color:#66d9ef>absolute</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>background</span>: <span style=color:#66d9ef>cadetblue</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#960050;background-color:#1e0010>.box-card</span> <span style=color:#960050;background-color:#1e0010>{</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>width</span>: <span style=color:#ae81ff>450</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>margin</span>: <span style=color:#ae81ff>200</span><span style=color:#66d9ef>px</span> <span style=color:#66d9ef>auto</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#960050;background-color:#1e0010>.el-button</span> <span style=color:#960050;background-color:#1e0010>{</span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>width</span>: <span style=color:#ae81ff>100</span><span style=color:#66d9ef>%</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  <span style=color:#960050;background-color:#1e0010>}</span>
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>style</span>&gt;
+</span></span></code></pre></div><h2 id=自定义校验>自定义校验</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>&lt;<span style=color:#f92672>template</span>&gt;
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;login&#34;</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>el-card</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;box-card&#34;</span>&gt;
+</span></span><span style=display:flex><span>      &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>slot</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;header&#34;</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;clearfix&#34;</span>&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>span</span>&gt;通用后台管理系统&lt;/<span style=color:#f92672>span</span>&gt;
+</span></span><span style=display:flex><span>      &lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      &lt;<span style=color:#f92672>el-form</span>
+</span></span><span style=display:flex><span>          <span style=color:#a6e22e>label-width</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;80px&#34;</span>
+</span></span><span style=display:flex><span>          <span style=color:#a6e22e>:model</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;form&#34;</span>
+</span></span><span style=display:flex><span>          <span style=color:#a6e22e>:rules</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;rules&#34;</span>
+</span></span><span style=display:flex><span>          <span style=color:#a6e22e>ref</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;form&#34;</span>&gt;
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>el-form-item</span> <span style=color:#a6e22e>label</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;用户名&#34;</span> <span style=color:#a6e22e>prop</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;username&#34;</span>&gt;
+</span></span><span style=display:flex><span>          &lt;<span style=color:#f92672>el-input</span> <span style=color:#a6e22e>v-model</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;form.username&#34;</span>&gt;&lt;/<span style=color:#f92672>el-input</span>&gt;
+</span></span><span style=display:flex><span>        &lt;/<span style=color:#f92672>el-form-item</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>el-form-item</span> <span style=color:#a6e22e>label</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;密码&#34;</span> <span style=color:#a6e22e>prop</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;password&#34;</span>&gt;
+</span></span><span style=display:flex><span>          &lt;<span style=color:#f92672>el-input</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;password&#34;</span> <span style=color:#a6e22e>v-model</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;form.password&#34;</span>&gt;&lt;/<span style=color:#f92672>el-input</span>&gt;
+</span></span><span style=display:flex><span>        &lt;/<span style=color:#f92672>el-form-item</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        &lt;<span style=color:#f92672>el-form-item</span>&gt;
+</span></span><span style=display:flex><span>          &lt;<span style=color:#f92672>el-button</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;primary&#34;</span> <span style=color:#960050;background-color:#1e0010>@</span><span style=color:#a6e22e>click</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;login(&#39;form&#39;)&#34;</span>&gt;登录&lt;/<span style=color:#f92672>el-button</span>&gt;
+</span></span><span style=display:flex><span>        &lt;/<span style=color:#f92672>el-form-item</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      &lt;/<span style=color:#f92672>el-form</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    &lt;/<span style=color:#f92672>el-card</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  &lt;/<span style=color:#f92672>div</span>&gt;
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>template</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>script</span>&gt;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>export</span> <span style=color:#66d9ef>default</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>data</span>() {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 验证用户名
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>validateName</span> <span style=color:#f92672>=</span> (<span style=color:#a6e22e>rule</span>, <span style=color:#a6e22e>value</span>, <span style=color:#a6e22e>callback</span>) =&gt; {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>value</span> <span style=color:#f92672>===</span> <span style=color:#e6db74>&#39;&#39;</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>callback</span>(<span style=color:#66d9ef>new</span> Error(<span style=color:#e6db74>&#34;请输入用户名&#34;</span>))
+</span></span><span style=display:flex><span>      } <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>value</span> <span style=color:#f92672>===</span> <span style=color:#e6db74>&#39;123456&#39;</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;11111111111&#34;</span>)
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>callback</span>(<span style=color:#66d9ef>new</span> Error(<span style=color:#e6db74>&#39;换个用户名,猜到啦&#39;</span>))
+</span></span><span style=display:flex><span>      } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>callback</span>()
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>validatePassword</span> <span style=color:#f92672>=</span> (<span style=color:#a6e22e>rule</span>, <span style=color:#a6e22e>value</span>, <span style=color:#a6e22e>callback</span>) =&gt; {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>value</span> <span style=color:#f92672>===</span> <span style=color:#e6db74>&#39;&#39;</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>callback</span>(<span style=color:#66d9ef>new</span> Error(<span style=color:#e6db74>&#34;请输入密码&#34;</span>))
+</span></span><span style=display:flex><span>      } <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span><span style=color:#a6e22e>value</span> <span style=color:#f92672>===</span> <span style=color:#e6db74>&#39;123456&#39;</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>callback</span>(<span style=color:#66d9ef>new</span> Error(<span style=color:#e6db74>&#39;换个密码,猜到啦&#39;</span>))
+</span></span><span style=display:flex><span>      } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>callback</span>()
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> {
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>form</span><span style=color:#f92672>:</span> {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>username</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>password</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;&#34;</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>rules</span><span style=color:#f92672>:</span> {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>username</span><span style=color:#f92672>:</span> [{<span style=color:#a6e22e>validator</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>validateName</span>, <span style=color:#a6e22e>trigger</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;blur&#39;</span>}],
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>password</span><span style=color:#f92672>:</span> [{<span style=color:#a6e22e>validator</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>validatePassword</span>, <span style=color:#a6e22e>trigger</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;blur&#39;</span>}],
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>methods</span><span style=color:#f92672>:</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>login</span>(<span style=color:#a6e22e>form</span>) {
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>$refs</span>[<span style=color:#a6e22e>form</span>].<span style=color:#a6e22e>validate</span>((<span style=color:#a6e22e>valid</span>) =&gt; {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>valid</span>) {
+</span></span><span style=display:flex><span>          <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;验证通过&#34;</span>)
+</span></span><span style=display:flex><span>          <span style=color:#75715e>// this.axios.post(&#34;http://localhost&#34;, this.form).then(
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>          <span style=color:#75715e>//     res =&gt; {
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>          <span style=color:#75715e>//       console.log(res)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>          <span style=color:#75715e>//       if (res.data.status === 200) {
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>          <span style=color:#75715e>//         localStorage.setItem(&#34;username&#34;, res.data.username)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>          <span style=color:#75715e>//         this.$message({
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>          <span style=color:#75715e>//           message: res.data.message,
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>          <span style=color:#75715e>//           type: &#39;success&#39;
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>          <span style=color:#75715e>//         })
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>          <span style=color:#75715e>//         this.$router.push(&#39;/home&#39;)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>          <span style=color:#75715e>//       }
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>          <span style=color:#75715e>//     }
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>          <span style=color:#75715e>// )
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>          <span style=color:#75715e>//     .catch(err =&gt; {
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>          <span style=color:#75715e>//       console.error(err)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>          <span style=color:#75715e>//     })
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>          <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>&#34;验证不通过&#34;</span>)
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>      })
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>script</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>style</span> <span style=color:#a6e22e>scoped</span> <span style=color:#a6e22e>lang</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;scss&#34;</span>&gt;
+</span></span><span style=display:flex><span>.<span style=color:#a6e22e>login</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>width</span>: <span style=color:#ae81ff>100</span><span style=color:#66d9ef>%</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>height</span>: <span style=color:#ae81ff>100</span><span style=color:#66d9ef>%</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>position</span>: <span style=color:#66d9ef>absolute</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>background</span>: <span style=color:#66d9ef>cadetblue</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#960050;background-color:#1e0010>.box-card</span> <span style=color:#960050;background-color:#1e0010>{</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>width</span>: <span style=color:#ae81ff>450</span><span style=color:#66d9ef>px</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>margin</span>: <span style=color:#ae81ff>200</span><span style=color:#66d9ef>px</span> <span style=color:#66d9ef>auto</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#960050;background-color:#1e0010>.el-button</span> <span style=color:#960050;background-color:#1e0010>{</span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>width</span>: <span style=color:#ae81ff>100</span><span style=color:#66d9ef>%</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  <span style=color:#960050;background-color:#1e0010>}</span>
+</span></span><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>style</span>&gt;
+</span></span></code></pre></div><h2 id=自定义校验封装>自定义校验封装</h2><p>新建一个vaildate.js</p></div><div><a class="read-more button" href=/posts/%E5%89%8D%E7%AB%AF/element-ui/>Read more →</a></div></article><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/excel/>Excel</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/mac/>Mac</a>&nbsp;
 </span><img src=https://image.runtimes.cc/202404051527140.png class=post-cover alt=Excel title="Cover Image"><div class=post-content><h1 id=行和列>行和列</h1><h2 id=隐藏或显示行和列>隐藏或显示行和列</h2><p>在电子表格中隐藏或取消隐藏列，以仅显示需要查看或打印的数据</p><blockquote><p>📌 不影响计算</p></blockquote><h3 id=隐藏列>隐藏列</h3><ol><li>选择一个或多个列，然后按 Ctrl 选择不相邻的其他列。</li><li>右键单击选定的列，然后选择<code>隐藏</code>。
 📌 两列之间的双线表示隐藏了一个列。</li></ol><p>✅ 参考:<a href=https://support.microsoft.com/zh-cn/office/%E9%9A%90%E8%97%8F%E6%88%96%E6%98%BE%E7%A4%BA%E8%A1%8C%E6%88%96%E5%88%97-659c2cad-802e-44ee-a614-dde8443579f8>微软官方文档</a></p><h3 id=取消隐藏列>取消隐藏列</h3><ol><li>选择隐藏列的<code>相邻左列和相邻右列</code>。</li><li>右键单击选定的列，然后选择“<strong>取消隐藏</strong>”。</li></ol><p>或双击隐藏列所存在的两列之间的双线。</p><h2 id=自定义列的格式>自定义列的格式</h2><p>比如这里要设置列的格式是 年月日星期几</p><p>默认的日期和时间是没有符合要求的
 <img src=https://image.runtimes.cc/202404051416398.png alt></p><p>自定义设置
@@ -330,72 +553,7 @@ git reset --soft HEAD^
 </span></span><span style=display:flex><span> <span style=color:#a6e22e>str</span>, <span style=color:#a6e22e>_</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>reader</span>.<span style=color:#a6e22e>ReadString</span>(<span style=color:#e6db74>&#39;\n&#39;</span>)
 </span></span><span style=display:flex><span> <span style=color:#a6e22e>fmt</span>.<span style=color:#a6e22e>Printf</span>(<span style=color:#e6db74>&#34;输入的值是:%s\n&#34;</span>, <span style=color:#a6e22e>str</span>)
 </span></span><span style=display:flex><span>}
-</span></span></code></pre></div><h2 id=声明变量>声明变量</h2><p>基本类型,声明变量,不赋值,就有默认值</p></div><div><a class="read-more button" href=/posts/go/>Read more →</a></div></article><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/grafana/>Grafana</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/%E7%9B%91%E6%8E%A7/>监控</a>&nbsp;
-</span><img src=https://image.runtimes.cc/202404051528868.jpeg class=post-cover alt=Grafana title="Cover Image"><div class=post-content><h1 id=监控主机>监控主机</h1><table><thead><tr><th>HostName</th><th>IP</th></tr></thead><tbody><tr><td>master</td><td>10.0.0.6</td></tr><tr><td>node1</td><td>10.0.0.9</td></tr></tbody></table><table><thead><tr><th>服务</th><th>端口</th></tr></thead><tbody><tr><td>Grafana</td><td>3000</td></tr><tr><td>Prometheus</td><td>9090</td></tr><tr><td>node-exporter</td><td>9100</td></tr><tr><td>Cadvisor</td><td>8080</td></tr></tbody></table><h2 id=部署prometheusmaster机器>部署Prometheus(master机器)</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>docker run -d <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    --name<span style=color:#f92672>=</span>prometheus <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    --restart<span style=color:#f92672>=</span>always <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    -p 9090:9090 <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    -v /root/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>    prom/prometheus
-</span></span></code></pre></div><p>编辑prometheus.yml配置文件</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>scrape_configs</span>:
-</span></span><span style=display:flex><span>  - <span style=color:#f92672>job_name</span>: <span style=color:#e6db74>&#39;prometheus&#39;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>static_configs</span>:
-</span></span><span style=display:flex><span>    - <span style=color:#f92672>targets</span>: [<span style=color:#e6db74>&#39;10.0.0.6:9090&#39;</span>]
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span> 	<span style=color:#75715e>#添加master及node节点添加</span>
-</span></span><span style=display:flex><span>  - <span style=color:#f92672>job_name</span>: <span style=color:#e6db74>&#39;master&#39;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>static_configs</span>:
-</span></span><span style=display:flex><span>    - <span style=color:#f92672>targets</span>: [<span style=color:#e6db74>&#39;10.0.0.6:9100&#39;</span>]
-</span></span><span style=display:flex><span>  
-</span></span><span style=display:flex><span>  - <span style=color:#f92672>job_name</span>: <span style=color:#e6db74>&#39;node&#39;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>static_configs</span>:
-</span></span><span style=display:flex><span>    - <span style=color:#f92672>targets</span>: [<span style=color:#e6db74>&#39;10.0.0.9:9100&#39;</span>]
-</span></span></code></pre></div><blockquote><p>这里只是提前编辑好,之后如果要添加新的机器,再后面添加</p></blockquote><p>访问master的9090端口,<code>http://10.0.0.6:9090/</code></p><p><img src=https://image.runtimes.cc/202404051421127.png alt></p><h2 id=部署node_exportermaster和node>部署node_exporter(master和node)</h2><p>看需求,master不部署也可以</p><p>{% tabs docker %}</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>docker run -d <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>      --name node-exporter <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>      --restart<span style=color:#f92672>=</span>always <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>      -p 9100:9100 <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>      -v <span style=color:#e6db74>&#34;/proc:/host/proc:ro&#34;</span> <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>      -v <span style=color:#e6db74>&#34;/sys:/host/sys:ro&#34;</span> <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>      -v <span style=color:#e6db74>&#34;/:/rootfs:ro&#34;</span> <span style=color:#ae81ff>\
-</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>      prom/node-exporter
-</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 下载最新的node_exporter版本</span>
-</span></span><span style=display:flex><span>wget https://github.com/prometheus/node_exporter/releases/download/v1.6.1/node_exporter-1.6.1.linux-amd64.tar.gz
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 解压缩下载的文件</span>
-</span></span><span style=display:flex><span>tar xvfz node_exporter-1.6.1.linux-amd64.tar.gz
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 将可执行文件移动到 /usr/local/bin</span>
-</span></span><span style=display:flex><span>sudo mv node_exporter-1.6.1.linux-amd64/node_exporter /usr/local/bin/
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 创建 node_exporter 用户</span>
-</span></span><span style=display:flex><span>useradd -rs /bin/false node_exporter
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 创建 systemd 服务</span>
-</span></span><span style=display:flex><span>vim /etc/systemd/system/node_exporter.service
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#f92672>[</span>Unit<span style=color:#f92672>]</span>
-</span></span><span style=display:flex><span>Description<span style=color:#f92672>=</span>Node Exporter
-</span></span><span style=display:flex><span>Wants<span style=color:#f92672>=</span>network-online.target
-</span></span><span style=display:flex><span>After<span style=color:#f92672>=</span>network-online.target
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#f92672>[</span>Service<span style=color:#f92672>]</span>
-</span></span><span style=display:flex><span>User<span style=color:#f92672>=</span>node_exporter
-</span></span><span style=display:flex><span>Group<span style=color:#f92672>=</span>node_exporter
-</span></span><span style=display:flex><span>Type<span style=color:#f92672>=</span>simple
-</span></span><span style=display:flex><span>ExecStart<span style=color:#f92672>=</span>/usr/local/bin/node_exporter
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#f92672>[</span>Install<span style=color:#f92672>]</span>
-</span></span><span style=display:flex><span>WantedBy<span style=color:#f92672>=</span>multi-user.target
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 重新加载 systemd 配置</span>
-</span></span><span style=display:flex><span>sudo systemctl daemon-reload
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 启动 node_exporter 服务</span>
-</span></span><span style=display:flex><span>sudo systemctl start node_exporter
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 设置为开机自动启动</span>
-</span></span><span style=display:flex><span>sudo systemctl enable node_exporter
-</span></span></code></pre></div><p>{% endtabs %}</p></div><div><a class="read-more button" href=/posts/grafana/>Read more →</a></div></article><div class=pagination><div class=pagination__buttons><a href=/page/15/ class="button previous"><span class=button__icon>←</span>
+</span></span></code></pre></div><h2 id=声明变量>声明变量</h2><p>基本类型,声明变量,不赋值,就有默认值</p></div><div><a class="read-more button" href=/posts/go/>Read more →</a></div></article><div class=pagination><div class=pagination__buttons><a href=/page/15/ class="button previous"><span class=button__icon>←</span>
 <span class=button__text>Newer posts</span>
 </a><a href=/page/17/ class="button next"><span class=button__text>Older posts</span>
 <span class=button__icon>→</span></a></div></div></div></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>

@@ -1,4 +1,68 @@
-<!doctype html><html lang=zh><head><title>Posts :: Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://connorzhangyu.com/posts/><link rel=stylesheet href=https://connorzhangyu.com/styles.css><link rel="shortcut icon" href=https://connorzhangyu.com/img/theme-colors/orange.png><link rel=apple-touch-icon href=https://connorzhangyu.com/img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta name=twitter:site content><meta name=twitter:creator content><meta property="og:locale" content="zh"><meta property="og:type" content="website"><meta property="og:title" content="Posts"><meta property="og:description" content><meta property="og:url" content="https://connorzhangyu.com/posts/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="https://connorzhangyu.com/img/favicon/orange.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><link href=/posts/index.xml rel=alternate type=application/rss+xml title="Hello World"></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></nav></header><div class=content><div class=posts><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/element-ui/>Element-UI</a></h1><div class=post-meta><time class=post-date>2025-01-04</time><span class=post-author>Connor</span></div><div class=post-content><h1 id=表单验证>表单验证</h1><h2 id=简单版>简单版</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>&lt;<span style=color:#f92672>template</span>&gt;
+<!doctype html><html lang=zh><head><title>Posts :: Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://connorzhangyu.com/posts/><link rel=stylesheet href=https://connorzhangyu.com/styles.css><link rel="shortcut icon" href=https://connorzhangyu.com/img/theme-colors/orange.png><link rel=apple-touch-icon href=https://connorzhangyu.com/img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta name=twitter:site content><meta name=twitter:creator content><meta property="og:locale" content="zh"><meta property="og:type" content="website"><meta property="og:title" content="Posts"><meta property="og:description" content><meta property="og:url" content="https://connorzhangyu.com/posts/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="https://connorzhangyu.com/img/favicon/orange.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><link href=/posts/index.xml rel=alternate type=application/rss+xml title="Hello World"></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/about>关于</a></li><li><a href=/showcase>精选</a></li></ul></nav></header><div class=content><div class=posts><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/vue%E9%A1%B9%E7%9B%AE/>Vue项目</a></h1><div class=post-meta><time class=post-date>2025-01-04</time><span class=post-author>Anthony</span></div><div class=post-content><h1 id=安装vue>安装Vue</h1><h2 id=局部安装>局部安装</h2><p>局部安装并使用vue-cli 4.x版本,和创建项目</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># 先创建一个文件夹</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 初始化一个node项目</span>
+</span></span><span style=display:flex><span>npm init -y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 局部安装vue</span>
+</span></span><span style=display:flex><span>npm i -D @vue/cli
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 查看vue的版本</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 局部安装要用npx命令</span>
+</span></span><span style=display:flex><span>C:<span style=color:#ae81ff>\U</span>sers<span style=color:#ae81ff>\m</span>mzcg<span style=color:#ae81ff>\W</span>ebstormProjects&gt;npx vue -V
+</span></span><span style=display:flex><span>@vue/cli 5.0.8
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 创建一个项目</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 为啥不能用npm运行</span>
+</span></span><span style=display:flex><span>npx vue create project-one
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 进入项目并且运行</span>
+</span></span><span style=display:flex><span>cd project-one
+</span></span><span style=display:flex><span>npm run serve
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 也可以用ui</span>
+</span></span><span style=display:flex><span>npx vue ui
+</span></span></code></pre></div><h2 id=全局安装>全局安装</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>npm install -g @vue/cli
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>vue create my-project
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>vue ui
+</span></span></code></pre></div><h1 id=安装element-ui>安装Element-UI</h1><h2 id=全局安装-1>全局安装</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># 安装</span>
+</span></span><span style=display:flex><span>npm i element-ui -S
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#75715e>// main.js 使用
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>ElementUI</span> <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#39;element-ui&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#e6db74>&#39;element-ui/lib/theme-chalk/index.css&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>Vue</span>.<span style=color:#a6e22e>use</span>(<span style=color:#a6e22e>ElementUI</span>)
+</span></span></code></pre></div><h2 id=按需引入>按需引入</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># 安装</span>
+</span></span><span style=display:flex><span>npm i element-ui -S
+</span></span><span style=display:flex><span>npm install babel-plugin-component -D
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#75715e>// main.js
+</span></span></span><span style=display:flex><span><span style=color:#75715e>// 全局引入
+</span></span></span><span style=display:flex><span><span style=color:#75715e>// import ElementUI from &#39;element-ui&#39;
+</span></span></span><span style=display:flex><span><span style=color:#75715e>// import &#39;element-ui/lib/theme-chalk/index.css&#39;
+</span></span></span><span style=display:flex><span><span style=color:#75715e>// Vue.use(ElementUI)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 按需引入
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>import</span> {<span style=color:#a6e22e>Button</span>} <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#39;element-ui&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>Vue</span>.<span style=color:#a6e22e>use</span>(<span style=color:#a6e22e>Button</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// babel.config.js
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>module</span>.<span style=color:#a6e22e>exports</span> <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>	<span style=color:#75715e>// 自动生成的
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>presets</span><span style=color:#f92672>:</span> [
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;@vue/cli-plugin-babel/preset&#39;</span>
+</span></span><span style=display:flex><span>  ],
+</span></span><span style=display:flex><span>	<span style=color:#75715e>// 从官网上复制的
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#e6db74>&#34;plugins&#34;</span><span style=color:#f92672>:</span> [
+</span></span><span style=display:flex><span>    [
+</span></span><span style=display:flex><span>      <span style=color:#e6db74>&#34;component&#34;</span>,
+</span></span><span style=display:flex><span>      {
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;libraryName&#34;</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;element-ui&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;styleLibraryName&#34;</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;theme-chalk&#34;</span>
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    ]
+</span></span><span style=display:flex><span>  ]
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>如果没有找到.babelirc文件,找找babel.config.js文件
+<img src=https://image.runtimes.cc/202404051519062.png alt></p></div><div><a class="read-more button" href=/posts/vue%E9%A1%B9%E7%9B%AE/>Read more →</a></div></article><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/element-ui/>Element-UI</a></h1><div class=post-meta><time class=post-date>2025-01-04</time><span class=post-author>Connor</span></div><div class=post-content><h1 id=表单验证>表单验证</h1><h2 id=简单版>简单版</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>&lt;<span style=color:#f92672>template</span>&gt;
 </span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;login&#34;</span>&gt;
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>el-card</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;box-card&#34;</span>&gt;
@@ -436,17 +500,7 @@
 </span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>html</span>&gt;
 </span></span></code></pre></div><h3 id=伪类选择器>伪类选择器</h3><ul><li>:link 未被访问的连接</li><li>:visited 已经访问的连接</li><li>:hover 鼠标放在上面的连接</li><li>:active 鼠标按下没有谈起的连接
 {% iframe <a href="https://codepen.io/anthony2023/embed/LYqJgJG?default-tab=html%2Cresult&amp;editable=true&amp;theme-id=light%25%7d">https://codepen.io/anthony2023/embed/LYqJgJG?default-tab=html%2Cresult&editable=true&theme-id=light%}</a></li></ul><h3 id=focus伪类选择器>focus伪类选择器</h3><p>获取焦点的<code>表单</code>选择器
-{% iframe <a href="https://codepen.io/anthony2023/embed/jOdveJe?default-tab=html%2Cresult&amp;editable=true&amp;theme-id=light%25%7d">https://codepen.io/anthony2023/embed/jOdveJe?default-tab=html%2Cresult&editable=true&theme-id=light%}</a></p></div><div><a class="read-more button" href=/posts/css/>Read more →</a></div></article><article class="post on-list"><h1 class=post-title><a href=https://connorzhangyu.com/posts/mac/>Mac</a></h1><div class=post-meta><time class=post-date>2025-01-04</time><span class=post-author>Connor</span></div><div class=post-content><hr><p>title: Mac
-tags:</p><ul><li>Mac</li><li>使用</li><li>教程</li><li>Github
-categories:</li><li>操作系统
-cover: <a href=https://image.runtimes.cc/202404051524065.jpg>https://image.runtimes.cc/202404051524065.jpg</a>
-abbrlink: 44793
-date: 2022-11-19 18:25:00
-updated: 2024-01-10 15:36:22</li></ul><hr><h1 id=快捷键>快捷键</h1><table><thead><tr><th>描述</th><th>命令</th></tr></thead><tbody><tr><td>一个应用多个窗口 切换</td><td>command+`</td></tr><tr><td>录屏幕</td><td>shift+command+5</td></tr><tr><td>截图</td><td>shift+command+4</td></tr><tr><td>重装系统</td><td>先一直按住不要松手:Common+R,<br>再按开机键;非苹果键盘,按住微软键+R</td></tr><tr><td>上一级目录</td><td>command+↑</td></tr></tbody></table><h1 id=网站链接>网站链接</h1><ul><li><a href=https://www.iplaysoft.com/fix-chrome-slow.html>一招解决 Chrome / Edge 浏览器卡顿变慢视频掉帧问题 - 让浏览器重回丝般流畅</a></li><li><a href=https://alt-tab-macos.netlify.app/>AltTab</a></li></ul><h1 id=iphone强制重启>iphone强制重启</h1><p><img src=https://image.runtimes.cc/202404051349933.webp alt></p><h1 id=浏览器返回手势>浏览器返回手势</h1><p><img src=https://image.runtimes.cc/202404051350113.png alt></p><h1 id=放歌有噪音>放歌有噪音</h1><p>通过【活动监视器】程序终止【coreaudiod】进程：</p><ol><li>聚焦搜索】中输入【activity monitor】</li><li>在窗口右上角的搜索栏里输入【coreaudiod】</li><li>选择【coreaudiod】进程后，点击窗口上方工具栏中的【停止按钮】（按钮图标为X）</li></ol><h1 id=只有mac不能访问github>只有mac不能访问github</h1><ol><li><p>打开<code>https://github.com.ipaddress.com/</code></p></li><li><p>打开<code>https://fastly.net.ipaddress.com/github.global.ssl.fastly.net#ipinfo</code></p></li><li><p>sudo vim /etc/hosts</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-Shell data-lang=Shell><span style=display:flex><span><span style=color:#75715e># 这个ip从第一步获取到的</span>
-</span></span><span style=display:flex><span>140.82.112.4 github.com
-</span></span><span style=display:flex><span><span style=color:#75715e># 这个ip从第二步获取到的</span>
-</span></span><span style=display:flex><span>199.232.69.194 github.global.ssl.fastly.net
-</span></span></code></pre></div></li><li><p>刷新:<code>sudo killall -HUP mDNSResponder;say DNS cache has been flushed</code></p></div><div><a class="read-more button" href=/posts/mac/>Read more →</a></div></article><div class=pagination><div class=pagination__buttons><a href=/posts/page/6/ class="button previous"><span class=button__icon>←</span>
+{% iframe <a href="https://codepen.io/anthony2023/embed/jOdveJe?default-tab=html%2Cresult&amp;editable=true&amp;theme-id=light%25%7d">https://codepen.io/anthony2023/embed/jOdveJe?default-tab=html%2Cresult&editable=true&theme-id=light%}</a></p></div><div><a class="read-more button" href=/posts/css/>Read more →</a></div></article><div class=pagination><div class=pagination__buttons><a href=/posts/page/6/ class="button previous"><span class=button__icon>←</span>
 <span class=button__text>Newer posts</span>
 </a><a href=/posts/page/8/ class="button next"><span class=button__text>Older posts</span>
 <span class=button__icon>→</span></a></div></div></div></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>
