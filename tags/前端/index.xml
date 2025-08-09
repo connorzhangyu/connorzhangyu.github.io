@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>前端 on Hello World</title><link>https://connorzhangyu.com/tags/%E5%89%8D%E7%AB%AF/</link><description>Recent content in 前端 on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Mon, 26 Feb 2024 13:47:19 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>Vue后台系统</title><link>https://connorzhangyu.com/posts/vue%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F/</link><pubDate>Mon, 26 Feb 2024 13:47:19 +0000</pubDate><guid>https://connorzhangyu.com/posts/vue%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F/</guid><description>&lt;p>项目由 Vue3 + Pina + JavaScript + Ant Design Vue&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>前端 on Hello World</title><link>/tags/%E5%89%8D%E7%AB%AF/</link><description>Recent content in 前端 on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Mon, 26 Feb 2024 13:47:19 +0000</lastBuildDate><atom:link href="/tags/%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>Vue后台系统</title><link>/posts/vue%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F/</link><pubDate>Mon, 26 Feb 2024 13:47:19 +0000</pubDate><guid>/posts/vue%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F/</guid><description>&lt;p>项目由 Vue3 + Pina + JavaScript + Ant Design Vue&lt;/p>
 &lt;h1 id="创建项目">创建项目&lt;/h1>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 直接创建&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>npm create vite@latest my-vue-app -- --template vue
@@ -274,7 +274,7 @@ VITE_APP_BASE_API = &amp;#39;/dev-api&amp;#39;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#a6e22e">service&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>main.js&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">import&lt;/span> &lt;span style="color:#a6e22e">router&lt;/span> &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;./router&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>CSS</title><link>https://connorzhangyu.com/posts/%E5%89%8D%E7%AB%AF/css/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/%E5%89%8D%E7%AB%AF/css/</guid><description>&lt;h1 id="css">CSS&lt;/h1>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>CSS</title><link>/posts/%E5%89%8D%E7%AB%AF/css/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/%E5%89%8D%E7%AB%AF/css/</guid><description>&lt;h1 id="css">CSS&lt;/h1>
 &lt;h2 id="选择器">选择器&lt;/h2>
 &lt;h3 id="基础选择器">基础选择器&lt;/h3>
 &lt;table>
@@ -482,7 +482,7 @@ VITE_APP_BASE_API = &amp;#39;/dev-api&amp;#39;
 &lt;p>链接里面不能再放连接,&lt;code>&amp;lt;a&amp;gt;&lt;/code>里面可以放块级元素&lt;/p>
 &lt;p>&lt;code>&amp;lt;input&amp;gt; &amp;lt;img&amp;gt;&lt;/code>是行内款,一行可以给多个,也能设置宽高&lt;/p>
 &lt;h3 id="元素显示模式的转换">元素显示模式的转换&lt;/h3>
-&lt;p>{% iframe &lt;a href="https://codepen.io/anthony2023/embed/wvNYQoj?default-tab=html%2Cresult&amp;amp;editable=true">https://codepen.io/anthony2023/embed/wvNYQoj?default-tab=html%2Cresult&amp;editable=true&lt;/a> %}&lt;/p></content></item><item><title>Element-UI</title><link>https://connorzhangyu.com/posts/%E5%89%8D%E7%AB%AF/element-ui/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/%E5%89%8D%E7%AB%AF/element-ui/</guid><description>&lt;h1 id="表单验证">表单验证&lt;/h1>
+&lt;p>{% iframe &lt;a href="https://codepen.io/anthony2023/embed/wvNYQoj?default-tab=html%2Cresult&amp;amp;editable=true">https://codepen.io/anthony2023/embed/wvNYQoj?default-tab=html%2Cresult&amp;editable=true&lt;/a> %}&lt;/p></content></item><item><title>Element-UI</title><link>/posts/%E5%89%8D%E7%AB%AF/element-ui/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/%E5%89%8D%E7%AB%AF/element-ui/</guid><description>&lt;h1 id="表单验证">表单验证&lt;/h1>
 &lt;h2 id="简单版">简单版&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">template&lt;/span>&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">div&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;login&amp;#34;&lt;/span>&amp;gt;
@@ -1400,7 +1400,7 @@ cities: cityOptions
 &amp;lt;/template&amp;gt;
 &lt;/code>&lt;/pre>&lt;p>Store 数据&lt;/p>
 &lt;pre tabindex="0">&lt;code>agentId: _this.$store.getters.name.agentId,
-&lt;/code>&lt;/pre></content></item><item><title>HTML</title><link>https://connorzhangyu.com/posts/%E5%89%8D%E7%AB%AF/html/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/%E5%89%8D%E7%AB%AF/html/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;!-- 声明文档类型，表示这是一个 HTML5 文档 --&amp;gt;&lt;/span>
+&lt;/code>&lt;/pre></content></item><item><title>HTML</title><link>/posts/%E5%89%8D%E7%AB%AF/html/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/%E5%89%8D%E7%AB%AF/html/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;!-- 声明文档类型，表示这是一个 HTML5 文档 --&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;!-- 这个不是标签,这是文档类型的声明标签 --&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;!DOCTYPE html&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;!-- 定义 HTML 文档的根元素，并设置文档的语言为英语 --&amp;gt;&lt;/span>
@@ -1795,7 +1795,7 @@ cities: cityOptions
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">script&lt;/span>&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">body&lt;/span>&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">html&lt;/span>&amp;gt;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>JavaScript</title><link>https://connorzhangyu.com/posts/%E5%89%8D%E7%AB%AF/javascript/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/%E5%89%8D%E7%AB%AF/javascript/</guid><description>&lt;h1 id="javascript">JavaScript&lt;/h1>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>JavaScript</title><link>/posts/%E5%89%8D%E7%AB%AF/javascript/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/%E5%89%8D%E7%AB%AF/javascript/</guid><description>&lt;h1 id="javascript">JavaScript&lt;/h1>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&amp;lt;!DOCTYPE html&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">html&lt;/span> &lt;span style="color:#a6e22e">lang&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;en&amp;#34;&lt;/span>&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">head&lt;/span>&amp;gt;
@@ -2128,7 +2128,7 @@ cities: cityOptions
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">for&lt;/span> (&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">key&lt;/span> &lt;span style="color:#66d9ef">of&lt;/span> &lt;span style="color:#a6e22e">map&lt;/span>.&lt;span style="color:#a6e22e">keys&lt;/span>()) {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">info&lt;/span>(&lt;span style="color:#a6e22e">map&lt;/span>.&lt;span style="color:#a6e22e">get&lt;/span>(&lt;span style="color:#a6e22e">key&lt;/span>))
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>NodeJs</title><link>https://connorzhangyu.com/posts/nodejs/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/nodejs/</guid><description>&lt;h1 id="语法">语法&lt;/h1>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>NodeJs</title><link>/posts/nodejs/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/nodejs/</guid><description>&lt;h1 id="语法">语法&lt;/h1>
 &lt;h1 id="基本使用">基本使用&lt;/h1>
 &lt;h1 id="初始化项目">初始化项目&lt;/h1>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>npm init -y
@@ -2531,7 +2531,7 @@ rules:[
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">app&lt;/span>.&lt;span style="color:#a6e22e">listen&lt;/span>(&lt;span style="color:#a6e22e">port&lt;/span>, () =&amp;gt; {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">`Example app listening on port &lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#a6e22e">port&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">`&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>})
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>5.像平常部署别的项目一样,部署这个项目就可以,部署好之后,就能看到首页的&lt;code>Hello World!&lt;/code>&lt;/p></content></item><item><title>Vue</title><link>https://connorzhangyu.com/posts/%E5%89%8D%E7%AB%AF/vue/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/%E5%89%8D%E7%AB%AF/vue/</guid><description>&lt;p>按照官方文档的教程步骤来,大部分的代码Demo,都是通过脚手架创建的项目的基础上创建的,用的版本的Vue3,Typescript,组合式的写法&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>5.像平常部署别的项目一样,部署这个项目就可以,部署好之后,就能看到首页的&lt;code>Hello World!&lt;/code>&lt;/p></content></item><item><title>Vue</title><link>/posts/%E5%89%8D%E7%AB%AF/vue/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/%E5%89%8D%E7%AB%AF/vue/</guid><description>&lt;p>按照官方文档的教程步骤来,大部分的代码Demo,都是通过脚手架创建的项目的基础上创建的,用的版本的Vue3,Typescript,组合式的写法&lt;/p>
 &lt;h1 id="基础">基础&lt;/h1>
 &lt;h2 id="创建一个应用">创建一个应用&lt;/h2>
 &lt;p>&lt;em>&lt;strong>多个应用实例&lt;/strong>&lt;/em>&lt;/p>
@@ -3423,7 +3423,7 @@ rules:[
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>};
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">script&lt;/span>&amp;gt;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
-&lt;p>参考:&lt;a href="https://blog.csdn.net/m0_49714202/article/details/126100398">前端Vue父组件点击按钮打开子组件弹窗案例&lt;/a>&lt;/p>&lt;/blockquote></content></item><item><title>Vue项目</title><link>https://connorzhangyu.com/posts/%E5%89%8D%E7%AB%AF/vue%E9%A1%B9%E7%9B%AE/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/%E5%89%8D%E7%AB%AF/vue%E9%A1%B9%E7%9B%AE/</guid><description>&lt;h1 id="安装vue">安装Vue&lt;/h1>
+&lt;p>参考:&lt;a href="https://blog.csdn.net/m0_49714202/article/details/126100398">前端Vue父组件点击按钮打开子组件弹窗案例&lt;/a>&lt;/p>&lt;/blockquote></content></item><item><title>Vue项目</title><link>/posts/%E5%89%8D%E7%AB%AF/vue%E9%A1%B9%E7%9B%AE/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/%E5%89%8D%E7%AB%AF/vue%E9%A1%B9%E7%9B%AE/</guid><description>&lt;h1 id="安装vue">安装Vue&lt;/h1>
 &lt;h2 id="局部安装">局部安装&lt;/h2>
 &lt;p>局部安装并使用vue-cli 4.x版本,和创建项目&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 先创建一个文件夹&lt;/span>

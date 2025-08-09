@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Java on Hello World</title><link>https://connorzhangyu.com/categories/java/</link><description>Recent content in Java on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sun, 03 Mar 2024 21:19:09 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/categories/java/index.xml" rel="self" type="application/rss+xml"/><item><title>SpringCloud</title><link>https://connorzhangyu.com/posts/springcloud/</link><pubDate>Sun, 03 Mar 2024 21:19:09 +0000</pubDate><guid>https://connorzhangyu.com/posts/springcloud/</guid><description/><content/></item><item><title>Netty</title><link>https://connorzhangyu.com/posts/netty/</link><pubDate>Sun, 10 Dec 2023 19:03:58 +0000</pubDate><guid>https://connorzhangyu.com/posts/netty/</guid><description>&lt;p>Server&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Java on Hello World</title><link>/categories/java/</link><description>Recent content in Java on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sun, 03 Mar 2024 21:19:09 +0000</lastBuildDate><atom:link href="/categories/java/index.xml" rel="self" type="application/rss+xml"/><item><title>SpringCloud</title><link>/posts/springcloud/</link><pubDate>Sun, 03 Mar 2024 21:19:09 +0000</pubDate><guid>/posts/springcloud/</guid><description/><content/></item><item><title>Netty</title><link>/posts/netty/</link><pubDate>Sun, 10 Dec 2023 19:03:58 +0000</pubDate><guid>/posts/netty/</guid><description>&lt;p>Server&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// 把 NettyServer 的创建交给 Spring 管理&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@Component&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">NettyServer&lt;/span> {
@@ -329,7 +329,7 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="方案2固定长度">方案2:固定长度&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// 客户端每条消息必须正好 8 字节，否则解析错。&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pipeline.&lt;span style="color:#a6e22e">addLast&lt;/span>(&lt;span style="color:#66d9ef">new&lt;/span> FixedLengthFrameDecoder(8));
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="方案三lengthfieldbasedframedecoder">方案三：LengthFieldBasedFrameDecoder&lt;/h3></content></item><item><title>代码片段</title><link>https://connorzhangyu.com/posts/%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/</link><pubDate>Sun, 24 Sep 2023 21:19:38 +0000</pubDate><guid>https://connorzhangyu.com/posts/%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/</guid><description>&lt;h1 id="谷歌验证码">谷歌验证码&lt;/h1>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="方案三lengthfieldbasedframedecoder">方案三：LengthFieldBasedFrameDecoder&lt;/h3></content></item><item><title>代码片段</title><link>/posts/%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/</link><pubDate>Sun, 24 Sep 2023 21:19:38 +0000</pubDate><guid>/posts/%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/</guid><description>&lt;h1 id="谷歌验证码">谷歌验证码&lt;/h1>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-xml" data-lang="xml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;dependency&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;groupId&amp;gt;&lt;/span>com.warrenstrange&lt;span style="color:#f92672">&amp;lt;/groupId&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;lt;artifactId&amp;gt;&lt;/span>googleauth&lt;span style="color:#f92672">&amp;lt;/artifactId&amp;gt;&lt;/span>
@@ -643,7 +643,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>Spring</title><link>https://connorzhangyu.com/posts/spring/</link><pubDate>Fri, 25 Aug 2023 14:58:26 +0000</pubDate><guid>https://connorzhangyu.com/posts/spring/</guid><description>&lt;h1 id="springmvc">SpringMVC&lt;/h1>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>Spring</title><link>/posts/spring/</link><pubDate>Fri, 25 Aug 2023 14:58:26 +0000</pubDate><guid>/posts/spring/</guid><description>&lt;h1 id="springmvc">SpringMVC&lt;/h1>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051458028.png" alt="">&lt;/p>
 &lt;p>总结：&lt;/p>
 &lt;ol>
@@ -3126,7 +3126,7 @@ WebConfig coolection init success
 testconfig collection init success
 TestBean sayHello...
 TestBean2 sayHello...ranjun
-&lt;/code>&lt;/pre></content></item><item><title>SpringBoot</title><link>https://connorzhangyu.com/posts/springboot/</link><pubDate>Sat, 15 Jul 2023 14:58:26 +0000</pubDate><guid>https://connorzhangyu.com/posts/springboot/</guid><description>&lt;h1 id="定时器">定时器&lt;/h1>
+&lt;/code>&lt;/pre></content></item><item><title>SpringBoot</title><link>/posts/springboot/</link><pubDate>Sat, 15 Jul 2023 14:58:26 +0000</pubDate><guid>/posts/springboot/</guid><description>&lt;h1 id="定时器">定时器&lt;/h1>
 &lt;p>定时器的数值放到配置文件,如果使用&lt;code>@Scheduled(fixedDelay = 类中的变量)&lt;/code>这种方式试过不行&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">@Scheduled&lt;/span>(fixedDelayString &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;${fixedDelayString}&amp;#34;&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">open&lt;/span>() {
@@ -3814,7 +3814,7 @@ info级别和error级别 记录到dev.log&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ERROR &lt;span style="color:#ae81ff">64710&lt;/span> --- &lt;span style="color:#f92672">[&lt;/span>nio-8080-exec-1&lt;span style="color:#f92672">]&lt;/span> c.e.s.controller.IndexController : 当前日期时间：2024-03-03 21:37:40
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>WARN &lt;span style="color:#ae81ff">64710&lt;/span> --- &lt;span style="color:#f92672">[&lt;/span>nio-8080-exec-1&lt;span style="color:#f92672">]&lt;/span> c.e.s.controller.IndexController : 当前日期时间：2024-03-03 21:37:40
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 为什么控制台没有打印 trace和debug日志&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>ElasticSearch</title><link>https://connorzhangyu.com/posts/elasticsearch/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/elasticsearch/</guid><description>&lt;h1 id="手动安装7x">手动安装7.x&lt;/h1>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>ElasticSearch</title><link>/posts/elasticsearch/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/elasticsearch/</guid><description>&lt;h1 id="手动安装7x">手动安装7.x&lt;/h1>
 &lt;h2 id="手动安装单机elasticsearch7x">手动安装单机ElasticSearch7.x&lt;/h2>
 &lt;pre tabindex="0">&lt;code># 下载tar包,(6.6.2)
 wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.6.2.tar.gz
@@ -5294,7 +5294,7 @@ xsi:schemaLocation=&amp;#34;http://maven.apache.org/POM/4.0.0 https://maven.apac
 &amp;lt;/build&amp;gt;
 &amp;lt;/project&amp;gt;
 &lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>spring.elasticsearch.rest.uris=http://192.168.111.132:9200
-&lt;/code>&lt;/pre></content></item><item><title>Flink</title><link>https://connorzhangyu.com/posts/flink/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/flink/</guid><description>&lt;h1 id="flink">Flink&lt;/h1>
+&lt;/code>&lt;/pre></content></item><item><title>Flink</title><link>/posts/flink/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/flink/</guid><description>&lt;h1 id="flink">Flink&lt;/h1>
 &lt;h2 id="尝试flink">尝试flink&lt;/h2>
 &lt;h3 id="本地安装">本地安装&lt;/h3>
 &lt;p>步骤一:下载&lt;/p>
@@ -5874,7 +5874,7 @@ return new SensorReading(valu1.getId(), valu2.getTimestamp(), Math.max(valu1.get
 reduce.print();
 env.execute();
 }
-&lt;/code>&lt;/pre></content></item><item><title>Java</title><link>https://connorzhangyu.com/posts/java/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/java/</guid><description>&lt;h1 id="基础知识点">基础知识点&lt;/h1>
+&lt;/code>&lt;/pre></content></item><item><title>Java</title><link>/posts/java/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/java/</guid><description>&lt;h1 id="基础知识点">基础知识点&lt;/h1>
 &lt;p>&lt;strong>循环标签&lt;/strong>&lt;/p>
 &lt;p>如果不在嵌套循环中使用,用了跳转,也就相当于&lt;code>continue&lt;/code>一样,没有区别&lt;/p>
 &lt;p>在嵌套循环中使用才有效果,用了&lt;code>innerLoop&lt;/code>之后,可以看到&lt;/p>
@@ -8151,7 +8151,7 @@ env.execute();
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">//可以使用封装类简写Content-Type，使用该方法则无需使用setCharacterEncoding&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>response.&lt;span style="color:#a6e22e">setContentType&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;text/html;charset=UTF-8&amp;#34;&lt;/span>);
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>Jenkins</title><link>https://connorzhangyu.com/posts/jenkins/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/jenkins/</guid><description>&lt;h1 id="root用户权限启动jenkins">Root用户权限启动Jenkins&lt;/h1>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>Jenkins</title><link>/posts/jenkins/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/jenkins/</guid><description>&lt;h1 id="root用户权限启动jenkins">Root用户权限启动Jenkins&lt;/h1>
 &lt;p>适用于Ubuntu环境下通过&lt;code>apt-get install -y jenkins&lt;/code>命令在线安装的Jenkins&lt;/p>
 &lt;p>1.修改配置文件&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>vim /etc/default/jenkins
@@ -8479,7 +8479,7 @@ env.execute();
 &lt;p>2.点击 管理系统&amp;ndash;&amp;gt;安全段落下的&amp;ndash;&amp;gt;全局安全配置,选中&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202408081652851.png" alt="image-20240808165220186">&lt;/p>
 &lt;p>3.管理系统&amp;ndash;&amp;gt;安全段落下的 就会多一个功能&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202408081653465.png" alt="image-20240808165321957">&lt;/p></content></item><item><title>Mybatis</title><link>https://connorzhangyu.com/posts/mybatis/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/mybatis/</guid><description>&lt;h1 id="教程">教程&lt;/h1>
+&lt;p>&lt;img src="https://image.runtimes.cc/202408081653465.png" alt="image-20240808165321957">&lt;/p></content></item><item><title>Mybatis</title><link>/posts/mybatis/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/mybatis/</guid><description>&lt;h1 id="教程">教程&lt;/h1>
 &lt;blockquote>
 &lt;p>参考:&lt;/p>
 &lt;p>&lt;a href="https://mybatis.org/mybatis-3/">官方文档&lt;/a>&lt;/p>
@@ -9784,7 +9784,7 @@ trim标签的属性如下：&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> cacheKey;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="面试题">面试题&lt;/h1></content></item><item><title>Mycat</title><link>https://connorzhangyu.com/posts/mycat/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/mycat/</guid><description>&lt;h1 id="主从复制">主从复制&lt;/h1>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="面试题">面试题&lt;/h1></content></item><item><title>Mycat</title><link>/posts/mycat/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/mycat/</guid><description>&lt;h1 id="主从复制">主从复制&lt;/h1>
 &lt;h1 id="启动">启动&lt;/h1>
 &lt;p>1 .下载jre包&lt;/p>
 &lt;p>2 下载mycat包&lt;/p>
@@ -10038,7 +10038,7 @@ auto-increment-offset=2
 &lt;h1 id="测试读写分离">测试读写分离&lt;/h1>
 &lt;p>插入语句&lt;/p>
 &lt;pre tabindex="0">&lt;code>insert into test valus(@@hostname)
-&lt;/code>&lt;/pre></content></item><item><title>Spring Security</title><link>https://connorzhangyu.com/posts/spring-security/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/spring-security/</guid><description>&lt;h1 id="spring-security">Spring Security&lt;/h1>
+&lt;/code>&lt;/pre></content></item><item><title>Spring Security</title><link>/posts/spring-security/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/spring-security/</guid><description>&lt;h1 id="spring-security">Spring Security&lt;/h1>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&amp;lt;dependency&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;artifactId&amp;gt;spring-boot-starter-security&amp;lt;/artifactId&amp;gt;
@@ -10494,7 +10494,7 @@ auto-increment-offset=2
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>找Java包的路径&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># mac&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/usr/libexec/java_home -V
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>设计模式</title><link>https://connorzhangyu.com/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid><description>&lt;h1 id="创建型模式">创建型模式&lt;/h1>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>设计模式</title><link>/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid><description>&lt;h1 id="创建型模式">创建型模式&lt;/h1>
 &lt;h2 id="简单工厂">简单工厂&lt;/h2>
 &lt;p>Pay.java&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">interface&lt;/span> &lt;span style="color:#a6e22e">Pay&lt;/span> {

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on Hello World</title><link>https://connorzhangyu.com/tags/linux/</link><description>Recent content in Linux on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Wed, 25 Oct 2023 09:30:33 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>JumpServer</title><link>https://connorzhangyu.com/posts/jumpserver/</link><pubDate>Wed, 25 Oct 2023 09:30:33 +0000</pubDate><guid>https://connorzhangyu.com/posts/jumpserver/</guid><description>&lt;h1 id="笔记">笔记&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on Hello World</title><link>/tags/linux/</link><description>Recent content in Linux on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Wed, 25 Oct 2023 09:30:33 +0000</lastBuildDate><atom:link href="/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>JumpServer</title><link>/posts/jumpserver/</link><pubDate>Wed, 25 Oct 2023 09:30:33 +0000</pubDate><guid>/posts/jumpserver/</guid><description>&lt;h1 id="笔记">笔记&lt;/h1>
 &lt;h2 id="安装jumpserver">安装JumpServer&lt;/h2>
 &lt;p>&lt;a href="https://community.fit2cloud.com/#/products/jumpserver/getstarted">官网一键安装&lt;/a>&lt;/p>
 &lt;h2 id="修改配置远程访问的端口">修改配置远程访问的端口&lt;/h2>
@@ -81,7 +81,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./jmsctl.sh start
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="配置ssh超时时间">配置SSH超时时间&lt;/h2>
 &lt;p>默认的时间好像半个小时不操作了,就会自动断开,改成最大值&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202406151603157.png" alt="image-20240615160327165">&lt;/p></content></item><item><title>Linux</title><link>https://connorzhangyu.com/posts/linux/</link><pubDate>Tue, 22 Nov 2022 10:53:07 +0000</pubDate><guid>https://connorzhangyu.com/posts/linux/</guid><description>&lt;h1 id="系统命令">系统命令&lt;/h1>
+&lt;p>&lt;img src="https://image.runtimes.cc/202406151603157.png" alt="image-20240615160327165">&lt;/p></content></item><item><title>Linux</title><link>/posts/linux/</link><pubDate>Tue, 22 Nov 2022 10:53:07 +0000</pubDate><guid>/posts/linux/</guid><description>&lt;h1 id="系统命令">系统命令&lt;/h1>
 &lt;h2 id="解压缩">解压缩&lt;/h2>
 &lt;p>demo(文件夹)&lt;/p>
 &lt;p>|&amp;mdash;&amp;mdash;|1.txt(文件)&lt;/p>
@@ -1070,7 +1070,7 @@ ls /mnt/cdrom/Packages/
 yum -y instal httpd
 # 安装rpm包
 rpm -ivh xxx.rpm
-&lt;/code>&lt;/pre></content></item><item><title>Linux软件</title><link>https://connorzhangyu.com/posts/linux%E8%BD%AF%E4%BB%B6/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/linux%E8%BD%AF%E4%BB%B6/</guid><description>&lt;h1 id="jumpsserver">JumpSserver&lt;/h1>
+&lt;/code>&lt;/pre></content></item><item><title>Linux软件</title><link>/posts/linux%E8%BD%AF%E4%BB%B6/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/linux%E8%BD%AF%E4%BB%B6/</guid><description>&lt;h1 id="jumpsserver">JumpSserver&lt;/h1>
 &lt;h2 id="设置sftp根目录">设置SFTP根目录&lt;/h2>
 &lt;p>3.0版本设置文件管理&lt;/p>
 &lt;p>克隆一份Linux平台&lt;/p>

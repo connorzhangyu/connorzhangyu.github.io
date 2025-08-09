@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>命令行 on Hello World</title><link>https://connorzhangyu.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/</link><description>Recent content in 命令行 on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sat, 19 Nov 2022 18:25:00 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/index.xml" rel="self" type="application/rss+xml"/><item><title>Windows</title><link>https://connorzhangyu.com/posts/windows/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/windows/</guid><description>&lt;h1 id="windows-server">Windows Server&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>命令行 on Hello World</title><link>/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/</link><description>Recent content in 命令行 on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sat, 19 Nov 2022 18:25:00 +0000</lastBuildDate><atom:link href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/index.xml" rel="self" type="application/rss+xml"/><item><title>Windows</title><link>/posts/windows/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/windows/</guid><description>&lt;h1 id="windows-server">Windows Server&lt;/h1>
 &lt;h2 id="开放指定端口">开放指定端口&lt;/h2>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051353354.webp" alt="1">&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051353503.webp" alt="2">&lt;/p>
@@ -254,7 +254,7 @@ NAME STATE VERSION
 &amp;#34;path&amp;#34;: &amp;#34;&amp;#34;, // 自定义存储路径
 &amp;#34;customUrl&amp;#34;: &amp;#34;&amp;#34; // 自定义域名，注意要加http://或者https://
 }
-&lt;/code>&lt;/pre>&lt;p>3.通过三个组合键，可以分别从：1.（Ctrl+alt+U）剪切板 2.（Ctrl+alt+E）文件夹 3.（Ctrl+alt+O）指定路径&lt;/p></content></item><item><title>Windows</title><link>https://connorzhangyu.com/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/windows/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/windows/</guid><description>&lt;h1 id="windows-server">Windows Server&lt;/h1>
+&lt;/code>&lt;/pre>&lt;p>3.通过三个组合键，可以分别从：1.（Ctrl+alt+U）剪切板 2.（Ctrl+alt+E）文件夹 3.（Ctrl+alt+O）指定路径&lt;/p></content></item><item><title>Windows</title><link>/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/windows/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/windows/</guid><description>&lt;h1 id="windows-server">Windows Server&lt;/h1>
 &lt;h2 id="开放指定端口">开放指定端口&lt;/h2>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051353354.webp" alt="1">&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051353503.webp" alt="2">&lt;/p>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>笔记 on Hello World</title><link>https://connorzhangyu.com/tags/%E7%AC%94%E8%AE%B0/</link><description>Recent content in 笔记 on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Mon, 26 Feb 2024 13:47:19 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>Vue后台系统</title><link>https://connorzhangyu.com/posts/vue%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F/</link><pubDate>Mon, 26 Feb 2024 13:47:19 +0000</pubDate><guid>https://connorzhangyu.com/posts/vue%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F/</guid><description>&lt;p>项目由 Vue3 + Pina + JavaScript + Ant Design Vue&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>笔记 on Hello World</title><link>/tags/%E7%AC%94%E8%AE%B0/</link><description>Recent content in 笔记 on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Mon, 26 Feb 2024 13:47:19 +0000</lastBuildDate><atom:link href="/tags/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>Vue后台系统</title><link>/posts/vue%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F/</link><pubDate>Mon, 26 Feb 2024 13:47:19 +0000</pubDate><guid>/posts/vue%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F/</guid><description>&lt;p>项目由 Vue3 + Pina + JavaScript + Ant Design Vue&lt;/p>
 &lt;h1 id="创建项目">创建项目&lt;/h1>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 直接创建&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>npm create vite@latest my-vue-app -- --template vue
@@ -274,7 +274,7 @@ VITE_APP_BASE_API = &amp;#39;/dev-api&amp;#39;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">export&lt;/span> &lt;span style="color:#66d9ef">default&lt;/span> &lt;span style="color:#a6e22e">service&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>main.js&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">import&lt;/span> &lt;span style="color:#a6e22e">router&lt;/span> &lt;span style="color:#a6e22e">from&lt;/span> &lt;span style="color:#e6db74">&amp;#39;./router&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>Telegram Bot</title><link>https://connorzhangyu.com/posts/telegrambot/</link><pubDate>Sat, 08 Jul 2023 15:09:14 +0000</pubDate><guid>https://connorzhangyu.com/posts/telegrambot/</guid><description>&lt;h1 id="机器人设置">机器人设置&lt;/h1>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>Telegram Bot</title><link>/posts/telegrambot/</link><pubDate>Sat, 08 Jul 2023 15:09:14 +0000</pubDate><guid>/posts/telegrambot/</guid><description>&lt;h1 id="机器人设置">机器人设置&lt;/h1>
 &lt;h2 id="消息分类">消息分类&lt;/h2>
 &lt;p>消息分两种:&lt;/p>
 &lt;ol>
@@ -290,7 +290,7 @@ VITE_APP_BASE_API = &amp;#39;/dev-api&amp;#39;
 &lt;li>命令消息(以&lt;code>'/'&lt;/code>开头的文本,比如 &lt;code>/test&lt;/code> )&lt;/li>
 &lt;/ol>
 &lt;p>默认在群里只能收到命令消息,和机器人私聊可以接收到全部的消息,如果想让机器人在群里也能接收到全部的消息,操作如下
-访问&lt;code>BotFather&lt;/code>,输入&lt;code>/setprivacy&lt;/code>,选择自己的机器人,选择&lt;code>DISABLED&lt;/code>,就可以了&lt;/p></content></item><item><title>Rime</title><link>https://connorzhangyu.com/posts/rime/</link><pubDate>Sun, 02 Jul 2023 22:37:34 +0000</pubDate><guid>https://connorzhangyu.com/posts/rime/</guid><description>&lt;h1 id="基本概念">基本概念&lt;/h1>
+访问&lt;code>BotFather&lt;/code>,输入&lt;code>/setprivacy&lt;/code>,选择自己的机器人,选择&lt;code>DISABLED&lt;/code>,就可以了&lt;/p></content></item><item><title>Rime</title><link>/posts/rime/</link><pubDate>Sun, 02 Jul 2023 22:37:34 +0000</pubDate><guid>/posts/rime/</guid><description>&lt;h1 id="基本概念">基本概念&lt;/h1>
 &lt;p>Rime 是一个输入法框架，并不是狭义上的“输入法”，而是将各种输入法的共性抽象出来的算法框架。通过不同的配置文件，Rime 可以支持多种输入方案（Schema），这个所谓的输入方案就是我们狭义上的“输入法”。比如朙月拼音输入法就是 Rime 自带的一种输入方案，另外还有比如四叶草输入法（https://github.com/fkxxyz/rime-cloverpinyin）等等。鼠须管、小狼毫、中州韵分别是 Rime 在不同操作系统下的实现程序。Rime 的配置、词库文件均使用文本方式，便于修改。所有文件均要求以 UTF-8 编码。在配置文件中，以 # 号开头表示注释。&lt;/p>
 &lt;h1 id="配置文件所在的目录">配置文件所在的目录&lt;/h1>
 &lt;p>Rime 有两个重要的配置目录：&lt;/p>
@@ -398,7 +398,7 @@ VITE_APP_BASE_API = &amp;#39;/dev-api&amp;#39;
 &lt;blockquote>
 &lt;p>参考:&lt;/p>
 &lt;p>&lt;a href="https://www.hawu.me/others/2666">鼠须管输入法配置 - 哈呜.王 (hawu.me)&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://zhuanlan.zhihu.com/p/474994157">Rime Squirrel 鼠须管输入法配置详解 - 知乎 (zhihu.com)&lt;/a>&lt;/p>&lt;/blockquote></content></item><item><title>Element-UI</title><link>https://connorzhangyu.com/posts/%E5%89%8D%E7%AB%AF/element-ui/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/%E5%89%8D%E7%AB%AF/element-ui/</guid><description>&lt;h1 id="表单验证">表单验证&lt;/h1>
+&lt;p>&lt;a href="https://zhuanlan.zhihu.com/p/474994157">Rime Squirrel 鼠须管输入法配置详解 - 知乎 (zhihu.com)&lt;/a>&lt;/p>&lt;/blockquote></content></item><item><title>Element-UI</title><link>/posts/%E5%89%8D%E7%AB%AF/element-ui/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/%E5%89%8D%E7%AB%AF/element-ui/</guid><description>&lt;h1 id="表单验证">表单验证&lt;/h1>
 &lt;h2 id="简单版">简单版&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">template&lt;/span>&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">div&lt;/span> &lt;span style="color:#a6e22e">class&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;login&amp;#34;&lt;/span>&amp;gt;
@@ -1316,7 +1316,7 @@ cities: cityOptions
 &amp;lt;/template&amp;gt;
 &lt;/code>&lt;/pre>&lt;p>Store 数据&lt;/p>
 &lt;pre tabindex="0">&lt;code>agentId: _this.$store.getters.name.agentId,
-&lt;/code>&lt;/pre></content></item><item><title>Mybatis</title><link>https://connorzhangyu.com/posts/mybatis/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/mybatis/</guid><description>&lt;h1 id="教程">教程&lt;/h1>
+&lt;/code>&lt;/pre></content></item><item><title>Mybatis</title><link>/posts/mybatis/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/mybatis/</guid><description>&lt;h1 id="教程">教程&lt;/h1>
 &lt;blockquote>
 &lt;p>参考:&lt;/p>
 &lt;p>&lt;a href="https://mybatis.org/mybatis-3/">官方文档&lt;/a>&lt;/p>
@@ -2621,7 +2621,7 @@ trim标签的属性如下：&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> cacheKey;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="面试题">面试题&lt;/h1></content></item><item><title>Obsidian</title><link>https://connorzhangyu.com/posts/obsidian/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/obsidian/</guid><description>&lt;h1 id="插件">插件&lt;/h1>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="面试题">面试题&lt;/h1></content></item><item><title>Obsidian</title><link>/posts/obsidian/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/obsidian/</guid><description>&lt;h1 id="插件">插件&lt;/h1>
 &lt;p>1.安装git插件
 2.运行命令,才能在界面上显示Git
 &lt;img src="https://image.runtimes.cc/202404051446974.png" alt="">&lt;/p>
@@ -2641,7 +2641,7 @@ trim标签的属性如下：&lt;/p>
 &lt;h2 id="本地图片的格式">本地图片的格式&lt;/h2>
 &lt;p>使用 Obsidian 时，粘贴的图片路径会变成&lt;code>[[]]&lt;/code> 的格式，在像 Typora 的软件上，就不适配。
 可以在设置里，关闭 Wiki 链接的选项，粘贴图片后的格式就会自动变成了。
-&lt;img src="https://image.runtimes.cc/202404051451913.png" alt="">&lt;/p></content></item><item><title>Python</title><link>https://connorzhangyu.com/posts/python/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/python/</guid><description>&lt;h1 id="安装">安装&lt;/h1>
+&lt;img src="https://image.runtimes.cc/202404051451913.png" alt="">&lt;/p></content></item><item><title>Python</title><link>/posts/python/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/python/</guid><description>&lt;h1 id="安装">安装&lt;/h1>
 &lt;h1 id="虚拟环境">虚拟环境&lt;/h1>
 &lt;pre tabindex="0">&lt;code># 判断有没有虚拟环境
 virtualenv -V
@@ -4367,7 +4367,7 @@ weight = 1
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> test &lt;span style="color:#f92672">=&lt;/span> LinuxFile(&lt;span style="color:#e6db74">&amp;#39;47.242.218.75&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;22&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;root&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;Qwer1234&amp;#39;&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># test.up_file(&amp;#39;../2020-10-11_20-21-28.py&amp;#39;, &amp;#39;/root/2020-10-11_20-21-28.py&amp;#39;)&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> test&lt;span style="color:#f92672">.&lt;/span>down_file(&lt;span style="color:#e6db74">&amp;#39;/var/log/nginx/access.log&amp;#39;&lt;/span>,&lt;span style="color:#e6db74">&amp;#39;a.log&amp;#39;&lt;/span>)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>Vue</title><link>https://connorzhangyu.com/posts/%E5%89%8D%E7%AB%AF/vue/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/%E5%89%8D%E7%AB%AF/vue/</guid><description>&lt;p>按照官方文档的教程步骤来,大部分的代码Demo,都是通过脚手架创建的项目的基础上创建的,用的版本的Vue3,Typescript,组合式的写法&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>Vue</title><link>/posts/%E5%89%8D%E7%AB%AF/vue/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/%E5%89%8D%E7%AB%AF/vue/</guid><description>&lt;p>按照官方文档的教程步骤来,大部分的代码Demo,都是通过脚手架创建的项目的基础上创建的,用的版本的Vue3,Typescript,组合式的写法&lt;/p>
 &lt;h1 id="基础">基础&lt;/h1>
 &lt;h2 id="创建一个应用">创建一个应用&lt;/h2>
 &lt;p>&lt;em>&lt;strong>多个应用实例&lt;/strong>&lt;/em>&lt;/p>
@@ -5259,7 +5259,7 @@ weight = 1
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>};
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#f92672">script&lt;/span>&amp;gt;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
-&lt;p>参考:&lt;a href="https://blog.csdn.net/m0_49714202/article/details/126100398">前端Vue父组件点击按钮打开子组件弹窗案例&lt;/a>&lt;/p>&lt;/blockquote></content></item><item><title>Vue项目</title><link>https://connorzhangyu.com/posts/%E5%89%8D%E7%AB%AF/vue%E9%A1%B9%E7%9B%AE/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/posts/%E5%89%8D%E7%AB%AF/vue%E9%A1%B9%E7%9B%AE/</guid><description>&lt;h1 id="安装vue">安装Vue&lt;/h1>
+&lt;p>参考:&lt;a href="https://blog.csdn.net/m0_49714202/article/details/126100398">前端Vue父组件点击按钮打开子组件弹窗案例&lt;/a>&lt;/p>&lt;/blockquote></content></item><item><title>Vue项目</title><link>/posts/%E5%89%8D%E7%AB%AF/vue%E9%A1%B9%E7%9B%AE/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/%E5%89%8D%E7%AB%AF/vue%E9%A1%B9%E7%9B%AE/</guid><description>&lt;h1 id="安装vue">安装Vue&lt;/h1>
 &lt;h2 id="局部安装">局部安装&lt;/h2>
 &lt;p>局部安装并使用vue-cli 4.x版本,和创建项目&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 先创建一个文件夹&lt;/span>
