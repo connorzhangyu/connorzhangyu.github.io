@@ -1,4 +1,177 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hello World</title><link>/</link><description>Recent content on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Fri, 08 Aug 2025 10:00:00 +0700</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Go 面试冲刺学习计划（14 天 | 每天 12 小时）</title><link>/posts/showcase/go-%E9%9D%A2%E8%AF%95%E5%86%B2%E5%88%BA%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</link><pubDate>Fri, 08 Aug 2025 10:00:00 +0700</pubDate><guid>/posts/showcase/go-%E9%9D%A2%E8%AF%95%E5%86%B2%E5%88%BA%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</guid><description>&lt;blockquote>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hello World</title><link>/</link><description>Recent content on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sat, 09 Aug 2025 10:00:00 +0700</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>使用 Docker 和 CI/CD 实现 Java 服务与 Nginx Proxy Manager 的自动化部署</title><link>/posts/docker%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E4%BB%A5%E5%8F%8A%E4%BB%A3%E7%90%86/</link><pubDate>Sat, 09 Aug 2025 10:00:00 +0700</pubDate><guid>/posts/docker%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E4%BB%A5%E5%8F%8A%E4%BB%A3%E7%90%86/</guid><description>&lt;h1 id="使用-docker-和-cicd-实现-java-服务与-nginx-proxy-manager-的自动化部署">使用 Docker 和 CI/CD 实现 Java 服务与 Nginx Proxy Manager 的自动化部署&lt;/h1>
+&lt;p>在现代微服务架构中，&lt;strong>Nginx Proxy Manager&lt;/strong> 常被用作轻量级的反向代理管理工具，而通过 &lt;strong>Docker&lt;/strong> 和 &lt;strong>CI/CD 工具&lt;/strong>（如 GitHub Actions、GitLab CI/CD），可以实现自动化的部署和配置。本篇博客将带你一步步实现 Nginx Proxy Manager 与 Java 服务的自动化部署和配置。&lt;/p>
+&lt;hr>
+&lt;h2 id="一背景与目标">一、背景与目标&lt;/h2>
+&lt;p>&lt;strong>为什么选择 Nginx Proxy Manager？&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>简单易用的 Web 界面。&lt;/li>
+&lt;li>内置 Let&amp;rsquo;s Encrypt 自动化 SSL 配置。&lt;/li>
+&lt;li>支持多域名、多服务的反向代理。&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>我们的目标：&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>使用 Docker 部署 Nginx Proxy Manager 和 Java 服务。&lt;/li>
+&lt;li>在 CI/CD 流程中自动化反向代理配置。&lt;/li>
+&lt;li>支持多环境（如开发、测试、生产）的动态切换。&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h2 id="二准备工作">二、准备工作&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>安装 Docker 和 Docker Compose&lt;/strong>&lt;br>
+确保服务器已安装：&lt;/p>
+&lt;ul>
+&lt;li>Docker：&lt;a href="https://docs.docker.com/get-docker/">安装指南&lt;/a>&lt;/li>
+&lt;li>Docker Compose：&lt;a href="https://docs.docker.com/compose/install/">安装指南&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>准备一个运行中的 Java 服务&lt;/strong>&lt;br>
+假设你已有一个 Java 应用（如 Spring Boot 项目），并打包成 Docker 镜像。&lt;/p></description><content>&lt;h1 id="使用-docker-和-cicd-实现-java-服务与-nginx-proxy-manager-的自动化部署">使用 Docker 和 CI/CD 实现 Java 服务与 Nginx Proxy Manager 的自动化部署&lt;/h1>
+&lt;p>在现代微服务架构中，&lt;strong>Nginx Proxy Manager&lt;/strong> 常被用作轻量级的反向代理管理工具，而通过 &lt;strong>Docker&lt;/strong> 和 &lt;strong>CI/CD 工具&lt;/strong>（如 GitHub Actions、GitLab CI/CD），可以实现自动化的部署和配置。本篇博客将带你一步步实现 Nginx Proxy Manager 与 Java 服务的自动化部署和配置。&lt;/p>
+&lt;hr>
+&lt;h2 id="一背景与目标">一、背景与目标&lt;/h2>
+&lt;p>&lt;strong>为什么选择 Nginx Proxy Manager？&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>简单易用的 Web 界面。&lt;/li>
+&lt;li>内置 Let&amp;rsquo;s Encrypt 自动化 SSL 配置。&lt;/li>
+&lt;li>支持多域名、多服务的反向代理。&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>我们的目标：&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>使用 Docker 部署 Nginx Proxy Manager 和 Java 服务。&lt;/li>
+&lt;li>在 CI/CD 流程中自动化反向代理配置。&lt;/li>
+&lt;li>支持多环境（如开发、测试、生产）的动态切换。&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h2 id="二准备工作">二、准备工作&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>安装 Docker 和 Docker Compose&lt;/strong>&lt;br>
+确保服务器已安装：&lt;/p>
+&lt;ul>
+&lt;li>Docker：&lt;a href="https://docs.docker.com/get-docker/">安装指南&lt;/a>&lt;/li>
+&lt;li>Docker Compose：&lt;a href="https://docs.docker.com/compose/install/">安装指南&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>准备一个运行中的 Java 服务&lt;/strong>&lt;br>
+假设你已有一个 Java 应用（如 Spring Boot 项目），并打包成 Docker 镜像。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>拥有一个域名（可选）&lt;/strong>&lt;br>
+如果需要通过域名访问服务，可以在 DNS 配置中指向你的服务器 IP。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h2 id="三docker-compose-配置">三、Docker Compose 配置&lt;/h2>
+&lt;p>以下是一个示例的 &lt;code>docker-compose.yml&lt;/code> 文件，用于部署 Nginx Proxy Manager 和 Java 服务：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">version&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;3.8&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">services&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">nginx-proxy-manager&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">image&lt;/span>: &lt;span style="color:#ae81ff">jc21/nginx-proxy-manager:latest&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">container_name&lt;/span>: &lt;span style="color:#ae81ff">nginx-proxy-manager&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">restart&lt;/span>: &lt;span style="color:#ae81ff">unless-stopped&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">ports&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#e6db74">&amp;#34;80:80&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#e6db74">&amp;#34;443:443&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#e6db74">&amp;#34;81:81&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">volumes&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">./data:/data&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">./letsencrypt:/etc/letsencrypt&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">java-service&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">image&lt;/span>: &lt;span style="color:#ae81ff">my-java-app:latest&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">container_name&lt;/span>: &lt;span style="color:#ae81ff">java-service&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">restart&lt;/span>: &lt;span style="color:#ae81ff">unless-stopped&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">environment&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">SPRING_PROFILES_ACTIVE=prod&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">ports&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#e6db74">&amp;#34;8080:8080&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>启动服务：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>docker-compose up -d
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>访问 Nginx Proxy Manager 管理界面：&lt;a href="http://%3c%E6%9C%8D%E5%8A%A1%E5%99%A8IP%3e:81">http://&amp;lt;服务器IP&amp;gt;:81&lt;/a>&lt;br>
+默认登录账号：&lt;strong>&lt;a href="mailto:admin@example.com">admin@example.com&lt;/a>&lt;/strong>，密码：&lt;strong>changeme&lt;/strong>。&lt;/p>
+&lt;hr>
+&lt;h2 id="四参数化配置支持多环境">四、参数化配置支持多环境&lt;/h2>
+&lt;p>通过 &lt;code>.env&lt;/code> 文件管理环境变量，以支持不同的环境（如开发、测试、生产）。以下是 &lt;code>.env&lt;/code> 文件的示例：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-env" data-lang="env">&lt;span style="display:flex;">&lt;span>SPRING_PROFILES_ACTIVE&lt;span style="color:#f92672">=&lt;/span>prod
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>NGINX_DOMAIN&lt;span style="color:#f92672">=&lt;/span>myapp.example.com
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>NGINX_FORWARD_HOST&lt;span style="color:#f92672">=&lt;/span>java-service
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>NGINX_FORWARD_PORT&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">8080&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>在 &lt;code>docker-compose.yml&lt;/code> 中动态加载环境变量：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">environment&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">SPRING_PROFILES_ACTIVE=${SPRING_PROFILES_ACTIVE}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>运行时加载 &lt;code>.env&lt;/code> 文件：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>docker-compose --env-file .env up -d
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="五自动化反向代理配置">五、自动化反向代理配置&lt;/h2>
+&lt;p>为了自动化配置 Nginx Proxy Manager，可以选择以下两种方式：&lt;/p>
+&lt;h3 id="方式-1使用-api-配置推荐">方式 1：使用 API 配置（推荐）&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>获取 API Token&lt;/strong>&lt;br>
+登录 API 获取管理员权限的 Token：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>curl -X POST &lt;span style="color:#e6db74">&amp;#34;http://&amp;lt;NGINX_PROXY_MANAGER_IP&amp;gt;:81/api/tokens&amp;#34;&lt;/span> -H &lt;span style="color:#e6db74">&amp;#34;Content-Type: application/json&amp;#34;&lt;/span> -d &lt;span style="color:#e6db74">&amp;#39;{&amp;#34;identity&amp;#34;: &amp;#34;admin@example.com&amp;#34;, &amp;#34;secret&amp;#34;: &amp;#34;password&amp;#34;}&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>自动创建反向代理规则&lt;/strong>&lt;br>
+通过 API 动态添加代理规则：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>curl -X POST &lt;span style="color:#e6db74">&amp;#34;http://&amp;lt;NGINX_PROXY_MANAGER_IP&amp;gt;:81/api/nginx/proxy-hosts&amp;#34;&lt;/span> -H &lt;span style="color:#e6db74">&amp;#34;Authorization: Bearer &amp;lt;TOKEN&amp;gt;&amp;#34;&lt;/span> -H &lt;span style="color:#e6db74">&amp;#34;Content-Type: application/json&amp;#34;&lt;/span> -d &lt;span style="color:#e6db74">&amp;#39;{
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34;domain_names&amp;#34;: [&amp;#34;${NGINX_DOMAIN}&amp;#34;],
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34;forward_host&amp;#34;: &amp;#34;${NGINX_FORWARD_HOST}&amp;#34;,
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34;forward_port&amp;#34;: ${NGINX_FORWARD_PORT},
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34;access_list_id&amp;#34;: 0,
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34;certificate_id&amp;#34;: 0,
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34;ssl_forced&amp;#34;: false
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> }&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;h3 id="方式-2直接操作-sqlite-数据库">方式 2：直接操作 SQLite 数据库&lt;/h3>
+&lt;p>如果你熟悉 SQLite，可以直接修改 Nginx Proxy Manager 的 &lt;code>data/database.sqlite&lt;/code> 文件，批量添加规则：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sqlite3 ./data/database.sqlite &lt;span style="color:#e6db74">&amp;lt;&amp;lt;EOF
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">INSERT INTO proxy_host (domain_names, forward_host, forward_port, ...) VALUES (...);
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">EOF&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="六集成到-cicd-流程">六、集成到 CI/CD 流程&lt;/h2>
+&lt;p>以下以 &lt;strong>GitHub Actions&lt;/strong> 为例，展示如何在 CI/CD 流程中自动化部署和配置：&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">CI/CD for Java Service and Nginx Proxy Manager&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">on&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">push&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">branches&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">main&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">jobs&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">deploy&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">runs-on&lt;/span>: &lt;span style="color:#ae81ff">ubuntu-latest&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">steps&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Checkout code&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">uses&lt;/span>: &lt;span style="color:#ae81ff">actions/checkout@v3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Set up Docker&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">uses&lt;/span>: &lt;span style="color:#ae81ff">docker/setup-buildx-action@v2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Deploy Java Service and Nginx Proxy Manager&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">run&lt;/span>: |&lt;span style="color:#e6db74">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> docker-compose -f docker-compose.yml --env-file .env up -d&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Configure Nginx Proxy Manager&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">run&lt;/span>: |&lt;span style="color:#e6db74">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> curl -X POST &amp;#34;http://nginx-proxy-manager:81/api/nginx/proxy-hosts&amp;#34; -H &amp;#34;Authorization: Bearer ${{ secrets.NPM_API_TOKEN }}&amp;#34; -H &amp;#34;Content-Type: application/json&amp;#34; -d &amp;#39;{&amp;#34;domain_names&amp;#34;: [&amp;#34;${NGINX_DOMAIN}&amp;#34;], &amp;#34;forward_host&amp;#34;: &amp;#34;${NGINX_FORWARD_HOST}&amp;#34;, &amp;#34;forward_port&amp;#34;: ${NGINX_FORWARD_PORT}}&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="七总结">七、总结&lt;/h2>
+&lt;p>通过以上方法，我们实现了：&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Nginx Proxy Manager 与 Java 服务的 Docker 化部署&lt;/strong>。&lt;/li>
+&lt;li>&lt;strong>支持多环境的动态代理配置&lt;/strong>。&lt;/li>
+&lt;li>&lt;strong>与 CI/CD 流程无缝集成，自动化部署与测试&lt;/strong>。&lt;/li>
+&lt;/ol>
+&lt;p>这不仅提高了部署效率，还保证了配置的一致性，非常适合现代化微服务架构的需求。&lt;/p>
+&lt;hr>
+&lt;p>希望这篇内容对你有所帮助！欢迎评论与分享！ 🎉&lt;/p></content></item><item><title>Go 面试冲刺学习计划（14 天 | 每天 12 小时）</title><link>/posts/showcase/go-%E9%9D%A2%E8%AF%95%E5%86%B2%E5%88%BA%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</link><pubDate>Fri, 08 Aug 2025 10:00:00 +0700</pubDate><guid>/posts/showcase/go-%E9%9D%A2%E8%AF%95%E5%86%B2%E5%88%BA%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</guid><description>&lt;blockquote>
 &lt;p>🚀 本计划适用于有 Java 开发经验的工程师，全力转向 Go 开发岗位，每天投入 12 小时，14 天从语法到项目到面试冲刺，快速具备独立开发 + 面试能力。&lt;/p>&lt;/blockquote>
 &lt;hr>
 &lt;h2 id="-阶段总览">🧭 阶段总览&lt;/h2>
@@ -11206,180 +11379,7 @@ updated: 2024-03-02 18:52:48&lt;/li>
 &lt;hr>
 &lt;h2 id="总结">总结&lt;/h2>
 &lt;p>通过以上学习与认证路径，你将逐步从入门者成长为能够独立设计复杂云架构的架构师。在学习过程中，动手实践和项目经验尤为重要，它不仅能加深你对 AWS 的理解，还能帮助你在未来的工作中游刃有余。&lt;/p>
-&lt;p>开始你的 AWS 学习之旅吧！如果有任何问题或经验分享，欢迎在评论区交流 😊&lt;/p></content></item><item><title>使用 Docker 和 CI/CD 实现 Java 服务与 Nginx Proxy Manager 的自动化部署</title><link>/posts/11143717-ed32-46f5-9ce6-5b4945a0c69b/</link><pubDate>Fri, 06 Dec 2024 21:06:48 +0000</pubDate><guid>/posts/11143717-ed32-46f5-9ce6-5b4945a0c69b/</guid><description>&lt;h1 id="使用-docker-和-cicd-实现-java-服务与-nginx-proxy-manager-的自动化部署">使用 Docker 和 CI/CD 实现 Java 服务与 Nginx Proxy Manager 的自动化部署&lt;/h1>
-&lt;p>在现代微服务架构中，&lt;strong>Nginx Proxy Manager&lt;/strong> 常被用作轻量级的反向代理管理工具，而通过 &lt;strong>Docker&lt;/strong> 和 &lt;strong>CI/CD 工具&lt;/strong>（如 GitHub Actions、GitLab CI/CD），可以实现自动化的部署和配置。本篇博客将带你一步步实现 Nginx Proxy Manager 与 Java 服务的自动化部署和配置。&lt;/p>
-&lt;hr>
-&lt;h2 id="一背景与目标">一、背景与目标&lt;/h2>
-&lt;p>&lt;strong>为什么选择 Nginx Proxy Manager？&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>简单易用的 Web 界面。&lt;/li>
-&lt;li>内置 Let&amp;rsquo;s Encrypt 自动化 SSL 配置。&lt;/li>
-&lt;li>支持多域名、多服务的反向代理。&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>我们的目标：&lt;/strong>&lt;/p>
-&lt;ol>
-&lt;li>使用 Docker 部署 Nginx Proxy Manager 和 Java 服务。&lt;/li>
-&lt;li>在 CI/CD 流程中自动化反向代理配置。&lt;/li>
-&lt;li>支持多环境（如开发、测试、生产）的动态切换。&lt;/li>
-&lt;/ol>
-&lt;hr>
-&lt;h2 id="二准备工作">二、准备工作&lt;/h2>
-&lt;ol>
-&lt;li>
-&lt;p>&lt;strong>安装 Docker 和 Docker Compose&lt;/strong>&lt;br>
-确保服务器已安装：&lt;/p>
-&lt;ul>
-&lt;li>Docker：&lt;a href="https://docs.docker.com/get-docker/">安装指南&lt;/a>&lt;/li>
-&lt;li>Docker Compose：&lt;a href="https://docs.docker.com/compose/install/">安装指南&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>准备一个运行中的 Java 服务&lt;/strong>&lt;br>
-假设你已有一个 Java 应用（如 Spring Boot 项目），并打包成 Docker 镜像。&lt;/p></description><content>&lt;h1 id="使用-docker-和-cicd-实现-java-服务与-nginx-proxy-manager-的自动化部署">使用 Docker 和 CI/CD 实现 Java 服务与 Nginx Proxy Manager 的自动化部署&lt;/h1>
-&lt;p>在现代微服务架构中，&lt;strong>Nginx Proxy Manager&lt;/strong> 常被用作轻量级的反向代理管理工具，而通过 &lt;strong>Docker&lt;/strong> 和 &lt;strong>CI/CD 工具&lt;/strong>（如 GitHub Actions、GitLab CI/CD），可以实现自动化的部署和配置。本篇博客将带你一步步实现 Nginx Proxy Manager 与 Java 服务的自动化部署和配置。&lt;/p>
-&lt;hr>
-&lt;h2 id="一背景与目标">一、背景与目标&lt;/h2>
-&lt;p>&lt;strong>为什么选择 Nginx Proxy Manager？&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>简单易用的 Web 界面。&lt;/li>
-&lt;li>内置 Let&amp;rsquo;s Encrypt 自动化 SSL 配置。&lt;/li>
-&lt;li>支持多域名、多服务的反向代理。&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>我们的目标：&lt;/strong>&lt;/p>
-&lt;ol>
-&lt;li>使用 Docker 部署 Nginx Proxy Manager 和 Java 服务。&lt;/li>
-&lt;li>在 CI/CD 流程中自动化反向代理配置。&lt;/li>
-&lt;li>支持多环境（如开发、测试、生产）的动态切换。&lt;/li>
-&lt;/ol>
-&lt;hr>
-&lt;h2 id="二准备工作">二、准备工作&lt;/h2>
-&lt;ol>
-&lt;li>
-&lt;p>&lt;strong>安装 Docker 和 Docker Compose&lt;/strong>&lt;br>
-确保服务器已安装：&lt;/p>
-&lt;ul>
-&lt;li>Docker：&lt;a href="https://docs.docker.com/get-docker/">安装指南&lt;/a>&lt;/li>
-&lt;li>Docker Compose：&lt;a href="https://docs.docker.com/compose/install/">安装指南&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>准备一个运行中的 Java 服务&lt;/strong>&lt;br>
-假设你已有一个 Java 应用（如 Spring Boot 项目），并打包成 Docker 镜像。&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>拥有一个域名（可选）&lt;/strong>&lt;br>
-如果需要通过域名访问服务，可以在 DNS 配置中指向你的服务器 IP。&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;hr>
-&lt;h2 id="三docker-compose-配置">三、Docker Compose 配置&lt;/h2>
-&lt;p>以下是一个示例的 &lt;code>docker-compose.yml&lt;/code> 文件，用于部署 Nginx Proxy Manager 和 Java 服务：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">version&lt;/span>: &lt;span style="color:#e6db74">&amp;#39;3.8&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">services&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">nginx-proxy-manager&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">image&lt;/span>: &lt;span style="color:#ae81ff">jc21/nginx-proxy-manager:latest&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">container_name&lt;/span>: &lt;span style="color:#ae81ff">nginx-proxy-manager&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">restart&lt;/span>: &lt;span style="color:#ae81ff">unless-stopped&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">ports&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#e6db74">&amp;#34;80:80&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#e6db74">&amp;#34;443:443&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#e6db74">&amp;#34;81:81&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">volumes&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">./data:/data&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">./letsencrypt:/etc/letsencrypt&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">java-service&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">image&lt;/span>: &lt;span style="color:#ae81ff">my-java-app:latest&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">container_name&lt;/span>: &lt;span style="color:#ae81ff">java-service&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">restart&lt;/span>: &lt;span style="color:#ae81ff">unless-stopped&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">environment&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">SPRING_PROFILES_ACTIVE=prod&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">ports&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#e6db74">&amp;#34;8080:8080&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>启动服务：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>docker-compose up -d
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>访问 Nginx Proxy Manager 管理界面：&lt;a href="http://%3c%E6%9C%8D%E5%8A%A1%E5%99%A8IP%3e:81">http://&amp;lt;服务器IP&amp;gt;:81&lt;/a>&lt;br>
-默认登录账号：&lt;strong>&lt;a href="mailto:admin@example.com">admin@example.com&lt;/a>&lt;/strong>，密码：&lt;strong>changeme&lt;/strong>。&lt;/p>
-&lt;hr>
-&lt;h2 id="四参数化配置支持多环境">四、参数化配置支持多环境&lt;/h2>
-&lt;p>通过 &lt;code>.env&lt;/code> 文件管理环境变量，以支持不同的环境（如开发、测试、生产）。以下是 &lt;code>.env&lt;/code> 文件的示例：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-env" data-lang="env">&lt;span style="display:flex;">&lt;span>SPRING_PROFILES_ACTIVE&lt;span style="color:#f92672">=&lt;/span>prod
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>NGINX_DOMAIN&lt;span style="color:#f92672">=&lt;/span>myapp.example.com
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>NGINX_FORWARD_HOST&lt;span style="color:#f92672">=&lt;/span>java-service
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>NGINX_FORWARD_PORT&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">8080&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>在 &lt;code>docker-compose.yml&lt;/code> 中动态加载环境变量：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">environment&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">SPRING_PROFILES_ACTIVE=${SPRING_PROFILES_ACTIVE}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>运行时加载 &lt;code>.env&lt;/code> 文件：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>docker-compose --env-file .env up -d
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h2 id="五自动化反向代理配置">五、自动化反向代理配置&lt;/h2>
-&lt;p>为了自动化配置 Nginx Proxy Manager，可以选择以下两种方式：&lt;/p>
-&lt;h3 id="方式-1使用-api-配置推荐">方式 1：使用 API 配置（推荐）&lt;/h3>
-&lt;ol>
-&lt;li>
-&lt;p>&lt;strong>获取 API Token&lt;/strong>&lt;br>
-登录 API 获取管理员权限的 Token：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>curl -X POST &lt;span style="color:#e6db74">&amp;#34;http://&amp;lt;NGINX_PROXY_MANAGER_IP&amp;gt;:81/api/tokens&amp;#34;&lt;/span> -H &lt;span style="color:#e6db74">&amp;#34;Content-Type: application/json&amp;#34;&lt;/span> -d &lt;span style="color:#e6db74">&amp;#39;{&amp;#34;identity&amp;#34;: &amp;#34;admin@example.com&amp;#34;, &amp;#34;secret&amp;#34;: &amp;#34;password&amp;#34;}&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>自动创建反向代理规则&lt;/strong>&lt;br>
-通过 API 动态添加代理规则：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>curl -X POST &lt;span style="color:#e6db74">&amp;#34;http://&amp;lt;NGINX_PROXY_MANAGER_IP&amp;gt;:81/api/nginx/proxy-hosts&amp;#34;&lt;/span> -H &lt;span style="color:#e6db74">&amp;#34;Authorization: Bearer &amp;lt;TOKEN&amp;gt;&amp;#34;&lt;/span> -H &lt;span style="color:#e6db74">&amp;#34;Content-Type: application/json&amp;#34;&lt;/span> -d &lt;span style="color:#e6db74">&amp;#39;{
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34;domain_names&amp;#34;: [&amp;#34;${NGINX_DOMAIN}&amp;#34;],
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34;forward_host&amp;#34;: &amp;#34;${NGINX_FORWARD_HOST}&amp;#34;,
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34;forward_port&amp;#34;: ${NGINX_FORWARD_PORT},
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34;access_list_id&amp;#34;: 0,
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34;certificate_id&amp;#34;: 0,
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34;ssl_forced&amp;#34;: false
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> }&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;/ol>
-&lt;h3 id="方式-2直接操作-sqlite-数据库">方式 2：直接操作 SQLite 数据库&lt;/h3>
-&lt;p>如果你熟悉 SQLite，可以直接修改 Nginx Proxy Manager 的 &lt;code>data/database.sqlite&lt;/code> 文件，批量添加规则：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sqlite3 ./data/database.sqlite &lt;span style="color:#e6db74">&amp;lt;&amp;lt;EOF
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">INSERT INTO proxy_host (domain_names, forward_host, forward_port, ...) VALUES (...);
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">EOF&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h2 id="六集成到-cicd-流程">六、集成到 CI/CD 流程&lt;/h2>
-&lt;p>以下以 &lt;strong>GitHub Actions&lt;/strong> 为例，展示如何在 CI/CD 流程中自动化部署和配置：&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">CI/CD for Java Service and Nginx Proxy Manager&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">on&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">push&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">branches&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#ae81ff">main&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">jobs&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">deploy&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">runs-on&lt;/span>: &lt;span style="color:#ae81ff">ubuntu-latest&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">steps&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Checkout code&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">uses&lt;/span>: &lt;span style="color:#ae81ff">actions/checkout@v3&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Set up Docker&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">uses&lt;/span>: &lt;span style="color:#ae81ff">docker/setup-buildx-action@v2&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Deploy Java Service and Nginx Proxy Manager&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">run&lt;/span>: |&lt;span style="color:#e6db74">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> docker-compose -f docker-compose.yml --env-file .env up -d&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Configure Nginx Proxy Manager&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">run&lt;/span>: |&lt;span style="color:#e6db74">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> curl -X POST &amp;#34;http://nginx-proxy-manager:81/api/nginx/proxy-hosts&amp;#34; -H &amp;#34;Authorization: Bearer ${{ secrets.NPM_API_TOKEN }}&amp;#34; -H &amp;#34;Content-Type: application/json&amp;#34; -d &amp;#39;{&amp;#34;domain_names&amp;#34;: [&amp;#34;${NGINX_DOMAIN}&amp;#34;], &amp;#34;forward_host&amp;#34;: &amp;#34;${NGINX_FORWARD_HOST}&amp;#34;, &amp;#34;forward_port&amp;#34;: ${NGINX_FORWARD_PORT}}&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h2 id="七总结">七、总结&lt;/h2>
-&lt;p>通过以上方法，我们实现了：&lt;/p>
-&lt;ol>
-&lt;li>&lt;strong>Nginx Proxy Manager 与 Java 服务的 Docker 化部署&lt;/strong>。&lt;/li>
-&lt;li>&lt;strong>支持多环境的动态代理配置&lt;/strong>。&lt;/li>
-&lt;li>&lt;strong>与 CI/CD 流程无缝集成，自动化部署与测试&lt;/strong>。&lt;/li>
-&lt;/ol>
-&lt;p>这不仅提高了部署效率，还保证了配置的一致性，非常适合现代化微服务架构的需求。&lt;/p>
-&lt;hr>
-&lt;p>希望这篇内容对你有所帮助！欢迎评论与分享！ 🎉&lt;/p></content></item><item><title>Flutter</title><link>/posts/flutter/</link><pubDate>Sat, 27 Jul 2024 16:17:46 +0000</pubDate><guid>/posts/flutter/</guid><description>&lt;h1 id="安装">安装&lt;/h1>
+&lt;p>开始你的 AWS 学习之旅吧！如果有任何问题或经验分享，欢迎在评论区交流 😊&lt;/p></content></item><item><title>Flutter</title><link>/posts/flutter/</link><pubDate>Sat, 27 Jul 2024 16:17:46 +0000</pubDate><guid>/posts/flutter/</guid><description>&lt;h1 id="安装">安装&lt;/h1>
 &lt;p>以&lt;code>Ma&lt;/code>为例,安装之后任何地方有问题,要执行flutter自带的命令,检查&lt;code>flutter doctor&lt;/code>&lt;/p>
 &lt;p>选择对应的版本,下载到本地就是一个压缩包,解压,就能看到flutter的源码,包含&lt;code>Dart&lt;/code>SDK&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202407271624215.png" alt="image-20240727162450510">&lt;/p>
@@ -40509,4 +40509,4 @@ new DispatchServlet().doDispatch();
 &lt;p>1.vmare配置
 &lt;img src="https://image.runtimes.cc/202404051348330.png" alt="">&lt;/p>
 &lt;p>2.电脑配置,虚拟机配置&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051349925.png" alt="">&lt;/p></content></item></channel></rss>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051349925.png" alt="">&lt;/p></content></item><item><title>关于</title><link>/posts/about/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/posts/about/about/</guid><description>&lt;p>欢迎来到我的技术博客&lt;/p></description><content>&lt;p>欢迎来到我的技术博客&lt;/p></content></item></channel></rss>
