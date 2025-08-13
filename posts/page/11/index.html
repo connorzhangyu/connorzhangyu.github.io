@@ -1,4 +1,191 @@
-<!doctype html><html lang=zh><head><title>Posts :: Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=../../../posts/><link rel=stylesheet href=../../../styles.css><link rel="shortcut icon" href=../../../img/theme-colors/orange.png><link rel=apple-touch-icon href=../../../img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta name=twitter:site content><meta name=twitter:creator content><meta property="og:locale" content="zh"><meta property="og:type" content="website"><meta property="og:title" content="Posts"><meta property="og:description" content><meta property="og:url" content="/posts/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="/img/favicon/orange.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><link href=../../../posts/index.xml rel=alternate type=application/rss+xml title="Hello World"></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=../../../><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=../../../about>关于</a></li><li><a href=../../../showcase>精选</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=../../../about>关于</a></li><li><a href=../../../showcase>精选</a></li></ul></nav></header><div class=content><div class=posts><article class="post on-list"><h1 class=post-title><a href=../../../posts/vue%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F/>Vue后台系统</a></h1><div class=post-meta><time class=post-date>2024-02-26</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=../../../tags/%E5%89%8D%E7%AB%AF/>前端</a>&nbsp;
+<!doctype html><html lang=zh><head><title>Posts :: Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=../../../posts/><link rel=stylesheet href=../../../styles.css><link rel="shortcut icon" href=../../../img/theme-colors/orange.png><link rel=apple-touch-icon href=../../../img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta name=twitter:site content><meta name=twitter:creator content><meta property="og:locale" content="zh"><meta property="og:type" content="website"><meta property="og:title" content="Posts"><meta property="og:description" content><meta property="og:url" content="/posts/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="/img/favicon/orange.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><link href=../../../posts/index.xml rel=alternate type=application/rss+xml title="Hello World"></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=../../../><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=../../../about>关于</a></li><li><a href=../../../showcase>精选</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=../../../about>关于</a></li><li><a href=../../../showcase>精选</a></li></ul></nav></header><div class=content><div class=posts><article class="post on-list"><h1 class=post-title><a href=../../../posts/springcloud/>SpringCloud</a></h1><div class=post-meta><time class=post-date>2024-03-03</time><span class=post-author>Anthony</span></div><img src=https://image.runtimes.cc/202404051534948.webp class=post-cover alt=SpringCloud title="Cover Image"><div class=post-content></div><div><a class="read-more button" href=../../../posts/springcloud/>Read more →</a></div></article><article class="post on-list"><h1 class=post-title><a href=../../../posts/%E8%AE%B0%E5%BD%95/springboot%E9%85%8D%E7%BD%AEgmail/>SpringBoot配置Gmail</a></h1><div class=post-meta><time class=post-date>2024-03-02</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=../../../tags/gmail/>Gmail</a>&nbsp;
+#<a href=../../../tags/springboot/>SpringBoot</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051524969.jpg class=post-cover alt=SpringBoot配置Gmail title="Cover Image"><div class=post-content><p><img src=https://image.runtimes.cc/202404051400542.png alt=image-20240302190257438></p><p>申请应用程序验证码</p><p><img src=https://image.runtimes.cc/202404051400643.png alt=image-20240302184916544></p><p>配置二步验证</p><p><img src=https://image.runtimes.cc/202404051400904.png alt=image-20240302185000050></p><p>要配置二步验证,才能看到应用程序的选项</p><p><img src=https://image.runtimes.cc/202404051402469.png alt=image-20240302185040456></p><p>最后就能获取到应用程序验证码</p><p><img src=https://image.runtimes.cc/202404051402369.png alt=image-20240302185121257></p><p>引入代码</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;dependency&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;groupId&gt;</span>org.springframework.boot<span style=color:#f92672>&lt;/groupId&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;artifactId&gt;</span>spring-boot-starter-mail<span style=color:#f92672>&lt;/artifactId&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/dependency&gt;</span>
+</span></span></code></pre></div><p>application.properties文件配置</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-properties data-lang=properties><span style=display:flex><span><span style=color:#a6e22e>spring.mail.host</span><span style=color:#f92672>=</span><span style=color:#e6db74>smtp.gmail.com</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 邮件服务器端口号</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>spring.mail.port</span><span style=color:#f92672>=</span><span style=color:#e6db74>587</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 邮件发送方的电子邮件地址</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>spring.mail.username</span><span style=color:#f92672>=</span><span style=color:#e6db74>你的Gmail邮箱账号</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 邮件发送方的密码或应用程序专用密码一定要开启了两步验证</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>spring.mail.password</span><span style=color:#f92672>=</span><span style=color:#e6db74>应用程序专用密码</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 启用TLS加密</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>spring.mail.properties.mail.smtp.starttls.enable</span><span style=color:#f92672>=</span><span style=color:#e6db74>true</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 验证邮件服务器的身份</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>spring.mail.properties.mail.smtp.auth</span><span style=color:#f92672>=</span><span style=color:#e6db74>true</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 邮件传输协议</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>spring.mail.properties.mail.transport.protocol</span><span style=color:#f92672>=</span><span style=color:#e6db74>smtp</span>
+</span></span></code></pre></div><p>配置的代码</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#a6e22e>@Service</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>EmailUtil</span> <span style=color:#66d9ef>implements</span> EmailService
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>final</span> Logger logger <span style=color:#f92672>=</span> LoggerFactory.<span style=color:#a6e22e>getLogger</span>(<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>getClass</span>());
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//Spring Boot 提供了一个发送邮件的简单抽象，使用的是下面这个接口，这里直接注入即可使用</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Autowired</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> JavaMailSender mailSender;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 配置文件中我的谷歌邮箱</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Value</span>(<span style=color:#e6db74>&#34;${spring.mail.username}&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> String from;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * 简单文本邮件
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param to 收件人
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param subject 主题
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param content 内容
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     */</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>sendSimpleMail</span>(String to, String subject, String content) {
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//创建SimpleMailMessage对象</span>
+</span></span><span style=display:flex><span>        SimpleMailMessage message <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> SimpleMailMessage();
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//邮件发送人</span>
+</span></span><span style=display:flex><span>        message.<span style=color:#a6e22e>setFrom</span>(from);
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//邮件接收人</span>
+</span></span><span style=display:flex><span>        message.<span style=color:#a6e22e>setTo</span>(to);
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//邮件主题</span>
+</span></span><span style=display:flex><span>        message.<span style=color:#a6e22e>setSubject</span>(subject);
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//邮件内容</span>
+</span></span><span style=display:flex><span>        message.<span style=color:#a6e22e>setText</span>(content);
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//发送邮件</span>
+</span></span><span style=display:flex><span>        mailSender.<span style=color:#a6e22e>send</span>(message);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * html邮件
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param to 收件人,多个时参数形式 ：&#34;xxx@xxx.com,xxx@xxx.com,xxx@xxx.com&#34;
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param subject 主题
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param content 内容
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     */</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>sendHtmlMail</span>(String to, String subject, String content) {
+</span></span><span style=display:flex><span>        <span style=color:#75715e>//获取MimeMessage对象</span>
+</span></span><span style=display:flex><span>        MimeMessage message <span style=color:#f92672>=</span> mailSender.<span style=color:#a6e22e>createMimeMessage</span>();
+</span></span><span style=display:flex><span>        MimeMessageHelper messageHelper;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>            messageHelper <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> MimeMessageHelper(message, <span style=color:#66d9ef>true</span>);
+</span></span><span style=display:flex><span>            <span style=color:#75715e>//邮件发送人</span>
+</span></span><span style=display:flex><span>            messageHelper.<span style=color:#a6e22e>setFrom</span>(from);
+</span></span><span style=display:flex><span>            <span style=color:#75715e>//邮件接收人,设置多个收件人地址</span>
+</span></span><span style=display:flex><span>            InternetAddress<span style=color:#f92672>[]</span> internetAddressTo <span style=color:#f92672>=</span> InternetAddress.<span style=color:#a6e22e>parse</span>(to);
+</span></span><span style=display:flex><span>            messageHelper.<span style=color:#a6e22e>setTo</span>(internetAddressTo);
+</span></span><span style=display:flex><span>            <span style=color:#75715e>//messageHelper.setTo(to);</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e>//邮件主题</span>
+</span></span><span style=display:flex><span>            message.<span style=color:#a6e22e>setSubject</span>(subject);
+</span></span><span style=display:flex><span>            <span style=color:#75715e>//邮件内容，html格式</span>
+</span></span><span style=display:flex><span>            messageHelper.<span style=color:#a6e22e>setText</span>(content, <span style=color:#66d9ef>true</span>);
+</span></span><span style=display:flex><span>            <span style=color:#75715e>//发送</span>
+</span></span><span style=display:flex><span>            mailSender.<span style=color:#a6e22e>send</span>(message);
+</span></span><span style=display:flex><span>            <span style=color:#75715e>//日志信息</span>
+</span></span><span style=display:flex><span>            logger.<span style=color:#a6e22e>info</span>(<span style=color:#e6db74>&#34;邮件已经发送。&#34;</span>);
+</span></span><span style=display:flex><span>        } <span style=color:#66d9ef>catch</span> (Exception e) {
+</span></span><span style=display:flex><span>            logger.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>&#34;发送邮件时发生异常！&#34;</span>, e);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * 带附件的邮件
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param to 收件人
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param subject 主题
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param content 内容
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param filePath 附件
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     */</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Override</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>sendAttachmentsMail</span>(String to, String subject, String content, String filePath) {
+</span></span><span style=display:flex><span>        MimeMessage message <span style=color:#f92672>=</span> mailSender.<span style=color:#a6e22e>createMimeMessage</span>();
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>            MimeMessageHelper helper <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> MimeMessageHelper(message, <span style=color:#66d9ef>true</span>);
+</span></span><span style=display:flex><span>            helper.<span style=color:#a6e22e>setFrom</span>(from);
+</span></span><span style=display:flex><span>            helper.<span style=color:#a6e22e>setTo</span>(to);
+</span></span><span style=display:flex><span>            helper.<span style=color:#a6e22e>setSubject</span>(subject);
+</span></span><span style=display:flex><span>            helper.<span style=color:#a6e22e>setText</span>(content, <span style=color:#66d9ef>true</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            FileSystemResource file <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> FileSystemResource(<span style=color:#66d9ef>new</span> File(filePath));
+</span></span><span style=display:flex><span>            String fileName <span style=color:#f92672>=</span> filePath.<span style=color:#a6e22e>substring</span>(filePath.<span style=color:#a6e22e>lastIndexOf</span>(File.<span style=color:#a6e22e>separator</span>));
+</span></span><span style=display:flex><span>            helper.<span style=color:#a6e22e>addAttachment</span>(fileName, file);
+</span></span><span style=display:flex><span>            mailSender.<span style=color:#a6e22e>send</span>(message);
+</span></span><span style=display:flex><span>            <span style=color:#75715e>//日志信息</span>
+</span></span><span style=display:flex><span>            logger.<span style=color:#a6e22e>info</span>(<span style=color:#e6db74>&#34;邮件已经发送。&#34;</span>);
+</span></span><span style=display:flex><span>        } <span style=color:#66d9ef>catch</span> (Exception e) {
+</span></span><span style=display:flex><span>            logger.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>&#34;发送邮件时发生异常！&#34;</span>, e);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * 验证邮箱格式
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param email
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @return
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     */</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span>  <span style=color:#66d9ef>boolean</span> <span style=color:#a6e22e>isEmail</span>(String email) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (email <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>||</span> email.<span style=color:#a6e22e>length</span>() <span style=color:#f92672>&lt;</span> 1 <span style=color:#f92672>||</span> email.<span style=color:#a6e22e>length</span>() <span style=color:#f92672>&gt;</span> 256) {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>false</span>;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        Pattern pattern <span style=color:#f92672>=</span> Pattern.<span style=color:#a6e22e>compile</span>(<span style=color:#e6db74>&#34;^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$&#34;</span>);
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> pattern.<span style=color:#a6e22e>matcher</span>(email).<span style=color:#a6e22e>matches</span>();
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>interface</span> <span style=color:#a6e22e>EmailService</span> {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * 发送文本邮件
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     *
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param to      收件人
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param subject 主题
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param content 内容
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     */</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>sendSimpleMail</span>(String to, String subject, String content);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * 发送HTML邮件
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     *
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param to      收件人
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param subject 主题
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param content 内容
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     */</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>sendHtmlMail</span>(String to, String subject, String content);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * 发送带附件的邮件
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     *
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param to       收件人
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param subject  主题
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param content  内容
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * @param filePath 附件
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     */</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>sendAttachmentsMail</span>(String to, String subject, String content, String filePath);
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#a6e22e>@Service</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>CodeUtil</span> {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>@Autowired</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> StringRedisTemplate redisTemplate;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>generateVerificationCode</span>() {
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// 生成6位随机数字验证码</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> String.<span style=color:#a6e22e>valueOf</span>((<span style=color:#66d9ef>int</span>) ((Math.<span style=color:#a6e22e>random</span>() <span style=color:#f92672>*</span> 9 <span style=color:#f92672>+</span> 1) <span style=color:#f92672>*</span> 100000));
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 验证验证码是否正确</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>boolean</span> <span style=color:#a6e22e>verifyCode</span>(String userId, String code,String key) {
+</span></span><span style=display:flex><span>        key <span style=color:#f92672>=</span> key <span style=color:#f92672>+</span> userId;
+</span></span><span style=display:flex><span>        String storedCode <span style=color:#f92672>=</span> redisTemplate.<span style=color:#a6e22e>opsForValue</span>().<span style=color:#a6e22e>get</span>(key);
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> code.<span style=color:#a6e22e>equals</span>(storedCode);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>//删除redis中验证码</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>deleteCode</span>(String userId,String key) {
+</span></span><span style=display:flex><span>         key <span style=color:#f92672>=</span> key <span style=color:#f92672>+</span> userId;
+</span></span><span style=display:flex><span>        redisTemplate.<span style=color:#a6e22e>delete</span>(key);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#75715e>//写在需要发送验证码的地方</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//存储时间</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>final</span> <span style=color:#66d9ef>int</span> EXPIRATION_TIME_IN_MINUTES <span style=color:#f92672>=</span> 3;
+</span></span><span style=display:flex><span>  <span style=color:#75715e>//键名</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>final</span> String KEY_PREFIX <span style=color:#f92672>==</span><span style=color:#e6db74>&#34;xxx&#34;</span>;
+</span></span><span style=display:flex><span>  key<span style=color:#f92672>=</span>KEY_PREFIX<span style=color:#f92672>+</span><span style=color:#e6db74>&#34;123456&#34;</span>
+</span></span><span style=display:flex><span>redisTemplate.<span style=color:#a6e22e>opsForValue</span>().<span style=color:#a6e22e>set</span>(key, 随机数字验证码, EXPIRATION_TIME_IN_MINUTES, TimeUnit.<span style=color:#a6e22e>MINUTES</span>);
+</span></span></code></pre></div></div><div><a class="read-more button" href=../../../posts/%E8%AE%B0%E5%BD%95/springboot%E9%85%8D%E7%BD%AEgmail/>Read more →</a></div></article><article class="post on-list"><h1 class=post-title><a href=../../../posts/vue%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F/>Vue后台系统</a></h1><div class=post-meta><time class=post-date>2024-02-26</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=../../../tags/%E5%89%8D%E7%AB%AF/>前端</a>&nbsp;
 #<a href=../../../tags/%E6%95%99%E7%A8%8B/>教程</a>&nbsp;
 #<a href=../../../tags/%E7%AC%94%E8%AE%B0/>笔记</a>&nbsp;
 #<a href=../../../tags/vue.js/>Vue.js</a>&nbsp;
@@ -171,70 +358,7 @@
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>NettyServerHandlerInitializer</p></div><div><a class="read-more button" href=../../../posts/netty/>Read more →</a></div></article><article class="post on-list"><h1 class=post-title><a href=../../../posts/kubernetes/>Kubernetes</a></h1><div class=post-meta><time class=post-date>2023-11-07</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=../../../tags/kubernetes/>Kubernetes</a>&nbsp;
-#<a href=../../../tags/docker/>Docker</a>&nbsp;
-</span><img src=https://image.runtimes.cc/202404051530299.png class=post-cover alt=Kubernetes title="Cover Image"><div class=post-content><h2 id=主节点上操作>主节点上操作</h2><p>定义主机名字</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>sudo vim /etc/hosts
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>192.168.11.128 k8s-master
-</span></span><span style=display:flex><span>192.168.11.129 k8s-node01
-</span></span><span style=display:flex><span>192.168.11.130 k8s-node01
-</span></span></code></pre></div><p>修改主机名</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># 打印hostname</span>
-</span></span><span style=display:flex><span>hostname
-</span></span><span style=display:flex><span><span style=color:#75715e># 修改hostname,需要重新连接,才能看到变化</span>
-</span></span><span style=display:flex><span>sduo hostnamectl set-hostname xxx
-</span></span></code></pre></div><p>下载k8s需要的镜像</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># 打印所需要的镜像</span>
-</span></span><span style=display:flex><span>kubeadm config images list
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># docker pull 上面命令的镜像</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 比如</span>
-</span></span><span style=display:flex><span>sudo docker pull registry.k8s.io/kube-apiserver:v1.28.3
-</span></span><span style=display:flex><span>sudo docker pull registry.k8s.io/kube-controller-manager:v1.28.3
-</span></span><span style=display:flex><span>sudo docker pull registry.k8s.io/kube-scheduler:v1.28.3
-</span></span><span style=display:flex><span>sudo docker pull registry.k8s.io/kube-proxy:v1.28.3
-</span></span><span style=display:flex><span>sudo docker pull registry.k8s.io/pause:3.9
-</span></span><span style=display:flex><span>sudo docker pull registry.k8s.io/etcd:3.5.9-0
-</span></span><span style=display:flex><span>sudo docker pull registry.k8s.io/coredns/coredns:v1.10.1
-</span></span></code></pre></div><p>创建master节点</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>sudo kubeadm init --apiserver-advertise-address<span style=color:#f92672>=</span>192.168.110.128 --pod-network-cidr<span style=color:#f92672>=</span>172.16.0.0/16
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 创建完之后会提示,并且执行</span>
-</span></span><span style=display:flex><span>mkdir -p $HOME/.kube
-</span></span><span style=display:flex><span>sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-</span></span><span style=display:flex><span>sudo chown <span style=color:#66d9ef>$(</span>id -u<span style=color:#66d9ef>)</span>:<span style=color:#66d9ef>$(</span>id -g<span style=color:#66d9ef>)</span> $HOME/.kube/config
-</span></span></code></pre></div><p>查看k8s状态</p></div><div><a class="read-more button" href=../../../posts/kubernetes/>Read more →</a></div></article><article class="post on-list"><h1 class=post-title><a href=../../../posts/jumpserver/>JumpServer</a></h1><div class=post-meta><time class=post-date>2023-10-25</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=../../../tags/linux/>Linux</a>&nbsp;
-#<a href=../../../tags/jumpserver/>JumpServer</a>&nbsp;
-</span><img src=https://image.runtimes.cc/202404051529843.jpeg class=post-cover alt=JumpServer title="Cover Image"><div class=post-content><h1 id=笔记>笔记</h1><h2 id=安装jumpserver>安装JumpServer</h2><p><a href=https://community.fit2cloud.com/#/products/jumpserver/getstarted>官网一键安装</a></p><h2 id=修改配置远程访问的端口>修改配置远程访问的端口</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># 进入到jp的配置文件目录</span>
-</span></span><span style=display:flex><span>cd /opt/jumpserver/config
-</span></span><span style=display:flex><span><span style=color:#75715e># 修改配置文件</span>
-</span></span><span style=display:flex><span>vim config.txt
-</span></span><span style=display:flex><span><span style=color:#75715e># 修改配置,对外提供服务端口, 如果与现有服务冲突请自行修改</span>
-</span></span><span style=display:flex><span>HTTP_PORT<span style=color:#f92672>=</span><span style=color:#ae81ff>8083</span>  <span style=color:#75715e># 修改这个端口</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 重新启动</span>
-</span></span><span style=display:flex><span>cd /opt/jumpserver-installer-v3.6.3
-</span></span><span style=display:flex><span>./jmsctl.sh restart
-</span></span></code></pre></div><h2 id=修改系统管理员密码>修改系统管理员密码</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># 进入Docker容器</span>
-</span></span><span style=display:flex><span>$ docker exec -it jms_core /bin/bash
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 进入根目录,如果不是Docker,进入cd /opt/jumpserver/apps</span>
-</span></span><span style=display:flex><span>$ cd apps/
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>$ python manage.py changepassword  admin
-</span></span><span style=display:flex><span><span style=color:#75715e># 输入新的密码</span>
-</span></span><span style=display:flex><span>$ password
-</span></span></code></pre></div><h2 id=nginx反向代理>Nginx反向代理</h2><p><a href=../9355/#%E4%BB%A3%E7%90%86JumpServer>Nginx反向代理</a></p><h2 id=配置ssl>配置SSL</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># 先停止服务</span>
-</span></span><span style=display:flex><span>cd /opt/jumpserver-installer-v3.6.3
-</span></span><span style=display:flex><span>./jmsctl.sh stop
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 把证书移动到这个目录</span>
-</span></span><span style=display:flex><span>/opt/jumpserver/config/nginx/cert
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 修改配置文件,域名和ssl证书的文职</span>
-</span></span><span style=display:flex><span>/opt/jumpserver/config/config.txt
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 启动服务</span>
-</span></span><span style=display:flex><span>cd /opt/jumpserver-installer-v3.6.3
-</span></span><span style=display:flex><span>./jmsctl.sh start
-</span></span></code></pre></div><h2 id=配置ssh超时时间>配置SSH超时时间</h2><p>默认的时间好像半个小时不操作了,就会自动断开,改成最大值</p></div><div><a class="read-more button" href=../../../posts/jumpserver/>Read more →</a></div></article><div class=pagination><div class=pagination__buttons><a href=../../../posts/page/10/ class="button previous"><span class=button__icon>←</span>
+</span></span></code></pre></div><p>NettyServerHandlerInitializer</p></div><div><a class="read-more button" href=../../../posts/netty/>Read more →</a></div></article><div class=pagination><div class=pagination__buttons><a href=../../../posts/page/10/ class="button previous"><span class=button__icon>←</span>
 <span class=button__text>Newer posts</span>
 </a><a href=../../../posts/page/12/ class="button next"><span class=button__text>Older posts</span>
 <span class=button__icon>→</span></a></div></div></div></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>

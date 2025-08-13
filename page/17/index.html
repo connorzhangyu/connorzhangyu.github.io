@@ -1,4 +1,249 @@
-<!doctype html><html lang=zh><head><meta name=generator content="Hugo 0.148.2"><title>Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="记仇小本本"><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=../../><link rel=stylesheet href=../../styles.css><link rel="shortcut icon" href=../../img/theme-colors/orange.png><link rel=apple-touch-icon href=../../img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta name=twitter:site content><meta name=twitter:creator content><meta property="og:locale" content="zh"><meta property="og:type" content="website"><meta property="og:title" content="Hello World"><meta property="og:description" content="记仇小本本"><meta property="og:url" content="/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="/img/favicon/orange.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><link href=../../index.xml rel=alternate type=application/rss+xml title="Hello World"><link href=../../index.json rel=alternate type=application/json title="Hello World"></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=../../><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=../../about>关于</a></li><li><a href=../../showcase>精选</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=../../about>关于</a></li><li><a href=../../showcase>精选</a></li></ul></nav></header><div class=content><div class=posts><article class="post on-list"><h1 class=post-title><a href=../../posts/go/>Go</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=../../tags/go/>Go</a>&nbsp;
+<!doctype html><html lang=zh><head><meta name=generator content="Hugo 0.148.2"><title>Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="记仇小本本"><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=../../><link rel=stylesheet href=../../styles.css><link rel="shortcut icon" href=../../img/theme-colors/orange.png><link rel=apple-touch-icon href=../../img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta name=twitter:site content><meta name=twitter:creator content><meta property="og:locale" content="zh"><meta property="og:type" content="website"><meta property="og:title" content="Hello World"><meta property="og:description" content="记仇小本本"><meta property="og:url" content="/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="/img/favicon/orange.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><link href=../../index.xml rel=alternate type=application/rss+xml title="Hello World"><link href=../../index.json rel=alternate type=application/json title="Hello World"></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=../../><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=../../about>关于</a></li><li><a href=../../showcase>精选</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=../../about>关于</a></li><li><a href=../../showcase>精选</a></li></ul></nav></header><div class=content><div class=posts><article class="post on-list"><h1 class=post-title><a href=../../posts/flink/>Flink</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=../../tags/java/>Java</a>&nbsp;
+#<a href=../../tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/>大数据</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051527464.png class=post-cover alt=Flink title="Cover Image"><div class=post-content><h1 id=flink>Flink</h1><h2 id=尝试flink>尝试flink</h2><h3 id=本地安装>本地安装</h3><p>步骤一:下载</p><p>为了能够运行Flink，唯一的要求是安装有效的<strong>Java 8或11</strong>。您可以通过发出以下命令来检查Java的正确安装：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># 要安装java环境</span>
+</span></span><span style=display:flex><span>java -version
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 下载解压flink</span>
+</span></span><span style=display:flex><span>tar -xzf flink-1.11.2-bin-scala_2.11.tgz
+</span></span><span style=display:flex><span>cd flink-1.11.2-bin-scala_2.11
+</span></span></code></pre></div><p>步骤二:启动本地集群</p><pre tabindex=0><code>$ ./bin/start-cluster.sh
+Starting cluster.
+Starting standalonesession daemon on host.
+Starting taskexecutor daemon on host.
+</code></pre><p>步骤三:提交一个job</p><pre tabindex=0><code>$ ./bin/flink run examples/streaming/WordCount.jar
+$ tail log/flink-*-taskexecutor-*.out
+  (to,1)
+  (be,1)
+  (or,1)
+  (not,1)
+  (to,2)
+  (be,2)
+</code></pre><p>步骤四:停止集群</p><pre tabindex=0><code>$ ./bin/stop-cluster.sh
+</code></pre><h2 id=使用datastream-api进行欺诈检测>使用DataStream API进行欺诈检测</h2><h3 id=java环境>Java环境</h3><pre tabindex=0><code>&lt;project xmlns=&#34;http://maven.apache.org/POM/4.0.0&#34; xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34;
+		 xsi:schemaLocation=&#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&#34;&gt;
+	&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+	&lt;groupId&gt;frauddetection&lt;/groupId&gt;
+	&lt;artifactId&gt;frauddetection&lt;/artifactId&gt;
+	&lt;version&gt;0.1&lt;/version&gt;
+	&lt;packaging&gt;jar&lt;/packaging&gt;
+
+	&lt;name&gt;Flink Walkthrough DataStream Java&lt;/name&gt;
+	&lt;url&gt;https://flink.apache.org&lt;/url&gt;
+
+	&lt;properties&gt;
+		&lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+		&lt;flink.version&gt;1.10.2&lt;/flink.version&gt;
+		&lt;java.version&gt;1.8&lt;/java.version&gt;
+		&lt;scala.binary.version&gt;2.11&lt;/scala.binary.version&gt;
+		&lt;maven.compiler.source&gt;${java.version}&lt;/maven.compiler.source&gt;
+		&lt;maven.compiler.target&gt;${java.version}&lt;/maven.compiler.target&gt;
+	&lt;/properties&gt;
+
+	&lt;dependencies&gt;
+		&lt;dependency&gt;
+			&lt;groupId&gt;org.apache.flink&lt;/groupId&gt;
+			&lt;artifactId&gt;flink-walkthrough-common_${scala.binary.version}&lt;/artifactId&gt;
+			&lt;version&gt;${flink.version}&lt;/version&gt;
+		&lt;/dependency&gt;
+
+		&lt;!-- This dependency is provided, because it should not be packaged into the JAR file. --&gt;
+		&lt;dependency&gt;
+			&lt;groupId&gt;org.apache.flink&lt;/groupId&gt;
+			&lt;artifactId&gt;flink-streaming-java_${scala.binary.version}&lt;/artifactId&gt;
+			&lt;version&gt;${flink.version}&lt;/version&gt;
+&lt;!--			&lt;scope&gt;provided&lt;/scope&gt;--&gt;
+		&lt;/dependency&gt;
+
+		&lt;dependency&gt;
+			&lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+			&lt;artifactId&gt;lombok&lt;/artifactId&gt;
+			&lt;version&gt;1.18.0&lt;/version&gt;
+			&lt;scope&gt;provided&lt;/scope&gt;
+		&lt;/dependency&gt;
+
+		&lt;!-- Add connector dependencies here. They must be in the default scope (compile). --&gt;
+
+		&lt;dependency&gt;
+			&lt;groupId&gt;org.apache.flink&lt;/groupId&gt;
+			&lt;artifactId&gt;flink-connector-kafka-0.10_${scala.binary.version}&lt;/artifactId&gt;
+			&lt;version&gt;${flink.version}&lt;/version&gt;
+		&lt;/dependency&gt;
+
+		&lt;!-- Add logging framework, to produce console output when running in the IDE. --&gt;
+		&lt;!-- These dependencies are excluded from the application JAR by default. --&gt;
+		&lt;dependency&gt;
+			&lt;groupId&gt;org.slf4j&lt;/groupId&gt;
+			&lt;artifactId&gt;slf4j-log4j12&lt;/artifactId&gt;
+			&lt;version&gt;1.7.7&lt;/version&gt;
+			&lt;scope&gt;runtime&lt;/scope&gt;
+		&lt;/dependency&gt;
+		&lt;dependency&gt;
+			&lt;groupId&gt;log4j&lt;/groupId&gt;
+			&lt;artifactId&gt;log4j&lt;/artifactId&gt;
+			&lt;version&gt;1.2.17&lt;/version&gt;
+			&lt;scope&gt;runtime&lt;/scope&gt;
+		&lt;/dependency&gt;
+	&lt;/dependencies&gt;
+
+	&lt;build&gt;
+		&lt;plugins&gt;
+
+			&lt;!-- Java Compiler --&gt;
+			&lt;plugin&gt;
+				&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+				&lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+				&lt;version&gt;3.1&lt;/version&gt;
+				&lt;configuration&gt;
+					&lt;source&gt;${java.version}&lt;/source&gt;
+					&lt;target&gt;${java.version}&lt;/target&gt;
+				&lt;/configuration&gt;
+			&lt;/plugin&gt;
+
+			&lt;!-- We use the maven-shade plugin to create a fat jar that contains all necessary dependencies. --&gt;
+			&lt;!-- Change the value of &lt;mainClass&gt;...&lt;/mainClass&gt; if your program entry point changes. --&gt;
+			&lt;plugin&gt;
+				&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+				&lt;artifactId&gt;maven-shade-plugin&lt;/artifactId&gt;
+				&lt;version&gt;3.0.0&lt;/version&gt;
+				&lt;executions&gt;
+					&lt;!-- Run shade goal on package phase --&gt;
+					&lt;execution&gt;
+						&lt;phase&gt;package&lt;/phase&gt;
+						&lt;goals&gt;
+							&lt;goal&gt;shade&lt;/goal&gt;
+						&lt;/goals&gt;
+						&lt;configuration&gt;
+							&lt;artifactSet&gt;
+								&lt;excludes&gt;
+									&lt;exclude&gt;org.apache.flink:force-shading&lt;/exclude&gt;
+									&lt;exclude&gt;com.google.code.findbugs:jsr305&lt;/exclude&gt;
+									&lt;exclude&gt;org.slf4j:*&lt;/exclude&gt;
+									&lt;exclude&gt;log4j:*&lt;/exclude&gt;
+								&lt;/excludes&gt;
+							&lt;/artifactSet&gt;
+							&lt;filters&gt;
+								&lt;filter&gt;
+									&lt;!-- Do not copy the signatures in the META-INF folder.
+                                    Otherwise, this might cause SecurityExceptions when using the JAR. --&gt;
+									&lt;artifact&gt;*:*&lt;/artifact&gt;
+									&lt;excludes&gt;
+										&lt;exclude&gt;META-INF/*.SF&lt;/exclude&gt;
+										&lt;exclude&gt;META-INF/*.DSA&lt;/exclude&gt;
+										&lt;exclude&gt;META-INF/*.RSA&lt;/exclude&gt;
+									&lt;/excludes&gt;
+								&lt;/filter&gt;
+							&lt;/filters&gt;
+							&lt;transformers&gt;
+								&lt;transformer implementation=&#34;org.apache.maven.plugins.shade.resource.ManifestResourceTransformer&#34;&gt;
+									&lt;mainClass&gt;spendreport.FraudDetectionJob&lt;/mainClass&gt;
+								&lt;/transformer&gt;
+							&lt;/transformers&gt;
+						&lt;/configuration&gt;
+					&lt;/execution&gt;
+				&lt;/executions&gt;
+			&lt;/plugin&gt;
+		&lt;/plugins&gt;
+
+		&lt;pluginManagement&gt;
+			&lt;plugins&gt;
+
+				&lt;!-- This improves the out-of-the-box experience in Eclipse by resolving some warnings. --&gt;
+				&lt;plugin&gt;
+					&lt;groupId&gt;org.eclipse.m2e&lt;/groupId&gt;
+					&lt;artifactId&gt;lifecycle-mapping&lt;/artifactId&gt;
+					&lt;version&gt;1.0.0&lt;/version&gt;
+					&lt;configuration&gt;
+						&lt;lifecycleMappingMetadata&gt;
+							&lt;pluginExecutions&gt;
+								&lt;pluginExecution&gt;
+									&lt;pluginExecutionFilter&gt;
+										&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+										&lt;artifactId&gt;maven-shade-plugin&lt;/artifactId&gt;
+										&lt;versionRange&gt;[3.0.0,)&lt;/versionRange&gt;
+										&lt;goals&gt;
+											&lt;goal&gt;shade&lt;/goal&gt;
+										&lt;/goals&gt;
+									&lt;/pluginExecutionFilter&gt;
+									&lt;action&gt;
+										&lt;ignore/&gt;
+									&lt;/action&gt;
+								&lt;/pluginExecution&gt;
+								&lt;pluginExecution&gt;
+									&lt;pluginExecutionFilter&gt;
+										&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+										&lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+										&lt;versionRange&gt;[3.1,)&lt;/versionRange&gt;
+										&lt;goals&gt;
+											&lt;goal&gt;testCompile&lt;/goal&gt;
+											&lt;goal&gt;compile&lt;/goal&gt;
+										&lt;/goals&gt;
+									&lt;/pluginExecutionFilter&gt;
+									&lt;action&gt;
+										&lt;ignore/&gt;
+									&lt;/action&gt;
+								&lt;/pluginExecution&gt;
+							&lt;/pluginExecutions&gt;
+						&lt;/lifecycleMappingMetadata&gt;
+					&lt;/configuration&gt;
+				&lt;/plugin&gt;
+			&lt;/plugins&gt;
+		&lt;/pluginManagement&gt;
+	&lt;/build&gt;
+&lt;/project&gt;
+</code></pre><h2 id=输入>输入</h2><h3 id=file输入>File输入</h3><pre tabindex=0><code>public static void main(String[] args) throws Exception {
+    final StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+    final DataStream&lt;String&gt; stringDataStreamSource = env.readTextFile(&#34;Sensor.txt&#34;);
+    stringDataStreamSource.print(&#34;data&#34;);
+    env.execute();
+}
+</code></pre><h2 id=kafka>Kafka</h2><p>需要引入包</p></div><div><a class="read-more button" href=../../posts/flink/>Read more →</a></div></article><article class="post on-list"><h1 class=post-title><a href=../../posts/git/>Git</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=../../tags/git/>Git</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051527622.jpg class=post-cover alt=Git title="Cover Image"><div class=post-content><h1 id=分支管理>分支管理</h1><h2 id=切一个新的本地分支>切一个新的本地分支</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># 先切换到需要复制的分支,比如想从prod分支,切一个新的分支</span>
+</span></span><span style=display:flex><span>git checkout prod   <span style=color:#75715e># 先到prod分支</span>
+</span></span><span style=display:flex><span>git checkout -b prod-fix  <span style=color:#75715e># 从prod分支拷贝一个新的分支叫prod-fix</span>
+</span></span></code></pre></div><h2></h2><h1 id=用命令pull-request代码>用命令pull request代码</h1><pre tabindex=0><code># 把本地的代码切换到master
+git checkout -b theme-next-master master
+# https://github.com/theme-next/hexo-theme-next.git 是要合并的代码
+git pull https://github.com/theme-next/hexo-theme-next.git master
+</code></pre><h1 id=git-key>Git Key</h1><pre tabindex=0><code>cd ~/.ssh
+ssh-keygen
+cat ~/.ssh/id_rsa.pub
+</code></pre><h1 id=git-bash启动慢>Git Bash启动慢</h1><pre tabindex=0><code>git config --global core.preloadindex true
+git config --global core.fscache true
+git config --global gc.auto 256
+</code></pre><h1 id=推送到远程>推送到远程</h1><pre tabindex=0><code>git init
+git add README.md
+git commit -m &#34;first commit&#34;
+git remote add origin git@github.com:YangAnLin/bbs.git
+git push -u origin master
+</code></pre><h1 id=创建新的分支推送到远程>创建新的分支推送到远程</h1><ol><li>先创建本地分支<code>git checkout -b &lt;branch-name></code></li><li>本地分支推送到远程服务器时，远程分支自动创建，推送本地分支到远程</li></ol><pre tabindex=0><code>git push --set-upstream &lt;remote-name&gt; &lt;local-branch-name&gt;:&lt;remote-branch-name&gt;
+
+&lt;remote-name&gt;：远程git服务器名称，一般设为origin
+&lt;local-branch-name&gt;：本地分支名称
+&lt;remote-branch-name&gt;：远程分支名称
+
+最后的结果是: git push --set-upstream origin prerelease:prerelease
+prerelease是分支的名字
+
+也可以这样操作:本地有个master_anthony,服务器中没有这个分支,
+git push -u origin master_anthony
+这个命令,就是把master_anthony分支的代码,提交到远程,还要在远程创建这个分支
+</code></pre><h1 id=删除远程仓库文件>删除远程仓库文件</h1><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 加上 -n 这个参数，执行命令时，是不会删除任何文件，而是展示此命令要删除的文件列表预览。</span>
+</span></span><span style=display:flex><span>git rm -r -n --cached 文件/文件夹名称
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>git rm -r --cached 文件/文件夹名称
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>git commit -m <span style=color:#e6db74>&#34;提交说明&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>git push
+</span></span></code></pre></div><h1 id=撤销修改>撤销修改</h1><pre tabindex=0><code># 工作区修改过了,恢复工作区
+git checkout -- file
+
+# 已经commit了,但是还没有push
+git reset --soft HEAD^
+
+# 现在就已经把暂存区恢复到工作了
+</code></pre><h1 id=版本回退reset>版本回退reset</h1><p>reset用于回退版本，可以遗弃不再使用的提交</p></div><div><a class="read-more button" href=../../posts/git/>Read more →</a></div></article><article class="post on-list"><h1 class=post-title><a href=../../posts/go/>Go</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=../../tags/go/>Go</a>&nbsp;
 #<a href=../../tags/%E6%95%99%E7%A8%8B/>教程</a>&nbsp;
 </span><img src=https://image.runtimes.cc/202404051528208.webp class=post-cover alt=Go title="Cover Image"><div class=post-content><h1 id=入门>入门</h1><h2 id=参考>参考:</h2><p><a href=https://www.golinuxcloud.com/golang-interview-questions-answers/>Go英文文档</a></p><h2 id=hello-world>Hello World</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span><span style=color:#75715e>// 一定要在main的包下才能运行</span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// 一个main包下,只能有一个main入口</span>
@@ -199,11 +444,7 @@
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e># 运行</span>
 </span></span><span style=display:flex><span><span style=color:#ae81ff>./install.sh</span>
-</span></span></code></pre></div><h2 id=访问>访问</h2><p>访问:<a href=http://10.0.2.4/><code>http://10.0.2.4/</code></a></p></div><div><a class="read-more button" href=../../posts/harbor/>Read more →</a></div></article><article class="post on-list"><h1 class=post-title><a href=../../posts/%E5%89%8D%E7%AB%AF/html/>HTML</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=../../tags/%E5%89%8D%E7%AB%AF/>前端</a>&nbsp;
-#<a href=../../tags/html/>HTML</a>&nbsp;
-</span><img src=https://image.runtimes.cc/202404051528094.png class=post-cover alt=HTML title="Cover Image"><div class=post-content>HTML</div><div><a class="read-more button" href=../../posts/%E5%89%8D%E7%AB%AF/html/>Read more →</a></div></article><article class="post on-list"><h1 class=post-title><a href=../../posts/idea/>IDEA</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=../../tags/mac/>Mac</a>&nbsp;
-#<a href=../../tags/idea/>IDEA</a>&nbsp;
-</span><img src=https://image.runtimes.cc/202404051529089.png class=post-cover alt=IDEA title="Cover Image"><div class=post-content><h1 id=教程>教程</h1><h2 id=idea查看方法被调用>IDEA查看方法被调用</h2><p><img src=https://image.runtimes.cc/202404051423853.png alt></p><h2 id=修改光标所在行背景颜色>修改光标所在行背景颜色</h2><p><img src=https://image.runtimes.cc/202404051423630.png alt></p><h2 id=断点判断条件>断点判断条件</h2><p>在断点上点右键,正常的写判断代码就行</p><p><img src=https://image.runtimes.cc/202404051423731.png alt=image-20230803174451532></p><h2 id=插件>插件</h2><h3 id=rabinbow-brackets>Rabinbow Brackets</h3><p>作者:Zhihao Zhang</p><p>使用方法</p><p><code>Command</code>+右键,高亮选中部分</p><p><code>Alt</code>+右键,高亮选中部分,其余的代码变暗</p><h3 id=commitmessage>CommitMessage</h3><p>作者:郭翰林</p><p>使用方法,提交的时候,点击✈️的图标</p><h3 id=codeium>Codeium</h3><p>作者:Codeium</p><p>写代码的时候会有自动提示,按tab确定使用AI生成的代码</p><h3 id=key-promoter-x>Key Promoter X</h3><h3 id=translation>Translation</h3><p>作者:Yii.Guxing</p><p>选中要翻译的内容,右键选择翻译</p></div><div><a class="read-more button" href=../../posts/idea/>Read more →</a></div></article><div class=pagination><div class=pagination__buttons><a href=../../page/16/ class="button previous"><span class=button__icon>←</span>
+</span></span></code></pre></div><h2 id=访问>访问</h2><p>访问:<a href=http://10.0.2.4/><code>http://10.0.2.4/</code></a></p></div><div><a class="read-more button" href=../../posts/harbor/>Read more →</a></div></article><div class=pagination><div class=pagination__buttons><a href=../../page/16/ class="button previous"><span class=button__icon>←</span>
 <span class=button__text>Newer posts</span>
 </a><a href=../../page/18/ class="button next"><span class=button__text>Older posts</span>
 <span class=button__icon>→</span></a></div></div></div></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>
