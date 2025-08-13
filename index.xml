@@ -1,4 +1,453 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hello World</title><link>/</link><description>Recent content on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Sat, 09 Aug 2025 10:00:00 +0700</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>使用 Docker 和 CI/CD 实现 Java 服务与 Nginx Proxy Manager 的自动化部署</title><link>/posts/docker%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E4%BB%A5%E5%8F%8A%E4%BB%A3%E7%90%86/</link><pubDate>Sat, 09 Aug 2025 10:00:00 +0700</pubDate><guid>/posts/docker%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E4%BB%A5%E5%8F%8A%E4%BB%A3%E7%90%86/</guid><description>&lt;h1 id="使用-docker-和-cicd-实现-java-服务与-nginx-proxy-manager-的自动化部署">使用 Docker 和 CI/CD 实现 Java 服务与 Nginx Proxy Manager 的自动化部署&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hello World</title><link>/</link><description>Recent content on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Wed, 13 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>Go 学习资源大全</title><link>/posts/showcase/go%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E5%A4%A7%E5%85%A8/</link><pubDate>Wed, 13 Aug 2025 00:00:00 +0000</pubDate><guid>/posts/showcase/go%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%BA%90%E5%A4%A7%E5%85%A8/</guid><description>&lt;h1 id="go-学习资源大全">Go 学习资源大全&lt;/h1>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>序号&lt;/th>
+&lt;th>类别&lt;/th>
+&lt;th>资源名称 / 链接&lt;/th>
+&lt;th>中文/英文&lt;/th>
+&lt;th>难度&lt;/th>
+&lt;th>学习阶段&lt;/th>
+&lt;th>备注&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td>官方文档&lt;/td>
+&lt;td>&lt;a href="https://go.dev/tour/">Tour of Go&lt;/a>&lt;/td>
+&lt;td>英文&lt;/td>
+&lt;td>初级&lt;/td>
+&lt;td>基础&lt;/td>
+&lt;td>交互式练习，熟悉语法&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td>官方文档&lt;/td>
+&lt;td>&lt;a href="https://go.dev/doc/effective_go">Effective Go&lt;/a>&lt;/td>
+&lt;td>英文&lt;/td>
+&lt;td>中级&lt;/td>
+&lt;td>基础/进阶&lt;/td>
+&lt;td>Go 最佳实践&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>官方文档&lt;/td>
+&lt;td>&lt;a href="https://gobyexample.com/">Go by Example&lt;/a>&lt;/td>
+&lt;td>英文&lt;/td>
+&lt;td>初级&lt;/td>
+&lt;td>基础&lt;/td>
+&lt;td>示例驱动，涵盖基础、切片、map、接口、并发&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>4&lt;/td>
+&lt;td>视频教程&lt;/td>
+&lt;td>&lt;a href="https://www.youtube.com/playlist?list=PL64wiCrrxh4Jisi7OcCJIUpguV_f5jGnZ">JustForFunc YouTube&lt;/a>&lt;/td>
+&lt;td>英文&lt;/td>
+&lt;td>中级&lt;/td>
+&lt;td>基础/进阶&lt;/td>
+&lt;td>Go 高质量实战视频，讲解并发、接口、标准库&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>5&lt;/td>
+&lt;td>视频教程&lt;/td>
+&lt;td>Bilibili Go 系列教程（周志明/尚硅谷/黑马）&lt;/td>
+&lt;td>中文&lt;/td>
+&lt;td>初中级&lt;/td>
+&lt;td>基础/进阶&lt;/td>
+&lt;td>系统讲解基础 + 高级特性&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>6&lt;/td>
+&lt;td>视频教程&lt;/td>
+&lt;td>&lt;a href="https://www.golangcasts.com/">GolangCasts&lt;/a>&lt;/td>
+&lt;td>英文&lt;/td>
+&lt;td>中级&lt;/td>
+&lt;td>实战&lt;/td>
+&lt;td>面向项目，适合面试前做实战训练&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>7&lt;/td>
+&lt;td>书籍&lt;/td>
+&lt;td>《Go语言圣经》（The Go Programming Language）&lt;/td>
+&lt;td>英文&lt;/td>
+&lt;td>初中级&lt;/td>
+&lt;td>基础&lt;/td>
+&lt;td>权威书籍，理解接口和并发&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>8&lt;/td>
+&lt;td>书籍&lt;/td>
+&lt;td>《Go语言高级编程》&lt;/td>
+&lt;td>中文&lt;/td>
+&lt;td>中高级&lt;/td>
+&lt;td>进阶/面试&lt;/td>
+&lt;td>深入理解内存模型、指针、垃圾回收、并发&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>9&lt;/td>
+&lt;td>书籍&lt;/td>
+&lt;td>《Go Web 编程》&lt;/td>
+&lt;td>中文&lt;/td>
+&lt;td>初中级&lt;/td>
+&lt;td>实战&lt;/td>
+&lt;td>Web 服务开发，RESTful API、数据库操作、部署&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>10&lt;/td>
+&lt;td>面试题库&lt;/td>
+&lt;td>&lt;a href="https://github.com/CloudyKit/Go-Interview-Questions">Go 面试题大全&lt;/a>&lt;/td>
+&lt;td>中文&lt;/td>
+&lt;td>中级&lt;/td>
+&lt;td>面试&lt;/td>
+&lt;td>覆盖基础语法、并发、网络、数据库、标准库&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>11&lt;/td>
+&lt;td>面试题库&lt;/td>
+&lt;td>&lt;a href="https://github.com/astaxie/build-web-application-with-golang">Go by Example + 面试题&lt;/a>&lt;/td>
+&lt;td>中文&lt;/td>
+&lt;td>中级&lt;/td>
+&lt;td>面试&lt;/td>
+&lt;td>通过项目理解面试知识点&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>12&lt;/td>
+&lt;td>开源项目&lt;/td>
+&lt;td>&lt;a href="https://github.com/gin-gonic/gin">gin-gonic/gin&lt;/a>&lt;/td>
+&lt;td>英文&lt;/td>
+&lt;td>初中级&lt;/td>
+&lt;td>实战/PR&lt;/td>
+&lt;td>Web 框架，PR 可以从文档、例子、测试开始&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>13&lt;/td>
+&lt;td>开源项目&lt;/td>
+&lt;td>&lt;a href="https://github.com/go-kratos/kratos">go-kratos/kratos&lt;/a>&lt;/td>
+&lt;td>英文&lt;/td>
+&lt;td>中级&lt;/td>
+&lt;td>实战/PR&lt;/td>
+&lt;td>微服务框架，文档/示例贡献容易上手&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>14&lt;/td>
+&lt;td>开源项目&lt;/td>
+&lt;td>&lt;a href="https://github.com/gopherjs/gopherjs">gopherjs/gopherjs&lt;/a>&lt;/td>
+&lt;td>英文&lt;/td>
+&lt;td>中级&lt;/td>
+&lt;td>实战/PR&lt;/td>
+&lt;td>Go → JS 编译器，轻量 PR 可做小修复&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>15&lt;/td>
+&lt;td>开源项目&lt;/td>
+&lt;td>&lt;a href="https://github.com/etcd-io/etcd">etcd-io/etcd&lt;/a>&lt;/td>
+&lt;td>英文&lt;/td>
+&lt;td>高级&lt;/td>
+&lt;td>实战/进阶&lt;/td>
+&lt;td>分布式存储，理解 Raft 算法&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>16&lt;/td>
+&lt;td>开源项目&lt;/td>
+&lt;td>&lt;a href="https://github.com/prometheus/prometheus">prometheus/prometheus&lt;/a>&lt;/td>
+&lt;td>英文&lt;/td>
+&lt;td>高级&lt;/td>
+&lt;td>实战/进阶&lt;/td>
+&lt;td>监控系统，做小 PR 可以优化文档、改 bug&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>17&lt;/td>
+&lt;td>工具&lt;/td>
+&lt;td>VS Code + Go 插件&lt;/td>
+&lt;td>英文&lt;/td>
+&lt;td>初级&lt;/td>
+&lt;td>工具&lt;/td>
+&lt;td>IDE 开发环境&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>18&lt;/td>
+&lt;td>工具&lt;/td>
+&lt;td>GoLand&lt;/td>
+&lt;td>英文&lt;/td>
+&lt;td>初级&lt;/td>
+&lt;td>工具&lt;/td>
+&lt;td>JetBrains 付费 IDE，官方支持 Go&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>19&lt;/td>
+&lt;td>工具&lt;/td>
+&lt;td>Delve (&lt;code>dlv&lt;/code>)&lt;/td>
+&lt;td>英文&lt;/td>
+&lt;td>中级&lt;/td>
+&lt;td>工具/调试&lt;/td>
+&lt;td>Go 调试工具&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>20&lt;/td>
+&lt;td>CI/CD&lt;/td>
+&lt;td>GitHub Actions + Docker&lt;/td>
+&lt;td>英文&lt;/td>
+&lt;td>中级&lt;/td>
+&lt;td>部署/实战&lt;/td>
+&lt;td>面试常考部署经验&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>21&lt;/td>
+&lt;td>CI/CD&lt;/td>
+&lt;td>Vercel / GCP / AWS&lt;/td>
+&lt;td>英文&lt;/td>
+&lt;td>中级&lt;/td>
+&lt;td>部署/实战&lt;/td>
+&lt;td>Web 服务部署，结合 GitHub Actions&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="学习顺序建议">学习顺序建议&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>基础阶段&lt;/strong>（0-2 周）&lt;/p></description><content>&lt;h1 id="go-学习资源大全">Go 学习资源大全&lt;/h1>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>序号&lt;/th>
+&lt;th>类别&lt;/th>
+&lt;th>资源名称 / 链接&lt;/th>
+&lt;th>中文/英文&lt;/th>
+&lt;th>难度&lt;/th>
+&lt;th>学习阶段&lt;/th>
+&lt;th>备注&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td>官方文档&lt;/td>
+&lt;td>&lt;a href="https://go.dev/tour/">Tour of Go&lt;/a>&lt;/td>
+&lt;td>英文&lt;/td>
+&lt;td>初级&lt;/td>
+&lt;td>基础&lt;/td>
+&lt;td>交互式练习，熟悉语法&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td>官方文档&lt;/td>
+&lt;td>&lt;a href="https://go.dev/doc/effective_go">Effective Go&lt;/a>&lt;/td>
+&lt;td>英文&lt;/td>
+&lt;td>中级&lt;/td>
+&lt;td>基础/进阶&lt;/td>
+&lt;td>Go 最佳实践&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>官方文档&lt;/td>
+&lt;td>&lt;a href="https://gobyexample.com/">Go by Example&lt;/a>&lt;/td>
+&lt;td>英文&lt;/td>
+&lt;td>初级&lt;/td>
+&lt;td>基础&lt;/td>
+&lt;td>示例驱动，涵盖基础、切片、map、接口、并发&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>4&lt;/td>
+&lt;td>视频教程&lt;/td>
+&lt;td>&lt;a href="https://www.youtube.com/playlist?list=PL64wiCrrxh4Jisi7OcCJIUpguV_f5jGnZ">JustForFunc YouTube&lt;/a>&lt;/td>
+&lt;td>英文&lt;/td>
+&lt;td>中级&lt;/td>
+&lt;td>基础/进阶&lt;/td>
+&lt;td>Go 高质量实战视频，讲解并发、接口、标准库&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>5&lt;/td>
+&lt;td>视频教程&lt;/td>
+&lt;td>Bilibili Go 系列教程（周志明/尚硅谷/黑马）&lt;/td>
+&lt;td>中文&lt;/td>
+&lt;td>初中级&lt;/td>
+&lt;td>基础/进阶&lt;/td>
+&lt;td>系统讲解基础 + 高级特性&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>6&lt;/td>
+&lt;td>视频教程&lt;/td>
+&lt;td>&lt;a href="https://www.golangcasts.com/">GolangCasts&lt;/a>&lt;/td>
+&lt;td>英文&lt;/td>
+&lt;td>中级&lt;/td>
+&lt;td>实战&lt;/td>
+&lt;td>面向项目，适合面试前做实战训练&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>7&lt;/td>
+&lt;td>书籍&lt;/td>
+&lt;td>《Go语言圣经》（The Go Programming Language）&lt;/td>
+&lt;td>英文&lt;/td>
+&lt;td>初中级&lt;/td>
+&lt;td>基础&lt;/td>
+&lt;td>权威书籍，理解接口和并发&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>8&lt;/td>
+&lt;td>书籍&lt;/td>
+&lt;td>《Go语言高级编程》&lt;/td>
+&lt;td>中文&lt;/td>
+&lt;td>中高级&lt;/td>
+&lt;td>进阶/面试&lt;/td>
+&lt;td>深入理解内存模型、指针、垃圾回收、并发&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>9&lt;/td>
+&lt;td>书籍&lt;/td>
+&lt;td>《Go Web 编程》&lt;/td>
+&lt;td>中文&lt;/td>
+&lt;td>初中级&lt;/td>
+&lt;td>实战&lt;/td>
+&lt;td>Web 服务开发，RESTful API、数据库操作、部署&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>10&lt;/td>
+&lt;td>面试题库&lt;/td>
+&lt;td>&lt;a href="https://github.com/CloudyKit/Go-Interview-Questions">Go 面试题大全&lt;/a>&lt;/td>
+&lt;td>中文&lt;/td>
+&lt;td>中级&lt;/td>
+&lt;td>面试&lt;/td>
+&lt;td>覆盖基础语法、并发、网络、数据库、标准库&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>11&lt;/td>
+&lt;td>面试题库&lt;/td>
+&lt;td>&lt;a href="https://github.com/astaxie/build-web-application-with-golang">Go by Example + 面试题&lt;/a>&lt;/td>
+&lt;td>中文&lt;/td>
+&lt;td>中级&lt;/td>
+&lt;td>面试&lt;/td>
+&lt;td>通过项目理解面试知识点&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>12&lt;/td>
+&lt;td>开源项目&lt;/td>
+&lt;td>&lt;a href="https://github.com/gin-gonic/gin">gin-gonic/gin&lt;/a>&lt;/td>
+&lt;td>英文&lt;/td>
+&lt;td>初中级&lt;/td>
+&lt;td>实战/PR&lt;/td>
+&lt;td>Web 框架，PR 可以从文档、例子、测试开始&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>13&lt;/td>
+&lt;td>开源项目&lt;/td>
+&lt;td>&lt;a href="https://github.com/go-kratos/kratos">go-kratos/kratos&lt;/a>&lt;/td>
+&lt;td>英文&lt;/td>
+&lt;td>中级&lt;/td>
+&lt;td>实战/PR&lt;/td>
+&lt;td>微服务框架，文档/示例贡献容易上手&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>14&lt;/td>
+&lt;td>开源项目&lt;/td>
+&lt;td>&lt;a href="https://github.com/gopherjs/gopherjs">gopherjs/gopherjs&lt;/a>&lt;/td>
+&lt;td>英文&lt;/td>
+&lt;td>中级&lt;/td>
+&lt;td>实战/PR&lt;/td>
+&lt;td>Go → JS 编译器，轻量 PR 可做小修复&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>15&lt;/td>
+&lt;td>开源项目&lt;/td>
+&lt;td>&lt;a href="https://github.com/etcd-io/etcd">etcd-io/etcd&lt;/a>&lt;/td>
+&lt;td>英文&lt;/td>
+&lt;td>高级&lt;/td>
+&lt;td>实战/进阶&lt;/td>
+&lt;td>分布式存储，理解 Raft 算法&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>16&lt;/td>
+&lt;td>开源项目&lt;/td>
+&lt;td>&lt;a href="https://github.com/prometheus/prometheus">prometheus/prometheus&lt;/a>&lt;/td>
+&lt;td>英文&lt;/td>
+&lt;td>高级&lt;/td>
+&lt;td>实战/进阶&lt;/td>
+&lt;td>监控系统，做小 PR 可以优化文档、改 bug&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>17&lt;/td>
+&lt;td>工具&lt;/td>
+&lt;td>VS Code + Go 插件&lt;/td>
+&lt;td>英文&lt;/td>
+&lt;td>初级&lt;/td>
+&lt;td>工具&lt;/td>
+&lt;td>IDE 开发环境&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>18&lt;/td>
+&lt;td>工具&lt;/td>
+&lt;td>GoLand&lt;/td>
+&lt;td>英文&lt;/td>
+&lt;td>初级&lt;/td>
+&lt;td>工具&lt;/td>
+&lt;td>JetBrains 付费 IDE，官方支持 Go&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>19&lt;/td>
+&lt;td>工具&lt;/td>
+&lt;td>Delve (&lt;code>dlv&lt;/code>)&lt;/td>
+&lt;td>英文&lt;/td>
+&lt;td>中级&lt;/td>
+&lt;td>工具/调试&lt;/td>
+&lt;td>Go 调试工具&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>20&lt;/td>
+&lt;td>CI/CD&lt;/td>
+&lt;td>GitHub Actions + Docker&lt;/td>
+&lt;td>英文&lt;/td>
+&lt;td>中级&lt;/td>
+&lt;td>部署/实战&lt;/td>
+&lt;td>面试常考部署经验&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>21&lt;/td>
+&lt;td>CI/CD&lt;/td>
+&lt;td>Vercel / GCP / AWS&lt;/td>
+&lt;td>英文&lt;/td>
+&lt;td>中级&lt;/td>
+&lt;td>部署/实战&lt;/td>
+&lt;td>Web 服务部署，结合 GitHub Actions&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="学习顺序建议">学习顺序建议&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>基础阶段&lt;/strong>（0-2 周）&lt;/p>
+&lt;ul>
+&lt;li>官方文档 + Tour of Go + Go by Example + 中文视频教程&lt;/li>
+&lt;li>熟悉语法、变量、切片、数组、map、函数、接口、指针&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>进阶阶段&lt;/strong>（2-4 周）&lt;/p>
+&lt;ul>
+&lt;li>学习并发（goroutine、channel）、标准库（net/http、os、io 等）&lt;/li>
+&lt;li>Effective Go + Go Web 编程 + Bilibili/GolangCasts 项目实战&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>面试准备阶段&lt;/strong>（4-6 周）&lt;/p>
+&lt;ul>
+&lt;li>系统做面试题库 + 阅读开源项目 PR / 提交简单 PR&lt;/li>
+&lt;li>项目实战（REST API + 数据库 + 部署）&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>实战与优化阶段&lt;/strong>（6 周+）&lt;/p>
+&lt;ul>
+&lt;li>深入理解内存、垃圾回收、接口实现&lt;/li>
+&lt;li>贡献开源项目、优化性能&lt;/li>
+&lt;li>部署到 Vercel / GitHub Pages / Docker&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;p>我可以帮你再做一份 &lt;strong>每天 12 小时的具体学习计划表&lt;/strong>，按照基础 / 进阶 / 面试 / 实战拆分到每天的学习内容，让你直接对号入座每天该做什么。&lt;/p>
+&lt;p>你希望我直接帮你做吗？&lt;/p></content></item><item><title>使用 Docker 和 CI/CD 实现 Java 服务与 Nginx Proxy Manager 的自动化部署</title><link>/posts/docker%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E4%BB%A5%E5%8F%8A%E4%BB%A3%E7%90%86/</link><pubDate>Sat, 09 Aug 2025 10:00:00 +0700</pubDate><guid>/posts/docker%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E4%BB%A5%E5%8F%8A%E4%BB%A3%E7%90%86/</guid><description>&lt;h1 id="使用-docker-和-cicd-实现-java-服务与-nginx-proxy-manager-的自动化部署">使用 Docker 和 CI/CD 实现 Java 服务与 Nginx Proxy Manager 的自动化部署&lt;/h1>
 &lt;p>在现代微服务架构中，&lt;strong>Nginx Proxy Manager&lt;/strong> 常被用作轻量级的反向代理管理工具，而通过 &lt;strong>Docker&lt;/strong> 和 &lt;strong>CI/CD 工具&lt;/strong>（如 GitHub Actions、GitLab CI/CD），可以实现自动化的部署和配置。本篇博客将带你一步步实现 Nginx Proxy Manager 与 Java 服务的自动化部署和配置。&lt;/p>
 &lt;hr>
 &lt;h2 id="一背景与目标">一、背景与目标&lt;/h2>
