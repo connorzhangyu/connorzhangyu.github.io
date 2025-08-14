@@ -1,4 +1,52 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hello World</title><link>https://tosa.team/</link><description>Recent content on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Wed, 13 Aug 2025 22:00:00 +0700</lastBuildDate><atom:link href="https://tosa.team/index.xml" rel="self" type="application/rss+xml"/><item><title>Go 的声明语法：为什么与众不同</title><link>https://tosa.team/posts/go/go-declaration-syntax/</link><pubDate>Wed, 13 Aug 2025 22:00:00 +0700</pubDate><guid>https://tosa.team/posts/go/go-declaration-syntax/</guid><description>&lt;div class="post-authors" style="margin:10px 0 18px;">&lt;div class="author" style="display:inline-flex;align-items:center;margin-right:16px;gap:8px;">&lt;span style="white-space:nowrap;">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hello World</title><link>https://tosa.team/</link><description>Recent content on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Thu, 14 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://tosa.team/index.xml" rel="self" type="application/rss+xml"/><item><title>Go v0.1 学习路线图</title><link>https://tosa.team/docs/project-guides/go-v0.1-roadmap/</link><pubDate>Thu, 14 Aug 2025 00:00:00 +0000</pubDate><guid>https://tosa.team/docs/project-guides/go-v0.1-roadmap/</guid><description>tosa 东南亚科技小组 Go v0.1 阶段学习路线图，涵盖第一个版本（基础架构）的技术学习与实战安排。</description><content>&lt;h1 id="go-v01-学习路线图">Go v0.1 学习路线图&lt;/h1>
+&lt;p>本路线图为 &lt;strong>tosa 东南亚科技小组&lt;/strong> v0.1 基础架构版学习与开发计划，目标是在 &lt;strong>4 周内完成可上线的最小可用版本（MVP 基础）&lt;/strong>。&lt;/p>
+&lt;hr>
+&lt;h2 id="总进度">总进度&lt;/h2>
+&lt;blockquote>
+&lt;p>&lt;strong>完成度&lt;/strong>：2 / 16 项&lt;br>
+&lt;strong>进度条&lt;/strong>：██░░░░░░░░ 12%&lt;br>
+&lt;strong>状态&lt;/strong>：🚀 刚刚开始&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;h2 id="学习与开发任务">学习与开发任务&lt;/h2>
+&lt;h3 id="第-1-周go-基础--gin--postgresql">第 1 周：Go 基础 + Gin + PostgreSQL&lt;/h3>
+&lt;ul>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> &lt;strong>Go 语法&lt;/strong>：变量、函数、struct、interface&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> &lt;strong>并发编程&lt;/strong>：goroutine、channel、context&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;strong>Gin 框架&lt;/strong>：路由、路由分组、中间件&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;strong>PostgreSQL 基础&lt;/strong>：基本 SQL 语句、查询与插入&lt;/li>
+&lt;/ul>
+&lt;h3 id="第-2-周数据库工具--配置管理--日志--数据迁移">第 2 周：数据库工具 + 配置管理 + 日志 + 数据迁移&lt;/h3>
+&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;strong>ORM/代码生成&lt;/strong>：sqlc 或 Ent&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;strong>配置管理&lt;/strong>：Viper（支持多环境配置）&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;strong>日志&lt;/strong>：zap（结构化日志）&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;strong>数据库迁移&lt;/strong>：golang-migrate（迁移与回滚）&lt;/li>
+&lt;/ul>
+&lt;h3 id="第-3-周缓存--测试--中间件">第 3 周：缓存 + 测试 + 中间件&lt;/h3>
+&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;strong>缓存&lt;/strong>：go-redis（KV 操作、过期时间、序列化）&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;strong>单元测试&lt;/strong>：testify（单测与断言）&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;strong>中间件&lt;/strong>：请求日志、Recover、Request-ID、超时控制（context）&lt;/li>
+&lt;/ul>
+&lt;h3 id="第-4-周容器化--部署--测试交付">第 4 周：容器化 + 部署 + 测试交付&lt;/h3>
+&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;strong>容器化&lt;/strong>：Dockerfile（可运行容器）&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;strong>代码质量&lt;/strong>：golangci-lint 检查&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;strong>并发安全测试&lt;/strong>：&lt;code>go test -race&lt;/code> 通过&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;strong>上线&lt;/strong>：完成 MVP 基础功能并部署&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="使用说明">使用说明&lt;/h2>
+&lt;ul>
+&lt;li>文档位置：&lt;code>content/docs/project-guides/&lt;/code>&lt;/li>
+&lt;li>相关配图：&lt;code>assets/images/roadmaps/&lt;/code>&lt;/li>
+&lt;li>&lt;code>visibility&lt;/code> 为 &lt;code>public&lt;/code> 时公开访问；改为 &lt;code>internal&lt;/code> 则仅内部可见&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;blockquote>
+&lt;p>💡 &lt;strong>发现错误或有建议？&lt;/strong>&lt;br>
+欢迎发送邮件至：&lt;a href="mailto:hi@tosa.team">hi@tosa.team&lt;/a>&lt;br>
+我会认真阅读并尽快回复。&lt;/p>&lt;/blockquote></content></item><item><title>Go 的声明语法：为什么与众不同</title><link>https://tosa.team/posts/go/go-declaration-syntax/</link><pubDate>Wed, 13 Aug 2025 22:00:00 +0700</pubDate><guid>https://tosa.team/posts/go/go-declaration-syntax/</guid><description>&lt;div class="post-authors" style="margin:10px 0 18px;">&lt;div class="author" style="display:inline-flex;align-items:center;margin-right:16px;gap:8px;">&lt;span style="white-space:nowrap;">
 Connor Zhang&lt;span style="margin-left:6px;opacity:.85;">📍 Bangkok, Thailand&lt;/span>&lt;/span>
 &lt;/div>&lt;div class="author-bio" style="margin-top:6px;opacity:.9;">AWS Certified Solutions Architect / 全栈工程师&lt;/div>&lt;/div>
 &lt;blockquote>
