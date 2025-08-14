@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Go on Hello World</title><link>/tags/go/</link><description>Recent content in Go on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Wed, 13 Aug 2025 22:00:00 +0700</lastBuildDate><atom:link href="/tags/go/index.xml" rel="self" type="application/rss+xml"/><item><title>Go 的声明语法：为什么与众不同</title><link>/posts/go/go-declaration-syntax/</link><pubDate>Wed, 13 Aug 2025 22:00:00 +0700</pubDate><guid>/posts/go/go-declaration-syntax/</guid><description>&lt;div class="post-authors" style="margin:10px 0 18px;">&lt;div class="author" style="display:inline-flex;align-items:center;margin-right:16px;gap:8px;">&lt;span style="white-space:nowrap;">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Go on Hello World</title><link>https://tosa.team/tags/go/</link><description>Recent content in Go on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Wed, 13 Aug 2025 22:00:00 +0700</lastBuildDate><atom:link href="https://tosa.team/tags/go/index.xml" rel="self" type="application/rss+xml"/><item><title>Go 的声明语法：为什么与众不同</title><link>https://tosa.team/posts/go/go-declaration-syntax/</link><pubDate>Wed, 13 Aug 2025 22:00:00 +0700</pubDate><guid>https://tosa.team/posts/go/go-declaration-syntax/</guid><description>&lt;div class="post-authors" style="margin:10px 0 18px;">&lt;div class="author" style="display:inline-flex;align-items:center;margin-right:16px;gap:8px;">&lt;span style="white-space:nowrap;">
 Connor Zhang&lt;span style="margin-left:6px;opacity:.85;">📍 Bangkok, Thailand&lt;/span>&lt;/span>
 &lt;/div>&lt;div class="author-bio" style="margin-top:6px;opacity:.9;">AWS Certified Solutions Architect / 全栈工程师&lt;/div>&lt;/div>
 &lt;blockquote>
@@ -131,7 +131,7 @@ Connor Zhang&lt;span style="margin-left:6px;opacity:.85;">📍 Bangkok, Thailand
 欢迎发送邮件至：&lt;a href="mailto:hi@tosa.team">hi@tosa.team&lt;/a>&lt;br>
 我会认真阅读并尽快回复。
 &lt;/blockquote>
-&lt;hr></content></item><item><title>Go 面试冲刺学习计划（14 天 | 每天 12 小时）</title><link>/posts/showcase/go-%E9%9D%A2%E8%AF%95%E5%86%B2%E5%88%BA%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</link><pubDate>Fri, 08 Aug 2025 10:00:00 +0700</pubDate><guid>/posts/showcase/go-%E9%9D%A2%E8%AF%95%E5%86%B2%E5%88%BA%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</guid><description>&lt;blockquote>
+&lt;hr></content></item><item><title>Go 面试冲刺学习计划（14 天 | 每天 12 小时）</title><link>https://tosa.team/posts/showcase/go-%E9%9D%A2%E8%AF%95%E5%86%B2%E5%88%BA%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</link><pubDate>Fri, 08 Aug 2025 10:00:00 +0700</pubDate><guid>https://tosa.team/posts/showcase/go-%E9%9D%A2%E8%AF%95%E5%86%B2%E5%88%BA%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</guid><description>&lt;blockquote>
 &lt;p>🚀 本计划适用于有 Java 开发经验的工程师，全力转向 Go 开发岗位，每天投入 12 小时，14 天从语法到项目到面试冲刺，快速具备独立开发 + 面试能力。&lt;/p>&lt;/blockquote>
 &lt;hr>
 &lt;h2 id="-阶段总览">🧭 阶段总览&lt;/h2>
@@ -336,7 +336,7 @@ Connor Zhang&lt;span style="margin-left:6px;opacity:.85;">📍 Bangkok, Thailand
 &lt;li>可填写在简历中的 Go 项目经历与技术亮点&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;p>你可以根据自己的节奏微调每个阶段的进度，只要坚持输出成果，就能在两周内形成强有力的 Go 技术竞争力 💪&lt;/p></content></item><item><title>Go</title><link>/posts/go/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/go/</guid><description>&lt;h1 id="入门">入门&lt;/h1>
+&lt;p>你可以根据自己的节奏微调每个阶段的进度，只要坚持输出成果，就能在两周内形成强有力的 Go 技术竞争力 💪&lt;/p></content></item><item><title>Go</title><link>https://tosa.team/posts/go/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/posts/go/</guid><description>&lt;h1 id="入门">入门&lt;/h1>
 &lt;h2 id="参考">参考:&lt;/h2>
 &lt;p>&lt;a href="https://www.golinuxcloud.com/golang-interview-questions-answers/">Go英文文档&lt;/a>&lt;/p>
 &lt;h2 id="hello-world">Hello World&lt;/h2>

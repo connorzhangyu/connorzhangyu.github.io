@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mac on Hello World</title><link>/tags/mac/</link><description>Recent content in Mac on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Thu, 29 May 2025 10:23:17 +0000</lastBuildDate><atom:link href="/tags/mac/index.xml" rel="self" type="application/rss+xml"/><item><title>Dapp</title><link>/posts/dapp/</link><pubDate>Thu, 29 May 2025 10:23:17 +0000</pubDate><guid>/posts/dapp/</guid><description>&lt;h1 id="helloworld合约">HelloWorld合约&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mac on Hello World</title><link>https://tosa.team/tags/mac/</link><description>Recent content in Mac on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Thu, 29 May 2025 10:23:17 +0000</lastBuildDate><atom:link href="https://tosa.team/tags/mac/index.xml" rel="self" type="application/rss+xml"/><item><title>Dapp</title><link>https://tosa.team/posts/dapp/</link><pubDate>Thu, 29 May 2025 10:23:17 +0000</pubDate><guid>https://tosa.team/posts/dapp/</guid><description>&lt;h1 id="helloworld合约">HelloWorld合约&lt;/h1>
 &lt;p>&lt;a href="https://remix.ethereum.org">Remix编辑器&lt;/a>&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202505281038720.png" alt="image-20250524144934373">&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-solidity" data-lang="solidity">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// SPDX-License-Identifier: MIT
@@ -60,7 +60,7 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://image.runtimes.cc/202505291022541.png" alt="image-20250529101412816">&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202505291022024.png" alt="image-20250529101510973">&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202505291022071.png" alt="image-20250529101815851">&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202505291022160.png" alt="image-20250529102052827">&lt;/p></content></item><item><title>DataGrip</title><link>/posts/datagrip/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/datagrip/</guid><description>&lt;h1 id="查看ddl和复制为insert语句">查看ddl和复制为insert语句&lt;/h1>
+&lt;p>&lt;img src="https://image.runtimes.cc/202505291022160.png" alt="image-20250529102052827">&lt;/p></content></item><item><title>DataGrip</title><link>https://tosa.team/posts/datagrip/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/posts/datagrip/</guid><description>&lt;h1 id="查看ddl和复制为insert语句">查看ddl和复制为insert语句&lt;/h1>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051411320.png" alt="">&lt;/p>
 &lt;h1 id="显示">显示&lt;/h1>
 &lt;h2 id="设置数据库颜色">设置数据库颜色&lt;/h2>
@@ -164,7 +164,7 @@
 &lt;p>要在库名上点右键&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051414735.png" alt="image-20231201154603739">&lt;/p>
 &lt;p>这个功能类似于&lt;/p>
-&lt;img src="https://image.runtimes.cc/202404051414049.png" alt="image-20231201154745846" style="zoom:50%;" /></content></item><item><title>ElasticSearch</title><link>/posts/elasticsearch/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/elasticsearch/</guid><description>&lt;h1 id="手动安装7x">手动安装7.x&lt;/h1>
+&lt;img src="https://image.runtimes.cc/202404051414049.png" alt="image-20231201154745846" style="zoom:50%;" /></content></item><item><title>ElasticSearch</title><link>https://tosa.team/posts/elasticsearch/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/posts/elasticsearch/</guid><description>&lt;h1 id="手动安装7x">手动安装7.x&lt;/h1>
 &lt;h2 id="手动安装单机elasticsearch7x">手动安装单机ElasticSearch7.x&lt;/h2>
 &lt;pre tabindex="0">&lt;code># 下载tar包,(6.6.2)
 wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.6.2.tar.gz
@@ -1644,7 +1644,7 @@ xsi:schemaLocation=&amp;#34;http://maven.apache.org/POM/4.0.0 https://maven.apac
 &amp;lt;/build&amp;gt;
 &amp;lt;/project&amp;gt;
 &lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>spring.elasticsearch.rest.uris=http://192.168.111.132:9200
-&lt;/code>&lt;/pre></content></item><item><title>Excel</title><link>/posts/excel/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/excel/</guid><description>&lt;h1 id="行和列">行和列&lt;/h1>
+&lt;/code>&lt;/pre></content></item><item><title>Excel</title><link>https://tosa.team/posts/excel/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/posts/excel/</guid><description>&lt;h1 id="行和列">行和列&lt;/h1>
 &lt;h2 id="隐藏或显示行和列">隐藏或显示行和列&lt;/h2>
 &lt;p>在电子表格中隐藏或取消隐藏列，以仅显示需要查看或打印的数据&lt;/p>
 &lt;blockquote>
@@ -1696,7 +1696,7 @@ xsi:schemaLocation=&amp;#34;http://maven.apache.org/POM/4.0.0 https://maven.apac
 &lt;img src="https://image.runtimes.cc/202404051416110.png" alt="">&lt;/p>
 &lt;p>📌 这样设置之后,比如在单元格里值设置的是 2021-01-02
 实际上显现的会是 2021年1月2日 星期几&lt;/p>
-&lt;p>✅ 参考:&lt;a href="https://support.microsoft.com/zh-cn/office/%E6%8C%89%E6%83%B3%E8%A6%81%E7%9A%84%E6%96%B9%E5%BC%8F%E8%AE%BE%E7%BD%AE%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F-8e10019e-d5d8-47a1-ba95-db95123d273e">微软官方文档&lt;/a>&lt;/p></content></item><item><title>IDEA</title><link>/posts/idea/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/idea/</guid><description>&lt;h1 id="教程">教程&lt;/h1>
+&lt;p>✅ 参考:&lt;a href="https://support.microsoft.com/zh-cn/office/%E6%8C%89%E6%83%B3%E8%A6%81%E7%9A%84%E6%96%B9%E5%BC%8F%E8%AE%BE%E7%BD%AE%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F-8e10019e-d5d8-47a1-ba95-db95123d273e">微软官方文档&lt;/a>&lt;/p></content></item><item><title>IDEA</title><link>https://tosa.team/posts/idea/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/posts/idea/</guid><description>&lt;h1 id="教程">教程&lt;/h1>
 &lt;h2 id="idea查看方法被调用">IDEA查看方法被调用&lt;/h2>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051423853.png" alt="">&lt;/p>
 &lt;h2 id="修改光标所在行背景颜色">修改光标所在行背景颜色&lt;/h2>
@@ -1742,7 +1742,7 @@ xsi:schemaLocation=&amp;#34;http://maven.apache.org/POM/4.0.0 https://maven.apac
 &lt;h3 id="key-promoter-x">Key Promoter X&lt;/h3>
 &lt;h3 id="translation">Translation&lt;/h3>
 &lt;p>作者:Yii.Guxing&lt;/p>
-&lt;p>选中要翻译的内容,右键选择翻译&lt;/p></content></item><item><title>Jenkins</title><link>/posts/jenkins/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/jenkins/</guid><description>&lt;h1 id="root用户权限启动jenkins">Root用户权限启动Jenkins&lt;/h1>
+&lt;p>选中要翻译的内容,右键选择翻译&lt;/p></content></item><item><title>Jenkins</title><link>https://tosa.team/posts/jenkins/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/posts/jenkins/</guid><description>&lt;h1 id="root用户权限启动jenkins">Root用户权限启动Jenkins&lt;/h1>
 &lt;p>适用于Ubuntu环境下通过&lt;code>apt-get install -y jenkins&lt;/code>命令在线安装的Jenkins&lt;/p>
 &lt;p>1.修改配置文件&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>vim /etc/default/jenkins
@@ -2070,7 +2070,7 @@ xsi:schemaLocation=&amp;#34;http://maven.apache.org/POM/4.0.0 https://maven.apac
 &lt;p>2.点击 管理系统&amp;ndash;&amp;gt;安全段落下的&amp;ndash;&amp;gt;全局安全配置,选中&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202408081652851.png" alt="image-20240808165220186">&lt;/p>
 &lt;p>3.管理系统&amp;ndash;&amp;gt;安全段落下的 就会多一个功能&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202408081653465.png" alt="image-20240808165321957">&lt;/p></content></item><item><title>Mac</title><link>/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/mac/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/mac/</guid><description>&lt;h1 id="快捷键">快捷键&lt;/h1>
+&lt;p>&lt;img src="https://image.runtimes.cc/202408081653465.png" alt="image-20240808165321957">&lt;/p></content></item><item><title>Mac</title><link>https://tosa.team/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/mac/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/mac/</guid><description>&lt;h1 id="快捷键">快捷键&lt;/h1>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -2255,7 +2255,7 @@ xsi:schemaLocation=&amp;#34;http://maven.apache.org/POM/4.0.0 https://maven.apac
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ffmpeg -i input.mov -c copy output.mp4
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 不要用这个命令,网上说是速度很慢&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ffmpeg -i input.mov output.mp4
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>Nginx</title><link>/posts/nginx/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/nginx/</guid><description>&lt;h2 id="docker安装-nginx">Docker安装 Nginx&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></content></item><item><title>Nginx</title><link>https://tosa.team/posts/nginx/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/posts/nginx/</guid><description>&lt;h2 id="docker安装-nginx">Docker安装 Nginx&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 简单的&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker run --name nginx-test &lt;span style="color:#ae81ff">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> -p 8080:80 &lt;span style="color:#ae81ff">\

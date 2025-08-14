@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>软件 on Hello World</title><link>/categories/%E8%BD%AF%E4%BB%B6/</link><description>Recent content in 软件 on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Fri, 23 May 2025 21:21:46 +0000</lastBuildDate><atom:link href="/categories/%E8%BD%AF%E4%BB%B6/index.xml" rel="self" type="application/rss+xml"/><item><title>Draw.io</title><link>/posts/draw.io/</link><pubDate>Fri, 23 May 2025 21:21:46 +0000</pubDate><guid>/posts/draw.io/</guid><description>&lt;p>连线滚动
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>软件 on Hello World</title><link>https://tosa.team/categories/%E8%BD%AF%E4%BB%B6/</link><description>Recent content in 软件 on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Fri, 23 May 2025 21:21:46 +0000</lastBuildDate><atom:link href="https://tosa.team/categories/%E8%BD%AF%E4%BB%B6/index.xml" rel="self" type="application/rss+xml"/><item><title>Draw.io</title><link>https://tosa.team/posts/draw.io/</link><pubDate>Fri, 23 May 2025 21:21:46 +0000</pubDate><guid>https://tosa.team/posts/draw.io/</guid><description>&lt;p>连线滚动
 &lt;img src="https://image.runtimes.cc/202505281524485.gif" alt="连线滚动">&lt;/p>
 &lt;p>Tree Folding折叠
 &lt;img src="https://image.runtimes.cc/202505281524649.gif" alt="Tree Folding">&lt;/p></description><content>&lt;p>连线滚动
 &lt;img src="https://image.runtimes.cc/202505281524485.gif" alt="连线滚动">&lt;/p>
 &lt;p>Tree Folding折叠
-&lt;img src="https://image.runtimes.cc/202505281524649.gif" alt="Tree Folding">&lt;/p></content></item><item><title>Telegram Bot</title><link>/posts/telegrambot/</link><pubDate>Sat, 08 Jul 2023 15:09:14 +0000</pubDate><guid>/posts/telegrambot/</guid><description>&lt;h1 id="机器人设置">机器人设置&lt;/h1>
+&lt;img src="https://image.runtimes.cc/202505281524649.gif" alt="Tree Folding">&lt;/p></content></item><item><title>Telegram Bot</title><link>https://tosa.team/posts/telegrambot/</link><pubDate>Sat, 08 Jul 2023 15:09:14 +0000</pubDate><guid>https://tosa.team/posts/telegrambot/</guid><description>&lt;h1 id="机器人设置">机器人设置&lt;/h1>
 &lt;h2 id="消息分类">消息分类&lt;/h2>
 &lt;p>消息分两种:&lt;/p>
 &lt;ol>
@@ -20,7 +20,7 @@
 &lt;li>命令消息(以&lt;code>'/'&lt;/code>开头的文本,比如 &lt;code>/test&lt;/code> )&lt;/li>
 &lt;/ol>
 &lt;p>默认在群里只能收到命令消息,和机器人私聊可以接收到全部的消息,如果想让机器人在群里也能接收到全部的消息,操作如下
-访问&lt;code>BotFather&lt;/code>,输入&lt;code>/setprivacy&lt;/code>,选择自己的机器人,选择&lt;code>DISABLED&lt;/code>,就可以了&lt;/p></content></item><item><title>Rime</title><link>/posts/rime/</link><pubDate>Sun, 02 Jul 2023 22:37:34 +0000</pubDate><guid>/posts/rime/</guid><description>&lt;h1 id="基本概念">基本概念&lt;/h1>
+访问&lt;code>BotFather&lt;/code>,输入&lt;code>/setprivacy&lt;/code>,选择自己的机器人,选择&lt;code>DISABLED&lt;/code>,就可以了&lt;/p></content></item><item><title>Rime</title><link>https://tosa.team/posts/rime/</link><pubDate>Sun, 02 Jul 2023 22:37:34 +0000</pubDate><guid>https://tosa.team/posts/rime/</guid><description>&lt;h1 id="基本概念">基本概念&lt;/h1>
 &lt;p>Rime 是一个输入法框架，并不是狭义上的“输入法”，而是将各种输入法的共性抽象出来的算法框架。通过不同的配置文件，Rime 可以支持多种输入方案（Schema），这个所谓的输入方案就是我们狭义上的“输入法”。比如朙月拼音输入法就是 Rime 自带的一种输入方案，另外还有比如四叶草输入法（https://github.com/fkxxyz/rime-cloverpinyin）等等。鼠须管、小狼毫、中州韵分别是 Rime 在不同操作系统下的实现程序。Rime 的配置、词库文件均使用文本方式，便于修改。所有文件均要求以 UTF-8 编码。在配置文件中，以 # 号开头表示注释。&lt;/p>
 &lt;h1 id="配置文件所在的目录">配置文件所在的目录&lt;/h1>
 &lt;p>Rime 有两个重要的配置目录：&lt;/p>
@@ -128,7 +128,7 @@
 &lt;blockquote>
 &lt;p>参考:&lt;/p>
 &lt;p>&lt;a href="https://www.hawu.me/others/2666">鼠须管输入法配置 - 哈呜.王 (hawu.me)&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://zhuanlan.zhihu.com/p/474994157">Rime Squirrel 鼠须管输入法配置详解 - 知乎 (zhihu.com)&lt;/a>&lt;/p>&lt;/blockquote></content></item><item><title>Hexo</title><link>/posts/hexo/</link><pubDate>Sun, 04 Dec 2022 01:26:00 +0000</pubDate><guid>/posts/hexo/</guid><description>&lt;h1 id="内链">内链&lt;/h1>
+&lt;p>&lt;a href="https://zhuanlan.zhihu.com/p/474994157">Rime Squirrel 鼠须管输入法配置详解 - 知乎 (zhihu.com)&lt;/a>&lt;/p>&lt;/blockquote></content></item><item><title>Hexo</title><link>https://tosa.team/posts/hexo/</link><pubDate>Sun, 04 Dec 2022 01:26:00 +0000</pubDate><guid>https://tosa.team/posts/hexo/</guid><description>&lt;h1 id="内链">内链&lt;/h1>
 &lt;h2 id="内链图片">内链图片&lt;/h2>
 &lt;h3 id="相对路径">相对路径&lt;/h3>
 &lt;p>在&lt;code>source/&lt;/code>下创建一个图片的目录,比如起名叫&lt;code>img&lt;/code>的文件夹
@@ -172,7 +172,7 @@
 &lt;li>&lt;code>../&lt;/code> 相对路径,不是md文件的相对路径,是生成的public文件夹你的文章和内链文章的相对路径&lt;/li>
 &lt;li>310 是指&lt;code>abbrlink: 310&lt;/code>,如果没有就使用标题&lt;/li>
 &lt;li>&lt;code>#CloudFront加速Vercel&lt;/code> 是指 310这篇文章的&lt;code>#CloudFront加速Vercel&lt;/code>这个标题,也可以不用写,如果写了,就会自动跳到页面的这个锚点&lt;/li>
-&lt;/ul></content></item><item><title>DataGrip</title><link>/posts/datagrip/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/datagrip/</guid><description>&lt;h1 id="查看ddl和复制为insert语句">查看ddl和复制为insert语句&lt;/h1>
+&lt;/ul></content></item><item><title>DataGrip</title><link>https://tosa.team/posts/datagrip/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/posts/datagrip/</guid><description>&lt;h1 id="查看ddl和复制为insert语句">查看ddl和复制为insert语句&lt;/h1>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051411320.png" alt="">&lt;/p>
 &lt;h1 id="显示">显示&lt;/h1>
 &lt;h2 id="设置数据库颜色">设置数据库颜色&lt;/h2>
@@ -276,7 +276,7 @@
 &lt;p>要在库名上点右键&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051414735.png" alt="image-20231201154603739">&lt;/p>
 &lt;p>这个功能类似于&lt;/p>
-&lt;img src="https://image.runtimes.cc/202404051414049.png" alt="image-20231201154745846" style="zoom:50%;" /></content></item><item><title>Excel</title><link>/posts/excel/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/excel/</guid><description>&lt;h1 id="行和列">行和列&lt;/h1>
+&lt;img src="https://image.runtimes.cc/202404051414049.png" alt="image-20231201154745846" style="zoom:50%;" /></content></item><item><title>Excel</title><link>https://tosa.team/posts/excel/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/posts/excel/</guid><description>&lt;h1 id="行和列">行和列&lt;/h1>
 &lt;h2 id="隐藏或显示行和列">隐藏或显示行和列&lt;/h2>
 &lt;p>在电子表格中隐藏或取消隐藏列，以仅显示需要查看或打印的数据&lt;/p>
 &lt;blockquote>
@@ -328,7 +328,7 @@
 &lt;img src="https://image.runtimes.cc/202404051416110.png" alt="">&lt;/p>
 &lt;p>📌 这样设置之后,比如在单元格里值设置的是 2021-01-02
 实际上显现的会是 2021年1月2日 星期几&lt;/p>
-&lt;p>✅ 参考:&lt;a href="https://support.microsoft.com/zh-cn/office/%E6%8C%89%E6%83%B3%E8%A6%81%E7%9A%84%E6%96%B9%E5%BC%8F%E8%AE%BE%E7%BD%AE%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F-8e10019e-d5d8-47a1-ba95-db95123d273e">微软官方文档&lt;/a>&lt;/p></content></item><item><title>IDEA</title><link>/posts/idea/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/idea/</guid><description>&lt;h1 id="教程">教程&lt;/h1>
+&lt;p>✅ 参考:&lt;a href="https://support.microsoft.com/zh-cn/office/%E6%8C%89%E6%83%B3%E8%A6%81%E7%9A%84%E6%96%B9%E5%BC%8F%E8%AE%BE%E7%BD%AE%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F-8e10019e-d5d8-47a1-ba95-db95123d273e">微软官方文档&lt;/a>&lt;/p></content></item><item><title>IDEA</title><link>https://tosa.team/posts/idea/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/posts/idea/</guid><description>&lt;h1 id="教程">教程&lt;/h1>
 &lt;h2 id="idea查看方法被调用">IDEA查看方法被调用&lt;/h2>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051423853.png" alt="">&lt;/p>
 &lt;h2 id="修改光标所在行背景颜色">修改光标所在行背景颜色&lt;/h2>
@@ -374,7 +374,7 @@
 &lt;h3 id="key-promoter-x">Key Promoter X&lt;/h3>
 &lt;h3 id="translation">Translation&lt;/h3>
 &lt;p>作者:Yii.Guxing&lt;/p>
-&lt;p>选中要翻译的内容,右键选择翻译&lt;/p></content></item><item><title>Obsidian</title><link>/posts/obsidian/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>/posts/obsidian/</guid><description>&lt;h1 id="插件">插件&lt;/h1>
+&lt;p>选中要翻译的内容,右键选择翻译&lt;/p></content></item><item><title>Obsidian</title><link>https://tosa.team/posts/obsidian/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/posts/obsidian/</guid><description>&lt;h1 id="插件">插件&lt;/h1>
 &lt;p>1.安装git插件
 2.运行命令,才能在界面上显示Git
 &lt;img src="https://image.runtimes.cc/202404051446974.png" alt="">&lt;/p>

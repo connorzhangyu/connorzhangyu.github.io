@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vim on Hello World</title><link>/tags/vim/</link><description>Recent content in Vim on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Wed, 13 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="/tags/vim/index.xml" rel="self" type="application/rss+xml"/><item><title>Vim 快速入门 &amp; IntelliJ IDEA 基础配置</title><link>/posts/showcase/vim%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E4%B8%8Eidea%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</link><pubDate>Wed, 13 Aug 2025 00:00:00 +0000</pubDate><guid>/posts/showcase/vim%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E4%B8%8Eidea%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vim on Hello World</title><link>https://tosa.team/tags/vim/</link><description>Recent content in Vim on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Wed, 13 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://tosa.team/tags/vim/index.xml" rel="self" type="application/rss+xml"/><item><title>Vim 快速入门 &amp; IntelliJ IDEA 基础配置</title><link>https://tosa.team/posts/showcase/vim%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E4%B8%8Eidea%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</link><pubDate>Wed, 13 Aug 2025 00:00:00 +0000</pubDate><guid>https://tosa.team/posts/showcase/vim%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E4%B8%8Eidea%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
 &lt;p>Vim 是一款强大的编辑器，配合 IntelliJ IDEA 的 IdeaVim 插件，可以显著提升代码编辑效率。本文将介绍 &lt;strong>Vim 最小必备快捷键&lt;/strong> 以及 &lt;strong>IdeaVim 的基础配置方法&lt;/strong>，帮助你快速上手。&lt;/p>
 &lt;hr>
 &lt;h2 id="一vim-最少必备快捷键初学者版">一、Vim 最少必备快捷键（初学者版）&lt;/h2>
@@ -242,7 +242,7 @@
 &lt;p>掌握这些内容后，你的代码编辑效率会有明显提升。&lt;/p>
 &lt;hr>
 &lt;blockquote>
-&lt;p>如果你已经学会这些基础操作，可以逐步学习更高级的 Vim 功能，例如文本对象（&lt;code>ci&amp;quot;&lt;/code>、&lt;code>di(&lt;/code> 等）、多文件编辑、宏录制等，让 Vim 真正成为你手中的利器。&lt;/p>&lt;/blockquote></content></item><item><title>Linux</title><link>/posts/linux/</link><pubDate>Tue, 22 Nov 2022 10:53:07 +0000</pubDate><guid>/posts/linux/</guid><description>&lt;h1 id="系统命令">系统命令&lt;/h1>
+&lt;p>如果你已经学会这些基础操作，可以逐步学习更高级的 Vim 功能，例如文本对象（&lt;code>ci&amp;quot;&lt;/code>、&lt;code>di(&lt;/code> 等）、多文件编辑、宏录制等，让 Vim 真正成为你手中的利器。&lt;/p>&lt;/blockquote></content></item><item><title>Linux</title><link>https://tosa.team/posts/linux/</link><pubDate>Tue, 22 Nov 2022 10:53:07 +0000</pubDate><guid>https://tosa.team/posts/linux/</guid><description>&lt;h1 id="系统命令">系统命令&lt;/h1>
 &lt;h2 id="解压缩">解压缩&lt;/h2>
 &lt;p>demo(文件夹)&lt;/p>
 &lt;p>|&amp;mdash;&amp;mdash;|1.txt(文件)&lt;/p>
