@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>精选 on Hello World!</title><link>https://tosa.team/featured/</link><description>Recent content in 精选 on Hello World!</description><generator>Hugo</generator><language>zh</language><atom:link href="https://tosa.team/featured/index.xml" rel="self" type="application/rss+xml"/><item><title>如何规划 AWS 学习与认证路径：从入门到架构师</title><link>https://tosa.team/featured/aws-study/</link><pubDate>Thu, 14 Aug 2025 18:03:01 +0000</pubDate><guid>https://tosa.team/featured/aws-study/</guid><description>&lt;h1 id="如何规划-aws-学习与认证路径从入门到架构师">如何规划 AWS 学习与认证路径：从入门到架构师&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>精选 on Hello World!</title><link>https://connorzhangyu.com/featured/</link><description>Recent content in 精选 on Hello World!</description><generator>Hugo</generator><language>zh</language><atom:link href="https://connorzhangyu.com/featured/index.xml" rel="self" type="application/rss+xml"/><item><title>如何规划 AWS 学习与认证路径：从入门到架构师</title><link>https://connorzhangyu.com/featured/aws-study/</link><pubDate>Thu, 14 Aug 2025 18:03:01 +0000</pubDate><guid>https://connorzhangyu.com/featured/aws-study/</guid><description>&lt;div class="post-authors" style="margin:10px 0 18px;">&lt;div class="author" style="display:inline-flex;align-items:center;margin-right:16px;gap:8px;">&lt;span style="white-space:nowrap;">
+ Connor Zhang&lt;span style="margin-left:6px;opacity:.85;">📍 Bangkok, Thailand&lt;/span>&lt;/span>
+ &lt;/div>&lt;div class="author-bio" style="margin-top:6px;opacity:.9;">AWS Certified Solutions Architect / 全栈工程师&lt;/div>&lt;/div>
+&lt;h1 id="如何规划-aws-学习与认证路径从入门到架构师">如何规划 AWS 学习与认证路径：从入门到架构师&lt;/h1>
 &lt;p>随着云计算的普及，掌握 AWS 技能成为技术人员提升自身竞争力的重要途径。作为一名 Java 开发者，同时怀揣成为架构师的梦想，规划一条清晰的 AWS 学习与认证路径，将为你的职业发展奠定坚实基础。&lt;/p>
 &lt;p>在这篇文章中，我将分享适合 Java 开发者的 AWS 学习和认证路线，从入门到架构师，一步步助你掌握云计算技能。&lt;/p>
 &lt;hr>
@@ -34,11 +37,204 @@
 &lt;hr>
 &lt;h3 id="阶段-2开发与构建">阶段 2：开发与构建&lt;/h3>
 &lt;blockquote>
-&lt;p>&lt;strong>目标&lt;/strong>：学习如何使用 AWS 开发工具，在云上构建高效的应用程序。&lt;/p>&lt;/blockquote>
-&lt;p>&lt;strong>学习内容&lt;/strong>：&lt;/p>
+&lt;p>&lt;strong>目标&lt;/strong>：学习如何使用 AWS 开发工具，在云上构建高效的应用程序。&lt;/p></description></item><item><title>Go 的声明语法：为什么与众不同</title><link>https://connorzhangyu.com/featured/go-declaration-syntax/</link><pubDate>Wed, 13 Aug 2025 22:00:00 +0700</pubDate><guid>https://connorzhangyu.com/featured/go-declaration-syntax/</guid><description>&lt;div class="post-authors" style="margin:10px 0 18px;">&lt;div class="author" style="display:inline-flex;align-items:center;margin-right:16px;gap:8px;">&lt;span style="white-space:nowrap;">
+ Connor Zhang&lt;span style="margin-left:6px;opacity:.85;">📍 Bangkok, Thailand&lt;/span>&lt;/span>
+ &lt;/div>&lt;div class="author-bio" style="margin-top:6px;opacity:.9;">AWS Certified Solutions Architect / 全栈工程师&lt;/div>&lt;/div>
+&lt;blockquote>
+&lt;p>本文整理自 Go 语言作者 Rob Pike 在 2010 年的文章 &lt;em>&amp;ldquo;Go&amp;rsquo;s Declaration Syntax&amp;rdquo;&lt;/em>，结合原文与实例，解释 Go 为什么采用不同于 C/Java 的声明方式。&lt;br>
+写这篇文章的原因：&lt;br>
+在网络上能找到不少 &lt;em>&amp;ldquo;Go&amp;rsquo;s Declaration Syntax&amp;rdquo;&lt;/em> 的中文翻译，但大多数存在直译生硬、遗漏原文细节甚至误解语义的问题。&lt;br>
+这些低质量翻译往往让读者更困惑，而不是更清楚。&lt;br>
+因此，我基于 Rob Pike 原文，结合上下文和代码示例，整理出一份更贴近原意、方便国内开发者理解的版本。&lt;br>
+同时保留原文核心思想，并补充了对比表与背景说明，帮助读者更好地掌握 Go 声明语法背后的设计理念。&lt;/p>&lt;/blockquote></description></item><item><title>如何通过 EC2 实例连接 Amazon RDS 数据库</title><link>https://connorzhangyu.com/featured/b765efc8-3b0e-421b-beb4-d1fac4fd836f/</link><pubDate>Tue, 17 Dec 2024 17:42:26 +0000</pubDate><guid>https://connorzhangyu.com/featured/b765efc8-3b0e-421b-beb4-d1fac4fd836f/</guid><description>&lt;div class="post-authors" style="margin:10px 0 18px;">&lt;div class="author" style="display:inline-flex;align-items:center;margin-right:16px;gap:8px;">&lt;span style="white-space:nowrap;">
+ Connor Zhang&lt;span style="margin-left:6px;opacity:.85;">📍 Bangkok, Thailand&lt;/span>&lt;/span>
+ &lt;/div>&lt;div class="author-bio" style="margin-top:6px;opacity:.9;">AWS Certified Solutions Architect / 全栈工程师&lt;/div>&lt;/div>
+&lt;h1 id="如何通过-ec2-实例连接-amazon-rds-数据库">如何通过 EC2 实例连接 Amazon RDS 数据库&lt;/h1>
+&lt;p>在云开发中，Amazon RDS 是一种强大而方便的托管数据库服务，但它通常处于一个受保护的私有网络中，无法直接从本地访问。如果你想在本地使用图形化工具（如 DBeaver 或 HeidiSQL）访问 RDS 数据库，可以通过 Amazon EC2 实例作为跳板实现。这篇文章将手把手教你如何完成这项操作。&lt;/p>
+&lt;hr>
+&lt;h2 id="1-为什么需要通过-ec2-访问-rds">1. 为什么需要通过 EC2 访问 RDS？&lt;/h2>
+&lt;p>Amazon RDS 默认部署在私有子网中，只有同一网络中的资源可以访问。直接将 RDS 公开到公网会带来安全风险，因此更好的办法是利用 EC2 实例作为跳板，通过 SSH 隧道安全地访问 RDS。这种方式既能保证数据库的安全性，也能满足开发需求。&lt;/p>
+&lt;hr>
+&lt;h2 id="2-准备工作">2. 准备工作&lt;/h2>
+&lt;p>在开始操作之前，请确保以下内容已准备好：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>RDS 实例信息&lt;/strong>：&lt;/p>
 &lt;ul>
-&lt;li>AWS 开发服务：Lambda、DynamoDB、SQS、SNS、API Gateway。&lt;/li>
-&lt;li>基础架构自动化：CloudFormation 和 AWS CDK。&lt;/li>
-&lt;li>CI/CD 实践：CodePipeline、CodeDeploy、CodeBuild。&lt;/li>
+&lt;li>记录 RDS 的连接端点（Endpoint）、端口（通常是 3306）以及数据库的用户名和密码。&lt;/li>
 &lt;/ul>
-&lt;p>&lt;strong>推荐课程&lt;/strong>：&lt;/p></description></item></channel></rss>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>EC2 实例信息&lt;/strong>：&lt;/p>
+&lt;ul>
+&lt;li>确保 EC2 实例处于运行状态，并记录其公有 IP 地址（或域名）。&lt;/li>
+&lt;li>下载并保存 EC2 实例的 &lt;code>.pem&lt;/code> SSH 密钥文件。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>安全组配置&lt;/strong>：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>RDS 安全组&lt;/strong>：允许 EC2 实例的安全组访问 RDS 的端口（如 3306）。&lt;/li>
+&lt;li>&lt;strong>EC2 安全组&lt;/strong>：允许本地 IP 地址的 SSH 入站访问（端口 22）。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h2 id="3-在本地创建-ssh-隧道">3. 在本地创建 SSH 隧道&lt;/h2>
+&lt;p>SSH 隧道是连接本地客户端和 RDS 数据库的桥梁。以下是设置方法：&lt;/p></description></item><item><title>使用 Nginx + Cloudflare + Docker 部署 Java 服务的最佳实践</title><link>https://connorzhangyu.com/featured/5c8f5a74-11b1-4c78-8307-5dfdd5c6adc3/</link><pubDate>Sun, 08 Dec 2024 05:07:43 +0000</pubDate><guid>https://connorzhangyu.com/featured/5c8f5a74-11b1-4c78-8307-5dfdd5c6adc3/</guid><description>&lt;div class="post-authors" style="margin:10px 0 18px;">&lt;div class="author" style="display:inline-flex;align-items:center;margin-right:16px;gap:8px;">&lt;span style="white-space:nowrap;">
+ Connor Zhang&lt;span style="margin-left:6px;opacity:.85;">📍 Bangkok, Thailand&lt;/span>&lt;/span>
+ &lt;/div>&lt;div class="author-bio" style="margin-top:6px;opacity:.9;">AWS Certified Solutions Architect / 全栈工程师&lt;/div>&lt;/div>
+&lt;h1 id="使用-nginx--cloudflare--docker-部署-java-服务的最佳实践">使用 Nginx + Cloudflare + Docker 部署 Java 服务的最佳实践&lt;/h1>
+&lt;p>在生产环境中，Nginx、Cloudflare 和 Docker 是一个经典且高效的组合，特别适合 Java 服务的部署。本篇博客将详细介绍如何将这三者结合起来，构建高性能、高可用的服务架构。&lt;/p>
+&lt;hr>
+&lt;h2 id="架构概览">架构概览&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span class="line">&lt;span class="cl">用户请求 → Cloudflare (CDN + DNS + HTTPS) → Nginx (反向代理 + 负载均衡) → Docker (Java 服务实例) → 数据库/缓存
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="架构组成">架构组成&lt;/h3>
+&lt;ol>
+&lt;li>&lt;strong>Cloudflare&lt;/strong>：提供 CDN 加速、HTTPS、DDoS 防护。&lt;/li>
+&lt;li>&lt;strong>Nginx&lt;/strong>：反向代理用户请求，将流量分发到多个 Java 服务实例。&lt;/li>
+&lt;li>&lt;strong>Docker&lt;/strong>：容器化运行 Java 服务，实现快速部署和弹性扩展。&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h2 id="一cloudflare-配置">一、Cloudflare 配置&lt;/h2>
+&lt;h3 id="1-职责">1. 职责&lt;/h3>
+&lt;ul>
+&lt;li>全球 CDN 加速，减少用户请求延迟。&lt;/li>
+&lt;li>提供 HTTPS 加密，确保数据传输安全。&lt;/li>
+&lt;li>防火墙和 DDoS 防护，保护服务免受恶意攻击。&lt;/li>
+&lt;/ul>
+&lt;h3 id="2-配置步骤">2. 配置步骤&lt;/h3>
+&lt;ol>
+&lt;li>登录 &lt;a href="https://www.cloudflare.com">Cloudflare&lt;/a>。&lt;/li>
+&lt;li>添加域名并设置 DNS 记录：
+&lt;ul>
+&lt;li>A 记录指向 Nginx 服务器的公网 IP。&lt;/li>
+&lt;li>或 CNAME 指向已有的负载均衡器域名。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>启用 SSL/TLS：
+&lt;ul>
+&lt;li>配置 &amp;ldquo;Full&amp;rdquo; 模式（需要 Nginx 服务器支持 HTTPS）。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>设置缓存策略：
+&lt;ul>
+&lt;li>针对静态资源（如 JS、CSS、图片）启用动态缓存。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>配置安全规则：
+&lt;ul>
+&lt;li>限制可疑 IP 的访问频率。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h2 id="二nginx-配置">二、Nginx 配置&lt;/h2>
+&lt;h3 id="1-职责-1">1. 职责&lt;/h3>
+&lt;ul>
+&lt;li>接收 Cloudflare 转发的流量，充当反向代理。&lt;/li>
+&lt;li>将请求分发到不同的 Java 服务实例，实现负载均衡。&lt;/li>
+&lt;li>提供 HTTPS 支持和 HTTP 压缩。&lt;/li>
+&lt;/ul>
+&lt;h3 id="2-配置示例">2. 配置示例&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-nginx" data-lang="nginx">&lt;span class="line">&lt;span class="cl">&lt;span class="k">server&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">listen&lt;/span> &lt;span class="mi">80&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">server_name&lt;/span> &lt;span class="s">example.com&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># 强制 HTTPS
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kn">return&lt;/span> &lt;span class="mi">301&lt;/span> &lt;span class="s">https://&lt;/span>&lt;span class="nv">$host$request_uri&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">server&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">listen&lt;/span> &lt;span class="mi">443&lt;/span> &lt;span class="s">ssl&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">server_name&lt;/span> &lt;span class="s">example.com&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">ssl_certificate&lt;/span> &lt;span class="s">/etc/nginx/ssl/certificate.crt&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">ssl_certificate_key&lt;/span> &lt;span class="s">/etc/nginx/ssl/certificate.key&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">location&lt;/span> &lt;span class="s">/&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">proxy_pass&lt;/span> &lt;span class="s">http://java-service-cluster&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">proxy_set_header&lt;/span> &lt;span class="s">Host&lt;/span> &lt;span class="nv">$host&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">proxy_set_header&lt;/span> &lt;span class="s">X-Real-IP&lt;/span> &lt;span class="nv">$remote_addr&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">proxy_set_header&lt;/span> &lt;span class="s">X-Forwarded-For&lt;/span> &lt;span class="nv">$proxy_add_x_forwarded_for&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">upstream&lt;/span> &lt;span class="s">java-service-cluster&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">server&lt;/span> &lt;span class="n">127.0.0.1&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">8081&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">server&lt;/span> &lt;span class="n">127.0.0.1&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">8082&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;hr>
+&lt;h2 id="三docker-配置">三、Docker 配置&lt;/h2>
+&lt;h3 id="1-构建-java-服务镜像">1. 构建 Java 服务镜像&lt;/h3>
+&lt;p>使用以下 Dockerfile 构建镜像：&lt;/p></description></item><item><title>使用 Cloudflare 和 Nginx 构建高性能安全站点</title><link>https://connorzhangyu.com/featured/cf-nginx/</link><pubDate>Sat, 07 Dec 2024 18:13:27 +0000</pubDate><guid>https://connorzhangyu.com/featured/cf-nginx/</guid><description>&lt;div class="post-authors" style="margin:10px 0 18px;">&lt;div class="author" style="display:inline-flex;align-items:center;margin-right:16px;gap:8px;">&lt;span style="white-space:nowrap;">
+ Connor Zhang&lt;span style="margin-left:6px;opacity:.85;">📍 Bangkok, Thailand&lt;/span>&lt;/span>
+ &lt;/div>&lt;div class="author-bio" style="margin-top:6px;opacity:.9;">AWS Certified Solutions Architect / 全栈工程师&lt;/div>&lt;/div>
+&lt;h1 id="使用-cloudflare-和-nginx-构建高性能安全站点">使用 Cloudflare 和 Nginx 构建高性能安全站点&lt;/h1>
+&lt;p>在现代网站架构中，&lt;strong>Nginx&lt;/strong> 和 &lt;strong>Cloudflare&lt;/strong> 是两大关键技术，它们分别在服务器端和网络加速层提供强大的支持。本篇博客将带你一步步配置 Nginx 与 Cloudflare 的集成，打造一个高性能且安全的生产环境。&lt;/p>
+&lt;hr>
+&lt;h2 id="一为什么选择-nginx-和-cloudflare">一、为什么选择 Nginx 和 Cloudflare？&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Nginx&lt;/strong>：以其轻量级、高并发性能著称，常用于反向代理、静态文件服务和负载均衡。&lt;/li>
+&lt;li>&lt;strong>Cloudflare&lt;/strong>：提供免费 CDN 加速、DDoS 防护、DNS 服务以及 HTTPS 加密服务，是全球站点优化的理想选择。&lt;/li>
+&lt;/ul>
+&lt;p>当二者结合时，Cloudflare 位于网络层，负责加速和安全，而 Nginx 位于服务器端，负责处理业务逻辑和请求分发。&lt;/p>
+&lt;hr>
+&lt;h2 id="二nginx-的安装与基本配置">二、Nginx 的安装与基本配置&lt;/h2>
+&lt;h3 id="1-安装-nginx">1. 安装 Nginx&lt;/h3>
+&lt;p>以 Ubuntu 为例：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo apt update
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo apt install nginx
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo systemctl start nginx
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo systemctl &lt;span class="nb">enable&lt;/span> nginx
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>安装完成后，通过浏览器访问服务器 IP，确认是否能看到默认欢迎页。&lt;/p></description></item></channel></rss>

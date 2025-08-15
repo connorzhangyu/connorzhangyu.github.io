@@ -1,0 +1,1128 @@
+<!doctype html><html lang=zh><head><title>SpringBoot :: Hello World!</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content='定时器 定时器的数值放到配置文件,如果使用@Scheduled(fixedDelay = 类中的变量)这种方式试过不行
+1 2 3 @Scheduled(fixedDelayString = "${fixedDelayString}") public void open() { } 1 fixedDelayString=30000 RocketMQ 下载源码或者二进制包
+1 2 3 4 5 6 7 8 # 源码安装 # 解压文件 unzip rocketmq-all-5.2.0-source-release.zip cd rocketmq-all-5.2.0-source-release/ # 编译 mvn -Prelease-all -DskipTests -Dspotbugs.skip=true clean install -U # 编译后的二进制的目录,配置文件在这里 cd ./distribution 修改配置文件
+1 2 3 4 5 6 7 # 修改配置文件 # 修改内存配置,虚拟机的内存太小了 # vim ./bin/runserver.sh JAVA_OPT="${JAVA_OPT} -server -Xms512m -Xmx521m -Xmn256g -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=320m" # vim ./bin/runbroker.sh JAVA_OPT="${JAVA_OPT} -server -Xms512m -Xmx512m" 启动
+'><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://connorzhangyu.com/springboot/><link rel=stylesheet href=https://connorzhangyu.com/css/custom.min.c48d2dcfc3aad8abc3315f33f61b0f9ee763ed50a0938b6ae80c6726450e5b2a.css><link rel=stylesheet href=https://connorzhangyu.com/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css><link rel=stylesheet href=https://connorzhangyu.com/css/code.min.d529ea4b2fb8d34328d7d31afc5466d5f7bc2f0bc9abdd98b69385335d7baee4.css><link rel=stylesheet href=https://connorzhangyu.com/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css><link rel=stylesheet href=https://connorzhangyu.com/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css><link rel=stylesheet href=https://connorzhangyu.com/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css><link rel=stylesheet href=https://connorzhangyu.com/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css><link rel=stylesheet href=https://connorzhangyu.com/css/main.min.775ac2af004d44c22a6d000fbd1d9af529642f5cef27399d0280d180af2c2e9b.css><link rel=stylesheet href=https://connorzhangyu.com/css/menu.min.310d32205bdedd6f43144e3c3273c9deecd238eba5f9108db5ea96ca0cfbe377.css><link rel=stylesheet href=https://connorzhangyu.com/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css><link rel=stylesheet href=https://connorzhangyu.com/css/post.min.ad50c7f4d00e7975918f37fc74c6029e1959a40d66fb5b2c6564a8715e985573.css><link rel=stylesheet href=https://connorzhangyu.com/css/syntax.min.e9ab635cf918bc84b901eb65c0b2caa74c9544245e3647c1af5c129896ef276e.css><link rel=stylesheet href=https://connorzhangyu.com/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css><link rel=stylesheet href=https://connorzhangyu.com/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css><link rel=stylesheet href=https://connorzhangyu.com/style.css><link rel="shortcut icon" href=https://connorzhangyu.com/favicon.png><link rel=apple-touch-icon href=https://connorzhangyu.com/apple-touch-icon.png><meta name=twitter:card content="summary"><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="og:title" content="SpringBoot"><meta property="og:description" content='定时器 定时器的数值放到配置文件,如果使用@Scheduled(fixedDelay = 类中的变量)这种方式试过不行
+1 2 3 @Scheduled(fixedDelayString = "${fixedDelayString}") public void open() { } 1 fixedDelayString=30000 RocketMQ 下载源码或者二进制包
+1 2 3 4 5 6 7 8 # 源码安装 # 解压文件 unzip rocketmq-all-5.2.0-source-release.zip cd rocketmq-all-5.2.0-source-release/ # 编译 mvn -Prelease-all -DskipTests -Dspotbugs.skip=true clean install -U # 编译后的二进制的目录,配置文件在这里 cd ./distribution 修改配置文件
+1 2 3 4 5 6 7 # 修改配置文件 # 修改内存配置,虚拟机的内存太小了 # vim ./bin/runserver.sh JAVA_OPT="${JAVA_OPT} -server -Xms512m -Xmx521m -Xmn256g -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=320m" # vim ./bin/runbroker.sh JAVA_OPT="${JAVA_OPT} -server -Xms512m -Xmx512m" 启动
+'><meta property="og:url" content="https://connorzhangyu.com/springboot/"><meta property="og:site_name" content="Hello World!"><meta property="og:image" content="https://image.runtimes.cc/202404051534895.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><meta property="article:section" content="Java"><meta property="article:section" content="Spring"><meta property="article:section" content="Spring Boot"><meta property="article:published_time" content="2023-07-15 14:58:26 +0000 UTC"><link rel=preconnect href=https://fonts.googleapis.com crossorigin><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel=stylesheet><link rel=stylesheet href=/style.css></head><body><div class="container center"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/>首页</a></li><li><a href=/featured/>精选</a></li><li><a href=/posts/>文章</a></li><li><a href=/categories/>分类</a></li><li><a href=/tags/>标签</a></li><li><a href=/about/>关于我</a></li><li><a href=/docs/>团队文档中心</a></li><hr><li><a href=https://connorzhangyu.com/>中文</a></li><li><a href=https://connorzhangyu.com/en/>ENG</a></li><li><a href=https://connorzhangyu.com/th/>ไทย</a></li></ul></li></ul><ul class="menu menu--desktop menu--language-selector"><li class=menu__trigger>中文&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=https://connorzhangyu.com/>中文</a></li><li><a href=https://connorzhangyu.com/en/>ENG</a></li><li><a href=https://connorzhangyu.com/th/>ไทย</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/>首页</a></li><li><a href=/featured/>精选</a></li><li><a href=/posts/>文章</a></li><li><a href=/categories/>分类</a></li><li><a href=/tags/>标签</a></li><li><a href=/about/>关于我</a></li><li><a href=/docs/>团队文档中心</a></li></ul></nav></header><div class=content><article class=post><h1 class=post-title><a href=https://connorzhangyu.com/springboot/>SpringBoot</a></h1><div class=post-meta><time class=post-date>2023-07-15&nbsp;[Updated: 2025-08-04]</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://connorzhangyu.com/tags/java/>Java</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051534895.png class=post-cover alt=SpringBoot title="Cover Image"><div class=post-content><div><h1 id=定时器>定时器<a href=#定时器 class=hanchor arialabel=Anchor>#</a></h1><p>定时器的数值放到配置文件,如果使用<code>@Scheduled(fixedDelay = 类中的变量)</code>这种方式试过不行</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=nd>@Scheduled</span><span class=p>(</span><span class=n>fixedDelayString</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s>&#34;${fixedDelayString}&#34;</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>open</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-properties data-lang=properties><span class=line><span class=cl><span class=na>fixedDelayString</span><span class=o>=</span><span class=s>30000</span>
+</span></span></code></pre></td></tr></table></div></div><h1 id=rocketmq>RocketMQ<a href=#rocketmq class=hanchor arialabel=Anchor>#</a></h1><p>下载源码或者二进制包</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl><span class=c1># 源码安装</span>
+</span></span><span class=line><span class=cl><span class=c1># 解压文件</span>
+</span></span><span class=line><span class=cl>unzip rocketmq-all-5.2.0-source-release.zip
+</span></span><span class=line><span class=cl><span class=nb>cd</span> rocketmq-all-5.2.0-source-release/
+</span></span><span class=line><span class=cl><span class=c1># 编译</span>
+</span></span><span class=line><span class=cl>mvn -Prelease-all -DskipTests -Dspotbugs.skip<span class=o>=</span><span class=nb>true</span> clean install -U
+</span></span><span class=line><span class=cl><span class=c1># 编译后的二进制的目录,配置文件在这里</span>
+</span></span><span class=line><span class=cl><span class=nb>cd</span> ./distribution
+</span></span></code></pre></td></tr></table></div></div><p>修改配置文件</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl><span class=c1># 修改配置文件</span>
+</span></span><span class=line><span class=cl><span class=c1># 修改内存配置,虚拟机的内存太小了</span>
+</span></span><span class=line><span class=cl><span class=c1># vim ./bin/runserver.sh</span>
+</span></span><span class=line><span class=cl><span class=nv>JAVA_OPT</span><span class=o>=</span><span class=s2>&#34;</span><span class=si>${</span><span class=nv>JAVA_OPT</span><span class=si>}</span><span class=s2> -server -Xms512m -Xmx521m -Xmn256g -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=320m&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># vim ./bin/runbroker.sh</span>
+</span></span><span class=line><span class=cl><span class=nv>JAVA_OPT</span><span class=o>=</span><span class=s2>&#34;</span><span class=si>${</span><span class=nv>JAVA_OPT</span><span class=si>}</span><span class=s2> -server -Xms512m -Xmx512m&#34;</span>
+</span></span></code></pre></td></tr></table></div></div><p>启动</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl><span class=c1># 第一步.启动Name Server</span>
+</span></span><span class=line><span class=cl>sh bin/mqnamesrv
+</span></span><span class=line><span class=cl>The Name Server boot success...
+</span></span><span class=line><span class=cl><span class=c1># 第二步.启动Broker</span>
+</span></span><span class=line><span class=cl>sh bin/mqbroker -n localhost:9876
+</span></span><span class=line><span class=cl> The broker<span class=o>[</span>%s, 172.30.30.233:10911<span class=o>]</span> boot success...
+</span></span></code></pre></td></tr></table></div></div><p>测试发送消息</p><pre tabindex=0><code>export NAMESRV_ADDR=localhost:9876
+# 发送消息
+sh bin/tools.sh org.apache.rocketmq.example.quickstart.Producer
+# 接收消息
+sh bin/tools.sh org.apache.rocketmq.example.quickstart.Consumer
+</code></pre><h2 id=关闭服务>关闭服务<a href=#关闭服务 class=hanchor arialabel=Anchor>#</a></h2><pre tabindex=0><code>sh bin/mqshutdown broker
+sh bin/mqshutdown namesrv
+</code></pre><h2 id=监控>监控<a href=#监控 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl><span class=c1># 记得checkout release-rocketmq-console-1.0.0分支</span>
+</span></span><span class=line><span class=cl>git clone https://github.com/apache/rocketmq-externals/tree/release-rocketmq-console-1.0.0
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 修改配置文件里的rocketMQ远程地址</span>
+</span></span><span class=line><span class=cl><span class=nv>NameSvrAddrList</span> <span class=o>=</span> 192.168.254.124:9876
+</span></span><span class=line><span class=cl><span class=c1># 或者</span>
+</span></span><span class=line><span class=cl>rocketmq.config.namesrvAddr<span class=o>=</span>192.168.254.124:9876
+</span></span></code></pre></td></tr></table></div></div><h2 id=代码>代码<a href=#代码 class=hanchor arialabel=Anchor>#</a></h2><h3 id=单个生产者消费者>单个生产者消费者<a href=#单个生产者消费者 class=hanchor arialabel=Anchor>#</a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Provider</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span><span class=w> </span><span class=n>args</span><span class=p>)</span><span class=w> </span><span class=kd>throws</span><span class=w> </span><span class=n>Exception</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>DefaultMQProducer</span><span class=w> </span><span class=n>producer</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>DefaultMQProducer</span><span class=p>(</span><span class=s>&#34;group1&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>producer</span><span class=p>.</span><span class=na>setNamesrvAddr</span><span class=p>(</span><span class=s>&#34;192.168.254.190:9876&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>producer</span><span class=p>.</span><span class=na>start</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>String</span><span class=w> </span><span class=n>msg</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s>&#34;什么鬼,咋莫名其妙就收到了&#34;</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>Message</span><span class=w> </span><span class=n>message</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>Message</span><span class=p>(</span><span class=s>&#34;topic1&#34;</span><span class=p>,</span><span class=w> </span><span class=s>&#34;tag1&#34;</span><span class=p>,</span><span class=w> </span><span class=n>msg</span><span class=p>.</span><span class=na>getBytes</span><span class=p>());</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>SendResult</span><span class=w> </span><span class=n>sendResult</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>producer</span><span class=p>.</span><span class=na>send</span><span class=p>(</span><span class=n>message</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>printf</span><span class=p>(</span><span class=s>&#34;%s%n&#34;</span><span class=p>,</span><span class=w> </span><span class=n>sendResult</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>producer</span><span class=p>.</span><span class=na>shutdown</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Consumer</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span><span class=w> </span><span class=n>args</span><span class=p>)</span><span class=w> </span><span class=kd>throws</span><span class=w> </span><span class=n>MQClientException</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>DefaultMQPushConsumer</span><span class=w> </span><span class=n>consumer</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>DefaultMQPushConsumer</span><span class=p>(</span><span class=s>&#34;group1&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>setNamesrvAddr</span><span class=p>(</span><span class=s>&#34;192.168.254.190:9876&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>subscribe</span><span class=p>(</span><span class=s>&#34;topic1&#34;</span><span class=p>,</span><span class=w> </span><span class=s>&#34;*&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>registerMessageListener</span><span class=p>((</span><span class=n>MessageListenerConcurrently</span><span class=p>)</span><span class=w> </span><span class=p>(</span><span class=n>list</span><span class=p>,</span><span class=w> </span><span class=n>consumeConcurrentlyContext</span><span class=p>)</span><span class=w> </span><span class=o>-&gt;</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=c1>// 业务逻辑</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>list</span><span class=p>.</span><span class=na>forEach</span><span class=p>(</span><span class=n>one</span><span class=o>-&gt;</span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=kt>byte</span><span class=o>[]</span><span class=w> </span><span class=n>body</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>one</span><span class=p>.</span><span class=na>getBody</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=k>new</span><span class=w> </span><span class=n>String</span><span class=p>(</span><span class=n>body</span><span class=p>));</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=p>});</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=k>return</span><span class=w> </span><span class=n>ConsumeConcurrentlyStatus</span><span class=p>.</span><span class=na>CONSUME_SUCCESS</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=p>});</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>start</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;消费者启起来了&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><h2 id=单个生产者多个消费者>单个生产者多个消费者<a href=#单个生产者多个消费者 class=hanchor arialabel=Anchor>#</a></h2><h3 id=相同的topic相同的group-负载均衡>相同的Topic,相同的Group-负载均衡<a href=#相同的topic相同的group-负载均衡 class=hanchor arialabel=Anchor>#</a></h3><p>默认就是负载均衡,多个消费者,每个人收一条信息,不重复</p><p><img src=https://image.runtimes.cc/202404051459670.png alt></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Provider</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span><span class=w> </span><span class=n>args</span><span class=p>)</span><span class=w> </span><span class=kd>throws</span><span class=w> </span><span class=n>Exception</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>DefaultMQProducer</span><span class=w> </span><span class=n>producer</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>DefaultMQProducer</span><span class=p>(</span><span class=s>&#34;group2&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>producer</span><span class=p>.</span><span class=na>setNamesrvAddr</span><span class=p>(</span><span class=s>&#34;192.168.254.190:9876&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>producer</span><span class=p>.</span><span class=na>start</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>for</span><span class=w> </span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>i</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>0</span><span class=p>;</span><span class=w> </span><span class=n>i</span><span class=w> </span><span class=o>&lt;</span><span class=w> </span><span class=n>10</span><span class=p>;</span><span class=w> </span><span class=n>i</span><span class=o>++</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>String</span><span class=w> </span><span class=n>msg</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s>&#34;默认接受者是负载均衡&#34;</span><span class=o>+</span><span class=n>i</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>Message</span><span class=w> </span><span class=n>message</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>Message</span><span class=p>(</span><span class=s>&#34;topic2&#34;</span><span class=p>,</span><span class=w> </span><span class=s>&#34;tag1&#34;</span><span class=p>,</span><span class=w> </span><span class=n>msg</span><span class=p>.</span><span class=na>getBytes</span><span class=p>());</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>SendResult</span><span class=w> </span><span class=n>sendResult</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>producer</span><span class=p>.</span><span class=na>send</span><span class=p>(</span><span class=n>message</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>printf</span><span class=p>(</span><span class=s>&#34;%s%n&#34;</span><span class=p>,</span><span class=w> </span><span class=n>sendResult</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>producer</span><span class=p>.</span><span class=na>shutdown</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Consumer</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span><span class=w> </span><span class=n>args</span><span class=p>)</span><span class=w> </span><span class=kd>throws</span><span class=w> </span><span class=n>MQClientException</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>// 谁来收</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>DefaultMQPushConsumer</span><span class=w> </span><span class=n>consumer</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>DefaultMQPushConsumer</span><span class=p>(</span><span class=s>&#34;group2&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>// 从哪里收</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>setNamesrvAddr</span><span class=p>(</span><span class=s>&#34;192.168.254.190:9876&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>// 监听队列</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>subscribe</span><span class=p>(</span><span class=s>&#34;topic2&#34;</span><span class=p>,</span><span class=w> </span><span class=s>&#34;*&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>// 监听器</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>registerMessageListener</span><span class=p>((</span><span class=n>MessageListenerConcurrently</span><span class=p>)</span><span class=w> </span><span class=p>(</span><span class=n>list</span><span class=p>,</span><span class=w> </span><span class=n>consumeConcurrentlyContext</span><span class=p>)</span><span class=w> </span><span class=o>-&gt;</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=c1>// 业务逻辑</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>list</span><span class=p>.</span><span class=na>forEach</span><span class=p>(</span><span class=n>one</span><span class=o>-&gt;</span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=kt>byte</span><span class=o>[]</span><span class=w> </span><span class=n>body</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>one</span><span class=p>.</span><span class=na>getBody</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=k>new</span><span class=w> </span><span class=n>String</span><span class=p>(</span><span class=n>body</span><span class=p>));</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=p>});</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=k>return</span><span class=w> </span><span class=n>ConsumeConcurrentlyStatus</span><span class=p>.</span><span class=na>CONSUME_SUCCESS</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=p>});</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>start</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;消费者启起来了&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 第一个消费者</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡0</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡4</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡5</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡8</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡9</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 第二个消费者</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡2</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡3</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡6</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡7</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><h3 id=相同的topic相同的group-轮训>相同的Topic,相同的Group-轮训<a href=#相同的topic相同的group-轮训 class=hanchor arialabel=Anchor>#</a></h3><p>只是添加了消费者的一段代码:<code>consumer.setMessageModel(MessageModel.BROADCASTING);</code></p><p><img src=https://image.runtimes.cc/202404051459646.png alt></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Provider</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span><span class=w> </span><span class=n>args</span><span class=p>)</span><span class=w> </span><span class=kd>throws</span><span class=w> </span><span class=n>Exception</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>// 谁来发</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>DefaultMQProducer</span><span class=w> </span><span class=n>producer</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>DefaultMQProducer</span><span class=p>(</span><span class=s>&#34;group3&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>// 发给谁</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>producer</span><span class=p>.</span><span class=na>setNamesrvAddr</span><span class=p>(</span><span class=s>&#34;192.168.254.190:9876&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>producer</span><span class=p>.</span><span class=na>start</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>for</span><span class=w> </span><span class=p>(</span><span class=kt>int</span><span class=w> </span><span class=n>i</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>0</span><span class=p>;</span><span class=w> </span><span class=n>i</span><span class=w> </span><span class=o>&lt;</span><span class=w> </span><span class=n>10</span><span class=p>;</span><span class=w> </span><span class=n>i</span><span class=o>++</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>String</span><span class=w> </span><span class=n>msg</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s>&#34;默认接受者是负载均衡&#34;</span><span class=o>+</span><span class=n>i</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>Message</span><span class=w> </span><span class=n>message</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>Message</span><span class=p>(</span><span class=s>&#34;topic3&#34;</span><span class=p>,</span><span class=w> </span><span class=s>&#34;tag1&#34;</span><span class=p>,</span><span class=w> </span><span class=n>msg</span><span class=p>.</span><span class=na>getBytes</span><span class=p>());</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>SendResult</span><span class=w> </span><span class=n>sendResult</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>producer</span><span class=p>.</span><span class=na>send</span><span class=p>(</span><span class=n>message</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>printf</span><span class=p>(</span><span class=s>&#34;%s%n&#34;</span><span class=p>,</span><span class=w> </span><span class=n>sendResult</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>producer</span><span class=p>.</span><span class=na>shutdown</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Consumer</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span><span class=w> </span><span class=n>args</span><span class=p>)</span><span class=w> </span><span class=kd>throws</span><span class=w> </span><span class=n>MQClientException</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>DefaultMQPushConsumer</span><span class=w> </span><span class=n>consumer</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>DefaultMQPushConsumer</span><span class=p>(</span><span class=s>&#34;group3&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>setNamesrvAddr</span><span class=p>(</span><span class=s>&#34;192.168.254.190:9876&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>subscribe</span><span class=p>(</span><span class=s>&#34;topic3&#34;</span><span class=p>,</span><span class=w> </span><span class=s>&#34;*&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>setMessageModel</span><span class=p>(</span><span class=n>MessageModel</span><span class=p>.</span><span class=na>BROADCASTING</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>// 监听器</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>registerMessageListener</span><span class=p>((</span><span class=n>MessageListenerConcurrently</span><span class=p>)</span><span class=w> </span><span class=p>(</span><span class=n>list</span><span class=p>,</span><span class=w> </span><span class=n>consumeConcurrentlyContext</span><span class=p>)</span><span class=w> </span><span class=o>-&gt;</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=c1>// 业务逻辑</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>list</span><span class=p>.</span><span class=na>forEach</span><span class=p>(</span><span class=n>one</span><span class=o>-&gt;</span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=kt>byte</span><span class=o>[]</span><span class=w> </span><span class=n>body</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>one</span><span class=p>.</span><span class=na>getBody</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=k>new</span><span class=w> </span><span class=n>String</span><span class=p>(</span><span class=n>body</span><span class=p>));</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=p>});</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=k>return</span><span class=w> </span><span class=n>ConsumeConcurrentlyStatus</span><span class=p>.</span><span class=na>CONSUME_SUCCESS</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=p>});</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>start</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;消费者启起来了&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 两个消费者都是收到相同的消息</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡0</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡2</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡3</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡4</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡5</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡6</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡7</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡8</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡9</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><h3 id=不同的topic不同的group>不同的Topic,不同的Group<a href=#不同的topic不同的group class=hanchor arialabel=Anchor>#</a></h3><p><img src=https://image.runtimes.cc/202404051459641.png alt></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span><span class=lnt>63
+</span><span class=lnt>64
+</span><span class=lnt>65
+</span><span class=lnt>66
+</span><span class=lnt>67
+</span><span class=lnt>68
+</span><span class=lnt>69
+</span><span class=lnt>70
+</span><span class=lnt>71
+</span><span class=lnt>72
+</span><span class=lnt>73
+</span><span class=lnt>74
+</span><span class=lnt>75
+</span><span class=lnt>76
+</span><span class=lnt>77
+</span><span class=lnt>78
+</span><span class=lnt>79
+</span><span class=lnt>80
+</span><span class=lnt>81
+</span><span class=lnt>82
+</span><span class=lnt>83
+</span><span class=lnt>84
+</span><span class=lnt>85
+</span><span class=lnt>86
+</span><span class=lnt>87
+</span><span class=lnt>88
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=c1>// 消费者1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Consumer</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span><span class=w> </span><span class=n>args</span><span class=p>)</span><span class=w> </span><span class=kd>throws</span><span class=w> </span><span class=n>MQClientException</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>DefaultMQPushConsumer</span><span class=w> </span><span class=n>consumer</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>DefaultMQPushConsumer</span><span class=p>(</span><span class=s>&#34;group4&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>setNamesrvAddr</span><span class=p>(</span><span class=s>&#34;192.168.254.190:9876&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>subscribe</span><span class=p>(</span><span class=s>&#34;topic4&#34;</span><span class=p>,</span><span class=w> </span><span class=s>&#34;*&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>// 监听器</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>registerMessageListener</span><span class=p>((</span><span class=n>MessageListenerConcurrently</span><span class=p>)</span><span class=w> </span><span class=p>(</span><span class=n>list</span><span class=p>,</span><span class=w> </span><span class=n>consumeConcurrentlyContext</span><span class=p>)</span><span class=w> </span><span class=o>-&gt;</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=c1>// 业务逻辑</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>list</span><span class=p>.</span><span class=na>forEach</span><span class=p>(</span><span class=n>one</span><span class=o>-&gt;</span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=kt>byte</span><span class=o>[]</span><span class=w> </span><span class=n>body</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>one</span><span class=p>.</span><span class=na>getBody</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=k>new</span><span class=w> </span><span class=n>String</span><span class=p>(</span><span class=n>body</span><span class=p>));</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=p>});</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=k>return</span><span class=w> </span><span class=n>ConsumeConcurrentlyStatus</span><span class=p>.</span><span class=na>CONSUME_SUCCESS</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=p>});</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>start</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;消费者启起来了&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 消费者2</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Consumer</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span><span class=w> </span><span class=n>args</span><span class=p>)</span><span class=w> </span><span class=kd>throws</span><span class=w> </span><span class=n>MQClientException</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>DefaultMQPushConsumer</span><span class=w> </span><span class=n>consumer</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>DefaultMQPushConsumer</span><span class=p>(</span><span class=s>&#34;group4&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>setNamesrvAddr</span><span class=p>(</span><span class=s>&#34;192.168.254.190:9876&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>subscribe</span><span class=p>(</span><span class=s>&#34;topic4&#34;</span><span class=p>,</span><span class=w> </span><span class=s>&#34;*&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>// 监听器</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>registerMessageListener</span><span class=p>((</span><span class=n>MessageListenerConcurrently</span><span class=p>)</span><span class=w> </span><span class=p>(</span><span class=n>list</span><span class=p>,</span><span class=w> </span><span class=n>consumeConcurrentlyContext</span><span class=p>)</span><span class=w> </span><span class=o>-&gt;</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=c1>// 业务逻辑</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>list</span><span class=p>.</span><span class=na>forEach</span><span class=p>(</span><span class=n>one</span><span class=o>-&gt;</span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=kt>byte</span><span class=o>[]</span><span class=w> </span><span class=n>body</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>one</span><span class=p>.</span><span class=na>getBody</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=k>new</span><span class=w> </span><span class=n>String</span><span class=p>(</span><span class=n>body</span><span class=p>));</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=p>});</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=k>return</span><span class=w> </span><span class=n>ConsumeConcurrentlyStatus</span><span class=p>.</span><span class=na>CONSUME_SUCCESS</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=p>});</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>start</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;消费者启起来了&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 消费者3</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Consumer</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span><span class=w> </span><span class=n>args</span><span class=p>)</span><span class=w> </span><span class=kd>throws</span><span class=w> </span><span class=n>MQClientException</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>DefaultMQPushConsumer</span><span class=w> </span><span class=n>consumer</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>DefaultMQPushConsumer</span><span class=p>(</span><span class=s>&#34;group4-1&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>setNamesrvAddr</span><span class=p>(</span><span class=s>&#34;192.168.254.190:9876&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>subscribe</span><span class=p>(</span><span class=s>&#34;topic4&#34;</span><span class=p>,</span><span class=w> </span><span class=s>&#34;*&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>// 监听器</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>registerMessageListener</span><span class=p>((</span><span class=n>MessageListenerConcurrently</span><span class=p>)</span><span class=w> </span><span class=p>(</span><span class=n>list</span><span class=p>,</span><span class=w> </span><span class=n>consumeConcurrentlyContext</span><span class=p>)</span><span class=w> </span><span class=o>-&gt;</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=c1>// 业务逻辑</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=n>list</span><span class=p>.</span><span class=na>forEach</span><span class=p>(</span><span class=n>one</span><span class=o>-&gt;</span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=kt>byte</span><span class=o>[]</span><span class=w> </span><span class=n>body</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>one</span><span class=p>.</span><span class=na>getBody</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=k>new</span><span class=w> </span><span class=n>String</span><span class=p>(</span><span class=n>body</span><span class=p>));</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=p>});</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>            </span><span class=k>return</span><span class=w> </span><span class=n>ConsumeConcurrentlyStatus</span><span class=p>.</span><span class=na>CONSUME_SUCCESS</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=p>});</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>start</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;消费者启起来了&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 消费者1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡2</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡3</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡6</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡7</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 消费者2</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡0</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡4</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡5</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡8</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡9</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 消费者3</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡0</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡2</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡3</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡4</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡5</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡6</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡7</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡8</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡9</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><h1 id=swagger>Swagger<a href=#swagger class=hanchor arialabel=Anchor>#</a></h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=line><span class=cl><span class=c>&lt;!-- 引入Swagger3依赖 --&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;dependency&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;groupId&gt;</span>io.springfox<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;artifactId&gt;</span>springfox-boot-starter<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;version&gt;</span>3.0.0<span class=nt>&lt;/version&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/dependency&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>import</span><span class=w> </span><span class=nn>io.swagger.annotations.ApiOperation</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>org.springframework.context.annotation.Bean</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>org.springframework.context.annotation.Configuration</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>springfox.documentation.builders.ApiInfoBuilder</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>springfox.documentation.builders.PathSelectors</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>springfox.documentation.builders.RequestHandlerSelectors</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>springfox.documentation.oas.annotations.EnableOpenApi</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>springfox.documentation.service.ApiInfo</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>springfox.documentation.service.Contact</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>springfox.documentation.spi.DocumentationType</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>springfox.documentation.spring.web.plugins.Docket</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=cm>/**
+</span></span></span><span class=line><span class=cl><span class=cm> * Swagger配置类
+</span></span></span><span class=line><span class=cl><span class=cm> */</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nd>@EnableOpenApi</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nd>@Configuration</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>SwaggerConfig</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nd>@Bean</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=n>Docket</span><span class=w> </span><span class=nf>docket</span><span class=p>(){</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>Docket</span><span class=p>(</span><span class=n>DocumentationType</span><span class=p>.</span><span class=na>OAS_30</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=p>.</span><span class=na>apiInfo</span><span class=p>(</span><span class=n>apiInfo</span><span class=p>()).</span><span class=na>enable</span><span class=p>(</span><span class=kc>true</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=p>.</span><span class=na>select</span><span class=p>()</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=c1>//apis： 添加swagger接口提取范围</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=p>.</span><span class=na>apis</span><span class=p>(</span><span class=n>RequestHandlerSelectors</span><span class=p>.</span><span class=na>basePackage</span><span class=p>(</span><span class=s>&#34;com.example.study.controller&#34;</span><span class=p>))</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=p>.</span><span class=na>apis</span><span class=p>(</span><span class=n>RequestHandlerSelectors</span><span class=p>.</span><span class=na>withMethodAnnotation</span><span class=p>(</span><span class=n>ApiOperation</span><span class=p>.</span><span class=na>class</span><span class=p>))</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=p>.</span><span class=na>paths</span><span class=p>(</span><span class=n>PathSelectors</span><span class=p>.</span><span class=na>any</span><span class=p>())</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=p>.</span><span class=na>build</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>private</span><span class=w> </span><span class=n>ApiInfo</span><span class=w> </span><span class=nf>apiInfo</span><span class=p>(){</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>ApiInfoBuilder</span><span class=p>()</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=p>.</span><span class=na>title</span><span class=p>(</span><span class=s>&#34;XX项目接口文档&#34;</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=p>.</span><span class=na>description</span><span class=p>(</span><span class=s>&#34;XX项目描述&#34;</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=p>.</span><span class=na>contact</span><span class=p>(</span><span class=k>new</span><span class=w> </span><span class=n>Contact</span><span class=p>(</span><span class=s>&#34;作者&#34;</span><span class=p>,</span><span class=w> </span><span class=s>&#34;作者URL&#34;</span><span class=p>,</span><span class=w> </span><span class=s>&#34;作者Email&#34;</span><span class=p>))</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=p>.</span><span class=na>version</span><span class=p>(</span><span class=s>&#34;1.0&#34;</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>                </span><span class=p>.</span><span class=na>build</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-powershell data-lang=powershell><span class=line><span class=cl><span class=c># 原因是在springboot 2.6.0中将SpringMVC 默认路径匹配策略从AntPathMatcher</span>
+</span></span><span class=line><span class=cl><span class=c># 更改为PathPatternParser，导致出错，解决办法是切换回原先的AntPathMatcher</span>
+</span></span><span class=line><span class=cl><span class=n>spring</span><span class=p>.</span><span class=py>mvc</span><span class=p>.</span><span class=py>pathmatch</span><span class=p>.</span><span class=nb>matching-strategy</span><span class=p>=</span><span class=n>ant_path_matcher</span>
+</span></span></code></pre></td></tr></table></div></div><h1 id=knife4j>knife4j<a href=#knife4j class=hanchor arialabel=Anchor>#</a></h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=line><span class=cl><span class=nt>&lt;dependency&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;groupId&gt;</span>com.github.xiaoymin<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;artifactId&gt;</span>knife4j-spring-boot-starter<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;version&gt;</span>3.0.3<span class=nt>&lt;/version&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/dependency&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><p>application.properties</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=line><span class=cl>spring.mvc.pathmatch.matching-strategy=ant_path_matcher
+</span></span><span class=line><span class=cl>knife4j.enable: true
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=nd>@RestController</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nd>@RequestMapping</span><span class=p>(</span><span class=s>&#34;/test&#34;</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nd>@Api</span><span class=p>(</span><span class=n>tags</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s>&#34;测试2&#34;</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 排序</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nd>@ApiSort</span><span class=p>(</span><span class=n>value</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>1</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>TestController2</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nd>@GetMapping</span><span class=p>(</span><span class=s>&#34;/3&#34;</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nd>@ApiOperation</span><span class=p>(</span><span class=s>&#34;3&#34;</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=n>String</span><span class=w> </span><span class=nf>method</span><span class=p>(){</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=s>&#34;hello wolrd&#34;</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nd>@GetMapping</span><span class=p>(</span><span class=s>&#34;/4&#34;</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nd>@ApiOperation</span><span class=p>(</span><span class=s>&#34;4&#34;</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=n>String</span><span class=w> </span><span class=nf>method2</span><span class=p>(){</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=s>&#34;hello wolrd&#34;</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><h1 id=log4j2>Log4j2<a href=#log4j2 class=hanchor arialabel=Anchor>#</a></h1><h2 id=log4j2-1>Log4j2<a href=#log4j2-1 class=hanchor arialabel=Anchor>#</a></h2><p>日志所有级别级别从上到下 ,级别从低到高,报错(更重要)这种,级别最高,info,debug相对不怎么重要</p><ul><li>all</li><li>trace</li><li>debug</li><li>info</li><li>warn</li><li>error</li><li>fail</li></ul><p>Log4j2.xml配置例子</p><p>{% tabs Log4j2 %}</p><pre tabindex=0><code>info级别输出到info.log
+warn级别输出warn.log
+error级别输出到error.log
+debug级别输出到debug.log
+</code></pre><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1
+</span><span class=lnt>  2
+</span><span class=lnt>  3
+</span><span class=lnt>  4
+</span><span class=lnt>  5
+</span><span class=lnt>  6
+</span><span class=lnt>  7
+</span><span class=lnt>  8
+</span><span class=lnt>  9
+</span><span class=lnt> 10
+</span><span class=lnt> 11
+</span><span class=lnt> 12
+</span><span class=lnt> 13
+</span><span class=lnt> 14
+</span><span class=lnt> 15
+</span><span class=lnt> 16
+</span><span class=lnt> 17
+</span><span class=lnt> 18
+</span><span class=lnt> 19
+</span><span class=lnt> 20
+</span><span class=lnt> 21
+</span><span class=lnt> 22
+</span><span class=lnt> 23
+</span><span class=lnt> 24
+</span><span class=lnt> 25
+</span><span class=lnt> 26
+</span><span class=lnt> 27
+</span><span class=lnt> 28
+</span><span class=lnt> 29
+</span><span class=lnt> 30
+</span><span class=lnt> 31
+</span><span class=lnt> 32
+</span><span class=lnt> 33
+</span><span class=lnt> 34
+</span><span class=lnt> 35
+</span><span class=lnt> 36
+</span><span class=lnt> 37
+</span><span class=lnt> 38
+</span><span class=lnt> 39
+</span><span class=lnt> 40
+</span><span class=lnt> 41
+</span><span class=lnt> 42
+</span><span class=lnt> 43
+</span><span class=lnt> 44
+</span><span class=lnt> 45
+</span><span class=lnt> 46
+</span><span class=lnt> 47
+</span><span class=lnt> 48
+</span><span class=lnt> 49
+</span><span class=lnt> 50
+</span><span class=lnt> 51
+</span><span class=lnt> 52
+</span><span class=lnt> 53
+</span><span class=lnt> 54
+</span><span class=lnt> 55
+</span><span class=lnt> 56
+</span><span class=lnt> 57
+</span><span class=lnt> 58
+</span><span class=lnt> 59
+</span><span class=lnt> 60
+</span><span class=lnt> 61
+</span><span class=lnt> 62
+</span><span class=lnt> 63
+</span><span class=lnt> 64
+</span><span class=lnt> 65
+</span><span class=lnt> 66
+</span><span class=lnt> 67
+</span><span class=lnt> 68
+</span><span class=lnt> 69
+</span><span class=lnt> 70
+</span><span class=lnt> 71
+</span><span class=lnt> 72
+</span><span class=lnt> 73
+</span><span class=lnt> 74
+</span><span class=lnt> 75
+</span><span class=lnt> 76
+</span><span class=lnt> 77
+</span><span class=lnt> 78
+</span><span class=lnt> 79
+</span><span class=lnt> 80
+</span><span class=lnt> 81
+</span><span class=lnt> 82
+</span><span class=lnt> 83
+</span><span class=lnt> 84
+</span><span class=lnt> 85
+</span><span class=lnt> 86
+</span><span class=lnt> 87
+</span><span class=lnt> 88
+</span><span class=lnt> 89
+</span><span class=lnt> 90
+</span><span class=lnt> 91
+</span><span class=lnt> 92
+</span><span class=lnt> 93
+</span><span class=lnt> 94
+</span><span class=lnt> 95
+</span><span class=lnt> 96
+</span><span class=lnt> 97
+</span><span class=lnt> 98
+</span><span class=lnt> 99
+</span><span class=lnt>100
+</span><span class=lnt>101
+</span><span class=lnt>102
+</span><span class=lnt>103
+</span><span class=lnt>104
+</span><span class=lnt>105
+</span><span class=lnt>106
+</span><span class=lnt>107
+</span><span class=lnt>108
+</span><span class=lnt>109
+</span><span class=lnt>110
+</span><span class=lnt>111
+</span><span class=lnt>112
+</span><span class=lnt>113
+</span><span class=lnt>114
+</span><span class=lnt>115
+</span><span class=lnt>116
+</span><span class=lnt>117
+</span><span class=lnt>118
+</span><span class=lnt>119
+</span><span class=lnt>120
+</span><span class=lnt>121
+</span><span class=lnt>122
+</span><span class=lnt>123
+</span><span class=lnt>124
+</span><span class=lnt>125
+</span><span class=lnt>126
+</span><span class=lnt>127
+</span><span class=lnt>128
+</span><span class=lnt>129
+</span><span class=lnt>130
+</span><span class=lnt>131
+</span><span class=lnt>132
+</span><span class=lnt>133
+</span><span class=lnt>134
+</span><span class=lnt>135
+</span><span class=lnt>136
+</span><span class=lnt>137
+</span><span class=lnt>138
+</span><span class=lnt>139
+</span><span class=lnt>140
+</span><span class=lnt>141
+</span><span class=lnt>142
+</span><span class=lnt>143
+</span><span class=lnt>144
+</span><span class=lnt>145
+</span><span class=lnt>146
+</span><span class=lnt>147
+</span><span class=lnt>148
+</span><span class=lnt>149
+</span><span class=lnt>150
+</span><span class=lnt>151
+</span><span class=lnt>152
+</span><span class=lnt>153
+</span><span class=lnt>154
+</span><span class=lnt>155
+</span><span class=lnt>156
+</span><span class=lnt>157
+</span><span class=lnt>158
+</span><span class=lnt>159
+</span><span class=lnt>160
+</span><span class=lnt>161
+</span><span class=lnt>162
+</span><span class=lnt>163
+</span><span class=lnt>164
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=line><span class=cl><span class=cp>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;Configuration&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!--&lt;Configuration status=&#34;WARN&#34; monitorInterval=&#34;30&#34;&gt; --&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;properties&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;property</span> <span class=na>name=</span><span class=s>&#34;LOG_HOME&#34;</span><span class=nt>&gt;</span>./service-logs<span class=nt>&lt;/property&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/properties&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;Appenders&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!--*********************控制台日志***********************--&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;Console</span> <span class=na>name=</span><span class=s>&#34;consoleAppender&#34;</span> <span class=na>target=</span><span class=s>&#34;SYSTEM_OUT&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=c>&lt;!--设置日志格式及颜色--&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;PatternLayout</span>
+</span></span><span class=line><span class=cl>                    <span class=na>pattern=</span><span class=s>&#34;%style{%d{ISO8601}}{bright,green} %highlight{%-5level} [%style{%t}{bright,blue}] %style{%C{}}{bright,yellow}: %msg%n%style{%throwable}{red}&#34;</span>
+</span></span><span class=line><span class=cl>                    <span class=na>disableAnsi=</span><span class=s>&#34;false&#34;</span> <span class=na>noConsoleNoAnsi=</span><span class=s>&#34;false&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/Console&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!--*********************文件日志***********************--&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!--all级别日志--&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;RollingFile</span> <span class=na>name=</span><span class=s>&#34;allFileAppender&#34;</span>
+</span></span><span class=line><span class=cl>                     <span class=na>fileName=</span><span class=s>&#34;${LOG_HOME}/all.log&#34;</span>
+</span></span><span class=line><span class=cl>                     <span class=na>filePattern=</span><span class=s>&#34;${LOG_HOME}/$${date:yyyy-MM}/all-%d{yyyy-MM-dd}-%i.log.gz&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=c>&lt;!--设置日志格式--&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;PatternLayout&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;pattern&gt;</span>%d %p %C{} [%t] %m%n<span class=nt>&lt;/pattern&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;/PatternLayout&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;Policies&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=c>&lt;!-- 设置日志文件切分参数 --&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=c>&lt;!--&lt;OnStartupTriggeringPolicy/&gt;--&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=c>&lt;!--设置日志基础文件大小，超过该大小就触发日志文件滚动更新--&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;SizeBasedTriggeringPolicy</span> <span class=na>size=</span><span class=s>&#34;100 MB&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=c>&lt;!--设置日志文件滚动更新的时间，依赖于文件命名filePattern的设置--&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;TimeBasedTriggeringPolicy/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;/Policies&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=c>&lt;!--设置日志的文件个数上限，不设置默认为7个，超过大小后会被覆盖；依赖于filePattern中的%i--&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;DefaultRolloverStrategy</span> <span class=na>max=</span><span class=s>&#34;100&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/RollingFile&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!--debug级别日志--&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;RollingFile</span> <span class=na>name=</span><span class=s>&#34;debugFileAppender&#34;</span>
+</span></span><span class=line><span class=cl>                     <span class=na>fileName=</span><span class=s>&#34;${LOG_HOME}/debug.log&#34;</span>
+</span></span><span class=line><span class=cl>                     <span class=na>filePattern=</span><span class=s>&#34;${LOG_HOME}/$${date:yyyy-MM}/debug-%d{yyyy-MM-dd}-%i.log.gz&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;Filters&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=c>&lt;!--过滤掉info及更高级别日志--&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;ThresholdFilter</span> <span class=na>level=</span><span class=s>&#34;info&#34;</span> <span class=na>onMatch=</span><span class=s>&#34;DENY&#34;</span> <span class=na>onMismatch=</span><span class=s>&#34;NEUTRAL&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;/Filters&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=c>&lt;!--设置日志格式--&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;PatternLayout&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;pattern&gt;</span>%d %p %C{} [%t] %m%n<span class=nt>&lt;/pattern&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;/PatternLayout&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;Policies&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=c>&lt;!-- 设置日志文件切分参数 --&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=c>&lt;!--&lt;OnStartupTriggeringPolicy/&gt;--&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=c>&lt;!--设置日志基础文件大小，超过该大小就触发日志文件滚动更新--&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;SizeBasedTriggeringPolicy</span> <span class=na>size=</span><span class=s>&#34;100 MB&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=c>&lt;!--设置日志文件滚动更新的时间，依赖于文件命名filePattern的设置--&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;TimeBasedTriggeringPolicy/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;/Policies&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=c>&lt;!--设置日志的文件个数上限，不设置默认为7个，超过大小后会被覆盖；依赖于filePattern中的%i--&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;DefaultRolloverStrategy</span> <span class=na>max=</span><span class=s>&#34;100&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/RollingFile&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!--info级别日志--&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;RollingFile</span> <span class=na>name=</span><span class=s>&#34;infoFileAppender&#34;</span>
+</span></span><span class=line><span class=cl>                     <span class=na>fileName=</span><span class=s>&#34;${LOG_HOME}/info.log&#34;</span>
+</span></span><span class=line><span class=cl>                     <span class=na>filePattern=</span><span class=s>&#34;${LOG_HOME}/$${date:yyyy-MM}/info-%d{yyyy-MM-dd}-%i.log.gz&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;Filters&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=c>&lt;!--过滤掉warn及更高级别日志--&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;ThresholdFilter</span> <span class=na>level=</span><span class=s>&#34;warn&#34;</span> <span class=na>onMatch=</span><span class=s>&#34;DENY&#34;</span> <span class=na>onMismatch=</span><span class=s>&#34;NEUTRAL&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;/Filters&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=c>&lt;!--设置日志格式--&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;PatternLayout&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;pattern&gt;</span>%d %p %C{} [%t] %m%n<span class=nt>&lt;/pattern&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;/PatternLayout&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;Policies&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=c>&lt;!-- 设置日志文件切分参数 --&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=c>&lt;!--&lt;OnStartupTriggeringPolicy/&gt;--&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=c>&lt;!--设置日志基础文件大小，超过该大小就触发日志文件滚动更新--&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;SizeBasedTriggeringPolicy</span> <span class=na>size=</span><span class=s>&#34;100 MB&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=c>&lt;!--设置日志文件滚动更新的时间，依赖于文件命名filePattern的设置--&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;TimeBasedTriggeringPolicy</span> <span class=na>interval=</span><span class=s>&#34;1&#34;</span> <span class=na>modulate=</span><span class=s>&#34;true&#34;</span> <span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;/Policies&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=c>&lt;!--设置日志的文件个数上限，不设置默认为7个，超过大小后会被覆盖；依赖于filePattern中的%i--&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=c>&lt;!--&lt;DefaultRolloverStrategy max=&#34;100&#34;/&gt;--&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/RollingFile&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!--warn级别日志--&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;RollingFile</span> <span class=na>name=</span><span class=s>&#34;warnFileAppender&#34;</span>
+</span></span><span class=line><span class=cl>                     <span class=na>fileName=</span><span class=s>&#34;${LOG_HOME}/warn.log&#34;</span>
+</span></span><span class=line><span class=cl>                     <span class=na>filePattern=</span><span class=s>&#34;${LOG_HOME}/$${date:yyyy-MM}/warn-%d{yyyy-MM-dd}-%i.log.gz&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;Filters&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=c>&lt;!--过滤掉error及更高级别日志--&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;ThresholdFilter</span> <span class=na>level=</span><span class=s>&#34;error&#34;</span> <span class=na>onMatch=</span><span class=s>&#34;DENY&#34;</span> <span class=na>onMismatch=</span><span class=s>&#34;NEUTRAL&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;/Filters&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=c>&lt;!--设置日志格式--&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;PatternLayout&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;pattern&gt;</span>%d %p %C{} [%t] %m%n<span class=nt>&lt;/pattern&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;/PatternLayout&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;Policies&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=c>&lt;!-- 设置日志文件切分参数 --&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=c>&lt;!--&lt;OnStartupTriggeringPolicy/&gt;--&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=c>&lt;!--设置日志基础文件大小，超过该大小就触发日志文件滚动更新--&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;SizeBasedTriggeringPolicy</span> <span class=na>size=</span><span class=s>&#34;100 MB&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=c>&lt;!--设置日志文件滚动更新的时间，依赖于文件命名filePattern的设置--&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;TimeBasedTriggeringPolicy/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;/Policies&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=c>&lt;!--设置日志的文件个数上限，不设置默认为7个，超过大小后会被覆盖；依赖于filePattern中的%i--&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;DefaultRolloverStrategy</span> <span class=na>max=</span><span class=s>&#34;100&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/RollingFile&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!--error及更高级别日志--&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;RollingFile</span> <span class=na>name=</span><span class=s>&#34;errorFileAppender&#34;</span>
+</span></span><span class=line><span class=cl>                     <span class=na>fileName=</span><span class=s>&#34;${LOG_HOME}/error.log&#34;</span>
+</span></span><span class=line><span class=cl>                     <span class=na>filePattern=</span><span class=s>&#34;${LOG_HOME}/$${date:yyyy-MM}/error-%d{yyyy-MM-dd}-%i.log.gz&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=c>&lt;!--设置日志格式--&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;PatternLayout&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;pattern&gt;</span>%d %p %C{} [%t] %m%n<span class=nt>&lt;/pattern&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;/PatternLayout&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;Policies&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=c>&lt;!-- 设置日志文件切分参数 --&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=c>&lt;!--&lt;OnStartupTriggeringPolicy/&gt;--&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=c>&lt;!--设置日志基础文件大小，超过该大小就触发日志文件滚动更新--&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;SizeBasedTriggeringPolicy</span> <span class=na>size=</span><span class=s>&#34;100 MB&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=c>&lt;!--设置日志文件滚动更新的时间，依赖于文件命名filePattern的设置--&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;TimeBasedTriggeringPolicy/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;/Policies&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=c>&lt;!--设置日志的文件个数上限，不设置默认为7个，超过大小后会被覆盖；依赖于filePattern中的%i--&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;DefaultRolloverStrategy</span> <span class=na>max=</span><span class=s>&#34;100&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/RollingFile&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!--json格式error级别日志--&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;RollingFile</span> <span class=na>name=</span><span class=s>&#34;errorJsonAppender&#34;</span>
+</span></span><span class=line><span class=cl>                     <span class=na>fileName=</span><span class=s>&#34;${LOG_HOME}/error-json.log&#34;</span>
+</span></span><span class=line><span class=cl>                     <span class=na>filePattern=</span><span class=s>&#34;${LOG_HOME}/error-json-%d{yyyy-MM-dd}-%i.log.gz&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;JSONLayout</span> <span class=na>compact=</span><span class=s>&#34;true&#34;</span> <span class=na>eventEol=</span><span class=s>&#34;true&#34;</span> <span class=na>locationInfo=</span><span class=s>&#34;true&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;Policies&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;SizeBasedTriggeringPolicy</span> <span class=na>size=</span><span class=s>&#34;100 MB&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;TimeBasedTriggeringPolicy</span> <span class=na>interval=</span><span class=s>&#34;1&#34;</span> <span class=na>modulate=</span><span class=s>&#34;true&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;/Policies&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/RollingFile&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/Appenders&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;Loggers&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!-- 根日志设置 --&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;Root</span> <span class=na>level=</span><span class=s>&#34;debug&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;AppenderRef</span> <span class=na>ref=</span><span class=s>&#34;allFileAppender&#34;</span> <span class=na>level=</span><span class=s>&#34;all&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;AppenderRef</span> <span class=na>ref=</span><span class=s>&#34;consoleAppender&#34;</span> <span class=na>level=</span><span class=s>&#34;debug&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;AppenderRef</span> <span class=na>ref=</span><span class=s>&#34;debugFileAppender&#34;</span> <span class=na>level=</span><span class=s>&#34;debug&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;AppenderRef</span> <span class=na>ref=</span><span class=s>&#34;infoFileAppender&#34;</span> <span class=na>level=</span><span class=s>&#34;info&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;AppenderRef</span> <span class=na>ref=</span><span class=s>&#34;warnFileAppender&#34;</span> <span class=na>level=</span><span class=s>&#34;warn&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;AppenderRef</span> <span class=na>ref=</span><span class=s>&#34;errorFileAppender&#34;</span> <span class=na>level=</span><span class=s>&#34;error&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;AppenderRef</span> <span class=na>ref=</span><span class=s>&#34;errorJsonAppender&#34;</span> <span class=na>level=</span><span class=s>&#34;error&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/Root&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!--spring日志--&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;Logger</span> <span class=na>name=</span><span class=s>&#34;org.springframework&#34;</span> <span class=na>level=</span><span class=s>&#34;debug&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!--druid数据源日志--&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;Logger</span> <span class=na>name=</span><span class=s>&#34;druid.sql.Statement&#34;</span> <span class=na>level=</span><span class=s>&#34;warn&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!-- mybatis日志 --&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;Logger</span> <span class=na>name=</span><span class=s>&#34;com.mybatis&#34;</span> <span class=na>level=</span><span class=s>&#34;warn&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;Logger</span> <span class=na>name=</span><span class=s>&#34;org.hibernate&#34;</span> <span class=na>level=</span><span class=s>&#34;warn&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;Logger</span> <span class=na>name=</span><span class=s>&#34;com.zaxxer.hikari&#34;</span> <span class=na>level=</span><span class=s>&#34;info&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;Logger</span> <span class=na>name=</span><span class=s>&#34;org.quartz&#34;</span> <span class=na>level=</span><span class=s>&#34;info&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;Logger</span> <span class=na>name=</span><span class=s>&#34;com.andya.demo&#34;</span> <span class=na>level=</span><span class=s>&#34;debug&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/Loggers&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/Configuration&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><pre tabindex=0><code>error级别 打印error.log
+info级别 打印info,error 日志到info.log
+debug级别 打印info,error,debug日志到debug.log
+</code></pre><p>{% endtabs %}</p><p>基本结构是:</p><ul><li>Configuration<ul><li>properties 属性配置,可以在这里配置全局变量,可以在xml别的地方引入</li><li>Appenders 具体配置日志框架该如何收集日志的动作<ul><li>Console 控制台输出</li><li>RollingFile 滚动日志文件</li></ul></li><li>Loggers<ul><li>Root 理论上只有一个Root,level属性,是全局日志级别,如果AppenderRef没有配置level,就使用全局级别<ul><li>AppenderRef 引用具体配置的动作,level 没有的话,就使用全局级别,就像<code>CSS</code>属性那样,标签里的属性优先级最高</li></ul></li><li>Logger 单独配置一些类,level 没有的话,就使用全局级别,就像<code>CSS</code>属性那样,标签里的属性优先级最高</li></ul></li></ul></li></ul><p>过滤器的具体使用方法</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=line><span class=cl><span class=nt>&lt;Filters&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=c>&lt;!--过滤掉info及更高级别日志--&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;ThresholdFilter</span> <span class=na>level=</span><span class=s>&#34;info&#34;</span> <span class=na>onMatch=</span><span class=s>&#34;DENY&#34;</span> <span class=na>onMismatch=</span><span class=s>&#34;NEUTRAL&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/Filters&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><p><code>level</code>指定日志等级的阈值。</p><p><code>onMatch</code> 定义当日志事件等级等于或高于 <code>level</code> 属性指定的等级时的行为。</p><ul><li><code>ACCEPT</code>：接受日志事件，让它通过过滤器。</li><li><code>DENY</code>：拒绝日志事件，不让它通过过滤器。</li><li><code>NEUTRAL</code>：对日志事件不做决定，继续应用其他的过滤规则。</li></ul><p><code>onMismatch</code> 定义当日志事件等级低于 <code>level</code> 属性指定的等级时的行为。</p><ul><li><code>ACCEPT</code>：接受日志事件，让它通过过滤器。</li><li><code>DENY</code>：拒绝日志事件，不让它通过过滤器。</li><li><code>NEUTRAL</code>：对日志事件不做决定，继续应用其他的过滤规则。</li></ul><pre tabindex=0><code>if 日志的级别 &gt;= level配置的级别
+	ACCEPT  接受日志
+	DENY  拒绝日志
+	NEUTRAL 对日志事件不做决定，继续应用其他的过滤规则
+
+if 日志的级别 &lt; level配置的级别
+	ACCEPT  接受日志
+	DENY  拒绝日志
+	NEUTRAL 对日志事件不做决定，继续应用其他的过滤规则
+</code></pre><blockquote><p>还是没有搞清楚 onMismatch=&ldquo;NEUTRAL&rdquo; 的作用是怎样的</p><p>使用ChatGPT提供的demo,没有验证</p><p>info级别 记录到info.log
+error级别 记录到error.log
+info级别和error级别 记录到dev.log</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=line><span class=cl><span class=nt>&lt;Configuration&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;Appenders&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!-- Info 级别日志的 Appender --&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;File</span> <span class=na>name=</span><span class=s>&#34;InfoAppender&#34;</span> <span class=na>fileName=</span><span class=s>&#34;logs/info.log&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;ThresholdFilter</span> <span class=na>level=</span><span class=s>&#34;INFO&#34;</span> <span class=na>onMatch=</span><span class=s>&#34;ACCEPT&#34;</span> <span class=na>onMismatch=</span><span class=s>&#34;DENY&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;PatternLayout</span> <span class=na>pattern=</span><span class=s>&#34;%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/File&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!-- Error 级别日志的 Appender --&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;File</span> <span class=na>name=</span><span class=s>&#34;ErrorAppender&#34;</span> <span class=na>fileName=</span><span class=s>&#34;logs/error.log&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;ThresholdFilter</span> <span class=na>level=</span><span class=s>&#34;ERROR&#34;</span> <span class=na>onMatch=</span><span class=s>&#34;ACCEPT&#34;</span> <span class=na>onMismatch=</span><span class=s>&#34;DENY&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;PatternLayout</span> <span class=na>pattern=</span><span class=s>&#34;%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/File&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=c>&lt;!-- 同时记录 Info 和 Error 级别日志的 Appender --&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;File</span> <span class=na>name=</span><span class=s>&#34;DevAppender&#34;</span> <span class=na>fileName=</span><span class=s>&#34;logs/dev.log&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;Filters&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;ThresholdFilter</span> <span class=na>level=</span><span class=s>&#34;INFO&#34;</span> <span class=na>onMatch=</span><span class=s>&#34;ACCEPT&#34;</span> <span class=na>onMismatch=</span><span class=s>&#34;DENY&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>                <span class=nt>&lt;ThresholdFilter</span> <span class=na>level=</span><span class=s>&#34;ERROR&#34;</span> <span class=na>onMatch=</span><span class=s>&#34;ACCEPT&#34;</span> <span class=na>onMismatch=</span><span class=s>&#34;NEUTRAL&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;/Filters&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;PatternLayout</span> <span class=na>pattern=</span><span class=s>&#34;%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/File&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/Appenders&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;Loggers&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;Root</span> <span class=na>level=</span><span class=s>&#34;DEBUG&#34;</span><span class=nt>&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;AppenderRef</span> <span class=na>ref=</span><span class=s>&#34;InfoAppender&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;AppenderRef</span> <span class=na>ref=</span><span class=s>&#34;ErrorAppender&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>            <span class=nt>&lt;AppenderRef</span> <span class=na>ref=</span><span class=s>&#34;DevAppender&#34;</span><span class=nt>/&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nt>&lt;/Root&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;/Loggers&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/Configuration&gt;</span>
+</span></span></code></pre></td></tr></table></div></div></blockquote><h2 id=只是引入web框架>只是引入web框架<a href=#只是引入web框架 class=hanchor arialabel=Anchor>#</a></h2><p>只是引入web框架</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=line><span class=cl><span class=nt>&lt;dependency&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;groupId&gt;</span>org.springframework.boot<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;artifactId&gt;</span>spring-boot-starter-web<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/dependency&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=nd>@GetMapping</span><span class=p>(</span><span class=s>&#34;/test&#34;</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=n>String</span><span class=w> </span><span class=nf>test</span><span class=p>(){</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>// 格式化当前日期时间</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>String</span><span class=w> </span><span class=n>formattedDateTime</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>LocalDateTime</span><span class=p>.</span><span class=na>now</span><span class=p>().</span><span class=na>format</span><span class=p>(</span><span class=n>DateTimeFormatter</span><span class=p>.</span><span class=na>ofPattern</span><span class=p>(</span><span class=s>&#34;yyyy-MM-dd HH:mm:ss&#34;</span><span class=p>));</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>log</span><span class=p>.</span><span class=na>debug</span><span class=p>(</span><span class=s>&#34;当前日期时间：{}&#34;</span><span class=p>,</span><span class=w> </span><span class=n>formattedDateTime</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>log</span><span class=p>.</span><span class=na>info</span><span class=p>(</span><span class=s>&#34;当前日期时间：{}&#34;</span><span class=p>,</span><span class=w> </span><span class=n>formattedDateTime</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>log</span><span class=p>.</span><span class=na>error</span><span class=p>(</span><span class=s>&#34;当前日期时间：{}&#34;</span><span class=p>,</span><span class=w> </span><span class=n>formattedDateTime</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>log</span><span class=p>.</span><span class=na>warn</span><span class=p>(</span><span class=s>&#34;当前日期时间：{}&#34;</span><span class=p>,</span><span class=w> </span><span class=n>formattedDateTime</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>log</span><span class=p>.</span><span class=na>trace</span><span class=p>(</span><span class=s>&#34;当前日期时间：{}&#34;</span><span class=p>,</span><span class=w> </span><span class=n>formattedDateTime</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>return</span><span class=w> </span><span class=n>formattedDateTime</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl><span class=c1># 控制台打印</span>
+</span></span><span class=line><span class=cl>INFO <span class=m>64710</span> --- <span class=o>[</span>nio-8080-exec-1<span class=o>]</span> c.e.s.controller.IndexController         : 当前日期时间：2024-03-03 21:37:40
+</span></span><span class=line><span class=cl>ERROR <span class=m>64710</span> --- <span class=o>[</span>nio-8080-exec-1<span class=o>]</span> c.e.s.controller.IndexController         : 当前日期时间：2024-03-03 21:37:40
+</span></span><span class=line><span class=cl>WARN <span class=m>64710</span> --- <span class=o>[</span>nio-8080-exec-1<span class=o>]</span> c.e.s.controller.IndexController         : 当前日期时间：2024-03-03 21:37:40
+</span></span><span class=line><span class=cl><span class=c1># 为什么控制台没有打印 trace和debug日志</span>
+</span></span></code></pre></td></tr></table></div></div></div></div></article></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>
+<span>:: <a href=https://github.com/panr/hugo-theme-terminal target=_blank>Theme</a> made by <a href=https://github.com/panr target=_blank>panr</a></span></div></div></footer><script type=text/javascript src=/bundle.min.js></script></div></body></html>

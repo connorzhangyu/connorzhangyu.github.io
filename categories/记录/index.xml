@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>记录 on Hello World!</title><link>https://tosa.team/categories/%E8%AE%B0%E5%BD%95/</link><description>Recent content in 记录 on Hello World!</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Fri, 15 Aug 2025 14:51:48 +0700</lastBuildDate><atom:link href="https://tosa.team/categories/%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml"/><item><title>好用的软件</title><link>https://tosa.team/posts/record/%E5%A5%BD%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6/</link><pubDate>Fri, 23 May 2025 17:59:24 +0000</pubDate><guid>https://tosa.team/posts/record/%E5%A5%BD%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6/</guid><description>&lt;h1 id="图片">图片&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>记录 on Hello World!</title><link>https://connorzhangyu.com/categories/%E8%AE%B0%E5%BD%95/</link><description>Recent content in 记录 on Hello World!</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Fri, 15 Aug 2025 14:51:48 +0700</lastBuildDate><atom:link href="https://connorzhangyu.com/categories/%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml"/><item><title>好用的软件</title><link>https://connorzhangyu.com/%E5%A5%BD%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6/</link><pubDate>Fri, 23 May 2025 17:59:24 +0000</pubDate><guid>https://connorzhangyu.com/%E5%A5%BD%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6/</guid><description>&lt;h1 id="图片">图片&lt;/h1>
 &lt;p>截图软件
 &lt;a href="https://www.snipaste.com/">Snipaste&lt;/a>&lt;/p>
 &lt;p>图片上传到图床
@@ -6,7 +6,7 @@
 &lt;p>录屏软件
 &lt;a href="https://screenity.io/">Screenity&lt;/a>&lt;/p>
 &lt;h1 id="文件">文件&lt;/h1>
-&lt;p>&lt;a href="https://localsend.org/">LocalSend&lt;/a>&lt;/p></description></item><item><title>Mac Apple芯片安装Win11</title><link>https://tosa.team/posts/record/mac-apple%E8%8A%AF%E7%89%87%E5%AE%89%E8%A3%85win11/</link><pubDate>Tue, 06 May 2025 15:09:33 +0000</pubDate><guid>https://tosa.team/posts/record/mac-apple%E8%8A%AF%E7%89%87%E5%AE%89%E8%A3%85win11/</guid><description>&lt;h1 id="mac-apple芯片安装win11">Mac Apple芯片安装Win11&lt;/h1>
+&lt;p>&lt;a href="https://localsend.org/">LocalSend&lt;/a>&lt;/p></description></item><item><title>Mac Apple芯片安装Win11</title><link>https://connorzhangyu.com/mac-apple%E8%8A%AF%E7%89%87%E5%AE%89%E8%A3%85win11/</link><pubDate>Tue, 06 May 2025 15:09:33 +0000</pubDate><guid>https://connorzhangyu.com/mac-apple%E8%8A%AF%E7%89%87%E5%AE%89%E8%A3%85win11/</guid><description>&lt;h1 id="mac-apple芯片安装win11">Mac Apple芯片安装Win11&lt;/h1>
 &lt;blockquote>
 &lt;p>&lt;a href="https://blog.csdn.net/weixin_52799373/article/details/129658881">M1/M2 Pro VMware Fusion虚拟机安装Win11教程(超详细)_m1装win11_七维大脑的博客-CSDN博客&lt;/a>&lt;/p>
 &lt;p>&lt;a href="https://blog.csdn.net/m0_72489515/article/details/128036581">M用户使用VM虚拟机安装win11连不上网，怎么解决_mac_xwz的博客-CSDN博客&lt;/a>&lt;/p>&lt;/blockquote>
@@ -43,7 +43,7 @@
 &lt;p>1.vmare配置
 &lt;img src="https://image.runtimes.cc/202404051348330.png" alt="">&lt;/p>
 &lt;p>2.电脑配置,虚拟机配置&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051349925.png" alt="">&lt;/p></description></item><item><title>Flarum</title><link>https://tosa.team/posts/record/flarum/</link><pubDate>Sun, 04 May 2025 18:52:43 +0000</pubDate><guid>https://tosa.team/posts/record/flarum/</guid><description>&lt;h1 id="flarum-部署">Flarum 部署&lt;/h1>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051349925.png" alt="">&lt;/p></description></item><item><title>Flarum</title><link>https://connorzhangyu.com/flarum/</link><pubDate>Sun, 04 May 2025 18:52:43 +0000</pubDate><guid>https://connorzhangyu.com/flarum/</guid><description>&lt;h1 id="flarum-部署">Flarum 部署&lt;/h1>
 &lt;ul>
 &lt;li>
 &lt;p>Ubuntu 24.04&lt;/p>
@@ -280,7 +280,7 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="-修改文件全新">✅ 修改文件全新&lt;/h2>
-&lt;p>到这一步,使用IP访问,会404,执行以下命令授权&lt;/p></description></item><item><title>nexus3</title><link>https://tosa.team/posts/record/nexus-3/</link><pubDate>Tue, 12 Mar 2024 18:52:43 +0000</pubDate><guid>https://tosa.team/posts/record/nexus-3/</guid><description>&lt;h1 id="docker仓库">Docker仓库&lt;/h1>
+&lt;p>到这一步,使用IP访问,会404,执行以下命令授权&lt;/p></description></item><item><title>nexus3</title><link>https://connorzhangyu.com/nexus3/</link><pubDate>Tue, 12 Mar 2024 18:52:43 +0000</pubDate><guid>https://connorzhangyu.com/nexus3/</guid><description>&lt;h1 id="docker仓库">Docker仓库&lt;/h1>
 &lt;table>
  &lt;thead>
  &lt;tr>
@@ -400,7 +400,7 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">docker push 54.255.206.44:9082/my-docker-host/nginx:latest
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>SpringBoot配置Gmail</title><link>https://tosa.team/posts/record/springboot%E9%85%8D%E7%BD%AEgmail/</link><pubDate>Sat, 02 Mar 2024 18:52:43 +0000</pubDate><guid>https://tosa.team/posts/record/springboot%E9%85%8D%E7%BD%AEgmail/</guid><description>&lt;p>&lt;img src="https://image.runtimes.cc/202404051400542.png" alt="image-20240302190257438">&lt;/p>
+&lt;/div></description></item><item><title>SpringBoot配置Gmail</title><link>https://connorzhangyu.com/springboot%E9%85%8D%E7%BD%AEgmail/</link><pubDate>Sat, 02 Mar 2024 18:52:43 +0000</pubDate><guid>https://connorzhangyu.com/springboot%E9%85%8D%E7%BD%AEgmail/</guid><description>&lt;p>&lt;img src="https://image.runtimes.cc/202404051400542.png" alt="image-20240302190257438">&lt;/p>
 &lt;p>申请应用程序验证码&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051400643.png" alt="image-20240302184916544">&lt;/p>
 &lt;p>配置二步验证&lt;/p>
@@ -818,7 +818,7 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="n">redisTemplate&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">opsForValue&lt;/span>&lt;span class="p">().&lt;/span>&lt;span class="na">set&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">key&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">随机数字验证码&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">EXPIRATION_TIME_IN_MINUTES&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">TimeUnit&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">MINUTES&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>面试记录</title><link>https://tosa.team/posts/record/%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/</link><pubDate>Tue, 01 Aug 2023 20:54:00 +0000</pubDate><guid>https://tosa.team/posts/record/%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/</guid><description>&lt;p>{% timeline 至今 ,color %}&lt;/p>
+&lt;/div></description></item><item><title>面试记录</title><link>https://connorzhangyu.com/%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/</link><pubDate>Tue, 01 Aug 2023 20:54:00 +0000</pubDate><guid>https://connorzhangyu.com/%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/</guid><description>&lt;p>{% timeline 至今 ,color %}&lt;/p>
 &lt;!-- timeline 2023-08-01 yb -->
 &lt;ol>
 &lt;li>mysql 主从复制异常怎么办&lt;/li>
@@ -834,7 +834,7 @@
 &lt;li>Spring事务传播&lt;/li>
 &lt;/ol>
 &lt;!-- endtimeline -->
-&lt;p>{% endtimeline %}&lt;/p></description></item><item><title>Waline部署</title><link>https://tosa.team/posts/record/waline/</link><pubDate>Tue, 25 Jul 2023 00:05:46 +0000</pubDate><guid>https://tosa.team/posts/record/waline/</guid><description>&lt;p>查看Waline文档,并点击&lt;code>Deploy&lt;/code>,文档上有大概步骤,也可以参考,要使用免费的数据库,我就选择&lt;code>MongoDB&lt;/code>,可以免费申请&lt;/p>
+&lt;p>{% endtimeline %}&lt;/p></description></item><item><title>Waline部署</title><link>https://connorzhangyu.com/waline%E9%83%A8%E7%BD%B2/</link><pubDate>Tue, 25 Jul 2023 00:05:46 +0000</pubDate><guid>https://connorzhangyu.com/waline%E9%83%A8%E7%BD%B2/</guid><description>&lt;p>查看Waline文档,并点击&lt;code>Deploy&lt;/code>,文档上有大概步骤,也可以参考,要使用免费的数据库,我就选择&lt;code>MongoDB&lt;/code>,可以免费申请&lt;/p>
 &lt;p>&lt;a href="https://waline.js.org/guide/deploy/vercel.html">Waline-Vercel部署&lt;/a>&lt;/p>
 &lt;p>部署Waline到Vercel
 &lt;img src="https://image.runtimes.cc/202404051403234.png" alt="image-20230724225259528">&lt;/p>
@@ -872,7 +872,7 @@
 &lt;p>环境变量配置好之后,重新部署下就行了&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051405198.png" alt="image-20230725001724373">&lt;/p>
 &lt;p>评论地址是:&lt;code>vercel分配的域名&lt;/code>&lt;/p>
-&lt;p>后台系统是:&lt;code>vercel分配的域名/ui&lt;/code>&lt;/p></description></item><item><title>Waline部署</title><link>https://tosa.team/posts/waline/</link><pubDate>Tue, 25 Jul 2023 00:05:46 +0000</pubDate><guid>https://tosa.team/posts/waline/</guid><description>&lt;p>查看Waline文档,并点击&lt;code>Deploy&lt;/code>,文档上有大概步骤,也可以参考,要使用免费的数据库,我就选择&lt;code>MongoDB&lt;/code>,可以免费申请&lt;/p>
+&lt;p>后台系统是:&lt;code>vercel分配的域名/ui&lt;/code>&lt;/p></description></item><item><title>Waline部署</title><link>https://connorzhangyu.com/waline%E9%83%A8%E7%BD%B2/</link><pubDate>Tue, 25 Jul 2023 00:05:46 +0000</pubDate><guid>https://connorzhangyu.com/waline%E9%83%A8%E7%BD%B2/</guid><description>&lt;p>查看Waline文档,并点击&lt;code>Deploy&lt;/code>,文档上有大概步骤,也可以参考,要使用免费的数据库,我就选择&lt;code>MongoDB&lt;/code>,可以免费申请&lt;/p>
 &lt;p>&lt;a href="https://waline.js.org/guide/deploy/vercel.html">Waline-Vercel部署&lt;/a>&lt;/p>
 &lt;p>部署Waline到Vercel
 &lt;img src="https://image.runtimes.cc/202404051403234.png" alt="image-20230724225259528">&lt;/p>

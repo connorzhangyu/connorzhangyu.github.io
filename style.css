@@ -1,41 +1,67 @@
-/* ===========================
-   首页复古：字体与微调
-   只作用于首页容器 .home-tty
-   =========================== */
+/* ========== Zpix 最像素：中文像素字体（常用汉字） ========== */
+@font-face {
+    font-family: "ZpixCN";
+    src:
+            local("Zpix"), local("ZpixCN"),
+            url("https://cdn.jsdelivr.net/gh/SolidZORO/zpix-pixel-font@latest/dist/zpix.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+4E00-9FFF;
+}
+
+/* ========== GNU Unifont：中文兜底（很大，设置为 optional 避免卡首屏） ========== */
+@font-face {
+    font-family: "UnifontCN";
+    src: url("https://unpkg.com/@unifont/unifont@latest/font-builds/unifont.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: optional;
+    unicode-range: U+4E00-9FFF, U+3400-4DBF, U+20000-2A6DF;
+}
+
+/* ========== 首页整体复古容器（中文 Zpix/Unifont，英文/数字 VT323） ========== */
 .home-tty {
-    font-family: 'VT323', monospace;
-    font-size: 18px;           /* VT323 字体略大更像 CRT，可调 17/18 */
+    font-family:
+            "ZpixCN","UnifontCN",           /* 中文（按 unicode-range 命中） */
+            "VT323",                        /* 英文/数字终端味（需在 head 里引入） */
+            monospace;
+    font-size: 18px;                  /* VT323 略大更像 CRT */
     line-height: 1.45;
     letter-spacing: 0.01em;
 }
 
-/* 首页里：标题、导航、标签、元信息全部复古 */
+/* 标题/导航/标签等复古化 */
 .home-tty h1, .home-tty h2, .home-tty h3, .home-tty h4, .home-tty h5, .home-tty h6,
 .home-tty nav, .home-tty .menu, .home-tty .site-title, .home-tty .logo,
 .home-tty .tags, .home-tty .tag, .home-tty .post-meta, .home-tty .post-title {
-    font-family: 'VT323', monospace !important;
+    font-family: "ZpixCN","UnifontCN","VT323", monospace !important;
 }
 
-/* 首页文章摘要仍用默认正文字体，保证可读性 */
+/* 摘要：保持默认正文字体，增强可读性 */
 .home-tty .summary,
 .home-tty .excerpt,
 .home-tty .post-excerpt,
 .home-tty .post-preview,
-.home-tty .description {
+.home-tty .description,
+.home-tty .summary p,
+.home-tty .excerpt p {
     font-family: var(--font-body, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif) !important;
+    "PingFang SC","Microsoft YaHei","Helvetica Neue", Arial, sans-serif) !important;
     line-height: 1.6;
     font-size: 1rem;
 }
 
-/* 可选：给首页加一点“CRT 微光”效果（低强度，避免影响可读性） */
+/* 微弱 CRT 味道（可注释） */
 .home-tty, .home-tty pre, .home-tty code, .home-tty .post-title, .home-tty nav {
     text-shadow: 0 0 1px rgba(0,0,0,.35);
 }
 
-/* ================
-   小屏适配
-   ================ */
+/* 语言切换器不换行（你之前的需求） */
+.language-switcher, .lang-switcher, .language-selector { white-space: nowrap; padding: 0 .4em; }
+.menu .language-switcher, .menu .lang-switcher, .menu .language-selector { display: inline-flex; align-items: center; }
+
+/* 小屏微调 */
 @media (max-width: 768px) {
     .home-tty { font-size: 17px; }
 }
