@@ -2,115 +2,210 @@
    本地字体声明（全部走 /static/fonts/）
    ========================= */
 
-/* 中文像素字体 */
+/* 中文像素字体（含 CJK 标点，避免标点“跳字”） */
 @font-face {
     font-family: "PixelZH";
     src: url("/fonts/fusion-pixel-12px-monospaced-zh_hans.ttf.woff2") format("woff2");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
-    unicode-range: U+4E00-9FFF; /* 常用汉字范围 */
+    unicode-range: U+3000-303F, U+4E00-9FFF; /* CJK 标点 + 常用汉字 */
 }
 
-/* 英数字像素字体 */
+/* 英数字像素字体（Latin/数字/常见标点） */
 @font-face {
     font-family: "PixelLatin";
     src: url("/fonts/fusion-pixel-12px-monospaced-latin.ttf.woff2") format("woff2");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
-    unicode-range: U+0020-007F; /* Basic Latin: 英文 + 数字 + 基础符号 */
+    unicode-range: U+0000-00FF, U+0100-017F, U+0180-024F, U+2000-206F;
 }
 
 /* =========================
-   全站 UI 像素风，正文还原默认
+   全局像素风（除文章正文外）
    ========================= */
-
-/* 默认 UI 像素风（中文→PixelZH；英文→PixelLatin） */
-body {
-    font-family:
-            "PixelZH",
-            "PixelLatin",
-            monospace;
+html, body {
+    font-family: "PixelZH","PixelLatin",monospace;
     font-size: 18px;
     line-height: 1.45;
     letter-spacing: 0.01em;
+    color: #d1d5db; /* 与终端前景一致 */
 }
 
-/* —— 仅正文（文章页面 & 列表摘要）用系统/主题默认字体 —— */
+/* 主题常见 UI 容器强制像素风（防止主题样式覆盖） */
+.header, .site-header,
+.logo, .logo__link, .site-title,
+.menu, .menu__inner, .menu__inner--desktop a, .menu__inner--mobile a,
+nav, .nav, .breadcrumbs,
+.footer, footer.footer,
+.pagination, .pagination__buttons, .pager,
+.language-switcher, .lang-switcher, .language-selector {
+    font-family: "PixelZH","PixelLatin",monospace !important;
+    text-shadow: 0 0 1px rgba(0,0,0,.35); /* 轻微 CRT 味道 */
+}
+
+/* 顶部语言切换与菜单不换行 */
+.language-switcher, .lang-switcher, .language-selector { white-space: nowrap; padding: 0 .4em; }
+.menu__inner--desktop a, .menu__inner--mobile a { white-space: nowrap; }
+
+/* 链接下划线优化（全站） */
+a { text-decoration-thickness: .08em; text-underline-offset: .18em; text-decoration-skip-ink: auto; }
+
+/* =========================
+   “仅文章正文”恢复为可读字体
+   兼容多种可能的 body/文章类名（terminal 主题常见写法）
+   ========================= */
+
+body.kind-post .post-content,
+body.type-post .post-content,
+body.section-posts .post-content,
+.single.post .post-content,
+article.post .post-content,
+article.post .content,
 .post-content,
-.post-content *,
-.list .post .content .summary,
-.list .post .content .summary * {
+.post-content * {
     font-family: var(--font-body, -apple-system, BlinkMacSystemFont, "Segoe UI",
     "PingFang SC","Microsoft YaHei","Helvetica Neue", Arial, sans-serif) !important;
     line-height: 1.7;
     font-size: 1rem;
+    text-shadow: none; /* 正文去掉 CRT 阴影 */
 }
 
-/* 首页命令行块 */
-.home-tty pre,
-.home-tty code {
-    font-family: "PixelZH", "PixelLatin", monospace !important;
-    font-size: 18px;
-    line-height: 1.45;
-    letter-spacing: 0.01em;
+/* 正文中的代码块：使用常规等宽，保证对齐与可读性 */
+body.kind-post .post-content code,
+body.kind-post .post-content pre,
+body.kind-post .post-content kbd,
+body.kind-post .post-content samp,
+body.type-post .post-content code,
+body.type-post .post-content pre,
+body.type-post .post-content kbd,
+body.type-post .post-content samp,
+.post-content code, .post-content pre, .post-content kbd, .post-content samp {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace !important;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* 列表页中的摘要/描述（通常也属于文章正文内容），同样用可读字体 */
+.list .post .content .summary,
+.list .post .content .summary *,
+.list .post .content .description,
+.list .post .content .description * {
+    font-family: var(--font-body, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "PingFang SC","Microsoft YaHei","Helvetica Neue", Arial, sans-serif) !important;
+    line-height: 1.6;
+    font-size: 1rem;
 }
 
 /* =========================
-   主题 UI 区域加固（防止主题覆盖）
+   首页命令行风格区域（像素风）
    ========================= */
-.site-header,
-.logo,
-.site-title,
-.menu, .menu__inner, .menu__inner--desktop a, .menu__inner--mobile a,
-nav, .breadcrumbs,
-.list .post .content .title,
-.post-title, .post-meta,
-.pagination, .pagination__buttons, .pager,
-footer.footer,
-.lang-switcher, .language-switcher, .language-selector,
-.header, .footer {
-    font-family:
-            "PixelZH",
-            "PixelLatin",
-            monospace !important;
+:root{
+    --tty-fg: #d1d5db;      /* 文字 */
+    --tty-dim: #9ca3af;     /* 次要文字 */
+    --tty-accent: #34d399;  /* 绿色光标/高亮 */
+    --tty-link: #93c5fd;    /* 链接 */
+    --tty-row-hl: rgba(52,211,153,.08); /* 行悬停 */
 }
 
-/* 顶部语言选择避免换行 */
-.language-switcher, .lang-switcher, .language-selector {
-    white-space: nowrap; padding: 0 .4em;
+.home-tty { color: var(--tty-fg); }
+.tty-block { margin: 1.2rem 0; }
+.tty-line {
+    margin: 0; /* <pre> 默认 margin 很大，清掉 */
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: "PixelZH","PixelLatin",monospace !important;
 }
-.menu .language-switcher, .menu .lang-switcher, .menu .language-selector {
-    display: inline-flex; align-items: center;
+.tty-host { color: #60a5fa; }  /* 蓝：主机名 */
+.tty-path { color: #fbbf24; }  /* 黄：路径 */
+.tty-cmd  { color: var(--tty-fg); }
+.tty-dim  { color: var(--tty-dim); }
+
+/* 光标：默认不闪烁；需要闪烁的元素额外加 .tty-caret--blink */
+.tty-caret{
+    display:inline-block; width:.6ch; height:1em; vertical-align:-0.15em;
+    margin-left:.2ch; background:var(--tty-accent); opacity:.85;
+}
+.tty-caret--blink{ animation: blink 1.1s steps(1,end) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+/* 命令输出对齐：与 “$ ” 后首字符对齐 */
+.tty-output {
+    margin: .15rem 0 .35rem 0;
+    padding-left: 1.5ch;
+    color: var(--tty-fg);
+    font-family: "PixelZH","PixelLatin",monospace !important;
+    white-space: pre-wrap;
 }
 
-/* 链接下划线优化 */
-a {
-    text-decoration-thickness: 0.08em;
-    text-underline-offset: 0.18em;
-    text-decoration-skip-ink: auto;
+/* 信息行（MOTD） */
+.tty-motd {
+    margin: .2rem 0 0 0;
+    padding-left: 1.5ch;
+    color: #10b981;
+    font-family: "PixelZH","PixelLatin",monospace !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-/* 列表 & 文章标题下划线样式 */
-.post-title a,
-.list .post .content .title a {
-    text-decoration: none;
-    border-bottom: 1px dashed currentColor;
-    padding-bottom: 0.05em;
+/* 表格化列表：日期 / 标题 / 标签(+n) */
+.tty-table{ display:block; }
+.tty-row{
+    display:grid;
+    grid-template-columns: 10ch 1fr auto; /* date | title | tags(+n) */
+    gap: 1ch;
+    align-items:center;
+    padding:.18rem .28rem;
+    text-decoration:none;
+    color: var(--tty-fg);
+    border-radius:4px;
+    font-family: "PixelZH","PixelLatin",monospace !important;
 }
-.post-title a:hover,
-.list .post .content .title a:hover {
-    border-bottom-style: solid;
+.tty-row:hover{ background: var(--tty-row-hl); }
+.tty-row.is-featured{ background: rgba(147,197,253,.06); }
+.tty-row.is-featured:hover{ background: rgba(147,197,253,.12); }
+
+.col-date{ color: var(--tty-dim); white-space:nowrap; }
+.col-title{
+    overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+    min-width: 0;  /* 让 ellipsis 生效 */
+    border-bottom: 1px dashed transparent; /* 避免穿字 */
+}
+.tty-row:hover .col-title{ border-bottom-color: currentColor; }
+
+.col-tags{ justify-self:end; white-space:nowrap; }
+.tty-tag{
+    display:inline-block;
+    padding: 0 .35em;
+    margin-left: .25em;
+    border: 1px solid var(--tty-dim);
+    border-radius: 3px;
+    font-size: .9em;
+    line-height: 1.6;
+    color: var(--tty-dim);
+}
+.tty-tag.more{ color:#a7f3d0; border-color:#a7f3d0; }
+
+/* 空状态 */
+.tty-empty{
+    padding-left: 1.5ch; color: var(--tty-dim);
+    font-family: "PixelZH","PixelLatin",monospace !important;
 }
 
-/* CRT 效果（可删） */
-.site-header, nav, .menu, .post-title, .list .post .content .title,
-.pagination, footer.footer {
-    text-shadow: 0 0 1px rgba(0,0,0,.35);
+/* 移动端微调 */
+@media (max-width: 720px){
+    .tty-row{ grid-template-columns: 1fr auto; }
+    .col-date{ display:none; }
 }
 
-/* 小屏微调 */
-@media (max-width: 768px) {
-    body { font-size: 17px; }
+/* ========== 仅首页命令行块的 <pre> 风格细节（像素风读起来更顺眼） ========== */
+.home-tty pre {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.45;
 }
