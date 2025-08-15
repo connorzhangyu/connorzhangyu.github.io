@@ -1,7 +1,7 @@
 <!doctype html><html lang=zh><head><title>ElasticSearch :: Hello World!</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content='手动安装7.x 手动安装单机ElasticSearch7.x # 下载tar包,(6.6.2) wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.6.2.tar.gz # 解压缩之后修改配置文件 vi /elasticsearch-7.10.1/config/elasticsearch.yml network.host: 0.0.0.0 #设置成外网也可以访问 # 追加内容,修改系统环境该变量,修改完需要重启才能生效 vi /etc/sysctl.conf vm.max_map_count=262144 # 加载参数 anthony@base:/usr/local/elasticsearch-6.6.2$ sudo sysctl -p vm.max_map_count = 262144 # 允许打开的最大文件描述,加入 vim /etc/security/limits.conf * soft nofile 65536 * hard nofile 65536 * soft nproc 4096 或者(65536) * hard nproc 4096 或者(65536) # 修改JVM分配大小 这两个值要一致 vi config/jvm.options -Xms4g -Xmx4g # 启动 bin/elasticsearch bin/elasticsearch -d #后台启动 安装分词器下载解压缩的哦elasticsearch的plugin目录下IK分词器https://github.com/medcl/elasticsearch-analysis-ik/releases/tag/v6.6.2 POST /_analyze { "analyzer": "ik_smart", "text": " 程序员 } 拼音分词器https://github.com/medcl/elasticsearch-analysis-pinyin/releases/tag/v6.6.2
-'><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://tosa.team/posts/elasticsearch/><link rel=stylesheet href=https://tosa.team/styles.css><link rel="shortcut icon" href=https://tosa.team/img/theme-colors/orange.png><link rel=apple-touch-icon href=https://tosa.team/img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta name=twitter:site content><meta name=twitter:creator content="Anthony"><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="og:title" content="ElasticSearch"><meta property="og:description" content='手动安装7.x 手动安装单机ElasticSearch7.x # 下载tar包,(6.6.2) wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.6.2.tar.gz # 解压缩之后修改配置文件 vi /elasticsearch-7.10.1/config/elasticsearch.yml network.host: 0.0.0.0 #设置成外网也可以访问 # 追加内容,修改系统环境该变量,修改完需要重启才能生效 vi /etc/sysctl.conf vm.max_map_count=262144 # 加载参数 anthony@base:/usr/local/elasticsearch-6.6.2$ sudo sysctl -p vm.max_map_count = 262144 # 允许打开的最大文件描述,加入 vim /etc/security/limits.conf * soft nofile 65536 * hard nofile 65536 * soft nproc 4096 或者(65536) * hard nproc 4096 或者(65536) # 修改JVM分配大小 这两个值要一致 vi config/jvm.options -Xms4g -Xmx4g # 启动 bin/elasticsearch bin/elasticsearch -d #后台启动 安装分词器下载解压缩的哦elasticsearch的plugin目录下IK分词器https://github.com/medcl/elasticsearch-analysis-ik/releases/tag/v6.6.2 POST /_analyze { "analyzer": "ik_smart", "text": " 程序员 } 拼音分词器https://github.com/medcl/elasticsearch-analysis-pinyin/releases/tag/v6.6.2
-'><meta property="og:url" content="https://tosa.team/posts/elasticsearch/"><meta property="og:site_name" content="Hello World!"><meta property="og:image" content="https://image.runtimes.cc/202404051527399.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><meta property="article:section" content="Java"><meta property="article:published_time" content="2022-11-19 18:25:00 +0000 UTC"></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/>首页</a></li><li><a href=/posts/>文章</a></li><li><a href=/categories/>分类</a></li><li><a href=/tags/>标签</a></li><li><a href=/about/>关于我</a></li><li><a href=/docs/>团队文档中心</a></li><hr><li><a href=https://tosa.team/>中文</a></li><li><a href=https://tosa.team/en/>English</a></li><li><a href=https://tosa.team/th/>ไทย</a></li></ul></li></ul><ul class="menu menu--desktop menu--language-selector"><li class=menu__trigger>中文&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=https://tosa.team/>中文</a></li><li><a href=https://tosa.team/en/>English</a></li><li><a href=https://tosa.team/th/>ไทย</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/>首页</a></li><li><a href=/posts/>文章</a></li><li><a href=/categories/>分类</a></li><li><a href=/tags/>标签</a></li><li><a href=/about/>关于我</a></li><li><a href=/docs/>团队文档中心</a></li></ul></nav></header><div class=content><article class=post><h1 class=post-title><a href=https://tosa.team/posts/elasticsearch/>ElasticSearch</a></h1><div class=post-meta><time class=post-date>2022-11-19[Updated::2022-11-19]</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://tosa.team/tags/mac/>Mac</a>&nbsp;
-</span><img src=https://image.runtimes.cc/202404051527399.jpg class=post-cover alt=" " title="Cover Image"><div class=post-content><div><h1 id=手动安装7x>手动安装7.x<a href=#手动安装7x class=hanchor arialabel=Anchor>&#8983;</a></h1><h2 id=手动安装单机elasticsearch7x>手动安装单机ElasticSearch7.x<a href=#手动安装单机elasticsearch7x class=hanchor arialabel=Anchor>&#8983;</a></h2><pre tabindex=0><code># 下载tar包,(6.6.2)
+'><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://tosa.team/posts/elasticsearch/><link rel=stylesheet href=https://tosa.team/css/custom.min.c48d2dcfc3aad8abc3315f33f61b0f9ee763ed50a0938b6ae80c6726450e5b2a.css><link rel=stylesheet href=https://tosa.team/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css><link rel=stylesheet href=https://tosa.team/css/code.min.d529ea4b2fb8d34328d7d31afc5466d5f7bc2f0bc9abdd98b69385335d7baee4.css><link rel=stylesheet href=https://tosa.team/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css><link rel=stylesheet href=https://tosa.team/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css><link rel=stylesheet href=https://tosa.team/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css><link rel=stylesheet href=https://tosa.team/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css><link rel=stylesheet href=https://tosa.team/css/main.min.775ac2af004d44c22a6d000fbd1d9af529642f5cef27399d0280d180af2c2e9b.css><link rel=stylesheet href=https://tosa.team/css/menu.min.310d32205bdedd6f43144e3c3273c9deecd238eba5f9108db5ea96ca0cfbe377.css><link rel=stylesheet href=https://tosa.team/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css><link rel=stylesheet href=https://tosa.team/css/post.min.ad50c7f4d00e7975918f37fc74c6029e1959a40d66fb5b2c6564a8715e985573.css><link rel=stylesheet href=https://tosa.team/css/syntax.min.e9ab635cf918bc84b901eb65c0b2caa74c9544245e3647c1af5c129896ef276e.css><link rel=stylesheet href=https://tosa.team/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css><link rel=stylesheet href=https://tosa.team/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css><link rel=stylesheet href=https://tosa.team/style.css><link rel="shortcut icon" href=https://tosa.team/favicon.png><link rel=apple-touch-icon href=https://tosa.team/apple-touch-icon.png><meta name=twitter:card content="summary"><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="og:title" content="ElasticSearch"><meta property="og:description" content='手动安装7.x 手动安装单机ElasticSearch7.x # 下载tar包,(6.6.2) wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.6.2.tar.gz # 解压缩之后修改配置文件 vi /elasticsearch-7.10.1/config/elasticsearch.yml network.host: 0.0.0.0 #设置成外网也可以访问 # 追加内容,修改系统环境该变量,修改完需要重启才能生效 vi /etc/sysctl.conf vm.max_map_count=262144 # 加载参数 anthony@base:/usr/local/elasticsearch-6.6.2$ sudo sysctl -p vm.max_map_count = 262144 # 允许打开的最大文件描述,加入 vim /etc/security/limits.conf * soft nofile 65536 * hard nofile 65536 * soft nproc 4096 或者(65536) * hard nproc 4096 或者(65536) # 修改JVM分配大小 这两个值要一致 vi config/jvm.options -Xms4g -Xmx4g # 启动 bin/elasticsearch bin/elasticsearch -d #后台启动 安装分词器下载解压缩的哦elasticsearch的plugin目录下IK分词器https://github.com/medcl/elasticsearch-analysis-ik/releases/tag/v6.6.2 POST /_analyze { "analyzer": "ik_smart", "text": " 程序员 } 拼音分词器https://github.com/medcl/elasticsearch-analysis-pinyin/releases/tag/v6.6.2
+'><meta property="og:url" content="https://tosa.team/posts/elasticsearch/"><meta property="og:site_name" content="Hello World!"><meta property="og:image" content="https://image.runtimes.cc/202404051527399.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><meta property="article:section" content="Java"><meta property="article:published_time" content="2022-11-19 18:25:00 +0000 UTC"><link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel=stylesheet><link rel=stylesheet href=/style.css></head><body><div class=container><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/>首页</a></li><li><a href=/featured/>精选</a></li><li><a href=/posts/>文章</a></li><li><a href=/categories/>分类</a></li><li><a href=/tags/>标签</a></li><li><a href=/about/>关于我</a></li><li><a href=/docs/>团队文档中心</a></li><hr><li><a href=https://tosa.team/>中文</a></li><li><a href=https://tosa.team/en/>ENG</a></li><li><a href=https://tosa.team/th/>ไทย</a></li></ul></li></ul><ul class="menu menu--desktop menu--language-selector"><li class=menu__trigger>中文&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=https://tosa.team/>中文</a></li><li><a href=https://tosa.team/en/>ENG</a></li><li><a href=https://tosa.team/th/>ไทย</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/>首页</a></li><li><a href=/featured/>精选</a></li><li><a href=/posts/>文章</a></li><li><a href=/categories/>分类</a></li><li><a href=/tags/>标签</a></li><li><a href=/about/>关于我</a></li><li><a href=/docs/>团队文档中心</a></li></ul></nav></header><div class=content><article class=post><h1 class=post-title><a href=https://tosa.team/posts/elasticsearch/>ElasticSearch</a></h1><div class=post-meta><time class=post-date>2022-11-19&nbsp;[Updated: 2025-08-04]</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://tosa.team/tags/mac/>Mac</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051527399.jpg class=post-cover alt=ElasticSearch title="Cover Image"><div class=post-content><div><h1 id=手动安装7x>手动安装7.x<a href=#手动安装7x class=hanchor arialabel=Anchor>#</a></h1><h2 id=手动安装单机elasticsearch7x>手动安装单机ElasticSearch7.x<a href=#手动安装单机elasticsearch7x class=hanchor arialabel=Anchor>#</a></h2><pre tabindex=0><code># 下载tar包,(6.6.2)
 wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.6.2.tar.gz
 
 # 解压缩之后修改配置文件
@@ -48,7 +48,7 @@ Exception in thread &#34;main&#34; java.nio.file.AccessDeniedException: /root/ho
 	at java.nio.file.spi.FileSystemProvider.newInputStream(FileSystemProvider.java:384)
 	at java.nio.file.Files.newInputStream(Files.java:152)
 	at org.elasticsearch.tools.launchers.JvmOptionsParser.main(JvmOptionsParser.java:58)
-</code></pre><h2 id=手动安装集群elasticsearch7x>手动安装集群ElasticSearch7.x<a href=#手动安装集群elasticsearch7x class=hanchor arialabel=Anchor>&#8983;</a></h2><p>1.修改一台elasticsearch的elasticsearch.yml</p><pre tabindex=0><code>cluster.name: kkb-es
+</code></pre><h2 id=手动安装集群elasticsearch7x>手动安装集群ElasticSearch7.x<a href=#手动安装集群elasticsearch7x class=hanchor arialabel=Anchor>#</a></h2><p>1.修改一台elasticsearch的elasticsearch.yml</p><pre tabindex=0><code>cluster.name: kkb-es
 node.name: node0
 node.master: true
 network.host: 0.0.0.0
@@ -63,7 +63,7 @@ http.cors.allow-origin: &#34;*&#34;
 http.port: 9200
 transport.tcp.port: 9300
 </code></pre><p>3.检查健康状态</p><pre tabindex=0><code>http://localhost:9200/_cat/health?v
-</code></pre><h2 id=手动单机kibana7x安装>手动单机Kibana7.x安装<a href=#手动单机kibana7x安装 class=hanchor arialabel=Anchor>&#8983;</a></h2><pre tabindex=0><code># 下载解压
+</code></pre><h2 id=手动单机kibana7x安装>手动单机Kibana7.x安装<a href=#手动单机kibana7x安装 class=hanchor arialabel=Anchor>#</a></h2><pre tabindex=0><code># 下载解压
 https://artifacts.elastic.co/downloads/kibana/kibana-6.6.2-linux-x86_64.tar.gz
 
 # 修改配置文件
@@ -74,7 +74,7 @@ elasticsearch.url: &#34;http://localhost:9200&#34;
 
 # 启动,后台启动
 ./bin/kibana &amp;
-</code></pre><h2 id=手动单机logstash7x安装>手动单机Logstash7.x安装<a href=#手动单机logstash7x安装 class=hanchor arialabel=Anchor>&#8983;</a></h2><p><code>mysql-connector-java-5.1.48.jar</code>是放在<code>logstash-6.6.2/logstash-core/lib/jars</code>,这样就不需要写相对路径了</p><pre tabindex=0><code>input {
+</code></pre><h2 id=手动单机logstash7x安装>手动单机Logstash7.x安装<a href=#手动单机logstash7x安装 class=hanchor arialabel=Anchor>#</a></h2><p><code>mysql-connector-java-5.1.48.jar</code>是放在<code>logstash-6.6.2/logstash-core/lib/jars</code>,这样就不需要写相对路径了</p><pre tabindex=0><code>input {
     jdbc {
         jdbc_driver_library =&gt; &#34;mysql-connector-java-5.1.48.jar&#34;
         jdbc_driver_class =&gt; &#34;com.mysql.jdbc.Driver&#34;
@@ -97,97 +97,186 @@ output {
     }
 }
 </code></pre><p>启动命令</p><pre tabindex=0><code>./logstash -f ../config/logstash-sample.conf
-</code></pre><h1 id=手动安装8x>手动安装8.x<a href=#手动安装8x class=hanchor arialabel=Anchor>&#8983;</a></h1><aside>📌 8.0 已经自带了jdk</aside><h2 id=二进制包安装es>二进制包安装ES<a href=#二进制包安装es class=hanchor arialabel=Anchor>&#8983;</a></h2><h3 id=安装>安装<a href=#安装 class=hanchor arialabel=Anchor>&#8983;</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 下载包并解压</span>
-</span></span><span style=display:flex><span>wget https://xxxx.tar
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 启动./elasticsearch</span>
-</span></span><span style=display:flex><span>./bin/elasticsearch
-</span></span></code></pre></div><h3 id=运行结果>运行结果<a href=#运行结果 class=hanchor arialabel=Anchor>&#8983;</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>✅ Elasticsearch security features have been automatically configured!
-</span></span><span style=display:flex><span>✅ Authentication is enabled and cluster connections are encrypted.
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>ℹ️  Password <span style=color:#66d9ef>for</span> the elastic user <span style=color:#f92672>(</span>reset with <span style=color:#e6db74>`</span>bin/elasticsearch-reset-password -u elastic<span style=color:#e6db74>`</span><span style=color:#f92672>)</span>:
-</span></span><span style=display:flex><span>  Shb2+OuCKthxFTxD-*jE
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>ℹ️  HTTP CA certificate SHA-256 fingerprint:
-</span></span><span style=display:flex><span>  ceb6add33653a4c8f3493bddde839cdfcf1035a3a50cb01247962495f15ea40f
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>ℹ️  Configure Kibana to use this cluster:
-</span></span><span style=display:flex><span>• Run Kibana and click the configuration link in the terminal when Kibana starts.
-</span></span><span style=display:flex><span>• Copy the following enrollment token and paste it into Kibana in your browser <span style=color:#f92672>(</span>valid <span style=color:#66d9ef>for</span> the next <span style=color:#ae81ff>30</span> minutes<span style=color:#f92672>)</span>:
-</span></span><span style=display:flex><span>  eyJ2ZXIiOiI4LjAuMCIsImFkciI6WyIxMC4wLjIuNDo5MjAwIl0sImZnciI6ImNlYjZhZGQzMzY1M2E0YzhmMzQ5M2JkZGRlODM5Y2RmY2YxMDM1YTNhNTBjYjAxMjQ3OTYyNDk1ZjE1ZWE0MGYiLCJrZXkiOiJXaEV4SDM4QlZXV242cU9KejgxNTprUVliUEY0dlJfaU56MnRFaDlRY0hnIn0<span style=color:#f92672>=</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>ℹ️  Configure other nodes to join this cluster:
-</span></span><span style=display:flex><span>• On this node:
-</span></span><span style=display:flex><span>  ⁃ Create an enrollment token with <span style=color:#e6db74>`</span>bin/elasticsearch-create-enrollment-token -s node<span style=color:#e6db74>`</span>.
-</span></span><span style=display:flex><span>  ⁃ Uncomment the transport.host setting at the end of config/elasticsearch.yml.
-</span></span><span style=display:flex><span>  ⁃ Restart Elasticsearch.
-</span></span><span style=display:flex><span>• On other nodes:
-</span></span><span style=display:flex><span>  ⁃ Start Elasticsearch with <span style=color:#e6db74>`</span>bin/elasticsearch --enrollment-token &lt;token&gt;<span style=color:#e6db74>`</span>, using the enrollment token that you generated.
-</span></span></code></pre></div><h3 id=停止服务修改配置文件>停止服务,修改配置文件<a href=#停止服务修改配置文件 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>然后输入：curl 127.0.0.1:9200,返回是：</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#f92672>[</span>hy@localhost ~<span style=color:#f92672>]</span>$ curl 127.0.0.1:9200
-</span></span><span style=display:flex><span>curl: <span style=color:#f92672>(</span>52<span style=color:#f92672>)</span> Empty reply from server
-</span></span></code></pre></div><p>而ES那边也有响应</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 看来这和以前的7.1.1版本不一样了</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>[</span>2022-02-19T05:02:02,812<span style=color:#f92672>][</span>WARN <span style=color:#f92672>][</span>o.e.x.s.t.n.SecurityNetty4HttpServerTransport<span style=color:#f92672>]</span> <span style=color:#f92672>[</span>localhost.localdomain<span style=color:#f92672>]</span> received plaintext http traffic on an https channel, closing connection Netty4HttpChannel<span style=color:#f92672>{</span>localAddress<span style=color:#f92672>=</span>/127.0.0.1:9200, remoteAddress<span style=color:#f92672>=</span>/127.0.0.1:38518<span style=color:#f92672>}</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>[</span>2022-02-19T05:02:27,144<span style=color:#f92672>][</span>WARN <span style=color:#f92672>][</span>o.e.x.s.t.n.SecurityNetty4HttpServerTransport<span style=color:#f92672>]</span> <span style=color:#f92672>[</span>localhost.localdomain<span style=color:#f92672>]</span> received plaintext http traffic on an https channel, closing connection Netty4HttpChannel<span style=color:#f92672>{</span>localAddress<span style=color:#f92672>=</span>/<span style=color:#f92672>[</span>0:0:0:0:0:0:0:1<span style=color:#f92672>]</span>:9200, remoteAddress<span style=color:#f92672>=</span>/<span style=color:#f92672>[</span>0:0:0:0:0:0:0:1<span style=color:#f92672>]</span>:56174<span style=color:#f92672>}</span>
-</span></span></code></pre></div><p>修改配置文件</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 需要把security features都关闭，否则http不对外服务了</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># true改成false</span>
-</span></span><span style=display:flex><span>xpack.security.http.ssl:
-</span></span><span style=display:flex><span>  enabled: false
-</span></span><span style=display:flex><span>  keystore.path: certs/http.p12
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Enable encryption and mutual authentication between cluster nodes</span>
-</span></span><span style=display:flex><span>xpack.security.transport.ssl:
-</span></span><span style=display:flex><span>  enabled: false
-</span></span></code></pre></div><h3 id=测试访问>测试访问<a href=#测试访问 class=hanchor arialabel=Anchor>&#8983;</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>http://localhost:9200
-</span></span><span style=display:flex><span>需要输入账号和密码:elastic  /  Shb2+OuCKthxFTxD-*jE
-</span></span></code></pre></div><h3 id=java访问测试>java访问测试<a href=#java访问测试 class=hanchor arialabel=Anchor>&#8983;</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span><span style=color:#f92672>&lt;dependency&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;groupId&gt;</span>org.elasticsearch.client<span style=color:#f92672>&lt;/groupId&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;artifactId&gt;</span>elasticsearch-rest-client<span style=color:#f92672>&lt;/artifactId&gt;</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;version&gt;</span>8.0.0<span style=color:#f92672>&lt;/version&gt;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>&lt;/dependency&gt;</span>
-</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span>@Bean(destroyMethod = &#34;close&#34;)
-</span></span><span style=display:flex><span>public RestClient restClient() throws CertificateException, IOException, KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    final CredentialsProvider credentialsProvider =
-</span></span><span style=display:flex><span>            new BasicCredentialsProvider();
-</span></span><span style=display:flex><span>    credentialsProvider.setCredentials(AuthScope.ANY,
-</span></span><span style=display:flex><span>            new UsernamePasswordCredentials(&#34;elastic&#34;, &#34;VWFjE60dbpKIjbajGJQ4&#34;));
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    Path caCertificatePath = Paths.get(&#34;E:\\es\\elasticsearch-8.0.0-windows-x86_64\\elasticsearch-8.0.0\\config\\certs\\http_ca.crt&#34;);
-</span></span><span style=display:flex><span>    CertificateFactory factory =
-</span></span><span style=display:flex><span>            CertificateFactory.getInstance(&#34;X.509&#34;);
-</span></span><span style=display:flex><span>    Certificate trustedCa;
-</span></span><span style=display:flex><span>    try (InputStream is = Files.newInputStream(caCertificatePath)) {
-</span></span><span style=display:flex><span>        trustedCa = factory.generateCertificate(is);
-</span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    KeyStore trustStore = KeyStore.getInstance(&#34;pkcs12&#34;);
-</span></span><span style=display:flex><span>    trustStore.load(null, null);
-</span></span><span style=display:flex><span>    trustStore.setCertificateEntry(&#34;ca&#34;, trustedCa);
-</span></span><span style=display:flex><span>    SSLContextBuilder sslContextBuilder = SSLContexts.custom()
-</span></span><span style=display:flex><span>            .loadTrustMaterial(trustStore, null);
-</span></span><span style=display:flex><span>    final SSLContext sslContext = sslContextBuilder.build();
-</span></span><span style=display:flex><span>    RestClientBuilder builder = RestClient.builder(
-</span></span><span style=display:flex><span>            new HttpHost(&#34;localhost&#34;, 9200, &#34;https&#34;))
-</span></span><span style=display:flex><span>            .setHttpClientConfigCallback(httpClientBuilder -&gt; {
-</span></span><span style=display:flex><span>                httpClientBuilder.setDefaultCredentialsProvider(credentialsProvider);
-</span></span><span style=display:flex><span>                return httpClientBuilder.setSSLContext(sslContext);
-</span></span><span style=display:flex><span>            });
-</span></span><span style=display:flex><span>    return builder.build();
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#75715e>//注入client</span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>@Autowired</span>
-</span></span><span style=display:flex><span>RestClient restClient;
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>Request request <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Request(<span style=color:#e6db74>&#34;GET&#34;</span>,<span style=color:#e6db74>&#34;/ess_book/_doc/1&#34;</span>);
-</span></span><span style=display:flex><span>Response response <span style=color:#f92672>=</span> restClient.<span style=color:#a6e22e>performRequest</span>(request);
-</span></span><span style=display:flex><span><span style=color:#66d9ef>return</span> EntityUtils.<span style=color:#a6e22e>toString</span>(response.<span style=color:#a6e22e>getEntity</span>());
-</span></span></code></pre></div><h2 id=集群安装es>集群安装ES<a href=#集群安装es class=hanchor arialabel=Anchor>&#8983;</a></h2><p><a href=https://juejin.cn/post/7066717637564170271>全栈开发之ElasticSearch8.0分布式搜索引擎集群及其高可用测试 - 掘金</a></p><h2 id=安装kibana>安装Kibana<a href=#安装kibana class=hanchor arialabel=Anchor>&#8983;</a></h2><h1 id=安装报错>安装报错<a href=#安装报错 class=hanchor arialabel=Anchor>&#8983;</a></h1><p>max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>vim /etc/sysctl.conf
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>vm.max_map_count<span style=color:#f92672>=</span>****262144
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 使生效</span>
-</span></span><span style=display:flex><span>sysctl -p****
-</span></span></code></pre></div><h1 id=安装插件>安装插件<a href=#安装插件 class=hanchor arialabel=Anchor>&#8983;</a></h1><h3 id=安装head>安装HEAD<a href=#安装head class=hanchor arialabel=Anchor>&#8983;</a></h3><p>Head是elasticsearch的集群管理工具，可以用于数据的浏览和查询</p><p>(1)elasticsearch-head是一款开源软件，被托管在github上面，所以如果我们要使用它，必须先安装git，通过git获取elasticsearch-head</p><p>(2)运行elasticsearch-head会用到grunt，而grunt需要npm包管理器，所以nodejs是必须要安装的</p><p>(3)elasticsearch5.0之后，elasticsearch-head不做为插件放在其plugins目录下了。使用git拷贝elasticsearch-head到本地</p><p>cd /usr/local/</p><p>git clone git://github.com/mobz/elasticsearch-head.git</p><p>(4)安装elasticsearch-head依赖包</p><p>[root<a href=#ZgotmplZ>@localhost</a> local]# npm install -g grunt-cli</p><p>[root<a href=#ZgotmplZ>@localhost</a> _site]# cd /usr/local/elasticsearch-head/</p><p>[root<a href=#ZgotmplZ>@localhost</a> elasticsearch-head]# cnpm install</p><p>(5)修改Gruntfile.js</p><p>[root<a href=#ZgotmplZ>@localhost</a> _site]# cd /usr/local/elasticsearch-head/</p><p>[root<a href=#ZgotmplZ>@localhost</a> elasticsearch-head]# vi Gruntfile.js</p><p>在connect&ndash;>server&ndash;>options下面添加：hostname:’*’，允许所有IP可以访问</p><p>(6)修改elasticsearch-head默认连接地址[root<a href=#ZgotmplZ>@localhost</a> elasticsearch-head]# cd /usr/local/elasticsearch-head/_site/</p><p>[root<a href=#ZgotmplZ>@localhost</a> _site]# vi app.js</p><p>将this.base_uri = this.config.base_uri || this.prefs.get(&ldquo;app-base_uri&rdquo;) || &ldquo;http://localhost:9200&rdquo;;中的localhost修改成你es的服务器地址</p><p>(7)配置elasticsearch允许跨域访问</p><p>打开elasticsearch的配置文件elasticsearch.yml，在文件末尾追加下面两行代码即可：</p><p>http.cors.enabled: true</p><p>http.cors.allow-origin: &ldquo;*&rdquo;</p><p>(8)打开9100端口</p><p>[root<a href=#ZgotmplZ>@localhost</a> elasticsearch-head]# firewall-cmd &ndash;zone=public &ndash;add-port=9100/tcp &ndash;permanent</p><p>重启防火墙</p><p>[root<a href=#ZgotmplZ>@localhost</a> elasticsearch-head]# firewall-cmd &ndash;reload</p><p>(9)启动elasticsearch</p><p>(10)启动elasticsearch-head</p><p>[root<a href=#ZgotmplZ>@localhost</a> _site]# cd /usr/local/elasticsearch-head/</p><p>[root<a href=#ZgotmplZ>@localhost</a> elasticsearch-head]# node_modules/grunt/bin/grunt server</p><p>(11)访问elasticsearch-head</p><p>关闭防火墙：systemctl stop firewalld.service</p><p>浏览器输入网址：<a href=http://192.168.25.131:9100/>http://192.168.25.131:9100/</a></p><h3 id=安装中文分词器>安装中文分词器<a href=#安装中文分词器 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>(1)下载中文分词器<a href=https://github.com/medcl/elasticsearch-analysis-ik>https://github.com/medcl/elasticsearch-analysis-ik</a></p><pre tabindex=0><code>下载elasticsearch-analysis-ik-master.zip
-</code></pre><p>(2)解压elasticsearch-analysis-ik-master.zip</p><p>unzip elasticsearch-analysis-ik-master.zip</p><p>(3)进入elasticsearch-analysis-ik-master，编译源码</p><p>mvn clean install -Dmaven.test.skip=true</p><p>(4)在es的plugins文件夹下创建目录ik</p><p>(5)将编译后生成的elasticsearch-analysis-ik-版本.zip移动到ik下，并解压</p><p>(6)解压后的内容移动到ik目录下</p><h3 id=分词器介绍及内置分词器>分词器介绍及内置分词器<a href=#分词器介绍及内置分词器 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>分词器：从一串文本中切分出一个一个的词条，并对每个词条进行标准化</p><p>包括三部分：</p><p>character filter：分词之前的预处理，过滤掉HTML标签，特殊符号转换等</p><p>tokenizer：分词</p><p>token filter：标准化</p><p>内置分词器：</p><p>standard 分词器：(默认的)他会将词汇单元转换成小写形式，并去除停用词和标点符号，支持中文采用的方法为单字切分</p><p>simple 分词器：首先会通过非字母字符来分割文本信息，然后将词汇单元统一为小写形式。该分析器会去掉数字类型的字符。</p><p>Whitespace 分词器：仅仅是去除空格，对字符没有lowcase化,不支持中文；并且不对生成的词汇单元进行其他的标准化处理。</p><p>language 分词器：特定语言的分词器，不支持中文</p><h1 id=api简单使用>API简单使用<a href=#api简单使用 class=hanchor arialabel=Anchor>&#8983;</a></h1><h1 id=查询索引和映射>查询索引和映射<a href=#查询索引和映射 class=hanchor arialabel=Anchor>&#8983;</a></h1><pre tabindex=0><code># 这两个都是查看索引,只是第三行比第三行多几个字段
+</code></pre><h1 id=手动安装8x>手动安装8.x<a href=#手动安装8x class=hanchor arialabel=Anchor>#</a></h1><aside>📌 8.0 已经自带了jdk</aside><h2 id=二进制包安装es>二进制包安装ES<a href=#二进制包安装es class=hanchor arialabel=Anchor>#</a></h2><h3 id=安装>安装<a href=#安装 class=hanchor arialabel=Anchor>#</a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 下载包并解压</span>
+</span></span><span class=line><span class=cl>wget https://xxxx.tar
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 启动./elasticsearch</span>
+</span></span><span class=line><span class=cl>./bin/elasticsearch
+</span></span></code></pre></td></tr></table></div></div><h3 id=运行结果>运行结果<a href=#运行结果 class=hanchor arialabel=Anchor>#</a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>✅ Elasticsearch security features have been automatically configured!
+</span></span><span class=line><span class=cl>✅ Authentication is enabled and cluster connections are encrypted.
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>ℹ️  Password <span class=k>for</span> the elastic user <span class=o>(</span>reset with <span class=sb>`</span>bin/elasticsearch-reset-password -u elastic<span class=sb>`</span><span class=o>)</span>:
+</span></span><span class=line><span class=cl>  Shb2+OuCKthxFTxD-*jE
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>ℹ️  HTTP CA certificate SHA-256 fingerprint:
+</span></span><span class=line><span class=cl>  ceb6add33653a4c8f3493bddde839cdfcf1035a3a50cb01247962495f15ea40f
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>ℹ️  Configure Kibana to use this cluster:
+</span></span><span class=line><span class=cl>• Run Kibana and click the configuration link in the terminal when Kibana starts.
+</span></span><span class=line><span class=cl>• Copy the following enrollment token and paste it into Kibana in your browser <span class=o>(</span>valid <span class=k>for</span> the next <span class=m>30</span> minutes<span class=o>)</span>:
+</span></span><span class=line><span class=cl>  <span class=nv>eyJ2ZXIiOiI4LjAuMCIsImFkciI6WyIxMC4wLjIuNDo5MjAwIl0sImZnciI6ImNlYjZhZGQzMzY1M2E0YzhmMzQ5M2JkZGRlODM5Y2RmY2YxMDM1YTNhNTBjYjAxMjQ3OTYyNDk1ZjE1ZWE0MGYiLCJrZXkiOiJXaEV4SDM4QlZXV242cU9KejgxNTprUVliUEY0dlJfaU56MnRFaDlRY0hnIn0</span><span class=o>=</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>ℹ️  Configure other nodes to join this cluster:
+</span></span><span class=line><span class=cl>• On this node:
+</span></span><span class=line><span class=cl>  ⁃ Create an enrollment token with <span class=sb>`</span>bin/elasticsearch-create-enrollment-token -s node<span class=sb>`</span>.
+</span></span><span class=line><span class=cl>  ⁃ Uncomment the transport.host setting at the end of config/elasticsearch.yml.
+</span></span><span class=line><span class=cl>  ⁃ Restart Elasticsearch.
+</span></span><span class=line><span class=cl>• On other nodes:
+</span></span><span class=line><span class=cl>  ⁃ Start Elasticsearch with <span class=sb>`</span>bin/elasticsearch --enrollment-token &lt;token&gt;<span class=sb>`</span>, using the enrollment token that you generated.
+</span></span></code></pre></td></tr></table></div></div><h3 id=停止服务修改配置文件>停止服务,修改配置文件<a href=#停止服务修改配置文件 class=hanchor arialabel=Anchor>#</a></h3><p>然后输入：curl 127.0.0.1:9200,返回是：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=o>[</span>hy@localhost ~<span class=o>]</span>$ curl 127.0.0.1:9200
+</span></span><span class=line><span class=cl>curl: <span class=o>(</span>52<span class=o>)</span> Empty reply from server
+</span></span></code></pre></td></tr></table></div></div><p>而ES那边也有响应</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 看来这和以前的7.1.1版本不一样了</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>2022-02-19T05:02:02,812<span class=o>][</span>WARN <span class=o>][</span>o.e.x.s.t.n.SecurityNetty4HttpServerTransport<span class=o>]</span> <span class=o>[</span>localhost.localdomain<span class=o>]</span> received plaintext http traffic on an https channel, closing connection Netty4HttpChannel<span class=o>{</span><span class=nv>localAddress</span><span class=o>=</span>/127.0.0.1:9200, <span class=nv>remoteAddress</span><span class=o>=</span>/127.0.0.1:38518<span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>[</span>2022-02-19T05:02:27,144<span class=o>][</span>WARN <span class=o>][</span>o.e.x.s.t.n.SecurityNetty4HttpServerTransport<span class=o>]</span> <span class=o>[</span>localhost.localdomain<span class=o>]</span> received plaintext http traffic on an https channel, closing connection Netty4HttpChannel<span class=o>{</span><span class=nv>localAddress</span><span class=o>=</span>/<span class=o>[</span>0:0:0:0:0:0:0:1<span class=o>]</span>:9200, <span class=nv>remoteAddress</span><span class=o>=</span>/<span class=o>[</span>0:0:0:0:0:0:0:1<span class=o>]</span>:56174<span class=o>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>修改配置文件</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 需要把security features都关闭，否则http不对外服务了</span>
+</span></span><span class=line><span class=cl><span class=c1># true改成false</span>
+</span></span><span class=line><span class=cl>xpack.security.http.ssl:
+</span></span><span class=line><span class=cl>  enabled: <span class=nb>false</span>
+</span></span><span class=line><span class=cl>  keystore.path: certs/http.p12
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Enable encryption and mutual authentication between cluster nodes</span>
+</span></span><span class=line><span class=cl>xpack.security.transport.ssl:
+</span></span><span class=line><span class=cl>  enabled: <span class=nb>false</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=测试访问>测试访问<a href=#测试访问 class=hanchor arialabel=Anchor>#</a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>http://localhost:9200
+</span></span><span class=line><span class=cl>需要输入账号和密码:elastic  /  Shb2+OuCKthxFTxD-*jE
+</span></span></code></pre></td></tr></table></div></div><h3 id=java访问测试>java访问测试<a href=#java访问测试 class=hanchor arialabel=Anchor>#</a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=line><span class=cl><span class=nt>&lt;dependency&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;groupId&gt;</span>org.elasticsearch.client<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;artifactId&gt;</span>elasticsearch-rest-client<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=nt>&lt;version&gt;</span>8.0.0<span class=nt>&lt;/version&gt;</span>
+</span></span><span class=line><span class=cl><span class=nt>&lt;/dependency&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=line><span class=cl>@Bean(destroyMethod = &#34;close&#34;)
+</span></span><span class=line><span class=cl>public RestClient restClient() throws CertificateException, IOException, KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    final CredentialsProvider credentialsProvider =
+</span></span><span class=line><span class=cl>            new BasicCredentialsProvider();
+</span></span><span class=line><span class=cl>    credentialsProvider.setCredentials(AuthScope.ANY,
+</span></span><span class=line><span class=cl>            new UsernamePasswordCredentials(&#34;elastic&#34;, &#34;VWFjE60dbpKIjbajGJQ4&#34;));
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    Path caCertificatePath = Paths.get(&#34;E:\\es\\elasticsearch-8.0.0-windows-x86_64\\elasticsearch-8.0.0\\config\\certs\\http_ca.crt&#34;);
+</span></span><span class=line><span class=cl>    CertificateFactory factory =
+</span></span><span class=line><span class=cl>            CertificateFactory.getInstance(&#34;X.509&#34;);
+</span></span><span class=line><span class=cl>    Certificate trustedCa;
+</span></span><span class=line><span class=cl>    try (InputStream is = Files.newInputStream(caCertificatePath)) {
+</span></span><span class=line><span class=cl>        trustedCa = factory.generateCertificate(is);
+</span></span><span class=line><span class=cl>    }
+</span></span><span class=line><span class=cl>    KeyStore trustStore = KeyStore.getInstance(&#34;pkcs12&#34;);
+</span></span><span class=line><span class=cl>    trustStore.load(null, null);
+</span></span><span class=line><span class=cl>    trustStore.setCertificateEntry(&#34;ca&#34;, trustedCa);
+</span></span><span class=line><span class=cl>    SSLContextBuilder sslContextBuilder = SSLContexts.custom()
+</span></span><span class=line><span class=cl>            .loadTrustMaterial(trustStore, null);
+</span></span><span class=line><span class=cl>    final SSLContext sslContext = sslContextBuilder.build();
+</span></span><span class=line><span class=cl>    RestClientBuilder builder = RestClient.builder(
+</span></span><span class=line><span class=cl>            new HttpHost(&#34;localhost&#34;, 9200, &#34;https&#34;))
+</span></span><span class=line><span class=cl>            .setHttpClientConfigCallback(httpClientBuilder -&gt; {
+</span></span><span class=line><span class=cl>                httpClientBuilder.setDefaultCredentialsProvider(credentialsProvider);
+</span></span><span class=line><span class=cl>                return httpClientBuilder.setSSLContext(sslContext);
+</span></span><span class=line><span class=cl>            });
+</span></span><span class=line><span class=cl>    return builder.build();
+</span></span><span class=line><span class=cl>}
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=c1>//注入client</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nd>@Autowired</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>RestClient</span><span class=w> </span><span class=n>restClient</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>Request</span><span class=w> </span><span class=n>request</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>Request</span><span class=p>(</span><span class=s>&#34;GET&#34;</span><span class=p>,</span><span class=s>&#34;/ess_book/_doc/1&#34;</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>Response</span><span class=w> </span><span class=n>response</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>restClient</span><span class=p>.</span><span class=na>performRequest</span><span class=p>(</span><span class=n>request</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=k>return</span><span class=w> </span><span class=n>EntityUtils</span><span class=p>.</span><span class=na>toString</span><span class=p>(</span><span class=n>response</span><span class=p>.</span><span class=na>getEntity</span><span class=p>());</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><h2 id=集群安装es>集群安装ES<a href=#集群安装es class=hanchor arialabel=Anchor>#</a></h2><p><a href=https://juejin.cn/post/7066717637564170271>全栈开发之ElasticSearch8.0分布式搜索引擎集群及其高可用测试 - 掘金</a></p><h2 id=安装kibana>安装Kibana<a href=#安装kibana class=hanchor arialabel=Anchor>#</a></h2><h1 id=安装报错>安装报错<a href=#安装报错 class=hanchor arialabel=Anchor>#</a></h1><p>max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>vim /etc/sysctl.conf
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>vm.max_map_count<span class=o>=</span>****262144
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 使生效</span>
+</span></span><span class=line><span class=cl>sysctl -p****
+</span></span></code></pre></td></tr></table></div></div><h1 id=安装插件>安装插件<a href=#安装插件 class=hanchor arialabel=Anchor>#</a></h1><h3 id=安装head>安装HEAD<a href=#安装head class=hanchor arialabel=Anchor>#</a></h3><p>Head是elasticsearch的集群管理工具，可以用于数据的浏览和查询</p><p>(1)elasticsearch-head是一款开源软件，被托管在github上面，所以如果我们要使用它，必须先安装git，通过git获取elasticsearch-head</p><p>(2)运行elasticsearch-head会用到grunt，而grunt需要npm包管理器，所以nodejs是必须要安装的</p><p>(3)elasticsearch5.0之后，elasticsearch-head不做为插件放在其plugins目录下了。使用git拷贝elasticsearch-head到本地</p><p>cd /usr/local/</p><p>git clone git://github.com/mobz/elasticsearch-head.git</p><p>(4)安装elasticsearch-head依赖包</p><p>[root<a href=#ZgotmplZ>@localhost</a> local]# npm install -g grunt-cli</p><p>[root<a href=#ZgotmplZ>@localhost</a> _site]# cd /usr/local/elasticsearch-head/</p><p>[root<a href=#ZgotmplZ>@localhost</a> elasticsearch-head]# cnpm install</p><p>(5)修改Gruntfile.js</p><p>[root<a href=#ZgotmplZ>@localhost</a> _site]# cd /usr/local/elasticsearch-head/</p><p>[root<a href=#ZgotmplZ>@localhost</a> elasticsearch-head]# vi Gruntfile.js</p><p>在connect&ndash;>server&ndash;>options下面添加：hostname:’*’，允许所有IP可以访问</p><p>(6)修改elasticsearch-head默认连接地址[root<a href=#ZgotmplZ>@localhost</a> elasticsearch-head]# cd /usr/local/elasticsearch-head/_site/</p><p>[root<a href=#ZgotmplZ>@localhost</a> _site]# vi app.js</p><p>将this.base_uri = this.config.base_uri || this.prefs.get(&ldquo;app-base_uri&rdquo;) || &ldquo;http://localhost:9200&rdquo;;中的localhost修改成你es的服务器地址</p><p>(7)配置elasticsearch允许跨域访问</p><p>打开elasticsearch的配置文件elasticsearch.yml，在文件末尾追加下面两行代码即可：</p><p>http.cors.enabled: true</p><p>http.cors.allow-origin: &ldquo;*&rdquo;</p><p>(8)打开9100端口</p><p>[root<a href=#ZgotmplZ>@localhost</a> elasticsearch-head]# firewall-cmd &ndash;zone=public &ndash;add-port=9100/tcp &ndash;permanent</p><p>重启防火墙</p><p>[root<a href=#ZgotmplZ>@localhost</a> elasticsearch-head]# firewall-cmd &ndash;reload</p><p>(9)启动elasticsearch</p><p>(10)启动elasticsearch-head</p><p>[root<a href=#ZgotmplZ>@localhost</a> _site]# cd /usr/local/elasticsearch-head/</p><p>[root<a href=#ZgotmplZ>@localhost</a> elasticsearch-head]# node_modules/grunt/bin/grunt server</p><p>(11)访问elasticsearch-head</p><p>关闭防火墙：systemctl stop firewalld.service</p><p>浏览器输入网址：<a href=http://192.168.25.131:9100/>http://192.168.25.131:9100/</a></p><h3 id=安装中文分词器>安装中文分词器<a href=#安装中文分词器 class=hanchor arialabel=Anchor>#</a></h3><p>(1)下载中文分词器<a href=https://github.com/medcl/elasticsearch-analysis-ik>https://github.com/medcl/elasticsearch-analysis-ik</a></p><pre tabindex=0><code>下载elasticsearch-analysis-ik-master.zip
+</code></pre><p>(2)解压elasticsearch-analysis-ik-master.zip</p><p>unzip elasticsearch-analysis-ik-master.zip</p><p>(3)进入elasticsearch-analysis-ik-master，编译源码</p><p>mvn clean install -Dmaven.test.skip=true</p><p>(4)在es的plugins文件夹下创建目录ik</p><p>(5)将编译后生成的elasticsearch-analysis-ik-版本.zip移动到ik下，并解压</p><p>(6)解压后的内容移动到ik目录下</p><h3 id=分词器介绍及内置分词器>分词器介绍及内置分词器<a href=#分词器介绍及内置分词器 class=hanchor arialabel=Anchor>#</a></h3><p>分词器：从一串文本中切分出一个一个的词条，并对每个词条进行标准化</p><p>包括三部分：</p><p>character filter：分词之前的预处理，过滤掉HTML标签，特殊符号转换等</p><p>tokenizer：分词</p><p>token filter：标准化</p><p>内置分词器：</p><p>standard 分词器：(默认的)他会将词汇单元转换成小写形式，并去除停用词和标点符号，支持中文采用的方法为单字切分</p><p>simple 分词器：首先会通过非字母字符来分割文本信息，然后将词汇单元统一为小写形式。该分析器会去掉数字类型的字符。</p><p>Whitespace 分词器：仅仅是去除空格，对字符没有lowcase化,不支持中文；并且不对生成的词汇单元进行其他的标准化处理。</p><p>language 分词器：特定语言的分词器，不支持中文</p><h1 id=api简单使用>API简单使用<a href=#api简单使用 class=hanchor arialabel=Anchor>#</a></h1><h1 id=查询索引和映射>查询索引和映射<a href=#查询索引和映射 class=hanchor arialabel=Anchor>#</a></h1><pre tabindex=0><code># 这两个都是查看索引,只是第三行比第三行多几个字段
 GET lib
 GET /lib/_settings
 
@@ -196,7 +285,7 @@ GET /_all/_settings
 
 # 查询映射
 GET /lib2/_mapping
-</code></pre><h1 id=添加索引>添加索引<a href=#添加索引 class=hanchor arialabel=Anchor>&#8983;</a></h1><pre tabindex=0><code># 方式一,使用的是默认的配置
+</code></pre><h1 id=添加索引>添加索引<a href=#添加索引 class=hanchor arialabel=Anchor>#</a></h1><pre tabindex=0><code># 方式一,使用的是默认的配置
 PUT /lib
 
 # 方式二
@@ -225,7 +314,7 @@ PUT /lib3
     }
   }
 }
-</code></pre><h1 id=添加文档>添加文档<a href=#添加文档 class=hanchor arialabel=Anchor>&#8983;</a></h1><pre tabindex=0><code># 指定id的时候用PUT
+</code></pre><h1 id=添加文档>添加文档<a href=#添加文档 class=hanchor arialabel=Anchor>#</a></h1><pre tabindex=0><code># 指定id的时候用PUT
 PUT /lib/user/1
 {
     &#34;first_name&#34;:&#34;Jame&#34;,
@@ -244,7 +333,7 @@ POST /lib/user/
     &#34;about&#34;:&#34;I like to collect rock albums&#34;,
     &#34;interests&#34;:[&#34;music&#34;]
 }
-</code></pre><h1 id=查询文档>查询文档<a href=#查询文档 class=hanchor arialabel=Anchor>&#8983;</a></h1><pre tabindex=0><code># 指定ID
+</code></pre><h1 id=查询文档>查询文档<a href=#查询文档 class=hanchor arialabel=Anchor>#</a></h1><pre tabindex=0><code># 指定ID
 GET /lib/user/1
 
 # 查看文档中的指定字段
@@ -252,7 +341,7 @@ GET /lib/user/1?_source=age,about
 
 # 查询索引下的所有文档
 GET /tt/ttt/_search
-</code></pre><h1 id=更新文档>更新文档<a href=#更新文档 class=hanchor arialabel=Anchor>&#8983;</a></h1><pre tabindex=0><code># 以覆盖的方式,如果有这个id,就覆盖更新,如果没有id,就创建
+</code></pre><h1 id=更新文档>更新文档<a href=#更新文档 class=hanchor arialabel=Anchor>#</a></h1><pre tabindex=0><code># 以覆盖的方式,如果有这个id,就覆盖更新,如果没有id,就创建
 PUT /lib/user/1
 {
     &#34;first_name&#34;:&#34;Jame&#34;,
@@ -269,12 +358,12 @@ POST /lib/user/1/_update
      &#34;age&#34;:&#34;37&#34;
   }
 }
-</code></pre><h1 id=删除文档和索引>删除文档和索引<a href=#删除文档和索引 class=hanchor arialabel=Anchor>&#8983;</a></h1><pre tabindex=0><code># 删除文档
+</code></pre><h1 id=删除文档和索引>删除文档和索引<a href=#删除文档和索引 class=hanchor arialabel=Anchor>#</a></h1><pre tabindex=0><code># 删除文档
 DELETE /lib/user/1
 
 # 删除索引
 DELETE /lib
-</code></pre><h1 id=muliget>MuliGet<a href=#muliget class=hanchor arialabel=Anchor>&#8983;</a></h1><p>MuliGet 需要ID,才能实现</p><pre tabindex=0><code># 批量查询,这是查出全部数据
+</code></pre><h1 id=muliget>MuliGet<a href=#muliget class=hanchor arialabel=Anchor>#</a></h1><p>MuliGet 需要ID,才能实现</p><pre tabindex=0><code># 批量查询,这是查出全部数据
 GET /_mget
 {
   &#34;docs&#34;:[
@@ -333,7 +422,7 @@ GET /lib/user/_mget
 {
    &#34;ids&#34;: [&#34;1&#34;,&#34;2&#34;]
 }
-</code></pre><h1 id=bulk批量插入>Bulk批量插入<a href=#bulk批量插入 class=hanchor arialabel=Anchor>&#8983;</a></h1><p>bulk的格式：</p><pre tabindex=0><code>{action:{metadata}}
+</code></pre><h1 id=bulk批量插入>Bulk批量插入<a href=#bulk批量插入 class=hanchor arialabel=Anchor>#</a></h1><p>bulk的格式：</p><pre tabindex=0><code>{action:{metadata}}
 {requstbody}
 </code></pre><ul><li>action:</li><li>create：文档不存在时创建</li><li>update:更新文档</li><li>index:创建新文档或替换已有文档</li><li>delete:删除一个文档</li><li>metadata:</li><li>index</li><li>_type</li><li>_id</li></ul><p>create 和index的区别:如果数据存在，使用create操作失败，会提示文档已经存在，使用index则可以成功执行。</p><p>bulk一次最大处理多少数据量:</p><p>bulk会把将要处理的数据载入内存中，所以数据量是有限制的，最佳的数据量不是一个确定的数值，它取决于你的硬件，你的文档大小以及复杂性，你的索引以及搜索的负载。一般建议是1000-5000个文档，大小建议是5-15MB，默认不能超过100M，可以在es的配置文件（即$ES_HOME下的config下的elasticsearch.yml）中。</p><pre tabindex=0><code># 批量删除,delete不需要请求体
 {&#34;delete&#34;:{&#34;_index&#34;:&#34;lib&#34;,&#34;_type&#34;:&#34;user&#34;,&#34;_id&#34;:&#34;1&#34;}}
@@ -364,7 +453,7 @@ POST /lib2/books/_bulk
 {&#34;name&#34;:&#34;zhaosi&#34;}
 {&#34;update&#34;:{&#34;_index&#34;:&#34;lib2&#34;,&#34;_type&#34;:&#34;books&#34;,&#34;_id&#34;:&#34;4&#34;}}
 {&#34;doc&#34;:{&#34;price&#34;:58}}
-</code></pre><h1 id=基本查询query查询>基本查询(Query查询)<a href=#基本查询query查询 class=hanchor arialabel=Anchor>&#8983;</a></h1><h3 id=term和terms查询>term和terms查询<a href=#term和terms查询 class=hanchor arialabel=Anchor>&#8983;</a></h3><ul><li>term 查询会去倒排索引中寻找确切的tem,它并不知道分词器的存在,这种查询使用keyword,numeric,date,在没有使用分词器的时候使用</li><li>term 查询某个字段里含有某个关键词的文档</li><li>terms:查询某个字段里含有多个关键词的文档</li></ul><pre tabindex=0><code># term，name含有“zhaoming”
+</code></pre><h1 id=基本查询query查询>基本查询(Query查询)<a href=#基本查询query查询 class=hanchor arialabel=Anchor>#</a></h1><h3 id=term和terms查询>term和terms查询<a href=#term和terms查询 class=hanchor arialabel=Anchor>#</a></h3><ul><li>term 查询会去倒排索引中寻找确切的tem,它并不知道分词器的存在,这种查询使用keyword,numeric,date,在没有使用分词器的时候使用</li><li>term 查询某个字段里含有某个关键词的文档</li><li>terms:查询某个字段里含有多个关键词的文档</li></ul><pre tabindex=0><code># term，name含有“zhaoming”
 GET /lib3/user/_search/
 {
   &#34;query&#34;:{
@@ -381,7 +470,7 @@ GET /lib3/user/_search/
     }
   }
 }
-</code></pre><h3 id=form和size分页>form和size分页<a href=#form和size分页 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>form是从0开始的,size是取多少个</p><pre tabindex=0><code>GET /lib3/user/_search/
+</code></pre><h3 id=form和size分页>form和size分页<a href=#form和size分页 class=hanchor arialabel=Anchor>#</a></h3><p>form是从0开始的,size是取多少个</p><pre tabindex=0><code>GET /lib3/user/_search/
 {
   &#34;version&#34;: true,  # 查询的时候如果需要返回version的话
   &#34;from&#34;: 0,
@@ -400,7 +489,7 @@ GET /lib3/user/_search/
     }
   }
 }
-</code></pre><h3 id=match查询>match查询<a href=#match查询 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>match query知道分词器的存在，会对filed进行分词操作，然后再查询</p><ul><li>match_all:查询所有文档</li><li>match:查询一个字段</li><li>multi_match:查询多个字段</li><li>match_phrase:包含得含有一样的,而且顺序还一样的,可以不用完整</li><li>match_phrase_prefix: 前缀匹配</li></ul><pre tabindex=0><code># match是知道分词器的存在的,所以会去查询name是lisi的,或者name是zhaoming的(or的关系)
+</code></pre><h3 id=match查询>match查询<a href=#match查询 class=hanchor arialabel=Anchor>#</a></h3><p>match query知道分词器的存在，会对filed进行分词操作，然后再查询</p><ul><li>match_all:查询所有文档</li><li>match:查询一个字段</li><li>multi_match:查询多个字段</li><li>match_phrase:包含得含有一样的,而且顺序还一样的,可以不用完整</li><li>match_phrase_prefix: 前缀匹配</li></ul><pre tabindex=0><code># match是知道分词器的存在的,所以会去查询name是lisi的,或者name是zhaoming的(or的关系)
 GET /lib3/user/_search
 {
   &#34;query&#34;:{
@@ -440,7 +529,7 @@ GET /lib3/user/_search
     }
   }
 }
-</code></pre><h3 id=_source控制返回字段>_source控制返回字段<a href=#_source控制返回字段 class=hanchor arialabel=Anchor>&#8983;</a></h3><pre tabindex=0><code># 指定返回的字段
+</code></pre><h3 id=_source控制返回字段>_source控制返回字段<a href=#_source控制返回字段 class=hanchor arialabel=Anchor>#</a></h3><pre tabindex=0><code># 指定返回的字段
 GET /lib3/user/_search
 {
     &#34;_source&#34;: [&#34;address&#34;,&#34;name&#34;],
@@ -474,7 +563,7 @@ GET /lib3/user/_search
         &#34;match_all&#34;: {}
     }
 }
-</code></pre><h3 id=sort排序>sort排序<a href=#sort排序 class=hanchor arialabel=Anchor>&#8983;</a></h3><pre tabindex=0><code># 指定排序字段
+</code></pre><h3 id=sort排序>sort排序<a href=#sort排序 class=hanchor arialabel=Anchor>#</a></h3><pre tabindex=0><code># 指定排序字段
 GET /lib3/user/_search
 {
   &#34;query&#34;:{
@@ -510,7 +599,7 @@ GET /lib3/user/_search
     }
   ]
 }
-</code></pre><h3 id=wildcard通配符查询>wildcard通配符查询<a href=#wildcard通配符查询 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>允许使用通配符* 和 ?来进行查询</p><ul><li>代表0个或多个字符</li></ul><p>？代表任意一个字符</p><pre tabindex=0><code>GET /lib3/user/_search
+</code></pre><h3 id=wildcard通配符查询>wildcard通配符查询<a href=#wildcard通配符查询 class=hanchor arialabel=Anchor>#</a></h3><p>允许使用通配符* 和 ?来进行查询</p><ul><li>代表0个或多个字符</li></ul><p>？代表任意一个字符</p><pre tabindex=0><code>GET /lib3/user/_search
 {
     &#34;query&#34;: {
         &#34;wildcard&#34;: {
@@ -529,7 +618,7 @@ GET /lib3/user/_search
     }
   }
 }
-</code></pre><h3 id=fuzzy模糊查询>fuzzy模糊查询<a href=#fuzzy模糊查询 class=hanchor arialabel=Anchor>&#8983;</a></h3><ul><li>value：查询的关键字</li><li>boost：查询的权值，默认值是1.0</li><li>min_similarity:设置匹配的最小相似度，默认值为0.5，对于字符串，取值为0-1(包括0和1);对于数值，取值可能大于1;对于日期型取值为1d,1m等，1d就代表1天</li><li>prefix_length:指明区分词项的共同前缀长度，默认是0</li><li>max_expansions:查询中的词项可以扩展的数目，默认可以无限大</li></ul><pre tabindex=0><code>GET /lib3/user/_search
+</code></pre><h3 id=fuzzy模糊查询>fuzzy模糊查询<a href=#fuzzy模糊查询 class=hanchor arialabel=Anchor>#</a></h3><ul><li>value：查询的关键字</li><li>boost：查询的权值，默认值是1.0</li><li>min_similarity:设置匹配的最小相似度，默认值为0.5，对于字符串，取值为0-1(包括0和1);对于数值，取值可能大于1;对于日期型取值为1d,1m等，1d就代表1天</li><li>prefix_length:指明区分词项的共同前缀长度，默认是0</li><li>max_expansions:查询中的词项可以扩展的数目，默认可以无限大</li></ul><pre tabindex=0><code>GET /lib3/user/_search
 {
   &#34;query&#34;: {
     &#34;fuzzy&#34;: {
@@ -539,7 +628,7 @@ GET /lib3/user/_search
     }
   }
 }
-</code></pre><h3 id=高亮搜索>高亮搜索<a href=#高亮搜索 class=hanchor arialabel=Anchor>&#8983;</a></h3><pre tabindex=0><code>GET /lib3/user/_search
+</code></pre><h3 id=高亮搜索>高亮搜索<a href=#高亮搜索 class=hanchor arialabel=Anchor>#</a></h3><pre tabindex=0><code>GET /lib3/user/_search
 {
   &#34;query&#34;: {
     &#34;fuzzy&#34;: {
@@ -554,7 +643,7 @@ GET /lib3/user/_search
     }
   }
 }
-</code></pre><h3 id=filter查询>Filter查询<a href=#filter查询 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>是不计算相关性的,同时可以缓存,因此,filter速度要快于query</p><pre tabindex=0><code># 过滤价格是40的
+</code></pre><h3 id=filter查询>Filter查询<a href=#filter查询 class=hanchor arialabel=Anchor>#</a></h3><p>是不计算相关性的,同时可以缓存,因此,filter速度要快于query</p><pre tabindex=0><code># 过滤价格是40的
 GET /lib4/items/_search
 {
   &#34;query&#34;: {
@@ -577,7 +666,7 @@ GET /lib4/items/_search
     }
   }
 }
-</code></pre><h3 id=bool过滤查询>bool过滤查询<a href=#bool过滤查询 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>可以实现组合过滤查询</p><p>格式：</p><pre tabindex=0><code>{
+</code></pre><h3 id=bool过滤查询>bool过滤查询<a href=#bool过滤查询 class=hanchor arialabel=Anchor>#</a></h3><p>可以实现组合过滤查询</p><p>格式：</p><pre tabindex=0><code>{
     &#34;bool&#34;: {
         &#34;must&#34;: [],
         &#34;should&#34;: [],
@@ -626,7 +715,7 @@ GET /lib4/items/_search
    }
   }
 }
-</code></pre><h3 id=聚合查询>聚合查询<a href=#聚合查询 class=hanchor arialabel=Anchor>&#8983;</a></h3><pre tabindex=0><code>GET /lib4/items/_search
+</code></pre><h3 id=聚合查询>聚合查询<a href=#聚合查询 class=hanchor arialabel=Anchor>#</a></h3><pre tabindex=0><code>GET /lib4/items/_search
 {
   &#34;size&#34;:0, # 只显示总和
   &#34;aggs&#34;:{
@@ -698,7 +787,7 @@ GET /lib4/items/_search
     }
   }
 }
-</code></pre><h1 id=api高级>API高级<a href=#api高级 class=hanchor arialabel=Anchor>&#8983;</a></h1><h3 id=版本控制>版本控制<a href=#版本控制 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>ElasticSearch采用了乐观锁来保证数据的一致性，也就是说，当用户对document进行操作时，并不需要对该document作加锁和解锁的操作，只需要指定要操作的版本即可。当版本号一致时，ElasticSearch会允许该操作顺利执行，而当版本号存在冲突时，ElasticSearch会提示冲突并抛出异常（VersionConflictEngineException异常）。</p><p>ElasticSearch的版本号的取值范围为1到2^63-1。</p><p>内部版本控制：使用的是_version</p><p>外部版本控制：elasticsearch在处理外部版本号时会与对内部版本号的处理有些不同。它不再是检查<em>version是否与请求中指定的数值</em>相同*,而是检查当前的*version是否比指定的数值小。如果请求成功，那么外部的版本号就会被存储到文档中的_version中。</p><p>为了保持_version与外部版本控制的数据一致使用version_type=external</p><h3 id=数据类型>数据类型<a href=#数据类型 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>核心数据类型（Core datatypes）</p><pre tabindex=0><code>字符型：string，string类型包括
+</code></pre><h1 id=api高级>API高级<a href=#api高级 class=hanchor arialabel=Anchor>#</a></h1><h3 id=版本控制>版本控制<a href=#版本控制 class=hanchor arialabel=Anchor>#</a></h3><p>ElasticSearch采用了乐观锁来保证数据的一致性，也就是说，当用户对document进行操作时，并不需要对该document作加锁和解锁的操作，只需要指定要操作的版本即可。当版本号一致时，ElasticSearch会允许该操作顺利执行，而当版本号存在冲突时，ElasticSearch会提示冲突并抛出异常（VersionConflictEngineException异常）。</p><p>ElasticSearch的版本号的取值范围为1到2^63-1。</p><p>内部版本控制：使用的是_version</p><p>外部版本控制：elasticsearch在处理外部版本号时会与对内部版本号的处理有些不同。它不再是检查<em>version是否与请求中指定的数值</em>相同*,而是检查当前的*version是否比指定的数值小。如果请求成功，那么外部的版本号就会被存储到文档中的_version中。</p><p>为了保持_version与外部版本控制的数据一致使用version_type=external</p><h3 id=数据类型>数据类型<a href=#数据类型 class=hanchor arialabel=Anchor>#</a></h3><p>核心数据类型（Core datatypes）</p><pre tabindex=0><code>字符型：string，string类型包括
 text 和 keyword
 
 text类型被用来索引长文本，在建立索引前会将这些文本进行分词，转化为词的组合，建立索引。允许es来检索这些词语。text类型不能用来排序和聚合。
@@ -756,16 +845,16 @@ mapper-murmur3
 &#34;similarity&#34;:&#34;BM25&#34;//默认是TF/IDF算法，指定一个字段评分策略，仅仅对字符串型和分词类型有效
 
 &#34;term_vector&#34;:&#34;no&#34;//默认不存储向量信息，支持参数yes（term存储），with_positions（term+位置）,with_offsets（term+偏移量），with_positions_offsets(term+位置+偏移量) 对快速高亮fast vector highlighter能提升性能，但开启又会加大索引体积，不适合大数据量用
-</code></pre><h1 id=elasticsearch原理>ElasticSearch原理<a href=#elasticsearch原理 class=hanchor arialabel=Anchor>&#8983;</a></h1><h3 id=解析es的分布式架构>解析es的分布式架构<a href=#解析es的分布式架构 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>分片的副本：</p><p>集群发现机制(cluster discovery)：比如当前我们启动了一个es进程，当启动了第二个es进程时，这个进程作为一个node自动就发现了集群，并且加入了进去</p><p>shard负载均衡：比如现在有10shard，集群中有3个节点，es会进行均衡的进行分配，以保持每个节点均衡的负载请求</p><p>请求路由</p><h3 id=扩容机制>扩容机制<a href=#扩容机制 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>垂直扩容：购置新的机器，替换已有的机器</p><p>例子:一台有6台机器,每台1T,一共6T,现在替换掉其中的两台,1T升级到2T,这样一共就有8T</p><p>水平扩容：直接增加机器</p><h3 id=rebalance>rebalance<a href=#rebalance class=hanchor arialabel=Anchor>&#8983;</a></h3><p>增加或减少节点时会自动均衡</p><h3 id=master节点>master节点<a href=#master节点 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>主节点的主要职责是和集群操作相关的内容，如创建或删除索引，跟踪哪些节点是群集的一部分，并决定哪些分片分配给相关的节点。稳定的主节点对集群的健康是非常重要的。一个集群,至少有一个master.并不是所有的请求都请求master</p><h3 id=节点对等>节点对等<a href=#节点对等 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>每个节点都能接收请求每个节点接收到请求后都能把该请求路由到有相关数据的其它节点上接收原始请求的节点负责采集数据并返回给客户端</p><h3 id=分片和副本机制>分片和副本机制<a href=#分片和副本机制 class=hanchor arialabel=Anchor>&#8983;</a></h3><ol><li>index包含多个shard</li><li>每个shard都是一个最小工作单元，承载部分数据；每个shard都是一个lucene实例，有完整的建立索引和处理请求的能力</li><li>增减节点时，shard会自动在nodes中负载均衡</li><li>primary shard和replica shard，每个document肯定只存在于某一个primary shard以及其对应的replica shard中，不可能存在于多个primary shard</li><li>replica shard是primary shard的副本，负责容错，以及承担读请求负载</li><li>primary shard的数量在创建索引的时候就固定了，replica shard的数量可以随时修改</li><li>primary shard的默认数量是5，replica默认是1，默认有10个shard，5个primary shard，5个replica shard</li><li>primary shard不能和自己的replica shard放在同一个节点上（否则节点宕机，primary shard和副本都丢失，起不到容错的作用），但是可以和其他primary shard的replica shard放在同一个节点上</li></ol><h3 id=单节点环境下创建索引分析>单节点环境下创建索引分析<a href=#单节点环境下创建索引分析 class=hanchor arialabel=Anchor>&#8983;</a></h3><pre tabindex=0><code>PUT /myindex
+</code></pre><h1 id=elasticsearch原理>ElasticSearch原理<a href=#elasticsearch原理 class=hanchor arialabel=Anchor>#</a></h1><h3 id=解析es的分布式架构>解析es的分布式架构<a href=#解析es的分布式架构 class=hanchor arialabel=Anchor>#</a></h3><p>分片的副本：</p><p>集群发现机制(cluster discovery)：比如当前我们启动了一个es进程，当启动了第二个es进程时，这个进程作为一个node自动就发现了集群，并且加入了进去</p><p>shard负载均衡：比如现在有10shard，集群中有3个节点，es会进行均衡的进行分配，以保持每个节点均衡的负载请求</p><p>请求路由</p><h3 id=扩容机制>扩容机制<a href=#扩容机制 class=hanchor arialabel=Anchor>#</a></h3><p>垂直扩容：购置新的机器，替换已有的机器</p><p>例子:一台有6台机器,每台1T,一共6T,现在替换掉其中的两台,1T升级到2T,这样一共就有8T</p><p>水平扩容：直接增加机器</p><h3 id=rebalance>rebalance<a href=#rebalance class=hanchor arialabel=Anchor>#</a></h3><p>增加或减少节点时会自动均衡</p><h3 id=master节点>master节点<a href=#master节点 class=hanchor arialabel=Anchor>#</a></h3><p>主节点的主要职责是和集群操作相关的内容，如创建或删除索引，跟踪哪些节点是群集的一部分，并决定哪些分片分配给相关的节点。稳定的主节点对集群的健康是非常重要的。一个集群,至少有一个master.并不是所有的请求都请求master</p><h3 id=节点对等>节点对等<a href=#节点对等 class=hanchor arialabel=Anchor>#</a></h3><p>每个节点都能接收请求每个节点接收到请求后都能把该请求路由到有相关数据的其它节点上接收原始请求的节点负责采集数据并返回给客户端</p><h3 id=分片和副本机制>分片和副本机制<a href=#分片和副本机制 class=hanchor arialabel=Anchor>#</a></h3><ol><li>index包含多个shard</li><li>每个shard都是一个最小工作单元，承载部分数据；每个shard都是一个lucene实例，有完整的建立索引和处理请求的能力</li><li>增减节点时，shard会自动在nodes中负载均衡</li><li>primary shard和replica shard，每个document肯定只存在于某一个primary shard以及其对应的replica shard中，不可能存在于多个primary shard</li><li>replica shard是primary shard的副本，负责容错，以及承担读请求负载</li><li>primary shard的数量在创建索引的时候就固定了，replica shard的数量可以随时修改</li><li>primary shard的默认数量是5，replica默认是1，默认有10个shard，5个primary shard，5个replica shard</li><li>primary shard不能和自己的replica shard放在同一个节点上（否则节点宕机，primary shard和副本都丢失，起不到容错的作用），但是可以和其他primary shard的replica shard放在同一个节点上</li></ol><h3 id=单节点环境下创建索引分析>单节点环境下创建索引分析<a href=#单节点环境下创建索引分析 class=hanchor arialabel=Anchor>#</a></h3><pre tabindex=0><code>PUT /myindex
 {
    &#34;settings&#34; : {
       &#34;number_of_shards&#34; : 3,  # 3个朱分片
       &#34;number_of_replicas&#34; : 1  # 1个负分片
    }
 }
-</code></pre><p>这个时候，只会将3个primary shard分配到仅有的一个node上去，另外3个replica shard是无法分配的（一个shard的副本replica，他们两个是不能在同一个节点的）。集群可以正常工作，但是一旦出现节点宕机，数据全部丢失，而且集群不可用，无法接收任何请求。</p><h3 id=两个节点环境下创建索引分析>两个节点环境下创建索引分析<a href=#两个节点环境下创建索引分析 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>将3个primary shard分配到一个node上去，另外3个replica shard分配到另一个节点上</p><p>primary shard 和replica shard 保持同步</p><p>primary shard 和replica shard 都可以处理客户端的读请求</p><h3 id=水平扩容的过程>水平扩容的过程<a href=#水平扩容的过程 class=hanchor arialabel=Anchor>&#8983;</a></h3><ol><li>扩容后primary shard和replica shard会自动的负载均衡</li><li>扩容后每个节点上的shard会减少，那么分配给每个shard的CPU，内存，IO资源会更多，性能提高</li><li>扩容的极限，如果有6个shard，扩容的极限就是6个节点，每个节点上一个shard，如果想超出扩容的极限，比如说扩容到9个节点，那么可以增加replica shard的个数</li><li>6个shard，3个节点，最多能承受几个节点所在的服务器宕机？(容错性)任何一台服务器宕机都会丢失部分数据</li></ol><p>为了提高容错性，增加shard的个数：9个shard，(3个primary shard，6个replicashard)，这样就能容忍最多两台服务器宕机了</p><p>总结：扩容是为了提高系统的吞吐量，同时也要考虑容错性，也就是让尽可能多的服务器宕机还能保证数据不丢失</p><h3 id=elasticsearch的容错机制>ElasticSearch的容错机制<a href=#elasticsearch的容错机制 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>以9个shard，3个节点为例：</p><p>1.如果master node 宕机，此时不是所有的primary shard都是Active status，所以此时的集群状态是red。</p><p>容错处理的第一步:是选举一台服务器作为master容错处理的第二步:新选举出的master会把挂掉的primary shard的某个replica shard 提升为primary shard,此时集群的状态为yellow，因为少了一个replica shard，并不是所有的replica shard都是active status</p><p>容错处理的第三步：重启故障机，新master会把所有的副本都复制一份到该节点上，（同步一下宕机后发生的修改），此时集群的状态为green，因为所有的primary shard和replica shard都是Active status</p><h3 id=文档的核心元数据>文档的核心元数据<a href=#文档的核心元数据 class=hanchor arialabel=Anchor>&#8983;</a></h3><ol><li><code>_index</code>:</li></ol><p>说明了一个文档存储在哪个索引中</p><p>同一个索引下存放的是相似的文档(文档的field多数是相同的)</p><p>索引名必须是小写的，不能以下划线开头，不能包括逗号</p><ol><li><code>_type</code>:</li></ol><p>表示文档属于索引中的哪个类型</p><p>一个索引下只能有一个type</p><p>类型名可以是大写也可以是小写的，不能以下划线开头，不能包括逗号</p><ol><li><code>_id</code>:</li></ol><p>文档的唯一标识，和索引，类型组合在一起唯一标识了一个文档</p><p>可以手动指定值，也可以由es来生成这个值</p><h3 id=文档id生成方式>文档id生成方式<a href=#文档id生成方式 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>1.手动指定</p><pre tabindex=0><code>put /index/type/66
+</code></pre><p>这个时候，只会将3个primary shard分配到仅有的一个node上去，另外3个replica shard是无法分配的（一个shard的副本replica，他们两个是不能在同一个节点的）。集群可以正常工作，但是一旦出现节点宕机，数据全部丢失，而且集群不可用，无法接收任何请求。</p><h3 id=两个节点环境下创建索引分析>两个节点环境下创建索引分析<a href=#两个节点环境下创建索引分析 class=hanchor arialabel=Anchor>#</a></h3><p>将3个primary shard分配到一个node上去，另外3个replica shard分配到另一个节点上</p><p>primary shard 和replica shard 保持同步</p><p>primary shard 和replica shard 都可以处理客户端的读请求</p><h3 id=水平扩容的过程>水平扩容的过程<a href=#水平扩容的过程 class=hanchor arialabel=Anchor>#</a></h3><ol><li>扩容后primary shard和replica shard会自动的负载均衡</li><li>扩容后每个节点上的shard会减少，那么分配给每个shard的CPU，内存，IO资源会更多，性能提高</li><li>扩容的极限，如果有6个shard，扩容的极限就是6个节点，每个节点上一个shard，如果想超出扩容的极限，比如说扩容到9个节点，那么可以增加replica shard的个数</li><li>6个shard，3个节点，最多能承受几个节点所在的服务器宕机？(容错性)任何一台服务器宕机都会丢失部分数据</li></ol><p>为了提高容错性，增加shard的个数：9个shard，(3个primary shard，6个replicashard)，这样就能容忍最多两台服务器宕机了</p><p>总结：扩容是为了提高系统的吞吐量，同时也要考虑容错性，也就是让尽可能多的服务器宕机还能保证数据不丢失</p><h3 id=elasticsearch的容错机制>ElasticSearch的容错机制<a href=#elasticsearch的容错机制 class=hanchor arialabel=Anchor>#</a></h3><p>以9个shard，3个节点为例：</p><p>1.如果master node 宕机，此时不是所有的primary shard都是Active status，所以此时的集群状态是red。</p><p>容错处理的第一步:是选举一台服务器作为master容错处理的第二步:新选举出的master会把挂掉的primary shard的某个replica shard 提升为primary shard,此时集群的状态为yellow，因为少了一个replica shard，并不是所有的replica shard都是active status</p><p>容错处理的第三步：重启故障机，新master会把所有的副本都复制一份到该节点上，（同步一下宕机后发生的修改），此时集群的状态为green，因为所有的primary shard和replica shard都是Active status</p><h3 id=文档的核心元数据>文档的核心元数据<a href=#文档的核心元数据 class=hanchor arialabel=Anchor>#</a></h3><ol><li><code>_index</code>:</li></ol><p>说明了一个文档存储在哪个索引中</p><p>同一个索引下存放的是相似的文档(文档的field多数是相同的)</p><p>索引名必须是小写的，不能以下划线开头，不能包括逗号</p><ol><li><code>_type</code>:</li></ol><p>表示文档属于索引中的哪个类型</p><p>一个索引下只能有一个type</p><p>类型名可以是大写也可以是小写的，不能以下划线开头，不能包括逗号</p><ol><li><code>_id</code>:</li></ol><p>文档的唯一标识，和索引，类型组合在一起唯一标识了一个文档</p><p>可以手动指定值，也可以由es来生成这个值</p><h3 id=文档id生成方式>文档id生成方式<a href=#文档id生成方式 class=hanchor arialabel=Anchor>#</a></h3><p>1.手动指定</p><pre tabindex=0><code>put /index/type/66
 </code></pre><p>通常是把其它系统的已有数据导入到es时</p><p>2.由es生成id值</p><pre tabindex=0><code>post /index/type
-</code></pre><p>es生成的id长度为20个字符，使用的是base64编码，URL安全，使用的是GUID算法，分布式下并发生成id值时不会冲突</p><h3 id=_source元数据分析>_source元数据分析<a href=#_source元数据分析 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>其实就是我们在添加文档时request body中的内容</p><p>指定返回的结果中含有哪些字段：</p><p>get /index/type/1?_source=name</p><h3 id=改变文档内容原理解析>改变文档内容原理解析<a href=#改变文档内容原理解析 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>替换方式(全部替换)：</p><pre tabindex=0><code>PUT /lib/user/4
+</code></pre><p>es生成的id长度为20个字符，使用的是base64编码，URL安全，使用的是GUID算法，分布式下并发生成id值时不会冲突</p><h3 id=_source元数据分析>_source元数据分析<a href=#_source元数据分析 class=hanchor arialabel=Anchor>#</a></h3><p>其实就是我们在添加文档时request body中的内容</p><p>指定返回的结果中含有哪些字段：</p><p>get /index/type/1?_source=name</p><h3 id=改变文档内容原理解析>改变文档内容原理解析<a href=#改变文档内容原理解析 class=hanchor arialabel=Anchor>#</a></h3><p>替换方式(全部替换)：</p><pre tabindex=0><code>PUT /lib/user/4
 {
     &#34;first_name&#34; : &#34;Jane&#34;,
     &#34;last_name&#34; :   &#34;Lucy&#34;,
@@ -780,7 +869,7 @@ mapper-murmur3
      }
 }
 </code></pre><p>删除文档:</p><pre tabindex=0><code>delete /lib
-</code></pre><p>以上3个操作文档的方式,都是把已有的document标记为deleted，随着数据量的增加，es会选择合适的时间删除掉</p><h3 id=基于groovy脚本执行partial-update>基于groovy脚本执行partial update<a href=#基于groovy脚本执行partial-update class=hanchor arialabel=Anchor>&#8983;</a></h3><p>es有内置的脚本支持，可以基于groovy脚本实现复杂的操作</p><pre tabindex=0><code>1.修改年龄
+</code></pre><p>以上3个操作文档的方式,都是把已有的document标记为deleted，随着数据量的增加，es会选择合适的时间删除掉</p><h3 id=基于groovy脚本执行partial-update>基于groovy脚本执行partial update<a href=#基于groovy脚本执行partial-update class=hanchor arialabel=Anchor>#</a></h3><p>es有内置的脚本支持，可以基于groovy脚本实现复杂的操作</p><pre tabindex=0><code>1.修改年龄
 POST /lib/user/4/_update
 {
   &#34;script&#34;: &#34;ctx._source.age+=1&#34;
@@ -838,14 +927,14 @@ POST /lib/user/4/_update
      &#34;interests&#34;:  [ &#34;music&#34; ]
   }
 }
-</code></pre><h3 id=partial-update-处理并发冲突>partial update 处理并发冲突<a href=#partial-update-处理并发冲突 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>使用的是乐观锁:_version</p><p>retry_on_conflict:</p><pre tabindex=0><code>POST /lib/user/4/_update?retry_on_conflict=3
-</code></pre><p>重新获取文档数据和版本信息进行更新，不断的操作，最多操作的次数就是retry_on_conflict的值</p><h3 id=文档数据路由原理解析>文档数据路由原理解析<a href=#文档数据路由原理解析 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>1.文档路由到分片上：</p><p>一个索引由多个分片构成，当添加(删除，修改)一个文档时，es就需要决定这个文档存储在哪个分片上，这个过程就称为数据路由(routing)</p><p>2.路由算法：</p><pre tabindex=0><code> shard=hash(routing) % number_of_pirmary_shards
-</code></pre><p>示例：一个索引，3个primary shard</p><p>(1)每次增删改查时，都有一个routing值，默认是文档的_id的值</p><p>(2)对这个routing值使用哈希函数进行计算</p><p>(3)计算出的值再和主分片个数取余数</p><p>余数肯定在0&mdash;（number_of_pirmary_shards-1）之间，文档就在对应的shard上</p><p>routing值默认是文档的_id的值，也可以手动指定一个值，手动指定对于负载均衡以及提高批量读取的性能都有帮助</p><p>3.primary shard个数一旦确定就不能修改了</p><h3 id=文档增删改内部原理>文档增删改内部原理<a href=#文档增删改内部原理 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>1:发送增删改请求时，可以选择任意一个节点，该节点就成了协调节点(coordinating node)</p><p>2.协调节点使用路由算法进行路由，然后将请求转到primary shard所在节点，该节点处理请求，并把数据同步到它的replica shard</p><p>3.协调节点对客户端做出响应</p><h3 id=写一致性原理和quorum机制>写一致性原理和quorum机制<a href=#写一致性原理和quorum机制 class=hanchor arialabel=Anchor>&#8983;</a></h3><ol><li>任何一个增删改操作都可以跟上一个参数:``consistency`</li></ol><p>可以给该参数指定的值：</p><pre tabindex=0><code>one: (primary shard)只要有一个primary shard是活跃的就可以执行
+</code></pre><h3 id=partial-update-处理并发冲突>partial update 处理并发冲突<a href=#partial-update-处理并发冲突 class=hanchor arialabel=Anchor>#</a></h3><p>使用的是乐观锁:_version</p><p>retry_on_conflict:</p><pre tabindex=0><code>POST /lib/user/4/_update?retry_on_conflict=3
+</code></pre><p>重新获取文档数据和版本信息进行更新，不断的操作，最多操作的次数就是retry_on_conflict的值</p><h3 id=文档数据路由原理解析>文档数据路由原理解析<a href=#文档数据路由原理解析 class=hanchor arialabel=Anchor>#</a></h3><p>1.文档路由到分片上：</p><p>一个索引由多个分片构成，当添加(删除，修改)一个文档时，es就需要决定这个文档存储在哪个分片上，这个过程就称为数据路由(routing)</p><p>2.路由算法：</p><pre tabindex=0><code> shard=hash(routing) % number_of_pirmary_shards
+</code></pre><p>示例：一个索引，3个primary shard</p><p>(1)每次增删改查时，都有一个routing值，默认是文档的_id的值</p><p>(2)对这个routing值使用哈希函数进行计算</p><p>(3)计算出的值再和主分片个数取余数</p><p>余数肯定在0&mdash;（number_of_pirmary_shards-1）之间，文档就在对应的shard上</p><p>routing值默认是文档的_id的值，也可以手动指定一个值，手动指定对于负载均衡以及提高批量读取的性能都有帮助</p><p>3.primary shard个数一旦确定就不能修改了</p><h3 id=文档增删改内部原理>文档增删改内部原理<a href=#文档增删改内部原理 class=hanchor arialabel=Anchor>#</a></h3><p>1:发送增删改请求时，可以选择任意一个节点，该节点就成了协调节点(coordinating node)</p><p>2.协调节点使用路由算法进行路由，然后将请求转到primary shard所在节点，该节点处理请求，并把数据同步到它的replica shard</p><p>3.协调节点对客户端做出响应</p><h3 id=写一致性原理和quorum机制>写一致性原理和quorum机制<a href=#写一致性原理和quorum机制 class=hanchor arialabel=Anchor>#</a></h3><ol><li>任何一个增删改操作都可以跟上一个参数:``consistency`</li></ol><p>可以给该参数指定的值：</p><pre tabindex=0><code>one: (primary shard)只要有一个primary shard是活跃的就可以执行
 
 all: (all shard)所有的primary shard和replica shard都是活跃的才能执行
 
 quorum: (default) 默认值，大部分shard是活跃的才能执行 （例如共有6个shard，至少有3个shard是活跃的才能执行写操作）
-</code></pre><ol><li>quorum机制：多数shard都是可用的，</li></ol><p>int((primary+number_of_replica)/2)+1</p><p>例如：3个primary shard，1个replica</p><p>int((3+1)/2)+1=3</p><p>至少3个shard是活跃的</p><p>注意：可能出现shard不能分配齐全的情况</p><p>比如：1个primary shard,1个replicaint((1+1)/2)+1=2但是如果只有一个节点，因为primary shard和replica shard不能在同一个节点上，所以仍然不能执行写操作</p><p>再举例：1个primary shard,3个replica,2个节点</p><p>int((1+3)/2)+1=3</p><p>最后:当活跃的shard的个数没有达到要求时，es默认会等待一分钟，如果在等待的期间活跃的shard的个数没有增加，则显示timeout</p><p>put /index/type/id?timeout=60s</p><h3 id=文档查询内部原理>文档查询内部原理<a href=#文档查询内部原理 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>第一步：查询请求发给任意一个节点，该节点就成了coordinating node，该节点使用路由算法算出文档所在的primary shard</p><p>第二步：协调节点把请求转发给primary shard也可以转发给replica shard(使用轮询调度算法(Round-Robin Scheduling，把请求平均分配至primary shard 和replica shard)</p><p>第三步：处理请求的节点把结果返回给协调节点，协调节点再返回给应用程序</p><p>特殊情况：请求的文档还在建立索引的过程中，primary shard上存在，但replica shar上不存在，但是请求被转发到了replica shard上，这时就会提示找不到文档</p><h3 id=bulk批量操作的json格式解析>bulk批量操作的json格式解析<a href=#bulk批量操作的json格式解析 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>bulk的格式：</p><pre tabindex=0><code>{action:{metadata}}\n
+</code></pre><ol><li>quorum机制：多数shard都是可用的，</li></ol><p>int((primary+number_of_replica)/2)+1</p><p>例如：3个primary shard，1个replica</p><p>int((3+1)/2)+1=3</p><p>至少3个shard是活跃的</p><p>注意：可能出现shard不能分配齐全的情况</p><p>比如：1个primary shard,1个replicaint((1+1)/2)+1=2但是如果只有一个节点，因为primary shard和replica shard不能在同一个节点上，所以仍然不能执行写操作</p><p>再举例：1个primary shard,3个replica,2个节点</p><p>int((1+3)/2)+1=3</p><p>最后:当活跃的shard的个数没有达到要求时，es默认会等待一分钟，如果在等待的期间活跃的shard的个数没有增加，则显示timeout</p><p>put /index/type/id?timeout=60s</p><h3 id=文档查询内部原理>文档查询内部原理<a href=#文档查询内部原理 class=hanchor arialabel=Anchor>#</a></h3><p>第一步：查询请求发给任意一个节点，该节点就成了coordinating node，该节点使用路由算法算出文档所在的primary shard</p><p>第二步：协调节点把请求转发给primary shard也可以转发给replica shard(使用轮询调度算法(Round-Robin Scheduling，把请求平均分配至primary shard 和replica shard)</p><p>第三步：处理请求的节点把结果返回给协调节点，协调节点再返回给应用程序</p><p>特殊情况：请求的文档还在建立索引的过程中，primary shard上存在，但replica shar上不存在，但是请求被转发到了replica shard上，这时就会提示找不到文档</p><h3 id=bulk批量操作的json格式解析>bulk批量操作的json格式解析<a href=#bulk批量操作的json格式解析 class=hanchor arialabel=Anchor>#</a></h3><p>bulk的格式：</p><pre tabindex=0><code>{action:{metadata}}\n
 {requstbody}\n
 </code></pre><p>为什么不使用如下格式：</p><pre tabindex=0><code>[{
     &#34;action&#34;: {
@@ -853,7 +942,7 @@ quorum: (default) 默认值，大部分shard是活跃的才能执行 （例如�
     &#34;data&#34;: {
     }
 }]
-</code></pre><p>这种方式可读性好，但是内部处理就麻烦了：</p><p>1.将json数组解析为JSONArray对象，在内存中就需要有一份json文本的拷贝，另外还有一个JSONArray对象。</p><p>2.解析json数组里的每个json，对每个请求中的document进行路由</p><p>3.为路由到同一个shard上的多个请求，创建一个请求数组</p><p>4.将这个请求数组序列化</p><p>5.将序列化后的请求数组发送到对应的节点上去</p><p>耗费更多内存，增加java虚拟机开销</p><p>1.不用将其转换为json对象，直接按照换行符切割json，内存中不需要json文本的拷贝</p><p>2.对每两个一组的json，读取meta，进行document路由</p><p>3.直接将对应的json发送到node上去</p><h3 id=查询结果分析>查询结果分析<a href=#查询结果分析 class=hanchor arialabel=Anchor>&#8983;</a></h3><pre tabindex=0><code>{
+</code></pre><p>这种方式可读性好，但是内部处理就麻烦了：</p><p>1.将json数组解析为JSONArray对象，在内存中就需要有一份json文本的拷贝，另外还有一个JSONArray对象。</p><p>2.解析json数组里的每个json，对每个请求中的document进行路由</p><p>3.为路由到同一个shard上的多个请求，创建一个请求数组</p><p>4.将这个请求数组序列化</p><p>5.将序列化后的请求数组发送到对应的节点上去</p><p>耗费更多内存，增加java虚拟机开销</p><p>1.不用将其转换为json对象，直接按照换行符切割json，内存中不需要json文本的拷贝</p><p>2.对每两个一组的json，读取meta，进行document路由</p><p>3.直接将对应的json发送到node上去</p><h3 id=查询结果分析>查询结果分析<a href=#查询结果分析 class=hanchor arialabel=Anchor>#</a></h3><pre tabindex=0><code>{
   # 查询耗费的时间，单位是毫秒
   &#34;took&#34;: 419,
   # 超时时间
@@ -902,7 +991,7 @@ GET /lib3/user/_search?timeout=10ms
         }
     }
 }
-</code></pre><h3 id=分页查询中的deep-paging问题>分页查询中的deep paging问题<a href=#分页查询中的deep-paging问题 class=hanchor arialabel=Anchor>&#8983;</a></h3><pre tabindex=0><code>GET /lib3/user/_search
+</code></pre><h3 id=分页查询中的deep-paging问题>分页查询中的deep paging问题<a href=#分页查询中的deep-paging问题 class=hanchor arialabel=Anchor>#</a></h3><pre tabindex=0><code>GET /lib3/user/_search
 {
     &#34;from&#34;:0,
     &#34;size&#34;:2,
@@ -914,7 +1003,7 @@ GET /lib3/user/_search?timeout=10ms
 }
 
 GET /_search?from=0&amp;size=3
-</code></pre><p>deep paging:查询的很深，比如一个索引有三个primary shard，分别存储了6000条数据，我们要得到第100页的数据(每页10条)，类似这种情况就叫deep paging</p><p>如何得到第100页的10条数据？</p><p>在每个shard中搜索990到999这10条数据，然后用这30条数据排序，排序之后取10条数据就是要搜索的数据，这种做法是错的，因为3个shard中的数据的<em>score分数不一样，可能这某一个shard中第一条数据的</em>score分数比另一个shard中第1000条都要高，所以在每个shard中搜索990到999这10条数据然后排序的做法是不正确的。</p><p>正确的做法是每个shard把0到999条数据全部搜索出来（按排序顺序），然后全部返回给coordinate node，由coordinate node按_score分数排序后，取出第100页的10条数据，然后返回给客户端。</p><p>deep paging性能问题</p><p>1.耗费网络带宽，因为搜索过深的话，各shard要把数据传送给coordinate node，这个过程是有大量数据传递的，消耗网络，</p><p>2.消耗内存，各shard要把数据传送给coordinate node，这个传递回来的数据，是被coordinate node保存在内存中的，这样会大量消耗内存。</p><p>3.消耗cpu coordinate node要把传回来的数据进行排序，这个排序过程很消耗cpu.</p><p>鉴于deep paging的性能问题，所以应尽量减少使用。</p><h3 id=query-string查询及copy_to解析>query string查询及copy_to解析<a href=#query-string查询及copy_to解析 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>GET /lib3/user/_search?q=interests:changge</p><p>GET /lib3/user/_search?q=+interests:changge</p><p>GET /lib3/user/_search?q=-interests:changge</p><p>copy_to字段是把其它字段中的值，以空格为分隔符组成一个大字符串，然后被分析和索引，但是不存储，也就是说它能被查询，但不能被取回显示。</p><p>注意:copy_to指向的字段字段类型要为：text</p><p>当没有指定field时，就会从copy_to字段中查询GET /lib3/user/_search?q=changge</p><h3 id=字符串排序问题>字符串排序问题<a href=#字符串排序问题 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>对一个字符串类型的字段进行排序通常不准确，因为已经被分词成多个词条了</p><p>解决方式：对字段索引两次，一次索引分词（用于搜索），一次索引不分词(用于排序)</p><pre tabindex=0><code># 设置mapping
+</code></pre><p>deep paging:查询的很深，比如一个索引有三个primary shard，分别存储了6000条数据，我们要得到第100页的数据(每页10条)，类似这种情况就叫deep paging</p><p>如何得到第100页的10条数据？</p><p>在每个shard中搜索990到999这10条数据，然后用这30条数据排序，排序之后取10条数据就是要搜索的数据，这种做法是错的，因为3个shard中的数据的<em>score分数不一样，可能这某一个shard中第一条数据的</em>score分数比另一个shard中第1000条都要高，所以在每个shard中搜索990到999这10条数据然后排序的做法是不正确的。</p><p>正确的做法是每个shard把0到999条数据全部搜索出来（按排序顺序），然后全部返回给coordinate node，由coordinate node按_score分数排序后，取出第100页的10条数据，然后返回给客户端。</p><p>deep paging性能问题</p><p>1.耗费网络带宽，因为搜索过深的话，各shard要把数据传送给coordinate node，这个过程是有大量数据传递的，消耗网络，</p><p>2.消耗内存，各shard要把数据传送给coordinate node，这个传递回来的数据，是被coordinate node保存在内存中的，这样会大量消耗内存。</p><p>3.消耗cpu coordinate node要把传回来的数据进行排序，这个排序过程很消耗cpu.</p><p>鉴于deep paging的性能问题，所以应尽量减少使用。</p><h3 id=query-string查询及copy_to解析>query string查询及copy_to解析<a href=#query-string查询及copy_to解析 class=hanchor arialabel=Anchor>#</a></h3><p>GET /lib3/user/_search?q=interests:changge</p><p>GET /lib3/user/_search?q=+interests:changge</p><p>GET /lib3/user/_search?q=-interests:changge</p><p>copy_to字段是把其它字段中的值，以空格为分隔符组成一个大字符串，然后被分析和索引，但是不存储，也就是说它能被查询，但不能被取回显示。</p><p>注意:copy_to指向的字段字段类型要为：text</p><p>当没有指定field时，就会从copy_to字段中查询GET /lib3/user/_search?q=changge</p><h3 id=字符串排序问题>字符串排序问题<a href=#字符串排序问题 class=hanchor arialabel=Anchor>#</a></h3><p>对一个字符串类型的字段进行排序通常不准确，因为已经被分词成多个词条了</p><p>解决方式：对字段索引两次，一次索引分词（用于搜索），一次索引不分词(用于排序)</p><pre tabindex=0><code># 设置mapping
 PUT /lib3
 {
     &#34;settings&#34;:{
@@ -970,7 +1059,7 @@ GET /lib3/user/_search
     }
   ]
 }
-</code></pre><h3 id=如何计算相关度分数>如何计算相关度分数<a href=#如何计算相关度分数 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>使用的是TF/IDF算法(Term Frequency&amp;Inverse Document Frequency)</p><p>1.Term Frequency:我们查询的文本中的词条在document本中出现了多少次，出现次数越多，相关度越高</p><p>搜索内容： hello world</p><p>Hello，I love china.</p><p>Hello world,how are you!</p><p>2.Inverse Document Frequency：我们查询的文本中的词条在索引的所有文档中出现了多少次，出现的次数越多，相关度越低</p><p>搜索内容：hello world</p><p>hello，what are you doing?</p><p>I like the world.</p><p>hello 在索引的所有文档中出现了500次，world出现了100次</p><p>3.Field-length(字段长度归约) norm:field越长，相关度越低</p><p>搜索内容：hello world</p><p>{&ldquo;title&rdquo;:&ldquo;hello,what&rsquo;s your name?&rdquo;,&ldquo;content&rdquo;:{&ldquo;owieurowieuolsdjflk&rdquo;}}</p><p>{&ldquo;title&rdquo;:&ldquo;hi,good morning&rdquo;,&ldquo;content&rdquo;:{&ldquo;lkjkljkj&mldr;&mldr;.world&rdquo;}}</p><p>查看分数是如何计算的：</p><p>GET /lib3/user/_search?explain=true{&ldquo;query&rdquo;:{&ldquo;match&rdquo;:{&ldquo;interests&rdquo;: &ldquo;duanlian,changge&rdquo;}}}</p><p>查看一个文档能否匹配上某个查询：</p><p>GET /lib3/user/2/_explain{&ldquo;query&rdquo;:{&ldquo;match&rdquo;:{&ldquo;interests&rdquo;: &ldquo;duanlian,changge&rdquo;}}}</p><h3 id=doc-values-解析>Doc Values 解析<a href=#doc-values-解析 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>DocValues其实是Lucene在构建倒排索引时，会额外建立一个有序的正排索引(基于document => field value的映射列表),字符串不会创建正排索引</p><pre tabindex=0><code>{&#34;birthday&#34;:&#34;1985-11-11&#34;,age:23}
+</code></pre><h3 id=如何计算相关度分数>如何计算相关度分数<a href=#如何计算相关度分数 class=hanchor arialabel=Anchor>#</a></h3><p>使用的是TF/IDF算法(Term Frequency&amp;Inverse Document Frequency)</p><p>1.Term Frequency:我们查询的文本中的词条在document本中出现了多少次，出现次数越多，相关度越高</p><p>搜索内容： hello world</p><p>Hello，I love china.</p><p>Hello world,how are you!</p><p>2.Inverse Document Frequency：我们查询的文本中的词条在索引的所有文档中出现了多少次，出现的次数越多，相关度越低</p><p>搜索内容：hello world</p><p>hello，what are you doing?</p><p>I like the world.</p><p>hello 在索引的所有文档中出现了500次，world出现了100次</p><p>3.Field-length(字段长度归约) norm:field越长，相关度越低</p><p>搜索内容：hello world</p><p>{&ldquo;title&rdquo;:&ldquo;hello,what&rsquo;s your name?&rdquo;,&ldquo;content&rdquo;:{&ldquo;owieurowieuolsdjflk&rdquo;}}</p><p>{&ldquo;title&rdquo;:&ldquo;hi,good morning&rdquo;,&ldquo;content&rdquo;:{&ldquo;lkjkljkj&mldr;&mldr;.world&rdquo;}}</p><p>查看分数是如何计算的：</p><p>GET /lib3/user/_search?explain=true{&ldquo;query&rdquo;:{&ldquo;match&rdquo;:{&ldquo;interests&rdquo;: &ldquo;duanlian,changge&rdquo;}}}</p><p>查看一个文档能否匹配上某个查询：</p><p>GET /lib3/user/2/_explain{&ldquo;query&rdquo;:{&ldquo;match&rdquo;:{&ldquo;interests&rdquo;: &ldquo;duanlian,changge&rdquo;}}}</p><h3 id=doc-values-解析>Doc Values 解析<a href=#doc-values-解析 class=hanchor arialabel=Anchor>#</a></h3><p>DocValues其实是Lucene在构建倒排索引时，会额外建立一个有序的正排索引(基于document => field value的映射列表),字符串不会创建正排索引</p><pre tabindex=0><code>{&#34;birthday&#34;:&#34;1985-11-11&#34;,age:23}
 
 {&#34;birthday&#34;:&#34;1989-11-11&#34;,age:29}
 
@@ -998,7 +1087,7 @@ doc2         29         1989-11-11
       }
      }
 }
-</code></pre><h3 id=基于scroll技术滚动搜索大量数据>基于scroll技术滚动搜索大量数据<a href=#基于scroll技术滚动搜索大量数据 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>如果一次性要查出来比如10万条数据，那么性能会很差，此时一般会采取用scoll滚动查询，一批一批的查，直到所有数据都查询完为止。</p><p>1.scoll搜索会在第一次搜索的时候，保存一个当时的视图快照，之后只会基于该旧的视图快照提供数据搜索，如果这个期间数据变更，是不会让用户看到的</p><p>2.采用基于<em>doc(不使用</em>score)进行排序的方式，性能较高</p><p>3.每次发送scroll请求，我们还需要指定一个scoll参数，指定一个时间窗口，每次搜索请求只要在这个时间窗口内能完成就可以了</p><pre tabindex=0><code>GET /lib3/user/_search?scroll=1m
+</code></pre><h3 id=基于scroll技术滚动搜索大量数据>基于scroll技术滚动搜索大量数据<a href=#基于scroll技术滚动搜索大量数据 class=hanchor arialabel=Anchor>#</a></h3><p>如果一次性要查出来比如10万条数据，那么性能会很差，此时一般会采取用scoll滚动查询，一批一批的查，直到所有数据都查询完为止。</p><p>1.scoll搜索会在第一次搜索的时候，保存一个当时的视图快照，之后只会基于该旧的视图快照提供数据搜索，如果这个期间数据变更，是不会让用户看到的</p><p>2.采用基于<em>doc(不使用</em>score)进行排序的方式，性能较高</p><p>3.每次发送scroll请求，我们还需要指定一个scoll参数，指定一个时间窗口，每次搜索请求只要在这个时间窗口内能完成就可以了</p><pre tabindex=0><code>GET /lib3/user/_search?scroll=1m
 {
   &#34;query&#34;: {
     &#34;match_all&#34;: {}
@@ -1014,10 +1103,13 @@ GET /_search/scroll
    # 这个是上面那个查询里获取到的
    &#34;scroll_id&#34;: &#34;DnF1ZXJ5VGhlbkZldGNoAwAAAAAAAAAdFkEwRENOVTdnUUJPWVZUd1p2WE5hV2cAAAAAAAAAHhZBMERDTlU3Z1FCT1lWVHdadlhOYVdnAAAAAAAAAB8WQTBEQ05VN2dRQk9ZVlR3WnZYTmFXZw==&#34;
 }
-</code></pre><h3 id=dynamic-mapping策略>dynamic mapping策略<a href=#dynamic-mapping策略 class=hanchor arialabel=Anchor>&#8983;</a></h3><p><strong>dynamic</strong>:</p><p>1.true:遇到陌生字段就 dynamic mapping</p><p>2.false:遇到陌生字段就忽略</p><p>3.strict:约到陌生字段就报错</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>PUT</span> <span style=color:#960050;background-color:#1e0010>/lib</span><span style=color:#ae81ff>8</span>{<span style=color:#f92672>&#34;settings&#34;</span>:{<span style=color:#f92672>&#34;number_of_shards&#34;</span> : <span style=color:#ae81ff>3</span>,<span style=color:#f92672>&#34;number_of_replicas&#34;</span> : <span style=color:#ae81ff>0</span>},<span style=color:#f92672>&#34;mappings&#34;</span>:{<span style=color:#f92672>&#34;user&#34;</span>:{<span style=color:#f92672>&#34;dynamic&#34;</span>:<span style=color:#960050;background-color:#1e0010>strict</span>,<span style=color:#f92672>&#34;properties&#34;</span>:{<span style=color:#f92672>&#34;name&#34;</span>: {<span style=color:#f92672>&#34;type&#34;</span>:<span style=color:#e6db74>&#34;text&#34;</span>},<span style=color:#f92672>&#34;address&#34;</span>:{<span style=color:#f92672>&#34;type&#34;</span>:<span style=color:#e6db74>&#34;object&#34;</span>,<span style=color:#f92672>&#34;dynamic&#34;</span>:<span style=color:#66d9ef>true</span>},}}}}
-</span></span></code></pre></div><p>会报错</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>PUT</span>  <span style=color:#960050;background-color:#1e0010>/lib</span><span style=color:#ae81ff>8</span><span style=color:#960050;background-color:#1e0010>/user/</span><span style=color:#ae81ff>1</span>{<span style=color:#f92672>&#34;name&#34;</span>:<span style=color:#e6db74>&#34;lisi&#34;</span>,<span style=color:#f92672>&#34;age&#34;</span>:<span style=color:#ae81ff>20</span>,<span style=color:#f92672>&#34;address&#34;</span>:{<span style=color:#f92672>&#34;province&#34;</span>:<span style=color:#e6db74>&#34;beijing&#34;</span>,<span style=color:#f92672>&#34;city&#34;</span>:<span style=color:#e6db74>&#34;beijing&#34;</span>}}
-</span></span></code></pre></div><p><strong>date_detection</strong>:默认会按照一定格式识别date，比如yyyy-MM-dd</p><p>可以手动关闭某个type的date_detection</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span><span style=color:#960050;background-color:#1e0010>PUT</span> <span style=color:#960050;background-color:#1e0010>/lib</span><span style=color:#ae81ff>8</span>{<span style=color:#f92672>&#34;settings&#34;</span>:{<span style=color:#f92672>&#34;number_of_shards&#34;</span> : <span style=color:#ae81ff>3</span>,<span style=color:#f92672>&#34;number_of_replicas&#34;</span> : <span style=color:#ae81ff>0</span>},<span style=color:#f92672>&#34;mappings&#34;</span>:{<span style=color:#f92672>&#34;user&#34;</span>:{<span style=color:#f92672>&#34;date_detection&#34;</span>: <span style=color:#66d9ef>false</span>,}}}
-</span></span></code></pre></div><p><strong>定制 dynamic mapping template(type)</strong></p><p>PUT /my_index{&ldquo;mappings&rdquo;: {&ldquo;my_type&rdquo;: {&ldquo;dynamic_templates&rdquo;: [{&ldquo;en&rdquo;: {&ldquo;match&rdquo;: &ldquo;*_en&rdquo;,&ldquo;match_mapping_type&rdquo;: &ldquo;string&rdquo;,&ldquo;mapping&rdquo;: {&ldquo;type&rdquo;: &ldquo;text&rdquo;,&ldquo;analyzer&rdquo;: &ldquo;english&rdquo;}}}]}}}#使用了模板</p><p>PUT /my_index/my_type/3{&ldquo;title_en&rdquo;: &ldquo;this is my dog&rdquo;</p><p>}#没有使用模板</p><p>PUT /my_index/my_type/5{&ldquo;title&rdquo;: &ldquo;this is my cat&rdquo;}</p><p>GET my_index/my_type/_search{&ldquo;query&rdquo;: {&ldquo;match&rdquo;: {&ldquo;title&rdquo;: &ldquo;is&rdquo;}}}</p><h3 id=重建索引>重建索引<a href=#重建索引 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>一个field的设置是不能修改的，如果要修改一个field，那么应该重新按照新的mapping，建立一个index，然后将数据批量查询出来，重新用bulk api写入到index中。</p><p>批量查询的时候，建议采用scroll api，并且采用多线程并发的方式来reindex数据，每次scroll就查询指定日期的一段数据，交给一个线程即可。</p><pre tabindex=0><code># 原始的数据
+</code></pre><h3 id=dynamic-mapping策略>dynamic mapping策略<a href=#dynamic-mapping策略 class=hanchor arialabel=Anchor>#</a></h3><p><strong>dynamic</strong>:</p><p>1.true:遇到陌生字段就 dynamic mapping</p><p>2.false:遇到陌生字段就忽略</p><p>3.strict:约到陌生字段就报错</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=err>PUT</span> <span class=err>/lib</span><span class=mi>8</span><span class=p>{</span><span class=nt>&#34;settings&#34;</span><span class=p>:{</span><span class=nt>&#34;number_of_shards&#34;</span> <span class=p>:</span> <span class=mi>3</span><span class=p>,</span><span class=nt>&#34;number_of_replicas&#34;</span> <span class=p>:</span> <span class=mi>0</span><span class=p>},</span><span class=nt>&#34;mappings&#34;</span><span class=p>:{</span><span class=nt>&#34;user&#34;</span><span class=p>:{</span><span class=nt>&#34;dynamic&#34;</span><span class=p>:</span><span class=err>strict</span><span class=p>,</span><span class=nt>&#34;properties&#34;</span><span class=p>:{</span><span class=nt>&#34;name&#34;</span><span class=p>:</span> <span class=p>{</span><span class=nt>&#34;type&#34;</span><span class=p>:</span><span class=s2>&#34;text&#34;</span><span class=p>},</span><span class=nt>&#34;address&#34;</span><span class=p>:{</span><span class=nt>&#34;type&#34;</span><span class=p>:</span><span class=s2>&#34;object&#34;</span><span class=p>,</span><span class=nt>&#34;dynamic&#34;</span><span class=p>:</span><span class=kc>true</span><span class=p>},}}}}</span>
+</span></span></code></pre></td></tr></table></div></div><p>会报错</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=err>PUT</span>  <span class=err>/lib</span><span class=mi>8</span><span class=err>/user/</span><span class=mi>1</span><span class=p>{</span><span class=nt>&#34;name&#34;</span><span class=p>:</span><span class=s2>&#34;lisi&#34;</span><span class=p>,</span><span class=nt>&#34;age&#34;</span><span class=p>:</span><span class=mi>20</span><span class=p>,</span><span class=nt>&#34;address&#34;</span><span class=p>:{</span><span class=nt>&#34;province&#34;</span><span class=p>:</span><span class=s2>&#34;beijing&#34;</span><span class=p>,</span><span class=nt>&#34;city&#34;</span><span class=p>:</span><span class=s2>&#34;beijing&#34;</span><span class=p>}}</span>
+</span></span></code></pre></td></tr></table></div></div><p><strong>date_detection</strong>:默认会按照一定格式识别date，比如yyyy-MM-dd</p><p>可以手动关闭某个type的date_detection</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=err>PUT</span> <span class=err>/lib</span><span class=mi>8</span><span class=p>{</span><span class=nt>&#34;settings&#34;</span><span class=p>:{</span><span class=nt>&#34;number_of_shards&#34;</span> <span class=p>:</span> <span class=mi>3</span><span class=p>,</span><span class=nt>&#34;number_of_replicas&#34;</span> <span class=p>:</span> <span class=mi>0</span><span class=p>},</span><span class=nt>&#34;mappings&#34;</span><span class=p>:{</span><span class=nt>&#34;user&#34;</span><span class=p>:{</span><span class=nt>&#34;date_detection&#34;</span><span class=p>:</span> <span class=kc>false</span><span class=p>,}}}</span>
+</span></span></code></pre></td></tr></table></div></div><p><strong>定制 dynamic mapping template(type)</strong></p><p>PUT /my_index{&ldquo;mappings&rdquo;: {&ldquo;my_type&rdquo;: {&ldquo;dynamic_templates&rdquo;: [{&ldquo;en&rdquo;: {&ldquo;match&rdquo;: &ldquo;*_en&rdquo;,&ldquo;match_mapping_type&rdquo;: &ldquo;string&rdquo;,&ldquo;mapping&rdquo;: {&ldquo;type&rdquo;: &ldquo;text&rdquo;,&ldquo;analyzer&rdquo;: &ldquo;english&rdquo;}}}]}}}#使用了模板</p><p>PUT /my_index/my_type/3{&ldquo;title_en&rdquo;: &ldquo;this is my dog&rdquo;</p><p>}#没有使用模板</p><p>PUT /my_index/my_type/5{&ldquo;title&rdquo;: &ldquo;this is my cat&rdquo;}</p><p>GET my_index/my_type/_search{&ldquo;query&rdquo;: {&ldquo;match&rdquo;: {&ldquo;title&rdquo;: &ldquo;is&rdquo;}}}</p><h3 id=重建索引>重建索引<a href=#重建索引 class=hanchor arialabel=Anchor>#</a></h3><p>一个field的设置是不能修改的，如果要修改一个field，那么应该重新按照新的mapping，建立一个index，然后将数据批量查询出来，重新用bulk api写入到index中。</p><p>批量查询的时候，建议采用scroll api，并且采用多线程并发的方式来reindex数据，每次scroll就查询指定日期的一段数据，交给一个线程即可。</p><pre tabindex=0><code># 原始的数据
 PUT /index1/type1/4
 {
    &#34;content&#34;:&#34;1990-12-12&#34;
@@ -1080,7 +1172,7 @@ POST /_aliases
 }
 
 GET index2/type1/_search
-</code></pre><h3 id=索引不可变的原因>索引不可变的原因<a href=#索引不可变的原因 class=hanchor arialabel=Anchor>&#8983;</a></h3><p>倒排索引包括：</p><p>文档的列表，文档的数量，词条在每个文档中出现的次数，出现的位置，每个文档的长度，所有文档的平均长度</p><p>索引不变的原因：</p><p>不需要锁，提升了并发性能</p><p>可以一直保存在缓存中（filter）</p><p>节省cpu和io开销</p><h1 id=先记着>先记着<a href=#先记着 class=hanchor arialabel=Anchor>&#8983;</a></h1><p>用logstash去同步mysql的的增量,,需要两个字段,第一个是 id,主键,第二个是update_date, 用第二个字段去查询,默认用id去去重</p><p>group by 的时候报错了</p><p>es进行聚合操作时提示Fielddata is disabled on text fields by default</p><p><a href=https://blog.csdn.net/u011403655/article/details/71107415/>https://blog.csdn.net/u011403655/article/details/71107415/</a></p><pre tabindex=0><code># 充值笔数
+</code></pre><h3 id=索引不可变的原因>索引不可变的原因<a href=#索引不可变的原因 class=hanchor arialabel=Anchor>#</a></h3><p>倒排索引包括：</p><p>文档的列表，文档的数量，词条在每个文档中出现的次数，出现的位置，每个文档的长度，所有文档的平均长度</p><p>索引不变的原因：</p><p>不需要锁，提升了并发性能</p><p>可以一直保存在缓存中（filter）</p><p>节省cpu和io开销</p><h1 id=先记着>先记着<a href=#先记着 class=hanchor arialabel=Anchor>#</a></h1><p>用logstash去同步mysql的的增量,,需要两个字段,第一个是 id,主键,第二个是update_date, 用第二个字段去查询,默认用id去去重</p><p>group by 的时候报错了</p><p>es进行聚合操作时提示Fielddata is disabled on text fields by default</p><p><a href=https://blog.csdn.net/u011403655/article/details/71107415/>https://blog.csdn.net/u011403655/article/details/71107415/</a></p><pre tabindex=0><code># 充值笔数
 GET /shouye/rukuan/_search
 {
   &#34;aggs&#34;: {
@@ -1105,7 +1197,7 @@ PUT shouye/_mapping/rukuan/
     }
   }
 }
-</code></pre><h1 id=springboot整合elasticsearch>springboot整合Elasticsearch<a href=#springboot整合elasticsearch class=hanchor arialabel=Anchor>&#8983;</a></h1><pre tabindex=0><code>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+</code></pre><h1 id=springboot整合elasticsearch>springboot整合Elasticsearch<a href=#springboot整合elasticsearch class=hanchor arialabel=Anchor>#</a></h1><pre tabindex=0><code>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
 &lt;project xmlns=&#34;http://maven.apache.org/POM/4.0.0&#34; xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34;
          xsi:schemaLocation=&#34;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&#34;&gt;
     &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
@@ -1148,8 +1240,5 @@ PUT shouye/_mapping/rukuan/
 
 &lt;/project&gt;
 </code></pre><pre tabindex=0><code>spring.elasticsearch.rest.uris=http://192.168.111.132:9200
-</code></pre></div></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Read other posts</span><hr></div><div class=pagination__buttons><span class="button previous"><a href=https://tosa.team/posts/docker/><span class=button__icon>←</span>
-<span class=button__text>Docker</span>
-</a></span><span class="button next"><a href=https://tosa.team/posts/web/element-ui/><span class=button__text>Element-UI</span>
-<span class=button__icon>→</span></a></span></div></div></article></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>
-<span>:: <a href=https://github.com/mirus-ua/hugo-theme-re-terminal target=_blank>Theme</a> made by <a href=https://github.com/mirus-ua target=_blank>Mirus</a></span></div></div></footer><script type=text/javascript src=/bundle.min.js></script></div></body></html>
+</code></pre></div></div></article></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>
+<span>:: <a href=https://github.com/panr/hugo-theme-terminal target=_blank>Theme</a> made by <a href=https://github.com/panr target=_blank>panr</a></span></div></div></footer><script type=text/javascript src=/bundle.min.js></script></div></body></html>

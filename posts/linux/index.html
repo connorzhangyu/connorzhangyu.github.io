@@ -1,184 +1,341 @@
 <!doctype html><html lang=zh><head><title>Linux :: Hello World!</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="系统命令 解压缩 demo(文件夹)
 |&mdash;&mdash;|1.txt(文件)
-# -r：递归地压缩目录，意味着 zip 命令会包含 demo 文件夹内的所有文件和子目录。 # demo.zip：这是输出的压缩文件名。 # demo：这是您要压缩的目录名。 zip -r demo.zip demo # -o：强制覆盖现有的文件和文件夹，而不会询问用户。 # demo.zip：这是您想要解压的 .zip 文件名。 unzip -o demo.zip 查看前几行 ifconfig | head -n 100 安装中文 apt install language-pack-zh-hans vim /etc/default/locale LANG=zh_CN.UTF-8 LANGUAGE=zh_CN:zh:en_US:en # 验证 root@anthony:~# echo $LANG zh_CN.UTF-8 Update索引失效 正在读取软件包列表... 完成 E: 无法下载 http://mirror.rise.ph/ubuntu/dists/focal-updates/main/dep11/Components-amd64.yml.xz 文件尺寸不符(264288 != 264484)。您使用的镜像正在同步中？ [IP: 43.226.6.79 80] Hashes of expected file: - Filesize:264484 [weak] - SHA256:ea09acc6bddd6a503a3812ba1d3a025e5515c5469dcad172c86e2bda6f203752 - SHA1:60863a9cc3181eb87007edcfc2de1ba6a0b81a5f [weak] - MD5Sum:80baa34a1b24d245341757fa51ebd29e [weak] Release file created at: Sat, 27 Feb 2021 08:09:39 +0000 E: 部分索引文件下载失败。如果忽略它们，那将转而使用旧的索引文件。 # 解决办法 sudo rm -rf /var/lib/apt/lists/partial/ sudo apt update 修改时区 # 查询当前时间 date -R # tzselect 选择 4,9,1,1 # ubuntu特有的,如果不是ubuntu 跳过这一步 sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime # java设置时区 在/etc/profile或~/.bashrc文件中设置环境变量TZ export TZ='Asia/Shanghai' source /etc/profile # ubuntu20.04 sudo timedatectl set-timezone Asia/Shanghai 历史命令 # 历史命令 history -3 sudo免密 vim /etc/sudoers
-"><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://tosa.team/posts/linux/><link rel=stylesheet href=https://tosa.team/styles.css><link rel="shortcut icon" href=https://tosa.team/img/theme-colors/orange.png><link rel=apple-touch-icon href=https://tosa.team/img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta name=twitter:site content><meta name=twitter:creator content="Anthony"><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="og:title" content="Linux"><meta property="og:description" content="系统命令 解压缩 demo(文件夹)
+1 2 3 4 5 6 7 8 # -r：递归地压缩目录，意味着 zip 命令会包含 demo 文件夹内的所有文件和子目录。 # demo.zip：这是输出的压缩文件名。 # demo：这是您要压缩的目录名。 zip -r demo.zip demo # -o：强制覆盖现有的文件和文件夹，而不会询问用户。 # demo.zip：这是您想要解压的 .zip 文件名。 unzip -o demo.zip 查看前几行 1 ifconfig | head -n 100 安装中文 1 2 3 4 5 6 7 8 9 apt install language-pack-zh-hans vim /etc/default/locale LANG=zh_CN.UTF-8 LANGUAGE=zh_CN:zh:en_US:en # 验证 root@anthony:~# echo $LANG zh_CN.UTF-8 Update索引失效 1 2 3 4 5 6 7 8 9 10 11 12 13 正在读取软件包列表... 完成 E: 无法下载 http://mirror.rise.ph/ubuntu/dists/focal-updates/main/dep11/Components-amd64.yml.xz 文件尺寸不符(264288 != 264484)。您使用的镜像正在同步中？ [IP: 43.226.6.79 80] Hashes of expected file: - Filesize:264484 [weak] - SHA256:ea09acc6bddd6a503a3812ba1d3a025e5515c5469dcad172c86e2bda6f203752 - SHA1:60863a9cc3181eb87007edcfc2de1ba6a0b81a5f [weak] - MD5Sum:80baa34a1b24d245341757fa51ebd29e [weak] Release file created at: Sat, 27 Feb 2021 08:09:39 +0000 E: 部分索引文件下载失败。如果忽略它们，那将转而使用旧的索引文件。 # 解决办法 sudo rm -rf /var/lib/apt/lists/partial/ sudo apt update 修改时区 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 # 查询当前时间 date -R # tzselect 选择 4,9,1,1 # ubuntu特有的,如果不是ubuntu 跳过这一步 sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime # java设置时区 在/etc/profile或~/.bashrc文件中设置环境变量TZ export TZ='Asia/Shanghai' source /etc/profile # ubuntu20.04 sudo timedatectl set-timezone Asia/Shanghai 历史命令 1 2 # 历史命令 history -3 sudo免密 vim /etc/sudoers
+"><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://tosa.team/posts/linux/><link rel=stylesheet href=https://tosa.team/css/custom.min.c48d2dcfc3aad8abc3315f33f61b0f9ee763ed50a0938b6ae80c6726450e5b2a.css><link rel=stylesheet href=https://tosa.team/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css><link rel=stylesheet href=https://tosa.team/css/code.min.d529ea4b2fb8d34328d7d31afc5466d5f7bc2f0bc9abdd98b69385335d7baee4.css><link rel=stylesheet href=https://tosa.team/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css><link rel=stylesheet href=https://tosa.team/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css><link rel=stylesheet href=https://tosa.team/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css><link rel=stylesheet href=https://tosa.team/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css><link rel=stylesheet href=https://tosa.team/css/main.min.775ac2af004d44c22a6d000fbd1d9af529642f5cef27399d0280d180af2c2e9b.css><link rel=stylesheet href=https://tosa.team/css/menu.min.310d32205bdedd6f43144e3c3273c9deecd238eba5f9108db5ea96ca0cfbe377.css><link rel=stylesheet href=https://tosa.team/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css><link rel=stylesheet href=https://tosa.team/css/post.min.ad50c7f4d00e7975918f37fc74c6029e1959a40d66fb5b2c6564a8715e985573.css><link rel=stylesheet href=https://tosa.team/css/syntax.min.e9ab635cf918bc84b901eb65c0b2caa74c9544245e3647c1af5c129896ef276e.css><link rel=stylesheet href=https://tosa.team/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css><link rel=stylesheet href=https://tosa.team/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css><link rel=stylesheet href=https://tosa.team/style.css><link rel="shortcut icon" href=https://tosa.team/favicon.png><link rel=apple-touch-icon href=https://tosa.team/apple-touch-icon.png><meta name=twitter:card content="summary"><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="og:title" content="Linux"><meta property="og:description" content="系统命令 解压缩 demo(文件夹)
 |&mdash;&mdash;|1.txt(文件)
-# -r：递归地压缩目录，意味着 zip 命令会包含 demo 文件夹内的所有文件和子目录。 # demo.zip：这是输出的压缩文件名。 # demo：这是您要压缩的目录名。 zip -r demo.zip demo # -o：强制覆盖现有的文件和文件夹，而不会询问用户。 # demo.zip：这是您想要解压的 .zip 文件名。 unzip -o demo.zip 查看前几行 ifconfig | head -n 100 安装中文 apt install language-pack-zh-hans vim /etc/default/locale LANG=zh_CN.UTF-8 LANGUAGE=zh_CN:zh:en_US:en # 验证 root@anthony:~# echo $LANG zh_CN.UTF-8 Update索引失效 正在读取软件包列表... 完成 E: 无法下载 http://mirror.rise.ph/ubuntu/dists/focal-updates/main/dep11/Components-amd64.yml.xz 文件尺寸不符(264288 != 264484)。您使用的镜像正在同步中？ [IP: 43.226.6.79 80] Hashes of expected file: - Filesize:264484 [weak] - SHA256:ea09acc6bddd6a503a3812ba1d3a025e5515c5469dcad172c86e2bda6f203752 - SHA1:60863a9cc3181eb87007edcfc2de1ba6a0b81a5f [weak] - MD5Sum:80baa34a1b24d245341757fa51ebd29e [weak] Release file created at: Sat, 27 Feb 2021 08:09:39 +0000 E: 部分索引文件下载失败。如果忽略它们，那将转而使用旧的索引文件。 # 解决办法 sudo rm -rf /var/lib/apt/lists/partial/ sudo apt update 修改时区 # 查询当前时间 date -R # tzselect 选择 4,9,1,1 # ubuntu特有的,如果不是ubuntu 跳过这一步 sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime # java设置时区 在/etc/profile或~/.bashrc文件中设置环境变量TZ export TZ='Asia/Shanghai' source /etc/profile # ubuntu20.04 sudo timedatectl set-timezone Asia/Shanghai 历史命令 # 历史命令 history -3 sudo免密 vim /etc/sudoers
-"><meta property="og:url" content="https://tosa.team/posts/linux/"><meta property="og:site_name" content="Hello World!"><meta property="og:image" content="https://image.runtimes.cc/202404051530296.jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><meta property="article:section" content="Linux"><meta property="article:published_time" content="2022-11-22 10:53:07 +0000 UTC"></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/>首页</a></li><li><a href=/posts/>文章</a></li><li><a href=/categories/>分类</a></li><li><a href=/tags/>标签</a></li><li><a href=/about/>关于我</a></li><li><a href=/docs/>团队文档中心</a></li><hr><li><a href=https://tosa.team/>中文</a></li><li><a href=https://tosa.team/en/>English</a></li><li><a href=https://tosa.team/th/>ไทย</a></li></ul></li></ul><ul class="menu menu--desktop menu--language-selector"><li class=menu__trigger>中文&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=https://tosa.team/>中文</a></li><li><a href=https://tosa.team/en/>English</a></li><li><a href=https://tosa.team/th/>ไทย</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/>首页</a></li><li><a href=/posts/>文章</a></li><li><a href=/categories/>分类</a></li><li><a href=/tags/>标签</a></li><li><a href=/about/>关于我</a></li><li><a href=/docs/>团队文档中心</a></li></ul></nav></header><div class=content><article class=post><h1 class=post-title><a href=https://tosa.team/posts/linux/>Linux</a></h1><div class=post-meta><time class=post-date>2022-11-22[Updated::2022-11-22]</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://tosa.team/tags/linux/>Linux</a>&nbsp;
+1 2 3 4 5 6 7 8 # -r：递归地压缩目录，意味着 zip 命令会包含 demo 文件夹内的所有文件和子目录。 # demo.zip：这是输出的压缩文件名。 # demo：这是您要压缩的目录名。 zip -r demo.zip demo # -o：强制覆盖现有的文件和文件夹，而不会询问用户。 # demo.zip：这是您想要解压的 .zip 文件名。 unzip -o demo.zip 查看前几行 1 ifconfig | head -n 100 安装中文 1 2 3 4 5 6 7 8 9 apt install language-pack-zh-hans vim /etc/default/locale LANG=zh_CN.UTF-8 LANGUAGE=zh_CN:zh:en_US:en # 验证 root@anthony:~# echo $LANG zh_CN.UTF-8 Update索引失效 1 2 3 4 5 6 7 8 9 10 11 12 13 正在读取软件包列表... 完成 E: 无法下载 http://mirror.rise.ph/ubuntu/dists/focal-updates/main/dep11/Components-amd64.yml.xz 文件尺寸不符(264288 != 264484)。您使用的镜像正在同步中？ [IP: 43.226.6.79 80] Hashes of expected file: - Filesize:264484 [weak] - SHA256:ea09acc6bddd6a503a3812ba1d3a025e5515c5469dcad172c86e2bda6f203752 - SHA1:60863a9cc3181eb87007edcfc2de1ba6a0b81a5f [weak] - MD5Sum:80baa34a1b24d245341757fa51ebd29e [weak] Release file created at: Sat, 27 Feb 2021 08:09:39 +0000 E: 部分索引文件下载失败。如果忽略它们，那将转而使用旧的索引文件。 # 解决办法 sudo rm -rf /var/lib/apt/lists/partial/ sudo apt update 修改时区 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 # 查询当前时间 date -R # tzselect 选择 4,9,1,1 # ubuntu特有的,如果不是ubuntu 跳过这一步 sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime # java设置时区 在/etc/profile或~/.bashrc文件中设置环境变量TZ export TZ='Asia/Shanghai' source /etc/profile # ubuntu20.04 sudo timedatectl set-timezone Asia/Shanghai 历史命令 1 2 # 历史命令 history -3 sudo免密 vim /etc/sudoers
+"><meta property="og:url" content="https://tosa.team/posts/linux/"><meta property="og:site_name" content="Hello World!"><meta property="og:image" content="https://image.runtimes.cc/202404051530296.jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><meta property="article:section" content="Linux"><meta property="article:published_time" content="2022-11-22 10:53:07 +0000 UTC"><link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel=stylesheet><link rel=stylesheet href=/style.css></head><body><div class=container><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>康纳的记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/>首页</a></li><li><a href=/featured/>精选</a></li><li><a href=/posts/>文章</a></li><li><a href=/categories/>分类</a></li><li><a href=/tags/>标签</a></li><li><a href=/about/>关于我</a></li><li><a href=/docs/>团队文档中心</a></li><hr><li><a href=https://tosa.team/>中文</a></li><li><a href=https://tosa.team/en/>ENG</a></li><li><a href=https://tosa.team/th/>ไทย</a></li></ul></li></ul><ul class="menu menu--desktop menu--language-selector"><li class=menu__trigger>中文&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=https://tosa.team/>中文</a></li><li><a href=https://tosa.team/en/>ENG</a></li><li><a href=https://tosa.team/th/>ไทย</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/>首页</a></li><li><a href=/featured/>精选</a></li><li><a href=/posts/>文章</a></li><li><a href=/categories/>分类</a></li><li><a href=/tags/>标签</a></li><li><a href=/about/>关于我</a></li><li><a href=/docs/>团队文档中心</a></li></ul></nav></header><div class=content><article class=post><h1 class=post-title><a href=https://tosa.team/posts/linux/>Linux</a></h1><div class=post-meta><time class=post-date>2022-11-22&nbsp;[Updated: 2025-08-04]</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://tosa.team/tags/linux/>Linux</a>&nbsp;
 #<a href=https://tosa.team/tags/vim/>vim</a>&nbsp;
 #<a href=https://tosa.team/tags/ssh/>ssh</a>&nbsp;
 #<a href=https://tosa.team/tags/%E6%9D%83%E9%99%90/>权限</a>&nbsp;
 #<a href=https://tosa.team/tags/%E7%94%A8%E6%88%B7/>用户</a>&nbsp;
 #<a href=https://tosa.team/tags/%E7%A3%81%E7%9B%98/>磁盘</a>&nbsp;
 #<a href=https://tosa.team/tags/%E8%84%9A%E6%9C%AC/>脚本</a>&nbsp;
-</span><img src=https://image.runtimes.cc/202404051530296.jpeg class=post-cover alt=" " title="Cover Image"><div class=post-content><div><h1 id=系统命令>系统命令<a href=#系统命令 class=hanchor arialabel=Anchor>&#8983;</a></h1><h2 id=解压缩>解压缩<a href=#解压缩 class=hanchor arialabel=Anchor>&#8983;</a></h2><p>demo(文件夹)</p><p>|&mdash;&mdash;|1.txt(文件)</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># -r：递归地压缩目录，意味着 zip 命令会包含 demo 文件夹内的所有文件和子目录。</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># demo.zip：这是输出的压缩文件名。</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># demo：这是您要压缩的目录名。</span>
-</span></span><span style=display:flex><span>zip -r demo.zip demo
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># -o：强制覆盖现有的文件和文件夹，而不会询问用户。</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># demo.zip：这是您想要解压的 .zip 文件名。</span>
-</span></span><span style=display:flex><span>unzip -o demo.zip
-</span></span></code></pre></div><h2 id=查看前几行>查看前几行<a href=#查看前几行 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>ifconfig | head -n <span style=color:#ae81ff>100</span>
-</span></span></code></pre></div><h2 id=安装中文>安装中文<a href=#安装中文 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>apt install language-pack-zh-hans
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>vim /etc/default/locale
-</span></span><span style=display:flex><span>LANG<span style=color:#f92672>=</span>zh_CN.UTF-8
-</span></span><span style=display:flex><span>LANGUAGE<span style=color:#f92672>=</span>zh_CN:zh:en_US:en
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 验证</span>
-</span></span><span style=display:flex><span>root@anthony:~# echo $LANG
-</span></span><span style=display:flex><span>zh_CN.UTF-8
-</span></span></code></pre></div><h2 id=update索引失效>Update索引失效<a href=#update索引失效 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>正在读取软件包列表... 完成
-</span></span><span style=display:flex><span>E: 无法下载 http://mirror.rise.ph/ubuntu/dists/focal-updates/main/dep11/Components-amd64.yml.xz  文件尺寸不符<span style=color:#f92672>(</span><span style=color:#ae81ff>264288</span> !<span style=color:#f92672>=</span> 264484<span style=color:#f92672>)</span>。您使用的镜像正在同步中？ <span style=color:#f92672>[</span>IP: 43.226.6.79 80<span style=color:#f92672>]</span>
-</span></span><span style=display:flex><span>   Hashes of expected file:
-</span></span><span style=display:flex><span>    - Filesize:264484 <span style=color:#f92672>[</span>weak<span style=color:#f92672>]</span>
-</span></span><span style=display:flex><span>    - SHA256:ea09acc6bddd6a503a3812ba1d3a025e5515c5469dcad172c86e2bda6f203752
-</span></span><span style=display:flex><span>    - SHA1:60863a9cc3181eb87007edcfc2de1ba6a0b81a5f <span style=color:#f92672>[</span>weak<span style=color:#f92672>]</span>
-</span></span><span style=display:flex><span>    - MD5Sum:80baa34a1b24d245341757fa51ebd29e <span style=color:#f92672>[</span>weak<span style=color:#f92672>]</span>
-</span></span><span style=display:flex><span>   Release file created at: Sat, <span style=color:#ae81ff>27</span> Feb <span style=color:#ae81ff>2021</span> 08:09:39 +0000
-</span></span><span style=display:flex><span>E: 部分索引文件下载失败。如果忽略它们，那将转而使用旧的索引文件。
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 解决办法</span>
-</span></span><span style=display:flex><span>sudo  rm -rf  /var/lib/apt/lists/partial/
-</span></span><span style=display:flex><span>sudo apt update
-</span></span></code></pre></div><h2 id=修改时区>修改时区<a href=#修改时区 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 查询当前时间</span>
-</span></span><span style=display:flex><span>date -R
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># tzselect</span>
-</span></span><span style=display:flex><span>选择 4,9,1,1
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># ubuntu特有的,如果不是ubuntu 跳过这一步</span>
-</span></span><span style=display:flex><span>sudo cp /usr/share/zoneinfo/Asia/Shanghai  /etc/localtime
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># java设置时区</span>
-</span></span><span style=display:flex><span>在/etc/profile或~/.bashrc文件中设置环境变量TZ
-</span></span><span style=display:flex><span>export TZ<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;Asia/Shanghai&#39;</span>
-</span></span><span style=display:flex><span>source /etc/profile
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># ubuntu20.04</span>
-</span></span><span style=display:flex><span>sudo timedatectl set-timezone Asia/Shanghai
-</span></span></code></pre></div><h2 id=历史命令>历史命令<a href=#历史命令 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 历史命令</span>
-</span></span><span style=display:flex><span>history -3
-</span></span></code></pre></div><h2 id=sudo免密>sudo免密<a href=#sudo免密 class=hanchor arialabel=Anchor>&#8983;</a></h2><p><code>vim /etc/sudoers</code></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># Host alias specification</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># User alias specification</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Cmnd alias specification</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># User privilege specification</span>
-</span></span><span style=display:flex><span>root    ALL<span style=color:#f92672>=(</span>ALL:ALL<span style=color:#f92672>)</span> ALL
-</span></span><span style=display:flex><span><span style=color:#75715e># 加在这里会被覆盖掉</span>
-</span></span><span style=display:flex><span>anthony ALL<span style=color:#f92672>=(</span>ALL<span style=color:#f92672>)</span> NOPASSWD:ALL
-</span></span><span style=display:flex><span><span style=color:#75715e># Members of the admin group may gain root privileges</span>
-</span></span><span style=display:flex><span>%admin ALL<span style=color:#f92672>=(</span>ALL<span style=color:#f92672>)</span> ALL
-</span></span><span style=display:flex><span><span style=color:#75715e># 最好是加在最后</span>
-</span></span><span style=display:flex><span>anthony ALL<span style=color:#f92672>=(</span>ALL<span style=color:#f92672>)</span> NOPASSWD:ALL
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Allow members of group sudo to execute any command</span>
-</span></span><span style=display:flex><span>%sudo   ALL<span style=color:#f92672>=(</span>ALL:ALL<span style=color:#f92672>)</span> ALL
-</span></span><span style=display:flex><span>anthony ALL<span style=color:#f92672>=(</span>ALL<span style=color:#f92672>)</span> NOPASSWD:ALL
-</span></span></code></pre></div><h2 id=grep管道>grep管道<a href=#grep管道 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>cat hive-default.xml | grep hive.cli.print
-</span></span></code></pre></div><h2 id=系统升级>系统升级<a href=#系统升级 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>yum -y update<span style=color:#f92672>(</span>centos<span style=color:#f92672>)</span>
-</span></span><span style=display:flex><span>apt-get update<span style=color:#f92672>(</span>ubuntu 软件包的列表 <span style=color:#f92672>)</span>
-</span></span><span style=display:flex><span>sudo apt-get dist-upgrade （进入列新你系统和系统里安装的软件）
-</span></span></code></pre></div><h2 id=ll文件大小按mb显示>ll文件大小按MB显示<a href=#ll文件大小按mb显示 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>ls -lh
-</span></span><span style=display:flex><span>ll -lh
-</span></span></code></pre></div><h2 id=查看系统版本>查看系统版本<a href=#查看系统版本 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>cat /etc/os-release
-</span></span></code></pre></div><h2 id=立即关机和重启>立即关机和重启<a href=#立即关机和重启 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 现在立即关机</span>
-</span></span><span style=display:flex><span>shutdown -h now 
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 现在立即重启</span>
-</span></span><span style=display:flex><span>shutdown -r now 
-</span></span></code></pre></div><h2 id=当前时间>当前时间<a href=#当前时间 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>data  /   date -R
-</span></span></code></pre></div><h2 id=目录占用空间>目录占用空间<a href=#目录占用空间 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 查看当前目录下一级子文件和子目录占用的磁盘容量</span>
-</span></span><span style=display:flex><span>du -lh --max-depth<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span> /
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 查看当前目录总共占的容量。而不单独列出各子项占用的容量</span>
-</span></span><span style=display:flex><span>du -sh
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 使用lsof命令排查,可以查看到状态为deleted的文件</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 可考虑kill掉程序,就会自动释放</span>
-</span></span><span style=display:flex><span>lsof |grep deleted
-</span></span><span style=display:flex><span>--------------------------------------------------------------------------------
-</span></span><span style=display:flex><span>COMMAND     PID   TID     USER   FD      TYPE             DEVICE   SIZE/OFF       NODE   NAME
-</span></span><span style=display:flex><span>dbus-daem   <span style=color:#ae81ff>456</span>           dbus  txt       REG              253,1      <span style=color:#ae81ff>441144</span>     <span style=color:#ae81ff>141672</span> /usr/bin/dbus-daemon <span style=color:#f92672>(</span>deleted<span style=color:#f92672>)</span>
-</span></span><span style=display:flex><span>...
-</span></span><span style=display:flex><span>node      <span style=color:#ae81ff>11595</span> <span style=color:#ae81ff>11733</span>     root  txt       REG              253,1    <span style=color:#ae81ff>29851602</span>    <span style=color:#ae81ff>1461079</span> /home/elk/kibana-5.5.1-linux-x86_64/node/bin/node <span style=color:#f92672>(</span>deleted<span style=color:#f92672>)</span>
-</span></span><span style=display:flex><span>node      <span style=color:#ae81ff>11595</span> <span style=color:#ae81ff>11733</span>     root    1w      REG              253,1 <span style=color:#ae81ff>11374904415</span>    <span style=color:#ae81ff>1059873</span> /home/elk/kibana-5.5.1-linux-x86_64/nohup.out <span style=color:#f92672>(</span>deleted<span style=color:#f92672>)</span>
-</span></span><span style=display:flex><span>node      <span style=color:#ae81ff>11595</span> <span style=color:#ae81ff>11733</span>     root    2w      REG              253,1 <span style=color:#ae81ff>11374904415</span>    <span style=color:#ae81ff>1059873</span> /home/elk/kibana-5.5.1-linux-x86_64/nohup.out <span style=color:#f92672>(</span>deleted<span style=color:#f92672>)</span>
-</span></span><span style=display:flex><span>async_17  <span style=color:#ae81ff>24113</span> <span style=color:#ae81ff>24210</span> rabbitmq    1w      REG              253,1  <span style=color:#ae81ff>8556707104</span>     <span style=color:#ae81ff>659069</span> /var/log/rabbitmq/startup_log <span style=color:#f92672>(</span>deleted<span style=color:#f92672>)</span>
-</span></span><span style=display:flex><span>async_18  <span style=color:#ae81ff>24113</span> <span style=color:#ae81ff>24211</span> rabbitmq    1w      REG              253,1  <span style=color:#ae81ff>8556707104</span>     <span style=color:#ae81ff>659069</span> /var/log/rabbitmq/startup_log <span style=color:#f92672>(</span>deleted<span style=color:#f92672>)</span>
-</span></span><span style=display:flex><span>async_19  <span style=color:#ae81ff>24113</span> <span style=color:#ae81ff>24212</span> rabbitmq    1w      REG              253,1  <span style=color:#ae81ff>8556707104</span>     <span style=color:#ae81ff>659069</span> /var/log/rabbitmq/startup_log <span style=color:#f92672>(</span>deleted<span style=color:#f92672>)</span>
-</span></span><span style=display:flex><span>async_20  <span style=color:#ae81ff>24113</span> <span style=color:#ae81ff>24213</span> rabbitmq    1w      REG              253,1  <span style=color:#ae81ff>8556707104</span>     <span style=color:#ae81ff>659069</span> /var/log/rabbitmq/startup_log <span style=color:#f92672>(</span>deleted<span style=color:#f92672>)</span>
-</span></span></code></pre></div><h2 id=文件传输>文件传输<a href=#文件传输 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 获取远程服务器上的文件</span>
-</span></span><span style=display:flex><span>scp -P <span style=color:#ae81ff>2222</span> root@www.vpser.net:/root/lnmp0.4.tar.gz /home/lnmp0.4.tar.gz
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 获取远程服务器上的目录</span>
-</span></span><span style=display:flex><span>scp -P <span style=color:#ae81ff>2222</span> -r root@www.vpser.net:/root/lnmp0.4/ /home/lnmp0.4/
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 将本地文件上传到服务器上</span>
-</span></span><span style=display:flex><span>scp -P <span style=color:#ae81ff>2222</span> /home/lnmp0.4.tar.gz* *root@www.vpser.net:/root/lnmp0.4.tar.gz
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 将本地目录上传到服务器上</span>
-</span></span><span style=display:flex><span>scp -P <span style=color:#ae81ff>2222</span> -r /home/lnmp0.4/* *root@www.vpser.net:/root/lnmp0.4/
-</span></span></code></pre></div><h2 id=修改主机名字>修改主机名字<a href=#修改主机名字 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 第一种方法</span>
-</span></span><span style=display:flex><span>sudo vim /etc/sysconfig/network
-</span></span><span style=display:flex><span><span style=color:#75715e># 编辑</span>
-</span></span><span style=display:flex><span>HOSTNAME<span style=color:#f92672>=</span>weekend100
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>sudo hostname weenkend110
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 第二种方法,需要重启</span>
-</span></span><span style=display:flex><span>vim /etc/hostname
-</span></span></code></pre></div><h2 id=ubuntu右上角网络图标消失并且上不了网>Ubuntu右上角网络图标消失并且上不了网<a href=#ubuntu右上角网络图标消失并且上不了网 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>sudo nmcli networking off
-</span></span><span style=display:flex><span>sudo nmcli networking on
-</span></span><span style=display:flex><span>sudo service network-manager stop
-</span></span><span style=display:flex><span>sudo rm /var/lib/NetworkManager/NetworkManager.state
-</span></span><span style=display:flex><span>sudo service network-manager start
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>sudo gedit /etc/NetworkManager/NetworkManager.conf
-</span></span><span style=display:flex><span><span style=color:#75715e># 把false改成true</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>sudo service network-manager restart
-</span></span></code></pre></div><h2 id=cockpit>Cockpit<a href=#cockpit class=hanchor arialabel=Anchor>&#8983;</a></h2><pre tabindex=0><code>Activate the web console with: systemctl enable --now cockpit.socke
-</code></pre><p>Cockpit介绍自己是一个Web端的系统管理工具，只用鼠标点点就能管理系统，事实上也确实如此，我实际使用来说，启动Cockpit服务之后，只需要鼠标点点点就能完成系统很多基础操作，比如查看系统信息，启动/停止服务，新增或者更改账户，系统更新，Web终端及查看网络流量等功能。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>systemctl start cockpit.socket   <span style=color:#75715e># 运行Cockpit服务</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>systemctl enable –now cockpit.socket  <span style=color:#75715e># 启动该服务，随系统启动一同启动</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>systemctl status cockpit.socket
-</span></span></code></pre></div><p>然后在另一台电脑上用浏览器登录 <a href=https://ip:9090/>https://IP:9090</a></p><h2 id=top>top<a href=#top class=hanchor arialabel=Anchor>&#8983;</a></h2><pre tabindex=0><code>top - 21:08:58 up  6:15,  4 users,  load average: 0.01, 0.03, 0.05
+</span><img src=https://image.runtimes.cc/202404051530296.jpeg class=post-cover alt=Linux title="Cover Image"><div class=post-content><div><h1 id=系统命令>系统命令<a href=#系统命令 class=hanchor arialabel=Anchor>#</a></h1><h2 id=解压缩>解压缩<a href=#解压缩 class=hanchor arialabel=Anchor>#</a></h2><p>demo(文件夹)</p><p>|&mdash;&mdash;|1.txt(文件)</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl><span class=c1># -r：递归地压缩目录，意味着 zip 命令会包含 demo 文件夹内的所有文件和子目录。</span>
+</span></span><span class=line><span class=cl><span class=c1># demo.zip：这是输出的压缩文件名。</span>
+</span></span><span class=line><span class=cl><span class=c1># demo：这是您要压缩的目录名。</span>
+</span></span><span class=line><span class=cl>zip -r demo.zip demo
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># -o：强制覆盖现有的文件和文件夹，而不会询问用户。</span>
+</span></span><span class=line><span class=cl><span class=c1># demo.zip：这是您想要解压的 .zip 文件名。</span>
+</span></span><span class=line><span class=cl>unzip -o demo.zip
+</span></span></code></pre></td></tr></table></div></div><h2 id=查看前几行>查看前几行<a href=#查看前几行 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>ifconfig <span class=p>|</span> head -n <span class=m>100</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=安装中文>安装中文<a href=#安装中文 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>apt install language-pack-zh-hans
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>vim /etc/default/locale
+</span></span><span class=line><span class=cl><span class=nv>LANG</span><span class=o>=</span>zh_CN.UTF-8
+</span></span><span class=line><span class=cl><span class=nv>LANGUAGE</span><span class=o>=</span>zh_CN:zh:en_US:en
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 验证</span>
+</span></span><span class=line><span class=cl>root@anthony:~# <span class=nb>echo</span> <span class=nv>$LANG</span>
+</span></span><span class=line><span class=cl>zh_CN.UTF-8
+</span></span></code></pre></td></tr></table></div></div><h2 id=update索引失效>Update索引失效<a href=#update索引失效 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>正在读取软件包列表... 完成
+</span></span><span class=line><span class=cl>E: 无法下载 http://mirror.rise.ph/ubuntu/dists/focal-updates/main/dep11/Components-amd64.yml.xz  文件尺寸不符<span class=o>(</span><span class=m>264288</span> !<span class=o>=</span> 264484<span class=o>)</span>。您使用的镜像正在同步中？ <span class=o>[</span>IP: 43.226.6.79 80<span class=o>]</span>
+</span></span><span class=line><span class=cl>   Hashes of expected file:
+</span></span><span class=line><span class=cl>    - Filesize:264484 <span class=o>[</span>weak<span class=o>]</span>
+</span></span><span class=line><span class=cl>    - SHA256:ea09acc6bddd6a503a3812ba1d3a025e5515c5469dcad172c86e2bda6f203752
+</span></span><span class=line><span class=cl>    - SHA1:60863a9cc3181eb87007edcfc2de1ba6a0b81a5f <span class=o>[</span>weak<span class=o>]</span>
+</span></span><span class=line><span class=cl>    - MD5Sum:80baa34a1b24d245341757fa51ebd29e <span class=o>[</span>weak<span class=o>]</span>
+</span></span><span class=line><span class=cl>   Release file created at: Sat, <span class=m>27</span> Feb <span class=m>2021</span> 08:09:39 +0000
+</span></span><span class=line><span class=cl>E: 部分索引文件下载失败。如果忽略它们，那将转而使用旧的索引文件。
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 解决办法</span>
+</span></span><span class=line><span class=cl>sudo  rm -rf  /var/lib/apt/lists/partial/
+</span></span><span class=line><span class=cl>sudo apt update
+</span></span></code></pre></td></tr></table></div></div><h2 id=修改时区>修改时区<a href=#修改时区 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 查询当前时间</span>
+</span></span><span class=line><span class=cl>date -R
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># tzselect</span>
+</span></span><span class=line><span class=cl>选择 4,9,1,1
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># ubuntu特有的,如果不是ubuntu 跳过这一步</span>
+</span></span><span class=line><span class=cl>sudo cp /usr/share/zoneinfo/Asia/Shanghai  /etc/localtime
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># java设置时区</span>
+</span></span><span class=line><span class=cl>在/etc/profile或~/.bashrc文件中设置环境变量TZ
+</span></span><span class=line><span class=cl><span class=nb>export</span> <span class=nv>TZ</span><span class=o>=</span><span class=s1>&#39;Asia/Shanghai&#39;</span>
+</span></span><span class=line><span class=cl><span class=nb>source</span> /etc/profile
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># ubuntu20.04</span>
+</span></span><span class=line><span class=cl>sudo timedatectl set-timezone Asia/Shanghai
+</span></span></code></pre></td></tr></table></div></div><h2 id=历史命令>历史命令<a href=#历史命令 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 历史命令</span>
+</span></span><span class=line><span class=cl><span class=nb>history</span> -3
+</span></span></code></pre></td></tr></table></div></div><h2 id=sudo免密>sudo免密<a href=#sudo免密 class=hanchor arialabel=Anchor>#</a></h2><p><code>vim /etc/sudoers</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Host alias specification</span>
+</span></span><span class=line><span class=cl><span class=c1># User alias specification</span>
+</span></span><span class=line><span class=cl><span class=c1># Cmnd alias specification</span>
+</span></span><span class=line><span class=cl><span class=c1># User privilege specification</span>
+</span></span><span class=line><span class=cl>root    <span class=nv>ALL</span><span class=o>=(</span>ALL:ALL<span class=o>)</span> ALL
+</span></span><span class=line><span class=cl><span class=c1># 加在这里会被覆盖掉</span>
+</span></span><span class=line><span class=cl>anthony <span class=nv>ALL</span><span class=o>=(</span>ALL<span class=o>)</span> NOPASSWD:ALL
+</span></span><span class=line><span class=cl><span class=c1># Members of the admin group may gain root privileges</span>
+</span></span><span class=line><span class=cl>%admin <span class=nv>ALL</span><span class=o>=(</span>ALL<span class=o>)</span> ALL
+</span></span><span class=line><span class=cl><span class=c1># 最好是加在最后</span>
+</span></span><span class=line><span class=cl>anthony <span class=nv>ALL</span><span class=o>=(</span>ALL<span class=o>)</span> NOPASSWD:ALL
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Allow members of group sudo to execute any command</span>
+</span></span><span class=line><span class=cl>%sudo   <span class=nv>ALL</span><span class=o>=(</span>ALL:ALL<span class=o>)</span> ALL
+</span></span><span class=line><span class=cl>anthony <span class=nv>ALL</span><span class=o>=(</span>ALL<span class=o>)</span> NOPASSWD:ALL
+</span></span></code></pre></td></tr></table></div></div><h2 id=grep管道>grep管道<a href=#grep管道 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>cat hive-default.xml <span class=p>|</span> grep hive.cli.print
+</span></span></code></pre></td></tr></table></div></div><h2 id=系统升级>系统升级<a href=#系统升级 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>yum -y update<span class=o>(</span>centos<span class=o>)</span>
+</span></span><span class=line><span class=cl>apt-get update<span class=o>(</span>ubuntu 软件包的列表 <span class=o>)</span>
+</span></span><span class=line><span class=cl>sudo apt-get dist-upgrade （进入列新你系统和系统里安装的软件）
+</span></span></code></pre></td></tr></table></div></div><h2 id=ll文件大小按mb显示>ll文件大小按MB显示<a href=#ll文件大小按mb显示 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>ls -lh
+</span></span><span class=line><span class=cl>ll -lh
+</span></span></code></pre></td></tr></table></div></div><h2 id=查看系统版本>查看系统版本<a href=#查看系统版本 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>cat /etc/os-release
+</span></span></code></pre></td></tr></table></div></div><h2 id=立即关机和重启>立即关机和重启<a href=#立即关机和重启 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 现在立即关机</span>
+</span></span><span class=line><span class=cl>shutdown -h now 
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 现在立即重启</span>
+</span></span><span class=line><span class=cl>shutdown -r now 
+</span></span></code></pre></td></tr></table></div></div><h2 id=当前时间>当前时间<a href=#当前时间 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>data  /   date -R
+</span></span></code></pre></td></tr></table></div></div><h2 id=目录占用空间>目录占用空间<a href=#目录占用空间 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 查看当前目录下一级子文件和子目录占用的磁盘容量</span>
+</span></span><span class=line><span class=cl>du -lh --max-depth<span class=o>=</span><span class=m>1</span> /
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 查看当前目录总共占的容量。而不单独列出各子项占用的容量</span>
+</span></span><span class=line><span class=cl>du -sh
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 使用lsof命令排查,可以查看到状态为deleted的文件</span>
+</span></span><span class=line><span class=cl><span class=c1># 可考虑kill掉程序,就会自动释放</span>
+</span></span><span class=line><span class=cl>lsof <span class=p>|</span>grep deleted
+</span></span><span class=line><span class=cl>--------------------------------------------------------------------------------
+</span></span><span class=line><span class=cl>COMMAND     PID   TID     USER   FD      TYPE             DEVICE   SIZE/OFF       NODE   NAME
+</span></span><span class=line><span class=cl>dbus-daem   <span class=m>456</span>           dbus  txt       REG              253,1      <span class=m>441144</span>     <span class=m>141672</span> /usr/bin/dbus-daemon <span class=o>(</span>deleted<span class=o>)</span>
+</span></span><span class=line><span class=cl>...
+</span></span><span class=line><span class=cl>node      <span class=m>11595</span> <span class=m>11733</span>     root  txt       REG              253,1    <span class=m>29851602</span>    <span class=m>1461079</span> /home/elk/kibana-5.5.1-linux-x86_64/node/bin/node <span class=o>(</span>deleted<span class=o>)</span>
+</span></span><span class=line><span class=cl>node      <span class=m>11595</span> <span class=m>11733</span>     root    1w      REG              253,1 <span class=m>11374904415</span>    <span class=m>1059873</span> /home/elk/kibana-5.5.1-linux-x86_64/nohup.out <span class=o>(</span>deleted<span class=o>)</span>
+</span></span><span class=line><span class=cl>node      <span class=m>11595</span> <span class=m>11733</span>     root    2w      REG              253,1 <span class=m>11374904415</span>    <span class=m>1059873</span> /home/elk/kibana-5.5.1-linux-x86_64/nohup.out <span class=o>(</span>deleted<span class=o>)</span>
+</span></span><span class=line><span class=cl>async_17  <span class=m>24113</span> <span class=m>24210</span> rabbitmq    1w      REG              253,1  <span class=m>8556707104</span>     <span class=m>659069</span> /var/log/rabbitmq/startup_log <span class=o>(</span>deleted<span class=o>)</span>
+</span></span><span class=line><span class=cl>async_18  <span class=m>24113</span> <span class=m>24211</span> rabbitmq    1w      REG              253,1  <span class=m>8556707104</span>     <span class=m>659069</span> /var/log/rabbitmq/startup_log <span class=o>(</span>deleted<span class=o>)</span>
+</span></span><span class=line><span class=cl>async_19  <span class=m>24113</span> <span class=m>24212</span> rabbitmq    1w      REG              253,1  <span class=m>8556707104</span>     <span class=m>659069</span> /var/log/rabbitmq/startup_log <span class=o>(</span>deleted<span class=o>)</span>
+</span></span><span class=line><span class=cl>async_20  <span class=m>24113</span> <span class=m>24213</span> rabbitmq    1w      REG              253,1  <span class=m>8556707104</span>     <span class=m>659069</span> /var/log/rabbitmq/startup_log <span class=o>(</span>deleted<span class=o>)</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=文件传输>文件传输<a href=#文件传输 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 获取远程服务器上的文件</span>
+</span></span><span class=line><span class=cl>scp -P <span class=m>2222</span> root@www.vpser.net:/root/lnmp0.4.tar.gz /home/lnmp0.4.tar.gz
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 获取远程服务器上的目录</span>
+</span></span><span class=line><span class=cl>scp -P <span class=m>2222</span> -r root@www.vpser.net:/root/lnmp0.4/ /home/lnmp0.4/
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 将本地文件上传到服务器上</span>
+</span></span><span class=line><span class=cl>scp -P <span class=m>2222</span> /home/lnmp0.4.tar.gz* *root@www.vpser.net:/root/lnmp0.4.tar.gz
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 将本地目录上传到服务器上</span>
+</span></span><span class=line><span class=cl>scp -P <span class=m>2222</span> -r /home/lnmp0.4/* *root@www.vpser.net:/root/lnmp0.4/
+</span></span></code></pre></td></tr></table></div></div><h2 id=修改主机名字>修改主机名字<a href=#修改主机名字 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 第一种方法</span>
+</span></span><span class=line><span class=cl>sudo vim /etc/sysconfig/network
+</span></span><span class=line><span class=cl><span class=c1># 编辑</span>
+</span></span><span class=line><span class=cl><span class=nv>HOSTNAME</span><span class=o>=</span>weekend100
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>sudo hostname weenkend110
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 第二种方法,需要重启</span>
+</span></span><span class=line><span class=cl>vim /etc/hostname
+</span></span></code></pre></td></tr></table></div></div><h2 id=ubuntu右上角网络图标消失并且上不了网>Ubuntu右上角网络图标消失并且上不了网<a href=#ubuntu右上角网络图标消失并且上不了网 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sudo nmcli networking off
+</span></span><span class=line><span class=cl>sudo nmcli networking on
+</span></span><span class=line><span class=cl>sudo service network-manager stop
+</span></span><span class=line><span class=cl>sudo rm /var/lib/NetworkManager/NetworkManager.state
+</span></span><span class=line><span class=cl>sudo service network-manager start
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>sudo gedit /etc/NetworkManager/NetworkManager.conf
+</span></span><span class=line><span class=cl><span class=c1># 把false改成true</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>sudo service network-manager restart
+</span></span></code></pre></td></tr></table></div></div><h2 id=cockpit>Cockpit<a href=#cockpit class=hanchor arialabel=Anchor>#</a></h2><pre tabindex=0><code>Activate the web console with: systemctl enable --now cockpit.socke
+</code></pre><p>Cockpit介绍自己是一个Web端的系统管理工具，只用鼠标点点就能管理系统，事实上也确实如此，我实际使用来说，启动Cockpit服务之后，只需要鼠标点点点就能完成系统很多基础操作，比如查看系统信息，启动/停止服务，新增或者更改账户，系统更新，Web终端及查看网络流量等功能。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>systemctl start cockpit.socket   <span class=c1># 运行Cockpit服务</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>systemctl <span class=nb>enable</span> –now cockpit.socket  <span class=c1># 启动该服务，随系统启动一同启动</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>systemctl status cockpit.socket
+</span></span></code></pre></td></tr></table></div></div><p>然后在另一台电脑上用浏览器登录 <a href=https://ip:9090/>https://IP:9090</a></p><h2 id=top>top<a href=#top class=hanchor arialabel=Anchor>#</a></h2><pre tabindex=0><code>top - 21:08:58 up  6:15,  4 users,  load average: 0.01, 0.03, 0.05
 Tasks: 262 total,   1 running, 261 sleeping,   0 stopped,   0 zombie
 %Cpu(s):  0.0 us,  1.4 sy,  0.0 ni, 98.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
 KiB Mem :  3861300 total,  1922280 free,  1029068 used,   909952 buff/cache
 KiB Swap:  2097148 total,  2097148 free,        0 used.  2545024 avail Mem
-</code></pre><ul><li>第一行</li><li>程序名(top)</li><li>21:08:58(系统时间)</li><li>up 6:15(运行时间)</li><li>4 users(登录用户数)</li><li>load average(cpu 负载数,5分钟的平均负载,10分钟的平均负载,15分钟的平均负载)</li><li>第二行</li><li>task(总进程数)</li><li>1 running (运行数:1)</li><li>261 sleeping(睡眠树:1)</li><li>stopped(停止数)</li><li>zoimbie(僵尸数)</li><li>第三行</li><li>%cpu(cpu使用占比)</li><li>us (用户)</li><li>sy (系统)</li><li>ni(优先级)</li><li>id(空闲)</li><li>wa(等待)</li><li>hi(硬件)</li><li>st(虚拟机)</li><li>第四行</li><li>kib Mem (物理内存 单位:K)</li><li>free (空间,单位:k)</li><li>userd(使用)</li><li>cache(缓存硬盘内容大小)</li><li>第五行</li><li>交换区</li><li>第六行</li><li>进程ID</li><li>用户名</li><li>优先级(PR)</li><li>内存(VIRT RES SHR)</li><li>状态(S)</li><li>cpu</li><li>内存</li><li>运行时间</li><li>命令</li></ul><h2 id=tree>tree<a href=#tree class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 排除目录venv目录</span>
-</span></span><span style=display:flex><span>tree -I <span style=color:#e6db74>&#39;*venv*&#39;</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 排除目录venv和venve2目录</span>
-</span></span><span style=display:flex><span>tree -I <span style=color:#e6db74>&#39;*venv|venv2*&#39;</span>
-</span></span></code></pre></div><h1 id=配置环境变量>配置环境变量<a href=#配置环境变量 class=hanchor arialabel=Anchor>&#8983;</a></h1><h2 id=配置java环境变量>配置Java环境变量<a href=#配置java环境变量 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>export JAVA_HOME<span style=color:#f92672>=</span>/home/anthony/soft/jdk1.8.0_19
-</span></span><span style=display:flex><span>export PATH<span style=color:#f92672>=</span>$JAVA_HOME/bin:$PATH
-</span></span><span style=display:flex><span>export CLASSPATH<span style=color:#f92672>=</span>.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
-</span></span></code></pre></div><h2 id=配置maven环境变量>配置Maven环境变量<a href=#配置maven环境变量 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>export M2_HOME<span style=color:#f92672>=</span>/usr/local/software/apache-maven-3.6.1
-</span></span><span style=display:flex><span>export PATH<span style=color:#f92672>=</span><span style=color:#e6db74>${</span>M2_HOME<span style=color:#e6db74>}</span>/bin:$PATH
-</span></span></code></pre></div><h2 id=安装和卸载openjdk>安装和卸载OpenJDK<a href=#安装和卸载openjdk class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 安装</span>
-</span></span><span style=display:flex><span>apt-get install -y openjdk-17-jdk
-</span></span><span style=display:flex><span><span style=color:#75715e># 卸载openJDK</span>
-</span></span><span style=display:flex><span>sudo apt-get remove openjdk*
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 查看jdk可安装的版本</span>
-</span></span><span style=display:flex><span>yum -y list java*
-</span></span><span style=display:flex><span><span style=color:#75715e># 选择一个安装</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 要选择 要带有-devel的安装，因为这个安装的是jdk，而那个不带-devel的安装完了其实是jre</span>
-</span></span><span style=display:flex><span>yum install -y java-1.8.0-openjdk-devel.x86_64
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 查找安装路径</span>
-</span></span><span style=display:flex><span>which java
-</span></span></code></pre></div><h2 id=配置scala>配置Scala<a href=#配置scala class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>export SCALA_HOME<span style=color:#f92672>=</span>/usr/local/scala-2.13.4
-</span></span><span style=display:flex><span>export PATH<span style=color:#f92672>=</span>$SCALA_HOME/bin:$PATH
-</span></span></code></pre></div><h1 id=固定ip>固定ip<a href=#固定ip class=hanchor arialabel=Anchor>&#8983;</a></h1><p>配置完了,最好是重启下vmware和虚拟机,和禁用开启 win10上的vmare8网卡</p><p>vmare配置
+</code></pre><ul><li>第一行</li><li>程序名(top)</li><li>21:08:58(系统时间)</li><li>up 6:15(运行时间)</li><li>4 users(登录用户数)</li><li>load average(cpu 负载数,5分钟的平均负载,10分钟的平均负载,15分钟的平均负载)</li><li>第二行</li><li>task(总进程数)</li><li>1 running (运行数:1)</li><li>261 sleeping(睡眠树:1)</li><li>stopped(停止数)</li><li>zoimbie(僵尸数)</li><li>第三行</li><li>%cpu(cpu使用占比)</li><li>us (用户)</li><li>sy (系统)</li><li>ni(优先级)</li><li>id(空闲)</li><li>wa(等待)</li><li>hi(硬件)</li><li>st(虚拟机)</li><li>第四行</li><li>kib Mem (物理内存 单位:K)</li><li>free (空间,单位:k)</li><li>userd(使用)</li><li>cache(缓存硬盘内容大小)</li><li>第五行</li><li>交换区</li><li>第六行</li><li>进程ID</li><li>用户名</li><li>优先级(PR)</li><li>内存(VIRT RES SHR)</li><li>状态(S)</li><li>cpu</li><li>内存</li><li>运行时间</li><li>命令</li></ul><h2 id=tree>tree<a href=#tree class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 排除目录venv目录</span>
+</span></span><span class=line><span class=cl>tree -I <span class=s1>&#39;*venv*&#39;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 排除目录venv和venve2目录</span>
+</span></span><span class=line><span class=cl>tree -I <span class=s1>&#39;*venv|venv2*&#39;</span>
+</span></span></code></pre></td></tr></table></div></div><h1 id=配置环境变量>配置环境变量<a href=#配置环境变量 class=hanchor arialabel=Anchor>#</a></h1><h2 id=配置java环境变量>配置Java环境变量<a href=#配置java环境变量 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nb>export</span> <span class=nv>JAVA_HOME</span><span class=o>=</span>/home/anthony/soft/jdk1.8.0_19
+</span></span><span class=line><span class=cl><span class=nb>export</span> <span class=nv>PATH</span><span class=o>=</span><span class=nv>$JAVA_HOME</span>/bin:<span class=nv>$PATH</span>
+</span></span><span class=line><span class=cl><span class=nb>export</span> <span class=nv>CLASSPATH</span><span class=o>=</span>.:<span class=nv>$JAVA_HOME</span>/lib/dt.jar:<span class=nv>$JAVA_HOME</span>/lib/tools.jar
+</span></span></code></pre></td></tr></table></div></div><h2 id=配置maven环境变量>配置Maven环境变量<a href=#配置maven环境变量 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nb>export</span> <span class=nv>M2_HOME</span><span class=o>=</span>/usr/local/software/apache-maven-3.6.1
+</span></span><span class=line><span class=cl><span class=nb>export</span> <span class=nv>PATH</span><span class=o>=</span><span class=si>${</span><span class=nv>M2_HOME</span><span class=si>}</span>/bin:<span class=nv>$PATH</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=安装和卸载openjdk>安装和卸载OpenJDK<a href=#安装和卸载openjdk class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 安装</span>
+</span></span><span class=line><span class=cl>apt-get install -y openjdk-17-jdk
+</span></span><span class=line><span class=cl><span class=c1># 卸载openJDK</span>
+</span></span><span class=line><span class=cl>sudo apt-get remove openjdk*
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 查看jdk可安装的版本</span>
+</span></span><span class=line><span class=cl>yum -y list java*
+</span></span><span class=line><span class=cl><span class=c1># 选择一个安装</span>
+</span></span><span class=line><span class=cl><span class=c1># 要选择 要带有-devel的安装，因为这个安装的是jdk，而那个不带-devel的安装完了其实是jre</span>
+</span></span><span class=line><span class=cl>yum install -y java-1.8.0-openjdk-devel.x86_64
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 查找安装路径</span>
+</span></span><span class=line><span class=cl>which java
+</span></span></code></pre></td></tr></table></div></div><h2 id=配置scala>配置Scala<a href=#配置scala class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nb>export</span> <span class=nv>SCALA_HOME</span><span class=o>=</span>/usr/local/scala-2.13.4
+</span></span><span class=line><span class=cl><span class=nb>export</span> <span class=nv>PATH</span><span class=o>=</span><span class=nv>$SCALA_HOME</span>/bin:<span class=nv>$PATH</span>
+</span></span></code></pre></td></tr></table></div></div><h1 id=固定ip>固定ip<a href=#固定ip class=hanchor arialabel=Anchor>#</a></h1><p>配置完了,最好是重启下vmware和虚拟机,和禁用开启 win10上的vmare8网卡</p><p>vmare配置
 <img src=https://image.runtimes.cc/202404051425040.png alt></p><p>电脑配置
 <img src=https://image.runtimes.cc/202404051425094.png alt>
 虚拟机配置
-<img src=https://image.runtimes.cc/202404051425941.png alt></p><h2 id=centos配置>Centos配置<a href=#centos配置 class=hanchor arialabel=Anchor>&#8983;</a></h2><pre tabindex=0><code>vim /etc/sysconfig/network-scripts/ifcfg-eth0
+<img src=https://image.runtimes.cc/202404051425941.png alt></p><h2 id=centos配置>Centos配置<a href=#centos配置 class=hanchor arialabel=Anchor>#</a></h2><pre tabindex=0><code>vim /etc/sysconfig/network-scripts/ifcfg-eth0
 
 BOOTPROTO=&#34;static&#34; #dhcp改为static
 ONBOOT=&#34;yes&#34; #开机启用本配置
@@ -188,114 +345,219 @@ NETMASK=255.255.255.0 #子网掩码
 
 # 重启网卡,或者重启电脑
 service network restart
-</code></pre><h2 id=ubuntu配置>Ubuntu配置<a href=#ubuntu配置 class=hanchor arialabel=Anchor>&#8983;</a></h2><p><code>vim /etc/netplan</code></p><p>编辑完之后执行<code>netplan apply</code></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#75715e># Ubuntu桌面版本</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>network</span>:
-</span></span><span style=display:flex><span>  <span style=color:#f92672>version</span>: <span style=color:#ae81ff>2</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>renderer</span>: <span style=color:#ae81ff>NetworkManager</span>
-</span></span><span style=display:flex><span>  <span style=color:#f92672>ethernets</span>:
-</span></span><span style=display:flex><span>    <span style=color:#f92672>ens33</span>:
-</span></span><span style=display:flex><span>      <span style=color:#f92672>dhcp4</span>: <span style=color:#66d9ef>no</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>optional</span>: <span style=color:#66d9ef>true</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>addresses</span>: [<span style=color:#ae81ff>192.168.0.5</span><span style=color:#ae81ff>/24]</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>gateway4</span>: <span style=color:#ae81ff>192.168.0.1</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>nameservers</span>:
-</span></span><span style=display:flex><span>        <span style=color:#f92672>addresses</span>: [<span style=color:#ae81ff>192.168.0.1</span>,<span style=color:#ae81ff>8.8.8.8</span>]
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Ubuntu服务器版本</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>network</span>:
-</span></span><span style=display:flex><span>  <span style=color:#f92672>ethernets</span>:
-</span></span><span style=display:flex><span>    <span style=color:#f92672>ens33</span>:
-</span></span><span style=display:flex><span>      <span style=color:#f92672>dhcp4</span>: <span style=color:#66d9ef>true</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>optional</span>: <span style=color:#66d9ef>true</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>addresses</span>: [<span style=color:#ae81ff>192.168.0.6</span><span style=color:#ae81ff>/24]</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>gateway4</span>: <span style=color:#ae81ff>192.168.0.1</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>nameservers</span>:
-</span></span><span style=display:flex><span>        <span style=color:#f92672>addresses</span>: [<span style=color:#ae81ff>192.168.0.1</span>,<span style=color:#ae81ff>8.8.8.8</span>]
-</span></span><span style=display:flex><span>  <span style=color:#f92672>version</span>: <span style=color:#ae81ff>2</span>
-</span></span></code></pre></div><h1 id=关闭ipv6>关闭IPV6<a href=#关闭ipv6 class=hanchor arialabel=Anchor>&#8983;</a></h1><p>Ubuntu关闭IPV6</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>sudo sysctl -w net.ipv6.conf.all.disable_ipv6<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>sudo sysctl -w net.ipv6.conf.default.disable_ipv6<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>sudo sysctl -w net.ipv6.conf.lo.disable_ipv6<span style=color:#f92672>=</span>
-</span></span></code></pre></div><p><img src=https://image.runtimes.cc/202404051425139.png alt=image-20231201154102952></p><h1 id=防火墙>防火墙<a href=#防火墙 class=hanchor arialabel=Anchor>&#8983;</a></h1><h2 id=centos防火墙>Centos防火墙<a href=#centos防火墙 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 启动</span>
-</span></span><span style=display:flex><span>systemctl start firewalld
-</span></span><span style=display:flex><span><span style=color:#75715e># 查看状态</span>
-</span></span><span style=display:flex><span>systemctl status firewalld
-</span></span><span style=display:flex><span><span style=color:#75715e># 停止</span>
-</span></span><span style=display:flex><span>systemctl disable firewalld
-</span></span><span style=display:flex><span><span style=color:#75715e># 禁用</span>
-</span></span><span style=display:flex><span>systemctl stop firewalld
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 开机启动防火墙</span>
-</span></span><span style=display:flex><span>systemctl enable firewalld.service
-</span></span><span style=display:flex><span><span style=color:#75715e># 查看防火墙是否开机启动</span>
-</span></span><span style=display:flex><span>systemctl  is-enabled  firewalld.service
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 开机时禁用防火墙</span>
-</span></span><span style=display:flex><span>systemctl disable firewalld.service
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 查看版本</span>
-</span></span><span style=display:flex><span>firewall-cmd --version
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 显示状态</span>
-</span></span><span style=display:flex><span>firewall-cmd --state
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 查看所有打开的端口</span>
-</span></span><span style=display:flex><span>firewall-cmd --zone<span style=color:#f92672>=</span>public --list-ports
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 重新载入，更新防火墙规则</span>
-</span></span><span style=display:flex><span>firewall-cmd --reload
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 查看区域信息</span>
-</span></span><span style=display:flex><span>firewall-cmd --get-active-zones
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 拒绝所有包</span>
-</span></span><span style=display:flex><span>firewall-cmd --panic-on
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 取消拒绝状态</span>
-</span></span><span style=display:flex><span>firewall-cmd --panic-off
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 查看是否拒绝</span>
-</span></span><span style=display:flex><span>firewall-cmd --query-panic
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 开启80端口，–permanent永久生效，没有此参数重启后失效</span>
-</span></span><span style=display:flex><span>firewall-cmd --zone<span style=color:#f92672>=</span>public --add-port<span style=color:#f92672>=</span>80/tcp --permanent
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 查看80端口是否开放</span>
-</span></span><span style=display:flex><span>firewall-cmd --zone<span style=color:#f92672>=</span>public --query-port<span style=color:#f92672>=</span>80/tcp
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 删除80端口配置</span>
-</span></span><span style=display:flex><span>firewall-cmd --zone<span style=color:#f92672>=</span>public --remove-port<span style=color:#f92672>=</span>80/tcp --permanent
-</span></span></code></pre></div><h2 id=ubuntu防火墙>Ubuntu防火墙<a href=#ubuntu防火墙 class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 开放端口</span>
-</span></span><span style=display:flex><span>sudo ufw allow <span style=color:#ae81ff>80</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 查看所有的服务端口</span>
-</span></span><span style=display:flex><span>netstat -ap
-</span></span><span style=display:flex><span><span style=color:#75715e># 查看已经连接的服务端口</span>
-</span></span><span style=display:flex><span>netstat -a
-</span></span><span style=display:flex><span><span style=color:#75715e># 如查看8888端口，则在终端中输入：</span>
-</span></span><span style=display:flex><span>lsof -i:8888
-</span></span><span style=display:flex><span><span style=color:#75715e># lsof -i:端口号查看某个端口是否被占用</span>
-</span></span><span style=display:flex><span>netstat -anp|grep <span style=color:#ae81ff>80</span>
-</span></span></code></pre></div><h2 id=转发ip>转发IP<a href=#转发ip class=hanchor arialabel=Anchor>&#8983;</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># 在文件中添加或修改以下行</span>
-</span></span><span style=display:flex><span>sudo vim /etc/sysctl.conf
-</span></span><span style=display:flex><span>net.ipv4.ip_forward<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 激活 IP 转发功能。</span>
-</span></span><span style=display:flex><span>sudo sysctl -p
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 182.160.10.16  目标到目标服务器的ip</span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 将到达端口 80 的流量转发到另一台服务器</span>
-</span></span><span style=display:flex><span>sudo iptables -t nat -A PREROUTING -p tcp --dport <span style=color:#ae81ff>80</span> -j DNAT --to-destination 182.160.10.16:80
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 设置 MASQUERADE 以便正确处理返回的流量</span>
-</span></span><span style=display:flex><span>sudo iptables -t nat -A POSTROUTING -j MASQUERADE
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 检查和保存规则</span>
-</span></span><span style=display:flex><span>sudo iptables -t nat -L -n -v
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 如果您希望这些规则在系统重启后依然有效，您需要安装 iptables-persistent 包：</span>
-</span></span><span style=display:flex><span>sudo apt-get install iptables-persistent
-</span></span></code></pre></div><h1 id=用户和权限>用户和权限<a href=#用户和权限 class=hanchor arialabel=Anchor>&#8983;</a></h1><h2 id=用户和用户组>用户和用户组<a href=#用户和用户组 class=hanchor arialabel=Anchor>&#8983;</a></h2><h3 id=普通用户和非普通用户>普通用户和非普通用户<a href=#普通用户和非普通用户 class=hanchor arialabel=Anchor>&#8983;</a></h3><pre tabindex=0><code>$ 是普通用户
+</code></pre><h2 id=ubuntu配置>Ubuntu配置<a href=#ubuntu配置 class=hanchor arialabel=Anchor>#</a></h2><p><code>vim /etc/netplan</code></p><p>编辑完之后执行<code>netplan apply</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=c># Ubuntu桌面版本</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>network</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>version</span><span class=p>:</span><span class=w> </span><span class=m>2</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>renderer</span><span class=p>:</span><span class=w> </span><span class=l>NetworkManager</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>ethernets</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>ens33</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>dhcp4</span><span class=p>:</span><span class=w> </span><span class=kc>no</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>optional</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>addresses</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=m>192.168.0.5</span><span class=l>/24]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>gateway4</span><span class=p>:</span><span class=w> </span><span class=m>192.168.0.1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>nameservers</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>addresses</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=m>192.168.0.1</span><span class=p>,</span><span class=m>8.8.8.8</span><span class=p>]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=c># Ubuntu服务器版本</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>network</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>ethernets</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>ens33</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>dhcp4</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>optional</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>addresses</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=m>192.168.0.6</span><span class=l>/24]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>gateway4</span><span class=p>:</span><span class=w> </span><span class=m>192.168.0.1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=nt>nameservers</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>addresses</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=m>192.168.0.1</span><span class=p>,</span><span class=m>8.8.8.8</span><span class=p>]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>version</span><span class=p>:</span><span class=w> </span><span class=m>2</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><h1 id=关闭ipv6>关闭IPV6<a href=#关闭ipv6 class=hanchor arialabel=Anchor>#</a></h1><p>Ubuntu关闭IPV6</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>sudo sysctl -w net.ipv6.conf.all.disable_ipv6<span class=o>=</span><span class=m>1</span>
+</span></span><span class=line><span class=cl>sudo sysctl -w net.ipv6.conf.default.disable_ipv6<span class=o>=</span><span class=m>1</span>
+</span></span><span class=line><span class=cl>sudo sysctl -w net.ipv6.conf.lo.disable_ipv6<span class=o>=</span>
+</span></span></code></pre></td></tr></table></div></div><p><img src=https://image.runtimes.cc/202404051425139.png alt=image-20231201154102952></p><h1 id=防火墙>防火墙<a href=#防火墙 class=hanchor arialabel=Anchor>#</a></h1><h2 id=centos防火墙>Centos防火墙<a href=#centos防火墙 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 启动</span>
+</span></span><span class=line><span class=cl>systemctl start firewalld
+</span></span><span class=line><span class=cl><span class=c1># 查看状态</span>
+</span></span><span class=line><span class=cl>systemctl status firewalld
+</span></span><span class=line><span class=cl><span class=c1># 停止</span>
+</span></span><span class=line><span class=cl>systemctl disable firewalld
+</span></span><span class=line><span class=cl><span class=c1># 禁用</span>
+</span></span><span class=line><span class=cl>systemctl stop firewalld
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 开机启动防火墙</span>
+</span></span><span class=line><span class=cl>systemctl <span class=nb>enable</span> firewalld.service
+</span></span><span class=line><span class=cl><span class=c1># 查看防火墙是否开机启动</span>
+</span></span><span class=line><span class=cl>systemctl  is-enabled  firewalld.service
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 开机时禁用防火墙</span>
+</span></span><span class=line><span class=cl>systemctl disable firewalld.service
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 查看版本</span>
+</span></span><span class=line><span class=cl>firewall-cmd --version
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 显示状态</span>
+</span></span><span class=line><span class=cl>firewall-cmd --state
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 查看所有打开的端口</span>
+</span></span><span class=line><span class=cl>firewall-cmd --zone<span class=o>=</span>public --list-ports
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 重新载入，更新防火墙规则</span>
+</span></span><span class=line><span class=cl>firewall-cmd --reload
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 查看区域信息</span>
+</span></span><span class=line><span class=cl>firewall-cmd --get-active-zones
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 拒绝所有包</span>
+</span></span><span class=line><span class=cl>firewall-cmd --panic-on
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 取消拒绝状态</span>
+</span></span><span class=line><span class=cl>firewall-cmd --panic-off
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 查看是否拒绝</span>
+</span></span><span class=line><span class=cl>firewall-cmd --query-panic
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 开启80端口，–permanent永久生效，没有此参数重启后失效</span>
+</span></span><span class=line><span class=cl>firewall-cmd --zone<span class=o>=</span>public --add-port<span class=o>=</span>80/tcp --permanent
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 查看80端口是否开放</span>
+</span></span><span class=line><span class=cl>firewall-cmd --zone<span class=o>=</span>public --query-port<span class=o>=</span>80/tcp
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 删除80端口配置</span>
+</span></span><span class=line><span class=cl>firewall-cmd --zone<span class=o>=</span>public --remove-port<span class=o>=</span>80/tcp --permanent
+</span></span></code></pre></td></tr></table></div></div><h2 id=ubuntu防火墙>Ubuntu防火墙<a href=#ubuntu防火墙 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 开放端口</span>
+</span></span><span class=line><span class=cl>sudo ufw allow <span class=m>80</span>
+</span></span><span class=line><span class=cl><span class=c1># 查看所有的服务端口</span>
+</span></span><span class=line><span class=cl>netstat -ap
+</span></span><span class=line><span class=cl><span class=c1># 查看已经连接的服务端口</span>
+</span></span><span class=line><span class=cl>netstat -a
+</span></span><span class=line><span class=cl><span class=c1># 如查看8888端口，则在终端中输入：</span>
+</span></span><span class=line><span class=cl>lsof -i:8888
+</span></span><span class=line><span class=cl><span class=c1># lsof -i:端口号查看某个端口是否被占用</span>
+</span></span><span class=line><span class=cl>netstat -anp<span class=p>|</span>grep <span class=m>80</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=转发ip>转发IP<a href=#转发ip class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl><span class=c1># 在文件中添加或修改以下行</span>
+</span></span><span class=line><span class=cl>sudo vim /etc/sysctl.conf
+</span></span><span class=line><span class=cl>net.ipv4.ip_forward<span class=o>=</span><span class=m>1</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 激活 IP 转发功能。</span>
+</span></span><span class=line><span class=cl>sudo sysctl -p
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 182.160.10.16  目标到目标服务器的ip</span>
+</span></span><span class=line><span class=cl><span class=c1># 将到达端口 80 的流量转发到另一台服务器</span>
+</span></span><span class=line><span class=cl>sudo iptables -t nat -A PREROUTING -p tcp --dport <span class=m>80</span> -j DNAT --to-destination 182.160.10.16:80
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 设置 MASQUERADE 以便正确处理返回的流量</span>
+</span></span><span class=line><span class=cl>sudo iptables -t nat -A POSTROUTING -j MASQUERADE
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 检查和保存规则</span>
+</span></span><span class=line><span class=cl>sudo iptables -t nat -L -n -v
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 如果您希望这些规则在系统重启后依然有效，您需要安装 iptables-persistent 包：</span>
+</span></span><span class=line><span class=cl>sudo apt-get install iptables-persistent
+</span></span></code></pre></td></tr></table></div></div><h1 id=用户和权限>用户和权限<a href=#用户和权限 class=hanchor arialabel=Anchor>#</a></h1><h2 id=用户和用户组>用户和用户组<a href=#用户和用户组 class=hanchor arialabel=Anchor>#</a></h2><h3 id=普通用户和非普通用户>普通用户和非普通用户<a href=#普通用户和非普通用户 class=hanchor arialabel=Anchor>#</a></h3><pre tabindex=0><code>$ 是普通用户
 # 不是普通用户
-</code></pre><h3 id=修改用户名>修改用户名<a href=#修改用户名 class=hanchor arialabel=Anchor>&#8983;</a></h3><pre tabindex=0><code>#  //-l 新的登陆名称，-d 用户新的主目录， -m将家目录内容移至新位置 (仅于 -d 一起使用)
+</code></pre><h3 id=修改用户名>修改用户名<a href=#修改用户名 class=hanchor arialabel=Anchor>#</a></h3><pre tabindex=0><code>#  //-l 新的登陆名称，-d 用户新的主目录， -m将家目录内容移至新位置 (仅于 -d 一起使用)
 usermod -l newname -d /home/newname -m oldname
 
 # 修改组
@@ -303,7 +565,7 @@ groupmod -n oldname newname
 
 # 重启
 reboot
-</code></pre><h3 id=用户组>用户组<a href=#用户组 class=hanchor arialabel=Anchor>&#8983;</a></h3><pre tabindex=0><code># 新建用户组
+</code></pre><h3 id=用户组>用户组<a href=#用户组 class=hanchor arialabel=Anchor>#</a></h3><pre tabindex=0><code># 新建用户组
 groupadd hr
 
 # 查看用户组
@@ -315,7 +577,7 @@ groupmod -n susan dan
 
 # 删除用户组
 groupdel hr
-</code></pre><h3 id=用户>用户<a href=#用户 class=hanchor arialabel=Anchor>&#8983;</a></h3><pre tabindex=0><code># 添加用户:useradd  hadoop,创建用户未指定任何选项,系统会创建一个同名的用户组
+</code></pre><h3 id=用户>用户<a href=#用户 class=hanchor arialabel=Anchor>#</a></h3><pre tabindex=0><code># 添加用户:useradd  hadoop,创建用户未指定任何选项,系统会创建一个同名的用户组
 # 添加用户
 adduser hadoop
 
@@ -349,7 +611,7 @@ anthony:x:1000:anthony
 
 # 修改用户基本组
 usermod username -g 组名
-</code></pre><p><img src=https://image.runtimes.cc/202404051521555.png alt></p><h3 id=修改用户基本组和附加组的demo>修改用户基本组和附加组的demo<a href=#修改用户基本组和附加组的demo class=hanchor arialabel=Anchor>&#8983;</a></h3><pre tabindex=0><code># 创建hadoop用户
+</code></pre><p><img src=https://image.runtimes.cc/202404051521555.png alt></p><h3 id=修改用户基本组和附加组的demo>修改用户基本组和附加组的demo<a href=#修改用户基本组和附加组的demo class=hanchor arialabel=Anchor>#</a></h3><pre tabindex=0><code># 创建hadoop用户
 [root@192 ~]# useradd hadoop
 # 查看hadoop用户,基本组是1002
 [root@192 ~]# tail -1 /etc/passwd
@@ -396,21 +658,21 @@ uid=1001(hadoop) gid=1003(hadoop_base) 组=1003(hadoop_base),1004(hadoop_more)
 gpasswd：用户“hadoop”不是“hadoop_base”的成员
 [root@192 ~]# gpasswd -d hadoop hadoop_more
 正在将用户“hadoop”从“hadoop_more”组中删除
-</code></pre><h3 id=修改用户权限>修改用户权限<a href=#修改用户权限 class=hanchor arialabel=Anchor>&#8983;</a></h3><pre tabindex=0><code>root修改用户权限: vim /etc/sudousers
-</code></pre><h3 id=组信息文件>组信息文件<a href=#组信息文件 class=hanchor arialabel=Anchor>&#8983;</a></h3><pre tabindex=0><code>[root@192 ~]# cat /etc/group
+</code></pre><h3 id=修改用户权限>修改用户权限<a href=#修改用户权限 class=hanchor arialabel=Anchor>#</a></h3><pre tabindex=0><code>root修改用户权限: vim /etc/sudousers
+</code></pre><h3 id=组信息文件>组信息文件<a href=#组信息文件 class=hanchor arialabel=Anchor>#</a></h3><pre tabindex=0><code>[root@192 ~]# cat /etc/group
 root:x:0:
 bin:x:1:
 daemon:x:2:
 sys:x:3:
 adm:x:4:
-</code></pre><p>一共有4列</p><ol><li>组名</li><li>组密码</li><li>组ID</li><li>备用的</li></ol><h3 id=用户文件信息>用户文件信息<a href=#用户文件信息 class=hanchor arialabel=Anchor>&#8983;</a></h3><pre tabindex=0><code>[root@192 ~]# cat /etc/passwd
+</code></pre><p>一共有4列</p><ol><li>组名</li><li>组密码</li><li>组ID</li><li>备用的</li></ol><h3 id=用户文件信息>用户文件信息<a href=#用户文件信息 class=hanchor arialabel=Anchor>#</a></h3><pre tabindex=0><code>[root@192 ~]# cat /etc/passwd
 root:x:0:0:root:/root:/bin/bash
 bin:x:1:1:bin:/bin:/sbin/nologin
 daemon:x:2:2:daemon:/sbin:/sbin/nologin
-</code></pre><ol><li>用户名,登录名中不能有冒号</li><li>口令,把真正的加密后的用户口令字存放到/etc/shadow文件中</li><li>用户标识符,取值范围是0-65535。0是超级用户root的标识号，1-99由系统保留，作为管理账号，普通用户的标识号从100开始。在Linux系统中，这个界限是500,</li><li>组标识符,也是基本组</li><li>注释性描述,例如用户的真实姓名、电话、地址等，这个字段并没有什么实际的用途</li><li>主目录</li><li>登录shell,解释器</li></ol><h2 id=权限>权限<a href=#权限 class=hanchor arialabel=Anchor>&#8983;</a></h2><pre tabindex=0><code>[anthony@192 ~]$ touch /tmp/demo.txt
+</code></pre><ol><li>用户名,登录名中不能有冒号</li><li>口令,把真正的加密后的用户口令字存放到/etc/shadow文件中</li><li>用户标识符,取值范围是0-65535。0是超级用户root的标识号，1-99由系统保留，作为管理账号，普通用户的标识号从100开始。在Linux系统中，这个界限是500,</li><li>组标识符,也是基本组</li><li>注释性描述,例如用户的真实姓名、电话、地址等，这个字段并没有什么实际的用途</li><li>主目录</li><li>登录shell,解释器</li></ol><h2 id=权限>权限<a href=#权限 class=hanchor arialabel=Anchor>#</a></h2><pre tabindex=0><code>[anthony@192 ~]$ touch /tmp/demo.txt
 [anthony@192 ~]$ ll /tmp/demo.txt
 -rw-rw-r--. 1 anthony anthony 0 1月  11 21:57 /tmp/demo.txt
-</code></pre><ul><li>第一位</li><li>代表文件,d代表文件夹</li><li>接下来的三位(rw-),是用户权限</li><li>接下来的三位(rw-),是组权限</li><li>接下来的三位(r&ndash;),是其他人权限</li><li>. 不知道是啥东西</li><li>第二位,连接</li><li>第三位,属主</li><li>第四位,属组</li><li>第五位,大小</li><li>第六位,7位,时间</li><li>第八位,名字</li></ul><h3 id=提升权限>提升权限<a href=#提升权限 class=hanchor arialabel=Anchor>&#8983;</a></h3><pre tabindex=0><code>[root@192 tmp]# touch fil1.txt
+</code></pre><ul><li>第一位</li><li>代表文件,d代表文件夹</li><li>接下来的三位(rw-),是用户权限</li><li>接下来的三位(rw-),是组权限</li><li>接下来的三位(r&ndash;),是其他人权限</li><li>. 不知道是啥东西</li><li>第二位,连接</li><li>第三位,属主</li><li>第四位,属组</li><li>第五位,大小</li><li>第六位,7位,时间</li><li>第八位,名字</li></ul><h3 id=提升权限>提升权限<a href=#提升权限 class=hanchor arialabel=Anchor>#</a></h3><pre tabindex=0><code>[root@192 tmp]# touch fil1.txt
 
 [root@192 tmp]# ll
 -rw-r--r--. 1 root root 0 1月  12 21:56 fil1.txt
@@ -471,9 +733,9 @@ other::r--
 setfacl -m g:hr:rw /tmp/acldemo.txt
 [root@192 tmp]# ll
 -rw-rw-r--+ 1 root root 0 1月  12 22:19 acldemo.txt
-</code></pre><h1 id=磁盘>磁盘<a href=#磁盘 class=hanchor arialabel=Anchor>&#8983;</a></h1><h2 id=管理磁盘的三个步骤>管理磁盘的三个步骤<a href=#管理磁盘的三个步骤 class=hanchor arialabel=Anchor>&#8983;</a></h2><p>先分区,再格式化,再挂载
+</code></pre><h1 id=磁盘>磁盘<a href=#磁盘 class=hanchor arialabel=Anchor>#</a></h1><h2 id=管理磁盘的三个步骤>管理磁盘的三个步骤<a href=#管理磁盘的三个步骤 class=hanchor arialabel=Anchor>#</a></h2><p>先分区,再格式化,再挂载
 <img src=https://image.runtimes.cc/202404051425657.png alt></p><p>MBR一共只能有4个分区,如果要需要很多个分区
-<img src=https://image.runtimes.cc/202404051425931.png alt></p><p><img src=https://image.runtimes.cc/202404051521648.png alt></p><h2 id=新建主分区和逻辑分区>新建主分区和逻辑分区<a href=#新建主分区和逻辑分区 class=hanchor arialabel=Anchor>&#8983;</a></h2><pre tabindex=0><code>[root@192 ~]# lsblk
+<img src=https://image.runtimes.cc/202404051425931.png alt></p><p><img src=https://image.runtimes.cc/202404051521648.png alt></p><h2 id=新建主分区和逻辑分区>新建主分区和逻辑分区<a href=#新建主分区和逻辑分区 class=hanchor arialabel=Anchor>#</a></h2><pre tabindex=0><code>[root@192 ~]# lsblk
 NAME            MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
 sda               8:0    0   20G  0 disk
 ├─sda1            8:1    0    1G  0 part /boot
@@ -574,7 +836,7 @@ tmpfs                   tmpfs     378M   12K  378M    1% /run/user/42
 tmpfs                   tmpfs     378M     0  378M    0% /run/user/0
 # 刚挂载的
 /dev/sdb1               ext4      2.9G  9.0M  2.8G    1% /mnt/disk1
-</code></pre><h2 id=新建swap>新建SWAP<a href=#新建swap class=hanchor arialabel=Anchor>&#8983;</a></h2><pre tabindex=0><code>[root@localhost ~]# lsblk
+</code></pre><h2 id=新建swap>新建SWAP<a href=#新建swap class=hanchor arialabel=Anchor>#</a></h2><pre tabindex=0><code>[root@localhost ~]# lsblk
 NAME            MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
 sda               8:0    0   20G  0 disk
 ├─sda1            8:1    0    1G  0 part /boot
@@ -722,7 +984,7 @@ Swap:          2047           0        2047
               total        used        free      shared  buff/cache   available
 Mem:           3770         925        2201          26         642        2579
 Swap:          7166           0        7166
-</code></pre><h2 id=禁用swap>禁用swap<a href=#禁用swap class=hanchor arialabel=Anchor>&#8983;</a></h2><pre tabindex=0><code>一、不重启电脑，禁用启用swap，立刻生效
+</code></pre><h2 id=禁用swap>禁用swap<a href=#禁用swap class=hanchor arialabel=Anchor>#</a></h2><pre tabindex=0><code>一、不重启电脑，禁用启用swap，立刻生效
 
 # 禁用命令
 sudo swapoff -a
@@ -732,7 +994,7 @@ sudo swapon -a
 
 # 查看交换分区的状态
 sudo free -m
-</code></pre><h2 id=创建lvm>创建LVM<a href=#创建lvm class=hanchor arialabel=Anchor>&#8983;</a></h2><p>无限制的扩张容量</p><pre tabindex=0><code>[root@192 ~]# lsblk
+</code></pre><h2 id=创建lvm>创建LVM<a href=#创建lvm class=hanchor arialabel=Anchor>#</a></h2><p>无限制的扩张容量</p><pre tabindex=0><code>[root@192 ~]# lsblk
 NAME            MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
 sda               8:0    0   20G  0 disk
 ├─sda1            8:1    0    1G  0 part /boot
@@ -852,7 +1114,7 @@ tmpfs                   tmpfs     378M   28K  378M    1% /run/user/1000
   VG     #PV #LV #SN Attr   VSize   VFree
   centos   1   2   0 wz--n- &lt;19.00g    0
   vg1      2   1   0 wz--n-   9.99g 1.99g
-</code></pre><h1 id=yum>yum<a href=#yum class=hanchor arialabel=Anchor>&#8983;</a></h1><p>yum的所有文件都在<code>/etc/yum.repos.d</code>下</p><h2 id=yum挂载光盘源>yum挂载光盘源<a href=#yum挂载光盘源 class=hanchor arialabel=Anchor>&#8983;</a></h2><p>新建一个xxx.repo的文件</p><pre tabindex=0><code>[root@192 yum.repos.d]# cat ./dvd.repo
+</code></pre><h1 id=yum>yum<a href=#yum class=hanchor arialabel=Anchor>#</a></h1><p>yum的所有文件都在<code>/etc/yum.repos.d</code>下</p><h2 id=yum挂载光盘源>yum挂载光盘源<a href=#yum挂载光盘源 class=hanchor arialabel=Anchor>#</a></h2><p>新建一个xxx.repo的文件</p><pre tabindex=0><code>[root@192 yum.repos.d]# cat ./dvd.repo
 [dvd]
 name=this is descreption
 baseurl=file:///mnt/cdrom
@@ -880,8 +1142,5 @@ yum -y instal httpd
 
 # 安装rpm包
 rpm -ivh  xxx.rpm
-</code></pre></div></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>Read other posts</span><hr></div><div class=pagination__buttons><span class="button previous"><a href=https://tosa.team/posts/mysql/><span class=button__icon>←</span>
-<span class=button__text>Mysql</span>
-</a></span><span class="button next"><a href=https://tosa.team/posts/aliyun/><span class=button__text>Aliyun</span>
-<span class=button__icon>→</span></a></span></div></div></article></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>
-<span>:: <a href=https://github.com/mirus-ua/hugo-theme-re-terminal target=_blank>Theme</a> made by <a href=https://github.com/mirus-ua target=_blank>Mirus</a></span></div></div></footer><script type=text/javascript src=/bundle.min.js></script></div></body></html>
+</code></pre></div></div></article></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>
+<span>:: <a href=https://github.com/panr/hugo-theme-terminal target=_blank>Theme</a> made by <a href=https://github.com/panr target=_blank>panr</a></span></div></div></footer><script type=text/javascript src=/bundle.min.js></script></div></body></html>

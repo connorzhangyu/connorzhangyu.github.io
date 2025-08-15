@@ -1,42 +1,42 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>学习计划 on Hello World!</title><link>https://tosa.team/tags/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</link><description>Recent content in 学习计划 on Hello World!</description><generator>Hugo -- gohugo.io</generator><language>zh</language><lastBuildDate>Fri, 08 Aug 2025 10:00:00 +0700</lastBuildDate><atom:link href="https://tosa.team/tags/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/index.xml" rel="self" type="application/rss+xml"/><item><title>Go 面试冲刺学习计划（14 天 | 每天 12 小时）</title><link>https://tosa.team/posts/showcase/go-%E9%9D%A2%E8%AF%95%E5%86%B2%E5%88%BA%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</link><pubDate>Fri, 08 Aug 2025 10:00:00 +0700</pubDate><guid>https://tosa.team/posts/showcase/go-%E9%9D%A2%E8%AF%95%E5%86%B2%E5%88%BA%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</guid><description>&lt;blockquote>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>学习计划 on Hello World!</title><link>https://tosa.team/tags/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</link><description>Recent content in 学习计划 on Hello World!</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Fri, 08 Aug 2025 10:00:00 +0700</lastBuildDate><atom:link href="https://tosa.team/tags/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/index.xml" rel="self" type="application/rss+xml"/><item><title>Go 面试冲刺学习计划（14 天 | 每天 12 小时）</title><link>https://tosa.team/posts/go-%E9%9D%A2%E8%AF%95%E5%86%B2%E5%88%BA%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</link><pubDate>Fri, 08 Aug 2025 10:00:00 +0700</pubDate><guid>https://tosa.team/posts/go-%E9%9D%A2%E8%AF%95%E5%86%B2%E5%88%BA%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</guid><description>&lt;blockquote>
 &lt;p>🚀 本计划适用于有 Java 开发经验的工程师，全力转向 Go 开发岗位，每天投入 12 小时，14 天从语法到项目到面试冲刺，快速具备独立开发 + 面试能力。&lt;/p>&lt;/blockquote>
 &lt;hr>
 &lt;h2 id="-阶段总览">🧭 阶段总览&lt;/h2>
 &lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>阶段&lt;/th>
-&lt;th>时间范围&lt;/th>
-&lt;th>目标&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>基础语法期&lt;/td>
-&lt;td>Day 1 ～ Day 4&lt;/td>
-&lt;td>掌握语法、指针、结构体、接口等基础能力&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>并发理解期&lt;/td>
-&lt;td>Day 5 ～ Day 6&lt;/td>
-&lt;td>熟练使用 goroutine、channel、锁等并发机制&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>框架实战期&lt;/td>
-&lt;td>Day 7 ～ Day 10&lt;/td>
-&lt;td>掌握 Gin、GORM、JWT、Redis、配置管理等项目能力&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>项目构建期&lt;/td>
-&lt;td>Day 11 ～ Day 12&lt;/td>
-&lt;td>完整开发项目并调试测试，准备部署&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>面试冲刺期&lt;/td>
-&lt;td>Day 13 ～ Day 14&lt;/td>
-&lt;td>刷题 + 模拟面试 + 简历完善 + 项目讲解&lt;/td>
-&lt;/tr>
-&lt;/tbody>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>阶段&lt;/th>
+ &lt;th>时间范围&lt;/th>
+ &lt;th>目标&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>基础语法期&lt;/td>
+ &lt;td>Day 1 ～ Day 4&lt;/td>
+ &lt;td>掌握语法、指针、结构体、接口等基础能力&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>并发理解期&lt;/td>
+ &lt;td>Day 5 ～ Day 6&lt;/td>
+ &lt;td>熟练使用 goroutine、channel、锁等并发机制&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>框架实战期&lt;/td>
+ &lt;td>Day 7 ～ Day 10&lt;/td>
+ &lt;td>掌握 Gin、GORM、JWT、Redis、配置管理等项目能力&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>项目构建期&lt;/td>
+ &lt;td>Day 11 ～ Day 12&lt;/td>
+ &lt;td>完整开发项目并调试测试，准备部署&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>面试冲刺期&lt;/td>
+ &lt;td>Day 13 ～ Day 14&lt;/td>
+ &lt;td>刷题 + 模拟面试 + 简历完善 + 项目讲解&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
 &lt;/table>
 &lt;hr>
 &lt;h2 id="-每日学习任务每日-12-小时">📅 每日学习任务（每日 12 小时）&lt;/h2>
@@ -47,160 +47,4 @@
 &lt;li>组织多文件项目结构&lt;/li>
 &lt;li>熟练使用 &lt;code>go run&lt;/code>, &lt;code>go build&lt;/code>, &lt;code>go install&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;p>🎯 输出：一个包含自定义包的练手项目&lt;/p></description><content>&lt;blockquote>
-&lt;p>🚀 本计划适用于有 Java 开发经验的工程师，全力转向 Go 开发岗位，每天投入 12 小时，14 天从语法到项目到面试冲刺，快速具备独立开发 + 面试能力。&lt;/p>&lt;/blockquote>
-&lt;hr>
-&lt;h2 id="-阶段总览">🧭 阶段总览&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>阶段&lt;/th>
-&lt;th>时间范围&lt;/th>
-&lt;th>目标&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>基础语法期&lt;/td>
-&lt;td>Day 1 ～ Day 4&lt;/td>
-&lt;td>掌握语法、指针、结构体、接口等基础能力&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>并发理解期&lt;/td>
-&lt;td>Day 5 ～ Day 6&lt;/td>
-&lt;td>熟练使用 goroutine、channel、锁等并发机制&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>框架实战期&lt;/td>
-&lt;td>Day 7 ～ Day 10&lt;/td>
-&lt;td>掌握 Gin、GORM、JWT、Redis、配置管理等项目能力&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>项目构建期&lt;/td>
-&lt;td>Day 11 ～ Day 12&lt;/td>
-&lt;td>完整开发项目并调试测试，准备部署&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>面试冲刺期&lt;/td>
-&lt;td>Day 13 ～ Day 14&lt;/td>
-&lt;td>刷题 + 模拟面试 + 简历完善 + 项目讲解&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;hr>
-&lt;h2 id="-每日学习任务每日-12-小时">📅 每日学习任务（每日 12 小时）&lt;/h2>
-&lt;h3 id="day-1go-项目结构与包机制">Day 1：Go 项目结构与包机制&lt;/h3>
-&lt;ul>
-&lt;li>学习 &lt;code>package&lt;/code>、&lt;code>import&lt;/code>、&lt;code>go mod&lt;/code>&lt;/li>
-&lt;li>区分 &lt;code>main&lt;/code> 包与普通包&lt;/li>
-&lt;li>组织多文件项目结构&lt;/li>
-&lt;li>熟练使用 &lt;code>go run&lt;/code>, &lt;code>go build&lt;/code>, &lt;code>go install&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>🎯 输出：一个包含自定义包的练手项目&lt;/p>
-&lt;hr>
-&lt;h3 id="day-2变量函数数组切片map指针">Day 2：变量、函数、数组、切片、map、指针&lt;/h3>
-&lt;ul>
-&lt;li>理解传值/传引用、切片扩容机制、map 操作&lt;/li>
-&lt;li>指针声明与解引用、new 与 make 的区别&lt;/li>
-&lt;/ul>
-&lt;p>🎯 输出：封装常用数据结构函数，写一篇指针总结&lt;/p>
-&lt;hr>
-&lt;h3 id="day-3结构体方法接口组合">Day 3：结构体、方法、接口、组合&lt;/h3>
-&lt;ul>
-&lt;li>Go 的面向接口编程&lt;/li>
-&lt;li>方法绑定 vs 普通函数&lt;/li>
-&lt;li>空接口与类型断言&lt;/li>
-&lt;/ul>
-&lt;p>🎯 输出：实现一个简单模块接口与实现&lt;/p>
-&lt;hr>
-&lt;h3 id="day-4流程控制与错误处理">Day 4：流程控制与错误处理&lt;/h3>
-&lt;ul>
-&lt;li>if/for/switch 控制结构&lt;/li>
-&lt;li>错误值处理、defer/panic/recover&lt;/li>
-&lt;/ul>
-&lt;p>🎯 输出：模拟错误恢复机制 + 错误封装&lt;/p>
-&lt;hr>
-&lt;h3 id="day-5并发编程基础">Day 5：并发编程基础&lt;/h3>
-&lt;ul>
-&lt;li>goroutine 启动与通信&lt;/li>
-&lt;li>channel 使用、缓冲、select 多路复用&lt;/li>
-&lt;li>sync.Mutex、WaitGroup 等并发控制工具&lt;/li>
-&lt;/ul>
-&lt;p>🎯 输出：并发下载器 + 模拟任务分发器&lt;/p>
-&lt;hr>
-&lt;h3 id="day-6context-控制协程生命周期">Day 6：context 控制协程生命周期&lt;/h3>
-&lt;ul>
-&lt;li>context.WithTimeout / Cancel 使用&lt;/li>
-&lt;li>多 goroutine 协调与退出控制&lt;/li>
-&lt;/ul>
-&lt;p>🎯 输出：带超时退出控制的任务系统&lt;/p>
-&lt;hr>
-&lt;h3 id="day-7gin-框架入门">Day 7：Gin 框架入门&lt;/h3>
-&lt;ul>
-&lt;li>Gin 项目结构与运行机制&lt;/li>
-&lt;li>请求路由、参数绑定、中间件、日志恢复&lt;/li>
-&lt;/ul>
-&lt;p>🎯 输出：用户注册/登录接口（无 DB）&lt;/p>
-&lt;hr>
-&lt;h3 id="day-8gorm-数据库-orm">Day 8：GORM 数据库 ORM&lt;/h3>
-&lt;ul>
-&lt;li>CRUD、事务、钩子、连接池管理&lt;/li>
-&lt;li>模型关联：一对多、多对多&lt;/li>
-&lt;/ul>
-&lt;p>🎯 输出：带分页的用户管理接口&lt;/p>
-&lt;hr>
-&lt;h3 id="day-9jwt-登录--配置中间件--日志系统">Day 9：JWT 登录 + 配置中间件 + 日志系统&lt;/h3>
-&lt;ul>
-&lt;li>JWT 实现登录鉴权&lt;/li>
-&lt;li>使用 viper 管理配置&lt;/li>
-&lt;li>接入 logrus/zap 做日志统一输出&lt;/li>
-&lt;/ul>
-&lt;p>🎯 输出：完整登录流程 + JWT 鉴权中间件&lt;/p>
-&lt;hr>
-&lt;h3 id="day-10redis-集成--项目优化--打包部署">Day 10：Redis 集成 + 项目优化 + 打包部署&lt;/h3>
-&lt;ul>
-&lt;li>用 Redis 做缓存、验证码、限流等场景&lt;/li>
-&lt;li>Docker 编写部署镜像&lt;/li>
-&lt;/ul>
-&lt;p>🎯 输出：可打包运行的后端 API 项目&lt;/p>
-&lt;hr>
-&lt;h3 id="day-11项目重构与测试">Day 11：项目重构与测试&lt;/h3>
-&lt;ul>
-&lt;li>合理划分模块结构（controller/service/model）&lt;/li>
-&lt;li>单元测试、接口测试&lt;/li>
-&lt;li>编写 README 与部署文档&lt;/li>
-&lt;/ul>
-&lt;p>🎯 输出：可上线版本的项目文档与接口说明&lt;/p>
-&lt;hr>
-&lt;h3 id="day-12模拟面试讲解与准备">Day 12：模拟面试讲解与准备&lt;/h3>
-&lt;ul>
-&lt;li>演练项目讲解：功能结构、技术选型、遇到的问题&lt;/li>
-&lt;li>输出接口文档、架构图、使用文档&lt;/li>
-&lt;/ul>
-&lt;p>🎯 输出：完整项目讲解材料&lt;/p>
-&lt;hr>
-&lt;h3 id="day-13面试题冲刺">Day 13：面试题冲刺&lt;/h3>
-&lt;ul>
-&lt;li>高频基础题：切片、map、接口、指针&lt;/li>
-&lt;li>高频框架题：Gin 流程、GORM 底层&lt;/li>
-&lt;li>高频并发题：channel 使用场景、select 多路复用&lt;/li>
-&lt;/ul>
-&lt;p>🎯 输出：10 套 Go 面试题答案整理&lt;/p>
-&lt;hr>
-&lt;h3 id="day-14模拟真实面试--简历定稿">Day 14：模拟真实面试 + 简历定稿&lt;/h3>
-&lt;ul>
-&lt;li>自述背景 + 项目亮点 + 技术核心难点&lt;/li>
-&lt;li>白板讲项目架构或核心实现&lt;/li>
-&lt;li>输出最终版简历 + GitHub 项目链接&lt;/li>
-&lt;/ul>
-&lt;p>🎯 输出：拥有完整 Go 面试准备能力&lt;/p>
-&lt;hr>
-&lt;h2 id="-学习成果清单">📦 学习成果清单&lt;/h2>
-&lt;ul>
-&lt;li>一个完整 Gin + GORM + Redis 的项目（含登录、分页、鉴权）&lt;/li>
-&lt;li>项目文档 + 讲解稿 + GitHub 项目链接&lt;/li>
-&lt;li>面试题知识点整理脑图 / Markdown 文档&lt;/li>
-&lt;li>可填写在简历中的 Go 项目经历与技术亮点&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;p>你可以根据自己的节奏微调每个阶段的进度，只要坚持输出成果，就能在两周内形成强有力的 Go 技术竞争力 💪&lt;/p></content></item></channel></rss>
+&lt;p>🎯 输出：一个包含自定义包的练手项目&lt;/p></description></item></channel></rss>
