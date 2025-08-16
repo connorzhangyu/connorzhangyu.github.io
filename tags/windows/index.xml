@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Windows on Hello World</title><link>https://connorzhangyu.com/tags/windows/</link><description>Recent content in Windows on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Fri, 15 Aug 2025 14:51:48 +0700</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/windows/index.xml" rel="self" type="application/rss+xml"/><item><title>Windows</title><link>https://connorzhangyu.com/windows/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/windows/</guid><description>&lt;h1 id="windows-server">Windows Server&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Windows on Hello World</title><link>https://tosa.team/tags/windows/</link><description>Recent content in Windows on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Fri, 15 Aug 2025 14:51:48 +0700</lastBuildDate><atom:link href="https://tosa.team/tags/windows/index.xml" rel="self" type="application/rss+xml"/><item><title>Windows</title><link>https://tosa.team/windows/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/windows/</guid><description>&lt;h1 id="windows-server">Windows Server&lt;/h1>
 &lt;h2 id="开放指定端口">开放指定端口&lt;/h2>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051353354.webp" alt="1">&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051353503.webp" alt="2">&lt;/p>
@@ -114,7 +114,7 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pause
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>复制上面的代码。新建一个文本文件。粘贴后另存为.bat文件，然后以管理员身份打开。&lt;/p></description></item><item><title>Windows</title><link>https://connorzhangyu.com/windows/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/windows/</guid><description>&lt;h1 id="windows-server">Windows Server&lt;/h1>
+&lt;/div>&lt;p>复制上面的代码。新建一个文本文件。粘贴后另存为.bat文件，然后以管理员身份打开。&lt;/p></description></item><item><title>Windows</title><link>https://tosa.team/windows/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/windows/</guid><description>&lt;h1 id="windows-server">Windows Server&lt;/h1>
 &lt;h2 id="开放指定端口">开放指定端口&lt;/h2>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051353354.webp" alt="1">&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051353503.webp" alt="2">&lt;/p>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>精选 on Hello World</title><link>https://connorzhangyu.com/featured/</link><description>Recent content in 精选 on Hello World</description><generator>Hugo</generator><language>zh</language><atom:link href="https://connorzhangyu.com/featured/index.xml" rel="self" type="application/rss+xml"/><item><title>如何规划 AWS 学习与认证路径：从入门到架构师</title><link>https://connorzhangyu.com/featured/aws-study/</link><pubDate>Thu, 14 Aug 2025 18:03:01 +0000</pubDate><guid>https://connorzhangyu.com/featured/aws-study/</guid><description>&lt;div class="post-authors" style="margin:10px 0 18px;">&lt;div class="author" style="display:inline-flex;align-items:center;margin-right:16px;gap:8px;">&lt;span style="white-space:nowrap;">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>精选 on Hello World</title><link>https://tosa.team/featured/</link><description>Recent content in 精选 on Hello World</description><generator>Hugo</generator><language>zh</language><atom:link href="https://tosa.team/featured/index.xml" rel="self" type="application/rss+xml"/><item><title>如何规划 AWS 学习与认证路径：从入门到架构师</title><link>https://tosa.team/featured/aws-study/</link><pubDate>Thu, 14 Aug 2025 18:03:01 +0000</pubDate><guid>https://tosa.team/featured/aws-study/</guid><description>&lt;div class="post-authors" style="margin:10px 0 18px;">&lt;div class="author" style="display:inline-flex;align-items:center;margin-right:16px;gap:8px;">&lt;span style="white-space:nowrap;">
  Connor Zhang&lt;span style="margin-left:6px;opacity:.85;">📍 Bangkok, Thailand&lt;/span>&lt;/span>
  &lt;/div>&lt;div class="author-bio" style="margin-top:6px;opacity:.9;">AWS Certified Solutions Architect / 全栈工程师&lt;/div>&lt;/div>
 &lt;h1 id="如何规划-aws-学习与认证路径从入门到架构师">如何规划 AWS 学习与认证路径：从入门到架构师&lt;/h1>
@@ -37,7 +37,7 @@
 &lt;hr>
 &lt;h3 id="阶段-2开发与构建">阶段 2：开发与构建&lt;/h3>
 &lt;blockquote>
-&lt;p>&lt;strong>目标&lt;/strong>：学习如何使用 AWS 开发工具，在云上构建高效的应用程序。&lt;/p></description></item><item><title>Go 的声明语法：为什么与众不同</title><link>https://connorzhangyu.com/featured/go-declaration-syntax/</link><pubDate>Wed, 13 Aug 2025 22:00:00 +0700</pubDate><guid>https://connorzhangyu.com/featured/go-declaration-syntax/</guid><description>&lt;div class="post-authors" style="margin:10px 0 18px;">&lt;div class="author" style="display:inline-flex;align-items:center;margin-right:16px;gap:8px;">&lt;span style="white-space:nowrap;">
+&lt;p>&lt;strong>目标&lt;/strong>：学习如何使用 AWS 开发工具，在云上构建高效的应用程序。&lt;/p></description></item><item><title>Go 的声明语法：为什么与众不同</title><link>https://tosa.team/featured/go-declaration-syntax/</link><pubDate>Wed, 13 Aug 2025 22:00:00 +0700</pubDate><guid>https://tosa.team/featured/go-declaration-syntax/</guid><description>&lt;div class="post-authors" style="margin:10px 0 18px;">&lt;div class="author" style="display:inline-flex;align-items:center;margin-right:16px;gap:8px;">&lt;span style="white-space:nowrap;">
  Connor Zhang&lt;span style="margin-left:6px;opacity:.85;">📍 Bangkok, Thailand&lt;/span>&lt;/span>
  &lt;/div>&lt;div class="author-bio" style="margin-top:6px;opacity:.9;">AWS Certified Solutions Architect / 全栈工程师&lt;/div>&lt;/div>
 &lt;blockquote>
@@ -46,7 +46,7 @@
 在网络上能找到不少 &lt;em>&amp;ldquo;Go&amp;rsquo;s Declaration Syntax&amp;rdquo;&lt;/em> 的中文翻译，但大多数存在直译生硬、遗漏原文细节甚至误解语义的问题。&lt;br>
 这些低质量翻译往往让读者更困惑，而不是更清楚。&lt;br>
 因此，我基于 Rob Pike 原文，结合上下文和代码示例，整理出一份更贴近原意、方便国内开发者理解的版本。&lt;br>
-同时保留原文核心思想，并补充了对比表与背景说明，帮助读者更好地掌握 Go 声明语法背后的设计理念。&lt;/p>&lt;/blockquote></description></item><item><title>如何通过 EC2 实例连接 Amazon RDS 数据库</title><link>https://connorzhangyu.com/featured/b765efc8-3b0e-421b-beb4-d1fac4fd836f/</link><pubDate>Tue, 17 Dec 2024 17:42:26 +0000</pubDate><guid>https://connorzhangyu.com/featured/b765efc8-3b0e-421b-beb4-d1fac4fd836f/</guid><description>&lt;div class="post-authors" style="margin:10px 0 18px;">&lt;div class="author" style="display:inline-flex;align-items:center;margin-right:16px;gap:8px;">&lt;span style="white-space:nowrap;">
+同时保留原文核心思想，并补充了对比表与背景说明，帮助读者更好地掌握 Go 声明语法背后的设计理念。&lt;/p>&lt;/blockquote></description></item><item><title>如何通过 EC2 实例连接 Amazon RDS 数据库</title><link>https://tosa.team/featured/b765efc8-3b0e-421b-beb4-d1fac4fd836f/</link><pubDate>Tue, 17 Dec 2024 17:42:26 +0000</pubDate><guid>https://tosa.team/featured/b765efc8-3b0e-421b-beb4-d1fac4fd836f/</guid><description>&lt;div class="post-authors" style="margin:10px 0 18px;">&lt;div class="author" style="display:inline-flex;align-items:center;margin-right:16px;gap:8px;">&lt;span style="white-space:nowrap;">
  Connor Zhang&lt;span style="margin-left:6px;opacity:.85;">📍 Bangkok, Thailand&lt;/span>&lt;/span>
  &lt;/div>&lt;div class="author-bio" style="margin-top:6px;opacity:.9;">AWS Certified Solutions Architect / 全栈工程师&lt;/div>&lt;/div>
 &lt;h1 id="如何通过-ec2-实例连接-amazon-rds-数据库">如何通过 EC2 实例连接 Amazon RDS 数据库&lt;/h1>
@@ -81,7 +81,7 @@
 &lt;/ol>
 &lt;hr>
 &lt;h2 id="3-在本地创建-ssh-隧道">3. 在本地创建 SSH 隧道&lt;/h2>
-&lt;p>SSH 隧道是连接本地客户端和 RDS 数据库的桥梁。以下是设置方法：&lt;/p></description></item><item><title>使用 Nginx + Cloudflare + Docker 部署 Java 服务的最佳实践</title><link>https://connorzhangyu.com/featured/5c8f5a74-11b1-4c78-8307-5dfdd5c6adc3/</link><pubDate>Sun, 08 Dec 2024 05:07:43 +0000</pubDate><guid>https://connorzhangyu.com/featured/5c8f5a74-11b1-4c78-8307-5dfdd5c6adc3/</guid><description>&lt;div class="post-authors" style="margin:10px 0 18px;">&lt;div class="author" style="display:inline-flex;align-items:center;margin-right:16px;gap:8px;">&lt;span style="white-space:nowrap;">
+&lt;p>SSH 隧道是连接本地客户端和 RDS 数据库的桥梁。以下是设置方法：&lt;/p></description></item><item><title>使用 Nginx + Cloudflare + Docker 部署 Java 服务的最佳实践</title><link>https://tosa.team/featured/5c8f5a74-11b1-4c78-8307-5dfdd5c6adc3/</link><pubDate>Sun, 08 Dec 2024 05:07:43 +0000</pubDate><guid>https://tosa.team/featured/5c8f5a74-11b1-4c78-8307-5dfdd5c6adc3/</guid><description>&lt;div class="post-authors" style="margin:10px 0 18px;">&lt;div class="author" style="display:inline-flex;align-items:center;margin-right:16px;gap:8px;">&lt;span style="white-space:nowrap;">
  Connor Zhang&lt;span style="margin-left:6px;opacity:.85;">📍 Bangkok, Thailand&lt;/span>&lt;/span>
  &lt;/div>&lt;div class="author-bio" style="margin-top:6px;opacity:.9;">AWS Certified Solutions Architect / 全栈工程师&lt;/div>&lt;/div>
 &lt;h1 id="使用-nginx--cloudflare--docker-部署-java-服务的最佳实践">使用 Nginx + Cloudflare + Docker 部署 Java 服务的最佳实践&lt;/h1>
@@ -207,7 +207,7 @@
 &lt;/div>&lt;hr>
 &lt;h2 id="三docker-配置">三、Docker 配置&lt;/h2>
 &lt;h3 id="1-构建-java-服务镜像">1. 构建 Java 服务镜像&lt;/h3>
-&lt;p>使用以下 Dockerfile 构建镜像：&lt;/p></description></item><item><title>使用 Cloudflare 和 Nginx 构建高性能安全站点</title><link>https://connorzhangyu.com/featured/cf-nginx/</link><pubDate>Sat, 07 Dec 2024 18:13:27 +0000</pubDate><guid>https://connorzhangyu.com/featured/cf-nginx/</guid><description>&lt;div class="post-authors" style="margin:10px 0 18px;">&lt;div class="author" style="display:inline-flex;align-items:center;margin-right:16px;gap:8px;">&lt;span style="white-space:nowrap;">
+&lt;p>使用以下 Dockerfile 构建镜像：&lt;/p></description></item><item><title>使用 Cloudflare 和 Nginx 构建高性能安全站点</title><link>https://tosa.team/featured/cf-nginx/</link><pubDate>Sat, 07 Dec 2024 18:13:27 +0000</pubDate><guid>https://tosa.team/featured/cf-nginx/</guid><description>&lt;div class="post-authors" style="margin:10px 0 18px;">&lt;div class="author" style="display:inline-flex;align-items:center;margin-right:16px;gap:8px;">&lt;span style="white-space:nowrap;">
  Connor Zhang&lt;span style="margin-left:6px;opacity:.85;">📍 Bangkok, Thailand&lt;/span>&lt;/span>
  &lt;/div>&lt;div class="author-bio" style="margin-top:6px;opacity:.9;">AWS Certified Solutions Architect / 全栈工程师&lt;/div>&lt;/div>
 &lt;h1 id="使用-cloudflare-和-nginx-构建高性能安全站点">使用 Cloudflare 和 Nginx 构建高性能安全站点&lt;/h1>

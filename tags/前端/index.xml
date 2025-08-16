@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>前端 on Hello World</title><link>https://connorzhangyu.com/tags/%E5%89%8D%E7%AB%AF/</link><description>Recent content in 前端 on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Fri, 15 Aug 2025 14:51:48 +0700</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>Vue后台系统</title><link>https://connorzhangyu.com/vue%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F/</link><pubDate>Mon, 26 Feb 2024 13:47:19 +0000</pubDate><guid>https://connorzhangyu.com/vue%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F/</guid><description>&lt;p>项目由 Vue3 + Pina + JavaScript + Ant Design Vue&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>前端 on Hello World</title><link>https://tosa.team/tags/%E5%89%8D%E7%AB%AF/</link><description>Recent content in 前端 on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Fri, 15 Aug 2025 14:51:48 +0700</lastBuildDate><atom:link href="https://tosa.team/tags/%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>Vue后台系统</title><link>https://tosa.team/vue%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F/</link><pubDate>Mon, 26 Feb 2024 13:47:19 +0000</pubDate><guid>https://tosa.team/vue%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F/</guid><description>&lt;p>项目由 Vue3 + Pina + JavaScript + Ant Design Vue&lt;/p>
 &lt;h1 id="创建项目">创建项目&lt;/h1>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -158,7 +158,7 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h1 id="配置开发环境">配置开发环境&lt;/h1>
-&lt;p>编辑vite.config.js&lt;/p></description></item><item><title>CSS</title><link>https://connorzhangyu.com/css/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/css/</guid><description>&lt;h1 id="css">CSS&lt;/h1>
+&lt;p>编辑vite.config.js&lt;/p></description></item><item><title>CSS</title><link>https://tosa.team/css/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/css/</guid><description>&lt;h1 id="css">CSS&lt;/h1>
 &lt;h2 id="选择器">选择器&lt;/h2>
 &lt;h3 id="基础选择器">基础选择器&lt;/h3>
 &lt;table>
@@ -241,7 +241,7 @@
 &lt;/ul>
 &lt;h3 id="外边距">外边距&lt;/h3>
 &lt;p>margin的语法跟padding用法一样
-{% iframe &lt;a href="https://codepen.io/anthony2023/embed/PoVyWYO?default-tab=html%2Cresult%25%7d">https://codepen.io/anthony2023/embed/PoVyWYO?default-tab=html%2Cresult%}&lt;/a>&lt;/p></description></item><item><title>Element-UI</title><link>https://connorzhangyu.com/element-ui/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/element-ui/</guid><description>&lt;h1 id="表单验证">表单验证&lt;/h1>
+{% iframe &lt;a href="https://codepen.io/anthony2023/embed/PoVyWYO?default-tab=html%2Cresult%25%7d">https://codepen.io/anthony2023/embed/PoVyWYO?default-tab=html%2Cresult%}&lt;/a>&lt;/p></description></item><item><title>Element-UI</title><link>https://tosa.team/element-ui/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/element-ui/</guid><description>&lt;h1 id="表单验证">表单验证&lt;/h1>
 &lt;h2 id="简单版">简单版&lt;/h2>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -693,7 +693,7 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="自定义校验封装">自定义校验封装&lt;/h2>
-&lt;p>新建一个vaildate.js&lt;/p></description></item><item><title>HTML</title><link>https://connorzhangyu.com/html/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/html/</guid><description>&lt;div class="highlight">&lt;div class="chroma">
+&lt;p>新建一个vaildate.js&lt;/p></description></item><item><title>HTML</title><link>https://tosa.team/html/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/html/</guid><description>&lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
 &lt;/span>&lt;span class="lnt"> 2
@@ -765,7 +765,7 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">body&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>&lt;strong>段落格式的特点&lt;/strong>&lt;/p></description></item><item><title>JavaScript</title><link>https://connorzhangyu.com/javascript/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/javascript/</guid><description>&lt;h1 id="javascript">JavaScript&lt;/h1>
+&lt;/div>&lt;p>&lt;strong>段落格式的特点&lt;/strong>&lt;/p></description></item><item><title>JavaScript</title><link>https://tosa.team/javascript/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/javascript/</guid><description>&lt;h1 id="javascript">JavaScript&lt;/h1>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
@@ -859,7 +859,7 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="函数">函数&lt;/h2>
-&lt;p>{% tabs JS函数, 1 %}&lt;/p></description></item><item><title>NodeJs</title><link>https://connorzhangyu.com/nodejs/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/nodejs/</guid><description>&lt;h1 id="语法">语法&lt;/h1>
+&lt;p>{% tabs JS函数, 1 %}&lt;/p></description></item><item><title>NodeJs</title><link>https://tosa.team/nodejs/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/nodejs/</guid><description>&lt;h1 id="语法">语法&lt;/h1>
 &lt;h1 id="基本使用">基本使用&lt;/h1>
 &lt;h1 id="初始化项目">初始化项目&lt;/h1>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -945,7 +945,7 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">html&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>index.js&lt;/p></description></item><item><title>Vue</title><link>https://connorzhangyu.com/vue/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/vue/</guid><description>&lt;p>按照官方文档的教程步骤来,大部分的代码Demo,都是通过脚手架创建的项目的基础上创建的,用的版本的Vue3,Typescript,组合式的写法&lt;/p>
+&lt;/div>&lt;p>index.js&lt;/p></description></item><item><title>Vue</title><link>https://tosa.team/vue/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/vue/</guid><description>&lt;p>按照官方文档的教程步骤来,大部分的代码Demo,都是通过脚手架创建的项目的基础上创建的,用的版本的Vue3,Typescript,组合式的写法&lt;/p>
 &lt;h1 id="基础">基础&lt;/h1>
 &lt;h2 id="创建一个应用">创建一个应用&lt;/h2>
 &lt;p>&lt;em>&lt;strong>多个应用实例&lt;/strong>&lt;/em>&lt;/p>
@@ -1045,7 +1045,7 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="模板语法">模板语法&lt;/h2>
-&lt;p>&lt;em>&lt;strong>文本插值&lt;/strong>&lt;/em>&lt;/p></description></item><item><title>Vue项目</title><link>https://connorzhangyu.com/vue%E9%A1%B9%E7%9B%AE/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/vue%E9%A1%B9%E7%9B%AE/</guid><description>&lt;h1 id="安装vue">安装Vue&lt;/h1>
+&lt;p>&lt;em>&lt;strong>文本插值&lt;/strong>&lt;/em>&lt;/p></description></item><item><title>Vue项目</title><link>https://tosa.team/vue%E9%A1%B9%E7%9B%AE/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/vue%E9%A1%B9%E7%9B%AE/</guid><description>&lt;h1 id="安装vue">安装Vue&lt;/h1>
 &lt;h2 id="局部安装">局部安装&lt;/h2>
 &lt;p>局部安装并使用vue-cli 4.x版本,和创建项目&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">

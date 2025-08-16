@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on Hello World</title><link>https://connorzhangyu.com/categories/linux/</link><description>Recent content in Linux on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Mon, 04 Aug 2025 01:38:57 +0700</lastBuildDate><atom:link href="https://connorzhangyu.com/categories/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>JumpServer</title><link>https://connorzhangyu.com/jumpserver/</link><pubDate>Wed, 25 Oct 2023 09:30:33 +0000</pubDate><guid>https://connorzhangyu.com/jumpserver/</guid><description>&lt;h1 id="笔记">笔记&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on Hello World</title><link>https://tosa.team/categories/linux/</link><description>Recent content in Linux on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Mon, 04 Aug 2025 01:38:57 +0700</lastBuildDate><atom:link href="https://tosa.team/categories/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>JumpServer</title><link>https://tosa.team/jumpserver/</link><pubDate>Wed, 25 Oct 2023 09:30:33 +0000</pubDate><guid>https://tosa.team/jumpserver/</guid><description>&lt;h1 id="笔记">笔记&lt;/h1>
 &lt;h2 id="安装jumpserver">安装JumpServer&lt;/h2>
 &lt;p>&lt;a href="https://community.fit2cloud.com/#/products/jumpserver/getstarted">官网一键安装&lt;/a>&lt;/p>
 &lt;h2 id="修改配置远程访问的端口">修改配置远程访问的端口&lt;/h2>
@@ -54,7 +54,7 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="nginx反向代理">Nginx反向代理&lt;/h2>
-&lt;p>&lt;a href="../9355/#%E4%BB%A3%E7%90%86JumpServer">Nginx反向代理&lt;/a>&lt;/p></description></item><item><title>WordPress</title><link>https://connorzhangyu.com/wordpress/</link><pubDate>Fri, 16 Jun 2023 13:39:21 +0000</pubDate><guid>https://connorzhangyu.com/wordpress/</guid><description>&lt;h1 id="搭建">搭建&lt;/h1>
+&lt;p>&lt;a href="../9355/#%E4%BB%A3%E7%90%86JumpServer">Nginx反向代理&lt;/a>&lt;/p></description></item><item><title>WordPress</title><link>https://tosa.team/wordpress/</link><pubDate>Fri, 16 Jun 2023 13:39:21 +0000</pubDate><guid>https://tosa.team/wordpress/</guid><description>&lt;h1 id="搭建">搭建&lt;/h1>
 &lt;p>使用阿里云,或者腾讯等轻量云服务器,一键搭建&lt;/p>
 &lt;h1 id="教程">教程&lt;/h1>
 &lt;h2 id="wordpress地址和站点地址的含义和区别">WordPress地址和站点地址的含义和区别&lt;/h2>
@@ -106,7 +106,7 @@
  &lt;td style="text-align: left">Yoast SEO&lt;/td>
  &lt;/tr>
  &lt;/tbody>
-&lt;/table></description></item><item><title>Linux</title><link>https://connorzhangyu.com/linux/</link><pubDate>Tue, 22 Nov 2022 10:53:07 +0000</pubDate><guid>https://connorzhangyu.com/linux/</guid><description>&lt;h1 id="系统命令">系统命令&lt;/h1>
+&lt;/table></description></item><item><title>Linux</title><link>https://tosa.team/linux/</link><pubDate>Tue, 22 Nov 2022 10:53:07 +0000</pubDate><guid>https://tosa.team/linux/</guid><description>&lt;h1 id="系统命令">系统命令&lt;/h1>
 &lt;h2 id="解压缩">解压缩&lt;/h2>
 &lt;p>demo(文件夹)&lt;/p>
 &lt;p>|&amp;mdash;&amp;mdash;|1.txt(文件)&lt;/p>
@@ -250,7 +250,7 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="sudo免密">sudo免密&lt;/h2>
-&lt;p>&lt;code>vim /etc/sudoers&lt;/code>&lt;/p></description></item><item><title>Git</title><link>https://connorzhangyu.com/git/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/git/</guid><description>&lt;h1 id="分支管理">分支管理&lt;/h1>
+&lt;p>&lt;code>vim /etc/sudoers&lt;/code>&lt;/p></description></item><item><title>Git</title><link>https://tosa.team/git/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/git/</guid><description>&lt;h1 id="分支管理">分支管理&lt;/h1>
 &lt;h2 id="切一个新的本地分支">切一个新的本地分支&lt;/h2>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -333,7 +333,7 @@ git reset --soft HEAD^
 
 # 现在就已经把暂存区恢复到工作了
 &lt;/code>&lt;/pre>&lt;h1 id="版本回退reset">版本回退reset&lt;/h1>
-&lt;p>reset用于回退版本，可以遗弃不再使用的提交&lt;/p></description></item><item><title>Grafana</title><link>https://connorzhangyu.com/grafana/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/grafana/</guid><description>&lt;h1 id="监控主机">监控主机&lt;/h1>
+&lt;p>reset用于回退版本，可以遗弃不再使用的提交&lt;/p></description></item><item><title>Grafana</title><link>https://tosa.team/grafana/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/grafana/</guid><description>&lt;h1 id="监控主机">监控主机&lt;/h1>
 &lt;table>
  &lt;thead>
  &lt;tr>
@@ -431,7 +431,7 @@ git reset --soft HEAD^
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;blockquote>
-&lt;p>这里只是提前编辑好,之后如果要添加新的机器,再后面添加&lt;/p></description></item><item><title>Linux软件</title><link>https://connorzhangyu.com/linux%E8%BD%AF%E4%BB%B6/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/linux%E8%BD%AF%E4%BB%B6/</guid><description>&lt;h1 id="jumpsserver">JumpSserver&lt;/h1>
+&lt;p>这里只是提前编辑好,之后如果要添加新的机器,再后面添加&lt;/p></description></item><item><title>Linux软件</title><link>https://tosa.team/linux%E8%BD%AF%E4%BB%B6/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/linux%E8%BD%AF%E4%BB%B6/</guid><description>&lt;h1 id="jumpsserver">JumpSserver&lt;/h1>
 &lt;h2 id="设置sftp根目录">设置SFTP根目录&lt;/h2>
 &lt;p>3.0版本设置文件管理&lt;/p>
 &lt;p>克隆一份Linux平台&lt;/p>
@@ -599,7 +599,7 @@ git reset --soft HEAD^
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$ sudo /etc/init.d/apache2 restart
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Ubuntu安装软件指定版本号&lt;/p></description></item><item><title>Nginx</title><link>https://connorzhangyu.com/nginx/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/nginx/</guid><description>&lt;h2 id="docker安装-nginx">Docker安装 Nginx&lt;/h2>
+&lt;/div>&lt;p>Ubuntu安装软件指定版本号&lt;/p></description></item><item><title>Nginx</title><link>https://tosa.team/nginx/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/nginx/</guid><description>&lt;h2 id="docker安装-nginx">Docker安装 Nginx&lt;/h2>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
@@ -1068,7 +1068,7 @@ git reset --soft HEAD^
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>推荐的配置&lt;/p></description></item><item><title>Redis</title><link>https://connorzhangyu.com/redis/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/redis/</guid><description>&lt;h1 id="安装redis">安装Redis&lt;/h1>
+&lt;/div>&lt;p>推荐的配置&lt;/p></description></item><item><title>Redis</title><link>https://tosa.team/redis/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/redis/</guid><description>&lt;h1 id="安装redis">安装Redis&lt;/h1>
 &lt;h2 id="安装单机redis">安装单机Redis&lt;/h2>
 &lt;p>{% tabs 安装单机Redis %}&lt;/p>
 &lt;!-- tab Windows安装Redis-->

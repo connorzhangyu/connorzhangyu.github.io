@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mac on Hello World</title><link>https://connorzhangyu.com/tags/mac/</link><description>Recent content in Mac on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Fri, 15 Aug 2025 14:51:48 +0700</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/mac/index.xml" rel="self" type="application/rss+xml"/><item><title>Dapp</title><link>https://connorzhangyu.com/dapp/</link><pubDate>Thu, 29 May 2025 10:23:17 +0000</pubDate><guid>https://connorzhangyu.com/dapp/</guid><description>&lt;h1 id="helloworld合约">HelloWorld合约&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mac on Hello World</title><link>https://tosa.team/tags/mac/</link><description>Recent content in Mac on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Fri, 15 Aug 2025 14:51:48 +0700</lastBuildDate><atom:link href="https://tosa.team/tags/mac/index.xml" rel="self" type="application/rss+xml"/><item><title>Dapp</title><link>https://tosa.team/dapp/</link><pubDate>Thu, 29 May 2025 10:23:17 +0000</pubDate><guid>https://tosa.team/dapp/</guid><description>&lt;h1 id="helloworld合约">HelloWorld合约&lt;/h1>
 &lt;p>&lt;a href="https://remix.ethereum.org">Remix编辑器&lt;/a>&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202505281038720.png" alt="image-20250524144934373">&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -60,7 +60,7 @@
 &lt;/div>&lt;p>&lt;img src="https://image.runtimes.cc/202505291022541.png" alt="image-20250529101412816">&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202505291022024.png" alt="image-20250529101510973">&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202505291022071.png" alt="image-20250529101815851">&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202505291022160.png" alt="image-20250529102052827">&lt;/p></description></item><item><title>DataGrip</title><link>https://connorzhangyu.com/datagrip/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/datagrip/</guid><description>&lt;h1 id="查看ddl和复制为insert语句">查看ddl和复制为insert语句&lt;/h1>
+&lt;p>&lt;img src="https://image.runtimes.cc/202505291022160.png" alt="image-20250529102052827">&lt;/p></description></item><item><title>DataGrip</title><link>https://tosa.team/datagrip/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/datagrip/</guid><description>&lt;h1 id="查看ddl和复制为insert语句">查看ddl和复制为insert语句&lt;/h1>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051411320.png" alt="">&lt;/p>
 &lt;h1 id="显示">显示&lt;/h1>
 &lt;h2 id="设置数据库颜色">设置数据库颜色&lt;/h2>
@@ -122,7 +122,7 @@
 &lt;p>要在库名上点右键&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051414735.png" alt="image-20231201154603739">&lt;/p>
 &lt;p>这个功能类似于&lt;/p>
-&lt;img src="https://image.runtimes.cc/202404051414049.png" alt="image-20231201154745846" style="zoom:50%;" /></description></item><item><title>ElasticSearch</title><link>https://connorzhangyu.com/elasticsearch/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/elasticsearch/</guid><description>&lt;h1 id="手动安装7x">手动安装7.x&lt;/h1>
+&lt;img src="https://image.runtimes.cc/202404051414049.png" alt="image-20231201154745846" style="zoom:50%;" /></description></item><item><title>ElasticSearch</title><link>https://tosa.team/elasticsearch/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/elasticsearch/</guid><description>&lt;h1 id="手动安装7x">手动安装7.x&lt;/h1>
 &lt;h2 id="手动安装单机elasticsearch7x">手动安装单机ElasticSearch7.x&lt;/h2>
 &lt;pre tabindex="0">&lt;code># 下载tar包,(6.6.2)
 wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.6.2.tar.gz
@@ -158,7 +158,7 @@ bin/elasticsearch -d #后台启动
 &lt;li>安装分词器下载解压缩的哦elasticsearch的plugin目录下IK分词器&lt;a href="https://github.com/medcl/elasticsearch-analysis-ik/releases/tag/v6.6.2">https://github.com/medcl/elasticsearch-analysis-ik/releases/tag/v6.6.2&lt;/a>&lt;/li>
 &lt;/ol>
 &lt;pre tabindex="0">&lt;code>POST /_analyze { &amp;#34;analyzer&amp;#34;: &amp;#34;ik_smart&amp;#34;, &amp;#34;text&amp;#34;: &amp;#34; 程序员 }
-&lt;/code>&lt;/pre>&lt;p>拼音分词器&lt;a href="https://github.com/medcl/elasticsearch-analysis-pinyin/releases/tag/v6.6.2">https://github.com/medcl/elasticsearch-analysis-pinyin/releases/tag/v6.6.2&lt;/a>&lt;/p></description></item><item><title>Excel</title><link>https://connorzhangyu.com/excel/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/excel/</guid><description>&lt;h1 id="行和列">行和列&lt;/h1>
+&lt;/code>&lt;/pre>&lt;p>拼音分词器&lt;a href="https://github.com/medcl/elasticsearch-analysis-pinyin/releases/tag/v6.6.2">https://github.com/medcl/elasticsearch-analysis-pinyin/releases/tag/v6.6.2&lt;/a>&lt;/p></description></item><item><title>Excel</title><link>https://tosa.team/excel/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/excel/</guid><description>&lt;h1 id="行和列">行和列&lt;/h1>
 &lt;h2 id="隐藏或显示行和列">隐藏或显示行和列&lt;/h2>
 &lt;p>在电子表格中隐藏或取消隐藏列，以仅显示需要查看或打印的数据&lt;/p>
 &lt;blockquote>
@@ -184,7 +184,7 @@ bin/elasticsearch -d #后台启动
 &lt;img src="https://image.runtimes.cc/202404051416110.png" alt="">&lt;/p>
 &lt;p>📌 这样设置之后,比如在单元格里值设置的是 2021-01-02
 实际上显现的会是 2021年1月2日 星期几&lt;/p>
-&lt;p>✅ 参考:&lt;a href="https://support.microsoft.com/zh-cn/office/%E6%8C%89%E6%83%B3%E8%A6%81%E7%9A%84%E6%96%B9%E5%BC%8F%E8%AE%BE%E7%BD%AE%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F-8e10019e-d5d8-47a1-ba95-db95123d273e">微软官方文档&lt;/a>&lt;/p></description></item><item><title>IDEA</title><link>https://connorzhangyu.com/idea/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/idea/</guid><description>&lt;h1 id="教程">教程&lt;/h1>
+&lt;p>✅ 参考:&lt;a href="https://support.microsoft.com/zh-cn/office/%E6%8C%89%E6%83%B3%E8%A6%81%E7%9A%84%E6%96%B9%E5%BC%8F%E8%AE%BE%E7%BD%AE%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F-8e10019e-d5d8-47a1-ba95-db95123d273e">微软官方文档&lt;/a>&lt;/p></description></item><item><title>IDEA</title><link>https://tosa.team/idea/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/idea/</guid><description>&lt;h1 id="教程">教程&lt;/h1>
 &lt;h2 id="idea查看方法被调用">IDEA查看方法被调用&lt;/h2>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051423853.png" alt="">&lt;/p>
 &lt;h2 id="修改光标所在行背景颜色">修改光标所在行背景颜色&lt;/h2>
@@ -207,7 +207,7 @@ bin/elasticsearch -d #后台启动
 &lt;h3 id="key-promoter-x">Key Promoter X&lt;/h3>
 &lt;h3 id="translation">Translation&lt;/h3>
 &lt;p>作者:Yii.Guxing&lt;/p>
-&lt;p>选中要翻译的内容,右键选择翻译&lt;/p></description></item><item><title>Jenkins</title><link>https://connorzhangyu.com/jenkins/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/jenkins/</guid><description>&lt;h1 id="root用户权限启动jenkins">Root用户权限启动Jenkins&lt;/h1>
+&lt;p>选中要翻译的内容,右键选择翻译&lt;/p></description></item><item><title>Jenkins</title><link>https://tosa.team/jenkins/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/jenkins/</guid><description>&lt;h1 id="root用户权限启动jenkins">Root用户权限启动Jenkins&lt;/h1>
 &lt;p>适用于Ubuntu环境下通过&lt;code>apt-get install -y jenkins&lt;/code>命令在线安装的Jenkins&lt;/p>
 &lt;p>1.修改配置文件&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -305,7 +305,7 @@ bin/elasticsearch -d #后台启动
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="同时构建任务的个数">同时构建任务的个数&lt;/h2>
-&lt;p>系统管理&amp;ndash;&amp;gt;系统设置&amp;ndash;&amp;gt;执行者数量&lt;/p></description></item><item><title>Mac</title><link>https://connorzhangyu.com/mac/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/mac/</guid><description>&lt;h1 id="快捷键">快捷键&lt;/h1>
+&lt;p>系统管理&amp;ndash;&amp;gt;系统设置&amp;ndash;&amp;gt;执行者数量&lt;/p></description></item><item><title>Mac</title><link>https://tosa.team/mac/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/mac/</guid><description>&lt;h1 id="快捷键">快捷键&lt;/h1>
 &lt;table>
  &lt;thead>
  &lt;tr>
@@ -395,7 +395,7 @@ bin/elasticsearch -d #后台启动
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h1 id="mac-os-x-访问-windows共享文件夹">Mac OS X 访问 Windows共享文件夹&lt;/h1>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051351999.png" alt="">&lt;/p></description></item><item><title>Nginx</title><link>https://connorzhangyu.com/nginx/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/nginx/</guid><description>&lt;h2 id="docker安装-nginx">Docker安装 Nginx&lt;/h2>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051351999.png" alt="">&lt;/p></description></item><item><title>Nginx</title><link>https://tosa.team/nginx/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/nginx/</guid><description>&lt;h2 id="docker安装-nginx">Docker安装 Nginx&lt;/h2>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1

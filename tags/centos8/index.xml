@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Centos8 on Hello World</title><link>https://connorzhangyu.com/tags/centos8/</link><description>Recent content in Centos8 on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Fri, 18 Nov 2022 18:25:00 +0000</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/centos8/index.xml" rel="self" type="application/rss+xml"/><item><title>虚拟机</title><link>https://connorzhangyu.com/%E8%99%9A%E6%8B%9F%E6%9C%BA/</link><pubDate>Fri, 18 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/%E8%99%9A%E6%8B%9F%E6%9C%BA/</guid><description>&lt;h1 id="virtualbox增强功能centos8">VirtualBox增强功能Centos8&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Centos8 on Hello World</title><link>https://tosa.team/tags/centos8/</link><description>Recent content in Centos8 on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Fri, 18 Nov 2022 18:25:00 +0000</lastBuildDate><atom:link href="https://tosa.team/tags/centos8/index.xml" rel="self" type="application/rss+xml"/><item><title>虚拟机</title><link>https://tosa.team/%E8%99%9A%E6%8B%9F%E6%9C%BA/</link><pubDate>Fri, 18 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/%E8%99%9A%E6%8B%9F%E6%9C%BA/</guid><description>&lt;h1 id="virtualbox增强功能centos8">VirtualBox增强功能Centos8&lt;/h1>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -23,7 +23,7 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">dnf install tar bzip2 kernel-devel-&lt;span class="k">$(&lt;/span>uname -r&lt;span class="k">)&lt;/span> kernel-headers perl gcc make elfutils-libelf-devel
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>虚拟机</title><link>https://connorzhangyu.com/%E8%99%9A%E6%8B%9F%E6%9C%BA/</link><pubDate>Fri, 18 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/%E8%99%9A%E6%8B%9F%E6%9C%BA/</guid><description>&lt;h1 id="virtualbox增强功能centos8">VirtualBox增强功能Centos8&lt;/h1>
+&lt;/div></description></item><item><title>虚拟机</title><link>https://tosa.team/%E8%99%9A%E6%8B%9F%E6%9C%BA/</link><pubDate>Fri, 18 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/%E8%99%9A%E6%8B%9F%E6%9C%BA/</guid><description>&lt;h1 id="virtualbox增强功能centos8">VirtualBox增强功能Centos8&lt;/h1>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
