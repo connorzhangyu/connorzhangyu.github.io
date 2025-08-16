@@ -1,4 +1,103 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>文章 on Hello World</title><link>https://tosa.team/posts/</link><description>Recent content in 文章 on Hello World</description><generator>Hugo</generator><language>zh</language><atom:link href="https://tosa.team/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Go 学习资源大全</title><link>https://tosa.team/go-study-resources/</link><pubDate>Wed, 13 Aug 2025 00:00:00 +0000</pubDate><guid>https://tosa.team/go-study-resources/</guid><description>系统整理 Go 语言入门到进阶的高质量学习资料，涵盖文档、视频、书籍、面试题、开源项目与工具。</description></item><item><title>Vim 快速入门 &amp; IntelliJ IDEA 基础配置</title><link>https://tosa.team/vim-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-intellij-idea-%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</link><pubDate>Wed, 13 Aug 2025 00:00:00 +0000</pubDate><guid>https://tosa.team/vim-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-intellij-idea-%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>文章 on Hello World</title><link>https://tosa.team/posts/</link><description>Recent content in 文章 on Hello World</description><generator>Hugo</generator><language>zh</language><atom:link href="https://tosa.team/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Go学习路线图v0.1</title><link>https://tosa.team/go-study-plan-v0-1/</link><pubDate>Thu, 14 Aug 2025 00:00:00 +0000</pubDate><guid>https://tosa.team/go-study-plan-v0-1/</guid><description>tosa 东南亚科技小组 Go v0.1 阶段学习路线图，涵盖第一个版本（基础架构）的技术学习与实战安排。</description></item><item><title>Go 学习资源大全</title><link>https://tosa.team/go-study-resources/</link><pubDate>Wed, 13 Aug 2025 00:00:00 +0000</pubDate><guid>https://tosa.team/go-study-resources/</guid><description>系统整理 Go 语言入门到进阶的高质量学习资料，涵盖文档、视频、书籍、面试题、开源项目与工具。</description></item><item><title>Go 面试冲刺学习计划（14 天 | 每天 12 小时）</title><link>https://tosa.team/go-%E9%9D%A2%E8%AF%95%E5%86%B2%E5%88%BA%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%9214-%E5%A4%A9-%E6%AF%8F%E5%A4%A9-12-%E5%B0%8F%E6%97%B6/</link><pubDate>Fri, 08 Aug 2025 10:00:00 +0700</pubDate><guid>https://tosa.team/go-%E9%9D%A2%E8%AF%95%E5%86%B2%E5%88%BA%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%9214-%E5%A4%A9-%E6%AF%8F%E5%A4%A9-12-%E5%B0%8F%E6%97%B6/</guid><description>&lt;blockquote>
+&lt;p>🚀 本计划适用于有 Java 开发经验的工程师，全力转向 Go 开发岗位，每天投入 12 小时，14 天从语法到项目到面试冲刺，快速具备独立开发 + 面试能力。&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;h2 id="-阶段总览">🧭 阶段总览&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>阶段&lt;/th>
+ &lt;th>时间范围&lt;/th>
+ &lt;th>目标&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>基础语法期&lt;/td>
+ &lt;td>Day 1 ～ Day 4&lt;/td>
+ &lt;td>掌握语法、指针、结构体、接口等基础能力&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>并发理解期&lt;/td>
+ &lt;td>Day 5 ～ Day 6&lt;/td>
+ &lt;td>熟练使用 goroutine、channel、锁等并发机制&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>框架实战期&lt;/td>
+ &lt;td>Day 7 ～ Day 10&lt;/td>
+ &lt;td>掌握 Gin、GORM、JWT、Redis、配置管理等项目能力&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>项目构建期&lt;/td>
+ &lt;td>Day 11 ～ Day 12&lt;/td>
+ &lt;td>完整开发项目并调试测试，准备部署&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>面试冲刺期&lt;/td>
+ &lt;td>Day 13 ～ Day 14&lt;/td>
+ &lt;td>刷题 + 模拟面试 + 简历完善 + 项目讲解&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h2 id="-每日学习任务每日-12-小时">📅 每日学习任务（每日 12 小时）&lt;/h2>
+&lt;h3 id="day-1go-项目结构与包机制">Day 1：Go 项目结构与包机制&lt;/h3>
+&lt;ul>
+&lt;li>学习 &lt;code>package&lt;/code>、&lt;code>import&lt;/code>、&lt;code>go mod&lt;/code>&lt;/li>
+&lt;li>区分 &lt;code>main&lt;/code> 包与普通包&lt;/li>
+&lt;li>组织多文件项目结构&lt;/li>
+&lt;li>熟练使用 &lt;code>go run&lt;/code>, &lt;code>go build&lt;/code>, &lt;code>go install&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>🎯 输出：一个包含自定义包的练手项目&lt;/p></description></item><item><title>Go学习计划</title><link>https://tosa.team/go%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</link><pubDate>Thu, 31 Jul 2025 16:02:25 +0700</pubDate><guid>https://tosa.team/go%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</guid><description>&lt;h1 id="go学习计划">Go学习计划&lt;/h1>
+&lt;hr>
+&lt;h2 id="-阶段一语言基础week-12">🏁 阶段一：语言基础（Week 1~2）&lt;/h2>
+&lt;h3 id="-目标">🎯 目标&lt;/h3>
+&lt;p>掌握 Go 的语法结构、数据类型、控制流、函数机制。&lt;/p>
+&lt;h3 id="-学习内容">✅ 学习内容&lt;/h3>
+&lt;ul>
+&lt;li>基本语法、变量、常量、数组、切片、map&lt;/li>
+&lt;li>控制结构（if, for, switch）&lt;/li>
+&lt;li>函数与多返回值、defer&lt;/li>
+&lt;li>指针（区别于 Java 的核心知识点）&lt;/li>
+&lt;li>结构体与方法&lt;/li>
+&lt;/ul>
+&lt;h3 id="-推荐资料">📚 推荐资料&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://go.dev/tour/">Tour of Go（交互式）&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://gobyexample.com/">Go by Example&lt;/a>&lt;/li>
+&lt;li>李文周基础语法章节（可作为中文参考）&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-阶段二并发与标准库week-34">🚀 阶段二：并发与标准库（Week 3~4）&lt;/h2>
+&lt;h3 id="-目标-1">🎯 目标&lt;/h3>
+&lt;p>理解 Go 的并发模型，熟悉关键标准库。&lt;/p>
+&lt;h3 id="-学习内容-1">✅ 学习内容&lt;/h3>
+&lt;ul>
+&lt;li>Goroutine、Channel、select&lt;/li>
+&lt;li>错误处理（error 接口、errors 包）&lt;/li>
+&lt;li>文件操作、时间处理、字符串处理、JSON 编解码&lt;/li>
+&lt;li>单元测试、基准测试&lt;/li>
+&lt;/ul>
+&lt;h3 id="-推荐资料-1">📚 推荐资料&lt;/h3>
+&lt;ul>
+&lt;li>《Go语言101》并发章节&lt;/li>
+&lt;li>&lt;a href="https://quii.gitbook.io/learn-go-with-tests/">Learn Go with Tests&lt;/a>&lt;/li>
+&lt;li>Go.dev 文档：&lt;a href="https://pkg.go.dev/net/http">&lt;code>net/http&lt;/code>&lt;/a>、&lt;code>time&lt;/code>、&lt;code>io&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-阶段三现代开发工具与依赖管理week-5">🧱 阶段三：现代开发工具与依赖管理（Week 5）&lt;/h2>
+&lt;h3 id="-目标-2">🎯 目标&lt;/h3>
+&lt;p>熟练掌握项目结构、模块化、依赖管理。&lt;/p>
+&lt;h3 id="-学习内容-2">✅ 学习内容&lt;/h3>
+&lt;ul>
+&lt;li>Go Modules（go.mod、go.sum）&lt;/li>
+&lt;li>项目结构（cmd/pkg/internal）&lt;/li>
+&lt;li>日志库（zap, zerolog）&lt;/li>
+&lt;li>配置管理（viper）&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-阶段四web-开发实践week-67">🌐 阶段四：Web 开发实践（Week 6~7）&lt;/h2>
+&lt;h3 id="-目标-3">🎯 目标&lt;/h3>
+&lt;p>掌握基于 Go 的 Web 服务开发&lt;/p></description></item><item><title>Go</title><link>https://tosa.team/go/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/go/</guid><description>GO基础学习笔记-东尼</description></item><item><title>Vim 快速入门 &amp; IntelliJ IDEA 基础配置</title><link>https://tosa.team/vim-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-intellij-idea-%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</link><pubDate>Wed, 13 Aug 2025 00:00:00 +0000</pubDate><guid>https://tosa.team/vim-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-intellij-idea-%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
 &lt;p>Vim 是一款强大的编辑器，配合 IntelliJ IDEA 的 IdeaVim 插件，可以显著提升代码编辑效率。本文将介绍 &lt;strong>Vim 最小必备快捷键&lt;/strong> 以及 &lt;strong>IdeaVim 的基础配置方法&lt;/strong>，帮助你快速上手。&lt;/p>
 &lt;hr>
 &lt;h2 id="一vim-最少必备快捷键初学者版">一、Vim 最少必备快捷键（初学者版）&lt;/h2>
@@ -114,56 +213,7 @@
 &lt;/li>
 &lt;li>
 &lt;p>&lt;strong>准备一个运行中的 Java 服务&lt;/strong>&lt;br>
-假设你已有一个 Java 应用（如 Spring Boot 项目），并打包成 Docker 镜像。&lt;/p></description></item><item><title>Go 面试冲刺学习计划（14 天 | 每天 12 小时）</title><link>https://tosa.team/go-%E9%9D%A2%E8%AF%95%E5%86%B2%E5%88%BA%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%9214-%E5%A4%A9-%E6%AF%8F%E5%A4%A9-12-%E5%B0%8F%E6%97%B6/</link><pubDate>Fri, 08 Aug 2025 10:00:00 +0700</pubDate><guid>https://tosa.team/go-%E9%9D%A2%E8%AF%95%E5%86%B2%E5%88%BA%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%9214-%E5%A4%A9-%E6%AF%8F%E5%A4%A9-12-%E5%B0%8F%E6%97%B6/</guid><description>&lt;blockquote>
-&lt;p>🚀 本计划适用于有 Java 开发经验的工程师，全力转向 Go 开发岗位，每天投入 12 小时，14 天从语法到项目到面试冲刺，快速具备独立开发 + 面试能力。&lt;/p>&lt;/blockquote>
-&lt;hr>
-&lt;h2 id="-阶段总览">🧭 阶段总览&lt;/h2>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>阶段&lt;/th>
- &lt;th>时间范围&lt;/th>
- &lt;th>目标&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>基础语法期&lt;/td>
- &lt;td>Day 1 ～ Day 4&lt;/td>
- &lt;td>掌握语法、指针、结构体、接口等基础能力&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>并发理解期&lt;/td>
- &lt;td>Day 5 ～ Day 6&lt;/td>
- &lt;td>熟练使用 goroutine、channel、锁等并发机制&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>框架实战期&lt;/td>
- &lt;td>Day 7 ～ Day 10&lt;/td>
- &lt;td>掌握 Gin、GORM、JWT、Redis、配置管理等项目能力&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>项目构建期&lt;/td>
- &lt;td>Day 11 ～ Day 12&lt;/td>
- &lt;td>完整开发项目并调试测试，准备部署&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>面试冲刺期&lt;/td>
- &lt;td>Day 13 ～ Day 14&lt;/td>
- &lt;td>刷题 + 模拟面试 + 简历完善 + 项目讲解&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;hr>
-&lt;h2 id="-每日学习任务每日-12-小时">📅 每日学习任务（每日 12 小时）&lt;/h2>
-&lt;h3 id="day-1go-项目结构与包机制">Day 1：Go 项目结构与包机制&lt;/h3>
-&lt;ul>
-&lt;li>学习 &lt;code>package&lt;/code>、&lt;code>import&lt;/code>、&lt;code>go mod&lt;/code>&lt;/li>
-&lt;li>区分 &lt;code>main&lt;/code> 包与普通包&lt;/li>
-&lt;li>组织多文件项目结构&lt;/li>
-&lt;li>熟练使用 &lt;code>go run&lt;/code>, &lt;code>go build&lt;/code>, &lt;code>go install&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>🎯 输出：一个包含自定义包的练手项目&lt;/p></description></item><item><title>Java基础入门80问</title><link>https://tosa.team/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/</link><pubDate>Thu, 07 Aug 2025 19:36:15 +0700</pubDate><guid>https://tosa.team/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/</guid><description>&lt;!-- TOC -->
+假设你已有一个 Java 应用（如 Spring Boot 项目），并打包成 Docker 镜像。&lt;/p></description></item><item><title>Java基础入门80问</title><link>https://tosa.team/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/</link><pubDate>Thu, 07 Aug 2025 19:36:15 +0700</pubDate><guid>https://tosa.team/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/</guid><description>&lt;!-- TOC -->
 &lt;ul>
 &lt;li>&lt;a href="https://tosa.team/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#1%e4%b8%80%e4%b8%aajava%e6%ba%90%e6%96%87%e4%bb%b6%e4%b8%ad%e6%98%af%e5%90%a6%e5%8f%af%e4%bb%a5%e5%8c%85%e6%8b%ac%e5%a4%9a%e4%b8%aa%e7%b1%bb%e4%b8%8d%e6%98%af%e5%86%85%e9%83%a8%e7%b1%bb%e6%9c%89%e4%bb%80%e4%b9%88%e9%99%90%e5%88%b6">1.一个&amp;quot;.java&amp;quot;源文件中是否可以包括多个类（不是内部类）？有什么限制？&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://tosa.team/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#2java%e6%9c%89%e6%b2%a1%e6%9c%89goto">2.Java有没有goto?&lt;/a>&lt;/li>
@@ -286,57 +336,7 @@ v1.0.1
 &lt;pre tabindex="0">&lt;code>类型: 简要描述
 
 详细描述（可选）
-&lt;/code>&lt;/pre>&lt;p>常用类型包括：&lt;code>feat&lt;/code>、&lt;code>fix&lt;/code>、&lt;code>docs&lt;/code>、&lt;code>style&lt;/code>、&lt;code>refactor&lt;/code>、&lt;code>test&lt;/code>、&lt;code>chore&lt;/code>。&lt;/p></description></item><item><title>Go学习计划</title><link>https://tosa.team/go%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</link><pubDate>Thu, 31 Jul 2025 16:02:25 +0700</pubDate><guid>https://tosa.team/go%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</guid><description>&lt;h1 id="go学习计划">Go学习计划&lt;/h1>
-&lt;hr>
-&lt;h2 id="-阶段一语言基础week-12">🏁 阶段一：语言基础（Week 1~2）&lt;/h2>
-&lt;h3 id="-目标">🎯 目标&lt;/h3>
-&lt;p>掌握 Go 的语法结构、数据类型、控制流、函数机制。&lt;/p>
-&lt;h3 id="-学习内容">✅ 学习内容&lt;/h3>
-&lt;ul>
-&lt;li>基本语法、变量、常量、数组、切片、map&lt;/li>
-&lt;li>控制结构（if, for, switch）&lt;/li>
-&lt;li>函数与多返回值、defer&lt;/li>
-&lt;li>指针（区别于 Java 的核心知识点）&lt;/li>
-&lt;li>结构体与方法&lt;/li>
-&lt;/ul>
-&lt;h3 id="-推荐资料">📚 推荐资料&lt;/h3>
-&lt;ul>
-&lt;li>&lt;a href="https://go.dev/tour/">Tour of Go（交互式）&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://gobyexample.com/">Go by Example&lt;/a>&lt;/li>
-&lt;li>李文周基础语法章节（可作为中文参考）&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h2 id="-阶段二并发与标准库week-34">🚀 阶段二：并发与标准库（Week 3~4）&lt;/h2>
-&lt;h3 id="-目标-1">🎯 目标&lt;/h3>
-&lt;p>理解 Go 的并发模型，熟悉关键标准库。&lt;/p>
-&lt;h3 id="-学习内容-1">✅ 学习内容&lt;/h3>
-&lt;ul>
-&lt;li>Goroutine、Channel、select&lt;/li>
-&lt;li>错误处理（error 接口、errors 包）&lt;/li>
-&lt;li>文件操作、时间处理、字符串处理、JSON 编解码&lt;/li>
-&lt;li>单元测试、基准测试&lt;/li>
-&lt;/ul>
-&lt;h3 id="-推荐资料-1">📚 推荐资料&lt;/h3>
-&lt;ul>
-&lt;li>《Go语言101》并发章节&lt;/li>
-&lt;li>&lt;a href="https://quii.gitbook.io/learn-go-with-tests/">Learn Go with Tests&lt;/a>&lt;/li>
-&lt;li>Go.dev 文档：&lt;a href="https://pkg.go.dev/net/http">&lt;code>net/http&lt;/code>&lt;/a>、&lt;code>time&lt;/code>、&lt;code>io&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h2 id="-阶段三现代开发工具与依赖管理week-5">🧱 阶段三：现代开发工具与依赖管理（Week 5）&lt;/h2>
-&lt;h3 id="-目标-2">🎯 目标&lt;/h3>
-&lt;p>熟练掌握项目结构、模块化、依赖管理。&lt;/p>
-&lt;h3 id="-学习内容-2">✅ 学习内容&lt;/h3>
-&lt;ul>
-&lt;li>Go Modules（go.mod、go.sum）&lt;/li>
-&lt;li>项目结构（cmd/pkg/internal）&lt;/li>
-&lt;li>日志库（zap, zerolog）&lt;/li>
-&lt;li>配置管理（viper）&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h2 id="-阶段四web-开发实践week-67">🌐 阶段四：Web 开发实践（Week 6~7）&lt;/h2>
-&lt;h3 id="-目标-3">🎯 目标&lt;/h3>
-&lt;p>掌握基于 Go 的 Web 服务开发&lt;/p></description></item><item><title>Java开发面试题库</title><link>https://tosa.team/java%E5%BC%80%E5%8F%91%E9%9D%A2%E8%AF%95%E9%A2%98%E5%BA%93/</link><pubDate>Thu, 31 Jul 2025 01:16:47 +0700</pubDate><guid>https://tosa.team/java%E5%BC%80%E5%8F%91%E9%9D%A2%E8%AF%95%E9%A2%98%E5%BA%93/</guid><description>&lt;h1 id="java-面试题库完整版含标准答案">Java 面试题库（完整版，含标准答案）&lt;/h1>
+&lt;/code>&lt;/pre>&lt;p>常用类型包括：&lt;code>feat&lt;/code>、&lt;code>fix&lt;/code>、&lt;code>docs&lt;/code>、&lt;code>style&lt;/code>、&lt;code>refactor&lt;/code>、&lt;code>test&lt;/code>、&lt;code>chore&lt;/code>。&lt;/p></description></item><item><title>Java开发面试题库</title><link>https://tosa.team/java%E5%BC%80%E5%8F%91%E9%9D%A2%E8%AF%95%E9%A2%98%E5%BA%93/</link><pubDate>Thu, 31 Jul 2025 01:16:47 +0700</pubDate><guid>https://tosa.team/java%E5%BC%80%E5%8F%91%E9%9D%A2%E8%AF%95%E9%A2%98%E5%BA%93/</guid><description>&lt;h1 id="java-面试题库完整版含标准答案">Java 面试题库（完整版，含标准答案）&lt;/h1>
 &lt;hr>
 &lt;h2 id="模块一java-基础共-10-题">模块一：Java 基础（共 10 题）&lt;/h2>
 &lt;h3 id="1-java-的基本数据类型有哪些">1. Java 的基本数据类型有哪些？&lt;/h3>
@@ -6631,209 +6631,7 @@ git reset --soft HEAD^
 
 # 现在就已经把暂存区恢复到工作了
 &lt;/code>&lt;/pre>&lt;h1 id="版本回退reset">版本回退reset&lt;/h1>
-&lt;p>reset用于回退版本，可以遗弃不再使用的提交&lt;/p></description></item><item><title>Go</title><link>https://tosa.team/go/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/go/</guid><description>&lt;h1 id="入门">入门&lt;/h1>
-&lt;h2 id="参考">参考:&lt;/h2>
-&lt;p>&lt;a href="https://www.golinuxcloud.com/golang-interview-questions-answers/">Go英文文档&lt;/a>&lt;/p>
-&lt;h2 id="hello-world">Hello World&lt;/h2>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;span class="lnt">6
-&lt;/span>&lt;span class="lnt">7
-&lt;/span>&lt;span class="lnt">8
-&lt;/span>&lt;span class="lnt">9
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 一定要在main的包下才能运行&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// 一个main包下,只能有一个main入口&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">package&lt;/span> &lt;span class="nx">main&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="s">&amp;#34;fmt&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;hello world&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;span class="lnt">6
-&lt;/span>&lt;span class="lnt">7
-&lt;/span>&lt;span class="lnt">8
-&lt;/span>&lt;span class="lnt">9
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-powershell" data-lang="powershell">&lt;span class="line">&lt;span class="cl">&lt;span class="c"># 第一种,编译后运行.exe文件&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c"># 编译&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">C:&lt;/span>&lt;span class="p">\&lt;/span>&lt;span class="n">Users&lt;/span>&lt;span class="p">\&lt;/span>&lt;span class="n">anthony&lt;/span>&lt;span class="p">\&lt;/span>&lt;span class="n">go&lt;/span>&lt;span class="p">\&lt;/span>&lt;span class="n">src&lt;/span>&lt;span class="p">\&lt;/span>&lt;span class="n">awesomeProject&lt;/span>&lt;span class="p">\&lt;/span>&lt;span class="n">demo&lt;/span>&lt;span class="p">\&lt;/span>&lt;span class="n">main&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>&lt;span class="n">go&lt;/span> &lt;span class="n">build&lt;/span> &lt;span class="n">demo&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">go&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c"># 运行编译后exe文件&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">C:&lt;/span>&lt;span class="p">\&lt;/span>&lt;span class="n">Users&lt;/span>&lt;span class="p">\&lt;/span>&lt;span class="n">anthony&lt;/span>&lt;span class="p">\&lt;/span>&lt;span class="n">go&lt;/span>&lt;span class="p">\&lt;/span>&lt;span class="n">src&lt;/span>&lt;span class="p">\&lt;/span>&lt;span class="n">awesomeProject&lt;/span>&lt;span class="p">\&lt;/span>&lt;span class="n">demo&lt;/span>&lt;span class="p">\&lt;/span>&lt;span class="n">main&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>&lt;span class="n">demo&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">exe&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">hello&lt;/span> &lt;span class="n">world&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c"># 第二种,直接运行源代码go run *.go&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h2 id="标准输入">标准输入&lt;/h2>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
-&lt;/span>&lt;span class="lnt"> 2
-&lt;/span>&lt;span class="lnt"> 3
-&lt;/span>&lt;span class="lnt"> 4
-&lt;/span>&lt;span class="lnt"> 5
-&lt;/span>&lt;span class="lnt"> 6
-&lt;/span>&lt;span class="lnt"> 7
-&lt;/span>&lt;span class="lnt"> 8
-&lt;/span>&lt;span class="lnt"> 9
-&lt;/span>&lt;span class="lnt">10
-&lt;/span>&lt;span class="lnt">11
-&lt;/span>&lt;span class="lnt">12
-&lt;/span>&lt;span class="lnt">13
-&lt;/span>&lt;span class="lnt">14
-&lt;/span>&lt;span class="lnt">15
-&lt;/span>&lt;span class="lnt">16
-&lt;/span>&lt;span class="lnt">17
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">package&lt;/span> &lt;span class="nx">main&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="s">&amp;#34;fmt&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">var&lt;/span> &lt;span class="nx">name&lt;/span> &lt;span class="kt">string&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">var&lt;/span> &lt;span class="nx">age&lt;/span> &lt;span class="kt">int&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="cm">/*
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> 使用&amp;#34;&amp;amp;&amp;#34;获取score变量的内存地址(即取变量内存地址的运算符)，通过键盘输入为score变量指向的内存地址赋初值。
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> fmt.Scan是一个阻塞的函数，如果它获取不到数据就会一直阻塞哟。
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> fmt.Scan可以接收多个参数，用户输入参数默认使用空格或者回车换行符分割输入设备传入的参数，直到接收所有的参数为止
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> */&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Scan&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">&amp;amp;&lt;/span>&lt;span class="nx">name&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="o">&amp;amp;&lt;/span>&lt;span class="nx">age&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">name&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">age&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
-&lt;/span>&lt;span class="lnt"> 2
-&lt;/span>&lt;span class="lnt"> 3
-&lt;/span>&lt;span class="lnt"> 4
-&lt;/span>&lt;span class="lnt"> 5
-&lt;/span>&lt;span class="lnt"> 6
-&lt;/span>&lt;span class="lnt"> 7
-&lt;/span>&lt;span class="lnt"> 8
-&lt;/span>&lt;span class="lnt"> 9
-&lt;/span>&lt;span class="lnt">10
-&lt;/span>&lt;span class="lnt">11
-&lt;/span>&lt;span class="lnt">12
-&lt;/span>&lt;span class="lnt">13
-&lt;/span>&lt;span class="lnt">14
-&lt;/span>&lt;span class="lnt">15
-&lt;/span>&lt;span class="lnt">16
-&lt;/span>&lt;span class="lnt">17
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">package&lt;/span> &lt;span class="nx">main&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="s">&amp;#34;fmt&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">var&lt;/span> &lt;span class="nx">name&lt;/span> &lt;span class="kt">string&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">var&lt;/span> &lt;span class="nx">age&lt;/span> &lt;span class="kt">int&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="cm">/*
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> 和fmt.Scan功能类似，fmt.Scanln也是一个阻塞的函数，如果它获取不到数据就会一直阻塞哟。
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> fmt.Scanln也可以接收多个参数，用户输入参数默认使用空格分割输入设备传入的参数，遇到回车换行符就结束接收参数
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> */&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Scanln&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">&amp;amp;&lt;/span>&lt;span class="nx">name&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="o">&amp;amp;&lt;/span>&lt;span class="nx">age&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">name&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">age&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
-&lt;/span>&lt;span class="lnt"> 2
-&lt;/span>&lt;span class="lnt"> 3
-&lt;/span>&lt;span class="lnt"> 4
-&lt;/span>&lt;span class="lnt"> 5
-&lt;/span>&lt;span class="lnt"> 6
-&lt;/span>&lt;span class="lnt"> 7
-&lt;/span>&lt;span class="lnt"> 8
-&lt;/span>&lt;span class="lnt"> 9
-&lt;/span>&lt;span class="lnt">10
-&lt;/span>&lt;span class="lnt">11
-&lt;/span>&lt;span class="lnt">12
-&lt;/span>&lt;span class="lnt">13
-&lt;/span>&lt;span class="lnt">14
-&lt;/span>&lt;span class="lnt">15
-&lt;/span>&lt;span class="lnt">16
-&lt;/span>&lt;span class="lnt">17
-&lt;/span>&lt;span class="lnt">18
-&lt;/span>&lt;span class="lnt">19
-&lt;/span>&lt;span class="lnt">20
-&lt;/span>&lt;span class="lnt">21
-&lt;/span>&lt;span class="lnt">22
-&lt;/span>&lt;span class="lnt">23
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">package&lt;/span> &lt;span class="nx">main&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="s">&amp;#34;fmt&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">var&lt;/span> &lt;span class="nx">name&lt;/span> &lt;span class="kt">string&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">var&lt;/span> &lt;span class="nx">age&lt;/span> &lt;span class="kt">int&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="cm">/*
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> 和fmt.Scanln功能类似，fmt.Scanf也是一个阻塞的函数，如果它获取不到数据就会一直阻塞哟。
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> 其实fmt.Scanln和fmt.Scanf可都以接收多个参数，用户输入参数默认使用空格分割输入设备传入的参数，遇到回车换行符就结束接收参数
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> 唯一区别就是可以格式化用户输入的数据类型,如下所示:
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> %s: 表示接收的参数会被转换成一个字符串类型，赋值给变量
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> %d: 表示接收的参数会被转换成一个整形类型，赋值给变量
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> 生产环境中使用fmt.Scanln和fmt.Scanf的情况相对较少，一般使用fmt.Scan的情况较多~
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> */&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Scanf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;%s%d&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="o">&amp;amp;&lt;/span>&lt;span class="nx">name&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="o">&amp;amp;&lt;/span>&lt;span class="nx">age&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">name&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">age&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">method_if&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">reader&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">bufio&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">NewReader&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">os&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Stdin&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">str&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">_&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">reader&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">ReadString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sc">&amp;#39;\n&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Printf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;输入的值是:%s\n&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">str&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h2 id="声明变量">声明变量&lt;/h2>
-&lt;p>基本类型,声明变量,不赋值,就有默认值&lt;/p></description></item><item><title>Grafana</title><link>https://tosa.team/grafana/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/grafana/</guid><description>&lt;h1 id="监控主机">监控主机&lt;/h1>
+&lt;p>reset用于回退版本，可以遗弃不再使用的提交&lt;/p></description></item><item><title>Grafana</title><link>https://tosa.team/grafana/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/grafana/</guid><description>&lt;h1 id="监控主机">监控主机&lt;/h1>
 &lt;table>
  &lt;thead>
  &lt;tr>

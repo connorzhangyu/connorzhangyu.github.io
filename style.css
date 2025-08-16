@@ -338,3 +338,6 @@ a {
         display: none;
     }
 }
+
+.post-authors { font-family: "PixelZH","PixelLatin",monospace; }
+.post-authors .author strong { font-weight: 700; }
