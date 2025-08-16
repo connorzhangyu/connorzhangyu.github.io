@@ -27,15 +27,15 @@
 /* =========================
    主题色（Terminal 默认暗色 + 橙色系）
    ========================= */
-:root{
-    --tty-fg: #d1d5db;            /* 主文字 */
-    --tty-dim: #9ca3af;           /* 次要文字 */
-    --tty-accent: #ffcc66;        /* 主题橙（统一欢迎语 + 文章标题链接） */
+:root {
+    --tty-fg: #d1d5db; /* 主文字 */
+    --tty-dim: #9ca3af; /* 次要文字 */
+    --tty-accent: #ffcc66; /* 主题橙（统一欢迎语 + 文章标题链接） */
     --tty-link: var(--tty-accent);
-    --tty-row-hl: rgba(255,204,102,.10);
-    --tty-green: #34d399;         /* 终端绿色（可选） */
-    --tty-blue:  #60a5fa;         /* 终端蓝（主机名） */
-    --tty-yellow:#fbbf24;         /* 终端黄（路径） */
+    --tty-row-hl: rgba(255, 204, 102, .10);
+    --tty-green: #34d399; /* 终端绿色（可选） */
+    --tty-blue: #60a5fa; /* 终端蓝（主机名） */
+    --tty-yellow: #fbbf24; /* 终端黄（路径） */
 }
 
 /* =========================
@@ -43,8 +43,8 @@
    ========================= */
 
 /* 关键：把像素字体挂到 body，确保导航/页脚/关于/首页等全部像素 */
-body{
-    font-family: "PixelZH","PixelLatin",monospace;
+body {
+    font-family: "PixelZH", "PixelLatin", monospace;
     font-size: 18px;
     line-height: 1.45;
     letter-spacing: 0.01em;
@@ -57,9 +57,9 @@ body{
 .list .post .content .summary,
 .list .post .content .summary *,
 .list .post .content .description,
-.list .post .content .description *{
+.list .post .content .description * {
     font-family: var(--font-body, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "PingFang SC","Microsoft YaHei","Helvetica Neue", Arial, sans-serif) !important;
+    "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif) !important;
     line-height: 1.7;
     font-size: 1rem;
 }
@@ -68,9 +68,9 @@ body{
 .post-content code,
 .post-content pre,
 .post-content kbd,
-.post-content samp{
+.post-content samp {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono","Courier New", monospace !important;
+    "Liberation Mono", "Courier New", monospace !important;
     font-size: .95rem;
     line-height: 1.6;
 }
@@ -86,7 +86,7 @@ body{
 .language-switcher, .lang-switcher, .language-selector,
 .footer, footer.footer,
 .pagination, .pagination__buttons, .pager {
-    font-family: "PixelZH","PixelLatin",monospace !important;
+    font-family: "PixelZH", "PixelLatin", monospace !important;
 }
 
 /* 菜单与语言选择不换行 */
@@ -99,105 +99,242 @@ body{
 /* =========================
    终端风格块（首页）
    ========================= */
-.home-tty { color: var(--tty-fg); }
-.tty-block { margin: 1.2rem 0; }
+.home-tty {
+    color: var(--tty-fg);
+}
+
+.tty-block {
+    margin: 1.2rem 0;
+}
 
 /* 单行命令行 */
 .tty-line {
     margin: 0 0 .25rem 0;
     white-space: nowrap;
     overflow: hidden;
-    font-family: "PixelZH","PixelLatin",monospace !important;
+    font-family: "PixelZH", "PixelLatin", monospace !important;
 }
-.tty-host { color: var(--tty-blue); }    /* 主机名 */
-.tty-path { color: var(--tty-yellow); }  /* 路径 */
-.tty-cmd  { color: var(--tty-fg); }      /* 命令 */
-.tty-dim  { color: var(--tty-dim); }     /* 注释/说明 */
+
+.tty-host {
+    color: var(--tty-blue);
+}
+
+/* 主机名 */
+.tty-path {
+    color: var(--tty-yellow);
+}
+
+/* 路径 */
+.tty-cmd {
+    color: var(--tty-fg);
+}
+
+/* 命令 */
+.tty-dim {
+    color: var(--tty-dim);
+}
+
+/* 注释/说明 */
 
 /* 光标（默认不闪烁；需要闪烁的加 .tty-caret--blink） */
-.tty-caret{
-    display:inline-block; width:.6ch; height:1em; vertical-align:-0.15em;
-    margin-left:.2ch; background:var(--tty-accent); opacity:.9;
+.tty-caret {
+    display: inline-block;
+    width: .6ch;
+    height: 1em;
+    vertical-align: -0.15em;
+    margin-left: .2ch;
+    background: var(--tty-accent);
+    opacity: .9;
 }
-.tty-caret--blink{ animation: blink 1.1s steps(1,end) infinite; }
-@keyframes blink { 50% { opacity: 0; } }
+
+.tty-caret--blink {
+    animation: blink 1.1s steps(1, end) infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
 
 /* 命令输出/欢迎语：缩进与命令对齐；欢迎语用主题橙 */
-.tty-output{
+.tty-output {
     margin: .15rem 0 .35rem 0;
     padding-left: 1.5ch;
-    font-family: "PixelZH","PixelLatin",monospace !important;
+    font-family: "PixelZH", "PixelLatin", monospace !important;
     white-space: pre-wrap;
 }
-.tty-welcome{
-    color: var(--tty-accent);                   /* 欢迎语颜色 = 文章链接颜色 */
-    font-family: "PixelZH","PixelLatin",monospace !important;
+
+/* 公共部分：所有 tty 输出类 */
+.tty-welcome,
+.tty-status {
+    font-family: "PixelZH", "PixelLatin", monospace !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-/* MOTD 与 /status 输出 */
-.tty-motd, .tty-status {
+/* 欢迎语：强调色 */
+.tty-welcome {
+    color: var(--tty-accent);
+}
+
+/* 状态输出与“终端输出”统一风格 */
+.tty-status {
     margin: .2rem 0 0 0;
-    padding-left: 1.5ch;
+    padding-left: 1.5ch; /* 与命令行的 $ 后对齐 */
     color: var(--tty-fg);
-    font-family: "PixelZH","PixelLatin",monospace !important;
-    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    font-family: "PixelZH", "PixelLatin", monospace !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 第二行提示更弱一些，避免喧宾夺主 */
+.tty-status--hint {
+    color: var(--tty-dim);
+}
+
+/* 运行中“省略号”——无布局抖动版本 */
+.tty-dots {
+    display: inline-block;
+    width: 2ch; /* 固定占位，避免后面内容位移 */
+    text-align: left;
+}
+
+.tty-dots i {
+    display: inline-block;
+    width: .66ch; /* 3 个点合计 ~2ch */
+    text-align: center;
+    opacity: 0;
+    animation: dotBlink 1.2s linear infinite;
+}
+
+/* 依次点亮：1号 / 2号 / 3号 */
+.tty-dots i:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.tty-dots i:nth-child(2) {
+    animation-delay: .2s;
+}
+
+.tty-dots i:nth-child(3) {
+    animation-delay: .4s;
+}
+
+@keyframes dotBlink {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 /* 列表表格：日期 | 标题 | 标签(+n) */
-.tty-table{ display:block; }
-.tty-row{
-    display:grid;
+.tty-table {
+    display: block;
+}
+
+.tty-row {
+    display: grid;
     grid-template-columns: 10ch 1fr auto;
     gap: 1ch;
-    align-items:center;
-    padding:.18rem .28rem;
+    align-items: center;
+    padding: .18rem .28rem;
     color: var(--tty-fg);
-    text-decoration:none;
-    border-radius:4px;
-    font-family: "PixelZH","PixelLatin",monospace !important;
+    text-decoration: none;
+    border-radius: 4px;
+    font-family: "PixelZH", "PixelLatin", monospace !important;
 }
-.tty-row:hover{ background: var(--tty-row-hl); }
-.tty-row.is-featured{ background: rgba(255,204,102,.10); }
-.tty-row.is-featured:hover{ background: rgba(255,204,102,.16); }
 
-.col-date{ color: var(--tty-dim); white-space:nowrap; }
+.tty-row:hover {
+    background: var(--tty-row-hl);
+}
+
+.tty-row.is-featured {
+    background: rgba(255, 204, 102, .10);
+}
+
+.tty-row.is-featured:hover {
+    background: rgba(255, 204, 102, .16);
+}
+
+.col-date {
+    color: var(--tty-dim);
+    white-space: nowrap;
+}
 
 /* 文章标题颜色统一为主题橙，并保留 hover 下划线 */
-.col-title{
+.col-title {
     color: var(--tty-accent);
-    overflow:hidden; text-overflow:ellipsis; white-space:nowrap; min-width:0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
     border-bottom: 1px dashed transparent;
 }
-.tty-row:hover .col-title{ border-bottom-color: currentColor; }
+
+.tty-row:hover .col-title {
+    border-bottom-color: currentColor;
+}
 
 /* 标签策略：<=2 全显；>2 显示第一个 + “+n” */
-.col-tags{ justify-self:end; white-space:nowrap; }
-.tty-tag{
-    display:inline-block;
+.col-tags {
+    justify-self: end;
+    white-space: nowrap;
+}
+
+.tty-tag {
+    display: inline-block;
     padding: 0 .35em;
     margin-left: .25em;
     border: 1px solid var(--tty-dim);
     border-radius: 3px;
-    font-size: .9em; line-height: 1.6;
+    font-size: .9em;
+    line-height: 1.6;
     color: var(--tty-dim);
 }
-.tty-tag.more{ color:#a7f3d0; border-color:#a7f3d0; }
+
+.tty-tag.more {
+    color: #a7f3d0;
+    border-color: #a7f3d0;
+}
 
 /* 空状态 */
-.tty-empty{
-    padding-left: 1.5ch; color: var(--tty-dim);
-    font-family: "PixelZH","PixelLatin",monospace !important;
+.tty-empty {
+    padding-left: 1.5ch;
+    color: var(--tty-dim);
+    font-family: "PixelZH", "PixelLatin", monospace !important;
 }
 
 /* 链接下划线优化（全站） */
-a{ text-decoration-thickness:.08em; text-underline-offset:.18em; text-decoration-skip-ink:auto; }
+a {
+    text-decoration-thickness: .08em;
+    text-underline-offset: .18em;
+    text-decoration-skip-ink: auto;
+}
 
 /* 微弱 CRT 味道（可删） */
 .site-header, nav, .menu, .post-title, .list .post .content .title,
-.pagination, footer.footer { text-shadow: 0 0 1px rgba(0,0,0,.35); }
+.pagination, footer.footer {
+    text-shadow: 0 0 1px rgba(0, 0, 0, .35);
+}
 
 /* 移动端：隐藏日期给标题留空间 */
-@media (max-width: 720px){
-    .tty-row{ grid-template-columns: 1fr auto; }
-    .col-date{ display:none; }
+@media (max-width: 720px) {
+    .tty-row {
+        grid-template-columns: 1fr auto;
+    }
+
+    .col-date {
+        display: none;
+    }
 }
