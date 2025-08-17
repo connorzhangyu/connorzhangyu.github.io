@@ -341,3 +341,25 @@ a {
 
 .post-authors { font-family: "PixelZH","PixelLatin",monospace; }
 .post-authors .author strong { font-weight: 700; }
+/* 作者头像强覆盖（避免主题滤镜/遮罩/占位影响） */
+.author-avatar {
+    display:inline-block !important;
+    width:48px !important;
+    height:48px !important;
+    border-radius:50% !important;
+    object-fit:cover !important;
+
+    background:transparent !important;
+    border:0 !important;
+    box-shadow:none !important;
+    outline:0 !important;
+    filter:none !important;
+    mix-blend-mode:normal !important;
+    -webkit-mask:none !important;
+    mask:none !important;
+
+    max-width:none !important;
+    vertical-align:middle;
+}
+
+.post-authors img.author-avatar{ margin:0 !important; }
