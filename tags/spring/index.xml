@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spring on Hello World</title><link>https://tosa.team/tags/spring/</link><description>Recent content in Spring on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Mon, 04 Aug 2025 01:38:57 +0700</lastBuildDate><atom:link href="https://tosa.team/tags/spring/index.xml" rel="self" type="application/rss+xml"/><item><title>Netty</title><link>https://tosa.team/netty/</link><pubDate>Sun, 10 Dec 2023 19:03:58 +0000</pubDate><guid>https://tosa.team/netty/</guid><description>&lt;p>Server&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spring on Hello World</title><link>https://connorzhangyu.com/tags/spring/</link><description>Recent content in Spring on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Mon, 04 Aug 2025 01:38:57 +0700</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/spring/index.xml" rel="self" type="application/rss+xml"/><item><title>Netty</title><link>https://connorzhangyu.com/netty/</link><pubDate>Sun, 10 Dec 2023 19:03:58 +0000</pubDate><guid>https://connorzhangyu.com/netty/</guid><description>&lt;p>Server&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
@@ -129,7 +129,7 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>NettyServerHandlerInitializer&lt;/p></description></item><item><title>Java</title><link>https://tosa.team/java/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/java/</guid><description>&lt;h1 id="基础知识点">基础知识点&lt;/h1>
+&lt;/div>&lt;p>NettyServerHandlerInitializer&lt;/p></description></item><item><title>Java</title><link>https://connorzhangyu.com/java/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/java/</guid><description>&lt;h1 id="基础知识点">基础知识点&lt;/h1>
 &lt;p>&lt;strong>循环标签&lt;/strong>&lt;/p>
 &lt;p>如果不在嵌套循环中使用,用了跳转,也就相当于&lt;code>continue&lt;/code>一样,没有区别&lt;/p>
 &lt;p>在嵌套循环中使用才有效果,用了&lt;code>innerLoop&lt;/code>之后,可以看到&lt;/p>
@@ -605,7 +605,7 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="lambda">Lambda&lt;/h2>
-&lt;p>给集合分组&lt;/p></description></item><item><title>Spring Security</title><link>https://tosa.team/spring-security/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://tosa.team/spring-security/</guid><description>&lt;h1 id="spring-security">Spring Security&lt;/h1>
+&lt;p>给集合分组&lt;/p></description></item><item><title>Spring Security</title><link>https://connorzhangyu.com/spring-security/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/spring-security/</guid><description>&lt;h1 id="spring-security">Spring Security&lt;/h1>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
