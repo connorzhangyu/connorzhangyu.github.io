@@ -97,7 +97,56 @@
 &lt;hr>
 &lt;h2 id="-阶段四web-开发实践week-67">🌐 阶段四：Web 开发实践（Week 6~7）&lt;/h2>
 &lt;h3 id="-目标-3">🎯 目标&lt;/h3>
-&lt;p>掌握基于 Go 的 Web 服务开发&lt;/p></description></item><item><title>Go</title><link>https://connorzhangyu.com/go/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/go/</guid><description>GO基础学习笔记-东尼</description></item><item><title>Vim 快速入门 &amp; IntelliJ IDEA 基础配置</title><link>https://connorzhangyu.com/vim-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-intellij-idea-%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</link><pubDate>Wed, 13 Aug 2025 00:00:00 +0000</pubDate><guid>https://connorzhangyu.com/vim-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-intellij-idea-%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>掌握基于 Go 的 Web 服务开发&lt;/p></description></item><item><title>Go</title><link>https://connorzhangyu.com/go/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/go/</guid><description>GO基础学习笔记-东尼</description></item><item><title>Neovide + Neovim 入门到日常开发：最实用教程</title><link>https://connorzhangyu.com/neovide-neovim-guide/</link><pubDate>Sun, 17 Aug 2025 00:00:00 +0000</pubDate><guid>https://connorzhangyu.com/neovide-neovim-guide/</guid><description>&lt;blockquote>
+&lt;p>这是一篇&lt;strong>开箱即用&lt;/strong>的 Neovide + Neovim 教程：先覆盖日常写作/写代码最常用的命令，再给出顺滑开发所需的插件与配置（含中文输入法自动切换）。&lt;br>
+读完你可以立刻完成：&lt;strong>打开项目 → 编辑 Markdown/代码 → 预览/运行 → Git 提交&lt;/strong> 的完整日常流。&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;h2 id="1-为什么选-neovide--neovim">1. 为什么选 Neovide + Neovim？&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Neovim&lt;/strong>：现代化的 Vim，速度快、扩展强（Lua 插件生态）。&lt;/li>
+&lt;li>&lt;strong>Neovide&lt;/strong>：Neovim 的&lt;strong>轻量 GUI&lt;/strong>，支持系统剪贴板、Retina 渲染与动效，比终端更友好。&lt;/li>
+&lt;li>&lt;strong>优势&lt;/strong>：编辑体验接近 Sublime 的轻快 + VS Code 级扩展，长远效率高。&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="2-基础概念三种模式必会">2. 基础概念：三种模式（必会）&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>普通模式 (Normal)&lt;/strong>：&lt;code>Esc&lt;/code> 回到此模式；移动、复制、删除都在这里做。&lt;/li>
+&lt;li>&lt;strong>插入模式 (Insert)&lt;/strong>：&lt;code>i&lt;/code>（光标前插入）/&lt;code>a&lt;/code>（光标后）/&lt;code>o&lt;/code>（下一行）。&lt;/li>
+&lt;li>&lt;strong>命令模式 (Command)&lt;/strong>：&lt;code>:&lt;/code> 输入如 &lt;code>:w&lt;/code> 保存、&lt;code>:q&lt;/code> 退出、&lt;code>:wq&lt;/code> 保存并退。&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>心法：&lt;strong>编辑 = i / a / o；操作 = Esc；命令 = :&lt;/strong>。&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;h2 id="3-5-分钟速成日常够用的命令">3. 5 分钟速成：日常够用的命令&lt;/h2>
+&lt;h3 id="光标与跳转">光标与跳转&lt;/h3>
+&lt;ul>
+&lt;li>上下左右：&lt;code>h j k l&lt;/code>&lt;/li>
+&lt;li>行首/尾：&lt;code>0 / $&lt;/code>；文件头/尾：&lt;code>gg / G&lt;/code>&lt;/li>
+&lt;li>按词移动：&lt;code>w / b&lt;/code>&lt;/li>
+&lt;li>跳行：&lt;code>:N&lt;/code>（如 &lt;code>:20&lt;/code> 到第 20 行）&lt;/li>
+&lt;/ul>
+&lt;h3 id="编辑与撤销">编辑与撤销&lt;/h3>
+&lt;ul>
+&lt;li>复制行：&lt;code>yy&lt;/code>；粘贴：&lt;code>p&lt;/code>；剪切行：&lt;code>dd&lt;/code>&lt;/li>
+&lt;li>删除词：&lt;code>dw&lt;/code>；替换字符：&lt;code>r&lt;/code>&lt;/li>
+&lt;li>撤销：&lt;code>u&lt;/code>；重做：&lt;code>Ctrl+r&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3 id="搜索与替换">搜索与替换&lt;/h3>
+&lt;ul>
+&lt;li>搜索：&lt;code>/关键字&lt;/code> → &lt;code>n&lt;/code> 下一个，&lt;code>N&lt;/code> 上一个&lt;/li>
+&lt;li>当前行替换：&lt;code>:s/foo/bar/&lt;/code>&lt;/li>
+&lt;li>全文替换：&lt;code>:%s/foo/bar/g&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3 id="文件窗口标签">文件/窗口/标签&lt;/h3>
+&lt;ul>
+&lt;li>保存/退出：&lt;code>:w&lt;/code> / &lt;code>:q&lt;/code> / &lt;code>:wq&lt;/code> / 强退 &lt;code>:q!&lt;/code>&lt;/li>
+&lt;li>分屏：&lt;code>:sp file&lt;/code>（横）/ &lt;code>:vsp file&lt;/code>（竖）&lt;/li>
+&lt;li>窗口切换：&lt;code>Ctrl-w h/j/k/l&lt;/code>&lt;/li>
+&lt;li>标签页：&lt;code>:tabnew&lt;/code>，切换 &lt;code>gt / gT&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="4-与系统剪贴板互通像普通编辑器一样复制粘贴">4. 与系统剪贴板互通（像普通编辑器一样复制粘贴）&lt;/h2>
+&lt;p>在配置里加上（下文有完整配置）：&lt;/p></description></item><item><title>Vim 快速入门 &amp; IntelliJ IDEA 基础配置</title><link>https://connorzhangyu.com/vim-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-intellij-idea-%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</link><pubDate>Wed, 13 Aug 2025 00:00:00 +0000</pubDate><guid>https://connorzhangyu.com/vim-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-intellij-idea-%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
 &lt;p>Vim 是一款强大的编辑器，配合 IntelliJ IDEA 的 IdeaVim 插件，可以显著提升代码编辑效率。本文将介绍 &lt;strong>Vim 最小必备快捷键&lt;/strong> 以及 &lt;strong>IdeaVim 的基础配置方法&lt;/strong>，帮助你快速上手。&lt;/p>
 &lt;hr>
 &lt;h2 id="一vim-最少必备快捷键初学者版">一、Vim 最少必备快捷键（初学者版）&lt;/h2>
