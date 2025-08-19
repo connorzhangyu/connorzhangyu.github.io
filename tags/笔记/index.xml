@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>笔记 on Hello World</title><link>https://connorzhangyu.com/tags/%E7%AC%94%E8%AE%B0/</link><description>Recent content in 笔记 on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Fri, 15 Aug 2025 14:51:48 +0700</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>Vue后台系统</title><link>https://connorzhangyu.com/vue%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F/</link><pubDate>Mon, 26 Feb 2024 13:47:19 +0000</pubDate><guid>https://connorzhangyu.com/vue%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F/</guid><description>&lt;p>项目由 Vue3 + Pina + JavaScript + Ant Design Vue&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>笔记 on Hello World</title><link>https://isme.cz/tags/%E7%AC%94%E8%AE%B0/</link><description>Recent content in 笔记 on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Fri, 15 Aug 2025 14:51:48 +0700</lastBuildDate><atom:link href="https://isme.cz/tags/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>Vue后台系统</title><link>https://isme.cz/vue%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F/</link><pubDate>Mon, 26 Feb 2024 13:47:19 +0000</pubDate><guid>https://isme.cz/vue%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F/</guid><description>&lt;p>项目由 Vue3 + Pina + JavaScript + Ant Design Vue&lt;/p>
 &lt;h1 id="创建项目">创建项目&lt;/h1>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -158,7 +158,7 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h1 id="配置开发环境">配置开发环境&lt;/h1>
-&lt;p>编辑vite.config.js&lt;/p></description></item><item><title>Telegram Bot</title><link>https://connorzhangyu.com/telegram-bot/</link><pubDate>Sat, 08 Jul 2023 15:09:14 +0000</pubDate><guid>https://connorzhangyu.com/telegram-bot/</guid><description>&lt;h1 id="机器人设置">机器人设置&lt;/h1>
+&lt;p>编辑vite.config.js&lt;/p></description></item><item><title>Telegram Bot</title><link>https://isme.cz/telegram-bot/</link><pubDate>Sat, 08 Jul 2023 15:09:14 +0000</pubDate><guid>https://isme.cz/telegram-bot/</guid><description>&lt;h1 id="机器人设置">机器人设置&lt;/h1>
 &lt;h2 id="消息分类">消息分类&lt;/h2>
 &lt;p>消息分两种:&lt;/p>
 &lt;ol>
@@ -166,7 +166,7 @@
 &lt;li>命令消息(以&lt;code>'/'&lt;/code>开头的文本,比如 &lt;code>/test&lt;/code> )&lt;/li>
 &lt;/ol>
 &lt;p>默认在群里只能收到命令消息,和机器人私聊可以接收到全部的消息,如果想让机器人在群里也能接收到全部的消息,操作如下
-访问&lt;code>BotFather&lt;/code>,输入&lt;code>/setprivacy&lt;/code>,选择自己的机器人,选择&lt;code>DISABLED&lt;/code>,就可以了&lt;/p></description></item><item><title>Rime</title><link>https://connorzhangyu.com/rime/</link><pubDate>Sun, 02 Jul 2023 22:37:34 +0000</pubDate><guid>https://connorzhangyu.com/rime/</guid><description>&lt;h1 id="基本概念">基本概念&lt;/h1>
+访问&lt;code>BotFather&lt;/code>,输入&lt;code>/setprivacy&lt;/code>,选择自己的机器人,选择&lt;code>DISABLED&lt;/code>,就可以了&lt;/p></description></item><item><title>Rime</title><link>https://isme.cz/rime/</link><pubDate>Sun, 02 Jul 2023 22:37:34 +0000</pubDate><guid>https://isme.cz/rime/</guid><description>&lt;h1 id="基本概念">基本概念&lt;/h1>
 &lt;p>Rime 是一个输入法框架，并不是狭义上的“输入法”，而是将各种输入法的共性抽象出来的算法框架。通过不同的配置文件，Rime 可以支持多种输入方案（Schema），这个所谓的输入方案就是我们狭义上的“输入法”。比如朙月拼音输入法就是 Rime 自带的一种输入方案，另外还有比如四叶草输入法（https://github.com/fkxxyz/rime-cloverpinyin）等等。鼠须管、小狼毫、中州韵分别是 Rime 在不同操作系统下的实现程序。Rime 的配置、词库文件均使用文本方式，便于修改。所有文件均要求以 UTF-8 编码。在配置文件中，以 # 号开头表示注释。&lt;/p>
 &lt;h1 id="配置文件所在的目录">配置文件所在的目录&lt;/h1>
 &lt;p>Rime 有两个重要的配置目录：&lt;/p>
@@ -202,7 +202,7 @@
 &lt;p>&lt;code>sync&lt;/code> 目录是用来做用户数据同步的。每个 &lt;code>sync/installation_id&lt;/code> 目录对应不同电脑上的 Rime 程序的用户数据。（如果你由多台电脑安装了 Rime，并设置了同步。）按照作者的说法，Rime 的用户词典同步原理是：&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>手工从其他电脑复制或者从网盘自动同步 ⇒ &lt;code>sync/*/*.userdb.txt&lt;/code> ⇒ 合并到本地 &lt;code>*.userdb&lt;/code> ⇒ 导出到 &lt;code>sync/&amp;lt;installation_id&amp;gt;/*.userdb.txt&lt;/code>。&lt;/p></description></item><item><title>Element-UI</title><link>https://connorzhangyu.com/element-ui/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/element-ui/</guid><description>&lt;h1 id="表单验证">表单验证&lt;/h1>
+&lt;p>手工从其他电脑复制或者从网盘自动同步 ⇒ &lt;code>sync/*/*.userdb.txt&lt;/code> ⇒ 合并到本地 &lt;code>*.userdb&lt;/code> ⇒ 导出到 &lt;code>sync/&amp;lt;installation_id&amp;gt;/*.userdb.txt&lt;/code>。&lt;/p></description></item><item><title>Element-UI</title><link>https://isme.cz/element-ui/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/element-ui/</guid><description>&lt;h1 id="表单验证">表单验证&lt;/h1>
 &lt;h2 id="简单版">简单版&lt;/h2>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -654,7 +654,7 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="自定义校验封装">自定义校验封装&lt;/h2>
-&lt;p>新建一个vaildate.js&lt;/p></description></item><item><title>Mybatis</title><link>https://connorzhangyu.com/mybatis/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/mybatis/</guid><description>&lt;h1 id="教程">教程&lt;/h1>
+&lt;p>新建一个vaildate.js&lt;/p></description></item><item><title>Mybatis</title><link>https://isme.cz/mybatis/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/mybatis/</guid><description>&lt;h1 id="教程">教程&lt;/h1>
 &lt;blockquote>
 &lt;p>参考:&lt;/p>
 &lt;p>&lt;a href="https://mybatis.org/mybatis-3/">官方文档&lt;/a>&lt;/p>
@@ -844,7 +844,7 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="注解-一对多查询一个参数">注解 一对多查询(一个参数)&lt;/h2>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051430732.png" alt="">&lt;/p></description></item><item><title>Obsidian</title><link>https://connorzhangyu.com/obsidian/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/obsidian/</guid><description>&lt;h1 id="插件">插件&lt;/h1>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051430732.png" alt="">&lt;/p></description></item><item><title>Obsidian</title><link>https://isme.cz/obsidian/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/obsidian/</guid><description>&lt;h1 id="插件">插件&lt;/h1>
 &lt;p>1.安装git插件
 2.运行命令,才能在界面上显示Git
 &lt;img src="https://image.runtimes.cc/202404051446974.png" alt="">&lt;/p>
@@ -854,7 +854,7 @@
 &lt;h2 id="本地图片的格式">本地图片的格式&lt;/h2>
 &lt;p>使用 Obsidian 时，粘贴的图片路径会变成&lt;code>[[]]&lt;/code> 的格式，在像 Typora 的软件上，就不适配。
 可以在设置里，关闭 Wiki 链接的选项，粘贴图片后的格式就会自动变成了。
-&lt;img src="https://image.runtimes.cc/202404051451913.png" alt="">&lt;/p></description></item><item><title>Python</title><link>https://connorzhangyu.com/python/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/python/</guid><description>&lt;h1 id="安装">安装&lt;/h1>
+&lt;img src="https://image.runtimes.cc/202404051451913.png" alt="">&lt;/p></description></item><item><title>Python</title><link>https://isme.cz/python/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/python/</guid><description>&lt;h1 id="安装">安装&lt;/h1>
 &lt;h1 id="虚拟环境">虚拟环境&lt;/h1>
 &lt;pre tabindex="0">&lt;code># 判断有没有虚拟环境
 virtualenv -V
@@ -948,7 +948,7 @@ pip3
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h1 id="2算数运算符">2.算数运算符&lt;/h1>
-&lt;p>乘法的使用,用&lt;code>*&lt;/code>可以拼接字符串&lt;/p></description></item><item><title>Vue</title><link>https://connorzhangyu.com/vue/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/vue/</guid><description>&lt;p>按照官方文档的教程步骤来,大部分的代码Demo,都是通过脚手架创建的项目的基础上创建的,用的版本的Vue3,Typescript,组合式的写法&lt;/p>
+&lt;p>乘法的使用,用&lt;code>*&lt;/code>可以拼接字符串&lt;/p></description></item><item><title>Vue</title><link>https://isme.cz/vue/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/vue/</guid><description>&lt;p>按照官方文档的教程步骤来,大部分的代码Demo,都是通过脚手架创建的项目的基础上创建的,用的版本的Vue3,Typescript,组合式的写法&lt;/p>
 &lt;h1 id="基础">基础&lt;/h1>
 &lt;h2 id="创建一个应用">创建一个应用&lt;/h2>
 &lt;p>&lt;em>&lt;strong>多个应用实例&lt;/strong>&lt;/em>&lt;/p>
@@ -1048,7 +1048,7 @@ pip3
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="模板语法">模板语法&lt;/h2>
-&lt;p>&lt;em>&lt;strong>文本插值&lt;/strong>&lt;/em>&lt;/p></description></item><item><title>Vue项目</title><link>https://connorzhangyu.com/vue%E9%A1%B9%E7%9B%AE/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/vue%E9%A1%B9%E7%9B%AE/</guid><description>&lt;h1 id="安装vue">安装Vue&lt;/h1>
+&lt;p>&lt;em>&lt;strong>文本插值&lt;/strong>&lt;/em>&lt;/p></description></item><item><title>Vue项目</title><link>https://isme.cz/vue%E9%A1%B9%E7%9B%AE/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/vue%E9%A1%B9%E7%9B%AE/</guid><description>&lt;h1 id="安装vue">安装Vue&lt;/h1>
 &lt;h2 id="局部安装">局部安装&lt;/h2>
 &lt;p>局部安装并使用vue-cli 4.x版本,和创建项目&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">

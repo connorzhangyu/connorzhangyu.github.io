@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>首页 on Hello World</title><link>https://connorzhangyu.com/</link><description>Recent content in 首页 on Hello World</description><generator>Hugo</generator><language>zh</language><atom:link href="https://connorzhangyu.com/index.xml" rel="self" type="application/rss+xml"/><item><title>如何规划 AWS 学习与认证路径：从入门到架构师</title><link>https://connorzhangyu.com/featured/aws-study/</link><pubDate>Thu, 14 Aug 2025 18:03:01 +0000</pubDate><guid>https://connorzhangyu.com/featured/aws-study/</guid><description>&lt;h1 id="如何规划-aws-学习与认证路径从入门到架构师">如何规划 AWS 学习与认证路径：从入门到架构师&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>首页 on Hello World</title><link>https://isme.cz/</link><description>Recent content in 首页 on Hello World</description><generator>Hugo</generator><language>zh</language><atom:link href="https://isme.cz/index.xml" rel="self" type="application/rss+xml"/><item><title>如何规划 AWS 学习与认证路径：从入门到架构师</title><link>https://isme.cz/featured/aws-study/</link><pubDate>Thu, 14 Aug 2025 18:03:01 +0000</pubDate><guid>https://isme.cz/featured/aws-study/</guid><description>&lt;h1 id="如何规划-aws-学习与认证路径从入门到架构师">如何规划 AWS 学习与认证路径：从入门到架构师&lt;/h1>
 &lt;p>随着云计算的普及，掌握 AWS 技能成为技术人员提升自身竞争力的重要途径。作为一名 Java 开发者，同时怀揣成为架构师的梦想，规划一条清晰的 AWS 学习与认证路径，将为你的职业发展奠定坚实基础。&lt;/p>
 &lt;p>在这篇文章中，我将分享适合 Java 开发者的 AWS 学习和认证路线，从入门到架构师，一步步助你掌握云计算技能。&lt;/p>
 &lt;hr>
@@ -41,13 +41,13 @@
 &lt;li>基础架构自动化：CloudFormation 和 AWS CDK。&lt;/li>
 &lt;li>CI/CD 实践：CodePipeline、CodeDeploy、CodeBuild。&lt;/li>
 &lt;/ul>
-&lt;p>&lt;strong>推荐课程&lt;/strong>：&lt;/p></description></item><item><title>Go 的声明语法：为什么与众不同</title><link>https://connorzhangyu.com/featured/go-declaration-syntax/</link><pubDate>Wed, 13 Aug 2025 22:00:00 +0700</pubDate><guid>https://connorzhangyu.com/featured/go-declaration-syntax/</guid><description>&lt;blockquote>
+&lt;p>&lt;strong>推荐课程&lt;/strong>：&lt;/p></description></item><item><title>Go 的声明语法：为什么与众不同</title><link>https://isme.cz/featured/go-declaration-syntax/</link><pubDate>Wed, 13 Aug 2025 22:00:00 +0700</pubDate><guid>https://isme.cz/featured/go-declaration-syntax/</guid><description>&lt;blockquote>
 &lt;p>本文整理自 Go 语言作者 Rob Pike 在 2010 年的文章 &lt;em>&amp;ldquo;Go&amp;rsquo;s Declaration Syntax&amp;rdquo;&lt;/em>，结合原文与实例，解释 Go 为什么采用不同于 C/Java 的声明方式。&lt;br>
 写这篇文章的原因：&lt;br>
 在网络上能找到不少 &lt;em>&amp;ldquo;Go&amp;rsquo;s Declaration Syntax&amp;rdquo;&lt;/em> 的中文翻译，但大多数存在直译生硬、遗漏原文细节甚至误解语义的问题。&lt;br>
 这些低质量翻译往往让读者更困惑，而不是更清楚。&lt;br>
 因此，我基于 Rob Pike 原文，结合上下文和代码示例，整理出一份更贴近原意、方便国内开发者理解的版本。&lt;br>
-同时保留原文核心思想，并补充了对比表与背景说明，帮助读者更好地掌握 Go 声明语法背后的设计理念。&lt;/p>&lt;/blockquote></description></item><item><title>Go学习路线图v0.1</title><link>https://connorzhangyu.com/go-study-plan-v0-1/</link><pubDate>Thu, 14 Aug 2025 00:00:00 +0000</pubDate><guid>https://connorzhangyu.com/go-study-plan-v0-1/</guid><description>tosa 东南亚科技小组 Go v0.1 阶段学习路线图，涵盖第一个版本（基础架构）的技术学习与实战安排。</description></item><item><title>Go 学习资源大全</title><link>https://connorzhangyu.com/go-study-resources/</link><pubDate>Wed, 13 Aug 2025 00:00:00 +0000</pubDate><guid>https://connorzhangyu.com/go-study-resources/</guid><description>系统整理 Go 语言入门到进阶的高质量学习资料，涵盖文档、视频、书籍、面试题、开源项目与工具。</description></item><item><title>Go 面试冲刺学习计划（14 天 | 每天 12 小时）</title><link>https://connorzhangyu.com/go-%E9%9D%A2%E8%AF%95%E5%86%B2%E5%88%BA%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%9214-%E5%A4%A9-%E6%AF%8F%E5%A4%A9-12-%E5%B0%8F%E6%97%B6/</link><pubDate>Fri, 08 Aug 2025 10:00:00 +0700</pubDate><guid>https://connorzhangyu.com/go-%E9%9D%A2%E8%AF%95%E5%86%B2%E5%88%BA%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%9214-%E5%A4%A9-%E6%AF%8F%E5%A4%A9-12-%E5%B0%8F%E6%97%B6/</guid><description>&lt;blockquote>
+同时保留原文核心思想，并补充了对比表与背景说明，帮助读者更好地掌握 Go 声明语法背后的设计理念。&lt;/p>&lt;/blockquote></description></item><item><title>Go学习路线图v0.1</title><link>https://isme.cz/go-study-plan-v0-1/</link><pubDate>Thu, 14 Aug 2025 00:00:00 +0000</pubDate><guid>https://isme.cz/go-study-plan-v0-1/</guid><description>tosa 东南亚科技小组 Go v0.1 阶段学习路线图，涵盖第一个版本（基础架构）的技术学习与实战安排。</description></item><item><title>Go 学习资源大全</title><link>https://isme.cz/go-study-resources/</link><pubDate>Wed, 13 Aug 2025 00:00:00 +0000</pubDate><guid>https://isme.cz/go-study-resources/</guid><description>系统整理 Go 语言入门到进阶的高质量学习资料，涵盖文档、视频、书籍、面试题、开源项目与工具。</description></item><item><title>Go 面试冲刺学习计划（14 天 | 每天 12 小时）</title><link>https://isme.cz/go-%E9%9D%A2%E8%AF%95%E5%86%B2%E5%88%BA%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%9214-%E5%A4%A9-%E6%AF%8F%E5%A4%A9-12-%E5%B0%8F%E6%97%B6/</link><pubDate>Fri, 08 Aug 2025 10:00:00 +0700</pubDate><guid>https://isme.cz/go-%E9%9D%A2%E8%AF%95%E5%86%B2%E5%88%BA%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%9214-%E5%A4%A9-%E6%AF%8F%E5%A4%A9-12-%E5%B0%8F%E6%97%B6/</guid><description>&lt;blockquote>
 &lt;p>🚀 本计划适用于有 Java 开发经验的工程师，全力转向 Go 开发岗位，每天投入 12 小时，14 天从语法到项目到面试冲刺，快速具备独立开发 + 面试能力。&lt;/p>&lt;/blockquote>
 &lt;hr>
 &lt;h2 id="-阶段总览">🧭 阶段总览&lt;/h2>
@@ -96,7 +96,7 @@
 &lt;li>组织多文件项目结构&lt;/li>
 &lt;li>熟练使用 &lt;code>go run&lt;/code>, &lt;code>go build&lt;/code>, &lt;code>go install&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;p>🎯 输出：一个包含自定义包的练手项目&lt;/p></description></item><item><title>Go学习计划</title><link>https://connorzhangyu.com/go%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</link><pubDate>Thu, 31 Jul 2025 16:02:25 +0700</pubDate><guid>https://connorzhangyu.com/go%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</guid><description>&lt;h1 id="go学习计划">Go学习计划&lt;/h1>
+&lt;p>🎯 输出：一个包含自定义包的练手项目&lt;/p></description></item><item><title>Go学习计划</title><link>https://isme.cz/go%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</link><pubDate>Thu, 31 Jul 2025 16:02:25 +0700</pubDate><guid>https://isme.cz/go%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</guid><description>&lt;h1 id="go学习计划">Go学习计划&lt;/h1>
 &lt;hr>
 &lt;h2 id="-阶段一语言基础week-12">🏁 阶段一：语言基础（Week 1~2）&lt;/h2>
 &lt;h3 id="-目标">🎯 目标&lt;/h3>
@@ -146,7 +146,7 @@
 &lt;hr>
 &lt;h2 id="-阶段四web-开发实践week-67">🌐 阶段四：Web 开发实践（Week 6~7）&lt;/h2>
 &lt;h3 id="-目标-3">🎯 目标&lt;/h3>
-&lt;p>掌握基于 Go 的 Web 服务开发&lt;/p></description></item><item><title>Go</title><link>https://connorzhangyu.com/go/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/go/</guid><description>GO基础学习笔记-东尼</description></item><item><title>如何通过 EC2 实例连接 Amazon RDS 数据库</title><link>https://connorzhangyu.com/featured/b765efc8-3b0e-421b-beb4-d1fac4fd836f/</link><pubDate>Tue, 17 Dec 2024 17:42:26 +0000</pubDate><guid>https://connorzhangyu.com/featured/b765efc8-3b0e-421b-beb4-d1fac4fd836f/</guid><description>&lt;h1 id="如何通过-ec2-实例连接-amazon-rds-数据库">如何通过 EC2 实例连接 Amazon RDS 数据库&lt;/h1>
+&lt;p>掌握基于 Go 的 Web 服务开发&lt;/p></description></item><item><title>Go</title><link>https://isme.cz/go/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/go/</guid><description>GO基础学习笔记-东尼</description></item><item><title>如何通过 EC2 实例连接 Amazon RDS 数据库</title><link>https://isme.cz/featured/b765efc8-3b0e-421b-beb4-d1fac4fd836f/</link><pubDate>Tue, 17 Dec 2024 17:42:26 +0000</pubDate><guid>https://isme.cz/featured/b765efc8-3b0e-421b-beb4-d1fac4fd836f/</guid><description>&lt;h1 id="如何通过-ec2-实例连接-amazon-rds-数据库">如何通过 EC2 实例连接 Amazon RDS 数据库&lt;/h1>
 &lt;p>在云开发中，Amazon RDS 是一种强大而方便的托管数据库服务，但它通常处于一个受保护的私有网络中，无法直接从本地访问。如果你想在本地使用图形化工具（如 DBeaver 或 HeidiSQL）访问 RDS 数据库，可以通过 Amazon EC2 实例作为跳板实现。这篇文章将手把手教你如何完成这项操作。&lt;/p>
 &lt;hr>
 &lt;h2 id="1-为什么需要通过-ec2-访问-rds">1. 为什么需要通过 EC2 访问 RDS？&lt;/h2>
@@ -178,7 +178,7 @@
 &lt;/ol>
 &lt;hr>
 &lt;h2 id="3-在本地创建-ssh-隧道">3. 在本地创建 SSH 隧道&lt;/h2>
-&lt;p>SSH 隧道是连接本地客户端和 RDS 数据库的桥梁。以下是设置方法：&lt;/p></description></item><item><title>使用 Nginx + Cloudflare + Docker 部署 Java 服务的最佳实践</title><link>https://connorzhangyu.com/featured/5c8f5a74-11b1-4c78-8307-5dfdd5c6adc3/</link><pubDate>Sun, 08 Dec 2024 05:07:43 +0000</pubDate><guid>https://connorzhangyu.com/featured/5c8f5a74-11b1-4c78-8307-5dfdd5c6adc3/</guid><description>&lt;h1 id="使用-nginx--cloudflare--docker-部署-java-服务的最佳实践">使用 Nginx + Cloudflare + Docker 部署 Java 服务的最佳实践&lt;/h1>
+&lt;p>SSH 隧道是连接本地客户端和 RDS 数据库的桥梁。以下是设置方法：&lt;/p></description></item><item><title>使用 Nginx + Cloudflare + Docker 部署 Java 服务的最佳实践</title><link>https://isme.cz/featured/5c8f5a74-11b1-4c78-8307-5dfdd5c6adc3/</link><pubDate>Sun, 08 Dec 2024 05:07:43 +0000</pubDate><guid>https://isme.cz/featured/5c8f5a74-11b1-4c78-8307-5dfdd5c6adc3/</guid><description>&lt;h1 id="使用-nginx--cloudflare--docker-部署-java-服务的最佳实践">使用 Nginx + Cloudflare + Docker 部署 Java 服务的最佳实践&lt;/h1>
 &lt;p>在生产环境中，Nginx、Cloudflare 和 Docker 是一个经典且高效的组合，特别适合 Java 服务的部署。本篇博客将详细介绍如何将这三者结合起来，构建高性能、高可用的服务架构。&lt;/p>
 &lt;hr>
 &lt;h2 id="架构概览">架构概览&lt;/h2>
@@ -301,7 +301,7 @@
 &lt;/div>&lt;hr>
 &lt;h2 id="三docker-配置">三、Docker 配置&lt;/h2>
 &lt;h3 id="1-构建-java-服务镜像">1. 构建 Java 服务镜像&lt;/h3>
-&lt;p>使用以下 Dockerfile 构建镜像：&lt;/p></description></item><item><title>使用 Cloudflare 和 Nginx 构建高性能安全站点</title><link>https://connorzhangyu.com/featured/cf-nginx/</link><pubDate>Sat, 07 Dec 2024 18:13:27 +0000</pubDate><guid>https://connorzhangyu.com/featured/cf-nginx/</guid><description>&lt;h1 id="使用-cloudflare-和-nginx-构建高性能安全站点">使用 Cloudflare 和 Nginx 构建高性能安全站点&lt;/h1>
+&lt;p>使用以下 Dockerfile 构建镜像：&lt;/p></description></item><item><title>使用 Cloudflare 和 Nginx 构建高性能安全站点</title><link>https://isme.cz/featured/cf-nginx/</link><pubDate>Sat, 07 Dec 2024 18:13:27 +0000</pubDate><guid>https://isme.cz/featured/cf-nginx/</guid><description>&lt;h1 id="使用-cloudflare-和-nginx-构建高性能安全站点">使用 Cloudflare 和 Nginx 构建高性能安全站点&lt;/h1>
 &lt;p>在现代网站架构中，&lt;strong>Nginx&lt;/strong> 和 &lt;strong>Cloudflare&lt;/strong> 是两大关键技术，它们分别在服务器端和网络加速层提供强大的支持。本篇博客将带你一步步配置 Nginx 与 Cloudflare 的集成，打造一个高性能且安全的生产环境。&lt;/p>
 &lt;hr>
 &lt;h2 id="一为什么选择-nginx-和-cloudflare">一、为什么选择 Nginx 和 Cloudflare？&lt;/h2>
@@ -339,7 +339,7 @@
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo nano /etc/nginx/conf.d/example.com.conf
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>内容如下：&lt;/p></description></item><item><title>Neovide + Neovim 入门到日常开发：最实用教程</title><link>https://connorzhangyu.com/neovide-neovim-guide/</link><pubDate>Sun, 17 Aug 2025 00:00:00 +0000</pubDate><guid>https://connorzhangyu.com/neovide-neovim-guide/</guid><description>&lt;blockquote>
+&lt;/div>&lt;p>内容如下：&lt;/p></description></item><item><title>Neovide + Neovim 入门到日常开发：最实用教程</title><link>https://isme.cz/neovide-neovim-guide/</link><pubDate>Sun, 17 Aug 2025 00:00:00 +0000</pubDate><guid>https://isme.cz/neovide-neovim-guide/</guid><description>&lt;blockquote>
 &lt;p>这是一篇&lt;strong>开箱即用&lt;/strong>的 Neovide + Neovim 教程：先覆盖日常写作/写代码最常用的命令，再给出顺滑开发所需的插件与配置（含中文输入法自动切换）。&lt;br>
 读完你可以立刻完成：&lt;strong>打开项目 → 编辑 Markdown/代码 → 预览/运行 → Git 提交&lt;/strong> 的完整日常流。&lt;/p>&lt;/blockquote>
 &lt;hr>
@@ -388,7 +388,7 @@
 &lt;/ul>
 &lt;hr>
 &lt;h2 id="4-与系统剪贴板互通像普通编辑器一样复制粘贴">4. 与系统剪贴板互通（像普通编辑器一样复制粘贴）&lt;/h2>
-&lt;p>在配置里加上（下文有完整配置）：&lt;/p></description></item><item><title>tosa后端技术规范与架构规划</title><link>https://connorzhangyu.com/docs/tech-specs/backend-architecture/</link><pubDate>Wed, 13 Aug 2025 00:00:00 +0000</pubDate><guid>https://connorzhangyu.com/docs/tech-specs/backend-architecture/</guid><description>统一后端技术栈与迭代路线，从 MVP 到企业级最佳实践。</description></item><item><title>Vim 快速入门 &amp; IntelliJ IDEA 基础配置</title><link>https://connorzhangyu.com/vim-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-intellij-idea-%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</link><pubDate>Wed, 13 Aug 2025 00:00:00 +0000</pubDate><guid>https://connorzhangyu.com/vim-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-intellij-idea-%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>在配置里加上（下文有完整配置）：&lt;/p></description></item><item><title>tosa后端技术规范与架构规划</title><link>https://isme.cz/docs/tech-specs/backend-architecture/</link><pubDate>Wed, 13 Aug 2025 00:00:00 +0000</pubDate><guid>https://isme.cz/docs/tech-specs/backend-architecture/</guid><description>统一后端技术栈与迭代路线，从 MVP 到企业级最佳实践。</description></item><item><title>Vim 快速入门 &amp; IntelliJ IDEA 基础配置</title><link>https://isme.cz/vim-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-intellij-idea-%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</link><pubDate>Wed, 13 Aug 2025 00:00:00 +0000</pubDate><guid>https://isme.cz/vim-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-intellij-idea-%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
 &lt;p>Vim 是一款强大的编辑器，配合 IntelliJ IDEA 的 IdeaVim 插件，可以显著提升代码编辑效率。本文将介绍 &lt;strong>Vim 最小必备快捷键&lt;/strong> 以及 &lt;strong>IdeaVim 的基础配置方法&lt;/strong>，帮助你快速上手。&lt;/p>
 &lt;hr>
 &lt;h2 id="一vim-最少必备快捷键初学者版">一、Vim 最少必备快捷键（初学者版）&lt;/h2>
@@ -475,7 +475,7 @@
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
-&lt;p>💡 &lt;strong>记忆技巧&lt;/strong>：&lt;/p></description></item><item><title>使用 Docker 和 CI/CD 实现 Java 服务与 Nginx Proxy Manager 的自动化部署</title><link>https://connorzhangyu.com/%E4%BD%BF%E7%94%A8-docker-%E5%92%8C-ci/cd-%E5%AE%9E%E7%8E%B0-java-%E6%9C%8D%E5%8A%A1%E4%B8%8E-nginx-proxy-manager-%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/</link><pubDate>Sat, 09 Aug 2025 10:00:00 +0700</pubDate><guid>https://connorzhangyu.com/%E4%BD%BF%E7%94%A8-docker-%E5%92%8C-ci/cd-%E5%AE%9E%E7%8E%B0-java-%E6%9C%8D%E5%8A%A1%E4%B8%8E-nginx-proxy-manager-%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/</guid><description>&lt;h1 id="使用-docker-和-cicd-实现-java-服务与-nginx-proxy-manager-的自动化部署">使用 Docker 和 CI/CD 实现 Java 服务与 Nginx Proxy Manager 的自动化部署&lt;/h1>
+&lt;p>💡 &lt;strong>记忆技巧&lt;/strong>：&lt;/p></description></item><item><title>使用 Docker 和 CI/CD 实现 Java 服务与 Nginx Proxy Manager 的自动化部署</title><link>https://isme.cz/%E4%BD%BF%E7%94%A8-docker-%E5%92%8C-ci/cd-%E5%AE%9E%E7%8E%B0-java-%E6%9C%8D%E5%8A%A1%E4%B8%8E-nginx-proxy-manager-%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/</link><pubDate>Sat, 09 Aug 2025 10:00:00 +0700</pubDate><guid>https://isme.cz/%E4%BD%BF%E7%94%A8-docker-%E5%92%8C-ci/cd-%E5%AE%9E%E7%8E%B0-java-%E6%9C%8D%E5%8A%A1%E4%B8%8E-nginx-proxy-manager-%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/</guid><description>&lt;h1 id="使用-docker-和-cicd-实现-java-服务与-nginx-proxy-manager-的自动化部署">使用 Docker 和 CI/CD 实现 Java 服务与 Nginx Proxy Manager 的自动化部署&lt;/h1>
 &lt;p>在现代微服务架构中，&lt;strong>Nginx Proxy Manager&lt;/strong> 常被用作轻量级的反向代理管理工具，而通过 &lt;strong>Docker&lt;/strong> 和 &lt;strong>CI/CD 工具&lt;/strong>（如 GitHub Actions、GitLab CI/CD），可以实现自动化的部署和配置。本篇博客将带你一步步实现 Nginx Proxy Manager 与 Java 服务的自动化部署和配置。&lt;/p>
 &lt;hr>
 &lt;h2 id="一背景与目标">一、背景与目标&lt;/h2>
@@ -504,93 +504,93 @@
 &lt;/li>
 &lt;li>
 &lt;p>&lt;strong>准备一个运行中的 Java 服务&lt;/strong>&lt;br>
-假设你已有一个 Java 应用（如 Spring Boot 项目），并打包成 Docker 镜像。&lt;/p></description></item><item><title>Java基础入门80问</title><link>https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/</link><pubDate>Thu, 07 Aug 2025 19:36:15 +0700</pubDate><guid>https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/</guid><description>&lt;!-- TOC -->
+假设你已有一个 Java 应用（如 Spring Boot 项目），并打包成 Docker 镜像。&lt;/p></description></item><item><title>Java基础入门80问</title><link>https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/</link><pubDate>Thu, 07 Aug 2025 19:36:15 +0700</pubDate><guid>https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/</guid><description>&lt;!-- TOC -->
 &lt;ul>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#1%e4%b8%80%e4%b8%aajava%e6%ba%90%e6%96%87%e4%bb%b6%e4%b8%ad%e6%98%af%e5%90%a6%e5%8f%af%e4%bb%a5%e5%8c%85%e6%8b%ac%e5%a4%9a%e4%b8%aa%e7%b1%bb%e4%b8%8d%e6%98%af%e5%86%85%e9%83%a8%e7%b1%bb%e6%9c%89%e4%bb%80%e4%b9%88%e9%99%90%e5%88%b6">1.一个&amp;quot;.java&amp;quot;源文件中是否可以包括多个类（不是内部类）？有什么限制？&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#2java%e6%9c%89%e6%b2%a1%e6%9c%89goto">2.Java有没有goto?&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#3%e8%af%b4%e8%af%b4%e5%92%8c%e7%9a%84%e5%8c%ba%e5%88%ab">3.说说&amp;amp;和&amp;amp;&amp;amp;的区别&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#4%e5%9c%a8java%e4%b8%ad%e5%a6%82%e4%bd%95%e8%b7%b3%e5%87%ba%e5%bd%93%e5%89%8d%e7%9a%84%e5%a4%9a%e9%87%8d%e5%b5%8c%e5%a5%97%e5%be%aa%e7%8e%af">4.在JAVA中如何跳出当前的多重嵌套循环？&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#5switch%e8%af%ad%e5%8f%a5%e8%83%bd%e5%90%a6%e4%bd%9c%e7%94%a8%e5%9c%a8byte%e4%b8%8a%e8%83%bd%e5%90%a6%e4%bd%9c%e7%94%a8%e5%9c%a8long%e4%b8%8a%e8%83%bd%e5%90%a6%e4%bd%9c%e7%94%a8%e5%9c%a8string%e4%b8%8a">5.switch语句能否作用在byte上，能否作用在long上，能否作用在String上?&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#6short-s1--1-s1--s1--1%e6%9c%89%e4%bb%80%e4%b9%88%e9%94%99-short-s1--1-s1--1%e6%9c%89%e4%bb%80%e4%b9%88%e9%94%99">6.short s1 = 1; s1 = s1 + 1;有什么错? short s1 = 1; s1 += 1;有什么错?&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#7char%e5%9e%8b%e5%8f%98%e9%87%8f%e4%b8%ad%e8%83%bd%e4%b8%8d%e8%83%bd%e5%ad%98%e8%b4%ae%e4%b8%80%e4%b8%aa%e4%b8%ad%e6%96%87%e6%b1%89%e5%ad%97%e4%b8%ba%e4%bb%80%e4%b9%88">7.char型变量中能不能存贮一个中文汉字?为什么?&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#8%e7%94%a8%e6%9c%80%e6%9c%89%e6%95%88%e7%8e%87%e7%9a%84%e6%96%b9%e6%b3%95%e7%ae%97%e5%87%ba2%e4%b9%98%e4%bb%a58%e7%ad%89%e4%ba%8e%e5%87%a0">8.用最有效率的方法算出2乘以8等于几?&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#9%e8%af%b7%e8%ae%be%e8%ae%a1%e4%b8%80%e4%b8%aa%e4%b8%80%e7%99%be%e4%ba%bf%e7%9a%84%e8%ae%a1%e7%ae%97%e5%99%a8">9.请设计一个一百亿的计算器&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#10%e4%bd%bf%e7%94%a8final%e5%85%b3%e9%94%ae%e5%ad%97%e4%bf%ae%e9%a5%b0%e4%b8%80%e4%b8%aa%e5%8f%98%e9%87%8f%e6%97%b6%e6%98%af%e5%bc%95%e7%94%a8%e4%b8%8d%e8%83%bd%e5%8f%98%e8%bf%98%e6%98%af%e5%bc%95%e7%94%a8%e7%9a%84%e5%af%b9%e8%b1%a1%e4%b8%8d%e8%83%bd%e5%8f%98">10.使用final关键字修饰一个变量时，是引用不能变，还是引用的对象不能变？&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#11%e5%92%8cequals%e6%96%b9%e6%b3%95%e7%a9%b6%e7%ab%9f%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab">11.&amp;quot;==&amp;ldquo;和equals方法究竟有什么区别？&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#12%e9%9d%99%e6%80%81%e5%8f%98%e9%87%8f%e5%92%8c%e5%ae%9e%e4%be%8b%e5%8f%98%e9%87%8f%e7%9a%84%e5%8c%ba%e5%88%ab">12.静态变量和实例变量的区别？&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#13%e6%98%af%e5%90%a6%e5%8f%af%e4%bb%a5%e4%bb%8e%e4%b8%80%e4%b8%aastatic%e6%96%b9%e6%b3%95%e5%86%85%e9%83%a8%e5%8f%91%e5%87%ba%e5%af%b9%e9%9d%9estatic%e6%96%b9%e6%b3%95%e7%9a%84%e8%b0%83%e7%94%a8">13.是否可以从一个static方法内部发出对非static方法的调用？&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#14integer%e4%b8%8eint%e7%9a%84%e5%8c%ba%e5%88%ab">14.Integer与int的区别&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#15mathround115%e7%ad%89%e4%ba%8e%e5%a4%9a%e5%b0%91-mathround-115%e7%ad%89%e4%ba%8e%e5%a4%9a%e5%b0%91">15.Math.round(11.5)等于多少? Math.round(-11.5)等于多少?&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#16%e8%af%b7%e8%af%b4%e5%87%ba%e4%bd%9c%e7%94%a8%e5%9f%9fpublicprivateprotected%e4%bb%a5%e5%8f%8a%e4%b8%8d%e5%86%99%e6%97%b6%e7%9a%84%e5%8c%ba%e5%88%ab">16.请说出作用域public，private，protected，以及不写时的区别&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#17overload%e5%92%8coverride%e7%9a%84%e5%8c%ba%e5%88%aboverloaded%e7%9a%84%e6%96%b9%e6%b3%95%e6%98%af%e5%90%a6%e5%8f%af%e4%bb%a5%e6%94%b9%e5%8f%98%e8%bf%94%e5%9b%9e%e5%80%bc%e7%9a%84%e7%b1%bb%e5%9e%8b">17.Overload和Override的区别。Overloaded的方法是否可以改变返回值的类型?&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#18%e6%9e%84%e9%80%a0%e5%99%a8constructor%e6%98%af%e5%90%a6%e5%8f%af%e8%a2%aboverride">18.构造器Constructor是否可被override?&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#19%e6%8e%a5%e5%8f%a3%e6%98%af%e5%90%a6%e5%8f%af%e7%bb%a7%e6%89%bf%e6%8e%a5%e5%8f%a3-%e6%8a%bd%e8%b1%a1%e7%b1%bb%e6%98%af%e5%90%a6%e5%8f%af%e5%ae%9e%e7%8e%b0implements%e6%8e%a5%e5%8f%a3-%e6%8a%bd%e8%b1%a1%e7%b1%bb%e6%98%af%e5%90%a6%e5%8f%af%e7%bb%a7%e6%89%bf%e5%85%b7%e4%bd%93%e7%b1%bbconcrete-class-%e6%8a%bd%e8%b1%a1%e7%b1%bb%e4%b8%ad%e6%98%af%e5%90%a6%e5%8f%af%e4%bb%a5%e6%9c%89%e9%9d%99%e6%80%81%e7%9a%84main%e6%96%b9%e6%b3%95">19.接口是否可继承接口? 抽象类是否可实现(implements)接口? 抽象类是否可继承具体类(concrete class)? 抽象类中是否可以有静态的main方法？&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#20%e5%86%99clone%e6%96%b9%e6%b3%95%e6%97%b6%e9%80%9a%e5%b8%b8%e9%83%bd%e6%9c%89%e4%b8%80%e8%a1%8c%e4%bb%a3%e7%a0%81%e6%98%af%e4%bb%80%e4%b9%88">20.写clone()方法时，通常都有一行代码，是什么？&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#21%e9%9d%a2%e5%90%91%e5%af%b9%e8%b1%a1%e7%9a%84%e7%89%b9%e5%be%81%e6%9c%89%e5%93%aa%e4%ba%9b%e6%96%b9%e9%9d%a2">21.面向对象的特征有哪些方面&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#22java%e4%b8%ad%e5%ae%9e%e7%8e%b0%e5%a4%9a%e6%80%81%e7%9a%84%e6%9c%ba%e5%88%b6%e6%98%af%e4%bb%80%e4%b9%88">22.java中实现多态的机制是什么？&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#23abstract-class%e5%92%8cinterface%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab">23.abstract class和interface有什么区别?&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#24abstract%e7%9a%84method%e6%98%af%e5%90%a6%e5%8f%af%e5%90%8c%e6%97%b6%e6%98%afstatic%e6%98%af%e5%90%a6%e5%8f%af%e5%90%8c%e6%97%b6%e6%98%afnative%e6%98%af%e5%90%a6%e5%8f%af%e5%90%8c%e6%97%b6%e6%98%afsynchronized">24.abstract的method是否可同时是static,是否可同时是native，是否可同时是synchronized?&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#25%e4%bb%80%e4%b9%88%e6%98%af%e5%86%85%e9%83%a8%e7%b1%bbstatic-nested-class-%e5%92%8c-inner-class%e7%9a%84%e4%b8%8d%e5%90%8c">25.什么是内部类？Static Nested Class 和 Inner Class的不同。&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#26%e5%86%85%e9%83%a8%e7%b1%bb%e5%8f%af%e4%bb%a5%e5%bc%95%e7%94%a8%e5%ae%83%e7%9a%84%e5%8c%85%e5%90%ab%e7%b1%bb%e7%9a%84%e6%88%90%e5%91%98%e5%90%97%e6%9c%89%e6%b2%a1%e6%9c%89%e4%bb%80%e4%b9%88%e9%99%90%e5%88%b6">26.内部类可以引用它的包含类的成员吗？有没有什么限制？&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#27anonymous-inner-class-%e5%8c%bf%e5%90%8d%e5%86%85%e9%83%a8%e7%b1%bb-%e6%98%af%e5%90%a6%e5%8f%af%e4%bb%a5extends%e7%bb%a7%e6%89%bf%e5%85%b6%e5%ae%83%e7%b1%bb%e6%98%af%e5%90%a6%e5%8f%af%e4%bb%a5implements%e5%ae%9e%e7%8e%b0interface%e6%8e%a5%e5%8f%a3">27.Anonymous Inner Class (匿名内部类) 是否可以extends(继承)其它类，是否可以implements(实现)interface(接口)?&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#28supergetclass%e6%96%b9%e6%b3%95%e8%b0%83%e7%94%a8">28.super.getClass()方法调用&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#29string%e6%98%af%e6%9c%80%e5%9f%ba%e6%9c%ac%e7%9a%84%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e5%90%97">29.String是最基本的数据类型吗?&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#30string-s--hellos--s---world%e8%bf%99%e4%b8%a4%e8%a1%8c%e4%bb%a3%e7%a0%81%e6%89%a7%e8%a1%8c%e5%90%8e%e5%8e%9f%e5%a7%8b%e7%9a%84string%e5%af%b9%e8%b1%a1%e4%b8%ad%e7%9a%84%e5%86%85%e5%ae%b9%e5%88%b0%e5%ba%95%e5%8f%98%e4%ba%86%e6%b2%a1%e6%9c%89">30.String s = &amp;ldquo;Hello&amp;rdquo;;s = s + &amp;quot; world!&amp;quot;;这两行代码执行后，原始的String对象中的内容到底变了没有？&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#31%e6%98%af%e5%90%a6%e5%8f%af%e4%bb%a5%e7%bb%a7%e6%89%bfstring%e7%b1%bb">31.是否可以继承String类?&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#32string-s--new-stringxyz%e5%88%9b%e5%bb%ba%e4%ba%86%e5%87%a0%e4%b8%aastring-object-%e4%ba%8c%e8%80%85%e4%b9%8b%e9%97%b4%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab">32.String s = new String(&amp;ldquo;xyz&amp;rdquo;);创建了几个String Object? 二者之间有什么区别？&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#33string-%e5%92%8cstringbuffer%e7%9a%84%e5%8c%ba%e5%88%ab">33.String 和StringBuffer的区别&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#34%e5%a6%82%e4%bd%95%e6%8a%8a%e4%b8%80%e6%ae%b5%e9%80%97%e5%8f%b7%e5%88%86%e5%89%b2%e7%9a%84%e5%ad%97%e7%ac%a6%e4%b8%b2%e8%bd%ac%e6%8d%a2%e6%88%90%e4%b8%80%e4%b8%aa%e6%95%b0%e7%bb%84">34.如何把一段逗号分割的字符串转换成一个数组?&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#35%e6%95%b0%e7%bb%84%e6%9c%89%e6%b2%a1%e6%9c%89length%e8%bf%99%e4%b8%aa%e6%96%b9%e6%b3%95-string%e6%9c%89%e6%b2%a1%e6%9c%89length%e8%bf%99%e4%b8%aa%e6%96%b9%e6%b3%95">35.数组有没有length()这个方法? String有没有length()这个方法？&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#36%e4%b8%8b%e9%9d%a2%e8%bf%99%e6%9d%a1%e8%af%ad%e5%8f%a5%e4%b8%80%e5%85%b1%e5%88%9b%e5%bb%ba%e4%ba%86%e5%a4%9a%e5%b0%91%e4%b8%aa%e5%af%b9%e8%b1%a1-string-sabcd">36.下面这条语句一共创建了多少个对象? String s=&amp;ldquo;a&amp;rdquo;+&amp;ldquo;b&amp;rdquo;+&amp;ldquo;c&amp;rdquo;+&amp;ldquo;d&amp;rdquo;;&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#37try-%e9%87%8c%e6%9c%89%e4%b8%80%e4%b8%aareturn%e8%af%ad%e5%8f%a5%e9%82%a3%e4%b9%88%e7%b4%a7%e8%b7%9f%e5%9c%a8%e8%bf%99%e4%b8%aatry%e5%90%8e%e7%9a%84finally-%e9%87%8c%e7%9a%84code%e4%bc%9a%e4%b8%8d%e4%bc%9a%e8%a2%ab%e6%89%a7%e8%a1%8c%e4%bb%80%e4%b9%88%e6%97%b6%e5%80%99%e8%a2%ab%e6%89%a7%e8%a1%8c%e5%9c%a8return%e5%89%8d%e8%bf%98%e6%98%af%e5%90%8e">37.try {}里有一个return语句，那么紧跟在这个try后的finally {}里的code会不会被执行，什么时候被执行，在return前还是后?&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#38%e4%b8%8b%e9%9d%a2%e7%9a%84%e7%a8%8b%e5%ba%8f%e4%bb%a3%e7%a0%81%e8%be%93%e5%87%ba%e7%9a%84%e7%bb%93%e6%9e%9c%e6%98%af%e5%a4%9a%e5%b0%91">38.下面的程序代码输出的结果是多少？&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#39final-finally-finalize%e7%9a%84%e5%8c%ba%e5%88%ab">39.final, finally, finalize的区别。&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#40%e8%bf%90%e8%a1%8c%e6%97%b6%e5%bc%82%e5%b8%b8%e4%b8%8e%e4%b8%80%e8%88%ac%e5%bc%82%e5%b8%b8%e6%9c%89%e4%bd%95%e5%bc%82%e5%90%8c">40.运行时异常与一般异常有何异同？&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#41error%e5%92%8cexception%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab">41.error和exception有什么区别?&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#42java%e4%b8%ad%e7%9a%84%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86%e6%9c%ba%e5%88%b6%e7%9a%84%e7%ae%80%e5%8d%95%e5%8e%9f%e7%90%86%e5%92%8c%e5%ba%94%e7%94%a8">42.Java中的异常处理机制的简单原理和应用。&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#43%e8%af%b7%e5%86%99%e5%87%ba%e4%bd%a0%e6%9c%80%e5%b8%b8%e8%a7%81%e5%88%b0%e7%9a%845%e4%b8%aaruntime-exception">43.请写出你最常见到的5个runtime exception。&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#44java%e4%b8%ad%e6%9c%89%e5%87%a0%e7%a7%8d%e6%96%b9%e6%b3%95%e5%8f%af%e4%bb%a5%e5%ae%9e%e7%8e%b0%e4%b8%80%e4%b8%aa%e7%ba%bf%e7%a8%8b%e7%94%a8%e4%bb%80%e4%b9%88%e5%85%b3%e9%94%ae%e5%ad%97%e4%bf%ae%e9%a5%b0%e5%90%8c%e6%ad%a5%e6%96%b9%e6%b3%95-stop%e5%92%8csuspend%e6%96%b9%e6%b3%95%e4%b8%ba%e4%bd%95%e4%b8%8d%e6%8e%a8%e8%8d%90%e4%bd%bf%e7%94%a8">44.java中有几种方法可以实现一个线程？用什么关键字修饰同步方法? stop()和suspend()方法为何不推荐使用？&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#45sleep-%e5%92%8c-wait-%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab">45.sleep() 和 wait() 有什么区别?&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#46%e5%90%8c%e6%ad%a5%e5%92%8c%e5%bc%82%e6%ad%a5%e6%9c%89%e4%bd%95%e5%bc%82%e5%90%8c%e5%9c%a8%e4%bb%80%e4%b9%88%e6%83%85%e5%86%b5%e4%b8%8b%e5%88%86%e5%88%ab%e4%bd%bf%e7%94%a8%e4%bb%96%e4%bb%ac%e4%b8%be%e4%be%8b%e8%af%b4%e6%98%8e">46.同步和异步有何异同，在什么情况下分别使用他们？举例说明。&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#47%e5%a4%9a%e7%ba%bf%e7%a8%8b%e6%9c%89%e5%87%a0%e7%a7%8d%e5%ae%9e%e7%8e%b0%e6%96%b9%e6%b3%95%e5%90%8c%e6%ad%a5%e6%9c%89%e5%87%a0%e7%a7%8d%e5%ae%9e%e7%8e%b0%e6%96%b9%e6%b3%95">47.多线程有几种实现方法?同步有几种实现方法?&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#48%e5%90%af%e5%8a%a8%e4%b8%80%e4%b8%aa%e7%ba%bf%e7%a8%8b%e6%98%af%e7%94%a8run%e8%bf%98%e6%98%afstart">48.启动一个线程是用run()还是start()？&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#49%e5%bd%93%e4%b8%80%e4%b8%aa%e7%ba%bf%e7%a8%8b%e8%bf%9b%e5%85%a5%e4%b8%80%e4%b8%aa%e5%af%b9%e8%b1%a1%e7%9a%84%e4%b8%80%e4%b8%aasynchronized%e6%96%b9%e6%b3%95%e5%90%8e%e5%85%b6%e5%ae%83%e7%ba%bf%e7%a8%8b%e6%98%af%e5%90%a6%e5%8f%af%e8%bf%9b%e5%85%a5%e6%ad%a4%e5%af%b9%e8%b1%a1%e7%9a%84%e5%85%b6%e5%ae%83%e6%96%b9%e6%b3%95">49.当一个线程进入一个对象的一个synchronized方法后，其它线程是否可进入此对象的其它方法?&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#50%e7%ba%bf%e7%a8%8b%e7%9a%84%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5%e7%ba%bf%e7%a8%8b%e7%9a%84%e5%9f%ba%e6%9c%ac%e7%8a%b6%e6%80%81%e4%bb%a5%e5%8f%8a%e7%8a%b6%e6%80%81%e4%b9%8b%e9%97%b4%e7%9a%84%e5%85%b3%e7%b3%bb">50.线程的基本概念、线程的基本状态以及状态之间的关系。&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#51%e7%ae%80%e8%bf%b0synchronized%e5%92%8cjavautilconcurrentlockslock%e7%9a%84%e5%bc%82%e5%90%8c-">51.简述synchronized和java.util.concurrent.locks.Lock的异同 ？&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#52%e8%ae%be%e8%ae%a14%e4%b8%aa%e7%ba%bf%e7%a8%8b%e5%85%b6%e4%b8%ad%e4%b8%a4%e4%b8%aa%e7%ba%bf%e7%a8%8b%e6%af%8f%e6%ac%a1%e5%af%b9j%e5%a2%9e%e5%8a%a01%e5%8f%a6%e5%a4%96%e4%b8%a4%e4%b8%aa%e7%ba%bf%e7%a8%8b%e5%af%b9j%e6%af%8f%e6%ac%a1%e5%87%8f%e5%b0%911%e5%86%99%e5%87%ba%e7%a8%8b%e5%ba%8f">52.设计4个线程，其中两个线程每次对j增加1，另外两个线程对j每次减少1。写出程序。&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#53%e5%ad%90%e7%ba%bf%e7%a8%8b%e5%be%aa%e7%8e%af10%e6%ac%a1%e6%8e%a5%e7%9d%80%e4%b8%bb%e7%ba%bf%e7%a8%8b%e5%be%aa%e7%8e%af100%e6%8e%a5%e7%9d%80%e5%8f%88%e5%9b%9e%e5%88%b0%e5%ad%90%e7%ba%bf%e7%a8%8b%e5%be%aa%e7%8e%af10%e6%ac%a1%e6%8e%a5%e7%9d%80%e5%86%8d%e5%9b%9e%e5%88%b0%e4%b8%bb%e7%ba%bf%e7%a8%8b%e5%8f%88%e5%be%aa%e7%8e%af100%e5%a6%82%e6%ad%a4%e5%be%aa%e7%8e%af50%e6%ac%a1%e8%af%b7%e5%86%99%e5%87%ba%e7%a8%8b%e5%ba%8f">53.子线程循环10次，接着主线程循环100，接着又回到子线程循环10次，接着再回到主线程又循环100，如此循环50次，请写出程序。&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#54collection%e6%a1%86%e6%9e%b6%e4%b8%ad%e5%ae%9e%e7%8e%b0%e6%af%94%e8%be%83%e8%a6%81%e5%ae%9e%e7%8e%b0%e4%bb%80%e4%b9%88%e6%8e%a5%e5%8f%a3">54.Collection框架中实现比较要实现什么接口&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#55arraylist%e5%92%8cvector%e7%9a%84%e5%8c%ba%e5%88%ab">55.ArrayList和Vector的区别&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#56hashmap%e5%92%8chashtable%e7%9a%84%e5%8c%ba%e5%88%ab">56.HashMap和Hashtable的区别&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#57list-%e5%92%8c-map-%e5%8c%ba%e5%88%ab">57.List 和 Map 区别?&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#58list-set-map%e6%98%af%e5%90%a6%e7%bb%a7%e6%89%bf%e8%87%aacollection%e6%8e%a5%e5%8f%a3">58.List, Set, Map是否继承自Collection接口?&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#59listmapset%e4%b8%89%e4%b8%aa%e6%8e%a5%e5%8f%a3%e5%ad%98%e5%8f%96%e5%85%83%e7%b4%a0%e6%97%b6%e5%90%84%e6%9c%89%e4%bb%80%e4%b9%88%e7%89%b9%e7%82%b9">59.List、Map、Set三个接口，存取元素时，各有什么特点？&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#60%e8%af%b4%e5%87%baarraylistvector-linkedlist%e7%9a%84%e5%ad%98%e5%82%a8%e6%80%a7%e8%83%bd%e5%92%8c%e7%89%b9%e6%80%a7">60.说出ArrayList,Vector, LinkedList的存储性能和特性&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#61%e5%8e%bb%e6%8e%89%e4%b8%80%e4%b8%aavector%e9%9b%86%e5%90%88%e4%b8%ad%e9%87%8d%e5%a4%8d%e7%9a%84%e5%85%83%e7%b4%a0">61.去掉一个Vector集合中重复的元素&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#62collection-%e5%92%8c-collections%e7%9a%84%e5%8c%ba%e5%88%ab">62.Collection 和 Collections的区别。&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#63set%e9%87%8c%e7%9a%84%e5%85%83%e7%b4%a0%e6%98%af%e4%b8%8d%e8%83%bd%e9%87%8d%e5%a4%8d%e7%9a%84%e9%82%a3%e4%b9%88%e7%94%a8%e4%bb%80%e4%b9%88%e6%96%b9%e6%b3%95%e6%9d%a5%e5%8c%ba%e5%88%86%e9%87%8d%e5%a4%8d%e4%b8%8e%e5%90%a6%e5%91%a2-%e6%98%af%e7%94%a8%e8%bf%98%e6%98%afequals-%e5%ae%83%e4%bb%ac%e6%9c%89%e4%bd%95%e5%8c%ba%e5%88%ab">63.Set里的元素是不能重复的，那么用什么方法来区分重复与否呢? 是用==还是equals()? 它们有何区别?&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#64%e4%bd%a0%e6%89%80%e7%9f%a5%e9%81%93%e7%9a%84%e9%9b%86%e5%90%88%e7%b1%bb%e9%83%bd%e6%9c%89%e5%93%aa%e4%ba%9b%e4%b8%bb%e8%a6%81%e6%96%b9%e6%b3%95">64.你所知道的集合类都有哪些？主要方法？&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#65%e4%b8%a4%e4%b8%aa%e5%af%b9%e8%b1%a1%e5%80%bc%e7%9b%b8%e5%90%8cxequalsy--true%e4%bd%86%e5%8d%b4%e5%8f%af%e6%9c%89%e4%b8%8d%e5%90%8c%e7%9a%84hash-code%e8%bf%99%e5%8f%a5%e8%af%9d%e5%af%b9%e4%b8%8d%e5%af%b9">65.两个对象值相同(x.equals(y) == true)，但却可有不同的hash code，这句话对不对?&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#66treeset%e9%87%8c%e9%9d%a2%e6%94%be%e5%af%b9%e8%b1%a1%e5%a6%82%e6%9e%9c%e5%90%8c%e6%97%b6%e6%94%be%e5%85%a5%e4%ba%86%e7%88%b6%e7%b1%bb%e5%92%8c%e5%ad%90%e7%b1%bb%e7%9a%84%e5%ae%9e%e4%be%8b%e5%af%b9%e8%b1%a1%e9%82%a3%e6%af%94%e8%be%83%e6%97%b6%e4%bd%bf%e7%94%a8%e7%9a%84%e6%98%af%e7%88%b6%e7%b1%bb%e7%9a%84compareto%e6%96%b9%e6%b3%95%e8%bf%98%e6%98%af%e4%bd%bf%e7%94%a8%e7%9a%84%e5%ad%90%e7%b1%bb%e7%9a%84compareto%e6%96%b9%e6%b3%95%e8%bf%98%e6%98%af%e6%8a%9b%e5%bc%82%e5%b8%b8">66.TreeSet里面放对象，如果同时放入了父类和子类的实例对象，那比较时使用的是父类的compareTo方法，还是使用的子类的compareTo方法，还是抛异常！&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#67%e8%af%b4%e5%87%ba%e4%b8%80%e4%ba%9b%e5%b8%b8%e7%94%a8%e7%9a%84%e7%b1%bb%e5%8c%85%e6%8e%a5%e5%8f%a3%e8%af%b7%e5%90%84%e4%b8%be5%e4%b8%aa">67.说出一些常用的类，包，接口，请各举5个。&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#68java%e4%b8%ad%e6%9c%89%e5%87%a0%e7%a7%8d%e7%b1%bb%e5%9e%8b%e7%9a%84%e6%b5%81jdk%e4%b8%ba%e6%af%8f%e7%a7%8d%e7%b1%bb%e5%9e%8b%e7%9a%84%e6%b5%81%e6%8f%90%e4%be%9b%e4%ba%86%e4%b8%80%e4%ba%9b%e6%8a%bd%e8%b1%a1%e7%b1%bb%e4%bb%a5%e4%be%9b%e7%bb%a7%e6%89%bf%e8%af%b7%e8%af%b4%e5%87%ba%e4%bb%96%e4%bb%ac%e5%88%86%e5%88%ab%e6%98%af%e5%93%aa%e4%ba%9b%e7%b1%bb">68.java中有几种类型的流？JDK为每种类型的流提供了一些抽象类以供继承，请说出他们分别是哪些类？&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#69%e5%ad%97%e8%8a%82%e6%b5%81%e4%b8%8e%e5%ad%97%e7%ac%a6%e6%b5%81%e7%9a%84%e5%8c%ba%e5%88%ab">69.字节流与字符流的区别&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#70%e4%bb%80%e4%b9%88%e6%98%afjava%e5%ba%8f%e5%88%97%e5%8c%96%e5%a6%82%e4%bd%95%e5%ae%9e%e7%8e%b0java%e5%ba%8f%e5%88%97%e5%8c%96%e6%88%96%e8%80%85%e8%af%b7%e8%a7%a3%e9%87%8aserializable%e6%8e%a5%e5%8f%a3%e7%9a%84%e4%bd%9c%e7%94%a8">70.什么是java序列化，如何实现java序列化？或者请解释Serializable接口的作用。&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#71%e6%8f%8f%e8%bf%b0%e4%b8%80%e4%b8%8bjvm%e5%8a%a0%e8%bd%bdclass%e6%96%87%e4%bb%b6%e7%9a%84%e5%8e%9f%e7%90%86%e6%9c%ba%e5%88%b6">71.描述一下JVM加载class文件的原理机制?&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#72heap%e5%92%8cstack%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab">72.heap和stack有什么区别。&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#73gc%e6%98%af%e4%bb%80%e4%b9%88-%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e6%9c%89gc">73.GC是什么? 为什么要有GC?&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#74%e5%9e%83%e5%9c%be%e5%9b%9e%e6%94%b6%e7%9a%84%e4%bc%98%e7%82%b9%e5%92%8c%e5%8e%9f%e7%90%86%e5%b9%b6%e8%80%83%e8%99%912%e7%a7%8d%e5%9b%9e%e6%94%b6%e6%9c%ba%e5%88%b6">74.垃圾回收的优点和原理。并考虑2种回收机制。&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#75%e5%9e%83%e5%9c%be%e5%9b%9e%e6%94%b6%e5%99%a8%e7%9a%84%e5%9f%ba%e6%9c%ac%e5%8e%9f%e7%90%86%e6%98%af%e4%bb%80%e4%b9%88%e5%9e%83%e5%9c%be%e5%9b%9e%e6%94%b6%e5%99%a8%e5%8f%af%e4%bb%a5%e9%a9%ac%e4%b8%8a%e5%9b%9e%e6%94%b6%e5%86%85%e5%ad%98%e5%90%97%e6%9c%89%e4%bb%80%e4%b9%88%e5%8a%9e%e6%b3%95%e4%b8%bb%e5%8a%a8%e9%80%9a%e7%9f%a5%e8%99%9a%e6%8b%9f%e6%9c%ba%e8%bf%9b%e8%a1%8c%e5%9e%83%e5%9c%be%e5%9b%9e%e6%94%b6">75.垃圾回收器的基本原理是什么？垃圾回收器可以马上回收内存吗？有什么办法主动通知虚拟机进行垃圾回收？&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#76%e4%bb%80%e4%b9%88%e6%97%b6%e5%80%99%e7%94%a8assert">76.什么时候用assert。&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#77java%e4%b8%ad%e4%bc%9a%e5%ad%98%e5%9c%a8%e5%86%85%e5%ad%98%e6%b3%84%e6%bc%8f%e5%90%97%e8%af%b7%e7%ae%80%e5%8d%95%e6%8f%8f%e8%bf%b0">77.java中会存在内存泄漏吗，请简单描述。&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#78%e8%83%bd%e4%b8%8d%e8%83%bd%e8%87%aa%e5%b7%b1%e5%86%99%e4%b8%aa%e7%b1%bb%e4%b9%9f%e5%8f%abjavalangstring">78.能不能自己写个类，也叫java.lang.String？&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#79%e8%8e%b7%e5%be%97%e4%b8%80%e4%b8%aa%e7%b1%bb%e7%9a%84%e7%b1%bb%e5%af%b9%e8%b1%a1%e6%9c%89%e5%93%aa%e4%ba%9b%e6%96%b9%e5%bc%8f">79.获得一个类的类对象有哪些方式？&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#80java%e4%bb%a3%e7%a0%81%e6%9f%a5%e9%94%99">80.Java代码查错&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#%e5%85%ac%e4%bc%97%e5%8f%b7">公众号&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#1%e4%b8%80%e4%b8%aajava%e6%ba%90%e6%96%87%e4%bb%b6%e4%b8%ad%e6%98%af%e5%90%a6%e5%8f%af%e4%bb%a5%e5%8c%85%e6%8b%ac%e5%a4%9a%e4%b8%aa%e7%b1%bb%e4%b8%8d%e6%98%af%e5%86%85%e9%83%a8%e7%b1%bb%e6%9c%89%e4%bb%80%e4%b9%88%e9%99%90%e5%88%b6">1.一个&amp;quot;.java&amp;quot;源文件中是否可以包括多个类（不是内部类）？有什么限制？&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#2java%e6%9c%89%e6%b2%a1%e6%9c%89goto">2.Java有没有goto?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#3%e8%af%b4%e8%af%b4%e5%92%8c%e7%9a%84%e5%8c%ba%e5%88%ab">3.说说&amp;amp;和&amp;amp;&amp;amp;的区别&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#4%e5%9c%a8java%e4%b8%ad%e5%a6%82%e4%bd%95%e8%b7%b3%e5%87%ba%e5%bd%93%e5%89%8d%e7%9a%84%e5%a4%9a%e9%87%8d%e5%b5%8c%e5%a5%97%e5%be%aa%e7%8e%af">4.在JAVA中如何跳出当前的多重嵌套循环？&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#5switch%e8%af%ad%e5%8f%a5%e8%83%bd%e5%90%a6%e4%bd%9c%e7%94%a8%e5%9c%a8byte%e4%b8%8a%e8%83%bd%e5%90%a6%e4%bd%9c%e7%94%a8%e5%9c%a8long%e4%b8%8a%e8%83%bd%e5%90%a6%e4%bd%9c%e7%94%a8%e5%9c%a8string%e4%b8%8a">5.switch语句能否作用在byte上，能否作用在long上，能否作用在String上?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#6short-s1--1-s1--s1--1%e6%9c%89%e4%bb%80%e4%b9%88%e9%94%99-short-s1--1-s1--1%e6%9c%89%e4%bb%80%e4%b9%88%e9%94%99">6.short s1 = 1; s1 = s1 + 1;有什么错? short s1 = 1; s1 += 1;有什么错?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#7char%e5%9e%8b%e5%8f%98%e9%87%8f%e4%b8%ad%e8%83%bd%e4%b8%8d%e8%83%bd%e5%ad%98%e8%b4%ae%e4%b8%80%e4%b8%aa%e4%b8%ad%e6%96%87%e6%b1%89%e5%ad%97%e4%b8%ba%e4%bb%80%e4%b9%88">7.char型变量中能不能存贮一个中文汉字?为什么?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#8%e7%94%a8%e6%9c%80%e6%9c%89%e6%95%88%e7%8e%87%e7%9a%84%e6%96%b9%e6%b3%95%e7%ae%97%e5%87%ba2%e4%b9%98%e4%bb%a58%e7%ad%89%e4%ba%8e%e5%87%a0">8.用最有效率的方法算出2乘以8等于几?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#9%e8%af%b7%e8%ae%be%e8%ae%a1%e4%b8%80%e4%b8%aa%e4%b8%80%e7%99%be%e4%ba%bf%e7%9a%84%e8%ae%a1%e7%ae%97%e5%99%a8">9.请设计一个一百亿的计算器&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#10%e4%bd%bf%e7%94%a8final%e5%85%b3%e9%94%ae%e5%ad%97%e4%bf%ae%e9%a5%b0%e4%b8%80%e4%b8%aa%e5%8f%98%e9%87%8f%e6%97%b6%e6%98%af%e5%bc%95%e7%94%a8%e4%b8%8d%e8%83%bd%e5%8f%98%e8%bf%98%e6%98%af%e5%bc%95%e7%94%a8%e7%9a%84%e5%af%b9%e8%b1%a1%e4%b8%8d%e8%83%bd%e5%8f%98">10.使用final关键字修饰一个变量时，是引用不能变，还是引用的对象不能变？&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#11%e5%92%8cequals%e6%96%b9%e6%b3%95%e7%a9%b6%e7%ab%9f%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab">11.&amp;quot;==&amp;ldquo;和equals方法究竟有什么区别？&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#12%e9%9d%99%e6%80%81%e5%8f%98%e9%87%8f%e5%92%8c%e5%ae%9e%e4%be%8b%e5%8f%98%e9%87%8f%e7%9a%84%e5%8c%ba%e5%88%ab">12.静态变量和实例变量的区别？&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#13%e6%98%af%e5%90%a6%e5%8f%af%e4%bb%a5%e4%bb%8e%e4%b8%80%e4%b8%aastatic%e6%96%b9%e6%b3%95%e5%86%85%e9%83%a8%e5%8f%91%e5%87%ba%e5%af%b9%e9%9d%9estatic%e6%96%b9%e6%b3%95%e7%9a%84%e8%b0%83%e7%94%a8">13.是否可以从一个static方法内部发出对非static方法的调用？&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#14integer%e4%b8%8eint%e7%9a%84%e5%8c%ba%e5%88%ab">14.Integer与int的区别&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#15mathround115%e7%ad%89%e4%ba%8e%e5%a4%9a%e5%b0%91-mathround-115%e7%ad%89%e4%ba%8e%e5%a4%9a%e5%b0%91">15.Math.round(11.5)等于多少? Math.round(-11.5)等于多少?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#16%e8%af%b7%e8%af%b4%e5%87%ba%e4%bd%9c%e7%94%a8%e5%9f%9fpublicprivateprotected%e4%bb%a5%e5%8f%8a%e4%b8%8d%e5%86%99%e6%97%b6%e7%9a%84%e5%8c%ba%e5%88%ab">16.请说出作用域public，private，protected，以及不写时的区别&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#17overload%e5%92%8coverride%e7%9a%84%e5%8c%ba%e5%88%aboverloaded%e7%9a%84%e6%96%b9%e6%b3%95%e6%98%af%e5%90%a6%e5%8f%af%e4%bb%a5%e6%94%b9%e5%8f%98%e8%bf%94%e5%9b%9e%e5%80%bc%e7%9a%84%e7%b1%bb%e5%9e%8b">17.Overload和Override的区别。Overloaded的方法是否可以改变返回值的类型?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#18%e6%9e%84%e9%80%a0%e5%99%a8constructor%e6%98%af%e5%90%a6%e5%8f%af%e8%a2%aboverride">18.构造器Constructor是否可被override?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#19%e6%8e%a5%e5%8f%a3%e6%98%af%e5%90%a6%e5%8f%af%e7%bb%a7%e6%89%bf%e6%8e%a5%e5%8f%a3-%e6%8a%bd%e8%b1%a1%e7%b1%bb%e6%98%af%e5%90%a6%e5%8f%af%e5%ae%9e%e7%8e%b0implements%e6%8e%a5%e5%8f%a3-%e6%8a%bd%e8%b1%a1%e7%b1%bb%e6%98%af%e5%90%a6%e5%8f%af%e7%bb%a7%e6%89%bf%e5%85%b7%e4%bd%93%e7%b1%bbconcrete-class-%e6%8a%bd%e8%b1%a1%e7%b1%bb%e4%b8%ad%e6%98%af%e5%90%a6%e5%8f%af%e4%bb%a5%e6%9c%89%e9%9d%99%e6%80%81%e7%9a%84main%e6%96%b9%e6%b3%95">19.接口是否可继承接口? 抽象类是否可实现(implements)接口? 抽象类是否可继承具体类(concrete class)? 抽象类中是否可以有静态的main方法？&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#20%e5%86%99clone%e6%96%b9%e6%b3%95%e6%97%b6%e9%80%9a%e5%b8%b8%e9%83%bd%e6%9c%89%e4%b8%80%e8%a1%8c%e4%bb%a3%e7%a0%81%e6%98%af%e4%bb%80%e4%b9%88">20.写clone()方法时，通常都有一行代码，是什么？&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#21%e9%9d%a2%e5%90%91%e5%af%b9%e8%b1%a1%e7%9a%84%e7%89%b9%e5%be%81%e6%9c%89%e5%93%aa%e4%ba%9b%e6%96%b9%e9%9d%a2">21.面向对象的特征有哪些方面&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#22java%e4%b8%ad%e5%ae%9e%e7%8e%b0%e5%a4%9a%e6%80%81%e7%9a%84%e6%9c%ba%e5%88%b6%e6%98%af%e4%bb%80%e4%b9%88">22.java中实现多态的机制是什么？&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#23abstract-class%e5%92%8cinterface%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab">23.abstract class和interface有什么区别?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#24abstract%e7%9a%84method%e6%98%af%e5%90%a6%e5%8f%af%e5%90%8c%e6%97%b6%e6%98%afstatic%e6%98%af%e5%90%a6%e5%8f%af%e5%90%8c%e6%97%b6%e6%98%afnative%e6%98%af%e5%90%a6%e5%8f%af%e5%90%8c%e6%97%b6%e6%98%afsynchronized">24.abstract的method是否可同时是static,是否可同时是native，是否可同时是synchronized?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#25%e4%bb%80%e4%b9%88%e6%98%af%e5%86%85%e9%83%a8%e7%b1%bbstatic-nested-class-%e5%92%8c-inner-class%e7%9a%84%e4%b8%8d%e5%90%8c">25.什么是内部类？Static Nested Class 和 Inner Class的不同。&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#26%e5%86%85%e9%83%a8%e7%b1%bb%e5%8f%af%e4%bb%a5%e5%bc%95%e7%94%a8%e5%ae%83%e7%9a%84%e5%8c%85%e5%90%ab%e7%b1%bb%e7%9a%84%e6%88%90%e5%91%98%e5%90%97%e6%9c%89%e6%b2%a1%e6%9c%89%e4%bb%80%e4%b9%88%e9%99%90%e5%88%b6">26.内部类可以引用它的包含类的成员吗？有没有什么限制？&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#27anonymous-inner-class-%e5%8c%bf%e5%90%8d%e5%86%85%e9%83%a8%e7%b1%bb-%e6%98%af%e5%90%a6%e5%8f%af%e4%bb%a5extends%e7%bb%a7%e6%89%bf%e5%85%b6%e5%ae%83%e7%b1%bb%e6%98%af%e5%90%a6%e5%8f%af%e4%bb%a5implements%e5%ae%9e%e7%8e%b0interface%e6%8e%a5%e5%8f%a3">27.Anonymous Inner Class (匿名内部类) 是否可以extends(继承)其它类，是否可以implements(实现)interface(接口)?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#28supergetclass%e6%96%b9%e6%b3%95%e8%b0%83%e7%94%a8">28.super.getClass()方法调用&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#29string%e6%98%af%e6%9c%80%e5%9f%ba%e6%9c%ac%e7%9a%84%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e5%90%97">29.String是最基本的数据类型吗?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#30string-s--hellos--s---world%e8%bf%99%e4%b8%a4%e8%a1%8c%e4%bb%a3%e7%a0%81%e6%89%a7%e8%a1%8c%e5%90%8e%e5%8e%9f%e5%a7%8b%e7%9a%84string%e5%af%b9%e8%b1%a1%e4%b8%ad%e7%9a%84%e5%86%85%e5%ae%b9%e5%88%b0%e5%ba%95%e5%8f%98%e4%ba%86%e6%b2%a1%e6%9c%89">30.String s = &amp;ldquo;Hello&amp;rdquo;;s = s + &amp;quot; world!&amp;quot;;这两行代码执行后，原始的String对象中的内容到底变了没有？&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#31%e6%98%af%e5%90%a6%e5%8f%af%e4%bb%a5%e7%bb%a7%e6%89%bfstring%e7%b1%bb">31.是否可以继承String类?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#32string-s--new-stringxyz%e5%88%9b%e5%bb%ba%e4%ba%86%e5%87%a0%e4%b8%aastring-object-%e4%ba%8c%e8%80%85%e4%b9%8b%e9%97%b4%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab">32.String s = new String(&amp;ldquo;xyz&amp;rdquo;);创建了几个String Object? 二者之间有什么区别？&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#33string-%e5%92%8cstringbuffer%e7%9a%84%e5%8c%ba%e5%88%ab">33.String 和StringBuffer的区别&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#34%e5%a6%82%e4%bd%95%e6%8a%8a%e4%b8%80%e6%ae%b5%e9%80%97%e5%8f%b7%e5%88%86%e5%89%b2%e7%9a%84%e5%ad%97%e7%ac%a6%e4%b8%b2%e8%bd%ac%e6%8d%a2%e6%88%90%e4%b8%80%e4%b8%aa%e6%95%b0%e7%bb%84">34.如何把一段逗号分割的字符串转换成一个数组?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#35%e6%95%b0%e7%bb%84%e6%9c%89%e6%b2%a1%e6%9c%89length%e8%bf%99%e4%b8%aa%e6%96%b9%e6%b3%95-string%e6%9c%89%e6%b2%a1%e6%9c%89length%e8%bf%99%e4%b8%aa%e6%96%b9%e6%b3%95">35.数组有没有length()这个方法? String有没有length()这个方法？&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#36%e4%b8%8b%e9%9d%a2%e8%bf%99%e6%9d%a1%e8%af%ad%e5%8f%a5%e4%b8%80%e5%85%b1%e5%88%9b%e5%bb%ba%e4%ba%86%e5%a4%9a%e5%b0%91%e4%b8%aa%e5%af%b9%e8%b1%a1-string-sabcd">36.下面这条语句一共创建了多少个对象? String s=&amp;ldquo;a&amp;rdquo;+&amp;ldquo;b&amp;rdquo;+&amp;ldquo;c&amp;rdquo;+&amp;ldquo;d&amp;rdquo;;&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#37try-%e9%87%8c%e6%9c%89%e4%b8%80%e4%b8%aareturn%e8%af%ad%e5%8f%a5%e9%82%a3%e4%b9%88%e7%b4%a7%e8%b7%9f%e5%9c%a8%e8%bf%99%e4%b8%aatry%e5%90%8e%e7%9a%84finally-%e9%87%8c%e7%9a%84code%e4%bc%9a%e4%b8%8d%e4%bc%9a%e8%a2%ab%e6%89%a7%e8%a1%8c%e4%bb%80%e4%b9%88%e6%97%b6%e5%80%99%e8%a2%ab%e6%89%a7%e8%a1%8c%e5%9c%a8return%e5%89%8d%e8%bf%98%e6%98%af%e5%90%8e">37.try {}里有一个return语句，那么紧跟在这个try后的finally {}里的code会不会被执行，什么时候被执行，在return前还是后?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#38%e4%b8%8b%e9%9d%a2%e7%9a%84%e7%a8%8b%e5%ba%8f%e4%bb%a3%e7%a0%81%e8%be%93%e5%87%ba%e7%9a%84%e7%bb%93%e6%9e%9c%e6%98%af%e5%a4%9a%e5%b0%91">38.下面的程序代码输出的结果是多少？&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#39final-finally-finalize%e7%9a%84%e5%8c%ba%e5%88%ab">39.final, finally, finalize的区别。&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#40%e8%bf%90%e8%a1%8c%e6%97%b6%e5%bc%82%e5%b8%b8%e4%b8%8e%e4%b8%80%e8%88%ac%e5%bc%82%e5%b8%b8%e6%9c%89%e4%bd%95%e5%bc%82%e5%90%8c">40.运行时异常与一般异常有何异同？&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#41error%e5%92%8cexception%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab">41.error和exception有什么区别?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#42java%e4%b8%ad%e7%9a%84%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86%e6%9c%ba%e5%88%b6%e7%9a%84%e7%ae%80%e5%8d%95%e5%8e%9f%e7%90%86%e5%92%8c%e5%ba%94%e7%94%a8">42.Java中的异常处理机制的简单原理和应用。&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#43%e8%af%b7%e5%86%99%e5%87%ba%e4%bd%a0%e6%9c%80%e5%b8%b8%e8%a7%81%e5%88%b0%e7%9a%845%e4%b8%aaruntime-exception">43.请写出你最常见到的5个runtime exception。&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#44java%e4%b8%ad%e6%9c%89%e5%87%a0%e7%a7%8d%e6%96%b9%e6%b3%95%e5%8f%af%e4%bb%a5%e5%ae%9e%e7%8e%b0%e4%b8%80%e4%b8%aa%e7%ba%bf%e7%a8%8b%e7%94%a8%e4%bb%80%e4%b9%88%e5%85%b3%e9%94%ae%e5%ad%97%e4%bf%ae%e9%a5%b0%e5%90%8c%e6%ad%a5%e6%96%b9%e6%b3%95-stop%e5%92%8csuspend%e6%96%b9%e6%b3%95%e4%b8%ba%e4%bd%95%e4%b8%8d%e6%8e%a8%e8%8d%90%e4%bd%bf%e7%94%a8">44.java中有几种方法可以实现一个线程？用什么关键字修饰同步方法? stop()和suspend()方法为何不推荐使用？&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#45sleep-%e5%92%8c-wait-%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab">45.sleep() 和 wait() 有什么区别?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#46%e5%90%8c%e6%ad%a5%e5%92%8c%e5%bc%82%e6%ad%a5%e6%9c%89%e4%bd%95%e5%bc%82%e5%90%8c%e5%9c%a8%e4%bb%80%e4%b9%88%e6%83%85%e5%86%b5%e4%b8%8b%e5%88%86%e5%88%ab%e4%bd%bf%e7%94%a8%e4%bb%96%e4%bb%ac%e4%b8%be%e4%be%8b%e8%af%b4%e6%98%8e">46.同步和异步有何异同，在什么情况下分别使用他们？举例说明。&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#47%e5%a4%9a%e7%ba%bf%e7%a8%8b%e6%9c%89%e5%87%a0%e7%a7%8d%e5%ae%9e%e7%8e%b0%e6%96%b9%e6%b3%95%e5%90%8c%e6%ad%a5%e6%9c%89%e5%87%a0%e7%a7%8d%e5%ae%9e%e7%8e%b0%e6%96%b9%e6%b3%95">47.多线程有几种实现方法?同步有几种实现方法?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#48%e5%90%af%e5%8a%a8%e4%b8%80%e4%b8%aa%e7%ba%bf%e7%a8%8b%e6%98%af%e7%94%a8run%e8%bf%98%e6%98%afstart">48.启动一个线程是用run()还是start()？&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#49%e5%bd%93%e4%b8%80%e4%b8%aa%e7%ba%bf%e7%a8%8b%e8%bf%9b%e5%85%a5%e4%b8%80%e4%b8%aa%e5%af%b9%e8%b1%a1%e7%9a%84%e4%b8%80%e4%b8%aasynchronized%e6%96%b9%e6%b3%95%e5%90%8e%e5%85%b6%e5%ae%83%e7%ba%bf%e7%a8%8b%e6%98%af%e5%90%a6%e5%8f%af%e8%bf%9b%e5%85%a5%e6%ad%a4%e5%af%b9%e8%b1%a1%e7%9a%84%e5%85%b6%e5%ae%83%e6%96%b9%e6%b3%95">49.当一个线程进入一个对象的一个synchronized方法后，其它线程是否可进入此对象的其它方法?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#50%e7%ba%bf%e7%a8%8b%e7%9a%84%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5%e7%ba%bf%e7%a8%8b%e7%9a%84%e5%9f%ba%e6%9c%ac%e7%8a%b6%e6%80%81%e4%bb%a5%e5%8f%8a%e7%8a%b6%e6%80%81%e4%b9%8b%e9%97%b4%e7%9a%84%e5%85%b3%e7%b3%bb">50.线程的基本概念、线程的基本状态以及状态之间的关系。&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#51%e7%ae%80%e8%bf%b0synchronized%e5%92%8cjavautilconcurrentlockslock%e7%9a%84%e5%bc%82%e5%90%8c-">51.简述synchronized和java.util.concurrent.locks.Lock的异同 ？&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#52%e8%ae%be%e8%ae%a14%e4%b8%aa%e7%ba%bf%e7%a8%8b%e5%85%b6%e4%b8%ad%e4%b8%a4%e4%b8%aa%e7%ba%bf%e7%a8%8b%e6%af%8f%e6%ac%a1%e5%af%b9j%e5%a2%9e%e5%8a%a01%e5%8f%a6%e5%a4%96%e4%b8%a4%e4%b8%aa%e7%ba%bf%e7%a8%8b%e5%af%b9j%e6%af%8f%e6%ac%a1%e5%87%8f%e5%b0%911%e5%86%99%e5%87%ba%e7%a8%8b%e5%ba%8f">52.设计4个线程，其中两个线程每次对j增加1，另外两个线程对j每次减少1。写出程序。&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#53%e5%ad%90%e7%ba%bf%e7%a8%8b%e5%be%aa%e7%8e%af10%e6%ac%a1%e6%8e%a5%e7%9d%80%e4%b8%bb%e7%ba%bf%e7%a8%8b%e5%be%aa%e7%8e%af100%e6%8e%a5%e7%9d%80%e5%8f%88%e5%9b%9e%e5%88%b0%e5%ad%90%e7%ba%bf%e7%a8%8b%e5%be%aa%e7%8e%af10%e6%ac%a1%e6%8e%a5%e7%9d%80%e5%86%8d%e5%9b%9e%e5%88%b0%e4%b8%bb%e7%ba%bf%e7%a8%8b%e5%8f%88%e5%be%aa%e7%8e%af100%e5%a6%82%e6%ad%a4%e5%be%aa%e7%8e%af50%e6%ac%a1%e8%af%b7%e5%86%99%e5%87%ba%e7%a8%8b%e5%ba%8f">53.子线程循环10次，接着主线程循环100，接着又回到子线程循环10次，接着再回到主线程又循环100，如此循环50次，请写出程序。&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#54collection%e6%a1%86%e6%9e%b6%e4%b8%ad%e5%ae%9e%e7%8e%b0%e6%af%94%e8%be%83%e8%a6%81%e5%ae%9e%e7%8e%b0%e4%bb%80%e4%b9%88%e6%8e%a5%e5%8f%a3">54.Collection框架中实现比较要实现什么接口&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#55arraylist%e5%92%8cvector%e7%9a%84%e5%8c%ba%e5%88%ab">55.ArrayList和Vector的区别&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#56hashmap%e5%92%8chashtable%e7%9a%84%e5%8c%ba%e5%88%ab">56.HashMap和Hashtable的区别&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#57list-%e5%92%8c-map-%e5%8c%ba%e5%88%ab">57.List 和 Map 区别?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#58list-set-map%e6%98%af%e5%90%a6%e7%bb%a7%e6%89%bf%e8%87%aacollection%e6%8e%a5%e5%8f%a3">58.List, Set, Map是否继承自Collection接口?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#59listmapset%e4%b8%89%e4%b8%aa%e6%8e%a5%e5%8f%a3%e5%ad%98%e5%8f%96%e5%85%83%e7%b4%a0%e6%97%b6%e5%90%84%e6%9c%89%e4%bb%80%e4%b9%88%e7%89%b9%e7%82%b9">59.List、Map、Set三个接口，存取元素时，各有什么特点？&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#60%e8%af%b4%e5%87%baarraylistvector-linkedlist%e7%9a%84%e5%ad%98%e5%82%a8%e6%80%a7%e8%83%bd%e5%92%8c%e7%89%b9%e6%80%a7">60.说出ArrayList,Vector, LinkedList的存储性能和特性&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#61%e5%8e%bb%e6%8e%89%e4%b8%80%e4%b8%aavector%e9%9b%86%e5%90%88%e4%b8%ad%e9%87%8d%e5%a4%8d%e7%9a%84%e5%85%83%e7%b4%a0">61.去掉一个Vector集合中重复的元素&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#62collection-%e5%92%8c-collections%e7%9a%84%e5%8c%ba%e5%88%ab">62.Collection 和 Collections的区别。&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#63set%e9%87%8c%e7%9a%84%e5%85%83%e7%b4%a0%e6%98%af%e4%b8%8d%e8%83%bd%e9%87%8d%e5%a4%8d%e7%9a%84%e9%82%a3%e4%b9%88%e7%94%a8%e4%bb%80%e4%b9%88%e6%96%b9%e6%b3%95%e6%9d%a5%e5%8c%ba%e5%88%86%e9%87%8d%e5%a4%8d%e4%b8%8e%e5%90%a6%e5%91%a2-%e6%98%af%e7%94%a8%e8%bf%98%e6%98%afequals-%e5%ae%83%e4%bb%ac%e6%9c%89%e4%bd%95%e5%8c%ba%e5%88%ab">63.Set里的元素是不能重复的，那么用什么方法来区分重复与否呢? 是用==还是equals()? 它们有何区别?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#64%e4%bd%a0%e6%89%80%e7%9f%a5%e9%81%93%e7%9a%84%e9%9b%86%e5%90%88%e7%b1%bb%e9%83%bd%e6%9c%89%e5%93%aa%e4%ba%9b%e4%b8%bb%e8%a6%81%e6%96%b9%e6%b3%95">64.你所知道的集合类都有哪些？主要方法？&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#65%e4%b8%a4%e4%b8%aa%e5%af%b9%e8%b1%a1%e5%80%bc%e7%9b%b8%e5%90%8cxequalsy--true%e4%bd%86%e5%8d%b4%e5%8f%af%e6%9c%89%e4%b8%8d%e5%90%8c%e7%9a%84hash-code%e8%bf%99%e5%8f%a5%e8%af%9d%e5%af%b9%e4%b8%8d%e5%af%b9">65.两个对象值相同(x.equals(y) == true)，但却可有不同的hash code，这句话对不对?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#66treeset%e9%87%8c%e9%9d%a2%e6%94%be%e5%af%b9%e8%b1%a1%e5%a6%82%e6%9e%9c%e5%90%8c%e6%97%b6%e6%94%be%e5%85%a5%e4%ba%86%e7%88%b6%e7%b1%bb%e5%92%8c%e5%ad%90%e7%b1%bb%e7%9a%84%e5%ae%9e%e4%be%8b%e5%af%b9%e8%b1%a1%e9%82%a3%e6%af%94%e8%be%83%e6%97%b6%e4%bd%bf%e7%94%a8%e7%9a%84%e6%98%af%e7%88%b6%e7%b1%bb%e7%9a%84compareto%e6%96%b9%e6%b3%95%e8%bf%98%e6%98%af%e4%bd%bf%e7%94%a8%e7%9a%84%e5%ad%90%e7%b1%bb%e7%9a%84compareto%e6%96%b9%e6%b3%95%e8%bf%98%e6%98%af%e6%8a%9b%e5%bc%82%e5%b8%b8">66.TreeSet里面放对象，如果同时放入了父类和子类的实例对象，那比较时使用的是父类的compareTo方法，还是使用的子类的compareTo方法，还是抛异常！&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#67%e8%af%b4%e5%87%ba%e4%b8%80%e4%ba%9b%e5%b8%b8%e7%94%a8%e7%9a%84%e7%b1%bb%e5%8c%85%e6%8e%a5%e5%8f%a3%e8%af%b7%e5%90%84%e4%b8%be5%e4%b8%aa">67.说出一些常用的类，包，接口，请各举5个。&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#68java%e4%b8%ad%e6%9c%89%e5%87%a0%e7%a7%8d%e7%b1%bb%e5%9e%8b%e7%9a%84%e6%b5%81jdk%e4%b8%ba%e6%af%8f%e7%a7%8d%e7%b1%bb%e5%9e%8b%e7%9a%84%e6%b5%81%e6%8f%90%e4%be%9b%e4%ba%86%e4%b8%80%e4%ba%9b%e6%8a%bd%e8%b1%a1%e7%b1%bb%e4%bb%a5%e4%be%9b%e7%bb%a7%e6%89%bf%e8%af%b7%e8%af%b4%e5%87%ba%e4%bb%96%e4%bb%ac%e5%88%86%e5%88%ab%e6%98%af%e5%93%aa%e4%ba%9b%e7%b1%bb">68.java中有几种类型的流？JDK为每种类型的流提供了一些抽象类以供继承，请说出他们分别是哪些类？&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#69%e5%ad%97%e8%8a%82%e6%b5%81%e4%b8%8e%e5%ad%97%e7%ac%a6%e6%b5%81%e7%9a%84%e5%8c%ba%e5%88%ab">69.字节流与字符流的区别&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#70%e4%bb%80%e4%b9%88%e6%98%afjava%e5%ba%8f%e5%88%97%e5%8c%96%e5%a6%82%e4%bd%95%e5%ae%9e%e7%8e%b0java%e5%ba%8f%e5%88%97%e5%8c%96%e6%88%96%e8%80%85%e8%af%b7%e8%a7%a3%e9%87%8aserializable%e6%8e%a5%e5%8f%a3%e7%9a%84%e4%bd%9c%e7%94%a8">70.什么是java序列化，如何实现java序列化？或者请解释Serializable接口的作用。&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#71%e6%8f%8f%e8%bf%b0%e4%b8%80%e4%b8%8bjvm%e5%8a%a0%e8%bd%bdclass%e6%96%87%e4%bb%b6%e7%9a%84%e5%8e%9f%e7%90%86%e6%9c%ba%e5%88%b6">71.描述一下JVM加载class文件的原理机制?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#72heap%e5%92%8cstack%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab">72.heap和stack有什么区别。&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#73gc%e6%98%af%e4%bb%80%e4%b9%88-%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e6%9c%89gc">73.GC是什么? 为什么要有GC?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#74%e5%9e%83%e5%9c%be%e5%9b%9e%e6%94%b6%e7%9a%84%e4%bc%98%e7%82%b9%e5%92%8c%e5%8e%9f%e7%90%86%e5%b9%b6%e8%80%83%e8%99%912%e7%a7%8d%e5%9b%9e%e6%94%b6%e6%9c%ba%e5%88%b6">74.垃圾回收的优点和原理。并考虑2种回收机制。&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#75%e5%9e%83%e5%9c%be%e5%9b%9e%e6%94%b6%e5%99%a8%e7%9a%84%e5%9f%ba%e6%9c%ac%e5%8e%9f%e7%90%86%e6%98%af%e4%bb%80%e4%b9%88%e5%9e%83%e5%9c%be%e5%9b%9e%e6%94%b6%e5%99%a8%e5%8f%af%e4%bb%a5%e9%a9%ac%e4%b8%8a%e5%9b%9e%e6%94%b6%e5%86%85%e5%ad%98%e5%90%97%e6%9c%89%e4%bb%80%e4%b9%88%e5%8a%9e%e6%b3%95%e4%b8%bb%e5%8a%a8%e9%80%9a%e7%9f%a5%e8%99%9a%e6%8b%9f%e6%9c%ba%e8%bf%9b%e8%a1%8c%e5%9e%83%e5%9c%be%e5%9b%9e%e6%94%b6">75.垃圾回收器的基本原理是什么？垃圾回收器可以马上回收内存吗？有什么办法主动通知虚拟机进行垃圾回收？&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#76%e4%bb%80%e4%b9%88%e6%97%b6%e5%80%99%e7%94%a8assert">76.什么时候用assert。&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#77java%e4%b8%ad%e4%bc%9a%e5%ad%98%e5%9c%a8%e5%86%85%e5%ad%98%e6%b3%84%e6%bc%8f%e5%90%97%e8%af%b7%e7%ae%80%e5%8d%95%e6%8f%8f%e8%bf%b0">77.java中会存在内存泄漏吗，请简单描述。&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#78%e8%83%bd%e4%b8%8d%e8%83%bd%e8%87%aa%e5%b7%b1%e5%86%99%e4%b8%aa%e7%b1%bb%e4%b9%9f%e5%8f%abjavalangstring">78.能不能自己写个类，也叫java.lang.String？&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#79%e8%8e%b7%e5%be%97%e4%b8%80%e4%b8%aa%e7%b1%bb%e7%9a%84%e7%b1%bb%e5%af%b9%e8%b1%a1%e6%9c%89%e5%93%aa%e4%ba%9b%e6%96%b9%e5%bc%8f">79.获得一个类的类对象有哪些方式？&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#80java%e4%bb%a3%e7%a0%81%e6%9f%a5%e9%94%99">80.Java代码查错&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/#%e5%85%ac%e4%bc%97%e5%8f%b7">公众号&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;!-- /TOC -->
 &lt;h1 id="1一个java源文件中是否可以包括多个类不是内部类有什么限制">1.一个&amp;rdquo;.java&amp;quot;源文件中是否可以包括多个类（不是内部类）？有什么限制？&lt;/h1>
-&lt;p>可以有多个类，但只能有一个public的类，并且public的类名必须与文件名相一致。&lt;/p></description></item><item><title>GitFlow分支规范</title><link>https://connorzhangyu.com/gitflow%E5%88%86%E6%94%AF%E8%A7%84%E8%8C%83/</link><pubDate>Mon, 04 Aug 2025 03:20:53 +0700</pubDate><guid>https://connorzhangyu.com/gitflow%E5%88%86%E6%94%AF%E8%A7%84%E8%8C%83/</guid><description>&lt;h1 id="gitflow分支规范">GitFlow分支规范&lt;/h1>
+&lt;p>可以有多个类，但只能有一个public的类，并且public的类名必须与文件名相一致。&lt;/p></description></item><item><title>GitFlow分支规范</title><link>https://isme.cz/gitflow%E5%88%86%E6%94%AF%E8%A7%84%E8%8C%83/</link><pubDate>Mon, 04 Aug 2025 03:20:53 +0700</pubDate><guid>https://isme.cz/gitflow%E5%88%86%E6%94%AF%E8%A7%84%E8%8C%83/</guid><description>&lt;h1 id="gitflow分支规范">GitFlow分支规范&lt;/h1>
 &lt;p>本规范适用于采用 Git Flow 模式进行项目开发的团队，以确保开发流程有序、版本可控、协作高效。&lt;/p>
 &lt;h2 id="分支结构">分支结构&lt;/h2>
 &lt;p>项目将使用以下主要分支：&lt;/p>
@@ -627,7 +627,7 @@ v1.0.1
 &lt;pre tabindex="0">&lt;code>类型: 简要描述
 
 详细描述（可选）
-&lt;/code>&lt;/pre>&lt;p>常用类型包括：&lt;code>feat&lt;/code>、&lt;code>fix&lt;/code>、&lt;code>docs&lt;/code>、&lt;code>style&lt;/code>、&lt;code>refactor&lt;/code>、&lt;code>test&lt;/code>、&lt;code>chore&lt;/code>。&lt;/p></description></item><item><title>Java开发面试题库</title><link>https://connorzhangyu.com/java%E5%BC%80%E5%8F%91%E9%9D%A2%E8%AF%95%E9%A2%98%E5%BA%93/</link><pubDate>Thu, 31 Jul 2025 01:16:47 +0700</pubDate><guid>https://connorzhangyu.com/java%E5%BC%80%E5%8F%91%E9%9D%A2%E8%AF%95%E9%A2%98%E5%BA%93/</guid><description>&lt;h1 id="java-面试题库完整版含标准答案">Java 面试题库（完整版，含标准答案）&lt;/h1>
+&lt;/code>&lt;/pre>&lt;p>常用类型包括：&lt;code>feat&lt;/code>、&lt;code>fix&lt;/code>、&lt;code>docs&lt;/code>、&lt;code>style&lt;/code>、&lt;code>refactor&lt;/code>、&lt;code>test&lt;/code>、&lt;code>chore&lt;/code>。&lt;/p></description></item><item><title>Java开发面试题库</title><link>https://isme.cz/java%E5%BC%80%E5%8F%91%E9%9D%A2%E8%AF%95%E9%A2%98%E5%BA%93/</link><pubDate>Thu, 31 Jul 2025 01:16:47 +0700</pubDate><guid>https://isme.cz/java%E5%BC%80%E5%8F%91%E9%9D%A2%E8%AF%95%E9%A2%98%E5%BA%93/</guid><description>&lt;h1 id="java-面试题库完整版含标准答案">Java 面试题库（完整版，含标准答案）&lt;/h1>
 &lt;hr>
 &lt;h2 id="模块一java-基础共-10-题">模块一：Java 基础（共 10 题）&lt;/h2>
 &lt;h3 id="1-java-的基本数据类型有哪些">1. Java 的基本数据类型有哪些？&lt;/h3>
@@ -665,7 +665,7 @@ v1.0.1
 &lt;h3 id="9-java-中的包装类有哪些">9. Java 中的包装类有哪些？&lt;/h3>
 &lt;p>Boolean、Byte、Character、Short、Integer、Long、Float、Double。&lt;/p>
 &lt;h3 id="10-java-如何实现反射">10. Java 如何实现反射？&lt;/h3>
-&lt;p>通过 &lt;code>Class.forName()&lt;/code>、&lt;code>getDeclaredMethods()&lt;/code>、&lt;code>getConstructor()&lt;/code> 等方法反射获取类信息并动态操作。&lt;/p></description></item><item><title>Axure</title><link>https://connorzhangyu.com/axure/</link><pubDate>Sun, 06 Jul 2025 14:31:09 +0000</pubDate><guid>https://connorzhangyu.com/axure/</guid><description>&lt;h1 id="元件库">元件库&lt;/h1>
+&lt;p>通过 &lt;code>Class.forName()&lt;/code>、&lt;code>getDeclaredMethods()&lt;/code>、&lt;code>getConstructor()&lt;/code> 等方法反射获取类信息并动态操作。&lt;/p></description></item><item><title>Axure</title><link>https://isme.cz/axure/</link><pubDate>Sun, 06 Jul 2025 14:31:09 +0000</pubDate><guid>https://isme.cz/axure/</guid><description>&lt;h1 id="元件库">元件库&lt;/h1>
 &lt;p>新建元件库的文件&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202507061428942.png" alt="image-20250706142136476">&lt;/p>
 &lt;p>随便画一个图,并保存,注意这里的1和2的表示&lt;/p>
@@ -726,7 +726,7 @@ v1.0.1
 &lt;ul>
 &lt;li>禁用&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="https://image.runtimes.cc/202507061430370.png" alt="image-20250706142752114">&lt;/p></description></item><item><title>Dapp</title><link>https://connorzhangyu.com/dapp/</link><pubDate>Thu, 29 May 2025 10:23:17 +0000</pubDate><guid>https://connorzhangyu.com/dapp/</guid><description>&lt;h1 id="helloworld合约">HelloWorld合约&lt;/h1>
+&lt;p>&lt;img src="https://image.runtimes.cc/202507061430370.png" alt="image-20250706142752114">&lt;/p></description></item><item><title>Dapp</title><link>https://isme.cz/dapp/</link><pubDate>Thu, 29 May 2025 10:23:17 +0000</pubDate><guid>https://isme.cz/dapp/</guid><description>&lt;h1 id="helloworld合约">HelloWorld合约&lt;/h1>
 &lt;p>&lt;a href="https://remix.ethereum.org">Remix编辑器&lt;/a>&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202505281038720.png" alt="image-20250524144934373">&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -788,10 +788,10 @@ v1.0.1
 &lt;/div>&lt;p>&lt;img src="https://image.runtimes.cc/202505291022541.png" alt="image-20250529101412816">&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202505291022024.png" alt="image-20250529101510973">&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202505291022071.png" alt="image-20250529101815851">&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202505291022160.png" alt="image-20250529102052827">&lt;/p></description></item><item><title>Draw.io</title><link>https://connorzhangyu.com/draw.io/</link><pubDate>Fri, 23 May 2025 21:21:46 +0000</pubDate><guid>https://connorzhangyu.com/draw.io/</guid><description>&lt;p>连线滚动
+&lt;p>&lt;img src="https://image.runtimes.cc/202505291022160.png" alt="image-20250529102052827">&lt;/p></description></item><item><title>Draw.io</title><link>https://isme.cz/draw.io/</link><pubDate>Fri, 23 May 2025 21:21:46 +0000</pubDate><guid>https://isme.cz/draw.io/</guid><description>&lt;p>连线滚动
 &lt;img src="https://image.runtimes.cc/202505281524485.gif" alt="连线滚动">&lt;/p>
 &lt;p>Tree Folding折叠
-&lt;img src="https://image.runtimes.cc/202505281524649.gif" alt="Tree Folding">&lt;/p></description></item><item><title>好用的软件</title><link>https://connorzhangyu.com/%E5%A5%BD%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6/</link><pubDate>Fri, 23 May 2025 17:59:24 +0000</pubDate><guid>https://connorzhangyu.com/%E5%A5%BD%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6/</guid><description>&lt;h1 id="图片">图片&lt;/h1>
+&lt;img src="https://image.runtimes.cc/202505281524649.gif" alt="Tree Folding">&lt;/p></description></item><item><title>好用的软件</title><link>https://isme.cz/%E5%A5%BD%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6/</link><pubDate>Fri, 23 May 2025 17:59:24 +0000</pubDate><guid>https://isme.cz/%E5%A5%BD%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6/</guid><description>&lt;h1 id="图片">图片&lt;/h1>
 &lt;p>截图软件
 &lt;a href="https://www.snipaste.com/">Snipaste&lt;/a>&lt;/p>
 &lt;p>图片上传到图床
@@ -799,7 +799,7 @@ v1.0.1
 &lt;p>录屏软件
 &lt;a href="https://screenity.io/">Screenity&lt;/a>&lt;/p>
 &lt;h1 id="文件">文件&lt;/h1>
-&lt;p>&lt;a href="https://localsend.org/">LocalSend&lt;/a>&lt;/p></description></item><item><title>Mac Apple芯片安装Win11</title><link>https://connorzhangyu.com/mac-apple%E8%8A%AF%E7%89%87%E5%AE%89%E8%A3%85win11/</link><pubDate>Tue, 06 May 2025 15:09:33 +0000</pubDate><guid>https://connorzhangyu.com/mac-apple%E8%8A%AF%E7%89%87%E5%AE%89%E8%A3%85win11/</guid><description>&lt;h1 id="mac-apple芯片安装win11">Mac Apple芯片安装Win11&lt;/h1>
+&lt;p>&lt;a href="https://localsend.org/">LocalSend&lt;/a>&lt;/p></description></item><item><title>Mac Apple芯片安装Win11</title><link>https://isme.cz/mac-apple%E8%8A%AF%E7%89%87%E5%AE%89%E8%A3%85win11/</link><pubDate>Tue, 06 May 2025 15:09:33 +0000</pubDate><guid>https://isme.cz/mac-apple%E8%8A%AF%E7%89%87%E5%AE%89%E8%A3%85win11/</guid><description>&lt;h1 id="mac-apple芯片安装win11">Mac Apple芯片安装Win11&lt;/h1>
 &lt;blockquote>
 &lt;p>&lt;a href="https://blog.csdn.net/weixin_52799373/article/details/129658881">M1/M2 Pro VMware Fusion虚拟机安装Win11教程(超详细)_m1装win11_七维大脑的博客-CSDN博客&lt;/a>&lt;/p>
 &lt;p>&lt;a href="https://blog.csdn.net/m0_72489515/article/details/128036581">M用户使用VM虚拟机安装win11连不上网，怎么解决_mac_xwz的博客-CSDN博客&lt;/a>&lt;/p>&lt;/blockquote>
@@ -836,7 +836,7 @@ v1.0.1
 &lt;p>1.vmare配置
 &lt;img src="https://image.runtimes.cc/202404051348330.png" alt="">&lt;/p>
 &lt;p>2.电脑配置,虚拟机配置&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051349925.png" alt="">&lt;/p></description></item><item><title>ESM</title><link>https://connorzhangyu.com/esm/</link><pubDate>Mon, 05 May 2025 15:39:19 +0000</pubDate><guid>https://connorzhangyu.com/esm/</guid><description>&lt;h1 id="导入和导出">导入和导出&lt;/h1>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051349925.png" alt="">&lt;/p></description></item><item><title>ESM</title><link>https://isme.cz/esm/</link><pubDate>Mon, 05 May 2025 15:39:19 +0000</pubDate><guid>https://isme.cz/esm/</guid><description>&lt;h1 id="导入和导出">导入和导出&lt;/h1>
 &lt;p>Es Module和CommonJs的导入导出不一样&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -905,7 +905,7 @@ v1.0.1
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">sayHello&lt;/span>&lt;span class="p">();&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>什么时候花括号呢?&lt;/p></description></item><item><title>Flarum</title><link>https://connorzhangyu.com/flarum/</link><pubDate>Sun, 04 May 2025 18:52:43 +0000</pubDate><guid>https://connorzhangyu.com/flarum/</guid><description>&lt;h1 id="flarum-部署">Flarum 部署&lt;/h1>
+&lt;/div>&lt;p>什么时候花括号呢?&lt;/p></description></item><item><title>Flarum</title><link>https://isme.cz/flarum/</link><pubDate>Sun, 04 May 2025 18:52:43 +0000</pubDate><guid>https://isme.cz/flarum/</guid><description>&lt;h1 id="flarum-部署">Flarum 部署&lt;/h1>
 &lt;ul>
 &lt;li>
 &lt;p>Ubuntu 24.04&lt;/p>
@@ -1142,7 +1142,7 @@ v1.0.1
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="-修改文件全新">✅ 修改文件全新&lt;/h2>
-&lt;p>到这一步,使用IP访问,会404,执行以下命令授权&lt;/p></description></item><item><title>Spring Boot 国际化 (i18n) 完整方案</title><link>https://connorzhangyu.com/spring-boot-%E5%9B%BD%E9%99%85%E5%8C%96-i18n-%E5%AE%8C%E6%95%B4%E6%96%B9%E6%A1%88/</link><pubDate>Wed, 05 Feb 2025 15:20:37 +0000</pubDate><guid>https://connorzhangyu.com/spring-boot-%E5%9B%BD%E9%99%85%E5%8C%96-i18n-%E5%AE%8C%E6%95%B4%E6%96%B9%E6%A1%88/</guid><description>&lt;h1 id="spring-boot-国际化-i18n-完整方案">Spring Boot 国际化 (i18n) 完整方案&lt;/h1>
+&lt;p>到这一步,使用IP访问,会404,执行以下命令授权&lt;/p></description></item><item><title>Spring Boot 国际化 (i18n) 完整方案</title><link>https://isme.cz/spring-boot-%E5%9B%BD%E9%99%85%E5%8C%96-i18n-%E5%AE%8C%E6%95%B4%E6%96%B9%E6%A1%88/</link><pubDate>Wed, 05 Feb 2025 15:20:37 +0000</pubDate><guid>https://isme.cz/spring-boot-%E5%9B%BD%E9%99%85%E5%8C%96-i18n-%E5%AE%8C%E6%95%B4%E6%96%B9%E6%A1%88/</guid><description>&lt;h1 id="spring-boot-国际化-i18n-完整方案">Spring Boot 国际化 (i18n) 完整方案&lt;/h1>
 &lt;p>在开发全球化应用时，支持多语言（国际化，i18n）是关键需求之一。本方案基于 &lt;strong>Spring Boot&lt;/strong>，实现一个完整的 &lt;strong>国际化解决方案&lt;/strong>，涵盖以下内容：&lt;/p>
 &lt;ul>
 &lt;li>&lt;strong>国际化资源配置 (&lt;code>messages.properties&lt;/code>)&lt;/strong>&lt;/li>
@@ -1246,7 +1246,7 @@ v1.0.1
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>&lt;strong>📌 关键点&lt;/strong>&lt;/p></description></item><item><title>适合中国人和泰国人一起做的生意</title><link>https://connorzhangyu.com/%E9%80%82%E5%90%88%E4%B8%AD%E5%9B%BD%E4%BA%BA%E5%92%8C%E6%B3%B0%E5%9B%BD%E4%BA%BA%E4%B8%80%E8%B5%B7%E5%81%9A%E7%9A%84%E7%94%9F%E6%84%8F/</link><pubDate>Mon, 27 Jan 2025 00:09:22 +0000</pubDate><guid>https://connorzhangyu.com/%E9%80%82%E5%90%88%E4%B8%AD%E5%9B%BD%E4%BA%BA%E5%92%8C%E6%B3%B0%E5%9B%BD%E4%BA%BA%E4%B8%80%E8%B5%B7%E5%81%9A%E7%9A%84%E7%94%9F%E6%84%8F/</guid><description>&lt;h1 id="适合中国人和泰国人一起做的生意">适合中国人和泰国人一起做的生意&lt;/h1>
+&lt;/div>&lt;p>&lt;strong>📌 关键点&lt;/strong>&lt;/p></description></item><item><title>适合中国人和泰国人一起做的生意</title><link>https://isme.cz/%E9%80%82%E5%90%88%E4%B8%AD%E5%9B%BD%E4%BA%BA%E5%92%8C%E6%B3%B0%E5%9B%BD%E4%BA%BA%E4%B8%80%E8%B5%B7%E5%81%9A%E7%9A%84%E7%94%9F%E6%84%8F/</link><pubDate>Mon, 27 Jan 2025 00:09:22 +0000</pubDate><guid>https://isme.cz/%E9%80%82%E5%90%88%E4%B8%AD%E5%9B%BD%E4%BA%BA%E5%92%8C%E6%B3%B0%E5%9B%BD%E4%BA%BA%E4%B8%80%E8%B5%B7%E5%81%9A%E7%9A%84%E7%94%9F%E6%84%8F/</guid><description>&lt;h1 id="适合中国人和泰国人一起做的生意">适合中国人和泰国人一起做的生意&lt;/h1>
 &lt;p>如果你有可以 &lt;strong>百分之百信任&lt;/strong> 的中国和泰国合伙人，那将是一个巨大的优势。结合两国的市场需求和资源优势，以下是一些适合 &lt;strong>中泰合伙&lt;/strong> 的生意机会：&lt;/p>
 &lt;hr>
 &lt;h2 id="1-进出口贸易">&lt;strong>1. 进出口贸易&lt;/strong>&lt;/h2>
@@ -1330,7 +1330,7 @@ v1.0.1
 &lt;/ul>
 &lt;hr>
 &lt;h2 id="总结">&lt;strong>总结&lt;/strong>&lt;/h2>
-&lt;p>如果你的合伙人可靠，建议从 &lt;strong>贸易、电商、旅游、健康产业&lt;/strong> 入手，因其市场需求大、启动成本相对可控，并结合你们各自的资源优势。&lt;/p></description></item><item><title>如何卸载并重装 Nginx：详细教程</title><link>https://connorzhangyu.com/%E5%A6%82%E4%BD%95%E5%8D%B8%E8%BD%BD%E5%B9%B6%E9%87%8D%E8%A3%85-nginx%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/</link><pubDate>Mon, 06 Jan 2025 02:12:05 +0000</pubDate><guid>https://connorzhangyu.com/%E5%A6%82%E4%BD%95%E5%8D%B8%E8%BD%BD%E5%B9%B6%E9%87%8D%E8%A3%85-nginx%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/</guid><description>&lt;h1 id="如何卸载并重装-nginx详细教程">&lt;strong>如何卸载并重装 Nginx：详细教程&lt;/strong>&lt;/h1>
+&lt;p>如果你的合伙人可靠，建议从 &lt;strong>贸易、电商、旅游、健康产业&lt;/strong> 入手，因其市场需求大、启动成本相对可控，并结合你们各自的资源优势。&lt;/p></description></item><item><title>如何卸载并重装 Nginx：详细教程</title><link>https://isme.cz/%E5%A6%82%E4%BD%95%E5%8D%B8%E8%BD%BD%E5%B9%B6%E9%87%8D%E8%A3%85-nginx%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/</link><pubDate>Mon, 06 Jan 2025 02:12:05 +0000</pubDate><guid>https://isme.cz/%E5%A6%82%E4%BD%95%E5%8D%B8%E8%BD%BD%E5%B9%B6%E9%87%8D%E8%A3%85-nginx%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/</guid><description>&lt;h1 id="如何卸载并重装-nginx详细教程">&lt;strong>如何卸载并重装 Nginx：详细教程&lt;/strong>&lt;/h1>
 &lt;p>Nginx 是一款高性能的开源 Web 服务器和反向代理服务器，在网站开发中非常常见。当遇到 Nginx 配置错误或需要彻底清理旧版本时，可能需要将其卸载并重新安装。本文将详细介绍在 &lt;strong>Debian/Ubuntu&lt;/strong> 和 &lt;strong>CentOS/RHEL&lt;/strong> 系统中，如何卸载和重装 Nginx。&lt;/p>
 &lt;hr>
 &lt;h2 id="步骤一卸载-nginx">&lt;strong>步骤一：卸载 Nginx&lt;/strong>&lt;/h2>
@@ -1381,7 +1381,7 @@ v1.0.1
 &lt;/div>
 &lt;/div>&lt;hr>
 &lt;h2 id="步骤二清理残留文件">&lt;strong>步骤二：清理残留文件&lt;/strong>&lt;/h2>
-&lt;p>即使 Nginx 已被卸载，可能仍有配置文件或日志文件残留，需要手动清理。&lt;/p></description></item><item><title>netWork</title><link>https://connorzhangyu.com/network/</link><pubDate>Sat, 04 Jan 2025 04:08:56 +0000</pubDate><guid>https://connorzhangyu.com/network/</guid><description>&lt;h1 id="网络">网络&lt;/h1>
+&lt;p>即使 Nginx 已被卸载，可能仍有配置文件或日志文件残留，需要手动清理。&lt;/p></description></item><item><title>netWork</title><link>https://isme.cz/network/</link><pubDate>Sat, 04 Jan 2025 04:08:56 +0000</pubDate><guid>https://isme.cz/network/</guid><description>&lt;h1 id="网络">网络&lt;/h1>
 &lt;h2 id="http-响应码-301-和-302-代表的是什么有什么区别">http 响应码 301 和 302 代表的是什么？有什么区别？&lt;/h2>
 &lt;p>301，302 都是HTTP状态的编码，都代表着某个URL发生了转移。
 区别：&lt;br>
@@ -1432,7 +1432,7 @@ GET请求参数会被完整保留在浏览器历史记录里，而POST中的参�
 GET请求在URL中传送的参数是有长度限制的，而POST么有。&lt;br>
 对参数的数据类型，GET只接受ASCII字符，而POST没有限制。&lt;br>
 GET比POST更不安全，因为参数直接暴露在URL上，所以不能用来传递敏感信息。&lt;br>
-GET参数通过URL传递，POST放在Request body中。&lt;/p></description></item><item><title>reflection</title><link>https://connorzhangyu.com/reflection/</link><pubDate>Sat, 04 Jan 2025 04:08:56 +0000</pubDate><guid>https://connorzhangyu.com/reflection/</guid><description>&lt;h1 id="反射">反射&lt;/h1>
+GET参数通过URL传递，POST放在Request body中。&lt;/p></description></item><item><title>reflection</title><link>https://isme.cz/reflection/</link><pubDate>Sat, 04 Jan 2025 04:08:56 +0000</pubDate><guid>https://isme.cz/reflection/</guid><description>&lt;h1 id="反射">反射&lt;/h1>
 &lt;h2 id="什么是反射">什么是反射？&lt;/h2>
 &lt;p>反射主要是指程序可以访问、检测和修改它本身状态或行为的一种能力&lt;br>
 Java反射：&lt;br>
@@ -1462,27 +1462,27 @@ Spring的AOP&lt;br>
 &lt;p>首先必须定义一个接口，还要有一个InvocationHandler(将实现接口的类的对象传递给它)处理类。再有一个工具类Proxy(习惯性将其称为代理类，因为调用他的newInstance()可以产生代理对象,其实他只是一个产生代理对象的工具类）。利用到InvocationHandler，拼接代理类源码，将其编译生成代理类的二进制码，利用加载器加载，并将其实例化产生代理对象，最后返回。&lt;/p>
 &lt;h2 id="目录">目录&lt;/h2>
 &lt;ul>
-&lt;li>&lt;a href="https://connorzhangyu.com/java/javaBase.md">Java基础&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java/collection.md">容器&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java/thread.md">线程&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java/reflection.md">反射&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java/cloneable.md">对象克隆&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java/javaWeb.md">JavaWeb&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java/exception.md">异常&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java/netWork.md">网络服务&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java/designpattern.md">设计模式&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java/spring.md">Spring&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java/springMVC.md">Spring MVC&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java/springBoot.md">Spring Boot&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java/springCloud.md">Spring Cloud&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java/hibernate.md">Hibernate&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java/mybatis.md">Mybatis&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java/mq.md">队列&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java/zookeeper.md">Zookeeper&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java/mySql.md">MySql&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java/redis.md">Redis&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://connorzhangyu.com/java/jvm.md">Jvm&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>springMVC</title><link>https://connorzhangyu.com/springmvc/</link><pubDate>Sat, 04 Jan 2025 04:08:56 +0000</pubDate><guid>https://connorzhangyu.com/springmvc/</guid><description>&lt;h1 id="spring-mvc">Spring MVC&lt;/h1>
+&lt;li>&lt;a href="https://isme.cz/java/javaBase.md">Java基础&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java/collection.md">容器&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java/thread.md">线程&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java/reflection.md">反射&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java/cloneable.md">对象克隆&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java/javaWeb.md">JavaWeb&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java/exception.md">异常&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java/netWork.md">网络服务&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java/designpattern.md">设计模式&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java/spring.md">Spring&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java/springMVC.md">Spring MVC&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java/springBoot.md">Spring Boot&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java/springCloud.md">Spring Cloud&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java/hibernate.md">Hibernate&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java/mybatis.md">Mybatis&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java/mq.md">队列&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java/zookeeper.md">Zookeeper&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java/mySql.md">MySql&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java/redis.md">Redis&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://isme.cz/java/jvm.md">Jvm&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>springMVC</title><link>https://isme.cz/springmvc/</link><pubDate>Sat, 04 Jan 2025 04:08:56 +0000</pubDate><guid>https://isme.cz/springmvc/</guid><description>&lt;h1 id="spring-mvc">Spring MVC&lt;/h1>
 &lt;h2 id="说一下-spring-mvc-运行流程">说一下 spring mvc 运行流程？&lt;/h2>
 &lt;p>Spring MVC运行流程图：&lt;/p>
 &lt;p>&lt;img src="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/d1f3cfcfacc0c82aa4f6870eaca54d649c6b8358aaff78b9ffa1413397124e3f1c0ec0ad425d6fe651ce7a7e1ee52520?pictype=scale&amp;amp;from=30113&amp;amp;version=3.3.3.3&amp;amp;uin=495869333&amp;amp;fname=springMVC%E8%BF%90%E8%A1%8C%E6%B5%81%E7%A8%8B.png&amp;amp;size=750" alt="Spring MVC运行流程图">&lt;/p>
@@ -1544,7 +1544,7 @@ multipart/form-data：不能处理；
 &lt;p>作者：希希里之海
 链接：https://www.jianshu.com/p/64b22da6c9ab
 来源：简书
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。&lt;/p></description></item><item><title>thread</title><link>https://connorzhangyu.com/thread/</link><pubDate>Sat, 04 Jan 2025 04:08:56 +0000</pubDate><guid>https://connorzhangyu.com/thread/</guid><description>&lt;h1 id="线程">线程&lt;/h1>
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。&lt;/p></description></item><item><title>thread</title><link>https://isme.cz/thread/</link><pubDate>Sat, 04 Jan 2025 04:08:56 +0000</pubDate><guid>https://isme.cz/thread/</guid><description>&lt;h1 id="线程">线程&lt;/h1>
 &lt;h2 id="并行和并发有什么区别">并行和并发有什么区别？&lt;/h2>
 &lt;p>并行是指两个或者多个事件在同一时刻发生；而并发是指两个或多个事件在同一时间间隔发生。&lt;br>
 并行是在不同实体上的多个事件，并发是在同一实体上的多个事件。&lt;br>
@@ -1591,7 +1591,7 @@ wait()：wait()是Object类的方法，当一个线程执行到wait方法时，�
 &lt;h2 id="线程的-run和-start有什么区别">线程的 run()和 start()有什么区别？&lt;/h2>
 &lt;p>每个线程都是通过某个特定Thread对象所对应的方法run()来完成其操作的，方法run()称为线程体。通过调用Thread类的start()方法来启动一个线程。&lt;br>
 start()方法来启动一个线程，真正实现了多线程运行。这时无需等待run方法体代码执行完毕，可以直接继续执行下面的代码； 这时此线程是处于就绪状态， 并没有运行。 然后通过此Thread类调用方法run()来完成其运行状态， 这里方法run()称为线程体，它包含了要执行的这个线程的内容， Run方法运行结束， 此线程终止。然后CPU再调度其它线程。&lt;br>
-run()方法是在本线程里的，只是线程里的一个函数,而不是多线程的。 如果直接调用run(),其实就相当于是调用了一个普通函数而已，直接待用run()方法必须等待run()方法执行完毕才能执行下面的代码，所以执行路径还是只有一条，根本就没有线程的特征，所以在多线程执行时要使用start()方法而不是run()方法。&lt;/p></description></item><item><title>zookeeper</title><link>https://connorzhangyu.com/zookeeper/</link><pubDate>Sat, 04 Jan 2025 04:08:56 +0000</pubDate><guid>https://connorzhangyu.com/zookeeper/</guid><description>&lt;h1 id="zookeeper">Zookeeper&lt;/h1>
+run()方法是在本线程里的，只是线程里的一个函数,而不是多线程的。 如果直接调用run(),其实就相当于是调用了一个普通函数而已，直接待用run()方法必须等待run()方法执行完毕才能执行下面的代码，所以执行路径还是只有一条，根本就没有线程的特征，所以在多线程执行时要使用start()方法而不是run()方法。&lt;/p></description></item><item><title>zookeeper</title><link>https://isme.cz/zookeeper/</link><pubDate>Sat, 04 Jan 2025 04:08:56 +0000</pubDate><guid>https://isme.cz/zookeeper/</guid><description>&lt;h1 id="zookeeper">Zookeeper&lt;/h1>
 &lt;h2 id="zookeeper-是什么">zookeeper 是什么？&lt;/h2>
 &lt;p>zookeeper 是一个分布式的，开放源码的分布式应用程序协调服务，是 google chubby 的开源实现，是 hadoop 和 hbase 的重要组件。它是一个为分布式应用提供一致性服务的软件，提供的功能包括：配置维护、域名服务、分布式同步、组服务等。&lt;/p>
 &lt;h2 id="zookeeper-都有哪些功能">zookeeper 都有哪些功能？&lt;/h2>
@@ -1613,7 +1613,7 @@ run()方法是在本线程里的，只是线程里的一个函数,而不是多�
 &lt;h2 id="集群中有-3-台服务器其中一个节点宕机这个时候-zookeeper-还可以使用吗">集群中有 3 台服务器，其中一个节点宕机，这个时候 zookeeper 还可以使用吗？&lt;/h2>
 &lt;p>可以继续使用，单数服务器只要没超过一半的服务器宕机就可以继续使用。&lt;/p>
 &lt;h2 id="说一下-zookeeper-的通知机制">说一下 zookeeper 的通知机制？&lt;/h2>
-&lt;p>客户端端会对某个 znode 建立一个 watcher 事件，当该 znode 发生变化时，这些客户端会收到 zookeeper 的通知，然后客户端可以根据 znode 变化来做出业务上的改变。&lt;/p></description></item><item><title>cloneable</title><link>https://connorzhangyu.com/cloneable/</link><pubDate>Sat, 04 Jan 2025 04:08:55 +0000</pubDate><guid>https://connorzhangyu.com/cloneable/</guid><description>&lt;h1 id="对象克隆">对象克隆&lt;/h1>
+&lt;p>客户端端会对某个 znode 建立一个 watcher 事件，当该 znode 发生变化时，这些客户端会收到 zookeeper 的通知，然后客户端可以根据 znode 变化来做出业务上的改变。&lt;/p></description></item><item><title>cloneable</title><link>https://isme.cz/cloneable/</link><pubDate>Sat, 04 Jan 2025 04:08:55 +0000</pubDate><guid>https://isme.cz/cloneable/</guid><description>&lt;h1 id="对象克隆">对象克隆&lt;/h1>
 &lt;h2 id="为什么要使用克隆">为什么要使用克隆？&lt;/h2>
 &lt;p>想对一个对象进行处理，又想保留原有的数据进行接下来的操作，就需要克隆了，Java语言中克隆针对的是类的实例。&lt;/p>
 &lt;h2 id="如何实现对象克隆">如何实现对象克隆？&lt;/h2>
@@ -1678,7 +1678,7 @@ run()方法是在本线程里的，只是线程里的一个函数,而不是多�
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>下面是测试代码：&lt;/p></description></item><item><title>collection</title><link>https://connorzhangyu.com/collection/</link><pubDate>Sat, 04 Jan 2025 04:08:55 +0000</pubDate><guid>https://connorzhangyu.com/collection/</guid><description>&lt;h1 id="容器">容器&lt;/h1>
+&lt;/div>&lt;p>下面是测试代码：&lt;/p></description></item><item><title>collection</title><link>https://isme.cz/collection/</link><pubDate>Sat, 04 Jan 2025 04:08:55 +0000</pubDate><guid>https://isme.cz/collection/</guid><description>&lt;h1 id="容器">容器&lt;/h1>
 &lt;h2 id="java-容器都有哪些">java 容器都有哪些？&lt;/h2>
 &lt;p>常用容器的图录：&lt;/p>
 &lt;p>&lt;img src="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/50db8810cd8a2e8038518950609a4e70a630e0f634e152308a104b665732101c6f98885b0382fadfdf7bd7827237a7b9?pictype=scale&amp;amp;from=30113&amp;amp;version=3.3.3.3&amp;amp;uin=495869333&amp;amp;fname=%E5%AE%B9%E5%99%A8.png&amp;amp;size=750" alt="容器">&lt;/p>
@@ -1714,7 +1714,7 @@ HashMap的value统一为PRESENT&lt;/p>
 &lt;h2 id="arraylist-和-vector-的区别是什么">ArrayList 和 Vector 的区别是什么？&lt;/h2>
 &lt;p>Vector是同步的，而ArrayList不是。然而，如果你寻求在迭代的时候对列表进行改变，你应该使用CopyOnWriteArrayList。&lt;br>
 ArrayList比Vector快，它因为有同步，不会过载。&lt;br>
-ArrayList更加通用，因为我们可以使用Collections工具类轻易地获取同步列表和只读列表。&lt;/p></description></item><item><title>designpattern</title><link>https://connorzhangyu.com/designpattern/</link><pubDate>Sat, 04 Jan 2025 04:08:55 +0000</pubDate><guid>https://connorzhangyu.com/designpattern/</guid><description>&lt;h1 id="设计模式">设计模式&lt;/h1>
+ArrayList更加通用，因为我们可以使用Collections工具类轻易地获取同步列表和只读列表。&lt;/p></description></item><item><title>designpattern</title><link>https://isme.cz/designpattern/</link><pubDate>Sat, 04 Jan 2025 04:08:55 +0000</pubDate><guid>https://isme.cz/designpattern/</guid><description>&lt;h1 id="设计模式">设计模式&lt;/h1>
 &lt;h2 id="说一下你熟悉的设计模式">说一下你熟悉的设计模式？&lt;/h2>
 &lt;h2 id="单例模式">单例模式&lt;/h2>
 &lt;p>简单点说，就是一个应用程序中，某个类的实例对象只有一个，你没有办法去new，因为构造器是被private修饰的，一般通过getInstance()的方法来获取它们的实例。&lt;/p>
@@ -1754,7 +1754,7 @@ ArrayList更加通用，因为我们可以使用Collections工具类轻易地获
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>按照我的习惯，我恨不得写满注释，怕你们看不懂，但是这个代码实在太简单了，所以我没写任何注释，如果这几行代码你都看不明白的话，那你可以洗洗睡了，等你睡醒了再来看我的博客说不定能看懂。&lt;/p></description></item><item><title>exception</title><link>https://connorzhangyu.com/exception/</link><pubDate>Sat, 04 Jan 2025 04:08:55 +0000</pubDate><guid>https://connorzhangyu.com/exception/</guid><description>&lt;h1 id="异常">异常&lt;/h1>
+&lt;/div>&lt;p>按照我的习惯，我恨不得写满注释，怕你们看不懂，但是这个代码实在太简单了，所以我没写任何注释，如果这几行代码你都看不明白的话，那你可以洗洗睡了，等你睡醒了再来看我的博客说不定能看懂。&lt;/p></description></item><item><title>exception</title><link>https://isme.cz/exception/</link><pubDate>Sat, 04 Jan 2025 04:08:55 +0000</pubDate><guid>https://isme.cz/exception/</guid><description>&lt;h1 id="异常">异常&lt;/h1>
 &lt;h2 id="throw-和-throws-的区别">throw 和 throws 的区别？&lt;/h2>
 &lt;p>throws是用来声明一个方法可能抛出的所有异常信息，throws是将异常声明但是不处理，而是将异常往上传，谁调用我就交给谁处理。而throw则是指抛出的一个具体的异常类型。&lt;/p>
 &lt;h2 id="finalfinallyfinalize-有什么区别">final、finally、finalize 有什么区别？&lt;/h2>
@@ -1830,7 +1830,7 @@ finalize是一个方法，属于Object类的一个方法，而Object类是所有
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>执行结果：30&lt;/p></description></item><item><title>hibernate</title><link>https://connorzhangyu.com/hibernate/</link><pubDate>Sat, 04 Jan 2025 04:08:55 +0000</pubDate><guid>https://connorzhangyu.com/hibernate/</guid><description>&lt;h1 id="hibernate">Hibernate&lt;/h1>
+&lt;/div>&lt;p>执行结果：30&lt;/p></description></item><item><title>hibernate</title><link>https://isme.cz/hibernate/</link><pubDate>Sat, 04 Jan 2025 04:08:55 +0000</pubDate><guid>https://isme.cz/hibernate/</guid><description>&lt;h1 id="hibernate">Hibernate&lt;/h1>
 &lt;h2 id="为什么要使用-hibernate">为什么要使用 hibernate？&lt;/h2>
 &lt;p>对JDBC访问数据库的代码做了封装，大大简化了数据访问层繁琐的重复性代码。&lt;br>
 Hibernate是一个基于JDBC的主流持久化框架，是一个优秀的ORM实现。他很大程度的简化DAO层的编码工作&lt;br>
@@ -1873,7 +1873,7 @@ hibernate的性能非常好，因为它是个轻量级框架。映射的灵活�
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="l">spring.jpa.properties.hibernate.use_sql_comments=true //指出是什么操作生成了该语句&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>此时，在控制台可以看到，控制台打印了一条经过格式化之后的sql语句，并标明了这条语句是在哪个步骤生成的。&lt;/p></description></item><item><title>javaBase</title><link>https://connorzhangyu.com/javabase/</link><pubDate>Sat, 04 Jan 2025 04:08:55 +0000</pubDate><guid>https://connorzhangyu.com/javabase/</guid><description>&lt;h1 id="java-基础">Java 基础&lt;/h1>
+&lt;/div>&lt;p>此时，在控制台可以看到，控制台打印了一条经过格式化之后的sql语句，并标明了这条语句是在哪个步骤生成的。&lt;/p></description></item><item><title>javaBase</title><link>https://isme.cz/javabase/</link><pubDate>Sat, 04 Jan 2025 04:08:55 +0000</pubDate><guid>https://isme.cz/javabase/</guid><description>&lt;h1 id="java-基础">Java 基础&lt;/h1>
 &lt;h2 id="jdk-和-jre-有什么区别">JDK 和 JRE 有什么区别？&lt;/h2>
 &lt;p>JDK：Java Development Kit 的简称，java 开发工具包，提供了 java 的开发环境和运行环境。&lt;br>
 JRE：Java Runtime Environment 的简称，java 运行环境，为 java 的运行提供了所需环境。&lt;br>
@@ -1904,7 +1904,7 @@ JRE：Java Runtime Environment 的简称，java 运行环境，为 java 的运�
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="n">System&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">out&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">x&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">equals&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">z&lt;/span>&lt;span class="p">));&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c1">// true&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>&lt;strong>代码解读：因为 x 和 y 指向的是同一个引用，所以 == 也是 true，而 new String()方法则重写开辟了内存空间，所以 == 结果为 false，而 equals 比较的一直是值，所以结果都为 true。&lt;/strong>&lt;/p></description></item><item><title>javaWeb</title><link>https://connorzhangyu.com/javaweb/</link><pubDate>Sat, 04 Jan 2025 04:08:55 +0000</pubDate><guid>https://connorzhangyu.com/javaweb/</guid><description>&lt;h1 id="java-web">Java Web&lt;/h1>
+&lt;/div>&lt;p>&lt;strong>代码解读：因为 x 和 y 指向的是同一个引用，所以 == 也是 true，而 new String()方法则重写开辟了内存空间，所以 == 结果为 false，而 equals 比较的一直是值，所以结果都为 true。&lt;/strong>&lt;/p></description></item><item><title>javaWeb</title><link>https://isme.cz/javaweb/</link><pubDate>Sat, 04 Jan 2025 04:08:55 +0000</pubDate><guid>https://isme.cz/javaweb/</guid><description>&lt;h1 id="java-web">Java Web&lt;/h1>
 &lt;h2 id="jsp-和-servlet-有什么区别">jsp 和 servlet 有什么区别？&lt;/h2>
 &lt;p>jsp经编译后就变成了Servlet.（JSP的本质就是Servlet，JVM只能识别java的类，不能识别JSP的代码，Web容器将JSP的代码编译成JVM能够识别的java类）&lt;br>
 jsp更擅长表现于页面显示，servlet更擅长于逻辑控制。&lt;br>
@@ -1938,7 +1938,7 @@ Cookie其实还可以用在一些方便用户的场景下，设想你某次登�
 假定用户关闭Cookie的情况下使用Session，其实现途径有以下几种：&lt;br>
 设置php.ini配置文件中的“session.use_trans_sid = 1”，或者编译时打开打开了“&amp;ndash;enable-trans-sid”选项，让PHP自动跨页传递Session ID。&lt;br>
 手动通过URL传值、隐藏表单传递Session ID。&lt;br>
-用文件、数据库等形式保存Session ID，在跨页过程中手动调用。&lt;/p></description></item><item><title>jvm</title><link>https://connorzhangyu.com/jvm/</link><pubDate>Sat, 04 Jan 2025 04:08:55 +0000</pubDate><guid>https://connorzhangyu.com/jvm/</guid><description>&lt;h1 id="jvm">JVM&lt;/h1>
+用文件、数据库等形式保存Session ID，在跨页过程中手动调用。&lt;/p></description></item><item><title>jvm</title><link>https://isme.cz/jvm/</link><pubDate>Sat, 04 Jan 2025 04:08:55 +0000</pubDate><guid>https://isme.cz/jvm/</guid><description>&lt;h1 id="jvm">JVM&lt;/h1>
 &lt;h2 id="说一下-jvm-的主要组成部分及其作用">说一下 jvm 的主要组成部分？及其作用？&lt;/h2>
 &lt;p>类加载器（ClassLoader）&lt;br>
 运行时数据区（Runtime Data Area）&lt;br>
@@ -1971,7 +1971,7 @@ Cookie其实还可以用在一些方便用户的场景下，设想你某次登�
 &lt;p>其他类加载器：&lt;br>
 扩展类加载器（Extension ClassLoader）：负责加载&amp;lt;java_home style=&amp;ldquo;box-sizing: border-box; -webkit-tap-highlight-color: transparent; text-size-adjust: none; -webkit-font-smoothing: antialiased; outline: 0px !important;&amp;quot;&amp;gt;\lib\ext目录或Java. ext. dirs系统变量指定的路径中的所有类库；&amp;lt;/java_home&amp;gt;&lt;br>
 应用程序类加载器（Application ClassLoader）。负责加载用户类路径（classpath）上的指定类库，我们可以直接使用这个类加载器。一般情况，如果我们没有自定义类加载器默认就是用这个加载器。&lt;br>
-双亲委派模型：如果一个类加载器收到了类加载的请求，它首先不会自己去加载这个类，而是把这个请求委派给父类加载器去完成，每一层的类加载器都是如此，这样所有的加载请求都会被传送到顶层的启动类加载器中，只有当父加载无法完成加载请求（它的搜索范围中没找到所需的类）时，子加载器才会尝试去加载类。&lt;/p></description></item><item><title>mq</title><link>https://connorzhangyu.com/mq/</link><pubDate>Sat, 04 Jan 2025 04:08:55 +0000</pubDate><guid>https://connorzhangyu.com/mq/</guid><description>&lt;h1 id="rabbitmq">RabbitMQ&lt;/h1>
+双亲委派模型：如果一个类加载器收到了类加载的请求，它首先不会自己去加载这个类，而是把这个请求委派给父类加载器去完成，每一层的类加载器都是如此，这样所有的加载请求都会被传送到顶层的启动类加载器中，只有当父加载无法完成加载请求（它的搜索范围中没找到所需的类）时，子加载器才会尝试去加载类。&lt;/p></description></item><item><title>mq</title><link>https://isme.cz/mq/</link><pubDate>Sat, 04 Jan 2025 04:08:55 +0000</pubDate><guid>https://isme.cz/mq/</guid><description>&lt;h1 id="rabbitmq">RabbitMQ&lt;/h1>
 &lt;h2 id="rabbitmq-的使用场景有哪些">rabbitmq 的使用场景有哪些？&lt;/h2>
 &lt;ol>
 &lt;li>跨系统的异步通信，所有需要异步交互的地方都可以使用消息队列。就像我们除了打电话（同步）以外，还需要发短信，发电子邮件（异步）的通讯方式。&lt;/li>
@@ -1999,7 +1999,7 @@ BindingKey（绑定键）：用于把交换器的消息绑定到队列上。&lt;
 &lt;p>首先客户端必须连接到 RabbitMQ 服务器才能发布和消费消息，客户端和 rabbit server 之间会创建一个 tcp 连接，一旦 tcp 打开并通过了认证（认证就是你发送给 rabbit 服务器的用户名和密码），你的客户端和 RabbitMQ 就创建了一条 amqp 信道（channel），信道是创建在“真实” tcp 上的虚拟连接，amqp 命令都是通过信道发送出去的，每个信道都会有一个唯一的 id，不论是发布消息，订阅队列都是通过这个信道完成的。&lt;/p>
 &lt;h2 id="rabbitmq-怎么保证消息的稳定性">rabbitmq 怎么保证消息的稳定性？&lt;/h2>
 &lt;p>提供了事务的功能。&lt;br>
-通过将 channel 设置为 confirm（确认）模式。&lt;/p></description></item><item><title>vue</title><link>https://connorzhangyu.com/vue/</link><pubDate>Sat, 04 Jan 2025 03:56:05 +0000</pubDate><guid>https://connorzhangyu.com/vue/</guid><description>&lt;p>按照官方文档的教程步骤来,大部分的代码Demo,都是通过脚手架创建的项目的基础上创建的,用的版本的Vue3,Typescript,组合式的写法&lt;/p>
+通过将 channel 设置为 confirm（确认）模式。&lt;/p></description></item><item><title>vue</title><link>https://isme.cz/vue/</link><pubDate>Sat, 04 Jan 2025 03:56:05 +0000</pubDate><guid>https://isme.cz/vue/</guid><description>&lt;p>按照官方文档的教程步骤来,大部分的代码Demo,都是通过脚手架创建的项目的基础上创建的,用的版本的Vue3,Typescript,组合式的写法&lt;/p>
 &lt;h1 id="基础">基础&lt;/h1>
 &lt;h2 id="创建一个应用">创建一个应用&lt;/h2>
 &lt;p>&lt;em>&lt;strong>多个应用实例&lt;/strong>&lt;/em>&lt;/p>
@@ -2099,7 +2099,7 @@ BindingKey（绑定键）：用于把交换器的消息绑定到队列上。&lt;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="模板语法">模板语法&lt;/h2>
-&lt;p>&lt;em>&lt;strong>文本插值&lt;/strong>&lt;/em>&lt;/p></description></item><item><title>Vue项目</title><link>https://connorzhangyu.com/vue%E9%A1%B9%E7%9B%AE/</link><pubDate>Sat, 04 Jan 2025 03:56:05 +0000</pubDate><guid>https://connorzhangyu.com/vue%E9%A1%B9%E7%9B%AE/</guid><description>&lt;h1 id="安装vue">安装Vue&lt;/h1>
+&lt;p>&lt;em>&lt;strong>文本插值&lt;/strong>&lt;/em>&lt;/p></description></item><item><title>Vue项目</title><link>https://isme.cz/vue%E9%A1%B9%E7%9B%AE/</link><pubDate>Sat, 04 Jan 2025 03:56:05 +0000</pubDate><guid>https://isme.cz/vue%E9%A1%B9%E7%9B%AE/</guid><description>&lt;h1 id="安装vue">安装Vue&lt;/h1>
 &lt;h2 id="局部安装">局部安装&lt;/h2>
 &lt;p>局部安装并使用vue-cli 4.x版本,和创建项目&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -2269,7 +2269,7 @@ BindingKey（绑定键）：用于把交换器的消息绑定到队列上。&lt;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>如果没有找到.babelirc文件,找找babel.config.js文件
-&lt;img src="https://image.runtimes.cc/202404051519062.png" alt="">&lt;/p></description></item><item><title>Element-UI</title><link>https://connorzhangyu.com/element-ui/</link><pubDate>Sat, 04 Jan 2025 03:56:03 +0000</pubDate><guid>https://connorzhangyu.com/element-ui/</guid><description>&lt;h1 id="表单验证">表单验证&lt;/h1>
+&lt;img src="https://image.runtimes.cc/202404051519062.png" alt="">&lt;/p></description></item><item><title>Element-UI</title><link>https://isme.cz/element-ui/</link><pubDate>Sat, 04 Jan 2025 03:56:03 +0000</pubDate><guid>https://isme.cz/element-ui/</guid><description>&lt;h1 id="表单验证">表单验证&lt;/h1>
 &lt;h2 id="简单版">简单版&lt;/h2>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -2721,7 +2721,7 @@ BindingKey（绑定键）：用于把交换器的消息绑定到队列上。&lt;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="自定义校验封装">自定义校验封装&lt;/h2>
-&lt;p>新建一个vaildate.js&lt;/p></description></item><item><title>Html</title><link>https://connorzhangyu.com/html/</link><pubDate>Sat, 04 Jan 2025 03:56:03 +0000</pubDate><guid>https://connorzhangyu.com/html/</guid><description>&lt;h1 id="html">HTML&lt;/h1>
+&lt;p>新建一个vaildate.js&lt;/p></description></item><item><title>Html</title><link>https://isme.cz/html/</link><pubDate>Sat, 04 Jan 2025 03:56:03 +0000</pubDate><guid>https://isme.cz/html/</guid><description>&lt;h1 id="html">HTML&lt;/h1>
 &lt;h3 id="标题标签">标题标签&lt;/h3>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -2814,7 +2814,7 @@ BindingKey（绑定键）：用于把交换器的消息绑定到队列上。&lt;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h3 id="span">span&lt;/h3>
-&lt;p>span所有的占一行&lt;/p></description></item><item><title>JavaScript</title><link>https://connorzhangyu.com/javascript/</link><pubDate>Sat, 04 Jan 2025 03:56:03 +0000</pubDate><guid>https://connorzhangyu.com/javascript/</guid><description>&lt;h1 id="javascript">JavaScript&lt;/h1>
+&lt;p>span所有的占一行&lt;/p></description></item><item><title>JavaScript</title><link>https://isme.cz/javascript/</link><pubDate>Sat, 04 Jan 2025 03:56:03 +0000</pubDate><guid>https://isme.cz/javascript/</guid><description>&lt;h1 id="javascript">JavaScript&lt;/h1>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
@@ -2908,7 +2908,7 @@ BindingKey（绑定键）：用于把交换器的消息绑定到队列上。&lt;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="函数">函数&lt;/h2>
-&lt;p>{% tabs JS函数, 1 %}&lt;/p></description></item><item><title>CSS</title><link>https://connorzhangyu.com/css/</link><pubDate>Sat, 04 Jan 2025 03:56:02 +0000</pubDate><guid>https://connorzhangyu.com/css/</guid><description>&lt;h1 id="css">CSS&lt;/h1>
+&lt;p>{% tabs JS函数, 1 %}&lt;/p></description></item><item><title>CSS</title><link>https://isme.cz/css/</link><pubDate>Sat, 04 Jan 2025 03:56:02 +0000</pubDate><guid>https://isme.cz/css/</guid><description>&lt;h1 id="css">CSS&lt;/h1>
 &lt;h2 id="选择器">选择器&lt;/h2>
 &lt;h3 id="基础选择器">基础选择器&lt;/h3>
 &lt;table>
@@ -3101,7 +3101,7 @@ BindingKey（绑定键）：用于把交换器的消息绑定到队列上。&lt;
 &lt;/ul>
 &lt;h3 id="focus伪类选择器">focus伪类选择器&lt;/h3>
 &lt;p>获取焦点的&lt;code>表单&lt;/code>选择器
-{% iframe &lt;a href="https://codepen.io/anthony2023/embed/jOdveJe?default-tab=html%2Cresult&amp;amp;editable=true&amp;amp;theme-id=light%25%7d">https://codepen.io/anthony2023/embed/jOdveJe?default-tab=html%2Cresult&amp;editable=true&amp;theme-id=light%}&lt;/a>&lt;/p></description></item><item><title>Mac</title><link>https://connorzhangyu.com/mac/</link><pubDate>Sat, 04 Jan 2025 03:56:02 +0000</pubDate><guid>https://connorzhangyu.com/mac/</guid><description>&lt;hr>
+{% iframe &lt;a href="https://codepen.io/anthony2023/embed/jOdveJe?default-tab=html%2Cresult&amp;amp;editable=true&amp;amp;theme-id=light%25%7d">https://codepen.io/anthony2023/embed/jOdveJe?default-tab=html%2Cresult&amp;editable=true&amp;theme-id=light%}&lt;/a>&lt;/p></description></item><item><title>Mac</title><link>https://isme.cz/mac/</link><pubDate>Sat, 04 Jan 2025 03:56:02 +0000</pubDate><guid>https://isme.cz/mac/</guid><description>&lt;hr>
 &lt;p>title: Mac
 tags:&lt;/p>
 &lt;ul>
@@ -3190,7 +3190,7 @@ updated: 2024-01-10 15:36:22&lt;/li>
 &lt;/div>
 &lt;/div>&lt;/li>
 &lt;li>
-&lt;p>刷新:&lt;code>sudo killall -HUP mDNSResponder;say DNS cache has been flushed&lt;/code>&lt;/p></description></item><item><title>nexus 3</title><link>https://connorzhangyu.com/nexus-3/</link><pubDate>Sat, 04 Jan 2025 03:56:02 +0000</pubDate><guid>https://connorzhangyu.com/nexus-3/</guid><description>&lt;hr>
+&lt;p>刷新:&lt;code>sudo killall -HUP mDNSResponder;say DNS cache has been flushed&lt;/code>&lt;/p></description></item><item><title>nexus 3</title><link>https://isme.cz/nexus-3/</link><pubDate>Sat, 04 Jan 2025 03:56:02 +0000</pubDate><guid>https://isme.cz/nexus-3/</guid><description>&lt;hr>
 &lt;p>title: nexus3
 tags:&lt;/p>
 &lt;ul>
@@ -3265,7 +3265,7 @@ updated: 2024-09-15 18:10:26&lt;/li>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">systemctl restart docker
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>登录&lt;/p></description></item><item><title>SpringBoot配置Gmail</title><link>https://connorzhangyu.com/springboot%E9%85%8D%E7%BD%AEgmail/</link><pubDate>Sat, 04 Jan 2025 03:56:02 +0000</pubDate><guid>https://connorzhangyu.com/springboot%E9%85%8D%E7%BD%AEgmail/</guid><description>&lt;hr>
+&lt;/div>&lt;p>登录&lt;/p></description></item><item><title>SpringBoot配置Gmail</title><link>https://isme.cz/springboot%E9%85%8D%E7%BD%AEgmail/</link><pubDate>Sat, 04 Jan 2025 03:56:02 +0000</pubDate><guid>https://isme.cz/springboot%E9%85%8D%E7%BD%AEgmail/</guid><description>&lt;hr>
 &lt;p>title: SpringBoot配置Gmail
 tags:&lt;/p>
 &lt;ul>
@@ -3338,7 +3338,7 @@ updated: 2024-03-02 18:52:48&lt;/li>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="na">spring.mail.properties.mail.transport.protocol&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">smtp&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>配置的代码&lt;/p></description></item><item><title>包网和SaaS：它们是同一回事吗？</title><link>https://connorzhangyu.com/%E5%8C%85%E7%BD%91%E5%92%8Csaas%E5%AE%83%E4%BB%AC%E6%98%AF%E5%90%8C%E4%B8%80%E5%9B%9E%E4%BA%8B%E5%90%97/</link><pubDate>Sat, 21 Dec 2024 01:47:03 +0000</pubDate><guid>https://connorzhangyu.com/%E5%8C%85%E7%BD%91%E5%92%8Csaas%E5%AE%83%E4%BB%AC%E6%98%AF%E5%90%8C%E4%B8%80%E5%9B%9E%E4%BA%8B%E5%90%97/</guid><description>&lt;h1 id="包网和saas它们是同一回事吗">&lt;strong>包网和SaaS：它们是同一回事吗？&lt;/strong>&lt;/h1>
+&lt;/div>&lt;p>配置的代码&lt;/p></description></item><item><title>包网和SaaS：它们是同一回事吗？</title><link>https://isme.cz/%E5%8C%85%E7%BD%91%E5%92%8Csaas%E5%AE%83%E4%BB%AC%E6%98%AF%E5%90%8C%E4%B8%80%E5%9B%9E%E4%BA%8B%E5%90%97/</link><pubDate>Sat, 21 Dec 2024 01:47:03 +0000</pubDate><guid>https://isme.cz/%E5%8C%85%E7%BD%91%E5%92%8Csaas%E5%AE%83%E4%BB%AC%E6%98%AF%E5%90%8C%E4%B8%80%E5%9B%9E%E4%BA%8B%E5%90%97/</guid><description>&lt;h1 id="包网和saas它们是同一回事吗">&lt;strong>包网和SaaS：它们是同一回事吗？&lt;/strong>&lt;/h1>
 &lt;p>在如今快速发展的数字化世界中，企业在选择技术解决方案时经常会听到两个热门词汇：&lt;strong>包网&lt;/strong>（White Label Solution）和 &lt;strong>SaaS&lt;/strong>（Software as a Service）。尽管它们在某些场景下可能有交集，但本质上是不同的。本文将深入探讨两者的定义、特点、适用场景以及它们的区别与联系，帮助企业更好地理解如何选择合适的解决方案。&lt;/p>
 &lt;hr>
 &lt;h2 id="1-什么是包网">&lt;strong>1. 什么是包网？&lt;/strong>&lt;/h2>
@@ -3419,7 +3419,7 @@ updated: 2024-03-02 18:52:48&lt;/li>
 &lt;/table>
 &lt;hr>
 &lt;h2 id="4-两者的结合saas包网">&lt;strong>4. 两者的结合：SaaS包网&lt;/strong>&lt;/h2>
-&lt;p>有趣的是，SaaS 和包网并非完全对立。在某些场景下，两者可以结合。例如，一家 SaaS 提供商可以开发一款高度可定制的软件，并将其作为“包网”产品授权给其他品牌使用。&lt;/p></description></item><item><title>Flutter</title><link>https://connorzhangyu.com/flutter/</link><pubDate>Sat, 27 Jul 2024 16:17:46 +0000</pubDate><guid>https://connorzhangyu.com/flutter/</guid><description>&lt;h1 id="安装">安装&lt;/h1>
+&lt;p>有趣的是，SaaS 和包网并非完全对立。在某些场景下，两者可以结合。例如，一家 SaaS 提供商可以开发一款高度可定制的软件，并将其作为“包网”产品授权给其他品牌使用。&lt;/p></description></item><item><title>Flutter</title><link>https://isme.cz/flutter/</link><pubDate>Sat, 27 Jul 2024 16:17:46 +0000</pubDate><guid>https://isme.cz/flutter/</guid><description>&lt;h1 id="安装">安装&lt;/h1>
 &lt;p>以&lt;code>Ma&lt;/code>为例,安装之后任何地方有问题,要执行flutter自带的命令,检查&lt;code>flutter doctor&lt;/code>&lt;/p>
 &lt;p>选择对应的版本,下载到本地就是一个压缩包,解压,就能看到flutter的源码,包含&lt;code>Dart&lt;/code>SDK&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202407271624215.png" alt="image-20240727162450510">&lt;/p>
@@ -3492,7 +3492,7 @@ updated: 2024-03-02 18:52:48&lt;/li>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;blockquote>
-&lt;p>参考:&lt;/p></description></item><item><title>Pinia</title><link>https://connorzhangyu.com/pinia/</link><pubDate>Sun, 07 Jul 2024 19:43:45 +0000</pubDate><guid>https://connorzhangyu.com/pinia/</guid><description>&lt;p>安装&lt;/p>
+&lt;p>参考:&lt;/p></description></item><item><title>Pinia</title><link>https://isme.cz/pinia/</link><pubDate>Sun, 07 Jul 2024 19:43:45 +0000</pubDate><guid>https://isme.cz/pinia/</guid><description>&lt;p>安装&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -3501,7 +3501,7 @@ updated: 2024-03-02 18:52:48&lt;/li>
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">npm install pinia
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>nexus3</title><link>https://connorzhangyu.com/nexus3/</link><pubDate>Tue, 12 Mar 2024 18:52:43 +0000</pubDate><guid>https://connorzhangyu.com/nexus3/</guid><description>&lt;h1 id="docker仓库">Docker仓库&lt;/h1>
+&lt;/div></description></item><item><title>nexus3</title><link>https://isme.cz/nexus3/</link><pubDate>Tue, 12 Mar 2024 18:52:43 +0000</pubDate><guid>https://isme.cz/nexus3/</guid><description>&lt;h1 id="docker仓库">Docker仓库&lt;/h1>
 &lt;table>
  &lt;thead>
  &lt;tr>
@@ -3621,7 +3621,7 @@ updated: 2024-03-02 18:52:48&lt;/li>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">docker push 54.255.206.44:9082/my-docker-host/nginx:latest
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>SpringCloud</title><link>https://connorzhangyu.com/springcloud/</link><pubDate>Sun, 03 Mar 2024 21:19:09 +0000</pubDate><guid>https://connorzhangyu.com/springcloud/</guid><description/></item><item><title>SpringBoot配置Gmail</title><link>https://connorzhangyu.com/springboot%E9%85%8D%E7%BD%AEgmail/</link><pubDate>Sat, 02 Mar 2024 18:52:43 +0000</pubDate><guid>https://connorzhangyu.com/springboot%E9%85%8D%E7%BD%AEgmail/</guid><description>&lt;p>&lt;img src="https://image.runtimes.cc/202404051400542.png" alt="image-20240302190257438">&lt;/p>
+&lt;/div></description></item><item><title>SpringCloud</title><link>https://isme.cz/springcloud/</link><pubDate>Sun, 03 Mar 2024 21:19:09 +0000</pubDate><guid>https://isme.cz/springcloud/</guid><description/></item><item><title>SpringBoot配置Gmail</title><link>https://isme.cz/springboot%E9%85%8D%E7%BD%AEgmail/</link><pubDate>Sat, 02 Mar 2024 18:52:43 +0000</pubDate><guid>https://isme.cz/springboot%E9%85%8D%E7%BD%AEgmail/</guid><description>&lt;p>&lt;img src="https://image.runtimes.cc/202404051400542.png" alt="image-20240302190257438">&lt;/p>
 &lt;p>申请应用程序验证码&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051400643.png" alt="image-20240302184916544">&lt;/p>
 &lt;p>配置二步验证&lt;/p>
@@ -4039,7 +4039,7 @@ updated: 2024-03-02 18:52:48&lt;/li>
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="n">redisTemplate&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">opsForValue&lt;/span>&lt;span class="p">().&lt;/span>&lt;span class="na">set&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">key&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">随机数字验证码&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">EXPIRATION_TIME_IN_MINUTES&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">TimeUnit&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">MINUTES&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>Vue后台系统</title><link>https://connorzhangyu.com/vue%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F/</link><pubDate>Mon, 26 Feb 2024 13:47:19 +0000</pubDate><guid>https://connorzhangyu.com/vue%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F/</guid><description>&lt;p>项目由 Vue3 + Pina + JavaScript + Ant Design Vue&lt;/p>
+&lt;/div></description></item><item><title>Vue后台系统</title><link>https://isme.cz/vue%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F/</link><pubDate>Mon, 26 Feb 2024 13:47:19 +0000</pubDate><guid>https://isme.cz/vue%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F/</guid><description>&lt;p>项目由 Vue3 + Pina + JavaScript + Ant Design Vue&lt;/p>
 &lt;h1 id="创建项目">创建项目&lt;/h1>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -4199,7 +4199,7 @@ updated: 2024-03-02 18:52:48&lt;/li>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h1 id="配置开发环境">配置开发环境&lt;/h1>
-&lt;p>编辑vite.config.js&lt;/p></description></item><item><title>Tron</title><link>https://connorzhangyu.com/tron/</link><pubDate>Wed, 20 Dec 2023 20:48:19 +0000</pubDate><guid>https://connorzhangyu.com/tron/</guid><description>&lt;blockquote>
+&lt;p>编辑vite.config.js&lt;/p></description></item><item><title>Tron</title><link>https://isme.cz/tron/</link><pubDate>Wed, 20 Dec 2023 20:48:19 +0000</pubDate><guid>https://isme.cz/tron/</guid><description>&lt;blockquote>
 &lt;p>&lt;a href="https://cn.developers.tron.network/reference/quickstart">波场官方trident-java文档&lt;/a>&lt;/p>
 &lt;p>&lt;a href="https://blog.csdn.net/u013903024/article/details/121263515">m1 mac Android protobuf 遇到的问题&lt;/a>&lt;/p>
 &lt;p>&lt;a href="https://tronprotocol.github.io/documentation-zh/api/http/#walletcreateaccount">tron中文文档&lt;/a>&lt;/p>
@@ -4310,7 +4310,7 @@ updated: 2024-03-02 18:52:48&lt;/li>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;/dependency&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>查询余额的代码&lt;/p></description></item><item><title>Netty</title><link>https://connorzhangyu.com/netty/</link><pubDate>Sun, 10 Dec 2023 19:03:58 +0000</pubDate><guid>https://connorzhangyu.com/netty/</guid><description>&lt;p>Server&lt;/p>
+&lt;/div>&lt;p>查询余额的代码&lt;/p></description></item><item><title>Netty</title><link>https://isme.cz/netty/</link><pubDate>Sun, 10 Dec 2023 19:03:58 +0000</pubDate><guid>https://isme.cz/netty/</guid><description>&lt;p>Server&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
@@ -4441,7 +4441,7 @@ updated: 2024-03-02 18:52:48&lt;/li>
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>NettyServerHandlerInitializer&lt;/p></description></item><item><title>Kubernetes</title><link>https://connorzhangyu.com/kubernetes/</link><pubDate>Tue, 07 Nov 2023 11:21:07 +0000</pubDate><guid>https://connorzhangyu.com/kubernetes/</guid><description>&lt;h2 id="主节点上操作">主节点上操作&lt;/h2>
+&lt;/div>&lt;p>NettyServerHandlerInitializer&lt;/p></description></item><item><title>Kubernetes</title><link>https://isme.cz/kubernetes/</link><pubDate>Tue, 07 Nov 2023 11:21:07 +0000</pubDate><guid>https://isme.cz/kubernetes/</guid><description>&lt;h2 id="主节点上操作">主节点上操作&lt;/h2>
 &lt;p>定义主机名字&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -4505,7 +4505,7 @@ updated: 2024-03-02 18:52:48&lt;/li>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo docker pull registry.k8s.io/coredns/coredns:v1.10.1
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>创建master节点&lt;/p></description></item><item><title>JumpServer</title><link>https://connorzhangyu.com/jumpserver/</link><pubDate>Wed, 25 Oct 2023 09:30:33 +0000</pubDate><guid>https://connorzhangyu.com/jumpserver/</guid><description>&lt;h1 id="笔记">笔记&lt;/h1>
+&lt;/div>&lt;p>创建master节点&lt;/p></description></item><item><title>JumpServer</title><link>https://isme.cz/jumpserver/</link><pubDate>Wed, 25 Oct 2023 09:30:33 +0000</pubDate><guid>https://isme.cz/jumpserver/</guid><description>&lt;h1 id="笔记">笔记&lt;/h1>
 &lt;h2 id="安装jumpserver">安装JumpServer&lt;/h2>
 &lt;p>&lt;a href="https://community.fit2cloud.com/#/products/jumpserver/getstarted">官网一键安装&lt;/a>&lt;/p>
 &lt;h2 id="修改配置远程访问的端口">修改配置远程访问的端口&lt;/h2>
@@ -4561,7 +4561,7 @@ updated: 2024-03-02 18:52:48&lt;/li>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="nginx反向代理">Nginx反向代理&lt;/h2>
-&lt;p>&lt;a href="../9355/#%E4%BB%A3%E7%90%86JumpServer">Nginx反向代理&lt;/a>&lt;/p></description></item><item><title>代码片段</title><link>https://connorzhangyu.com/%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/</link><pubDate>Sun, 24 Sep 2023 21:19:38 +0000</pubDate><guid>https://connorzhangyu.com/%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/</guid><description>&lt;h1 id="谷歌验证码">谷歌验证码&lt;/h1>
+&lt;p>&lt;a href="../9355/#%E4%BB%A3%E7%90%86JumpServer">Nginx反向代理&lt;/a>&lt;/p></description></item><item><title>代码片段</title><link>https://isme.cz/%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/</link><pubDate>Sun, 24 Sep 2023 21:19:38 +0000</pubDate><guid>https://isme.cz/%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/</guid><description>&lt;h1 id="谷歌验证码">谷歌验证码&lt;/h1>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -4908,7 +4908,7 @@ updated: 2024-03-02 18:52:48&lt;/li>
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>Spring</title><link>https://connorzhangyu.com/spring/</link><pubDate>Fri, 25 Aug 2023 14:58:26 +0000</pubDate><guid>https://connorzhangyu.com/spring/</guid><description>&lt;h1 id="springmvc">SpringMVC&lt;/h1>
+&lt;/div></description></item><item><title>Spring</title><link>https://isme.cz/spring/</link><pubDate>Fri, 25 Aug 2023 14:58:26 +0000</pubDate><guid>https://isme.cz/spring/</guid><description>&lt;h1 id="springmvc">SpringMVC&lt;/h1>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051458028.png" alt="">&lt;/p>
 &lt;p>总结：&lt;/p>
 &lt;ol>
@@ -5098,7 +5098,7 @@ updated: 2024-03-02 18:52:48&lt;/li>
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">	&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>总体流程:&lt;/p></description></item><item><title>面试记录</title><link>https://connorzhangyu.com/%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/</link><pubDate>Tue, 01 Aug 2023 20:54:00 +0000</pubDate><guid>https://connorzhangyu.com/%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/</guid><description>&lt;p>{% timeline 至今 ,color %}&lt;/p>
+&lt;/div>&lt;p>总体流程:&lt;/p></description></item><item><title>面试记录</title><link>https://isme.cz/%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/</link><pubDate>Tue, 01 Aug 2023 20:54:00 +0000</pubDate><guid>https://isme.cz/%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/</guid><description>&lt;p>{% timeline 至今 ,color %}&lt;/p>
 &lt;!-- timeline 2023-08-01 yb -->
 &lt;ol>
 &lt;li>mysql 主从复制异常怎么办&lt;/li>
@@ -5114,7 +5114,7 @@ updated: 2024-03-02 18:52:48&lt;/li>
 &lt;li>Spring事务传播&lt;/li>
 &lt;/ol>
 &lt;!-- endtimeline -->
-&lt;p>{% endtimeline %}&lt;/p></description></item><item><title>Waline部署</title><link>https://connorzhangyu.com/waline%E9%83%A8%E7%BD%B2/</link><pubDate>Tue, 25 Jul 2023 00:05:46 +0000</pubDate><guid>https://connorzhangyu.com/waline%E9%83%A8%E7%BD%B2/</guid><description>&lt;p>查看Waline文档,并点击&lt;code>Deploy&lt;/code>,文档上有大概步骤,也可以参考,要使用免费的数据库,我就选择&lt;code>MongoDB&lt;/code>,可以免费申请&lt;/p>
+&lt;p>{% endtimeline %}&lt;/p></description></item><item><title>Waline部署</title><link>https://isme.cz/waline%E9%83%A8%E7%BD%B2/</link><pubDate>Tue, 25 Jul 2023 00:05:46 +0000</pubDate><guid>https://isme.cz/waline%E9%83%A8%E7%BD%B2/</guid><description>&lt;p>查看Waline文档,并点击&lt;code>Deploy&lt;/code>,文档上有大概步骤,也可以参考,要使用免费的数据库,我就选择&lt;code>MongoDB&lt;/code>,可以免费申请&lt;/p>
 &lt;p>&lt;a href="https://waline.js.org/guide/deploy/vercel.html">Waline-Vercel部署&lt;/a>&lt;/p>
 &lt;p>部署Waline到Vercel
 &lt;img src="https://image.runtimes.cc/202404051403234.png" alt="image-20230724225259528">&lt;/p>
@@ -5152,7 +5152,7 @@ updated: 2024-03-02 18:52:48&lt;/li>
 &lt;p>环境变量配置好之后,重新部署下就行了&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051405198.png" alt="image-20230725001724373">&lt;/p>
 &lt;p>评论地址是:&lt;code>vercel分配的域名&lt;/code>&lt;/p>
-&lt;p>后台系统是:&lt;code>vercel分配的域名/ui&lt;/code>&lt;/p></description></item><item><title>Waline部署</title><link>https://connorzhangyu.com/waline%E9%83%A8%E7%BD%B2/</link><pubDate>Tue, 25 Jul 2023 00:05:46 +0000</pubDate><guid>https://connorzhangyu.com/waline%E9%83%A8%E7%BD%B2/</guid><description>&lt;p>查看Waline文档,并点击&lt;code>Deploy&lt;/code>,文档上有大概步骤,也可以参考,要使用免费的数据库,我就选择&lt;code>MongoDB&lt;/code>,可以免费申请&lt;/p>
+&lt;p>后台系统是:&lt;code>vercel分配的域名/ui&lt;/code>&lt;/p></description></item><item><title>Waline部署</title><link>https://isme.cz/waline%E9%83%A8%E7%BD%B2/</link><pubDate>Tue, 25 Jul 2023 00:05:46 +0000</pubDate><guid>https://isme.cz/waline%E9%83%A8%E7%BD%B2/</guid><description>&lt;p>查看Waline文档,并点击&lt;code>Deploy&lt;/code>,文档上有大概步骤,也可以参考,要使用免费的数据库,我就选择&lt;code>MongoDB&lt;/code>,可以免费申请&lt;/p>
 &lt;p>&lt;a href="https://waline.js.org/guide/deploy/vercel.html">Waline-Vercel部署&lt;/a>&lt;/p>
 &lt;p>部署Waline到Vercel
 &lt;img src="https://image.runtimes.cc/202404051403234.png" alt="image-20230724225259528">&lt;/p>
@@ -5190,7 +5190,7 @@ updated: 2024-03-02 18:52:48&lt;/li>
 &lt;p>环境变量配置好之后,重新部署下就行了&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051405198.png" alt="image-20230725001724373">&lt;/p>
 &lt;p>评论地址是:&lt;code>vercel分配的域名&lt;/code>&lt;/p>
-&lt;p>后台系统是:&lt;code>vercel分配的域名/ui&lt;/code>&lt;/p></description></item><item><title>SpringBoot</title><link>https://connorzhangyu.com/springboot/</link><pubDate>Sat, 15 Jul 2023 14:58:26 +0000</pubDate><guid>https://connorzhangyu.com/springboot/</guid><description>&lt;h1 id="定时器">定时器&lt;/h1>
+&lt;p>后台系统是:&lt;code>vercel分配的域名/ui&lt;/code>&lt;/p></description></item><item><title>SpringBoot</title><link>https://isme.cz/springboot/</link><pubDate>Sat, 15 Jul 2023 14:58:26 +0000</pubDate><guid>https://isme.cz/springboot/</guid><description>&lt;h1 id="定时器">定时器&lt;/h1>
 &lt;p>定时器的数值放到配置文件,如果使用&lt;code>@Scheduled(fixedDelay = 类中的变量)&lt;/code>这种方式试过不行&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -5257,7 +5257,7 @@ updated: 2024-03-02 18:52:48&lt;/li>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">JAVA_OPT&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">JAVA_OPT&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2"> -server -Xms512m -Xmx512m&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>启动&lt;/p></description></item><item><title>Telegram Bot</title><link>https://connorzhangyu.com/telegram-bot/</link><pubDate>Sat, 08 Jul 2023 15:09:14 +0000</pubDate><guid>https://connorzhangyu.com/telegram-bot/</guid><description>&lt;h1 id="机器人设置">机器人设置&lt;/h1>
+&lt;/div>&lt;p>启动&lt;/p></description></item><item><title>Telegram Bot</title><link>https://isme.cz/telegram-bot/</link><pubDate>Sat, 08 Jul 2023 15:09:14 +0000</pubDate><guid>https://isme.cz/telegram-bot/</guid><description>&lt;h1 id="机器人设置">机器人设置&lt;/h1>
 &lt;h2 id="消息分类">消息分类&lt;/h2>
 &lt;p>消息分两种:&lt;/p>
 &lt;ol>
@@ -5265,7 +5265,7 @@ updated: 2024-03-02 18:52:48&lt;/li>
 &lt;li>命令消息(以&lt;code>'/'&lt;/code>开头的文本,比如 &lt;code>/test&lt;/code> )&lt;/li>
 &lt;/ol>
 &lt;p>默认在群里只能收到命令消息,和机器人私聊可以接收到全部的消息,如果想让机器人在群里也能接收到全部的消息,操作如下
-访问&lt;code>BotFather&lt;/code>,输入&lt;code>/setprivacy&lt;/code>,选择自己的机器人,选择&lt;code>DISABLED&lt;/code>,就可以了&lt;/p></description></item><item><title>Rime</title><link>https://connorzhangyu.com/rime/</link><pubDate>Sun, 02 Jul 2023 22:37:34 +0000</pubDate><guid>https://connorzhangyu.com/rime/</guid><description>&lt;h1 id="基本概念">基本概念&lt;/h1>
+访问&lt;code>BotFather&lt;/code>,输入&lt;code>/setprivacy&lt;/code>,选择自己的机器人,选择&lt;code>DISABLED&lt;/code>,就可以了&lt;/p></description></item><item><title>Rime</title><link>https://isme.cz/rime/</link><pubDate>Sun, 02 Jul 2023 22:37:34 +0000</pubDate><guid>https://isme.cz/rime/</guid><description>&lt;h1 id="基本概念">基本概念&lt;/h1>
 &lt;p>Rime 是一个输入法框架，并不是狭义上的“输入法”，而是将各种输入法的共性抽象出来的算法框架。通过不同的配置文件，Rime 可以支持多种输入方案（Schema），这个所谓的输入方案就是我们狭义上的“输入法”。比如朙月拼音输入法就是 Rime 自带的一种输入方案，另外还有比如四叶草输入法（https://github.com/fkxxyz/rime-cloverpinyin）等等。鼠须管、小狼毫、中州韵分别是 Rime 在不同操作系统下的实现程序。Rime 的配置、词库文件均使用文本方式，便于修改。所有文件均要求以 UTF-8 编码。在配置文件中，以 # 号开头表示注释。&lt;/p>
 &lt;h1 id="配置文件所在的目录">配置文件所在的目录&lt;/h1>
 &lt;p>Rime 有两个重要的配置目录：&lt;/p>
@@ -5301,7 +5301,7 @@ updated: 2024-03-02 18:52:48&lt;/li>
 &lt;p>&lt;code>sync&lt;/code> 目录是用来做用户数据同步的。每个 &lt;code>sync/installation_id&lt;/code> 目录对应不同电脑上的 Rime 程序的用户数据。（如果你由多台电脑安装了 Rime，并设置了同步。）按照作者的说法，Rime 的用户词典同步原理是：&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>手工从其他电脑复制或者从网盘自动同步 ⇒ &lt;code>sync/*/*.userdb.txt&lt;/code> ⇒ 合并到本地 &lt;code>*.userdb&lt;/code> ⇒ 导出到 &lt;code>sync/&amp;lt;installation_id&amp;gt;/*.userdb.txt&lt;/code>。&lt;/p></description></item><item><title>WordPress</title><link>https://connorzhangyu.com/wordpress/</link><pubDate>Fri, 16 Jun 2023 13:39:21 +0000</pubDate><guid>https://connorzhangyu.com/wordpress/</guid><description>&lt;h1 id="搭建">搭建&lt;/h1>
+&lt;p>手工从其他电脑复制或者从网盘自动同步 ⇒ &lt;code>sync/*/*.userdb.txt&lt;/code> ⇒ 合并到本地 &lt;code>*.userdb&lt;/code> ⇒ 导出到 &lt;code>sync/&amp;lt;installation_id&amp;gt;/*.userdb.txt&lt;/code>。&lt;/p></description></item><item><title>WordPress</title><link>https://isme.cz/wordpress/</link><pubDate>Fri, 16 Jun 2023 13:39:21 +0000</pubDate><guid>https://isme.cz/wordpress/</guid><description>&lt;h1 id="搭建">搭建&lt;/h1>
 &lt;p>使用阿里云,或者腾讯等轻量云服务器,一键搭建&lt;/p>
 &lt;h1 id="教程">教程&lt;/h1>
 &lt;h2 id="wordpress地址和站点地址的含义和区别">WordPress地址和站点地址的含义和区别&lt;/h2>
@@ -5353,7 +5353,7 @@ updated: 2024-03-02 18:52:48&lt;/li>
  &lt;td style="text-align: left">Yoast SEO&lt;/td>
  &lt;/tr>
  &lt;/tbody>
-&lt;/table></description></item><item><title>Hexo</title><link>https://connorzhangyu.com/hexo/</link><pubDate>Sun, 04 Dec 2022 01:26:00 +0000</pubDate><guid>https://connorzhangyu.com/hexo/</guid><description>&lt;h1 id="内链">内链&lt;/h1>
+&lt;/table></description></item><item><title>Hexo</title><link>https://isme.cz/hexo/</link><pubDate>Sun, 04 Dec 2022 01:26:00 +0000</pubDate><guid>https://isme.cz/hexo/</guid><description>&lt;h1 id="内链">内链&lt;/h1>
 &lt;h2 id="内链图片">内链图片&lt;/h2>
 &lt;h3 id="相对路径">相对路径&lt;/h3>
 &lt;p>在&lt;code>source/&lt;/code>下创建一个图片的目录,比如起名叫&lt;code>img&lt;/code>的文件夹
@@ -5389,7 +5389,7 @@ updated: 2024-03-02 18:52:48&lt;/li>
 &lt;li>&lt;code>../&lt;/code> 相对路径,不是md文件的相对路径,是生成的public文件夹你的文章和内链文章的相对路径&lt;/li>
 &lt;li>310 是指&lt;code>abbrlink: 310&lt;/code>,如果没有就使用标题&lt;/li>
 &lt;li>&lt;code>#CloudFront加速Vercel&lt;/code> 是指 310这篇文章的&lt;code>#CloudFront加速Vercel&lt;/code>这个标题,也可以不用写,如果写了,就会自动跳到页面的这个锚点&lt;/li>
-&lt;/ul></description></item><item><title>博客修改记录</title><link>https://connorzhangyu.com/%E5%8D%9A%E5%AE%A2%E4%BF%AE%E6%94%B9%E8%AE%B0%E5%BD%95/</link><pubDate>Sat, 26 Nov 2022 18:05:21 +0000</pubDate><guid>https://connorzhangyu.com/%E5%8D%9A%E5%AE%A2%E4%BF%AE%E6%94%B9%E8%AE%B0%E5%BD%95/</guid><description>&lt;p>{% timeline 至今 ,color %}&lt;/p>
+&lt;/ul></description></item><item><title>博客修改记录</title><link>https://isme.cz/%E5%8D%9A%E5%AE%A2%E4%BF%AE%E6%94%B9%E8%AE%B0%E5%BD%95/</link><pubDate>Sat, 26 Nov 2022 18:05:21 +0000</pubDate><guid>https://isme.cz/%E5%8D%9A%E5%AE%A2%E4%BF%AE%E6%94%B9%E8%AE%B0%E5%BD%95/</guid><description>&lt;p>{% timeline 至今 ,color %}&lt;/p>
 &lt;!-- timeline 2025-05-09 -->
 &lt;p>把_posts_目录下的&lt;code>something/index.md(博客更新的时间)&lt;/code>和&lt;code>interview/index.md(面试经历)&lt;/code>改成文章&lt;/p>
 &lt;!-- endtimeline -->
@@ -5413,7 +5413,7 @@ Dynaot买的域名, 指定 Cloudflar 的NameServer
 &lt;p>迁移完成,迁移过程中,笔记有丢失的&lt;/p>
 &lt;!-- endtimeline -->
 &lt;!-- timeline 2022-11-19 -->
-&lt;p>把笔记初步迁移到博客上来&lt;/p></description></item><item><title>Mysql</title><link>https://connorzhangyu.com/mysql/</link><pubDate>Fri, 25 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/mysql/</guid><description>&lt;h1 id="常见问题">常见问题&lt;/h1>
+&lt;p>把笔记初步迁移到博客上来&lt;/p></description></item><item><title>Mysql</title><link>https://isme.cz/mysql/</link><pubDate>Fri, 25 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/mysql/</guid><description>&lt;h1 id="常见问题">常见问题&lt;/h1>
 &lt;h2 id="字符集问题">字符集问题&lt;/h2>
 &lt;p>修改mysql的数据陆慕下的my.ini的配置文件(Windows系统)&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -5519,7 +5519,7 @@ Dynaot买的域名, 指定 Cloudflar 的NameServer
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="存过报错">存过报错&lt;/h2>
-&lt;p>报错信息:&lt;/p></description></item><item><title>Linux</title><link>https://connorzhangyu.com/linux/</link><pubDate>Tue, 22 Nov 2022 10:53:07 +0000</pubDate><guid>https://connorzhangyu.com/linux/</guid><description>&lt;h1 id="系统命令">系统命令&lt;/h1>
+&lt;p>报错信息:&lt;/p></description></item><item><title>Linux</title><link>https://isme.cz/linux/</link><pubDate>Tue, 22 Nov 2022 10:53:07 +0000</pubDate><guid>https://isme.cz/linux/</guid><description>&lt;h1 id="系统命令">系统命令&lt;/h1>
 &lt;h2 id="解压缩">解压缩&lt;/h2>
 &lt;p>demo(文件夹)&lt;/p>
 &lt;p>|&amp;mdash;&amp;mdash;|1.txt(文件)&lt;/p>
@@ -5663,10 +5663,10 @@ Dynaot买的域名, 指定 Cloudflar 的NameServer
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="sudo免密">sudo免密&lt;/h2>
-&lt;p>&lt;code>vim /etc/sudoers&lt;/code>&lt;/p></description></item><item><title>Aliyun</title><link>https://connorzhangyu.com/aliyun/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/aliyun/</guid><description>&lt;h1 id="服务器硬盘扩容">服务器硬盘扩容&lt;/h1>
+&lt;p>&lt;code>vim /etc/sudoers&lt;/code>&lt;/p></description></item><item><title>Aliyun</title><link>https://isme.cz/aliyun/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/aliyun/</guid><description>&lt;h1 id="服务器硬盘扩容">服务器硬盘扩容&lt;/h1>
 &lt;p>&lt;a href="https://help.aliyun.com/document_detail/113316.html#title-fmv-9g2-lyb">在线硬盘扩容&lt;/a>&lt;/p>
 &lt;h1 id="阿里云ossaws-cloudfront">阿里云OSS+AWS Cloudfront&lt;/h1>
-&lt;p>&lt;a href="../310/#CloudFront%E5%8A%A0%E9%80%9FVercel">CloudFront加速Vercel&lt;/a>&lt;/p></description></item><item><title>AWS</title><link>https://connorzhangyu.com/aws/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/aws/</guid><description>&lt;h1 id="aws基本教程">AWS基本教程&lt;/h1>
+&lt;p>&lt;a href="../310/#CloudFront%E5%8A%A0%E9%80%9FVercel">CloudFront加速Vercel&lt;/a>&lt;/p></description></item><item><title>AWS</title><link>https://isme.cz/aws/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/aws/</guid><description>&lt;h1 id="aws基本教程">AWS基本教程&lt;/h1>
 &lt;p>场景是:在把22端口关闭了,无法再连上服务器的情况&lt;/p>
 &lt;p>解决办法:关闭服务器,点击&lt;code>操作&lt;/code>-&amp;gt;&lt;code>实例设置&lt;/code>-&amp;gt;&lt;code>编辑用户数据&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -5824,7 +5824,7 @@ Dynaot买的域名, 指定 Cloudflar 的NameServer
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="s3桶策略">S3桶策略&lt;/h2>
-&lt;p>公开访问桶策略&lt;/p></description></item><item><title>C++</title><link>https://connorzhangyu.com/c-/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/c-/</guid><description>&lt;h1 id="基础">基础&lt;/h1>
+&lt;p>公开访问桶策略&lt;/p></description></item><item><title>C++</title><link>https://isme.cz/c-/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/c-/</guid><description>&lt;h1 id="基础">基础&lt;/h1>
 &lt;h1 id="注释">注释&lt;/h1>
 &lt;p>&lt;strong>作用&lt;/strong>：在代码中加一些说明和解释，方便自己或其他程序员程序员阅读代码&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -5883,7 +5883,7 @@ Dynaot买的域名, 指定 Cloudflar 的NameServer
 &lt;/div>
 &lt;/div>&lt;p>注意：C++在创建变量时，&lt;code>必须给变量一个初始值&lt;/code>，否则会报错&lt;/p>
 &lt;h1 id="常量">常量&lt;/h1>
-&lt;p>&lt;strong>作用&lt;/strong>：用于记录程序中不可更改的数据&lt;/p></description></item><item><title>Cloudflare</title><link>https://connorzhangyu.com/cloudflare/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/cloudflare/</guid><description>&lt;h1 id="关闭ipv6">关闭IPV6&lt;/h1>
+&lt;p>&lt;strong>作用&lt;/strong>：用于记录程序中不可更改的数据&lt;/p></description></item><item><title>Cloudflare</title><link>https://isme.cz/cloudflare/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/cloudflare/</guid><description>&lt;h1 id="关闭ipv6">关闭IPV6&lt;/h1>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051517919.png" alt="">&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -5904,7 +5904,7 @@ Dynaot买的域名, 指定 Cloudflar 的NameServer
 &lt;/div>&lt;p>URL上的地址:
 &lt;img src="https://image.runtimes.cc/202404051411183.png" alt="">&lt;/p>
 &lt;p>X-Auth-Key:
-&lt;img src="https://image.runtimes.cc/202404051411721.png" alt="">&lt;/p></description></item><item><title>CSS</title><link>https://connorzhangyu.com/css/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/css/</guid><description>&lt;h1 id="css">CSS&lt;/h1>
+&lt;img src="https://image.runtimes.cc/202404051411721.png" alt="">&lt;/p></description></item><item><title>CSS</title><link>https://isme.cz/css/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/css/</guid><description>&lt;h1 id="css">CSS&lt;/h1>
 &lt;h2 id="选择器">选择器&lt;/h2>
 &lt;h3 id="基础选择器">基础选择器&lt;/h3>
 &lt;table>
@@ -5987,7 +5987,7 @@ Dynaot买的域名, 指定 Cloudflar 的NameServer
 &lt;/ul>
 &lt;h3 id="外边距">外边距&lt;/h3>
 &lt;p>margin的语法跟padding用法一样
-{% iframe &lt;a href="https://codepen.io/anthony2023/embed/PoVyWYO?default-tab=html%2Cresult%25%7d">https://codepen.io/anthony2023/embed/PoVyWYO?default-tab=html%2Cresult%}&lt;/a>&lt;/p></description></item><item><title>DataGrip</title><link>https://connorzhangyu.com/datagrip/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/datagrip/</guid><description>&lt;h1 id="查看ddl和复制为insert语句">查看ddl和复制为insert语句&lt;/h1>
+{% iframe &lt;a href="https://codepen.io/anthony2023/embed/PoVyWYO?default-tab=html%2Cresult%25%7d">https://codepen.io/anthony2023/embed/PoVyWYO?default-tab=html%2Cresult%}&lt;/a>&lt;/p></description></item><item><title>DataGrip</title><link>https://isme.cz/datagrip/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/datagrip/</guid><description>&lt;h1 id="查看ddl和复制为insert语句">查看ddl和复制为insert语句&lt;/h1>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051411320.png" alt="">&lt;/p>
 &lt;h1 id="显示">显示&lt;/h1>
 &lt;h2 id="设置数据库颜色">设置数据库颜色&lt;/h2>
@@ -6049,7 +6049,7 @@ Dynaot买的域名, 指定 Cloudflar 的NameServer
 &lt;p>要在库名上点右键&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051414735.png" alt="image-20231201154603739">&lt;/p>
 &lt;p>这个功能类似于&lt;/p>
-&lt;img src="https://image.runtimes.cc/202404051414049.png" alt="image-20231201154745846" style="zoom:50%;" /></description></item><item><title>Docker</title><link>https://connorzhangyu.com/docker/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/docker/</guid><description>&lt;h1 id="docker安装">docker安装&lt;/h1>
+&lt;img src="https://image.runtimes.cc/202404051414049.png" alt="image-20231201154745846" style="zoom:50%;" /></description></item><item><title>Docker</title><link>https://isme.cz/docker/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/docker/</guid><description>&lt;h1 id="docker安装">docker安装&lt;/h1>
 &lt;p>{% tabs docker %}&lt;/p>
 &lt;!-- tab Centos-->
 &lt;div class="highlight">&lt;div class="chroma">
@@ -6103,7 +6103,7 @@ Dynaot买的域名, 指定 Cloudflar 的NameServer
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;!-- endtab -->
-&lt;p>{% endtabs %}&lt;/p></description></item><item><title>ElasticSearch</title><link>https://connorzhangyu.com/elasticsearch/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/elasticsearch/</guid><description>&lt;h1 id="手动安装7x">手动安装7.x&lt;/h1>
+&lt;p>{% endtabs %}&lt;/p></description></item><item><title>ElasticSearch</title><link>https://isme.cz/elasticsearch/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/elasticsearch/</guid><description>&lt;h1 id="手动安装7x">手动安装7.x&lt;/h1>
 &lt;h2 id="手动安装单机elasticsearch7x">手动安装单机ElasticSearch7.x&lt;/h2>
 &lt;pre tabindex="0">&lt;code># 下载tar包,(6.6.2)
 wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.6.2.tar.gz
@@ -6139,7 +6139,7 @@ bin/elasticsearch -d #后台启动
 &lt;li>安装分词器下载解压缩的哦elasticsearch的plugin目录下IK分词器&lt;a href="https://github.com/medcl/elasticsearch-analysis-ik/releases/tag/v6.6.2">https://github.com/medcl/elasticsearch-analysis-ik/releases/tag/v6.6.2&lt;/a>&lt;/li>
 &lt;/ol>
 &lt;pre tabindex="0">&lt;code>POST /_analyze { &amp;#34;analyzer&amp;#34;: &amp;#34;ik_smart&amp;#34;, &amp;#34;text&amp;#34;: &amp;#34; 程序员 }
-&lt;/code>&lt;/pre>&lt;p>拼音分词器&lt;a href="https://github.com/medcl/elasticsearch-analysis-pinyin/releases/tag/v6.6.2">https://github.com/medcl/elasticsearch-analysis-pinyin/releases/tag/v6.6.2&lt;/a>&lt;/p></description></item><item><title>Element-UI</title><link>https://connorzhangyu.com/element-ui/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/element-ui/</guid><description>&lt;h1 id="表单验证">表单验证&lt;/h1>
+&lt;/code>&lt;/pre>&lt;p>拼音分词器&lt;a href="https://github.com/medcl/elasticsearch-analysis-pinyin/releases/tag/v6.6.2">https://github.com/medcl/elasticsearch-analysis-pinyin/releases/tag/v6.6.2&lt;/a>&lt;/p></description></item><item><title>Element-UI</title><link>https://isme.cz/element-ui/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/element-ui/</guid><description>&lt;h1 id="表单验证">表单验证&lt;/h1>
 &lt;h2 id="简单版">简单版&lt;/h2>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -6591,7 +6591,7 @@ bin/elasticsearch -d #后台启动
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="自定义校验封装">自定义校验封装&lt;/h2>
-&lt;p>新建一个vaildate.js&lt;/p></description></item><item><title>Excel</title><link>https://connorzhangyu.com/excel/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/excel/</guid><description>&lt;h1 id="行和列">行和列&lt;/h1>
+&lt;p>新建一个vaildate.js&lt;/p></description></item><item><title>Excel</title><link>https://isme.cz/excel/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/excel/</guid><description>&lt;h1 id="行和列">行和列&lt;/h1>
 &lt;h2 id="隐藏或显示行和列">隐藏或显示行和列&lt;/h2>
 &lt;p>在电子表格中隐藏或取消隐藏列，以仅显示需要查看或打印的数据&lt;/p>
 &lt;blockquote>
@@ -6617,7 +6617,7 @@ bin/elasticsearch -d #后台启动
 &lt;img src="https://image.runtimes.cc/202404051416110.png" alt="">&lt;/p>
 &lt;p>📌 这样设置之后,比如在单元格里值设置的是 2021-01-02
 实际上显现的会是 2021年1月2日 星期几&lt;/p>
-&lt;p>✅ 参考:&lt;a href="https://support.microsoft.com/zh-cn/office/%E6%8C%89%E6%83%B3%E8%A6%81%E7%9A%84%E6%96%B9%E5%BC%8F%E8%AE%BE%E7%BD%AE%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F-8e10019e-d5d8-47a1-ba95-db95123d273e">微软官方文档&lt;/a>&lt;/p></description></item><item><title>Flink</title><link>https://connorzhangyu.com/flink/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/flink/</guid><description>&lt;h1 id="flink">Flink&lt;/h1>
+&lt;p>✅ 参考:&lt;a href="https://support.microsoft.com/zh-cn/office/%E6%8C%89%E6%83%B3%E8%A6%81%E7%9A%84%E6%96%B9%E5%BC%8F%E8%AE%BE%E7%BD%AE%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F-8e10019e-d5d8-47a1-ba95-db95123d273e">微软官方文档&lt;/a>&lt;/p></description></item><item><title>Flink</title><link>https://isme.cz/flink/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/flink/</guid><description>&lt;h1 id="flink">Flink&lt;/h1>
 &lt;h2 id="尝试flink">尝试flink&lt;/h2>
 &lt;h3 id="本地安装">本地安装&lt;/h3>
 &lt;p>步骤一:下载&lt;/p>
@@ -6839,7 +6839,7 @@ $ tail log/flink-*-taskexecutor-*.out
  env.execute();
 }
 &lt;/code>&lt;/pre>&lt;h2 id="kafka">Kafka&lt;/h2>
-&lt;p>需要引入包&lt;/p></description></item><item><title>Git</title><link>https://connorzhangyu.com/git/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/git/</guid><description>&lt;h1 id="分支管理">分支管理&lt;/h1>
+&lt;p>需要引入包&lt;/p></description></item><item><title>Git</title><link>https://isme.cz/git/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/git/</guid><description>&lt;h1 id="分支管理">分支管理&lt;/h1>
 &lt;h2 id="切一个新的本地分支">切一个新的本地分支&lt;/h2>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -6922,7 +6922,7 @@ git reset --soft HEAD^
 
 # 现在就已经把暂存区恢复到工作了
 &lt;/code>&lt;/pre>&lt;h1 id="版本回退reset">版本回退reset&lt;/h1>
-&lt;p>reset用于回退版本，可以遗弃不再使用的提交&lt;/p></description></item><item><title>Grafana</title><link>https://connorzhangyu.com/grafana/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/grafana/</guid><description>&lt;h1 id="监控主机">监控主机&lt;/h1>
+&lt;p>reset用于回退版本，可以遗弃不再使用的提交&lt;/p></description></item><item><title>Grafana</title><link>https://isme.cz/grafana/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/grafana/</guid><description>&lt;h1 id="监控主机">监控主机&lt;/h1>
 &lt;table>
  &lt;thead>
  &lt;tr>
@@ -7020,7 +7020,7 @@ git reset --soft HEAD^
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;blockquote>
-&lt;p>这里只是提前编辑好,之后如果要添加新的机器,再后面添加&lt;/p></description></item><item><title>Harbor</title><link>https://connorzhangyu.com/harbor/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/harbor/</guid><description>&lt;h2 id="下载离线安装包">下载离线安装包&lt;/h2>
+&lt;p>这里只是提前编辑好,之后如果要添加新的机器,再后面添加&lt;/p></description></item><item><title>Harbor</title><link>https://isme.cz/harbor/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/harbor/</guid><description>&lt;h2 id="下载离线安装包">下载离线安装包&lt;/h2>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051422363.png" alt="">&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -7149,7 +7149,7 @@ git reset --soft HEAD^
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="访问">访问&lt;/h2>
-&lt;p>访问:&lt;a href="http://10.0.2.4/">&lt;code>http://10.0.2.4/&lt;/code>&lt;/a>&lt;/p></description></item><item><title>HTML</title><link>https://connorzhangyu.com/html/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/html/</guid><description>&lt;div class="highlight">&lt;div class="chroma">
+&lt;p>访问:&lt;a href="http://10.0.2.4/">&lt;code>http://10.0.2.4/&lt;/code>&lt;/a>&lt;/p></description></item><item><title>HTML</title><link>https://isme.cz/html/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/html/</guid><description>&lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
 &lt;/span>&lt;span class="lnt"> 2
@@ -7221,7 +7221,7 @@ git reset --soft HEAD^
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">body&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>&lt;strong>段落格式的特点&lt;/strong>&lt;/p></description></item><item><title>IDEA</title><link>https://connorzhangyu.com/idea/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/idea/</guid><description>&lt;h1 id="教程">教程&lt;/h1>
+&lt;/div>&lt;p>&lt;strong>段落格式的特点&lt;/strong>&lt;/p></description></item><item><title>IDEA</title><link>https://isme.cz/idea/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/idea/</guid><description>&lt;h1 id="教程">教程&lt;/h1>
 &lt;h2 id="idea查看方法被调用">IDEA查看方法被调用&lt;/h2>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051423853.png" alt="">&lt;/p>
 &lt;h2 id="修改光标所在行背景颜色">修改光标所在行背景颜色&lt;/h2>
@@ -7244,7 +7244,7 @@ git reset --soft HEAD^
 &lt;h3 id="key-promoter-x">Key Promoter X&lt;/h3>
 &lt;h3 id="translation">Translation&lt;/h3>
 &lt;p>作者:Yii.Guxing&lt;/p>
-&lt;p>选中要翻译的内容,右键选择翻译&lt;/p></description></item><item><title>Java</title><link>https://connorzhangyu.com/java/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/java/</guid><description>&lt;h1 id="基础知识点">基础知识点&lt;/h1>
+&lt;p>选中要翻译的内容,右键选择翻译&lt;/p></description></item><item><title>Java</title><link>https://isme.cz/java/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/java/</guid><description>&lt;h1 id="基础知识点">基础知识点&lt;/h1>
 &lt;p>&lt;strong>循环标签&lt;/strong>&lt;/p>
 &lt;p>如果不在嵌套循环中使用,用了跳转,也就相当于&lt;code>continue&lt;/code>一样,没有区别&lt;/p>
 &lt;p>在嵌套循环中使用才有效果,用了&lt;code>innerLoop&lt;/code>之后,可以看到&lt;/p>
@@ -7720,7 +7720,7 @@ git reset --soft HEAD^
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="lambda">Lambda&lt;/h2>
-&lt;p>给集合分组&lt;/p></description></item><item><title>JavaScript</title><link>https://connorzhangyu.com/javascript/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/javascript/</guid><description>&lt;h1 id="javascript">JavaScript&lt;/h1>
+&lt;p>给集合分组&lt;/p></description></item><item><title>JavaScript</title><link>https://isme.cz/javascript/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/javascript/</guid><description>&lt;h1 id="javascript">JavaScript&lt;/h1>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
@@ -7814,7 +7814,7 @@ git reset --soft HEAD^
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="函数">函数&lt;/h2>
-&lt;p>{% tabs JS函数, 1 %}&lt;/p></description></item><item><title>Jenkins</title><link>https://connorzhangyu.com/jenkins/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/jenkins/</guid><description>&lt;h1 id="root用户权限启动jenkins">Root用户权限启动Jenkins&lt;/h1>
+&lt;p>{% tabs JS函数, 1 %}&lt;/p></description></item><item><title>Jenkins</title><link>https://isme.cz/jenkins/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/jenkins/</guid><description>&lt;h1 id="root用户权限启动jenkins">Root用户权限启动Jenkins&lt;/h1>
 &lt;p>适用于Ubuntu环境下通过&lt;code>apt-get install -y jenkins&lt;/code>命令在线安装的Jenkins&lt;/p>
 &lt;p>1.修改配置文件&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -7912,7 +7912,7 @@ git reset --soft HEAD^
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="同时构建任务的个数">同时构建任务的个数&lt;/h2>
-&lt;p>系统管理&amp;ndash;&amp;gt;系统设置&amp;ndash;&amp;gt;执行者数量&lt;/p></description></item><item><title>Linux软件</title><link>https://connorzhangyu.com/linux%E8%BD%AF%E4%BB%B6/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/linux%E8%BD%AF%E4%BB%B6/</guid><description>&lt;h1 id="jumpsserver">JumpSserver&lt;/h1>
+&lt;p>系统管理&amp;ndash;&amp;gt;系统设置&amp;ndash;&amp;gt;执行者数量&lt;/p></description></item><item><title>Linux软件</title><link>https://isme.cz/linux%E8%BD%AF%E4%BB%B6/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/linux%E8%BD%AF%E4%BB%B6/</guid><description>&lt;h1 id="jumpsserver">JumpSserver&lt;/h1>
 &lt;h2 id="设置sftp根目录">设置SFTP根目录&lt;/h2>
 &lt;p>3.0版本设置文件管理&lt;/p>
 &lt;p>克隆一份Linux平台&lt;/p>
@@ -8080,7 +8080,7 @@ git reset --soft HEAD^
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$ sudo /etc/init.d/apache2 restart
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>Ubuntu安装软件指定版本号&lt;/p></description></item><item><title>Mac</title><link>https://connorzhangyu.com/mac/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/mac/</guid><description>&lt;h1 id="快捷键">快捷键&lt;/h1>
+&lt;/div>&lt;p>Ubuntu安装软件指定版本号&lt;/p></description></item><item><title>Mac</title><link>https://isme.cz/mac/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/mac/</guid><description>&lt;h1 id="快捷键">快捷键&lt;/h1>
 &lt;table>
  &lt;thead>
  &lt;tr>
@@ -8170,7 +8170,7 @@ git reset --soft HEAD^
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h1 id="mac-os-x-访问-windows共享文件夹">Mac OS X 访问 Windows共享文件夹&lt;/h1>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051351999.png" alt="">&lt;/p></description></item><item><title>Mybatis</title><link>https://connorzhangyu.com/mybatis/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/mybatis/</guid><description>&lt;h1 id="教程">教程&lt;/h1>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051351999.png" alt="">&lt;/p></description></item><item><title>Mybatis</title><link>https://isme.cz/mybatis/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/mybatis/</guid><description>&lt;h1 id="教程">教程&lt;/h1>
 &lt;blockquote>
 &lt;p>参考:&lt;/p>
 &lt;p>&lt;a href="https://mybatis.org/mybatis-3/">官方文档&lt;/a>&lt;/p>
@@ -8360,7 +8360,7 @@ git reset --soft HEAD^
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="注解-一对多查询一个参数">注解 一对多查询(一个参数)&lt;/h2>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051430732.png" alt="">&lt;/p></description></item><item><title>Mycat</title><link>https://connorzhangyu.com/mycat/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/mycat/</guid><description>&lt;h1 id="主从复制">主从复制&lt;/h1>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051430732.png" alt="">&lt;/p></description></item><item><title>Mycat</title><link>https://isme.cz/mycat/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/mycat/</guid><description>&lt;h1 id="主从复制">主从复制&lt;/h1>
 &lt;h1 id="启动">启动&lt;/h1>
 &lt;p>1 .下载jre包&lt;/p>
 &lt;p>2 下载mycat包&lt;/p>
@@ -8407,7 +8407,7 @@ jvm 1 | MyCAT Server startup successfully. see logs in logs/mycat.log
 &lt;pre tabindex="0">&lt;code># 从容器中拷贝这些文件
 docker cp xxx:/etc/mysql/mysql.conf.d/ /home/anthony/mysql
 docker cp xxx:/var/log/ /home/anthony/mysql
-&lt;/code>&lt;/pre>&lt;p>启动的时候映射这些&lt;/p></description></item><item><title>Nginx</title><link>https://connorzhangyu.com/nginx/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/nginx/</guid><description>&lt;h2 id="docker安装-nginx">Docker安装 Nginx&lt;/h2>
+&lt;/code>&lt;/pre>&lt;p>启动的时候映射这些&lt;/p></description></item><item><title>Nginx</title><link>https://isme.cz/nginx/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/nginx/</guid><description>&lt;h2 id="docker安装-nginx">Docker安装 Nginx&lt;/h2>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
@@ -8876,7 +8876,7 @@ docker cp xxx:/var/log/ /home/anthony/mysql
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>推荐的配置&lt;/p></description></item><item><title>NodeJs</title><link>https://connorzhangyu.com/nodejs/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/nodejs/</guid><description>&lt;h1 id="语法">语法&lt;/h1>
+&lt;/div>&lt;p>推荐的配置&lt;/p></description></item><item><title>NodeJs</title><link>https://isme.cz/nodejs/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/nodejs/</guid><description>&lt;h1 id="语法">语法&lt;/h1>
 &lt;h1 id="基本使用">基本使用&lt;/h1>
 &lt;h1 id="初始化项目">初始化项目&lt;/h1>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -8962,7 +8962,7 @@ docker cp xxx:/var/log/ /home/anthony/mysql
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">html&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>index.js&lt;/p></description></item><item><title>Obsidian</title><link>https://connorzhangyu.com/obsidian/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/obsidian/</guid><description>&lt;h1 id="插件">插件&lt;/h1>
+&lt;/div>&lt;p>index.js&lt;/p></description></item><item><title>Obsidian</title><link>https://isme.cz/obsidian/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/obsidian/</guid><description>&lt;h1 id="插件">插件&lt;/h1>
 &lt;p>1.安装git插件
 2.运行命令,才能在界面上显示Git
 &lt;img src="https://image.runtimes.cc/202404051446974.png" alt="">&lt;/p>
@@ -8972,7 +8972,7 @@ docker cp xxx:/var/log/ /home/anthony/mysql
 &lt;h2 id="本地图片的格式">本地图片的格式&lt;/h2>
 &lt;p>使用 Obsidian 时，粘贴的图片路径会变成&lt;code>[[]]&lt;/code> 的格式，在像 Typora 的软件上，就不适配。
 可以在设置里，关闭 Wiki 链接的选项，粘贴图片后的格式就会自动变成了。
-&lt;img src="https://image.runtimes.cc/202404051451913.png" alt="">&lt;/p></description></item><item><title>PHP</title><link>https://connorzhangyu.com/php/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/php/</guid><description>&lt;h1 id="安装nginx与php-74">安装Nginx与PHP 7.4&lt;/h1>
+&lt;img src="https://image.runtimes.cc/202404051451913.png" alt="">&lt;/p></description></item><item><title>PHP</title><link>https://isme.cz/php/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/php/</guid><description>&lt;h1 id="安装nginx与php-74">安装Nginx与PHP 7.4&lt;/h1>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -9164,7 +9164,7 @@ server {
  }
 }
 &lt;/code>&lt;/pre>&lt;h2 id="vultr上安装">Vultr上安装&lt;/h2>
-&lt;p>&lt;a href="https://import.wp-migration.com/">上传备份&lt;/a>&lt;/p></description></item><item><title>Python</title><link>https://connorzhangyu.com/python/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/python/</guid><description>&lt;h1 id="安装">安装&lt;/h1>
+&lt;p>&lt;a href="https://import.wp-migration.com/">上传备份&lt;/a>&lt;/p></description></item><item><title>Python</title><link>https://isme.cz/python/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/python/</guid><description>&lt;h1 id="安装">安装&lt;/h1>
 &lt;h1 id="虚拟环境">虚拟环境&lt;/h1>
 &lt;pre tabindex="0">&lt;code># 判断有没有虚拟环境
 virtualenv -V
@@ -9258,7 +9258,7 @@ pip3
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h1 id="2算数运算符">2.算数运算符&lt;/h1>
-&lt;p>乘法的使用,用&lt;code>*&lt;/code>可以拼接字符串&lt;/p></description></item><item><title>Redis</title><link>https://connorzhangyu.com/redis/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/redis/</guid><description>&lt;h1 id="安装redis">安装Redis&lt;/h1>
+&lt;p>乘法的使用,用&lt;code>*&lt;/code>可以拼接字符串&lt;/p></description></item><item><title>Redis</title><link>https://isme.cz/redis/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/redis/</guid><description>&lt;h1 id="安装redis">安装Redis&lt;/h1>
 &lt;h2 id="安装单机redis">安装单机Redis&lt;/h2>
 &lt;p>{% tabs 安装单机Redis %}&lt;/p>
 &lt;!-- tab Windows安装Redis-->
@@ -9300,7 +9300,7 @@ pip3
 &lt;li>redis-server 后面的那段 &lt;code>/etc/redis/redis.conf&lt;/code> 也可以不用。&lt;/li>
 &lt;li>&lt;code>$PWD&lt;/code> 在window系统下貌似不能用,可以用相对路径&lt;code>/&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;p>客户端连接&lt;/p></description></item><item><title>Spring Security</title><link>https://connorzhangyu.com/spring-security/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/spring-security/</guid><description>&lt;h1 id="spring-security">Spring Security&lt;/h1>
+&lt;p>客户端连接&lt;/p></description></item><item><title>Spring Security</title><link>https://isme.cz/spring-security/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/spring-security/</guid><description>&lt;h1 id="spring-security">Spring Security&lt;/h1>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -9452,7 +9452,7 @@ pip3
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>验证账户&lt;/p></description></item><item><title>Vue</title><link>https://connorzhangyu.com/vue/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/vue/</guid><description>&lt;p>按照官方文档的教程步骤来,大部分的代码Demo,都是通过脚手架创建的项目的基础上创建的,用的版本的Vue3,Typescript,组合式的写法&lt;/p>
+&lt;/div>&lt;p>验证账户&lt;/p></description></item><item><title>Vue</title><link>https://isme.cz/vue/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/vue/</guid><description>&lt;p>按照官方文档的教程步骤来,大部分的代码Demo,都是通过脚手架创建的项目的基础上创建的,用的版本的Vue3,Typescript,组合式的写法&lt;/p>
 &lt;h1 id="基础">基础&lt;/h1>
 &lt;h2 id="创建一个应用">创建一个应用&lt;/h2>
 &lt;p>&lt;em>&lt;strong>多个应用实例&lt;/strong>&lt;/em>&lt;/p>
@@ -9552,7 +9552,7 @@ pip3
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="模板语法">模板语法&lt;/h2>
-&lt;p>&lt;em>&lt;strong>文本插值&lt;/strong>&lt;/em>&lt;/p></description></item><item><title>Vue项目</title><link>https://connorzhangyu.com/vue%E9%A1%B9%E7%9B%AE/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/vue%E9%A1%B9%E7%9B%AE/</guid><description>&lt;h1 id="安装vue">安装Vue&lt;/h1>
+&lt;p>&lt;em>&lt;strong>文本插值&lt;/strong>&lt;/em>&lt;/p></description></item><item><title>Vue项目</title><link>https://isme.cz/vue%E9%A1%B9%E7%9B%AE/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/vue%E9%A1%B9%E7%9B%AE/</guid><description>&lt;h1 id="安装vue">安装Vue&lt;/h1>
 &lt;h2 id="局部安装">局部安装&lt;/h2>
 &lt;p>局部安装并使用vue-cli 4.x版本,和创建项目&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -9606,7 +9606,7 @@ pip3
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="全局安装">全局安装&lt;/h2>
-&lt;p>{% tabs Vue %}&lt;/p></description></item><item><title>Windows</title><link>https://connorzhangyu.com/windows/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/windows/</guid><description>&lt;h1 id="windows-server">Windows Server&lt;/h1>
+&lt;p>{% tabs Vue %}&lt;/p></description></item><item><title>Windows</title><link>https://isme.cz/windows/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/windows/</guid><description>&lt;h1 id="windows-server">Windows Server&lt;/h1>
 &lt;h2 id="开放指定端口">开放指定端口&lt;/h2>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051353354.webp" alt="1">&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051353503.webp" alt="2">&lt;/p>
@@ -9722,7 +9722,7 @@ pip3
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pause
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>复制上面的代码。新建一个文本文件。粘贴后另存为.bat文件，然后以管理员身份打开。&lt;/p></description></item><item><title>Windows</title><link>https://connorzhangyu.com/windows/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/windows/</guid><description>&lt;h1 id="windows-server">Windows Server&lt;/h1>
+&lt;/div>&lt;p>复制上面的代码。新建一个文本文件。粘贴后另存为.bat文件，然后以管理员身份打开。&lt;/p></description></item><item><title>Windows</title><link>https://isme.cz/windows/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/windows/</guid><description>&lt;h1 id="windows-server">Windows Server&lt;/h1>
 &lt;h2 id="开放指定端口">开放指定端口&lt;/h2>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051353354.webp" alt="1">&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051353503.webp" alt="2">&lt;/p>
@@ -9838,7 +9838,7 @@ pip3
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pause
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>复制上面的代码。新建一个文本文件。粘贴后另存为.bat文件，然后以管理员身份打开。&lt;/p></description></item><item><title>设计模式</title><link>https://connorzhangyu.com/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid><description>&lt;h1 id="创建型模式">创建型模式&lt;/h1>
+&lt;/div>&lt;p>复制上面的代码。新建一个文本文件。粘贴后另存为.bat文件，然后以管理员身份打开。&lt;/p></description></item><item><title>设计模式</title><link>https://isme.cz/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid><description>&lt;h1 id="创建型模式">创建型模式&lt;/h1>
 &lt;h2 id="简单工厂">简单工厂&lt;/h2>
 &lt;p>Pay.java&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -9886,7 +9886,7 @@ pip3
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>WXPay.java&lt;/p></description></item><item><title>虚拟机</title><link>https://connorzhangyu.com/%E8%99%9A%E6%8B%9F%E6%9C%BA/</link><pubDate>Fri, 18 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/%E8%99%9A%E6%8B%9F%E6%9C%BA/</guid><description>&lt;h1 id="virtualbox增强功能centos8">VirtualBox增强功能Centos8&lt;/h1>
+&lt;/div>&lt;p>WXPay.java&lt;/p></description></item><item><title>虚拟机</title><link>https://isme.cz/%E8%99%9A%E6%8B%9F%E6%9C%BA/</link><pubDate>Fri, 18 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/%E8%99%9A%E6%8B%9F%E6%9C%BA/</guid><description>&lt;h1 id="virtualbox增强功能centos8">VirtualBox增强功能Centos8&lt;/h1>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -9911,7 +9911,7 @@ pip3
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">dnf install tar bzip2 kernel-devel-&lt;span class="k">$(&lt;/span>uname -r&lt;span class="k">)&lt;/span> kernel-headers perl gcc make elfutils-libelf-devel
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>虚拟机</title><link>https://connorzhangyu.com/%E8%99%9A%E6%8B%9F%E6%9C%BA/</link><pubDate>Fri, 18 Nov 2022 18:25:00 +0000</pubDate><guid>https://connorzhangyu.com/%E8%99%9A%E6%8B%9F%E6%9C%BA/</guid><description>&lt;h1 id="virtualbox增强功能centos8">VirtualBox增强功能Centos8&lt;/h1>
+&lt;/div></description></item><item><title>虚拟机</title><link>https://isme.cz/%E8%99%9A%E6%8B%9F%E6%9C%BA/</link><pubDate>Fri, 18 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/%E8%99%9A%E6%8B%9F%E6%9C%BA/</guid><description>&lt;h1 id="virtualbox增强功能centos8">VirtualBox增强功能Centos8&lt;/h1>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vim on Hello World</title><link>https://connorzhangyu.com/tags/vim/</link><description>Recent content in Vim on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Mon, 18 Aug 2025 04:44:26 +0700</lastBuildDate><atom:link href="https://connorzhangyu.com/tags/vim/index.xml" rel="self" type="application/rss+xml"/><item><title>Neovide + Neovim 入门到日常开发：最实用教程</title><link>https://connorzhangyu.com/neovide-neovim-guide/</link><pubDate>Sun, 17 Aug 2025 00:00:00 +0000</pubDate><guid>https://connorzhangyu.com/neovide-neovim-guide/</guid><description>&lt;blockquote>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vim on Hello World</title><link>https://isme.cz/tags/vim/</link><description>Recent content in Vim on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Mon, 18 Aug 2025 04:44:26 +0700</lastBuildDate><atom:link href="https://isme.cz/tags/vim/index.xml" rel="self" type="application/rss+xml"/><item><title>Neovide + Neovim 入门到日常开发：最实用教程</title><link>https://isme.cz/neovide-neovim-guide/</link><pubDate>Sun, 17 Aug 2025 00:00:00 +0000</pubDate><guid>https://isme.cz/neovide-neovim-guide/</guid><description>&lt;blockquote>
 &lt;p>这是一篇&lt;strong>开箱即用&lt;/strong>的 Neovide + Neovim 教程：先覆盖日常写作/写代码最常用的命令，再给出顺滑开发所需的插件与配置（含中文输入法自动切换）。&lt;br>
 读完你可以立刻完成：&lt;strong>打开项目 → 编辑 Markdown/代码 → 预览/运行 → Git 提交&lt;/strong> 的完整日常流。&lt;/p>&lt;/blockquote>
 &lt;hr>
@@ -47,7 +47,7 @@
 &lt;/ul>
 &lt;hr>
 &lt;h2 id="4-与系统剪贴板互通像普通编辑器一样复制粘贴">4. 与系统剪贴板互通（像普通编辑器一样复制粘贴）&lt;/h2>
-&lt;p>在配置里加上（下文有完整配置）：&lt;/p></description></item><item><title>Vim 快速入门 &amp; IntelliJ IDEA 基础配置</title><link>https://connorzhangyu.com/vim-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-intellij-idea-%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</link><pubDate>Wed, 13 Aug 2025 00:00:00 +0000</pubDate><guid>https://connorzhangyu.com/vim-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-intellij-idea-%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
+&lt;p>在配置里加上（下文有完整配置）：&lt;/p></description></item><item><title>Vim 快速入门 &amp; IntelliJ IDEA 基础配置</title><link>https://isme.cz/vim-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-intellij-idea-%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</link><pubDate>Wed, 13 Aug 2025 00:00:00 +0000</pubDate><guid>https://isme.cz/vim-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-intellij-idea-%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
 &lt;p>Vim 是一款强大的编辑器，配合 IntelliJ IDEA 的 IdeaVim 插件，可以显著提升代码编辑效率。本文将介绍 &lt;strong>Vim 最小必备快捷键&lt;/strong> 以及 &lt;strong>IdeaVim 的基础配置方法&lt;/strong>，帮助你快速上手。&lt;/p>
 &lt;hr>
 &lt;h2 id="一vim-最少必备快捷键初学者版">一、Vim 最少必备快捷键（初学者版）&lt;/h2>
@@ -134,7 +134,7 @@
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
-&lt;p>💡 &lt;strong>记忆技巧&lt;/strong>：&lt;/p></description></item><item><title>Linux</title><link>https://connorzhangyu.com/linux/</link><pubDate>Tue, 22 Nov 2022 10:53:07 +0000</pubDate><guid>https://connorzhangyu.com/linux/</guid><description>&lt;h1 id="系统命令">系统命令&lt;/h1>
+&lt;p>💡 &lt;strong>记忆技巧&lt;/strong>：&lt;/p></description></item><item><title>Linux</title><link>https://isme.cz/linux/</link><pubDate>Tue, 22 Nov 2022 10:53:07 +0000</pubDate><guid>https://isme.cz/linux/</guid><description>&lt;h1 id="系统命令">系统命令&lt;/h1>
 &lt;h2 id="解压缩">解压缩&lt;/h2>
 &lt;p>demo(文件夹)&lt;/p>
 &lt;p>|&amp;mdash;&amp;mdash;|1.txt(文件)&lt;/p>

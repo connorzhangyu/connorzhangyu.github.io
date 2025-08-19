@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>精选 on Hello World</title><link>https://connorzhangyu.com/featured/</link><description>Recent content in 精选 on Hello World</description><generator>Hugo</generator><language>zh</language><atom:link href="https://connorzhangyu.com/featured/index.xml" rel="self" type="application/rss+xml"/><item><title>如何规划 AWS 学习与认证路径：从入门到架构师</title><link>https://connorzhangyu.com/featured/aws-study/</link><pubDate>Thu, 14 Aug 2025 18:03:01 +0000</pubDate><guid>https://connorzhangyu.com/featured/aws-study/</guid><description>&lt;h1 id="如何规划-aws-学习与认证路径从入门到架构师">如何规划 AWS 学习与认证路径：从入门到架构师&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>精选 on Hello World</title><link>https://isme.cz/featured/</link><description>Recent content in 精选 on Hello World</description><generator>Hugo</generator><language>zh</language><atom:link href="https://isme.cz/featured/index.xml" rel="self" type="application/rss+xml"/><item><title>如何规划 AWS 学习与认证路径：从入门到架构师</title><link>https://isme.cz/featured/aws-study/</link><pubDate>Thu, 14 Aug 2025 18:03:01 +0000</pubDate><guid>https://isme.cz/featured/aws-study/</guid><description>&lt;h1 id="如何规划-aws-学习与认证路径从入门到架构师">如何规划 AWS 学习与认证路径：从入门到架构师&lt;/h1>
 &lt;p>随着云计算的普及，掌握 AWS 技能成为技术人员提升自身竞争力的重要途径。作为一名 Java 开发者，同时怀揣成为架构师的梦想，规划一条清晰的 AWS 学习与认证路径，将为你的职业发展奠定坚实基础。&lt;/p>
 &lt;p>在这篇文章中，我将分享适合 Java 开发者的 AWS 学习和认证路线，从入门到架构师，一步步助你掌握云计算技能。&lt;/p>
 &lt;hr>
@@ -41,13 +41,13 @@
 &lt;li>基础架构自动化：CloudFormation 和 AWS CDK。&lt;/li>
 &lt;li>CI/CD 实践：CodePipeline、CodeDeploy、CodeBuild。&lt;/li>
 &lt;/ul>
-&lt;p>&lt;strong>推荐课程&lt;/strong>：&lt;/p></description></item><item><title>Go 的声明语法：为什么与众不同</title><link>https://connorzhangyu.com/featured/go-declaration-syntax/</link><pubDate>Wed, 13 Aug 2025 22:00:00 +0700</pubDate><guid>https://connorzhangyu.com/featured/go-declaration-syntax/</guid><description>&lt;blockquote>
+&lt;p>&lt;strong>推荐课程&lt;/strong>：&lt;/p></description></item><item><title>Go 的声明语法：为什么与众不同</title><link>https://isme.cz/featured/go-declaration-syntax/</link><pubDate>Wed, 13 Aug 2025 22:00:00 +0700</pubDate><guid>https://isme.cz/featured/go-declaration-syntax/</guid><description>&lt;blockquote>
 &lt;p>本文整理自 Go 语言作者 Rob Pike 在 2010 年的文章 &lt;em>&amp;ldquo;Go&amp;rsquo;s Declaration Syntax&amp;rdquo;&lt;/em>，结合原文与实例，解释 Go 为什么采用不同于 C/Java 的声明方式。&lt;br>
 写这篇文章的原因：&lt;br>
 在网络上能找到不少 &lt;em>&amp;ldquo;Go&amp;rsquo;s Declaration Syntax&amp;rdquo;&lt;/em> 的中文翻译，但大多数存在直译生硬、遗漏原文细节甚至误解语义的问题。&lt;br>
 这些低质量翻译往往让读者更困惑，而不是更清楚。&lt;br>
 因此，我基于 Rob Pike 原文，结合上下文和代码示例，整理出一份更贴近原意、方便国内开发者理解的版本。&lt;br>
-同时保留原文核心思想，并补充了对比表与背景说明，帮助读者更好地掌握 Go 声明语法背后的设计理念。&lt;/p>&lt;/blockquote></description></item><item><title>如何通过 EC2 实例连接 Amazon RDS 数据库</title><link>https://connorzhangyu.com/featured/b765efc8-3b0e-421b-beb4-d1fac4fd836f/</link><pubDate>Tue, 17 Dec 2024 17:42:26 +0000</pubDate><guid>https://connorzhangyu.com/featured/b765efc8-3b0e-421b-beb4-d1fac4fd836f/</guid><description>&lt;h1 id="如何通过-ec2-实例连接-amazon-rds-数据库">如何通过 EC2 实例连接 Amazon RDS 数据库&lt;/h1>
+同时保留原文核心思想，并补充了对比表与背景说明，帮助读者更好地掌握 Go 声明语法背后的设计理念。&lt;/p>&lt;/blockquote></description></item><item><title>如何通过 EC2 实例连接 Amazon RDS 数据库</title><link>https://isme.cz/featured/b765efc8-3b0e-421b-beb4-d1fac4fd836f/</link><pubDate>Tue, 17 Dec 2024 17:42:26 +0000</pubDate><guid>https://isme.cz/featured/b765efc8-3b0e-421b-beb4-d1fac4fd836f/</guid><description>&lt;h1 id="如何通过-ec2-实例连接-amazon-rds-数据库">如何通过 EC2 实例连接 Amazon RDS 数据库&lt;/h1>
 &lt;p>在云开发中，Amazon RDS 是一种强大而方便的托管数据库服务，但它通常处于一个受保护的私有网络中，无法直接从本地访问。如果你想在本地使用图形化工具（如 DBeaver 或 HeidiSQL）访问 RDS 数据库，可以通过 Amazon EC2 实例作为跳板实现。这篇文章将手把手教你如何完成这项操作。&lt;/p>
 &lt;hr>
 &lt;h2 id="1-为什么需要通过-ec2-访问-rds">1. 为什么需要通过 EC2 访问 RDS？&lt;/h2>
@@ -79,7 +79,7 @@
 &lt;/ol>
 &lt;hr>
 &lt;h2 id="3-在本地创建-ssh-隧道">3. 在本地创建 SSH 隧道&lt;/h2>
-&lt;p>SSH 隧道是连接本地客户端和 RDS 数据库的桥梁。以下是设置方法：&lt;/p></description></item><item><title>使用 Nginx + Cloudflare + Docker 部署 Java 服务的最佳实践</title><link>https://connorzhangyu.com/featured/5c8f5a74-11b1-4c78-8307-5dfdd5c6adc3/</link><pubDate>Sun, 08 Dec 2024 05:07:43 +0000</pubDate><guid>https://connorzhangyu.com/featured/5c8f5a74-11b1-4c78-8307-5dfdd5c6adc3/</guid><description>&lt;h1 id="使用-nginx--cloudflare--docker-部署-java-服务的最佳实践">使用 Nginx + Cloudflare + Docker 部署 Java 服务的最佳实践&lt;/h1>
+&lt;p>SSH 隧道是连接本地客户端和 RDS 数据库的桥梁。以下是设置方法：&lt;/p></description></item><item><title>使用 Nginx + Cloudflare + Docker 部署 Java 服务的最佳实践</title><link>https://isme.cz/featured/5c8f5a74-11b1-4c78-8307-5dfdd5c6adc3/</link><pubDate>Sun, 08 Dec 2024 05:07:43 +0000</pubDate><guid>https://isme.cz/featured/5c8f5a74-11b1-4c78-8307-5dfdd5c6adc3/</guid><description>&lt;h1 id="使用-nginx--cloudflare--docker-部署-java-服务的最佳实践">使用 Nginx + Cloudflare + Docker 部署 Java 服务的最佳实践&lt;/h1>
 &lt;p>在生产环境中，Nginx、Cloudflare 和 Docker 是一个经典且高效的组合，特别适合 Java 服务的部署。本篇博客将详细介绍如何将这三者结合起来，构建高性能、高可用的服务架构。&lt;/p>
 &lt;hr>
 &lt;h2 id="架构概览">架构概览&lt;/h2>
@@ -202,7 +202,7 @@
 &lt;/div>&lt;hr>
 &lt;h2 id="三docker-配置">三、Docker 配置&lt;/h2>
 &lt;h3 id="1-构建-java-服务镜像">1. 构建 Java 服务镜像&lt;/h3>
-&lt;p>使用以下 Dockerfile 构建镜像：&lt;/p></description></item><item><title>使用 Cloudflare 和 Nginx 构建高性能安全站点</title><link>https://connorzhangyu.com/featured/cf-nginx/</link><pubDate>Sat, 07 Dec 2024 18:13:27 +0000</pubDate><guid>https://connorzhangyu.com/featured/cf-nginx/</guid><description>&lt;h1 id="使用-cloudflare-和-nginx-构建高性能安全站点">使用 Cloudflare 和 Nginx 构建高性能安全站点&lt;/h1>
+&lt;p>使用以下 Dockerfile 构建镜像：&lt;/p></description></item><item><title>使用 Cloudflare 和 Nginx 构建高性能安全站点</title><link>https://isme.cz/featured/cf-nginx/</link><pubDate>Sat, 07 Dec 2024 18:13:27 +0000</pubDate><guid>https://isme.cz/featured/cf-nginx/</guid><description>&lt;h1 id="使用-cloudflare-和-nginx-构建高性能安全站点">使用 Cloudflare 和 Nginx 构建高性能安全站点&lt;/h1>
 &lt;p>在现代网站架构中，&lt;strong>Nginx&lt;/strong> 和 &lt;strong>Cloudflare&lt;/strong> 是两大关键技术，它们分别在服务器端和网络加速层提供强大的支持。本篇博客将带你一步步配置 Nginx 与 Cloudflare 的集成，打造一个高性能且安全的生产环境。&lt;/p>
 &lt;hr>
 &lt;h2 id="一为什么选择-nginx-和-cloudflare">一、为什么选择 Nginx 和 Cloudflare？&lt;/h2>
