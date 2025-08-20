@@ -52,21 +52,21 @@
 </span><span class=lnt>22
 </span><span class=lnt>23
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-plaintext data-lang=plaintext><span class=line><span class=cl> v2
-</span></span><span class=line><span class=cl> ┌───────────────┐    ┌───────────────┐ ┌───────────────┐ ┌───────────────┐
-</span></span><span class=line><span class=cl> │     User1     │    │     User2     │ │     User3     │ │     User4     │  🌐用户访问层
-</span></span><span class=line><span class=cl> └───────┬───────┘    └───────┬───────┘ └───────┬───────┘ └──────┬────────┘
-</span></span><span class=line><span class=cl>         │                    │                 │                │
-</span></span><span class=line><span class=cl>         │                    ▼                 ▼                ▼
-</span></span><span class=line><span class=cl>         │            ┌───────────────┐ ┌───────────────┐ ┌───────────────┐
-</span></span><span class=line><span class=cl>         │            │    domain1    │ │    domain1    │ │    domain1    │  🌍域名策略层(入口)
-</span></span><span class=line><span class=cl>         │            └───────┬───────┘ └───────┬───────┘ └──────┬────────┘
-</span></span><span class=line><span class=cl>         │                    │                 │                │
-</span></span><span class=line><span class=cl>         │                    ▼                 ▼                ▼
-</span></span><span class=line><span class=cl>         │            ┌───────────────────────────────────────────────────┐
-</span></span><span class=line><span class=cl>         │            │            Redirect Worker (301/308)              │  统一跳转 🔀 主域名
-</span></span><span class=line><span class=cl>         ▼            └──────────────────────────┬────────────────────────┘
-</span></span><span class=line><span class=cl> ┌───────────────┐                               │
-</span></span><span class=line><span class=cl> │     主域名     │ ◀ ────────────────────────────┘
+</span></span><span class=line><span class=cl> ┌───────────────┐    ┌───────────────┐ ┌───────────────┐
+</span></span><span class=line><span class=cl> │     User1     │    │     User2     │ │     User3     │ 🌐用户访问层
+</span></span><span class=line><span class=cl> └───────┬───────┘    └───────┬───────┘ └───────┬───────┘
+</span></span><span class=line><span class=cl>         │                    │                 │
+</span></span><span class=line><span class=cl>         │                    ▼                 ▼
+</span></span><span class=line><span class=cl>         │            ┌───────────────┐ ┌───────────────┐
+</span></span><span class=line><span class=cl>         │            │    domain1    │ │    domain1    │ 🌍域名策略层(入口)
+</span></span><span class=line><span class=cl>         │            └───────┬───────┘ └───────┬───────┘
+</span></span><span class=line><span class=cl>         │                    │                 │
+</span></span><span class=line><span class=cl>         │                    ▼                 ▼
+</span></span><span class=line><span class=cl>         │            ┌─────────────────────────────────┐
+</span></span><span class=line><span class=cl>         │            │    Redirect Worker (301/308)    │ 统一跳转 🔀 主域名
+</span></span><span class=line><span class=cl>         ▼            └────────────────┬────────────────┘
+</span></span><span class=line><span class=cl> ┌───────────────┐                     │
+</span></span><span class=line><span class=cl> │     主域名     │ ◀ ──────────────────┘
 </span></span><span class=line><span class=cl> └───────┬───────┘
 </span></span><span class=line><span class=cl>         │ 🌐主域名流量(主备回源)                       源站层(内容托管)
 </span></span><span class=line><span class=cl>         ▼                                          ┌───────────────┐
