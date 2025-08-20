@@ -66,14 +66,14 @@
 </span></span><span class=line><span class=cl>         │            │    Redirect Worker (301/308)    │ 统一跳转 🔀 主域名
 </span></span><span class=line><span class=cl>         ▼            └────────────────┬────────────────┘
 </span></span><span class=line><span class=cl> ┌───────────────┐                     │
-</span></span><span class=line><span class=cl> │     主域名     │ ◀ ──────────────────┘
-</span></span><span class=line><span class=cl> └───────┬───────┘
-</span></span><span class=line><span class=cl>         │ 🌐主域名流量(主备回源)                       源站层(内容托管)
-</span></span><span class=line><span class=cl>         ▼                                          ┌───────────────┐
-</span></span><span class=line><span class=cl> ┌───────────────┐                                  │    主源　CF    │
-</span></span><span class=line><span class=cl> │Failover Worker├─────────────────────────────── ▶ │    备源　VC    │
-</span></span><span class=line><span class=cl> └───────────────┘                                  │    备源　GH    │
-</span></span><span class=line><span class=cl>                                                    └───────────────┘
+</span></span><span class=line><span class=cl> │     主域名     │ ◀ ──────────────────┤
+</span></span><span class=line><span class=cl> └───────┬───────┘   主域名流量(主备回源) │              源站层(内容托管)
+</span></span><span class=line><span class=cl>         │                             │            ┌───────────────┐ 
+</span></span><span class=line><span class=cl>         ▼                             └───────── ▶ │    主源　CF    │
+</span></span><span class=line><span class=cl> ┌───────────────┐                                  │    备源　VC    │
+</span></span><span class=line><span class=cl> │Failover Worker├─────────────────────────────── ▶ │    备源　GH    │
+</span></span><span class=line><span class=cl> └───────────────┘                                  └───────────────┘
+</span></span><span class=line><span class=cl>                                                    
 </span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
