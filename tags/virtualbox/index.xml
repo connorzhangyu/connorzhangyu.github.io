@@ -23,46 +23,4 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">dnf install tar bzip2 kernel-devel-&lt;span class="k">$(&lt;/span>uname -r&lt;span class="k">)&lt;/span> kernel-headers perl gcc make elfutils-libelf-devel
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>虚拟机</title><link>https://isme.cz/%E8%99%9A%E6%8B%9F%E6%9C%BA/</link><pubDate>Fri, 18 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/%E8%99%9A%E6%8B%9F%E6%9C%BA/</guid><description>&lt;h1 id="virtualbox增强功能centos8">VirtualBox增强功能Centos8&lt;/h1>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;span class="lnt">6
-&lt;/span>&lt;span class="lnt">7
-&lt;/span>&lt;span class="lnt">8
-&lt;/span>&lt;span class="lnt">9
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-Shell" data-lang="Shell">&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 需要安装一定的依赖，例如：make gcc perl&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo yum install gcc perl make tar bzip2 elfutils-libelf-devel
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#同时安装的kernel-devel版本要和内核版本一致，安装对应版本&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo yum install -y &lt;span class="s2">&amp;#34;kernel-devel-uname-r == &lt;/span>&lt;span class="k">$(&lt;/span>uname -r&lt;span class="k">)&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 或者通过DNF安装所有：&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">dnf install tar bzip2 kernel-devel-&lt;span class="k">$(&lt;/span>uname -r&lt;span class="k">)&lt;/span> kernel-headers perl gcc make elfutils-libelf-devel
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h1 id="mac-apple芯片安装win11">Mac Apple芯片安装Win11&lt;/h1>
-&lt;blockquote>
-&lt;p>&lt;a href="https://blog.csdn.net/weixin_52799373/article/details/129658881">M1/M2 Pro VMware Fusion虚拟机安装Win11教程(超详细)_m1装win11_七维大脑的博客-CSDN博客&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://blog.csdn.net/m0_72489515/article/details/128036581">M用户使用VM虚拟机安装win11连不上网，怎么解决_mac_xwz的博客-CSDN博客&lt;/a>&lt;/p>&lt;/blockquote>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051338314.png" alt="image-20240106171142746">&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051338837.png" alt="image-20240106171214171">&lt;/p>
-&lt;blockquote>
-&lt;p>记得要下载ARM版本的&lt;/p>&lt;/blockquote>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051338380.png" alt="image-20240106171222884">&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051339250.png" alt="image-20240106171238651">&lt;/p>
-&lt;p>这里设置的密码,后面不会再用了,可以设置个简单点的就行&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051339063.png" alt="image-20240106171316780">&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051340279.png" alt="image-20240106171329023">&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051340353.png" alt="image-20240106171353840">&lt;/p>
-&lt;p>内存设置4GB,硬盘设置成80GB&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051340025.png" alt="image-20240106171404594">&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051341339.png" alt="image-20240106171419408">&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051341466.png" alt="image-20240106171447630">&lt;/p></description></item></channel></rss>
+&lt;/div></description></item></channel></rss>

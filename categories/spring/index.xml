@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spring on Hello World</title><link>https://isme.cz/categories/spring/</link><description>Recent content in Spring on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Mon, 04 Aug 2025 01:38:57 +0700</lastBuildDate><atom:link href="https://isme.cz/categories/spring/index.xml" rel="self" type="application/rss+xml"/><item><title>Spring</title><link>https://isme.cz/spring/</link><pubDate>Fri, 25 Aug 2023 14:58:26 +0000</pubDate><guid>https://isme.cz/spring/</guid><description>&lt;h1 id="springmvc">SpringMVC&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spring on Hello World</title><link>https://isme.cz/categories/spring/</link><description>Recent content in Spring on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Fri, 22 Aug 2025 14:49:53 +0700</lastBuildDate><atom:link href="https://isme.cz/categories/spring/index.xml" rel="self" type="application/rss+xml"/><item><title>Spring</title><link>https://isme.cz/java/spring/</link><pubDate>Fri, 25 Aug 2023 14:58:26 +0000</pubDate><guid>https://isme.cz/java/spring/</guid><description>&lt;h1 id="springmvc">SpringMVC&lt;/h1>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051458028.png" alt="">&lt;/p>
 &lt;p>总结：&lt;/p>
 &lt;ol>
@@ -188,7 +188,7 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">	&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>总体流程:&lt;/p></description></item><item><title>SpringBoot</title><link>https://isme.cz/springboot/</link><pubDate>Sat, 15 Jul 2023 14:58:26 +0000</pubDate><guid>https://isme.cz/springboot/</guid><description>&lt;h1 id="定时器">定时器&lt;/h1>
+&lt;/div>&lt;p>总体流程:&lt;/p></description></item><item><title>SpringBoot</title><link>https://isme.cz/java/springboot/</link><pubDate>Sat, 15 Jul 2023 14:58:26 +0000</pubDate><guid>https://isme.cz/java/springboot/</guid><description>&lt;h1 id="定时器">定时器&lt;/h1>
 &lt;p>定时器的数值放到配置文件,如果使用&lt;code>@Scheduled(fixedDelay = 类中的变量)&lt;/code>这种方式试过不行&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -255,7 +255,7 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">JAVA_OPT&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">JAVA_OPT&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2"> -server -Xms512m -Xmx512m&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>启动&lt;/p></description></item><item><title>Spring Security</title><link>https://isme.cz/spring-security/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/spring-security/</guid><description>&lt;h1 id="spring-security">Spring Security&lt;/h1>
+&lt;/div>&lt;p>启动&lt;/p></description></item><item><title>Spring Security</title><link>https://isme.cz/java/spring-security/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/java/spring-security/</guid><description>&lt;h1 id="spring-security">Spring Security&lt;/h1>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1

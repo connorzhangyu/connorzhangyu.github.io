@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Go on Hello World</title><link>https://isme.cz/go/</link><description>Recent content in Go on Hello World</description><generator>Hugo</generator><language>zh</language><atom:link href="https://isme.cz/go/index.xml" rel="self" type="application/rss+xml"/><item><title>Go学习路线图v0.1</title><link>https://isme.cz/go/go-study-plan-v0-1/</link><pubDate>Thu, 14 Aug 2025 00:00:00 +0000</pubDate><guid>https://isme.cz/go/go-study-plan-v0-1/</guid><description>tosa 东南亚科技小组 Go v0.1 阶段学习路线图，涵盖第一个版本（基础架构）的技术学习与实战安排。</description></item><item><title>Go 学习资源大全</title><link>https://isme.cz/go/go-study-resources/</link><pubDate>Wed, 13 Aug 2025 00:00:00 +0000</pubDate><guid>https://isme.cz/go/go-study-resources/</guid><description>系统整理 Go 语言入门到进阶的高质量学习资料，涵盖文档、视频、书籍、面试题、开源项目与工具。</description></item><item><title>Go 面试冲刺学习计划（14 天 | 每天 12 小时）</title><link>https://isme.cz/go/go-%E9%9D%A2%E8%AF%95%E5%86%B2%E5%88%BA%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</link><pubDate>Fri, 08 Aug 2025 10:00:00 +0700</pubDate><guid>https://isme.cz/go/go-%E9%9D%A2%E8%AF%95%E5%86%B2%E5%88%BA%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</guid><description>&lt;blockquote>
+&lt;p>🚀 本计划适用于有 Java 开发经验的工程师，全力转向 Go 开发岗位，每天投入 12 小时，14 天从语法到项目到面试冲刺，快速具备独立开发 + 面试能力。&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;h2 id="-阶段总览">🧭 阶段总览&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>阶段&lt;/th>
+ &lt;th>时间范围&lt;/th>
+ &lt;th>目标&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>基础语法期&lt;/td>
+ &lt;td>Day 1 ～ Day 4&lt;/td>
+ &lt;td>掌握语法、指针、结构体、接口等基础能力&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>并发理解期&lt;/td>
+ &lt;td>Day 5 ～ Day 6&lt;/td>
+ &lt;td>熟练使用 goroutine、channel、锁等并发机制&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>框架实战期&lt;/td>
+ &lt;td>Day 7 ～ Day 10&lt;/td>
+ &lt;td>掌握 Gin、GORM、JWT、Redis、配置管理等项目能力&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>项目构建期&lt;/td>
+ &lt;td>Day 11 ～ Day 12&lt;/td>
+ &lt;td>完整开发项目并调试测试，准备部署&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>面试冲刺期&lt;/td>
+ &lt;td>Day 13 ～ Day 14&lt;/td>
+ &lt;td>刷题 + 模拟面试 + 简历完善 + 项目讲解&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h2 id="-每日学习任务每日-12-小时">📅 每日学习任务（每日 12 小时）&lt;/h2>
+&lt;h3 id="day-1go-项目结构与包机制">Day 1：Go 项目结构与包机制&lt;/h3>
+&lt;ul>
+&lt;li>学习 &lt;code>package&lt;/code>、&lt;code>import&lt;/code>、&lt;code>go mod&lt;/code>&lt;/li>
+&lt;li>区分 &lt;code>main&lt;/code> 包与普通包&lt;/li>
+&lt;li>组织多文件项目结构&lt;/li>
+&lt;li>熟练使用 &lt;code>go run&lt;/code>, &lt;code>go build&lt;/code>, &lt;code>go install&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>🎯 输出：一个包含自定义包的练手项目&lt;/p></description></item><item><title>Go学习计划</title><link>https://isme.cz/go/go%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</link><pubDate>Thu, 31 Jul 2025 16:02:25 +0700</pubDate><guid>https://isme.cz/go/go%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/</guid><description>&lt;h1 id="go学习计划">Go学习计划&lt;/h1>
+&lt;hr>
+&lt;h2 id="-阶段一语言基础week-12">🏁 阶段一：语言基础（Week 1~2）&lt;/h2>
+&lt;h3 id="-目标">🎯 目标&lt;/h3>
+&lt;p>掌握 Go 的语法结构、数据类型、控制流、函数机制。&lt;/p>
+&lt;h3 id="-学习内容">✅ 学习内容&lt;/h3>
+&lt;ul>
+&lt;li>基本语法、变量、常量、数组、切片、map&lt;/li>
+&lt;li>控制结构（if, for, switch）&lt;/li>
+&lt;li>函数与多返回值、defer&lt;/li>
+&lt;li>指针（区别于 Java 的核心知识点）&lt;/li>
+&lt;li>结构体与方法&lt;/li>
+&lt;/ul>
+&lt;h3 id="-推荐资料">📚 推荐资料&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://go.dev/tour/">Tour of Go（交互式）&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://gobyexample.com/">Go by Example&lt;/a>&lt;/li>
+&lt;li>李文周基础语法章节（可作为中文参考）&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-阶段二并发与标准库week-34">🚀 阶段二：并发与标准库（Week 3~4）&lt;/h2>
+&lt;h3 id="-目标-1">🎯 目标&lt;/h3>
+&lt;p>理解 Go 的并发模型，熟悉关键标准库。&lt;/p>
+&lt;h3 id="-学习内容-1">✅ 学习内容&lt;/h3>
+&lt;ul>
+&lt;li>Goroutine、Channel、select&lt;/li>
+&lt;li>错误处理（error 接口、errors 包）&lt;/li>
+&lt;li>文件操作、时间处理、字符串处理、JSON 编解码&lt;/li>
+&lt;li>单元测试、基准测试&lt;/li>
+&lt;/ul>
+&lt;h3 id="-推荐资料-1">📚 推荐资料&lt;/h3>
+&lt;ul>
+&lt;li>《Go语言101》并发章节&lt;/li>
+&lt;li>&lt;a href="https://quii.gitbook.io/learn-go-with-tests/">Learn Go with Tests&lt;/a>&lt;/li>
+&lt;li>Go.dev 文档：&lt;a href="https://pkg.go.dev/net/http">&lt;code>net/http&lt;/code>&lt;/a>、&lt;code>time&lt;/code>、&lt;code>io&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-阶段三现代开发工具与依赖管理week-5">🧱 阶段三：现代开发工具与依赖管理（Week 5）&lt;/h2>
+&lt;h3 id="-目标-2">🎯 目标&lt;/h3>
+&lt;p>熟练掌握项目结构、模块化、依赖管理。&lt;/p>
+&lt;h3 id="-学习内容-2">✅ 学习内容&lt;/h3>
+&lt;ul>
+&lt;li>Go Modules（go.mod、go.sum）&lt;/li>
+&lt;li>项目结构（cmd/pkg/internal）&lt;/li>
+&lt;li>日志库（zap, zerolog）&lt;/li>
+&lt;li>配置管理（viper）&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="-阶段四web-开发实践week-67">🌐 阶段四：Web 开发实践（Week 6~7）&lt;/h2>
+&lt;h3 id="-目标-3">🎯 目标&lt;/h3>
+&lt;p>掌握基于 Go 的 Web 服务开发&lt;/p></description></item><item><title>Go基础</title><link>https://isme.cz/go/go%E5%9F%BA%E7%A1%80/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/go/go%E5%9F%BA%E7%A1%80/</guid><description>GO基础学习笔记-东尼</description></item></channel></rss>
