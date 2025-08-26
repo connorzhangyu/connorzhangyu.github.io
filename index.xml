@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>首页 on Hello World</title><link>https://isme.cz/</link><description>Recent content in 首页 on Hello World</description><generator>Hugo</generator><language>zh</language><atom:link href="https://isme.cz/index.xml" rel="self" type="application/rss+xml"/><item><title>如何规划 AWS 学习与认证路径：从入门到架构师</title><link>https://isme.cz/featured/aws-study/</link><pubDate>Thu, 14 Aug 2025 18:03:01 +0000</pubDate><guid>https://isme.cz/featured/aws-study/</guid><description>&lt;h1 id="如何规划-aws-学习与认证路径从入门到架构师">如何规划 AWS 学习与认证路径：从入门到架构师&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>首页 on Hello World</title><link>https://isme.cz/</link><description>Recent content in 首页 on Hello World</description><generator>Hugo</generator><language>zh</language><atom:link href="https://isme.cz/index.xml" rel="self" type="application/rss+xml"/><item><title>MAC系统常用快捷键 基本常用的都整理在这里了</title><link>https://isme.cz/featured/mac-shortcut-key/</link><pubDate>Thu, 31 May 2018 09:13:00 +0700</pubDate><guid>https://isme.cz/featured/mac-shortcut-key/</guid><description>整理 Mac 系统常用快捷键，包括通用、系统、截图、Finder、浏览器、应用程序和文本处理，帮助提升日常效率。</description></item><item><title>如何规划 AWS 学习与认证路径：从入门到架构师</title><link>https://isme.cz/featured/aws-study/</link><pubDate>Thu, 14 Aug 2025 18:03:01 +0000</pubDate><guid>https://isme.cz/featured/aws-study/</guid><description>&lt;h1 id="如何规划-aws-学习与认证路径从入门到架构师">如何规划 AWS 学习与认证路径：从入门到架构师&lt;/h1>
 &lt;p>随着云计算的普及，掌握 AWS 技能成为技术人员提升自身竞争力的重要途径。作为一名 Java 开发者，同时怀揣成为架构师的梦想，规划一条清晰的 AWS 学习与认证路径，将为你的职业发展奠定坚实基础。&lt;/p>
 &lt;p>在这篇文章中，我将分享适合 Java 开发者的 AWS 学习和认证路线，从入门到架构师，一步步助你掌握云计算技能。&lt;/p>
 &lt;hr>
@@ -151,6 +151,8 @@
 &lt;hr>
 &lt;h2 id="1-为什么需要通过-ec2-访问-rds">1. 为什么需要通过 EC2 访问 RDS？&lt;/h2>
 &lt;p>Amazon RDS 默认部署在私有子网中，只有同一网络中的资源可以访问。直接将 RDS 公开到公网会带来安全风险，因此更好的办法是利用 EC2 实例作为跳板，通过 SSH 隧道安全地访问 RDS。这种方式既能保证数据库的安全性，也能满足开发需求。&lt;/p>
+&lt;p>说人话：&lt;em>其实就是薅羊毛的时候能省个公网ip的钱（AWS免费优惠只有一个公网ip，要给到ec2）&lt;/em>&lt;/p>
+&lt;p>土豪请划走 不需要往下看了&lt;/p>
 &lt;hr>
 &lt;h2 id="2-准备工作">2. 准备工作&lt;/h2>
 &lt;p>在开始操作之前，请确保以下内容已准备好：&lt;/p>
