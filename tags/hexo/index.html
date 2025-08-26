@@ -8,10 +8,12 @@
 </span><img src=https://image.runtimes.cc/202404051528435.png class=post-cover alt=Hexo title="Cover Image"><div class=post-content><h1 id=内链>内链</h1><h2 id=内链图片>内链图片</h2><h3 id=相对路径>相对路径</h3><p>在<code>source/</code>下创建一个图片的目录,比如起名叫<code>img</code>的文件夹
 在文章中引入 <code>![图片的备注](图片的相对路径)</code>
 比如<code>![测试](./2020.png)</code></p><h3 id=第二种相对路径>第二种相对路径</h3><p>将<code>_config.yml</code>文件中的配置项<code>post_asset_folder</code>设为true后，执行命令</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>$ hexo new post_name
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>hexo new post_name
 </span></span></code></pre></td></tr></table></div></div><p>在source/_posts中会生成文章post_name.md和同名文件夹post_name。
 将图片资源放在post_name中，文章就可以使用相对路径引用图片资源了。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>!<span class=o>[](</span>image.jpg<span class=o>)</span>
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>!<span class=o>[</span>TODO<span class=o>](</span>
+</span></span><span class=line><span class=cl>image.jpg<span class=o>)</span>
 </span></span></code></pre></td></tr></table></div></div><blockquote><p>如果有遇到问题参考:<a href=https://yanyinhong.github.io/2017/05/02/How-to-insert-image-in-hexo-post/>Hexo博客搭建之在文章中插入图片</a></p></blockquote><h2 id=内链文章>内链文章</h2><h3 id=相对路径-1>相对路径</h3><p>比如我的博客:
 <code>[需要显示的文字](../310/#CloudFront加速Vercel)</code></p><ul><li><code>../</code> 相对路径,不是md文件的相对路径,是生成的public文件夹你的文章和内链文章的相对路径</li><li>310 是指<code>abbrlink: 310</code>,如果没有就使用标题</li><li><code>#CloudFront加速Vercel</code> 是指 310这篇文章的<code>#CloudFront加速Vercel</code>这个标题,也可以不用写,如果写了,就会自动跳到页面的这个锚点</li></ul></div><div><a class="read-more button inline" href=/hexo/>[阅读全文]</a></div></article><div class=pagination><div class=pagination__buttons></div></div></div></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>
 <span>:: <a href=https://github.com/panr/hugo-theme-terminal target=_blank>Theme</a> made by <a href=https://github.com/panr target=_blank>panr</a></span></div></div></footer><script type=text/javascript src=/bundle.min.js></script></div></body></html>

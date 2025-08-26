@@ -93,19 +93,19 @@
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>// 创建 ServerBootstrap 对象，用于 Netty Server 启动</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>ServerBootstrap</span><span class=w> </span><span class=n>bootstrap</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>ServerBootstrap</span><span class=p>();</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>// 设置 ServerBootstrap 的各种属性</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>      	</span><span class=c1>// 设置两个 EventLoopGroup 对象</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>       </span><span class=c1>// 设置两个 EventLoopGroup 对象</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>bootstrap</span><span class=p>.</span><span class=na>group</span><span class=p>(</span><span class=n>bossGroup</span><span class=p>,</span><span class=w> </span><span class=n>workerGroup</span><span class=p>)</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>          			</span><span class=c1>// 指定 Channel 为服务端 NioServerSocketChannel</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>             </span><span class=c1>// 指定 Channel 为服务端 NioServerSocketChannel</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>                </span><span class=p>.</span><span class=na>channel</span><span class=p>(</span><span class=n>NioServerSocketChannel</span><span class=p>.</span><span class=na>class</span><span class=p>)</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>          			</span><span class=c1>// 设置 Netty Server 的端口</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>             </span><span class=c1>// 设置 Netty Server 的端口</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>                </span><span class=p>.</span><span class=na>localAddress</span><span class=p>(</span><span class=k>new</span><span class=w> </span><span class=n>InetSocketAddress</span><span class=p>(</span><span class=n>port</span><span class=p>))</span><span class=w> 
-</span></span></span><span class=line><span class=cl><span class=w>          			</span><span class=c1>// 服务端 accept 队列的大小</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>             </span><span class=c1>// 服务端 accept 队列的大小</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>                </span><span class=p>.</span><span class=na>option</span><span class=p>(</span><span class=n>ChannelOption</span><span class=p>.</span><span class=na>SO_BACKLOG</span><span class=p>,</span><span class=w> </span><span class=n>1024</span><span class=p>)</span><span class=w> 
-</span></span></span><span class=line><span class=cl><span class=w>          			</span><span class=c1>// TCP Keepalive 机制，实现 TCP 层级的心跳保活功能</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>             </span><span class=c1>// TCP Keepalive 机制，实现 TCP 层级的心跳保活功能</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>                </span><span class=p>.</span><span class=na>childOption</span><span class=p>(</span><span class=n>ChannelOption</span><span class=p>.</span><span class=na>SO_KEEPALIVE</span><span class=p>,</span><span class=w> </span><span class=kc>true</span><span class=p>)</span><span class=w> 
-</span></span></span><span class=line><span class=cl><span class=w>          			</span><span class=c1>// 允许较小的数据包的发送，降低延迟</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>             </span><span class=c1>// 允许较小的数据包的发送，降低延迟</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>                </span><span class=p>.</span><span class=na>childOption</span><span class=p>(</span><span class=n>ChannelOption</span><span class=p>.</span><span class=na>TCP_NODELAY</span><span class=p>,</span><span class=w> </span><span class=kc>true</span><span class=p>)</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>          			</span><span class=c1>// 处理器</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>             </span><span class=c1>// 处理器</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>                </span><span class=p>.</span><span class=na>childHandler</span><span class=p>(</span><span class=n>nettyServerHandlerInitializer</span><span class=p>);</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>// 绑定端口，并同步等待成功，即启动服务端</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>ChannelFuture</span><span class=w> </span><span class=n>future</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>bootstrap</span><span class=p>.</span><span class=na>bind</span><span class=p>().</span><span class=na>sync</span><span class=p>();</span><span class=w>
@@ -135,9 +135,9 @@
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=line><span class=cl><span class=nt>&lt;dependency&gt;</span>
-</span></span><span class=line><span class=cl>	<span class=nt>&lt;groupId&gt;</span>com.warrenstrange<span class=nt>&lt;/groupId&gt;</span>
-</span></span><span class=line><span class=cl>	<span class=nt>&lt;artifactId&gt;</span>googleauth<span class=nt>&lt;/artifactId&gt;</span>
-</span></span><span class=line><span class=cl>	<span class=nt>&lt;version&gt;</span>1.5.0<span class=nt>&lt;/version&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;groupId&gt;</span>com.warrenstrange<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;artifactId&gt;</span>googleauth<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;version&gt;</span>1.5.0<span class=nt>&lt;/version&gt;</span>
 </span></span><span class=line><span class=cl><span class=nt>&lt;/dependency&gt;</span>
 </span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -299,9 +299,9 @@
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=line><span class=cl><span class=nt>&lt;dependency&gt;</span>
-</span></span><span class=line><span class=cl>	<span class=nt>&lt;groupId&gt;</span>com.huaweicloud<span class=nt>&lt;/groupId&gt;</span>
-</span></span><span class=line><span class=cl>	<span class=nt>&lt;artifactId&gt;</span>esdk-obs-java-bundle<span class=nt>&lt;/artifactId&gt;</span>
-</span></span><span class=line><span class=cl>	<span class=nt>&lt;version&gt;</span>3.23.9.1<span class=nt>&lt;/version&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;groupId&gt;</span>com.huaweicloud<span class=nt>&lt;/groupId&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;artifactId&gt;</span>esdk-obs-java-bundle<span class=nt>&lt;/artifactId&gt;</span>
+</span></span><span class=line><span class=cl> <span class=nt>&lt;version&gt;</span>3.23.9.1<span class=nt>&lt;/version&gt;</span>
 </span></span><span class=line><span class=cl><span class=nt>&lt;/dependency&gt;</span>
 </span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -438,7 +438,7 @@
 </span></span></span><span class=line><span class=cl><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
 </span></span></span></code></pre></td></tr></table></div></div></div><div><a class="read-more button inline" href=/%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/>[阅读全文]</a></div></article><article class="post on-list"><h1 class=post-title><a href=https://isme.cz/java/spring/>Spring</a></h1><div class=post-meta><time class=post-date>2023-08-25</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://isme.cz/tags/java/>Java</a>&nbsp;
-</span><img src=https://image.runtimes.cc/202404051534866.png class=post-cover alt=Spring title="Cover Image"><div class=post-content><h1 id=springmvc>SpringMVC</h1><p><img src=https://image.runtimes.cc/202404051458028.png alt></p><p>总结：</p><ol><li>首先请求进入DispatcherServlet 由DispatcherServlet 从HandlerMappings中提取对应的Handler。</li><li>2.此时只是获取到了对应的Handle，然后得去寻找对应的适配器，即：HandlerAdapter。</li><li>拿到对应HandlerAdapter时，这时候开始调用对应的Handler处理业务逻辑了。 （这时候实际上已经执行完了我们的Controller） 执行完成之后返回一个ModeAndView</li><li>这时候交给我们的ViewResolver通过视图名称查找出对应的视图然后返回。</li><li>最后 渲染视图 返回渲染后的视图 &ndash;>响应请求。</li></ol><h2 id=初始化过程>初始化过程</h2><p>version 5.3.8</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><img src=https://image.runtimes.cc/202404051534866.png class=post-cover alt=Spring title="Cover Image"><div class=post-content><h1 id=springmvc>SpringMVC</h1><p><img src=https://image.runtimes.cc/202404051458028.png alt=TODO></p><p>总结：</p><ol><li>首先请求进入DispatcherServlet 由DispatcherServlet 从HandlerMappings中提取对应的Handler。</li><li>2.此时只是获取到了对应的Handle，然后得去寻找对应的适配器，即：HandlerAdapter。</li><li>拿到对应HandlerAdapter时，这时候开始调用对应的Handler处理业务逻辑了。 （这时候实际上已经执行完了我们的Controller） 执行完成之后返回一个ModeAndView</li><li>这时候交给我们的ViewResolver通过视图名称查找出对应的视图然后返回。</li><li>最后 渲染视图 返回渲染后的视图 &ndash;>响应请求。</li></ol><h2 id=初始化过程>初始化过程</h2><p>version 5.3.8</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
@@ -527,70 +527,70 @@
 </span><span class=lnt>57
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=c1>// org.springframework.web.servlet.FrameworkServlet#initWebApplicationContext</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>protected</span><span class=w> </span><span class=n>WebApplicationContext</span><span class=w> </span><span class=nf>initWebApplicationContext</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=n>WebApplicationContext</span><span class=w> </span><span class=n>rootContext</span><span class=w> </span><span class=o>=</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>				</span><span class=n>WebApplicationContextUtils</span><span class=p>.</span><span class=na>getWebApplicationContext</span><span class=p>(</span><span class=n>getServletContext</span><span class=p>());</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=n>WebApplicationContext</span><span class=w> </span><span class=n>wac</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=kc>null</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=n>WebApplicationContext</span><span class=w> </span><span class=n>rootContext</span><span class=w> </span><span class=o>=</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>WebApplicationContextUtils</span><span class=p>.</span><span class=na>getWebApplicationContext</span><span class=p>(</span><span class=n>getServletContext</span><span class=p>());</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=n>WebApplicationContext</span><span class=w> </span><span class=n>wac</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=kc>null</span><span class=p>;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=k>this</span><span class=p>.</span><span class=na>webApplicationContext</span><span class=w> </span><span class=o>!=</span><span class=w> </span><span class=kc>null</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>			</span><span class=c1>// A context instance was injected at construction time -&gt; use it</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>			</span><span class=n>wac</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>this</span><span class=p>.</span><span class=na>webApplicationContext</span><span class=p>;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>			</span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=n>wac</span><span class=w> </span><span class=k>instanceof</span><span class=w> </span><span class=n>ConfigurableWebApplicationContext</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>				</span><span class=n>ConfigurableWebApplicationContext</span><span class=w> </span><span class=n>cwac</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=p>(</span><span class=n>ConfigurableWebApplicationContext</span><span class=p>)</span><span class=w> </span><span class=n>wac</span><span class=p>;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>				</span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=o>!</span><span class=n>cwac</span><span class=p>.</span><span class=na>isActive</span><span class=p>())</span><span class=w> </span><span class=p>{</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>					</span><span class=c1>// The context has not yet been refreshed -&gt; provide services such as</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>					</span><span class=c1>// setting the parent context, setting the application context id, etc</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>					</span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=n>cwac</span><span class=p>.</span><span class=na>getParent</span><span class=p>()</span><span class=w> </span><span class=o>==</span><span class=w> </span><span class=kc>null</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>						</span><span class=c1>// The context instance was injected without an explicit parent -&gt; set</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>						</span><span class=c1>// the root application context (if any; may be null) as the parent</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>						</span><span class=n>cwac</span><span class=p>.</span><span class=na>setParent</span><span class=p>(</span><span class=n>rootContext</span><span class=p>);</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>					</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=k>this</span><span class=p>.</span><span class=na>webApplicationContext</span><span class=w> </span><span class=o>!=</span><span class=w> </span><span class=kc>null</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=c1>// A context instance was injected at construction time -&gt; use it</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=n>wac</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>this</span><span class=p>.</span><span class=na>webApplicationContext</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=n>wac</span><span class=w> </span><span class=k>instanceof</span><span class=w> </span><span class=n>ConfigurableWebApplicationContext</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>ConfigurableWebApplicationContext</span><span class=w> </span><span class=n>cwac</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=p>(</span><span class=n>ConfigurableWebApplicationContext</span><span class=p>)</span><span class=w> </span><span class=n>wac</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=o>!</span><span class=n>cwac</span><span class=p>.</span><span class=na>isActive</span><span class=p>())</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>     </span><span class=c1>// The context has not yet been refreshed -&gt; provide services such as</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>     </span><span class=c1>// setting the parent context, setting the application context id, etc</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>     </span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=n>cwac</span><span class=p>.</span><span class=na>getParent</span><span class=p>()</span><span class=w> </span><span class=o>==</span><span class=w> </span><span class=kc>null</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=c1>// The context instance was injected without an explicit parent -&gt; set</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=c1>// the root application context (if any; may be null) as the parent</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=n>cwac</span><span class=p>.</span><span class=na>setParent</span><span class=p>(</span><span class=n>rootContext</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>     </span><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>          
 </span></span></span><span class=line><span class=cl><span class=w>          </span><span class=c1>//配置和刷新spring容器（重要）</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>					</span><span class=c1>//这个无非就是初始化spring ioc的环境，创建bean和实例化bean等操作</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>					</span><span class=c1>//这个方法最终也是调用refresh()方法，已在spring源码解析中解析过了</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>					</span><span class=n>configureAndRefreshWebApplicationContext</span><span class=p>(</span><span class=n>cwac</span><span class=p>);</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>				</span><span class=p>}</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>			</span><span class=p>}</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=p>}</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=n>wac</span><span class=w> </span><span class=o>==</span><span class=w> </span><span class=kc>null</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>			</span><span class=c1>// No context instance was injected at construction time -&gt; see if one</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>			</span><span class=c1>// has been registered in the servlet context. If one exists, it is assumed</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>			</span><span class=c1>// that the parent context (if any) has already been set and that the</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>			</span><span class=c1>// user has performed any initialization such as setting the context id</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>			</span><span class=n>wac</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>findWebApplicationContext</span><span class=p>();</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=p>}</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=n>wac</span><span class=w> </span><span class=o>==</span><span class=w> </span><span class=kc>null</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>			</span><span class=c1>// No context instance is defined for this servlet -&gt; create a local one</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>			</span><span class=n>wac</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>createWebApplicationContext</span><span class=p>(</span><span class=n>rootContext</span><span class=p>);</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>     </span><span class=c1>//这个无非就是初始化spring ioc的环境，创建bean和实例化bean等操作</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>     </span><span class=c1>//这个方法最终也是调用refresh()方法，已在spring源码解析中解析过了</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>     </span><span class=n>configureAndRefreshWebApplicationContext</span><span class=p>(</span><span class=n>cwac</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=n>wac</span><span class=w> </span><span class=o>==</span><span class=w> </span><span class=kc>null</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=c1>// No context instance was injected at construction time -&gt; see if one</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=c1>// has been registered in the servlet context. If one exists, it is assumed</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=c1>// that the parent context (if any) has already been set and that the</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=c1>// user has performed any initialization such as setting the context id</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=n>wac</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>findWebApplicationContext</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=n>wac</span><span class=w> </span><span class=o>==</span><span class=w> </span><span class=kc>null</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=c1>// No context instance is defined for this servlet -&gt; create a local one</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=n>wac</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>createWebApplicationContext</span><span class=p>(</span><span class=n>rootContext</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=o>!</span><span class=k>this</span><span class=p>.</span><span class=na>refreshEventReceived</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>			</span><span class=c1>// Either the context is not a ConfigurableApplicationContext with refresh</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>			</span><span class=c1>// support or the context injected at construction time had already been</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>			</span><span class=c1>// refreshed -&gt; trigger initial onRefresh manually here.</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>			</span><span class=kd>synchronized</span><span class=w> </span><span class=p>(</span><span class=k>this</span><span class=p>.</span><span class=na>onRefreshMonitor</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=o>!</span><span class=k>this</span><span class=p>.</span><span class=na>refreshEventReceived</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=c1>// Either the context is not a ConfigurableApplicationContext with refresh</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=c1>// support or the context injected at construction time had already been</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=c1>// refreshed -&gt; trigger initial onRefresh manually here.</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=kd>synchronized</span><span class=w> </span><span class=p>(</span><span class=k>this</span><span class=p>.</span><span class=na>onRefreshMonitor</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>// 初始化DispatcherServlet的配置initStrategies()</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>				</span><span class=n>onRefresh</span><span class=p>(</span><span class=n>wac</span><span class=p>);</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>			</span><span class=p>}</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>onRefresh</span><span class=p>(</span><span class=n>wac</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=k>this</span><span class=p>.</span><span class=na>publishContext</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>			</span><span class=c1>// Publish the context as a servlet context attribute.</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>			</span><span class=n>String</span><span class=w> </span><span class=n>attrName</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>getServletContextAttributeName</span><span class=p>();</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>			</span><span class=n>getServletContext</span><span class=p>().</span><span class=na>setAttribute</span><span class=p>(</span><span class=n>attrName</span><span class=p>,</span><span class=w> </span><span class=n>wac</span><span class=p>);</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=k>if</span><span class=w> </span><span class=p>(</span><span class=k>this</span><span class=p>.</span><span class=na>publishContext</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=c1>// Publish the context as a servlet context attribute.</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=n>String</span><span class=w> </span><span class=n>attrName</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>getServletContextAttributeName</span><span class=p>();</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=n>getServletContext</span><span class=p>().</span><span class=na>setAttribute</span><span class=p>(</span><span class=n>attrName</span><span class=p>,</span><span class=w> </span><span class=n>wac</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=k>return</span><span class=w> </span><span class=n>wac</span><span class=p>;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=k>return</span><span class=w> </span><span class=n>wac</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w> </span><span class=p>}</span><span class=w>
 </span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=c1>// org.springframework.web.servlet.DispatcherServlet#onRefresh	</span><span class=w>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=c1>// org.springframework.web.servlet.DispatcherServlet#onRefresh </span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>protected</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>onRefresh</span><span class=p>(</span><span class=n>ApplicationContext</span><span class=w> </span><span class=n>context</span><span class=p>)</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>// //初始化springmvc的配置</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>		</span><span class=n>initStrategies</span><span class=p>(</span><span class=n>context</span><span class=p>);</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>	</span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=n>initStrategies</span><span class=p>(</span><span class=n>context</span><span class=p>);</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w> </span><span class=p>}</span><span class=w>
 </span></span></span></code></pre></td></tr></table></div></div><p>总体流程:</p></div><div><a class="read-more button inline" href=/java/spring/>[阅读全文]</a></div></article><div class=pagination><div class=pagination__buttons><a href=/categories/java/page/2/ class="button inline next">[<span class=button__text>下一页</span>] ></a></div></div></div></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>
 <span>:: <a href=https://github.com/panr/hugo-theme-terminal target=_blank>Theme</a> made by <a href=https://github.com/panr target=_blank>panr</a></span></div></div></footer><script type=text/javascript src=/bundle.min.js></script></div></body></html>

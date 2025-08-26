@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mybatis on Hello World</title><link>https://isme.cz/tags/mybatis/</link><description>Recent content in Mybatis on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Fri, 22 Aug 2025 14:49:53 +0700</lastBuildDate><atom:link href="https://isme.cz/tags/mybatis/index.xml" rel="self" type="application/rss+xml"/><item><title>Mybatis</title><link>https://isme.cz/java/mybatis/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/java/mybatis/</guid><description>&lt;h1 id="教程">教程&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mybatis on Hello World</title><link>https://isme.cz/tags/mybatis/</link><description>Recent content in Mybatis on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Tue, 26 Aug 2025 12:48:16 +0700</lastBuildDate><atom:link href="https://isme.cz/tags/mybatis/index.xml" rel="self" type="application/rss+xml"/><item><title>Mybatis</title><link>https://isme.cz/java/mybatis/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/java/mybatis/</guid><description>&lt;h1 id="教程">教程&lt;/h1>
 &lt;blockquote>
 &lt;p>参考:&lt;/p>
 &lt;p>&lt;a href="https://mybatis.org/mybatis-3/">官方文档&lt;/a>&lt;/p>
@@ -8,12 +8,12 @@
 &lt;p>2.Provider的方法,大概就三个方法sql.SELECT,sql.WHERE,sql.FROM&lt;/p>
 &lt;p>3.SQL 对象里的方法名跟别的不一样,小写的不行,idea也识别不到,要用大写,比如SLELECT&lt;/p>
 &lt;p>4.Provider里返回的是String&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051427670.png" alt="">&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051427490.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051427670.png" alt="TODO">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051427490.png" alt="TODO">&lt;/p>
 &lt;h2 id="注解-一对多查询多个参数">注解 一对多查询(多个参数)&lt;/h2>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051427839.png" alt="">&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051428785.png" alt="">&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051429441.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051427839.png" alt="TODO">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051428785.png" alt="TODO">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051429441.png" alt="TODO">&lt;/p>
 &lt;h2 id="注解-一对多查询多个参数-1">注解 一对多查询(多个参数)&lt;/h2>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -188,4 +188,4 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="注解-一对多查询一个参数">注解 一对多查询(一个参数)&lt;/h2>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051430732.png" alt="">&lt;/p></description></item></channel></rss>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051430732.png" alt="TODO">&lt;/p></description></item></channel></rss>

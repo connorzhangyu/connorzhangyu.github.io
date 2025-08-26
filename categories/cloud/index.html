@@ -24,12 +24,12 @@
 </span></span><span class=line><span class=cl>iptables -F
 </span></span><span class=line><span class=cl>iptables -A INPUT -p tcp --dport <span class=m>22</span> -j ACCEPT
 </span></span></code></pre></td></tr></table></div></div><p>再启动服务器</p><h2 id=aws升级配置>AWS升级配置</h2><p>1.先<code>停止</code>实例,不是<code>终止</code>实例
-<img src=https://image.runtimes.cc/202404051405513.png alt></p><p>2.修改实例类型
-<img src=https://image.runtimes.cc/202404051406722.png alt></p><p>{% note danger simple %}
+<img src=https://image.runtimes.cc/202404051405513.png alt=TODO></p><p>2.修改实例类型
+<img src=https://image.runtimes.cc/202404051406722.png alt=TODO></p><p>{% note danger simple %}
 重启公网IP可能会改变
-{% endnote %}</p><h2 id=服务器局域网互通>服务器局域网互通</h2><p>需要把局域网 想要互通的服务器,加入一个公共的的默认安全组</p><p><img src=https://image.runtimes.cc/202404051406727.png alt>
+{% endnote %}</p><h2 id=服务器局域网互通>服务器局域网互通</h2><p>需要把局域网 想要互通的服务器,加入一个公共的的默认安全组</p><p><img src=https://image.runtimes.cc/202404051406727.png alt=TODO>
 选择<code>default</code>安全组
-<img src=https://image.runtimes.cc/202404051406784.png alt></p><h2 id=要看服务器部署在哪里>要看服务器部署在哪里</h2><p><img src=https://image.runtimes.cc/202404051406380.png alt></p><p><img src=https://image.runtimes.cc/202404051407931.png alt></p><h2 id=javasdk上传图片到s3>JavaSDK上传图片到S3</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+<img src=https://image.runtimes.cc/202404051406784.png alt=TODO></p><h2 id=要看服务器部署在哪里>要看服务器部署在哪里</h2><p><img src=https://image.runtimes.cc/202404051406380.png alt=TODO></p><p><img src=https://image.runtimes.cc/202404051407931.png alt=TODO></p><h2 id=javasdk上传图片到s3>JavaSDK上传图片到S3</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -134,7 +134,7 @@
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
 </span></span></span></code></pre></td></tr></table></div></div><h2 id=s3桶策略>S3桶策略</h2><p>公开访问桶策略</p></div><div><a class="read-more button inline" href=/aws/>[阅读全文]</a></div></article><article class="post on-list"><h1 class=post-title><a href=https://isme.cz/cloudflare/>Cloudflare</a></h1><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://isme.cz/tags/%E5%9F%9F%E5%90%8D/>域名</a>&nbsp;
-</span><img src=https://image.runtimes.cc/202404051526915.webp class=post-cover alt=Cloudflare title="Cover Image"><div class=post-content><h1 id=关闭ipv6>关闭IPV6</h1><p><img src=https://image.runtimes.cc/202404051517919.png alt></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><img src=https://image.runtimes.cc/202404051526915.webp class=post-cover alt=Cloudflare title="Cover Image"><div class=post-content><h1 id=关闭ipv6>关闭IPV6</h1><p><img src=https://image.runtimes.cc/202404051517919.png alt=TODO></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
@@ -145,6 +145,6 @@
 </span></span></span><span class=line><span class=cl><span class=se></span>     -H <span class=s2>&#34;Content-Type: application/json&#34;</span> <span class=se>\
 </span></span></span><span class=line><span class=cl><span class=se></span>     --data <span class=s1>&#39;{&#34;value&#34;:&#34;off&#34;}&#39;</span>
 </span></span></code></pre></td></tr></table></div></div><p>URL上的地址:
-<img src=https://image.runtimes.cc/202404051411183.png alt></p><p>X-Auth-Key:
-<img src=https://image.runtimes.cc/202404051411721.png alt></p></div><div><a class="read-more button inline" href=/cloudflare/>[阅读全文]</a></div></article><div class=pagination><div class=pagination__buttons></div></div></div></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>
+<img src=https://image.runtimes.cc/202404051411183.png alt=TODO></p><p>X-Auth-Key:
+<img src=https://image.runtimes.cc/202404051411721.png alt=TODO></p></div><div><a class="read-more button inline" href=/cloudflare/>[阅读全文]</a></div></article><div class=pagination><div class=pagination__buttons></div></div></div></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>
 <span>:: <a href=https://github.com/panr/hugo-theme-terminal target=_blank>Theme</a> made by <a href=https://github.com/panr target=_blank>panr</a></span></div></div></footer><script type=text/javascript src=/bundle.min.js></script></div></body></html>

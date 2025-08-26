@@ -207,12 +207,12 @@ Dynaot买的域名, 指定 Cloudflar 的NameServer
 </span></span><span class=line><span class=cl>iptables -F
 </span></span><span class=line><span class=cl>iptables -A INPUT -p tcp --dport <span class=m>22</span> -j ACCEPT
 </span></span></code></pre></td></tr></table></div></div><p>再启动服务器</p><h2 id=aws升级配置>AWS升级配置</h2><p>1.先<code>停止</code>实例,不是<code>终止</code>实例
-<img src=https://image.runtimes.cc/202404051405513.png alt></p><p>2.修改实例类型
-<img src=https://image.runtimes.cc/202404051406722.png alt></p><p>{% note danger simple %}
+<img src=https://image.runtimes.cc/202404051405513.png alt=TODO></p><p>2.修改实例类型
+<img src=https://image.runtimes.cc/202404051406722.png alt=TODO></p><p>{% note danger simple %}
 重启公网IP可能会改变
-{% endnote %}</p><h2 id=服务器局域网互通>服务器局域网互通</h2><p>需要把局域网 想要互通的服务器,加入一个公共的的默认安全组</p><p><img src=https://image.runtimes.cc/202404051406727.png alt>
+{% endnote %}</p><h2 id=服务器局域网互通>服务器局域网互通</h2><p>需要把局域网 想要互通的服务器,加入一个公共的的默认安全组</p><p><img src=https://image.runtimes.cc/202404051406727.png alt=TODO>
 选择<code>default</code>安全组
-<img src=https://image.runtimes.cc/202404051406784.png alt></p><h2 id=要看服务器部署在哪里>要看服务器部署在哪里</h2><p><img src=https://image.runtimes.cc/202404051406380.png alt></p><p><img src=https://image.runtimes.cc/202404051407931.png alt></p><h2 id=javasdk上传图片到s3>JavaSDK上传图片到S3</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+<img src=https://image.runtimes.cc/202404051406784.png alt=TODO></p><h2 id=要看服务器部署在哪里>要看服务器部署在哪里</h2><p><img src=https://image.runtimes.cc/202404051406380.png alt=TODO></p><p><img src=https://image.runtimes.cc/202404051407931.png alt=TODO></p><h2 id=javasdk上传图片到s3>JavaSDK上传图片到S3</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -344,19 +344,19 @@ Dynaot买的域名, 指定 Cloudflar 的NameServer
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kt>int</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=c1>//变量的定义
-</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=c1>//语法：数据类型  变量名 = 初始值
+</span></span><span class=line><span class=cl> <span class=c1>//变量的定义
+</span></span></span><span class=line><span class=cl><span class=c1></span> <span class=c1>//语法：数据类型  变量名 = 初始值
 </span></span></span><span class=line><span class=cl><span class=c1></span>
-</span></span><span class=line><span class=cl>	<span class=kt>int</span> <span class=n>a</span> <span class=o>=</span> <span class=mi>10</span><span class=p>;</span>
+</span></span><span class=line><span class=cl> <span class=kt>int</span> <span class=n>a</span> <span class=o>=</span> <span class=mi>10</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;a = &#34;</span> <span class=o>&lt;&lt;</span> <span class=n>a</span> <span class=o>&lt;&lt;</span> <span class=n>endl</span><span class=p>;</span>
+</span></span><span class=line><span class=cl> <span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=s>&#34;a = &#34;</span> <span class=o>&lt;&lt;</span> <span class=n>a</span> <span class=o>&lt;&lt;</span> <span class=n>endl</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=n>system</span><span class=p>(</span><span class=s>&#34;pause&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl> <span class=n>system</span><span class=p>(</span><span class=s>&#34;pause&#34;</span><span class=p>);</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl> <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div><p>注意：C++在创建变量时，<code>必须给变量一个初始值</code>，否则会报错</p><h1 id=常量>常量</h1><p><strong>作用</strong>：用于记录程序中不可更改的数据</p></div><div><a class="read-more button inline" href=/c-/>[阅读全文]</a></div></article><article class="post on-list"><h2 class=post-title><a href=https://isme.cz/cloudflare/>Cloudflare</a></h2><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://isme.cz/tags/%E5%9F%9F%E5%90%8D/>域名</a>&nbsp;
-</span><img src=https://image.runtimes.cc/202404051526915.webp class=post-cover alt=Cloudflare title="Cover Image"><div class=post-content><h1 id=关闭ipv6>关闭IPV6</h1><p><img src=https://image.runtimes.cc/202404051517919.png alt></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><img src=https://image.runtimes.cc/202404051526915.webp class=post-cover alt=Cloudflare title="Cover Image"><div class=post-content><h1 id=关闭ipv6>关闭IPV6</h1><p><img src=https://image.runtimes.cc/202404051517919.png alt=TODO></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
@@ -367,11 +367,11 @@ Dynaot买的域名, 指定 Cloudflar 的NameServer
 </span></span></span><span class=line><span class=cl><span class=se></span>     -H <span class=s2>&#34;Content-Type: application/json&#34;</span> <span class=se>\
 </span></span></span><span class=line><span class=cl><span class=se></span>     --data <span class=s1>&#39;{&#34;value&#34;:&#34;off&#34;}&#39;</span>
 </span></span></code></pre></td></tr></table></div></div><p>URL上的地址:
-<img src=https://image.runtimes.cc/202404051411183.png alt></p><p>X-Auth-Key:
-<img src=https://image.runtimes.cc/202404051411721.png alt></p></div><div><a class="read-more button inline" href=/cloudflare/>[阅读全文]</a></div></article><article class="post on-list"><h2 class=post-title><a href=https://isme.cz/css/>CSS</a></h2><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://isme.cz/tags/%E5%89%8D%E7%AB%AF/>前端</a>&nbsp;
+<img src=https://image.runtimes.cc/202404051411183.png alt=TODO></p><p>X-Auth-Key:
+<img src=https://image.runtimes.cc/202404051411721.png alt=TODO></p></div><div><a class="read-more button inline" href=/cloudflare/>[阅读全文]</a></div></article><article class="post on-list"><h2 class=post-title><a href=https://isme.cz/css/>CSS</a></h2><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://isme.cz/tags/%E5%89%8D%E7%AB%AF/>前端</a>&nbsp;
 #<a href=https://isme.cz/tags/css/>CSS</a>&nbsp;
 </span><img src=https://image.runtimes.cc/202505281524854.webp class=post-cover alt=CSS title="Cover Image"><div class=post-content><p>CSS</p></div><div><a class="read-more button inline" href=/css/>[阅读全文]</a></div></article><article class="post on-list"><h2 class=post-title><a href=https://isme.cz/datagrip/>DataGrip</a></h2><div class=post-meta><time class=post-date>2022-11-19</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://isme.cz/tags/mac/>Mac</a>&nbsp;
-</span><img src=https://image.runtimes.cc/202404051526687.webp class=post-cover alt=DataGrip title="Cover Image"><div class=post-content><h1 id=查看ddl和复制为insert语句>查看ddl和复制为insert语句</h1><p><img src=https://image.runtimes.cc/202404051411320.png alt></p><h1 id=显示>显示</h1><h2 id=设置数据库颜色>设置数据库颜色</h2><p><img src=https://image.runtimes.cc/202404051411473.png alt=image-20230723151325737></p><h2 id=显示树状结构>显示树状结构</h2><p><img src=https://image.runtimes.cc/202404051412133.png alt=image-20230726133150472></p><h2 id=显示表的commnet>显示表的commnet</h2><p><img src=https://image.runtimes.cc/202404051412038.png alt=image-20230726133353607></p><h2 id=显示数据库ddl最后一次更新的时间>显示数据库DDL最后一次更新的时间</h2><p><img src=https://image.runtimes.cc/202404051412291.png alt=image-20230726133451693></p><h1 id=同步比较两个表的数据结构>同步/比较两个表的数据结构</h1><p>用command 选中 两个想要比较的表,然后在其中一个表,选择</p><p><img src=https://image.runtimes.cc/202404051412792.png alt=image-20230723151708711></p><p>只显示不一样的字段
+</span><img src=https://image.runtimes.cc/202404051526687.webp class=post-cover alt=DataGrip title="Cover Image"><div class=post-content><h1 id=查看ddl和复制为insert语句>查看ddl和复制为insert语句</h1><p><img src=https://image.runtimes.cc/202404051411320.png alt=TODO></p><h1 id=显示>显示</h1><h2 id=设置数据库颜色>设置数据库颜色</h2><p><img src=https://image.runtimes.cc/202404051411473.png alt=image-20230723151325737></p><h2 id=显示树状结构>显示树状结构</h2><p><img src=https://image.runtimes.cc/202404051412133.png alt=image-20230726133150472></p><h2 id=显示表的commnet>显示表的commnet</h2><p><img src=https://image.runtimes.cc/202404051412038.png alt=image-20230726133353607></p><h2 id=显示数据库ddl最后一次更新的时间>显示数据库DDL最后一次更新的时间</h2><p><img src=https://image.runtimes.cc/202404051412291.png alt=image-20230726133451693></p><h1 id=同步比较两个表的数据结构>同步/比较两个表的数据结构</h1><p>用command 选中 两个想要比较的表,然后在其中一个表,选择</p><p><img src=https://image.runtimes.cc/202404051412792.png alt=image-20230723151708711></p><p>只显示不一样的字段
 <img src=https://image.runtimes.cc/202404051412925.png alt=image-20230723151821734></p><p>显示全部字段,绿色表示不一样</p><p><img src=https://image.runtimes.cc/202404051412733.png alt=image-20230723151913910></p><p>也可以比较两个库,还是刚才的方法,选中两个库,再比较</p><p><img src=https://image.runtimes.cc/202404051412216.png alt=image-20230723153819424></p><p>相当于Navicat的这个功能</p><p><img src=https://image.runtimes.cc/202404051413066.png alt=image-20230723153427586></p><h1 id=复制功能>复制功能</h1><p>标记1,选中表,<code>Command + c</code> 就是复制的表名</p><p>标记2,选中库,<code>Command + c</code> 就是复制的库名</p><p><img src=https://image.runtimes.cc/202404051414322.png alt=image-20230726133739963></p><p>右边的选项,让你复制出的SQL格式是什么样的,比如复制出insert的sql,或者update的sql,或者导出xml 或者,多条记录复制出一条sql语句,简单使用可以尝试</p><p>build-in:</p><ul><li>sql inserts</li><li>sql updates</li></ul><p>scripted:</p><ul><li>sql-insert-multirow</li><li>Sql-insert-statements</li><li></li></ul><p><img src=https://image.runtimes.cc/202404051414566.png alt=image-20230726133946342></p><h1 id=导出的功能>导出的功能</h1><p>使用mysqldump,导出整个库</p><p><img src=https://image.runtimes.cc/202404051414556.png alt=image-20230726134405227></p><p><img src=https://image.runtimes.cc/202404051414094.png alt=image-20230726134504395></p><p>Mac电脑需要安装,<code>mysql-client</code></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3

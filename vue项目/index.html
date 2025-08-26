@@ -149,11 +149,11 @@
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1>// babel.config.js
 </span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>module</span><span class=p>.</span><span class=nx>exports</span> <span class=o>=</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=c1>// 自动生成的
+</span></span><span class=line><span class=cl> <span class=c1>// 自动生成的
 </span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=nx>presets</span><span class=o>:</span> <span class=p>[</span>
 </span></span><span class=line><span class=cl>    <span class=s1>&#39;@vue/cli-plugin-babel/preset&#39;</span>
 </span></span><span class=line><span class=cl>  <span class=p>],</span>
-</span></span><span class=line><span class=cl>	<span class=c1>// 从官网上复制的
+</span></span><span class=line><span class=cl> <span class=c1>// 从官网上复制的
 </span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=s2>&#34;plugins&#34;</span><span class=o>:</span> <span class=p>[</span>
 </span></span><span class=line><span class=cl>    <span class=p>[</span>
 </span></span><span class=line><span class=cl>      <span class=s2>&#34;component&#34;</span><span class=p>,</span>
@@ -165,7 +165,7 @@
 </span></span><span class=line><span class=cl>  <span class=p>]</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div><p>如果没有找到.babelirc文件,找找babel.config.js文件
-<img src=https://image.runtimes.cc/202404051519062.png alt></p><p>一个一个import 按需引入有点麻烦,在根目录下面创建一个plugins文件夹,在这个文件夹下面创建element.js</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+<img src=https://image.runtimes.cc/202404051519062.png alt=TODO></p><p>一个一个import 按需引入有点麻烦,在根目录下面创建一个plugins文件夹,在这个文件夹下面创建element.js</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>import</span> <span class=nx>Vue</span> <span class=nx>from</span> <span class=s1>&#39;vue&#39;</span>
@@ -433,7 +433,7 @@ src->router->index.js</p><div class=highlight><div class=chroma><table class=lnt
 </span></span><span class=line><span class=cl>        <span class=p>},</span>
 </span></span><span class=line><span class=cl>        <span class=p>{</span>
 </span></span><span class=line><span class=cl>            <span class=nx>path</span><span class=o>:</span><span class=s1>&#39;/home2&#39;</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>						<span class=c1>// 异步组件
+</span></span><span class=line><span class=cl>      <span class=c1>// 异步组件
 </span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=nx>component</span><span class=o>:</span><span class=nx>resolve</span> <span class=p>=&gt;</span><span class=nx>require</span><span class=p>([</span><span class=s1>&#39;@/components/Home.vue&#39;</span><span class=p>],</span><span class=nx>resolve</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>        <span class=p>}</span>
 </span></span><span class=line><span class=cl>    <span class=p>],</span>

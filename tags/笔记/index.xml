@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>笔记 on Hello World</title><link>https://isme.cz/tags/%E7%AC%94%E8%AE%B0/</link><description>Recent content in 笔记 on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Fri, 22 Aug 2025 14:49:53 +0700</lastBuildDate><atom:link href="https://isme.cz/tags/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>Vue后台系统</title><link>https://isme.cz/vue%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F/</link><pubDate>Mon, 26 Feb 2024 13:47:19 +0000</pubDate><guid>https://isme.cz/vue%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F/</guid><description>&lt;p>项目由 Vue3 + Pina + JavaScript + Ant Design Vue&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>笔记 on Hello World</title><link>https://isme.cz/tags/%E7%AC%94%E8%AE%B0/</link><description>Recent content in 笔记 on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Tue, 26 Aug 2025 12:48:16 +0700</lastBuildDate><atom:link href="https://isme.cz/tags/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>Vue后台系统</title><link>https://isme.cz/vue%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F/</link><pubDate>Mon, 26 Feb 2024 13:47:19 +0000</pubDate><guid>https://isme.cz/vue%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F/</guid><description>&lt;p>项目由 Vue3 + Pina + JavaScript + Ant Design Vue&lt;/p>
 &lt;h1 id="创建项目">创建项目&lt;/h1>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -167,7 +167,7 @@
 &lt;/ol>
 &lt;p>默认在群里只能收到命令消息,和机器人私聊可以接收到全部的消息,如果想让机器人在群里也能接收到全部的消息,操作如下
 访问&lt;code>BotFather&lt;/code>,输入&lt;code>/setprivacy&lt;/code>,选择自己的机器人,选择&lt;code>DISABLED&lt;/code>,就可以了&lt;/p></description></item><item><title>Rime</title><link>https://isme.cz/rime/</link><pubDate>Sun, 02 Jul 2023 22:37:34 +0000</pubDate><guid>https://isme.cz/rime/</guid><description>&lt;h1 id="基本概念">基本概念&lt;/h1>
-&lt;p>Rime 是一个输入法框架，并不是狭义上的“输入法”，而是将各种输入法的共性抽象出来的算法框架。通过不同的配置文件，Rime 可以支持多种输入方案（Schema），这个所谓的输入方案就是我们狭义上的“输入法”。比如朙月拼音输入法就是 Rime 自带的一种输入方案，另外还有比如四叶草输入法（https://github.com/fkxxyz/rime-cloverpinyin）等等。鼠须管、小狼毫、中州韵分别是 Rime 在不同操作系统下的实现程序。Rime 的配置、词库文件均使用文本方式，便于修改。所有文件均要求以 UTF-8 编码。在配置文件中，以 # 号开头表示注释。&lt;/p>
+&lt;p>Rime 是一个输入法框架，并不是狭义上的“输入法”，而是将各种输入法的共性抽象出来的算法框架。通过不同的配置文件，Rime 可以支持多种输入方案（Schema），这个所谓的输入方案就是我们狭义上的“输入法”。比如朙月拼音输入法就是 Rime 自带的一种输入方案，另外还有比如四叶草输入法（&lt;a href="https://github.com/fkxxyz/rime-cloverpinyin%EF%BC%89%E7%AD%89%E7%AD%89%E3%80%82%E9%BC%A0%E9%A1%BB%E7%AE%A1%E3%80%81%E5%B0%8F%E7%8B%BC%E6%AF%AB%E3%80%81%E4%B8%AD%E5%B7%9E%E9%9F%B5%E5%88%86%E5%88%AB%E6%98%AF">https://github.com/fkxxyz/rime-cloverpinyin）等等。鼠须管、小狼毫、中州韵分别是&lt;/a> Rime 在不同操作系统下的实现程序。Rime 的配置、词库文件均使用文本方式，便于修改。所有文件均要求以 UTF-8 编码。在配置文件中，以 # 号开头表示注释。&lt;/p>
 &lt;h1 id="配置文件所在的目录">配置文件所在的目录&lt;/h1>
 &lt;p>Rime 有两个重要的配置目录：&lt;/p>
 &lt;h2 id="共享配置目录">共享配置目录&lt;/h2>
@@ -664,12 +664,12 @@
 &lt;p>2.Provider的方法,大概就三个方法sql.SELECT,sql.WHERE,sql.FROM&lt;/p>
 &lt;p>3.SQL 对象里的方法名跟别的不一样,小写的不行,idea也识别不到,要用大写,比如SLELECT&lt;/p>
 &lt;p>4.Provider里返回的是String&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051427670.png" alt="">&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051427490.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051427670.png" alt="TODO">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051427490.png" alt="TODO">&lt;/p>
 &lt;h2 id="注解-一对多查询多个参数">注解 一对多查询(多个参数)&lt;/h2>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051427839.png" alt="">&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051428785.png" alt="">&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051429441.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051427839.png" alt="TODO">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051428785.png" alt="TODO">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051429441.png" alt="TODO">&lt;/p>
 &lt;h2 id="注解-一对多查询多个参数-1">注解 一对多查询(多个参数)&lt;/h2>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -844,17 +844,17 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="注解-一对多查询一个参数">注解 一对多查询(一个参数)&lt;/h2>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051430732.png" alt="">&lt;/p></description></item><item><title>Obsidian</title><link>https://isme.cz/obsidian/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/obsidian/</guid><description>&lt;h1 id="插件">插件&lt;/h1>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051430732.png" alt="TODO">&lt;/p></description></item><item><title>Obsidian</title><link>https://isme.cz/obsidian/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/obsidian/</guid><description>&lt;h1 id="插件">插件&lt;/h1>
 &lt;p>1.安装git插件
 2.运行命令,才能在界面上显示Git
-&lt;img src="https://image.runtimes.cc/202404051446974.png" alt="">&lt;/p>
+&lt;img src="https://image.runtimes.cc/202404051446974.png" alt="TODO">&lt;/p>
 &lt;h1 id="设置">设置&lt;/h1>
 &lt;h2 id="打开文件的时候显示的模式">打开文件的时候,显示的模式&lt;/h2>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051447844.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051447844.png" alt="TODO">&lt;/p>
 &lt;h2 id="本地图片的格式">本地图片的格式&lt;/h2>
 &lt;p>使用 Obsidian 时，粘贴的图片路径会变成&lt;code>[[]]&lt;/code> 的格式，在像 Typora 的软件上，就不适配。
 可以在设置里，关闭 Wiki 链接的选项，粘贴图片后的格式就会自动变成了。
-&lt;img src="https://image.runtimes.cc/202404051451913.png" alt="">&lt;/p></description></item><item><title>Python</title><link>https://isme.cz/python/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/python/</guid><description>&lt;h1 id="安装">安装&lt;/h1>
+&lt;img src="https://image.runtimes.cc/202404051451913.png" alt="TODO">&lt;/p></description></item><item><title>Python</title><link>https://isme.cz/python/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/python/</guid><description>&lt;h1 id="安装">安装&lt;/h1>
 &lt;h1 id="虚拟环境">虚拟环境&lt;/h1>
 &lt;pre tabindex="0">&lt;code># 判断有没有虚拟环境
 virtualenv -V

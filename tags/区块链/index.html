@@ -22,7 +22,7 @@
 </span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div><p><img src=https://image.runtimes.cc/202505281038400.png alt=image-20250524145024856></p><h1 id=发行代币>发行代币</h1><p>在闲鱼,淘宝上买些测试币,也可以通过水龙头获取(只是有点要求和门槛,不如直接买),这里我买了两笔
-<img src=https://image.runtimes.cc/202505281036642.webp alt></p><p>新建合约文件</p><p><img src=https://image.runtimes.cc/202505291022584.png alt=image-20250529101100930></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+<img src=https://image.runtimes.cc/202505281036642.webp alt=TODO></p><p>新建合约文件</p><p><img src=https://image.runtimes.cc/202505291022584.png alt=image-20250529101100930></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -61,16 +61,16 @@
 </span><span class=lnt>13
 </span><span class=lnt>14
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-gradle data-lang=gradle><span class=line><span class=cl><span class=n>protoc</span> <span class=o>{</span>
-</span></span><span class=line><span class=cl>				<span class=c1>// 原来的依赖
+</span></span><span class=line><span class=cl>    <span class=c1>// 原来的依赖
 </span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=n>artifact</span> <span class=o>=</span> <span class=s1>&#39;com.google.protobuf:protoc:3.12.0&#39;</span>
 </span></span><span class=line><span class=cl>        <span class=c1>// 修改之后的依赖
 </span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=n>artifact</span> <span class=o>=</span> <span class=s1>&#39;com.google.protobuf:protoc:3.12.0:osx-x86_64&#39;</span>
 </span></span><span class=line><span class=cl>    <span class=o>}</span>
 </span></span><span class=line><span class=cl>    <span class=n>plugins</span> <span class=o>{</span>
 </span></span><span class=line><span class=cl>        <span class=n>grpc</span> <span class=o>{</span>
-</span></span><span class=line><span class=cl> 						<span class=c1>// 原来的依赖
+</span></span><span class=line><span class=cl>       <span class=c1>// 原来的依赖
 </span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=n>artifact</span> <span class=o>=</span> <span class=s1>&#39;io.grpc:protoc-gen-grpc-java:1.31.0&#39;</span>
-</span></span><span class=line><span class=cl>						<span class=c1>// 修改之后的依赖
+</span></span><span class=line><span class=cl>      <span class=c1>// 修改之后的依赖
 </span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=n>artifact</span> <span class=o>=</span> <span class=s1>&#39;io.grpc:protoc-gen-grpc-java:1.31.0:osx-x86_64&#39;</span>
 </span></span><span class=line><span class=cl>        <span class=o>}</span>
 </span></span><span class=line><span class=cl>    <span class=o>}</span>

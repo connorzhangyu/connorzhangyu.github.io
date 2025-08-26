@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Java on Hello World</title><link>https://isme.cz/categories/java/</link><description>Recent content in Java on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Sat, 23 Aug 2025 20:53:24 +0700</lastBuildDate><atom:link href="https://isme.cz/categories/java/index.xml" rel="self" type="application/rss+xml"/><item><title>Java基础入门80问</title><link>https://isme.cz/java/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/</link><pubDate>Thu, 07 Aug 2025 19:36:15 +0700</pubDate><guid>https://isme.cz/java/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/</guid><description>Java基础入门80问</description></item><item><title>Java开发面试题库</title><link>https://isme.cz/java/java%E5%BC%80%E5%8F%91%E9%9D%A2%E8%AF%95%E9%A2%98%E5%BA%93/</link><pubDate>Thu, 31 Jul 2025 01:16:47 +0700</pubDate><guid>https://isme.cz/java/java%E5%BC%80%E5%8F%91%E9%9D%A2%E8%AF%95%E9%A2%98%E5%BA%93/</guid><description>Java 面试题库（完整版，含标准答案）</description></item><item><title>springMVC</title><link>https://isme.cz/java/springmvc/</link><pubDate>Sat, 04 Jan 2025 04:08:56 +0000</pubDate><guid>https://isme.cz/java/springmvc/</guid><description>&lt;h1 id="spring-mvc">Spring MVC&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Java on Hello World</title><link>https://isme.cz/categories/java/</link><description>Recent content in Java on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Tue, 26 Aug 2025 14:16:57 +0700</lastBuildDate><atom:link href="https://isme.cz/categories/java/index.xml" rel="self" type="application/rss+xml"/><item><title>Java基础入门80问</title><link>https://isme.cz/java/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/</link><pubDate>Thu, 07 Aug 2025 19:36:15 +0700</pubDate><guid>https://isme.cz/java/java%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A880%E9%97%AE/</guid><description>Java基础入门80问</description></item><item><title>Java开发面试题库</title><link>https://isme.cz/java/java%E5%BC%80%E5%8F%91%E9%9D%A2%E8%AF%95%E9%A2%98%E5%BA%93/</link><pubDate>Thu, 31 Jul 2025 01:16:47 +0700</pubDate><guid>https://isme.cz/java/java%E5%BC%80%E5%8F%91%E9%9D%A2%E8%AF%95%E9%A2%98%E5%BA%93/</guid><description>Java 面试题库（完整版，含标准答案）</description></item><item><title>springMVC</title><link>https://isme.cz/java/springmvc/</link><pubDate>Sat, 04 Jan 2025 04:08:56 +0000</pubDate><guid>https://isme.cz/java/springmvc/</guid><description>&lt;h1 id="spring-mvc">Spring MVC&lt;/h1>
 &lt;h2 id="说一下-spring-mvc-运行流程">说一下 spring mvc 运行流程？&lt;/h2>
 &lt;p>Spring MVC运行流程图：&lt;/p>
 &lt;p>&lt;img src="https://picabstract-preview-ftn.weiyun.com/ftn_pic_abs_v3/d1f3cfcfacc0c82aa4f6870eaca54d649c6b8358aaff78b9ffa1413397124e3f1c0ec0ad425d6fe651ce7a7e1ee52520?pictype=scale&amp;amp;from=30113&amp;amp;version=3.3.3.3&amp;amp;uin=495869333&amp;amp;fname=springMVC%E8%BF%90%E8%A1%8C%E6%B5%81%E7%A8%8B.png&amp;amp;size=750" alt="Spring MVC运行流程图">&lt;/p>
@@ -58,7 +58,7 @@ multipart/form-data：不能处理；
 其他格式：必须；&lt;/li>
 &lt;/ol>
 &lt;p>作者：希希里之海
-链接：https://www.jianshu.com/p/64b22da6c9ab
+链接：&lt;a href="https://www.jianshu.com/p/64b22da6c9ab">https://www.jianshu.com/p/64b22da6c9ab&lt;/a>
 来源：简书
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。&lt;/p></description></item><item><title>javaBase</title><link>https://isme.cz/java/javabase/</link><pubDate>Sat, 04 Jan 2025 04:08:55 +0000</pubDate><guid>https://isme.cz/java/javabase/</guid><description>&lt;h1 id="java-基础">Java 基础&lt;/h1>
 &lt;h2 id="jdk-和-jre-有什么区别">JDK 和 JRE 有什么区别？&lt;/h2>
@@ -252,19 +252,19 @@ Cookie其实还可以用在一些方便用户的场景下，设想你某次登�
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// 创建 ServerBootstrap 对象，用于 Netty Server 启动&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">ServerBootstrap&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">bootstrap&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">new&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">ServerBootstrap&lt;/span>&lt;span class="p">();&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// 设置 ServerBootstrap 的各种属性&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> 	&lt;/span>&lt;span class="c1">// 设置两个 EventLoopGroup 对象&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// 设置两个 EventLoopGroup 对象&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">bootstrap&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">group&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">bossGroup&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">workerGroup&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> 			&lt;/span>&lt;span class="c1">// 指定 Channel 为服务端 NioServerSocketChannel&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// 指定 Channel 为服务端 NioServerSocketChannel&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">channel&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">NioServerSocketChannel&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">class&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> 			&lt;/span>&lt;span class="c1">// 设置 Netty Server 的端口&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// 设置 Netty Server 的端口&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">localAddress&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">new&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">InetSocketAddress&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">port&lt;/span>&lt;span class="p">))&lt;/span>&lt;span class="w"> 
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> 			&lt;/span>&lt;span class="c1">// 服务端 accept 队列的大小&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// 服务端 accept 队列的大小&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">option&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">ChannelOption&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">SO_BACKLOG&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">1024&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> 
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> 			&lt;/span>&lt;span class="c1">// TCP Keepalive 机制，实现 TCP 层级的心跳保活功能&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// TCP Keepalive 机制，实现 TCP 层级的心跳保活功能&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">childOption&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">ChannelOption&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">SO_KEEPALIVE&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> 
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> 			&lt;/span>&lt;span class="c1">// 允许较小的数据包的发送，降低延迟&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// 允许较小的数据包的发送，降低延迟&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">childOption&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">ChannelOption&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">TCP_NODELAY&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> 			&lt;/span>&lt;span class="c1">// 处理器&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// 处理器&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">childHandler&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">nettyServerHandlerInitializer&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// 绑定端口，并同步等待成功，即启动服务端&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">ChannelFuture&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">future&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">bootstrap&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">bind&lt;/span>&lt;span class="p">().&lt;/span>&lt;span class="na">sync&lt;/span>&lt;span class="p">();&lt;/span>&lt;span class="w">
@@ -300,9 +300,9 @@ Cookie其实还可以用在一些方便用户的场景下，设想你某次登�
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;dependency&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="nt">&amp;lt;groupId&amp;gt;&lt;/span>com.warrenstrange&lt;span class="nt">&amp;lt;/groupId&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="nt">&amp;lt;artifactId&amp;gt;&lt;/span>googleauth&lt;span class="nt">&amp;lt;/artifactId&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="nt">&amp;lt;version&amp;gt;&lt;/span>1.5.0&lt;span class="nt">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;groupId&amp;gt;&lt;/span>com.warrenstrange&lt;span class="nt">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;artifactId&amp;gt;&lt;/span>googleauth&lt;span class="nt">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;version&amp;gt;&lt;/span>1.5.0&lt;span class="nt">&amp;lt;/version&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;/dependency&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
@@ -490,9 +490,9 @@ Cookie其实还可以用在一些方便用户的场景下，设想你某次登�
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;dependency&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="nt">&amp;lt;groupId&amp;gt;&lt;/span>com.huaweicloud&lt;span class="nt">&amp;lt;/groupId&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="nt">&amp;lt;artifactId&amp;gt;&lt;/span>esdk-obs-java-bundle&lt;span class="nt">&amp;lt;/artifactId&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="nt">&amp;lt;version&amp;gt;&lt;/span>3.23.9.1&lt;span class="nt">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;groupId&amp;gt;&lt;/span>com.huaweicloud&lt;span class="nt">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;artifactId&amp;gt;&lt;/span>esdk-obs-java-bundle&lt;span class="nt">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;version&amp;gt;&lt;/span>3.23.9.1&lt;span class="nt">&amp;lt;/version&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;/dependency&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
@@ -637,7 +637,7 @@ Cookie其实还可以用在一些方便用户的场景下，设想你某次登�
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div></description></item><item><title>Spring</title><link>https://isme.cz/java/spring/</link><pubDate>Fri, 25 Aug 2023 14:58:26 +0000</pubDate><guid>https://isme.cz/java/spring/</guid><description>&lt;h1 id="springmvc">SpringMVC&lt;/h1>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051458028.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051458028.png" alt="TODO">&lt;/p>
 &lt;p>总结：&lt;/p>
 &lt;ol>
 &lt;li>首先请求进入DispatcherServlet 由DispatcherServlet 从HandlerMappings中提取对应的Handler。&lt;/li>
@@ -753,61 +753,61 @@ Cookie其实还可以用在一些方便用户的场景下，设想你某次登�
 &lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// org.springframework.web.servlet.FrameworkServlet#initWebApplicationContext&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="kd">protected&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">WebApplicationContext&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nf">initWebApplicationContext&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">		&lt;/span>&lt;span class="n">WebApplicationContext&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">rootContext&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">				&lt;/span>&lt;span class="n">WebApplicationContextUtils&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">getWebApplicationContext&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">getServletContext&lt;/span>&lt;span class="p">());&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">		&lt;/span>&lt;span class="n">WebApplicationContext&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">wac&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">null&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">WebApplicationContext&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">rootContext&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">WebApplicationContextUtils&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">getWebApplicationContext&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">getServletContext&lt;/span>&lt;span class="p">());&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">WebApplicationContext&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">wac&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">null&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">		&lt;/span>&lt;span class="k">if&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">webApplicationContext&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">!=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">null&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">			&lt;/span>&lt;span class="c1">// A context instance was injected at construction time -&amp;gt; use it&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">			&lt;/span>&lt;span class="n">wac&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">webApplicationContext&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">			&lt;/span>&lt;span class="k">if&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">wac&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">instanceof&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">ConfigurableWebApplicationContext&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">				&lt;/span>&lt;span class="n">ConfigurableWebApplicationContext&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">cwac&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">ConfigurableWebApplicationContext&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">wac&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">				&lt;/span>&lt;span class="k">if&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">!&lt;/span>&lt;span class="n">cwac&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">isActive&lt;/span>&lt;span class="p">())&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">					&lt;/span>&lt;span class="c1">// The context has not yet been refreshed -&amp;gt; provide services such as&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">					&lt;/span>&lt;span class="c1">// setting the parent context, setting the application context id, etc&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">					&lt;/span>&lt;span class="k">if&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">cwac&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">getParent&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">==&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">null&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">						&lt;/span>&lt;span class="c1">// The context instance was injected without an explicit parent -&amp;gt; set&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">						&lt;/span>&lt;span class="c1">// the root application context (if any; may be null) as the parent&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">						&lt;/span>&lt;span class="n">cwac&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">setParent&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">rootContext&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">					&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">if&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">webApplicationContext&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">!=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">null&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// A context instance was injected at construction time -&amp;gt; use it&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">wac&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">webApplicationContext&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">if&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">wac&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">instanceof&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">ConfigurableWebApplicationContext&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">ConfigurableWebApplicationContext&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">cwac&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">ConfigurableWebApplicationContext&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">wac&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">if&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">!&lt;/span>&lt;span class="n">cwac&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">isActive&lt;/span>&lt;span class="p">())&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// The context has not yet been refreshed -&amp;gt; provide services such as&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// setting the parent context, setting the application context id, etc&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">if&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">cwac&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">getParent&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">==&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">null&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// The context instance was injected without an explicit parent -&amp;gt; set&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// the root application context (if any; may be null) as the parent&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">cwac&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">setParent&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">rootContext&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> 
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">//配置和刷新spring容器（重要）&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">					&lt;/span>&lt;span class="c1">//这个无非就是初始化spring ioc的环境，创建bean和实例化bean等操作&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">					&lt;/span>&lt;span class="c1">//这个方法最终也是调用refresh()方法，已在spring源码解析中解析过了&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">					&lt;/span>&lt;span class="n">configureAndRefreshWebApplicationContext&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">cwac&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">				&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">			&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">		&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">		&lt;/span>&lt;span class="k">if&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">wac&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">==&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">null&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">			&lt;/span>&lt;span class="c1">// No context instance was injected at construction time -&amp;gt; see if one&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">			&lt;/span>&lt;span class="c1">// has been registered in the servlet context. If one exists, it is assumed&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">			&lt;/span>&lt;span class="c1">// that the parent context (if any) has already been set and that the&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">			&lt;/span>&lt;span class="c1">// user has performed any initialization such as setting the context id&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">			&lt;/span>&lt;span class="n">wac&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">findWebApplicationContext&lt;/span>&lt;span class="p">();&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">		&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">		&lt;/span>&lt;span class="k">if&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">wac&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">==&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">null&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">			&lt;/span>&lt;span class="c1">// No context instance is defined for this servlet -&amp;gt; create a local one&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">			&lt;/span>&lt;span class="n">wac&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">createWebApplicationContext&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">rootContext&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">		&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">//这个无非就是初始化spring ioc的环境，创建bean和实例化bean等操作&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">//这个方法最终也是调用refresh()方法，已在spring源码解析中解析过了&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">configureAndRefreshWebApplicationContext&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">cwac&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">if&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">wac&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">==&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">null&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// No context instance was injected at construction time -&amp;gt; see if one&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// has been registered in the servlet context. If one exists, it is assumed&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// that the parent context (if any) has already been set and that the&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// user has performed any initialization such as setting the context id&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">wac&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">findWebApplicationContext&lt;/span>&lt;span class="p">();&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">if&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">wac&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">==&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">null&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// No context instance is defined for this servlet -&amp;gt; create a local one&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">wac&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">createWebApplicationContext&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">rootContext&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">		&lt;/span>&lt;span class="k">if&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">!&lt;/span>&lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">refreshEventReceived&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">			&lt;/span>&lt;span class="c1">// Either the context is not a ConfigurableApplicationContext with refresh&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">			&lt;/span>&lt;span class="c1">// support or the context injected at construction time had already been&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">			&lt;/span>&lt;span class="c1">// refreshed -&amp;gt; trigger initial onRefresh manually here.&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">			&lt;/span>&lt;span class="kd">synchronized&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">onRefreshMonitor&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">if&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">!&lt;/span>&lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">refreshEventReceived&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// Either the context is not a ConfigurableApplicationContext with refresh&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// support or the context injected at construction time had already been&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// refreshed -&amp;gt; trigger initial onRefresh manually here.&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="kd">synchronized&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">onRefreshMonitor&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// 初始化DispatcherServlet的配置initStrategies()&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">				&lt;/span>&lt;span class="n">onRefresh&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">wac&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">			&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">		&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">onRefresh&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">wac&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">		&lt;/span>&lt;span class="k">if&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">publishContext&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">			&lt;/span>&lt;span class="c1">// Publish the context as a servlet context attribute.&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">			&lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">attrName&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">getServletContextAttributeName&lt;/span>&lt;span class="p">();&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">			&lt;/span>&lt;span class="n">getServletContext&lt;/span>&lt;span class="p">().&lt;/span>&lt;span class="na">setAttribute&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">attrName&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">wac&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">		&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">if&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">this&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">publishContext&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// Publish the context as a servlet context attribute.&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">String&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">attrName&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">getServletContextAttributeName&lt;/span>&lt;span class="p">();&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">getServletContext&lt;/span>&lt;span class="p">().&lt;/span>&lt;span class="na">setAttribute&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">attrName&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">wac&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">		&lt;/span>&lt;span class="k">return&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">wac&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">	&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="k">return&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">wac&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;div class="highlight">&lt;div class="chroma">
@@ -819,11 +819,11 @@ Cookie其实还可以用在一些方便用户的场景下，设想你某次登�
 &lt;/span>&lt;span class="lnt">5
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// org.springframework.web.servlet.DispatcherServlet#onRefresh	&lt;/span>&lt;span class="w">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// org.springframework.web.servlet.DispatcherServlet#onRefresh &lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="kd">protected&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kt">void&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nf">onRefresh&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">ApplicationContext&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">context&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">{&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// //初始化springmvc的配置&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">		&lt;/span>&lt;span class="n">initStrategies&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">context&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">	&lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">initStrategies&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">context&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">}&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>总体流程:&lt;/p></description></item><item><title>SpringBoot</title><link>https://isme.cz/java/springboot/</link><pubDate>Sat, 15 Jul 2023 14:58:26 +0000</pubDate><guid>https://isme.cz/java/springboot/</guid><description>&lt;h1 id="定时器">定时器&lt;/h1>
@@ -967,180 +967,180 @@ $ tail log/flink-*-taskexecutor-*.out
  (to,2)
  (be,2)
 &lt;/code>&lt;/pre>&lt;p>步骤四:停止集群&lt;/p>
-&lt;pre tabindex="0">&lt;code>$ ./bin/stop-cluster.sh
+&lt;pre tabindex="0">&lt;code>./bin/stop-cluster.sh
 &lt;/code>&lt;/pre>&lt;h2 id="使用datastream-api进行欺诈检测">使用DataStream API进行欺诈检测&lt;/h2>
 &lt;h3 id="java环境">Java环境&lt;/h3>
 &lt;pre tabindex="0">&lt;code>&amp;lt;project xmlns=&amp;#34;http://maven.apache.org/POM/4.0.0&amp;#34; xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34;
-		 xsi:schemaLocation=&amp;#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&amp;#34;&amp;gt;
-	&amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt;
+ xsi:schemaLocation=&amp;#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&amp;#34;&amp;gt;
+ &amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt;
 
-	&amp;lt;groupId&amp;gt;frauddetection&amp;lt;/groupId&amp;gt;
-	&amp;lt;artifactId&amp;gt;frauddetection&amp;lt;/artifactId&amp;gt;
-	&amp;lt;version&amp;gt;0.1&amp;lt;/version&amp;gt;
-	&amp;lt;packaging&amp;gt;jar&amp;lt;/packaging&amp;gt;
+ &amp;lt;groupId&amp;gt;frauddetection&amp;lt;/groupId&amp;gt;
+ &amp;lt;artifactId&amp;gt;frauddetection&amp;lt;/artifactId&amp;gt;
+ &amp;lt;version&amp;gt;0.1&amp;lt;/version&amp;gt;
+ &amp;lt;packaging&amp;gt;jar&amp;lt;/packaging&amp;gt;
 
-	&amp;lt;name&amp;gt;Flink Walkthrough DataStream Java&amp;lt;/name&amp;gt;
-	&amp;lt;url&amp;gt;https://flink.apache.org&amp;lt;/url&amp;gt;
+ &amp;lt;name&amp;gt;Flink Walkthrough DataStream Java&amp;lt;/name&amp;gt;
+ &amp;lt;url&amp;gt;https://flink.apache.org&amp;lt;/url&amp;gt;
 
-	&amp;lt;properties&amp;gt;
-		&amp;lt;project.build.sourceEncoding&amp;gt;UTF-8&amp;lt;/project.build.sourceEncoding&amp;gt;
-		&amp;lt;flink.version&amp;gt;1.10.2&amp;lt;/flink.version&amp;gt;
-		&amp;lt;java.version&amp;gt;1.8&amp;lt;/java.version&amp;gt;
-		&amp;lt;scala.binary.version&amp;gt;2.11&amp;lt;/scala.binary.version&amp;gt;
-		&amp;lt;maven.compiler.source&amp;gt;${java.version}&amp;lt;/maven.compiler.source&amp;gt;
-		&amp;lt;maven.compiler.target&amp;gt;${java.version}&amp;lt;/maven.compiler.target&amp;gt;
-	&amp;lt;/properties&amp;gt;
+ &amp;lt;properties&amp;gt;
+ &amp;lt;project.build.sourceEncoding&amp;gt;UTF-8&amp;lt;/project.build.sourceEncoding&amp;gt;
+ &amp;lt;flink.version&amp;gt;1.10.2&amp;lt;/flink.version&amp;gt;
+ &amp;lt;java.version&amp;gt;1.8&amp;lt;/java.version&amp;gt;
+ &amp;lt;scala.binary.version&amp;gt;2.11&amp;lt;/scala.binary.version&amp;gt;
+ &amp;lt;maven.compiler.source&amp;gt;${java.version}&amp;lt;/maven.compiler.source&amp;gt;
+ &amp;lt;maven.compiler.target&amp;gt;${java.version}&amp;lt;/maven.compiler.target&amp;gt;
+ &amp;lt;/properties&amp;gt;
 
-	&amp;lt;dependencies&amp;gt;
-		&amp;lt;dependency&amp;gt;
-			&amp;lt;groupId&amp;gt;org.apache.flink&amp;lt;/groupId&amp;gt;
-			&amp;lt;artifactId&amp;gt;flink-walkthrough-common_${scala.binary.version}&amp;lt;/artifactId&amp;gt;
-			&amp;lt;version&amp;gt;${flink.version}&amp;lt;/version&amp;gt;
-		&amp;lt;/dependency&amp;gt;
+ &amp;lt;dependencies&amp;gt;
+ &amp;lt;dependency&amp;gt;
+ &amp;lt;groupId&amp;gt;org.apache.flink&amp;lt;/groupId&amp;gt;
+ &amp;lt;artifactId&amp;gt;flink-walkthrough-common_${scala.binary.version}&amp;lt;/artifactId&amp;gt;
+ &amp;lt;version&amp;gt;${flink.version}&amp;lt;/version&amp;gt;
+ &amp;lt;/dependency&amp;gt;
 
-		&amp;lt;!-- This dependency is provided, because it should not be packaged into the JAR file. --&amp;gt;
-		&amp;lt;dependency&amp;gt;
-			&amp;lt;groupId&amp;gt;org.apache.flink&amp;lt;/groupId&amp;gt;
-			&amp;lt;artifactId&amp;gt;flink-streaming-java_${scala.binary.version}&amp;lt;/artifactId&amp;gt;
-			&amp;lt;version&amp;gt;${flink.version}&amp;lt;/version&amp;gt;
+ &amp;lt;!-- This dependency is provided, because it should not be packaged into the JAR file. --&amp;gt;
+ &amp;lt;dependency&amp;gt;
+ &amp;lt;groupId&amp;gt;org.apache.flink&amp;lt;/groupId&amp;gt;
+ &amp;lt;artifactId&amp;gt;flink-streaming-java_${scala.binary.version}&amp;lt;/artifactId&amp;gt;
+ &amp;lt;version&amp;gt;${flink.version}&amp;lt;/version&amp;gt;
 &amp;lt;!--			&amp;lt;scope&amp;gt;provided&amp;lt;/scope&amp;gt;--&amp;gt;
-		&amp;lt;/dependency&amp;gt;
+ &amp;lt;/dependency&amp;gt;
 
-		&amp;lt;dependency&amp;gt;
-			&amp;lt;groupId&amp;gt;org.projectlombok&amp;lt;/groupId&amp;gt;
-			&amp;lt;artifactId&amp;gt;lombok&amp;lt;/artifactId&amp;gt;
-			&amp;lt;version&amp;gt;1.18.0&amp;lt;/version&amp;gt;
-			&amp;lt;scope&amp;gt;provided&amp;lt;/scope&amp;gt;
-		&amp;lt;/dependency&amp;gt;
+ &amp;lt;dependency&amp;gt;
+ &amp;lt;groupId&amp;gt;org.projectlombok&amp;lt;/groupId&amp;gt;
+ &amp;lt;artifactId&amp;gt;lombok&amp;lt;/artifactId&amp;gt;
+ &amp;lt;version&amp;gt;1.18.0&amp;lt;/version&amp;gt;
+ &amp;lt;scope&amp;gt;provided&amp;lt;/scope&amp;gt;
+ &amp;lt;/dependency&amp;gt;
 
-		&amp;lt;!-- Add connector dependencies here. They must be in the default scope (compile). --&amp;gt;
+ &amp;lt;!-- Add connector dependencies here. They must be in the default scope (compile). --&amp;gt;
 
-		&amp;lt;dependency&amp;gt;
-			&amp;lt;groupId&amp;gt;org.apache.flink&amp;lt;/groupId&amp;gt;
-			&amp;lt;artifactId&amp;gt;flink-connector-kafka-0.10_${scala.binary.version}&amp;lt;/artifactId&amp;gt;
-			&amp;lt;version&amp;gt;${flink.version}&amp;lt;/version&amp;gt;
-		&amp;lt;/dependency&amp;gt;
+ &amp;lt;dependency&amp;gt;
+ &amp;lt;groupId&amp;gt;org.apache.flink&amp;lt;/groupId&amp;gt;
+ &amp;lt;artifactId&amp;gt;flink-connector-kafka-0.10_${scala.binary.version}&amp;lt;/artifactId&amp;gt;
+ &amp;lt;version&amp;gt;${flink.version}&amp;lt;/version&amp;gt;
+ &amp;lt;/dependency&amp;gt;
 
-		&amp;lt;!-- Add logging framework, to produce console output when running in the IDE. --&amp;gt;
-		&amp;lt;!-- These dependencies are excluded from the application JAR by default. --&amp;gt;
-		&amp;lt;dependency&amp;gt;
-			&amp;lt;groupId&amp;gt;org.slf4j&amp;lt;/groupId&amp;gt;
-			&amp;lt;artifactId&amp;gt;slf4j-log4j12&amp;lt;/artifactId&amp;gt;
-			&amp;lt;version&amp;gt;1.7.7&amp;lt;/version&amp;gt;
-			&amp;lt;scope&amp;gt;runtime&amp;lt;/scope&amp;gt;
-		&amp;lt;/dependency&amp;gt;
-		&amp;lt;dependency&amp;gt;
-			&amp;lt;groupId&amp;gt;log4j&amp;lt;/groupId&amp;gt;
-			&amp;lt;artifactId&amp;gt;log4j&amp;lt;/artifactId&amp;gt;
-			&amp;lt;version&amp;gt;1.2.17&amp;lt;/version&amp;gt;
-			&amp;lt;scope&amp;gt;runtime&amp;lt;/scope&amp;gt;
-		&amp;lt;/dependency&amp;gt;
-	&amp;lt;/dependencies&amp;gt;
+ &amp;lt;!-- Add logging framework, to produce console output when running in the IDE. --&amp;gt;
+ &amp;lt;!-- These dependencies are excluded from the application JAR by default. --&amp;gt;
+ &amp;lt;dependency&amp;gt;
+ &amp;lt;groupId&amp;gt;org.slf4j&amp;lt;/groupId&amp;gt;
+ &amp;lt;artifactId&amp;gt;slf4j-log4j12&amp;lt;/artifactId&amp;gt;
+ &amp;lt;version&amp;gt;1.7.7&amp;lt;/version&amp;gt;
+ &amp;lt;scope&amp;gt;runtime&amp;lt;/scope&amp;gt;
+ &amp;lt;/dependency&amp;gt;
+ &amp;lt;dependency&amp;gt;
+ &amp;lt;groupId&amp;gt;log4j&amp;lt;/groupId&amp;gt;
+ &amp;lt;artifactId&amp;gt;log4j&amp;lt;/artifactId&amp;gt;
+ &amp;lt;version&amp;gt;1.2.17&amp;lt;/version&amp;gt;
+ &amp;lt;scope&amp;gt;runtime&amp;lt;/scope&amp;gt;
+ &amp;lt;/dependency&amp;gt;
+ &amp;lt;/dependencies&amp;gt;
 
-	&amp;lt;build&amp;gt;
-		&amp;lt;plugins&amp;gt;
+ &amp;lt;build&amp;gt;
+ &amp;lt;plugins&amp;gt;
 
-			&amp;lt;!-- Java Compiler --&amp;gt;
-			&amp;lt;plugin&amp;gt;
-				&amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt;
-				&amp;lt;artifactId&amp;gt;maven-compiler-plugin&amp;lt;/artifactId&amp;gt;
-				&amp;lt;version&amp;gt;3.1&amp;lt;/version&amp;gt;
-				&amp;lt;configuration&amp;gt;
-					&amp;lt;source&amp;gt;${java.version}&amp;lt;/source&amp;gt;
-					&amp;lt;target&amp;gt;${java.version}&amp;lt;/target&amp;gt;
-				&amp;lt;/configuration&amp;gt;
-			&amp;lt;/plugin&amp;gt;
+ &amp;lt;!-- Java Compiler --&amp;gt;
+ &amp;lt;plugin&amp;gt;
+ &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt;
+ &amp;lt;artifactId&amp;gt;maven-compiler-plugin&amp;lt;/artifactId&amp;gt;
+ &amp;lt;version&amp;gt;3.1&amp;lt;/version&amp;gt;
+ &amp;lt;configuration&amp;gt;
+ &amp;lt;source&amp;gt;${java.version}&amp;lt;/source&amp;gt;
+ &amp;lt;target&amp;gt;${java.version}&amp;lt;/target&amp;gt;
+ &amp;lt;/configuration&amp;gt;
+ &amp;lt;/plugin&amp;gt;
 
-			&amp;lt;!-- We use the maven-shade plugin to create a fat jar that contains all necessary dependencies. --&amp;gt;
-			&amp;lt;!-- Change the value of &amp;lt;mainClass&amp;gt;...&amp;lt;/mainClass&amp;gt; if your program entry point changes. --&amp;gt;
-			&amp;lt;plugin&amp;gt;
-				&amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt;
-				&amp;lt;artifactId&amp;gt;maven-shade-plugin&amp;lt;/artifactId&amp;gt;
-				&amp;lt;version&amp;gt;3.0.0&amp;lt;/version&amp;gt;
-				&amp;lt;executions&amp;gt;
-					&amp;lt;!-- Run shade goal on package phase --&amp;gt;
-					&amp;lt;execution&amp;gt;
-						&amp;lt;phase&amp;gt;package&amp;lt;/phase&amp;gt;
-						&amp;lt;goals&amp;gt;
-							&amp;lt;goal&amp;gt;shade&amp;lt;/goal&amp;gt;
-						&amp;lt;/goals&amp;gt;
-						&amp;lt;configuration&amp;gt;
-							&amp;lt;artifactSet&amp;gt;
-								&amp;lt;excludes&amp;gt;
-									&amp;lt;exclude&amp;gt;org.apache.flink:force-shading&amp;lt;/exclude&amp;gt;
-									&amp;lt;exclude&amp;gt;com.google.code.findbugs:jsr305&amp;lt;/exclude&amp;gt;
-									&amp;lt;exclude&amp;gt;org.slf4j:*&amp;lt;/exclude&amp;gt;
-									&amp;lt;exclude&amp;gt;log4j:*&amp;lt;/exclude&amp;gt;
-								&amp;lt;/excludes&amp;gt;
-							&amp;lt;/artifactSet&amp;gt;
-							&amp;lt;filters&amp;gt;
-								&amp;lt;filter&amp;gt;
-									&amp;lt;!-- Do not copy the signatures in the META-INF folder.
+ &amp;lt;!-- We use the maven-shade plugin to create a fat jar that contains all necessary dependencies. --&amp;gt;
+ &amp;lt;!-- Change the value of &amp;lt;mainClass&amp;gt;...&amp;lt;/mainClass&amp;gt; if your program entry point changes. --&amp;gt;
+ &amp;lt;plugin&amp;gt;
+ &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt;
+ &amp;lt;artifactId&amp;gt;maven-shade-plugin&amp;lt;/artifactId&amp;gt;
+ &amp;lt;version&amp;gt;3.0.0&amp;lt;/version&amp;gt;
+ &amp;lt;executions&amp;gt;
+ &amp;lt;!-- Run shade goal on package phase --&amp;gt;
+ &amp;lt;execution&amp;gt;
+ &amp;lt;phase&amp;gt;package&amp;lt;/phase&amp;gt;
+ &amp;lt;goals&amp;gt;
+ &amp;lt;goal&amp;gt;shade&amp;lt;/goal&amp;gt;
+ &amp;lt;/goals&amp;gt;
+ &amp;lt;configuration&amp;gt;
+ &amp;lt;artifactSet&amp;gt;
+ &amp;lt;excludes&amp;gt;
+ &amp;lt;exclude&amp;gt;org.apache.flink:force-shading&amp;lt;/exclude&amp;gt;
+ &amp;lt;exclude&amp;gt;com.google.code.findbugs:jsr305&amp;lt;/exclude&amp;gt;
+ &amp;lt;exclude&amp;gt;org.slf4j:*&amp;lt;/exclude&amp;gt;
+ &amp;lt;exclude&amp;gt;log4j:*&amp;lt;/exclude&amp;gt;
+ &amp;lt;/excludes&amp;gt;
+ &amp;lt;/artifactSet&amp;gt;
+ &amp;lt;filters&amp;gt;
+ &amp;lt;filter&amp;gt;
+ &amp;lt;!-- Do not copy the signatures in the META-INF folder.
  Otherwise, this might cause SecurityExceptions when using the JAR. --&amp;gt;
-									&amp;lt;artifact&amp;gt;*:*&amp;lt;/artifact&amp;gt;
-									&amp;lt;excludes&amp;gt;
-										&amp;lt;exclude&amp;gt;META-INF/*.SF&amp;lt;/exclude&amp;gt;
-										&amp;lt;exclude&amp;gt;META-INF/*.DSA&amp;lt;/exclude&amp;gt;
-										&amp;lt;exclude&amp;gt;META-INF/*.RSA&amp;lt;/exclude&amp;gt;
-									&amp;lt;/excludes&amp;gt;
-								&amp;lt;/filter&amp;gt;
-							&amp;lt;/filters&amp;gt;
-							&amp;lt;transformers&amp;gt;
-								&amp;lt;transformer implementation=&amp;#34;org.apache.maven.plugins.shade.resource.ManifestResourceTransformer&amp;#34;&amp;gt;
-									&amp;lt;mainClass&amp;gt;spendreport.FraudDetectionJob&amp;lt;/mainClass&amp;gt;
-								&amp;lt;/transformer&amp;gt;
-							&amp;lt;/transformers&amp;gt;
-						&amp;lt;/configuration&amp;gt;
-					&amp;lt;/execution&amp;gt;
-				&amp;lt;/executions&amp;gt;
-			&amp;lt;/plugin&amp;gt;
-		&amp;lt;/plugins&amp;gt;
+ &amp;lt;artifact&amp;gt;*:*&amp;lt;/artifact&amp;gt;
+ &amp;lt;excludes&amp;gt;
+ &amp;lt;exclude&amp;gt;META-INF/*.SF&amp;lt;/exclude&amp;gt;
+ &amp;lt;exclude&amp;gt;META-INF/*.DSA&amp;lt;/exclude&amp;gt;
+ &amp;lt;exclude&amp;gt;META-INF/*.RSA&amp;lt;/exclude&amp;gt;
+ &amp;lt;/excludes&amp;gt;
+ &amp;lt;/filter&amp;gt;
+ &amp;lt;/filters&amp;gt;
+ &amp;lt;transformers&amp;gt;
+ &amp;lt;transformer implementation=&amp;#34;org.apache.maven.plugins.shade.resource.ManifestResourceTransformer&amp;#34;&amp;gt;
+ &amp;lt;mainClass&amp;gt;spendreport.FraudDetectionJob&amp;lt;/mainClass&amp;gt;
+ &amp;lt;/transformer&amp;gt;
+ &amp;lt;/transformers&amp;gt;
+ &amp;lt;/configuration&amp;gt;
+ &amp;lt;/execution&amp;gt;
+ &amp;lt;/executions&amp;gt;
+ &amp;lt;/plugin&amp;gt;
+ &amp;lt;/plugins&amp;gt;
 
-		&amp;lt;pluginManagement&amp;gt;
-			&amp;lt;plugins&amp;gt;
+ &amp;lt;pluginManagement&amp;gt;
+ &amp;lt;plugins&amp;gt;
 
-				&amp;lt;!-- This improves the out-of-the-box experience in Eclipse by resolving some warnings. --&amp;gt;
-				&amp;lt;plugin&amp;gt;
-					&amp;lt;groupId&amp;gt;org.eclipse.m2e&amp;lt;/groupId&amp;gt;
-					&amp;lt;artifactId&amp;gt;lifecycle-mapping&amp;lt;/artifactId&amp;gt;
-					&amp;lt;version&amp;gt;1.0.0&amp;lt;/version&amp;gt;
-					&amp;lt;configuration&amp;gt;
-						&amp;lt;lifecycleMappingMetadata&amp;gt;
-							&amp;lt;pluginExecutions&amp;gt;
-								&amp;lt;pluginExecution&amp;gt;
-									&amp;lt;pluginExecutionFilter&amp;gt;
-										&amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt;
-										&amp;lt;artifactId&amp;gt;maven-shade-plugin&amp;lt;/artifactId&amp;gt;
-										&amp;lt;versionRange&amp;gt;[3.0.0,)&amp;lt;/versionRange&amp;gt;
-										&amp;lt;goals&amp;gt;
-											&amp;lt;goal&amp;gt;shade&amp;lt;/goal&amp;gt;
-										&amp;lt;/goals&amp;gt;
-									&amp;lt;/pluginExecutionFilter&amp;gt;
-									&amp;lt;action&amp;gt;
-										&amp;lt;ignore/&amp;gt;
-									&amp;lt;/action&amp;gt;
-								&amp;lt;/pluginExecution&amp;gt;
-								&amp;lt;pluginExecution&amp;gt;
-									&amp;lt;pluginExecutionFilter&amp;gt;
-										&amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt;
-										&amp;lt;artifactId&amp;gt;maven-compiler-plugin&amp;lt;/artifactId&amp;gt;
-										&amp;lt;versionRange&amp;gt;[3.1,)&amp;lt;/versionRange&amp;gt;
-										&amp;lt;goals&amp;gt;
-											&amp;lt;goal&amp;gt;testCompile&amp;lt;/goal&amp;gt;
-											&amp;lt;goal&amp;gt;compile&amp;lt;/goal&amp;gt;
-										&amp;lt;/goals&amp;gt;
-									&amp;lt;/pluginExecutionFilter&amp;gt;
-									&amp;lt;action&amp;gt;
-										&amp;lt;ignore/&amp;gt;
-									&amp;lt;/action&amp;gt;
-								&amp;lt;/pluginExecution&amp;gt;
-							&amp;lt;/pluginExecutions&amp;gt;
-						&amp;lt;/lifecycleMappingMetadata&amp;gt;
-					&amp;lt;/configuration&amp;gt;
-				&amp;lt;/plugin&amp;gt;
-			&amp;lt;/plugins&amp;gt;
-		&amp;lt;/pluginManagement&amp;gt;
-	&amp;lt;/build&amp;gt;
+ &amp;lt;!-- This improves the out-of-the-box experience in Eclipse by resolving some warnings. --&amp;gt;
+ &amp;lt;plugin&amp;gt;
+ &amp;lt;groupId&amp;gt;org.eclipse.m2e&amp;lt;/groupId&amp;gt;
+ &amp;lt;artifactId&amp;gt;lifecycle-mapping&amp;lt;/artifactId&amp;gt;
+ &amp;lt;version&amp;gt;1.0.0&amp;lt;/version&amp;gt;
+ &amp;lt;configuration&amp;gt;
+ &amp;lt;lifecycleMappingMetadata&amp;gt;
+ &amp;lt;pluginExecutions&amp;gt;
+ &amp;lt;pluginExecution&amp;gt;
+ &amp;lt;pluginExecutionFilter&amp;gt;
+ &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt;
+ &amp;lt;artifactId&amp;gt;maven-shade-plugin&amp;lt;/artifactId&amp;gt;
+ &amp;lt;versionRange&amp;gt;[3.0.0,)&amp;lt;/versionRange&amp;gt;
+ &amp;lt;goals&amp;gt;
+ &amp;lt;goal&amp;gt;shade&amp;lt;/goal&amp;gt;
+ &amp;lt;/goals&amp;gt;
+ &amp;lt;/pluginExecutionFilter&amp;gt;
+ &amp;lt;action&amp;gt;
+ &amp;lt;ignore/&amp;gt;
+ &amp;lt;/action&amp;gt;
+ &amp;lt;/pluginExecution&amp;gt;
+ &amp;lt;pluginExecution&amp;gt;
+ &amp;lt;pluginExecutionFilter&amp;gt;
+ &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt;
+ &amp;lt;artifactId&amp;gt;maven-compiler-plugin&amp;lt;/artifactId&amp;gt;
+ &amp;lt;versionRange&amp;gt;[3.1,)&amp;lt;/versionRange&amp;gt;
+ &amp;lt;goals&amp;gt;
+ &amp;lt;goal&amp;gt;testCompile&amp;lt;/goal&amp;gt;
+ &amp;lt;goal&amp;gt;compile&amp;lt;/goal&amp;gt;
+ &amp;lt;/goals&amp;gt;
+ &amp;lt;/pluginExecutionFilter&amp;gt;
+ &amp;lt;action&amp;gt;
+ &amp;lt;ignore/&amp;gt;
+ &amp;lt;/action&amp;gt;
+ &amp;lt;/pluginExecution&amp;gt;
+ &amp;lt;/pluginExecutions&amp;gt;
+ &amp;lt;/lifecycleMappingMetadata&amp;gt;
+ &amp;lt;/configuration&amp;gt;
+ &amp;lt;/plugin&amp;gt;
+ &amp;lt;/plugins&amp;gt;
+ &amp;lt;/pluginManagement&amp;gt;
+ &amp;lt;/build&amp;gt;
 &amp;lt;/project&amp;gt;
 &lt;/code>&lt;/pre>&lt;h2 id="输入">输入&lt;/h2>
 &lt;h3 id="file输入">File输入&lt;/h3>
@@ -1259,12 +1259,12 @@ $ tail log/flink-*-taskexecutor-*.out
 &lt;p>2.Provider的方法,大概就三个方法sql.SELECT,sql.WHERE,sql.FROM&lt;/p>
 &lt;p>3.SQL 对象里的方法名跟别的不一样,小写的不行,idea也识别不到,要用大写,比如SLELECT&lt;/p>
 &lt;p>4.Provider里返回的是String&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051427670.png" alt="">&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051427490.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051427670.png" alt="TODO">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051427490.png" alt="TODO">&lt;/p>
 &lt;h2 id="注解-一对多查询多个参数">注解 一对多查询(多个参数)&lt;/h2>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051427839.png" alt="">&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051428785.png" alt="">&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051429441.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051427839.png" alt="TODO">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051428785.png" alt="TODO">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051429441.png" alt="TODO">&lt;/p>
 &lt;h2 id="注解-一对多查询多个参数-1">注解 一对多查询(多个参数)&lt;/h2>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -1439,7 +1439,7 @@ $ tail log/flink-*-taskexecutor-*.out
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h2 id="注解-一对多查询一个参数">注解 一对多查询(一个参数)&lt;/h2>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051430732.png" alt="">&lt;/p></description></item><item><title>Mycat</title><link>https://isme.cz/mycat/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/mycat/</guid><description>&lt;h1 id="主从复制">主从复制&lt;/h1>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051430732.png" alt="TODO">&lt;/p></description></item><item><title>Mycat</title><link>https://isme.cz/mycat/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/mycat/</guid><description>&lt;h1 id="主从复制">主从复制&lt;/h1>
 &lt;h1 id="启动">启动&lt;/h1>
 &lt;p>1 .下载jre包&lt;/p>
 &lt;p>2 下载mycat包&lt;/p>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>记录 on Hello World</title><link>https://isme.cz/categories/%E8%AE%B0%E5%BD%95/</link><description>Recent content in 记录 on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Fri, 15 Aug 2025 14:51:48 +0700</lastBuildDate><atom:link href="https://isme.cz/categories/%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml"/><item><title>好用的软件</title><link>https://isme.cz/%E5%A5%BD%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6/</link><pubDate>Fri, 23 May 2025 17:59:24 +0000</pubDate><guid>https://isme.cz/%E5%A5%BD%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6/</guid><description>&lt;h1 id="图片">图片&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>记录 on Hello World</title><link>https://isme.cz/categories/%E8%AE%B0%E5%BD%95/</link><description>Recent content in 记录 on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Tue, 26 Aug 2025 12:48:16 +0700</lastBuildDate><atom:link href="https://isme.cz/categories/%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml"/><item><title>好用的软件</title><link>https://isme.cz/%E5%A5%BD%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6/</link><pubDate>Fri, 23 May 2025 17:59:24 +0000</pubDate><guid>https://isme.cz/%E5%A5%BD%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6/</guid><description>&lt;h1 id="图片">图片&lt;/h1>
 &lt;p>截图软件
 &lt;a href="https://www.snipaste.com/">Snipaste&lt;/a>&lt;/p>
 &lt;p>图片上传到图床
@@ -41,9 +41,9 @@
 &lt;h1 id="固定ip">固定IP&lt;/h1>
 &lt;p>配置完了,最好是重启下vmware和虚拟机,和禁用开启 win10上的vmare8网卡&lt;/p>
 &lt;p>1.vmare配置
-&lt;img src="https://image.runtimes.cc/202404051348330.png" alt="">&lt;/p>
+&lt;img src="https://image.runtimes.cc/202404051348330.png" alt="TODO">&lt;/p>
 &lt;p>2.电脑配置,虚拟机配置&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051349925.png" alt="">&lt;/p></description></item><item><title>Flarum</title><link>https://isme.cz/flarum/</link><pubDate>Sun, 04 May 2025 18:52:43 +0000</pubDate><guid>https://isme.cz/flarum/</guid><description>&lt;h1 id="flarum-部署">Flarum 部署&lt;/h1>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051349925.png" alt="TODO">&lt;/p></description></item><item><title>Flarum</title><link>https://isme.cz/flarum/</link><pubDate>Sun, 04 May 2025 18:52:43 +0000</pubDate><guid>https://isme.cz/flarum/</guid><description>&lt;h1 id="flarum-部署">Flarum 部署&lt;/h1>
 &lt;ul>
 &lt;li>
 &lt;p>Ubuntu 24.04&lt;/p>

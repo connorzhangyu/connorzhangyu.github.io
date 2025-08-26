@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mac on Hello World</title><link>https://isme.cz/tags/mac/</link><description>Recent content in Mac on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Fri, 15 Aug 2025 14:51:48 +0700</lastBuildDate><atom:link href="https://isme.cz/tags/mac/index.xml" rel="self" type="application/rss+xml"/><item><title>Dapp</title><link>https://isme.cz/dapp/</link><pubDate>Thu, 29 May 2025 10:23:17 +0000</pubDate><guid>https://isme.cz/dapp/</guid><description>&lt;h1 id="helloworld合约">HelloWorld合约&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mac on Hello World</title><link>https://isme.cz/tags/mac/</link><description>Recent content in Mac on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Tue, 26 Aug 2025 14:16:57 +0700</lastBuildDate><atom:link href="https://isme.cz/tags/mac/index.xml" rel="self" type="application/rss+xml"/><item><title>Dapp</title><link>https://isme.cz/dapp/</link><pubDate>Thu, 29 May 2025 10:23:17 +0000</pubDate><guid>https://isme.cz/dapp/</guid><description>&lt;h1 id="helloworld合约">HelloWorld合约&lt;/h1>
 &lt;p>&lt;a href="https://remix.ethereum.org">Remix编辑器&lt;/a>&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202505281038720.png" alt="image-20250524144934373">&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -26,7 +26,7 @@
 &lt;/div>&lt;p>&lt;img src="https://image.runtimes.cc/202505281038400.png" alt="image-20250524145024856">&lt;/p>
 &lt;h1 id="发行代币">发行代币&lt;/h1>
 &lt;p>在闲鱼,淘宝上买些测试币,也可以通过水龙头获取(只是有点要求和门槛,不如直接买),这里我买了两笔
-&lt;img src="https://image.runtimes.cc/202505281036642.webp" alt="">&lt;/p>
+&lt;img src="https://image.runtimes.cc/202505281036642.webp" alt="TODO">&lt;/p>
 &lt;p>新建合约文件&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202505291022584.png" alt="image-20250529101100930">&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -61,7 +61,7 @@
 &lt;p>&lt;img src="https://image.runtimes.cc/202505291022024.png" alt="image-20250529101510973">&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202505291022071.png" alt="image-20250529101815851">&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202505291022160.png" alt="image-20250529102052827">&lt;/p></description></item><item><title>DataGrip</title><link>https://isme.cz/datagrip/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/datagrip/</guid><description>&lt;h1 id="查看ddl和复制为insert语句">查看ddl和复制为insert语句&lt;/h1>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051411320.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051411320.png" alt="TODO">&lt;/p>
 &lt;h1 id="显示">显示&lt;/h1>
 &lt;h2 id="设置数据库颜色">设置数据库颜色&lt;/h2>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051411473.png" alt="image-20230723151325737">&lt;/p>
@@ -179,16 +179,16 @@ bin/elasticsearch -d #后台启动
 &lt;h2 id="自定义列的格式">自定义列的格式&lt;/h2>
 &lt;p>比如这里要设置列的格式是 年月日星期几&lt;/p>
 &lt;p>默认的日期和时间是没有符合要求的
-&lt;img src="https://image.runtimes.cc/202404051416398.png" alt="">&lt;/p>
+&lt;img src="https://image.runtimes.cc/202404051416398.png" alt="TODO">&lt;/p>
 &lt;p>自定义设置
-&lt;img src="https://image.runtimes.cc/202404051416110.png" alt="">&lt;/p>
+&lt;img src="https://image.runtimes.cc/202404051416110.png" alt="TODO">&lt;/p>
 &lt;p>📌 这样设置之后,比如在单元格里值设置的是 2021-01-02
 实际上显现的会是 2021年1月2日 星期几&lt;/p>
 &lt;p>✅ 参考:&lt;a href="https://support.microsoft.com/zh-cn/office/%E6%8C%89%E6%83%B3%E8%A6%81%E7%9A%84%E6%96%B9%E5%BC%8F%E8%AE%BE%E7%BD%AE%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F-8e10019e-d5d8-47a1-ba95-db95123d273e">微软官方文档&lt;/a>&lt;/p></description></item><item><title>IDEA</title><link>https://isme.cz/idea/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/idea/</guid><description>&lt;h1 id="教程">教程&lt;/h1>
 &lt;h2 id="idea查看方法被调用">IDEA查看方法被调用&lt;/h2>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051423853.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051423853.png" alt="TODO">&lt;/p>
 &lt;h2 id="修改光标所在行背景颜色">修改光标所在行背景颜色&lt;/h2>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051423630.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051423630.png" alt="TODO">&lt;/p>
 &lt;h2 id="断点判断条件">断点判断条件&lt;/h2>
 &lt;p>在断点上点右键,正常的写判断代码就行&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051423731.png" alt="image-20230803174451532">&lt;/p>
@@ -342,9 +342,9 @@ bin/elasticsearch -d #后台启动
 &lt;li>&lt;a href="https://alt-tab-macos.netlify.app/">AltTab&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h1 id="iphone强制重启">iphone强制重启&lt;/h1>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051349933.webp" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051349933.webp" alt="TODO">&lt;/p>
 &lt;h1 id="浏览器返回手势">浏览器返回手势&lt;/h1>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051350113.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051350113.png" alt="TODO">&lt;/p>
 &lt;h1 id="放歌有噪音">放歌有噪音&lt;/h1>
 &lt;p>通过【活动监视器】程序终止【coreaudiod】进程：&lt;/p>
 &lt;ol>
@@ -395,7 +395,7 @@ bin/elasticsearch -d #后台启动
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h1 id="mac-os-x-访问-windows共享文件夹">Mac OS X 访问 Windows共享文件夹&lt;/h1>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051351999.png" alt="">&lt;/p></description></item><item><title>Nginx</title><link>https://isme.cz/nginx/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/nginx/</guid><description>&lt;h2 id="docker安装-nginx">Docker安装 Nginx&lt;/h2>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051351999.png" alt="TODO">&lt;/p></description></item><item><title>Nginx</title><link>https://isme.cz/nginx/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/nginx/</guid><description>&lt;h2 id="docker安装-nginx">Docker安装 Nginx&lt;/h2>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
@@ -859,7 +859,7 @@ bin/elasticsearch -d #后台启动
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="err">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">#配置日志, main 就是log_format 后面的名字
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> 	&lt;span class="c1"># 该server的访问日志的文件是logs/access.log,使用的是main格式
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="c1"># 该server的访问日志的文件是logs/access.log,使用的是main格式
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="s">access_log&lt;/span> &lt;span class="s">logs/access.log&lt;/span> &lt;span class="s">main&lt;/span>&lt;span class="p">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>

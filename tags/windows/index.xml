@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Windows on Hello World</title><link>https://isme.cz/tags/windows/</link><description>Recent content in Windows on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Fri, 15 Aug 2025 14:51:48 +0700</lastBuildDate><atom:link href="https://isme.cz/tags/windows/index.xml" rel="self" type="application/rss+xml"/><item><title>Windows</title><link>https://isme.cz/windows/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/windows/</guid><description>&lt;h1 id="windows-server">Windows Server&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Windows on Hello World</title><link>https://isme.cz/tags/windows/</link><description>Recent content in Windows on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Tue, 26 Aug 2025 12:48:16 +0700</lastBuildDate><atom:link href="https://isme.cz/tags/windows/index.xml" rel="self" type="application/rss+xml"/><item><title>Windows</title><link>https://isme.cz/windows/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/windows/</guid><description>&lt;h1 id="windows-server">Windows Server&lt;/h1>
 &lt;h2 id="开放指定端口">开放指定端口&lt;/h2>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051353354.webp" alt="1">&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051353503.webp" alt="2">&lt;/p>
@@ -7,13 +7,13 @@
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051354921.webp" alt="6">&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051355944.webp" alt="7">&lt;/p>
 &lt;h2 id="服务器禁用ipv6">服务器禁用IPV6&lt;/h2>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051355530.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051355530.png" alt="TODO">&lt;/p>
 &lt;p>⛔ 一定要重启&lt;/p>
 &lt;p>&lt;a href="https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/configure-ipv6-in-windows">官方文档&lt;/a>&lt;/p>
 &lt;h2 id="ie浏览器允许下载">IE浏览器允许下载&lt;/h2>
 &lt;p>通常服务器不允许乱下载软件,所以一般默认被禁用,下面两种方法都行&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051355878.png" alt="">&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051355807.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051355878.png" alt="TODO">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051355807.png" alt="TODO">&lt;/p>
 &lt;h1 id="安装win10系统创建本地账号">安装win10系统,创建本地账号&lt;/h1>
 &lt;p>在提示需要账号登录的时候,按&lt;code>Shift + F10&lt;/code>打开命令行,输入&lt;code>oobe\bypassnro.cmd&lt;/code>，就会重启,再安装，就不会要求输入微软账号了；也有例外的情况，用过win11商业版的镜像安装的时候,用这个命令不起作用
 &lt;img src="https://image.runtimes.cc/202404051355254.png" alt="win11">&lt;/p>
@@ -32,7 +32,7 @@
 &lt;/div>
 &lt;/div>&lt;h2 id="永久修改">永久修改&lt;/h2>
 &lt;p>进入注册表&lt;code>win+R-&amp;gt;输入regedit&lt;/code>在&lt;code>HKEY_CURRENT_USER\Console&lt;/code>，双击&lt;code>CodePage&lt;/code>修改键值为&lt;code>65001&lt;/code>
-&lt;img src="https://image.runtimes.cc/202404051355297.png" alt="">
+&lt;img src="https://image.runtimes.cc/202404051355297.png" alt="TODO">
 检查是否生效: 新开一个PowerShell,或者重启&lt;/p>
 &lt;h1 id="win10杀线程">Win10杀线程&lt;/h1>
 &lt;div class="highlight">&lt;div class="chroma">

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>静态资源 on Hello World</title><link>https://isme.cz/tags/%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/</link><description>Recent content in 静态资源 on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Mon, 04 Aug 2025 01:38:57 +0700</lastBuildDate><atom:link href="https://isme.cz/tags/%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/index.xml" rel="self" type="application/rss+xml"/><item><title>AWS</title><link>https://isme.cz/aws/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/aws/</guid><description>&lt;h1 id="aws基本教程">AWS基本教程&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>静态资源 on Hello World</title><link>https://isme.cz/tags/%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/</link><description>Recent content in 静态资源 on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Tue, 26 Aug 2025 12:48:16 +0700</lastBuildDate><atom:link href="https://isme.cz/tags/%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/index.xml" rel="self" type="application/rss+xml"/><item><title>AWS</title><link>https://isme.cz/aws/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/aws/</guid><description>&lt;h1 id="aws基本教程">AWS基本教程&lt;/h1>
 &lt;p>场景是:在把22端口关闭了,无法再连上服务器的情况&lt;/p>
 &lt;p>解决办法:关闭服务器,点击&lt;code>操作&lt;/code>-&amp;gt;&lt;code>实例设置&lt;/code>-&amp;gt;&lt;code>编辑用户数据&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -24,20 +24,20 @@
 &lt;/div>&lt;p>再启动服务器&lt;/p>
 &lt;h2 id="aws升级配置">AWS升级配置&lt;/h2>
 &lt;p>1.先&lt;code>停止&lt;/code>实例,不是&lt;code>终止&lt;/code>实例
-&lt;img src="https://image.runtimes.cc/202404051405513.png" alt="">&lt;/p>
+&lt;img src="https://image.runtimes.cc/202404051405513.png" alt="TODO">&lt;/p>
 &lt;p>2.修改实例类型
-&lt;img src="https://image.runtimes.cc/202404051406722.png" alt="">&lt;/p>
+&lt;img src="https://image.runtimes.cc/202404051406722.png" alt="TODO">&lt;/p>
 &lt;p>{% note danger simple %}
 重启公网IP可能会改变
 {% endnote %}&lt;/p>
 &lt;h2 id="服务器局域网互通">服务器局域网互通&lt;/h2>
 &lt;p>需要把局域网 想要互通的服务器,加入一个公共的的默认安全组&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051406727.png" alt="">
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051406727.png" alt="TODO">
 选择&lt;code>default&lt;/code>安全组
-&lt;img src="https://image.runtimes.cc/202404051406784.png" alt="">&lt;/p>
+&lt;img src="https://image.runtimes.cc/202404051406784.png" alt="TODO">&lt;/p>
 &lt;h2 id="要看服务器部署在哪里">要看服务器部署在哪里&lt;/h2>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051406380.png" alt="">&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051407931.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051406380.png" alt="TODO">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051407931.png" alt="TODO">&lt;/p>
 &lt;h2 id="javasdk上传图片到s3">JavaSDK上传图片到S3&lt;/h2>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">

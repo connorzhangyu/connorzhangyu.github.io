@@ -2,7 +2,7 @@
 #<a href=https://isme.cz/tags/%E5%90%8E%E7%AB%AF/>后端</a>&nbsp;
 #<a href=https://isme.cz/tags/%E6%95%99%E7%A8%8B/>教程</a>&nbsp;
 #<a href=https://isme.cz/tags/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/>学习计划</a>&nbsp;
-</span><img src=https://image.runtimes.cc/202404051528208.webp class=post-cover alt=Go基础 title="Cover Image"><div class=post-content><div><h1 id=入门>入门<a href=#入门 class=hanchor arialabel=Anchor>#</a></h1><h2 id=参考>参考:<a href=#参考 class=hanchor arialabel=Anchor>#</a></h2><p><a href=https://www.golinuxcloud.com/golang-interview-questions-answers/>Go英文文档</a></p><h2 id=hello-world>Hello World<a href=#hello-world class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><img src=https://image.runtimes.cc/202404051528208.webp class=post-cover alt=Go基础 title="Cover Image"><div class=post-content><div><h1 id=入门>入门<a href=#入门 class=hanchor arialabel=Anchor>#</a></h1><h2 id=参考>参考<a href=#参考 class=hanchor arialabel=Anchor>#</a></h2><p><a href=https://www.golinuxcloud.com/golang-interview-questions-answers/>Go英文文档</a></p><h2 id=hello-world>Hello World<a href=#hello-world class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
@@ -175,14 +175,14 @@
 </span><span class=lnt>11
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=c1>// 基本类型有默认值</span>
 </span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=kd>var</span> <span class=nx>age</span> <span class=kt>int</span> <span class=p>=</span> <span class=mi>0</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>age</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=kd>var</span> <span class=nx>age</span> <span class=kt>int</span> <span class=p>=</span> <span class=mi>0</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>age</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=kd>var</span> <span class=nx>code</span> <span class=kt>int</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>code</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=kd>var</span> <span class=nx>code</span> <span class=kt>int</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>code</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=kd>var</span> <span class=nx>sex</span> <span class=kt>bool</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>sex</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=kd>var</span> <span class=nx>sex</span> <span class=kt>bool</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>sex</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div><p>一次性声明不同类型的变量</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -205,12 +205,12 @@
 </span><span class=lnt>19
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=kd>var</span> <span class=nx>age</span><span class=p>,</span> <span class=nx>name</span> <span class=p>=</span> <span class=mi>10</span><span class=p>,</span> <span class=s>&#34;anthony&#34;</span>
-</span></span><span class=line><span class=cl>	<span class=nb>println</span><span class=p>(</span><span class=s>&#34;可以声明不同类型,只能自动推导,不能定义类型:&#34;</span><span class=p>,</span> <span class=nx>age</span><span class=p>,</span> <span class=nx>name</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=kd>var</span> <span class=nx>age</span><span class=p>,</span> <span class=nx>name</span> <span class=p>=</span> <span class=mi>10</span><span class=p>,</span> <span class=s>&#34;anthony&#34;</span>
+</span></span><span class=line><span class=cl> <span class=nb>println</span><span class=p>(</span><span class=s>&#34;可以声明不同类型,只能自动推导,不能定义类型:&#34;</span><span class=p>,</span> <span class=nx>age</span><span class=p>,</span> <span class=nx>name</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=c1>// 报错,多变量赋值值,不能声明类型</span>
-</span></span><span class=line><span class=cl>	<span class=c1>// var age2 int,name2 string = 10, &#34;anthony&#34;</span>
-</span></span><span class=line><span class=cl>	<span class=c1>// println(age2,name2)</span>
+</span></span><span class=line><span class=cl> <span class=c1>// 报错,多变量赋值值,不能声明类型</span>
+</span></span><span class=line><span class=cl> <span class=c1>// var age2 int,name2 string = 10, &#34;anthony&#34;</span>
+</span></span><span class=line><span class=cl> <span class=c1>// println(age2,name2)</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
@@ -331,8 +331,8 @@
 </span></span><span class=line><span class=cl> <span class=nx>name</span> <span class=o>:=</span> <span class=s>&#34;Hello World&#34;</span>
 </span></span><span class=line><span class=cl> <span class=k>for</span> <span class=nx>index</span> <span class=o>:=</span> <span class=k>range</span>  <span class=nx>name</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>  <span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;遍历字符串:%v,%v\n&#34;</span><span class=p>,</span><span class=nx>index</span><span class=p>,</span><span class=nx>name</span><span class=p>[</span><span class=nx>index</span><span class=p>])</span>
-</span></span><span class=line><span class=cl>	<span class=c1>// 字符串长度</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nb>len</span><span class=p>(</span><span class=nx>name</span><span class=p>[</span><span class=nx>index</span><span class=p>]))</span>
+</span></span><span class=line><span class=cl> <span class=c1>// 字符串长度</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nb>len</span><span class=p>(</span><span class=nx>name</span><span class=p>[</span><span class=nx>index</span><span class=p>]))</span>
 </span></span><span class=line><span class=cl> <span class=p>}</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div><h3 id=字符串切片>字符串切片<a href=#字符串切片 class=hanchor arialabel=Anchor>#</a></h3><pre tabindex=0><code>var response = &#34;var r = [[\&#34;000001\&#34;,\&#34;HXCZHH\&#34;,\&#34;华夏成长混合\&#34;,\&#34;混合型-偏股\&#34;,\&#34;HUAXIACHENGZHANGHUNHE\&#34;]];&#34;
@@ -355,18 +355,18 @@ fmt.Println(response[8:len(response)-1])
 </span><span class=lnt>13
 </span><span class=lnt>14
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>response</span> <span class=o>:=</span> <span class=s>&#34;[1,2,3]&#34;</span>
-</span></span><span class=line><span class=cl>	<span class=kd>var</span> <span class=nx>arr</span> <span class=p>[]</span><span class=kt>int</span>
-</span></span><span class=line><span class=cl>	<span class=k>if</span> <span class=nx>err</span> <span class=o>:=</span> <span class=nx>json</span><span class=p>.</span><span class=nf>Unmarshal</span><span class=p>([]</span><span class=nb>byte</span><span class=p>(</span><span class=nx>response</span><span class=p>),</span> <span class=o>&amp;</span><span class=nx>arr</span><span class=p>);</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;Error:&#34;</span><span class=p>,</span> <span class=nx>err</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl> <span class=nx>response</span> <span class=o>:=</span> <span class=s>&#34;[1,2,3]&#34;</span>
+</span></span><span class=line><span class=cl> <span class=kd>var</span> <span class=nx>arr</span> <span class=p>[]</span><span class=kt>int</span>
+</span></span><span class=line><span class=cl> <span class=k>if</span> <span class=nx>err</span> <span class=o>:=</span> <span class=nx>json</span><span class=p>.</span><span class=nf>Unmarshal</span><span class=p>([]</span><span class=nb>byte</span><span class=p>(</span><span class=nx>response</span><span class=p>),</span> <span class=o>&amp;</span><span class=nx>arr</span><span class=p>);</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;Error:&#34;</span><span class=p>,</span> <span class=nx>err</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>  <span class=c1>// 第1行;数据是:1</span>
-</span></span><span class=line><span class=cl>	<span class=c1>// 第2行;数据是:2</span>
-</span></span><span class=line><span class=cl>	<span class=c1>// 第3行;数据是:3</span>
-</span></span><span class=line><span class=cl>	<span class=k>for</span> <span class=nx>i</span><span class=o>:=</span><span class=mi>0</span> <span class=p>;</span><span class=nx>i</span><span class=p>&lt;</span> <span class=nb>len</span><span class=p>(</span><span class=nx>arr</span><span class=p>);</span><span class=nx>i</span><span class=o>++</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;第%v行;数据是:%v\n&#34;</span><span class=p>,</span><span class=nx>i</span><span class=o>+</span><span class=mi>1</span><span class=p>,</span><span class=nx>arr</span><span class=p>[</span><span class=nx>i</span><span class=p>])</span>
-</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl> <span class=c1>// 第2行;数据是:2</span>
+</span></span><span class=line><span class=cl> <span class=c1>// 第3行;数据是:3</span>
+</span></span><span class=line><span class=cl> <span class=k>for</span> <span class=nx>i</span><span class=o>:=</span><span class=mi>0</span> <span class=p>;</span><span class=nx>i</span><span class=p>&lt;</span> <span class=nb>len</span><span class=p>(</span><span class=nx>arr</span><span class=p>);</span><span class=nx>i</span><span class=o>++</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;第%v行;数据是:%v\n&#34;</span><span class=p>,</span><span class=nx>i</span><span class=o>+</span><span class=mi>1</span><span class=p>,</span><span class=nx>arr</span><span class=p>[</span><span class=nx>i</span><span class=p>])</span>
+</span></span><span class=line><span class=cl> <span class=p>}</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div><h3 id=字符串数组转二维数组>字符串数组转二维数组<a href=#字符串数组转二维数组 class=hanchor arialabel=Anchor>#</a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -382,17 +382,17 @@ fmt.Println(response[8:len(response)-1])
 </span><span class=lnt>12
 </span><span class=lnt>13
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>response</span> <span class=o>:=</span> <span class=s>&#34;[[1,2,3],[2,3,4]]&#34;</span>
-</span></span><span class=line><span class=cl>	<span class=kd>var</span> <span class=nx>arr</span> <span class=p>[][]</span><span class=kt>int</span>
-</span></span><span class=line><span class=cl>	<span class=k>if</span> <span class=nx>err</span> <span class=o>:=</span> <span class=nx>json</span><span class=p>.</span><span class=nf>Unmarshal</span><span class=p>([]</span><span class=nb>byte</span><span class=p>(</span><span class=nx>response</span><span class=p>),</span> <span class=o>&amp;</span><span class=nx>arr</span><span class=p>);</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;Error:&#34;</span><span class=p>,</span> <span class=nx>err</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl> <span class=nx>response</span> <span class=o>:=</span> <span class=s>&#34;[[1,2,3],[2,3,4]]&#34;</span>
+</span></span><span class=line><span class=cl> <span class=kd>var</span> <span class=nx>arr</span> <span class=p>[][]</span><span class=kt>int</span>
+</span></span><span class=line><span class=cl> <span class=k>if</span> <span class=nx>err</span> <span class=o>:=</span> <span class=nx>json</span><span class=p>.</span><span class=nf>Unmarshal</span><span class=p>([]</span><span class=nb>byte</span><span class=p>(</span><span class=nx>response</span><span class=p>),</span> <span class=o>&amp;</span><span class=nx>arr</span><span class=p>);</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;Error:&#34;</span><span class=p>,</span> <span class=nx>err</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>    <span class=c1>// 第1行;数据是:[1 2 3]</span>
-</span></span><span class=line><span class=cl>	<span class=c1>// 第2行;数据是:[2 3 4]</span>
-</span></span><span class=line><span class=cl>	<span class=k>for</span> <span class=nx>i</span><span class=o>:=</span><span class=mi>0</span> <span class=p>;</span><span class=nx>i</span><span class=p>&lt;</span> <span class=nb>len</span><span class=p>(</span><span class=nx>arr</span><span class=p>);</span><span class=nx>i</span><span class=o>++</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;第%v行;数据是:%v\n&#34;</span><span class=p>,</span><span class=nx>i</span><span class=o>+</span><span class=mi>1</span><span class=p>,</span><span class=nx>arr</span><span class=p>[</span><span class=nx>i</span><span class=p>])</span>
-</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl> <span class=c1>// 第2行;数据是:[2 3 4]</span>
+</span></span><span class=line><span class=cl> <span class=k>for</span> <span class=nx>i</span><span class=o>:=</span><span class=mi>0</span> <span class=p>;</span><span class=nx>i</span><span class=p>&lt;</span> <span class=nb>len</span><span class=p>(</span><span class=nx>arr</span><span class=p>);</span><span class=nx>i</span><span class=o>++</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;第%v行;数据是:%v\n&#34;</span><span class=p>,</span><span class=nx>i</span><span class=o>+</span><span class=mi>1</span><span class=p>,</span><span class=nx>arr</span><span class=p>[</span><span class=nx>i</span><span class=p>])</span>
+</span></span><span class=line><span class=cl> <span class=p>}</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div><h3 id=字符串和数字互转>字符串和数字互转<a href=#字符串和数字互转 class=hanchor arialabel=Anchor>#</a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
@@ -551,34 +551,34 @@ fmt.Println(response[8:len(response)-1])
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=c1>// if</span>
 </span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>method_if</span><span class=p>()</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	 <span class=nx>reader</span> <span class=o>:=</span> <span class=nx>bufio</span><span class=p>.</span><span class=nf>NewReader</span><span class=p>(</span><span class=nx>os</span><span class=p>.</span><span class=nx>Stdin</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	 <span class=nx>str</span><span class=p>,</span> <span class=nx>_</span> <span class=o>:=</span> <span class=nx>reader</span><span class=p>.</span><span class=nf>ReadString</span><span class=p>(</span><span class=sc>&#39;\n&#39;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	
-</span></span><span class=line><span class=cl>	 <span class=k>if</span> <span class=nx>str</span> <span class=o>==</span> <span class=s>&#34;&#34;</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	  <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;空的&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	 <span class=p>}</span>
-</span></span><span class=line><span class=cl>	
-</span></span><span class=line><span class=cl>	 <span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;输入的值是:%s\n&#34;</span><span class=p>,</span> <span class=nx>str</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=nx>reader</span> <span class=o>:=</span> <span class=nx>bufio</span><span class=p>.</span><span class=nf>NewReader</span><span class=p>(</span><span class=nx>os</span><span class=p>.</span><span class=nx>Stdin</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=nx>str</span><span class=p>,</span> <span class=nx>_</span> <span class=o>:=</span> <span class=nx>reader</span><span class=p>.</span><span class=nf>ReadString</span><span class=p>(</span><span class=sc>&#39;\n&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> 
+</span></span><span class=line><span class=cl>  <span class=k>if</span> <span class=nx>str</span> <span class=o>==</span> <span class=s>&#34;&#34;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>   <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;空的&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl> 
+</span></span><span class=line><span class=cl>  <span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;输入的值是:%s\n&#34;</span><span class=p>,</span> <span class=nx>str</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1>// if-ik</span>
 </span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=kd>var</span> <span class=nx>data</span> <span class=p>=</span> <span class=nb>make</span><span class=p>(</span><span class=kd>map</span><span class=p>[</span><span class=kt>string</span><span class=p>]</span><span class=kt>int</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=nx>data</span><span class=p>[</span><span class=s>&#34;a&#34;</span><span class=p>]</span> <span class=p>=</span> <span class=mi>0</span>
-</span></span><span class=line><span class=cl>	<span class=nx>data</span><span class=p>[</span><span class=s>&#34;b&#34;</span><span class=p>]</span> <span class=p>=</span> <span class=mi>1</span>
-</span></span><span class=line><span class=cl>	<span class=nx>data</span><span class=p>[</span><span class=s>&#34;c&#34;</span><span class=p>]</span> <span class=p>=</span> <span class=mi>2</span>
+</span></span><span class=line><span class=cl> <span class=kd>var</span> <span class=nx>data</span> <span class=p>=</span> <span class=nb>make</span><span class=p>(</span><span class=kd>map</span><span class=p>[</span><span class=kt>string</span><span class=p>]</span><span class=kt>int</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nx>data</span><span class=p>[</span><span class=s>&#34;a&#34;</span><span class=p>]</span> <span class=p>=</span> <span class=mi>0</span>
+</span></span><span class=line><span class=cl> <span class=nx>data</span><span class=p>[</span><span class=s>&#34;b&#34;</span><span class=p>]</span> <span class=p>=</span> <span class=mi>1</span>
+</span></span><span class=line><span class=cl> <span class=nx>data</span><span class=p>[</span><span class=s>&#34;c&#34;</span><span class=p>]</span> <span class=p>=</span> <span class=mi>2</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=c1>// 遍历</span>
-</span></span><span class=line><span class=cl>	<span class=k>for</span> <span class=nx>k</span><span class=p>,</span> <span class=nx>v</span> <span class=o>:=</span> <span class=k>range</span> <span class=nx>data</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>k</span><span class=p>,</span> <span class=nx>v</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl> <span class=c1>// 遍历</span>
+</span></span><span class=line><span class=cl> <span class=k>for</span> <span class=nx>k</span><span class=p>,</span> <span class=nx>v</span> <span class=o>:=</span> <span class=k>range</span> <span class=nx>data</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>k</span><span class=p>,</span> <span class=nx>v</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=p>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=k>if</span> <span class=nx>_</span><span class=p>,</span> <span class=nx>ok</span> <span class=o>:=</span> <span class=nx>data</span><span class=p>[</span><span class=s>&#34;a&#34;</span><span class=p>];</span> <span class=nx>ok</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=c1>//存在</span>
-</span></span><span class=line><span class=cl>		<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;存在&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl> <span class=k>if</span> <span class=nx>_</span><span class=p>,</span> <span class=nx>ok</span> <span class=o>:=</span> <span class=nx>data</span><span class=p>[</span><span class=s>&#34;a&#34;</span><span class=p>];</span> <span class=nx>ok</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=c1>//存在</span>
+</span></span><span class=line><span class=cl>  <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;存在&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
@@ -843,24 +843,24 @@ fmt.Println(response[8:len(response)-1])
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>main</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kn>import</span> <span class=p>(</span>
-</span></span><span class=line><span class=cl>	<span class=s>&#34;fmt&#34;</span>
+</span></span><span class=line><span class=cl> <span class=s>&#34;fmt&#34;</span>
 </span></span><span class=line><span class=cl><span class=p>)</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;在main函数外部&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;在main函数外部&#34;</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=c1>// 进入匿名代码块</span>
-</span></span><span class=line><span class=cl>	<span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;在匿名代码块内部&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>		<span class=c1>// 定义一个局部变量，仅在代码块内可见</span>
-</span></span><span class=line><span class=cl>		<span class=nx>message</span> <span class=o>:=</span> <span class=s>&#34;这是一个局部变量&#34;</span>
-</span></span><span class=line><span class=cl>		<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>message</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl> <span class=c1>// 进入匿名代码块</span>
+</span></span><span class=line><span class=cl> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;在匿名代码块内部&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=c1>// 定义一个局部变量，仅在代码块内可见</span>
+</span></span><span class=line><span class=cl>  <span class=nx>message</span> <span class=o>:=</span> <span class=s>&#34;这是一个局部变量&#34;</span>
+</span></span><span class=line><span class=cl>  <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>message</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=p>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=c1>// message 变量在代码块外不可见</span>
-</span></span><span class=line><span class=cl>	<span class=c1>// fmt.Println(message)  // 这会导致编译错误</span>
+</span></span><span class=line><span class=cl> <span class=c1>// message 变量在代码块外不可见</span>
+</span></span><span class=line><span class=cl> <span class=c1>// fmt.Println(message)  // 这会导致编译错误</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;在main函数外部&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;在main函数外部&#34;</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div><h2 id=数组和切片>数组和切片<a href=#数组和切片 class=hanchor arialabel=Anchor>#</a></h2><p>数组</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -901,15 +901,15 @@ fmt.Println(response[8:len(response)-1])
 </span><span class=lnt>37
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kd>func</span> <span class=nf>get</span><span class=p>()</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=nx>list</span> <span class=o>:=</span> <span class=p>[</span><span class=mi>5</span><span class=p>]</span><span class=kt>int</span><span class=p>{</span><span class=mi>1</span><span class=p>,</span><span class=mi>2</span><span class=p>,</span><span class=mi>3</span><span class=p>,</span><span class=mi>4</span><span class=p>,</span><span class=mi>5</span><span class=p>}</span>
+</span></span><span class=line><span class=cl> <span class=nx>list</span> <span class=o>:=</span> <span class=p>[</span><span class=mi>5</span><span class=p>]</span><span class=kt>int</span><span class=p>{</span><span class=mi>1</span><span class=p>,</span><span class=mi>2</span><span class=p>,</span><span class=mi>3</span><span class=p>,</span><span class=mi>4</span><span class=p>,</span><span class=mi>5</span><span class=p>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=k>for</span> <span class=nx>i</span><span class=o>:=</span><span class=mi>0</span><span class=p>;</span><span class=nx>i</span><span class=p>&lt;</span> <span class=nb>len</span><span class=p>(</span><span class=nx>list</span><span class=p>);</span><span class=nx>i</span><span class=o>++</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>i</span><span class=p>,</span> <span class=s>&#34;==&#34;</span><span class=p>,</span> <span class=nx>list</span><span class=p>[</span><span class=nx>i</span><span class=p>])</span>
-</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl> <span class=k>for</span> <span class=nx>i</span><span class=o>:=</span><span class=mi>0</span><span class=p>;</span><span class=nx>i</span><span class=p>&lt;</span> <span class=nb>len</span><span class=p>(</span><span class=nx>list</span><span class=p>);</span><span class=nx>i</span><span class=o>++</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>i</span><span class=p>,</span> <span class=s>&#34;==&#34;</span><span class=p>,</span> <span class=nx>list</span><span class=p>[</span><span class=nx>i</span><span class=p>])</span>
+</span></span><span class=line><span class=cl> <span class=p>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=k>for</span> <span class=nx>k</span><span class=p>,</span> <span class=nx>v</span> <span class=o>:=</span> <span class=k>range</span> <span class=nx>my</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>k</span><span class=p>,</span> <span class=nx>v</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl> <span class=k>for</span> <span class=nx>k</span><span class=p>,</span> <span class=nx>v</span> <span class=o>:=</span> <span class=k>range</span> <span class=nx>my</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>k</span><span class=p>,</span> <span class=nx>v</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=p>}</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>create</span><span class=p>(){</span>
@@ -972,36 +972,36 @@ fmt.Println(response[8:len(response)-1])
 </span><span class=lnt>34
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kd>func</span> <span class=nf>define</span><span class=p>()</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=kd>var</span> <span class=nx>identifier</span> <span class=p>[]</span><span class=kt>int</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;空数组&#34;</span><span class=p>,</span> <span class=nx>identifier</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=kd>var</span> <span class=nx>identifier</span> <span class=p>[]</span><span class=kt>int</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;空数组&#34;</span><span class=p>,</span> <span class=nx>identifier</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=kd>var</span> <span class=nx>slice1</span> <span class=p>[]</span><span class=kt>int</span> <span class=p>=</span> <span class=nb>make</span><span class=p>([]</span><span class=kt>int</span><span class=p>,</span> <span class=mi>10</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;切片&#34;</span><span class=p>,</span> <span class=nx>slice1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=kd>var</span> <span class=nx>slice1</span> <span class=p>[]</span><span class=kt>int</span> <span class=p>=</span> <span class=nb>make</span><span class=p>([]</span><span class=kt>int</span><span class=p>,</span> <span class=mi>10</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;切片&#34;</span><span class=p>,</span> <span class=nx>slice1</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=nx>i0</span> <span class=o>:=</span> <span class=nx>slice1</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span>
-</span></span><span class=line><span class=cl>	<span class=nx>i1</span> <span class=o>:=</span> <span class=nx>slice1</span><span class=p>[</span><span class=mi>1</span><span class=p>]</span>
-</span></span><span class=line><span class=cl>	<span class=nx>i2</span> <span class=o>:=</span> <span class=nx>slice1</span><span class=p>[</span><span class=mi>2</span><span class=p>]</span>
-</span></span><span class=line><span class=cl>	<span class=nx>i3</span> <span class=o>:=</span> <span class=nx>slice1</span><span class=p>[</span><span class=mi>3</span><span class=p>]</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;通过索引,获取值&#34;</span><span class=p>,</span> <span class=nx>i0</span><span class=p>,</span> <span class=nx>i1</span><span class=p>,</span> <span class=nx>i2</span><span class=p>,</span> <span class=nx>i3</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nx>i0</span> <span class=o>:=</span> <span class=nx>slice1</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span>
+</span></span><span class=line><span class=cl> <span class=nx>i1</span> <span class=o>:=</span> <span class=nx>slice1</span><span class=p>[</span><span class=mi>1</span><span class=p>]</span>
+</span></span><span class=line><span class=cl> <span class=nx>i2</span> <span class=o>:=</span> <span class=nx>slice1</span><span class=p>[</span><span class=mi>2</span><span class=p>]</span>
+</span></span><span class=line><span class=cl> <span class=nx>i3</span> <span class=o>:=</span> <span class=nx>slice1</span><span class=p>[</span><span class=mi>3</span><span class=p>]</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;通过索引,获取值&#34;</span><span class=p>,</span> <span class=nx>i0</span><span class=p>,</span> <span class=nx>i1</span><span class=p>,</span> <span class=nx>i2</span><span class=p>,</span> <span class=nx>i3</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=c1>// 修改切片</span>
-</span></span><span class=line><span class=cl>	<span class=k>for</span> <span class=nx>i</span> <span class=o>:=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=p>&lt;</span> <span class=nb>len</span><span class=p>(</span><span class=nx>slice1</span><span class=p>);</span> <span class=nx>i</span><span class=o>++</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=nx>slice1</span><span class=p>[</span><span class=nx>i</span><span class=p>]</span> <span class=p>=</span> <span class=nx>i</span>
-</span></span><span class=line><span class=cl>	<span class=p>}</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;修改完切片::&#34;</span><span class=p>,</span> <span class=nx>slice1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=c1>// 修改切片</span>
+</span></span><span class=line><span class=cl> <span class=k>for</span> <span class=nx>i</span> <span class=o>:=</span> <span class=mi>0</span><span class=p>;</span> <span class=nx>i</span> <span class=p>&lt;</span> <span class=nb>len</span><span class=p>(</span><span class=nx>slice1</span><span class=p>);</span> <span class=nx>i</span><span class=o>++</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>slice1</span><span class=p>[</span><span class=nx>i</span><span class=p>]</span> <span class=p>=</span> <span class=nx>i</span>
+</span></span><span class=line><span class=cl> <span class=p>}</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;修改完切片::&#34;</span><span class=p>,</span> <span class=nx>slice1</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;获取切片区间1:&#34;</span><span class=p>,</span> <span class=nx>slice1</span><span class=p>[</span><span class=mi>0</span><span class=p>:</span><span class=mi>2</span><span class=p>])</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;获取切片区间2:&#34;</span><span class=p>,</span> <span class=nx>slice1</span><span class=p>[</span><span class=mi>5</span><span class=p>:])</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;获取切片区间3:&#34;</span><span class=p>,</span> <span class=nx>slice1</span><span class=p>[:</span><span class=mi>5</span><span class=p>])</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;获取切片区间1:&#34;</span><span class=p>,</span> <span class=nx>slice1</span><span class=p>[</span><span class=mi>0</span><span class=p>:</span><span class=mi>2</span><span class=p>])</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;获取切片区间2:&#34;</span><span class=p>,</span> <span class=nx>slice1</span><span class=p>[</span><span class=mi>5</span><span class=p>:])</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;获取切片区间3:&#34;</span><span class=p>,</span> <span class=nx>slice1</span><span class=p>[:</span><span class=mi>5</span><span class=p>])</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=nx>slice1</span> <span class=p>=</span> <span class=nb>append</span><span class=p>(</span><span class=nx>slice1</span><span class=p>,</span> <span class=mi>10</span><span class=p>,</span> <span class=mi>11</span><span class=p>,</span> <span class=mi>12</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;追加完切片::&#34;</span><span class=p>,</span> <span class=nx>slice1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nx>slice1</span> <span class=p>=</span> <span class=nb>append</span><span class=p>(</span><span class=nx>slice1</span><span class=p>,</span> <span class=mi>10</span><span class=p>,</span> <span class=mi>11</span><span class=p>,</span> <span class=mi>12</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;追加完切片::&#34;</span><span class=p>,</span> <span class=nx>slice1</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=nx>slice2</span> <span class=o>:=</span> <span class=nb>make</span><span class=p>([]</span><span class=kt>int</span><span class=p>,</span> <span class=nb>len</span><span class=p>(</span><span class=nx>slice1</span><span class=p>),</span> <span class=nb>cap</span><span class=p>(</span><span class=nx>slice1</span><span class=p>)</span><span class=o>*</span><span class=mi>2</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;创建个容量是原来容量两位的数组:&#34;</span><span class=p>,</span> <span class=nx>slice2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nx>slice2</span> <span class=o>:=</span> <span class=nb>make</span><span class=p>([]</span><span class=kt>int</span><span class=p>,</span> <span class=nb>len</span><span class=p>(</span><span class=nx>slice1</span><span class=p>),</span> <span class=nb>cap</span><span class=p>(</span><span class=nx>slice1</span><span class=p>)</span><span class=o>*</span><span class=mi>2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;创建个容量是原来容量两位的数组:&#34;</span><span class=p>,</span> <span class=nx>slice2</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=nx>number</span> <span class=o>:=</span> <span class=nb>copy</span><span class=p>(</span><span class=nx>slice2</span><span class=p>,</span> <span class=nx>slice1</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;slice:%v,slice2:%v,number:%v:&#34;</span><span class=p>,</span> <span class=nx>slice1</span><span class=p>,</span> <span class=nx>slice2</span><span class=p>,</span> <span class=nx>number</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nx>number</span> <span class=o>:=</span> <span class=nb>copy</span><span class=p>(</span><span class=nx>slice2</span><span class=p>,</span> <span class=nx>slice1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;slice:%v,slice2:%v,number:%v:&#34;</span><span class=p>,</span> <span class=nx>slice1</span><span class=p>,</span> <span class=nx>slice2</span><span class=p>,</span> <span class=nx>number</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div><h2 id=map>Map<a href=#map class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
@@ -1055,52 +1055,52 @@ fmt.Println(response[8:len(response)-1])
 </span><span class=lnt>49
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=nx>keyvale</span> <span class=o>:=</span> <span class=nb>make</span><span class=p>(</span><span class=kd>map</span><span class=p>[</span><span class=kt>string</span><span class=p>]</span><span class=kt>string</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=nx>keyvale</span><span class=p>[</span><span class=s>&#34;k1&#34;</span><span class=p>]</span> <span class=p>=</span> <span class=s>&#34;v1&#34;</span>
-</span></span><span class=line><span class=cl>	<span class=nx>keyvale</span><span class=p>[</span><span class=s>&#34;k2&#34;</span><span class=p>]</span> <span class=p>=</span> <span class=s>&#34;v2&#34;</span>
-</span></span><span class=line><span class=cl>	<span class=nx>keyvale</span><span class=p>[</span><span class=s>&#34;k3&#34;</span><span class=p>]</span> <span class=p>=</span> <span class=s>&#34;v3&#34;</span>
-</span></span><span class=line><span class=cl>	<span class=nx>keyvale</span><span class=p>[</span><span class=s>&#34;k4&#34;</span><span class=p>]</span> <span class=p>=</span> <span class=s>&#34;v4&#34;</span>
+</span></span><span class=line><span class=cl> <span class=nx>keyvale</span> <span class=o>:=</span> <span class=nb>make</span><span class=p>(</span><span class=kd>map</span><span class=p>[</span><span class=kt>string</span><span class=p>]</span><span class=kt>string</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nx>keyvale</span><span class=p>[</span><span class=s>&#34;k1&#34;</span><span class=p>]</span> <span class=p>=</span> <span class=s>&#34;v1&#34;</span>
+</span></span><span class=line><span class=cl> <span class=nx>keyvale</span><span class=p>[</span><span class=s>&#34;k2&#34;</span><span class=p>]</span> <span class=p>=</span> <span class=s>&#34;v2&#34;</span>
+</span></span><span class=line><span class=cl> <span class=nx>keyvale</span><span class=p>[</span><span class=s>&#34;k3&#34;</span><span class=p>]</span> <span class=p>=</span> <span class=s>&#34;v3&#34;</span>
+</span></span><span class=line><span class=cl> <span class=nx>keyvale</span><span class=p>[</span><span class=s>&#34;k4&#34;</span><span class=p>]</span> <span class=p>=</span> <span class=s>&#34;v4&#34;</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=c1>// 循环遍历</span>
-</span></span><span class=line><span class=cl>	<span class=k>for</span> <span class=nx>key</span> <span class=o>:=</span> <span class=k>range</span> <span class=nx>keyvale</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;循环遍历:&#34;</span><span class=p>,</span> <span class=nx>key</span><span class=p>,</span> <span class=nx>keyvale</span><span class=p>[</span><span class=nx>key</span><span class=p>])</span>
-</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl> <span class=c1>// 循环遍历</span>
+</span></span><span class=line><span class=cl> <span class=k>for</span> <span class=nx>key</span> <span class=o>:=</span> <span class=k>range</span> <span class=nx>keyvale</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;循环遍历:&#34;</span><span class=p>,</span> <span class=nx>key</span><span class=p>,</span> <span class=nx>keyvale</span><span class=p>[</span><span class=nx>key</span><span class=p>])</span>
+</span></span><span class=line><span class=cl> <span class=p>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=c1>// 删除元素</span>
-</span></span><span class=line><span class=cl>	<span class=nb>delete</span><span class=p>(</span><span class=nx>keyvale</span><span class=p>,</span> <span class=s>&#34;k1&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=k>for</span> <span class=nx>key</span> <span class=o>:=</span> <span class=k>range</span> <span class=nx>keyvale</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;删除值之后,循环遍历:&#34;</span><span class=p>,</span> <span class=nx>key</span><span class=p>,</span> <span class=nx>keyvale</span><span class=p>[</span><span class=nx>key</span><span class=p>])</span>
-</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl> <span class=c1>// 删除元素</span>
+</span></span><span class=line><span class=cl> <span class=nb>delete</span><span class=p>(</span><span class=nx>keyvale</span><span class=p>,</span> <span class=s>&#34;k1&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=k>for</span> <span class=nx>key</span> <span class=o>:=</span> <span class=k>range</span> <span class=nx>keyvale</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;删除值之后,循环遍历:&#34;</span><span class=p>,</span> <span class=nx>key</span><span class=p>,</span> <span class=nx>keyvale</span><span class=p>[</span><span class=nx>key</span><span class=p>])</span>
+</span></span><span class=line><span class=cl> <span class=p>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=c1>// 查看元素是否存在</span>
-</span></span><span class=line><span class=cl>	<span class=nx>_</span><span class=p>,</span> <span class=nx>ok</span> <span class=o>:=</span> <span class=nx>keyvale</span><span class=p>[</span><span class=s>&#34;United States&#34;</span><span class=p>]</span>
-</span></span><span class=line><span class=cl>	<span class=k>if</span> <span class=nx>ok</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;存在\n&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;不存在\n&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl> <span class=c1>// 查看元素是否存在</span>
+</span></span><span class=line><span class=cl> <span class=nx>_</span><span class=p>,</span> <span class=nx>ok</span> <span class=o>:=</span> <span class=nx>keyvale</span><span class=p>[</span><span class=s>&#34;United States&#34;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl> <span class=k>if</span> <span class=nx>ok</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;存在\n&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;不存在\n&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=p>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=c1>// 但是当key如果不存在的时候，我们会得到该value值类型的默认值，比如string类型得到空字符串，int类型得到0。但是程序不会报错</span>
-</span></span><span class=line><span class=cl>	<span class=nx>m</span> <span class=o>:=</span> <span class=nb>make</span><span class=p>(</span><span class=kd>map</span><span class=p>[</span><span class=kt>string</span><span class=p>]</span><span class=kt>int</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=nx>m</span><span class=p>[</span><span class=s>&#34;a&#34;</span><span class=p>]</span> <span class=p>=</span> <span class=mi>1</span>
-</span></span><span class=line><span class=cl>	<span class=nx>x</span><span class=p>,</span> <span class=nx>ok</span> <span class=o>:=</span> <span class=nx>m</span><span class=p>[</span><span class=s>&#34;b&#34;</span><span class=p>]</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;key不存在时,会有默认值&#34;</span><span class=p>,</span> <span class=nx>x</span><span class=p>,</span> <span class=nx>ok</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=c1>// 但是当key如果不存在的时候，我们会得到该value值类型的默认值，比如string类型得到空字符串，int类型得到0。但是程序不会报错</span>
+</span></span><span class=line><span class=cl> <span class=nx>m</span> <span class=o>:=</span> <span class=nb>make</span><span class=p>(</span><span class=kd>map</span><span class=p>[</span><span class=kt>string</span><span class=p>]</span><span class=kt>int</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nx>m</span><span class=p>[</span><span class=s>&#34;a&#34;</span><span class=p>]</span> <span class=p>=</span> <span class=mi>1</span>
+</span></span><span class=line><span class=cl> <span class=nx>x</span><span class=p>,</span> <span class=nx>ok</span> <span class=o>:=</span> <span class=nx>m</span><span class=p>[</span><span class=s>&#34;b&#34;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;key不存在时,会有默认值&#34;</span><span class=p>,</span> <span class=nx>x</span><span class=p>,</span> <span class=nx>ok</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=c1>// map长度</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;map长度&#34;</span><span class=p>,</span> <span class=nb>len</span><span class=p>(</span><span class=nx>m</span><span class=p>))</span>
+</span></span><span class=line><span class=cl> <span class=c1>// map长度</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;map长度&#34;</span><span class=p>,</span> <span class=nb>len</span><span class=p>(</span><span class=nx>m</span><span class=p>))</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=c1>// map是引用类型</span>
-</span></span><span class=line><span class=cl>	<span class=nx>mymap</span> <span class=o>:=</span> <span class=kd>map</span><span class=p>[</span><span class=kt>string</span><span class=p>]</span><span class=kt>int</span><span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=s>&#34;steven&#34;</span><span class=p>:</span>  <span class=mi>12000</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>		<span class=s>&#34;anthony&#34;</span><span class=p>:</span> <span class=mi>15000</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>	<span class=p>}</span>
-</span></span><span class=line><span class=cl>	<span class=nx>mymap</span><span class=p>[</span><span class=s>&#34;mike&#34;</span><span class=p>]</span> <span class=p>=</span> <span class=mi>9000</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;原来的数据:%v\n&#34;</span><span class=p>,</span> <span class=nx>mymap</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=c1>// map是引用类型</span>
+</span></span><span class=line><span class=cl> <span class=nx>mymap</span> <span class=o>:=</span> <span class=kd>map</span><span class=p>[</span><span class=kt>string</span><span class=p>]</span><span class=kt>int</span><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=s>&#34;steven&#34;</span><span class=p>:</span>  <span class=mi>12000</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=s>&#34;anthony&#34;</span><span class=p>:</span> <span class=mi>15000</span><span class=p>,</span>
+</span></span><span class=line><span class=cl> <span class=p>}</span>
+</span></span><span class=line><span class=cl> <span class=nx>mymap</span><span class=p>[</span><span class=s>&#34;mike&#34;</span><span class=p>]</span> <span class=p>=</span> <span class=mi>9000</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;原来的数据:%v\n&#34;</span><span class=p>,</span> <span class=nx>mymap</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=nx>newmymap</span> <span class=o>:=</span> <span class=nx>mymap</span>
-</span></span><span class=line><span class=cl>	<span class=nx>newmymap</span><span class=p>[</span><span class=s>&#34;anthony&#34;</span><span class=p>]</span> <span class=p>=</span> <span class=mi>50000</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;改变后,原来的数据:%v\n&#34;</span><span class=p>,</span> <span class=nx>mymap</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;改变后,新的的数据:%v\n&#34;</span><span class=p>,</span> <span class=nx>newmymap</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nx>newmymap</span> <span class=o>:=</span> <span class=nx>mymap</span>
+</span></span><span class=line><span class=cl> <span class=nx>newmymap</span><span class=p>[</span><span class=s>&#34;anthony&#34;</span><span class=p>]</span> <span class=p>=</span> <span class=mi>50000</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;改变后,原来的数据:%v\n&#34;</span><span class=p>,</span> <span class=nx>mymap</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;改变后,新的的数据:%v\n&#34;</span><span class=p>,</span> <span class=nx>newmymap</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div><h2 id=函数>函数<a href=#函数 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -1191,22 +1191,22 @@ fmt.Println(response[8:len(response)-1])
 </span><span class=lnt>17
 </span><span class=lnt>18
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kd>type</span> <span class=nx>studen</span> <span class=kd>struct</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>name</span> <span class=kt>string</span>
-</span></span><span class=line><span class=cl>	<span class=nx>age</span>  <span class=kt>int</span>
+</span></span><span class=line><span class=cl> <span class=nx>name</span> <span class=kt>string</span>
+</span></span><span class=line><span class=cl> <span class=nx>age</span>  <span class=kt>int</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>test4</span><span class=p>()</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>stu</span> <span class=o>:=</span> <span class=nf>test4_return</span><span class=p>()</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>stu</span><span class=p>.</span><span class=nx>name</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nx>stu</span> <span class=o>:=</span> <span class=nf>test4_return</span><span class=p>()</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>stu</span><span class=p>.</span><span class=nx>name</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>test4_return</span><span class=p>()</span> <span class=p>(</span><span class=nx>stu</span> <span class=o>*</span><span class=nx>studen</span><span class=p>)</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=nx>stu</span> <span class=p>=</span> <span class=o>&amp;</span><span class=nx>studen</span><span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=s>&#34;anthony&#34;</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>		<span class=mi>13</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>	<span class=p>}</span>
-</span></span><span class=line><span class=cl>	<span class=k>return</span>
+</span></span><span class=line><span class=cl> <span class=nx>stu</span> <span class=p>=</span> <span class=o>&amp;</span><span class=nx>studen</span><span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=s>&#34;anthony&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=mi>13</span><span class=p>,</span>
+</span></span><span class=line><span class=cl> <span class=p>}</span>
+</span></span><span class=line><span class=cl> <span class=k>return</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div><h3 id=函数作为实参>函数作为实参<a href=#函数作为实参 class=hanchor arialabel=Anchor>#</a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -1267,24 +1267,24 @@ fmt.Println(response[8:len(response)-1])
 </span><span class=lnt>19
 </span><span class=lnt>20
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nf>test2</span><span class=p>()</span>
+</span></span><span class=line><span class=cl> <span class=nf>test2</span><span class=p>()</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>test2</span><span class=p>()</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nf>group</span><span class=p>(</span><span class=s>&#34;/system1&#34;</span><span class=p>,</span> <span class=nx>myfunc</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nf>group</span><span class=p>(</span><span class=s>&#34;/system1&#34;</span><span class=p>,</span> <span class=nx>myfunc</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=nf>group</span><span class=p>(</span><span class=s>&#34;/system2&#34;</span><span class=p>,</span> <span class=kd>func</span><span class=p>(</span><span class=nx>path2</span> <span class=kt>string</span><span class=p>)</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;回调Path:%v \n&#34;</span><span class=p>,</span> <span class=nx>path2</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=p>})</span>
+</span></span><span class=line><span class=cl> <span class=nf>group</span><span class=p>(</span><span class=s>&#34;/system2&#34;</span><span class=p>,</span> <span class=kd>func</span><span class=p>(</span><span class=nx>path2</span> <span class=kt>string</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;回调Path:%v \n&#34;</span><span class=p>,</span> <span class=nx>path2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=p>})</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>group</span><span class=p>(</span><span class=nx>path</span> <span class=kt>string</span><span class=p>,</span> <span class=nx>group</span> <span class=kd>func</span><span class=p>(</span><span class=nx>path2</span> <span class=kt>string</span><span class=p>))</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;手动实现 \n&#34;</span> <span class=o>+</span> <span class=nx>path</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=nf>group</span><span class=p>(</span><span class=nx>path</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;手动实现 \n&#34;</span> <span class=o>+</span> <span class=nx>path</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nf>group</span><span class=p>(</span><span class=nx>path</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>myfunc</span><span class=p>(</span><span class=nx>path2</span> <span class=kt>string</span><span class=p>)</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;回调Path:%v \n&#34;</span><span class=p>,</span> <span class=nx>path2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;回调Path:%v \n&#34;</span><span class=p>,</span> <span class=nx>path2</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div><h3 id=函数作为参数-interface>函数作为参数-interface<a href=#函数作为参数-interface class=hanchor arialabel=Anchor>#</a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
@@ -1295,14 +1295,14 @@ fmt.Println(response[8:len(response)-1])
 </span><span class=lnt>7
 </span><span class=lnt>8
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kd>func</span> <span class=nf>test3</span><span class=p>()</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nf>test3_object</span><span class=p>(</span><span class=nx>myfunc</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nf>test3_object</span><span class=p>(</span><span class=nx>myfunc</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>test3_object</span><span class=p>(</span><span class=nx>object</span> <span class=kd>interface</span><span class=p>{})</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>a</span> <span class=o>:=</span> <span class=nx>object</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;什么鬼:%v&#34;</span><span class=p>,</span> <span class=nx>a</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nx>a</span> <span class=o>:=</span> <span class=nx>object</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;什么鬼:%v&#34;</span><span class=p>,</span> <span class=nx>a</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=指针>指针<a href=#指针 class=hanchor arialabel=Anchor>#</a></h2><p><img src=https://image.runtimes.cc/202404051522806.png alt></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div><h2 id=指针>指针<a href=#指针 class=hanchor arialabel=Anchor>#</a></h2><p><img src=https://image.runtimes.cc/202404051522806.png alt=TODO></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -1380,19 +1380,19 @@ fmt.Println(response[8:len(response)-1])
 </span><span class=lnt>14
 </span><span class=lnt>15
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=c1>// 返回的是该实例的结构类型</span>
-</span></span><span class=line><span class=cl>	<span class=kd>var</span> <span class=nx>s</span> <span class=nx>people</span>
-</span></span><span class=line><span class=cl>	<span class=nx>s</span><span class=p>.</span><span class=nx>age</span> <span class=p>=</span> <span class=mi>1</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>s</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=c1>// 返回的是该实例的结构类型</span>
+</span></span><span class=line><span class=cl> <span class=kd>var</span> <span class=nx>s</span> <span class=nx>people</span>
+</span></span><span class=line><span class=cl> <span class=nx>s</span><span class=p>.</span><span class=nx>age</span> <span class=p>=</span> <span class=mi>1</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>s</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=c1>// 第二第三种，返回的是一个指向这个结构类型的一个指针，是地址</span>
-</span></span><span class=line><span class=cl>	<span class=nx>ming</span> <span class=o>:=</span> <span class=nb>new</span><span class=p>(</span><span class=nx>people</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=nx>ming</span><span class=p>.</span><span class=nx>name</span> <span class=p>=</span> <span class=s>&#34;xiao ming&#34;</span>
-</span></span><span class=line><span class=cl>	<span class=nx>ming</span><span class=p>.</span><span class=nx>age</span> <span class=p>=</span> <span class=mi>18</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>ming</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=c1>// 第二第三种，返回的是一个指向这个结构类型的一个指针，是地址</span>
+</span></span><span class=line><span class=cl> <span class=nx>ming</span> <span class=o>:=</span> <span class=nb>new</span><span class=p>(</span><span class=nx>people</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nx>ming</span><span class=p>.</span><span class=nx>name</span> <span class=p>=</span> <span class=s>&#34;xiao ming&#34;</span>
+</span></span><span class=line><span class=cl> <span class=nx>ming</span><span class=p>.</span><span class=nx>age</span> <span class=p>=</span> <span class=mi>18</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>ming</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=nx>ming2</span> <span class=o>:=</span> <span class=o>&amp;</span><span class=nx>people</span><span class=p>{</span><span class=s>&#34;xiao ming&#34;</span><span class=p>,</span> <span class=mi>18</span><span class=p>}</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>ming2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nx>ming2</span> <span class=o>:=</span> <span class=o>&amp;</span><span class=nx>people</span><span class=p>{</span><span class=s>&#34;xiao ming&#34;</span><span class=p>,</span> <span class=mi>18</span><span class=p>}</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>ming2</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div><p>第二第三种返回指针的声明形式，在我们需要修改他的值的时候，其实应该使用的方式是:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=p>(</span><span class=o>*</span><span class=nx>ming</span><span class=p>).</span><span class=nx>name</span> <span class=p>=</span> <span class=s>&#34;xiao wang&#34;</span>
@@ -1423,30 +1423,30 @@ fmt.Println(response[8:len(response)-1])
 </span><span class=lnt>25
 </span><span class=lnt>26
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kd>type</span> <span class=nx>Vertex</span> <span class=kd>struct</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>X</span><span class=p>,</span> <span class=nx>Y</span> <span class=kt>float64</span>
+</span></span><span class=line><span class=cl> <span class=nx>X</span><span class=p>,</span> <span class=nx>Y</span> <span class=kt>float64</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kd>func</span> <span class=p>(</span><span class=nx>v</span> <span class=nx>Vertex</span><span class=p>)</span> <span class=nf>test1</span><span class=p>()</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>v</span><span class=p>.</span><span class=nx>X</span><span class=o>++</span>
-</span></span><span class=line><span class=cl>	<span class=nx>v</span><span class=p>.</span><span class=nx>Y</span><span class=o>++</span>
+</span></span><span class=line><span class=cl> <span class=nx>v</span><span class=p>.</span><span class=nx>X</span><span class=o>++</span>
+</span></span><span class=line><span class=cl> <span class=nx>v</span><span class=p>.</span><span class=nx>Y</span><span class=o>++</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kd>func</span> <span class=p>(</span><span class=nx>v</span> <span class=o>*</span><span class=nx>Vertex</span><span class=p>)</span> <span class=nf>test2</span><span class=p>()</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>v</span><span class=p>.</span><span class=nx>X</span><span class=o>++</span>
-</span></span><span class=line><span class=cl>	<span class=nx>v</span><span class=p>.</span><span class=nx>Y</span><span class=o>++</span>
+</span></span><span class=line><span class=cl> <span class=nx>v</span><span class=p>.</span><span class=nx>X</span><span class=o>++</span>
+</span></span><span class=line><span class=cl> <span class=nx>v</span><span class=p>.</span><span class=nx>Y</span><span class=o>++</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>v1</span> <span class=o>:=</span> <span class=nx>Vertex</span><span class=p>{</span><span class=mi>1</span><span class=p>,</span> <span class=mi>1</span><span class=p>}</span>
-</span></span><span class=line><span class=cl>	<span class=nx>v2</span> <span class=o>:=</span> <span class=o>&amp;</span><span class=nx>Vertex</span><span class=p>{</span><span class=mi>1</span><span class=p>,</span> <span class=mi>1</span><span class=p>}</span>
+</span></span><span class=line><span class=cl> <span class=nx>v1</span> <span class=o>:=</span> <span class=nx>Vertex</span><span class=p>{</span><span class=mi>1</span><span class=p>,</span> <span class=mi>1</span><span class=p>}</span>
+</span></span><span class=line><span class=cl> <span class=nx>v2</span> <span class=o>:=</span> <span class=o>&amp;</span><span class=nx>Vertex</span><span class=p>{</span><span class=mi>1</span><span class=p>,</span> <span class=mi>1</span><span class=p>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=nx>v1</span><span class=p>.</span><span class=nf>test1</span><span class=p>()</span>
-</span></span><span class=line><span class=cl>	<span class=nx>v2</span><span class=p>.</span><span class=nf>test2</span><span class=p>()</span>
+</span></span><span class=line><span class=cl> <span class=nx>v1</span><span class=p>.</span><span class=nf>test1</span><span class=p>()</span>
+</span></span><span class=line><span class=cl> <span class=nx>v2</span><span class=p>.</span><span class=nf>test2</span><span class=p>()</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=c1>// {1 1}</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>v1</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=c1>// &amp;{2 2}</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>v2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=c1>// {1 1}</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>v1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=c1>// &amp;{2 2}</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>v2</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div><p><code>test1</code>和<code>test2</code>，他们唯一的区别就是方法名前面的接收者不同，一个是指针类型的，一个是值类型的。</p><h3 id=测试>测试<a href=#测试 class=hanchor arialabel=Anchor>#</a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -1466,21 +1466,21 @@ fmt.Println(response[8:len(response)-1])
 </span><span class=lnt>16
 </span><span class=lnt>17
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kd>type</span> <span class=nx>Vertex</span> <span class=kd>struct</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>X</span><span class=p>,</span> <span class=nx>Y</span> <span class=kt>float64</span>
+</span></span><span class=line><span class=cl> <span class=nx>X</span><span class=p>,</span> <span class=nx>Y</span> <span class=kt>float64</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kd>func</span> <span class=p>(</span><span class=nx>v</span> <span class=nx>Vertex</span><span class=p>)</span> <span class=nf>test1</span><span class=p>(){</span>
-</span></span><span class=line><span class=cl>	<span class=c1>// 自己定义的v1内存地址为：0xc00000a0e0</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;在方法中的v的地址为：%p\n&#34;</span><span class=p>,</span> <span class=o>&amp;</span><span class=nx>v</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=nx>v</span><span class=p>.</span><span class=nx>X</span><span class=o>++</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>	<span class=nx>v</span><span class=p>.</span><span class=nx>Y</span><span class=o>++</span><span class=p>;</span>
+</span></span><span class=line><span class=cl> <span class=c1>// 自己定义的v1内存地址为：0xc00000a0e0</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;在方法中的v的地址为：%p\n&#34;</span><span class=p>,</span> <span class=o>&amp;</span><span class=nx>v</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nx>v</span><span class=p>.</span><span class=nx>X</span><span class=o>++</span><span class=p>;</span>
+</span></span><span class=line><span class=cl> <span class=nx>v</span><span class=p>.</span><span class=nx>Y</span><span class=o>++</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span>  <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>v1</span> <span class=o>:=</span> <span class=nx>Vertex</span><span class=p>{</span><span class=mi>1</span><span class=p>,</span> <span class=mi>1</span><span class=p>}</span>
-</span></span><span class=line><span class=cl>	<span class=c1>// 在方法中的v的地址为：0xc00000a100</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;自己定义的v1内存地址为：%p\n&#34;</span><span class=p>,</span> <span class=o>&amp;</span><span class=nx>v1</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=nx>v1</span><span class=p>.</span><span class=nf>test1</span><span class=p>()</span>
+</span></span><span class=line><span class=cl> <span class=nx>v1</span> <span class=o>:=</span> <span class=nx>Vertex</span><span class=p>{</span><span class=mi>1</span><span class=p>,</span> <span class=mi>1</span><span class=p>}</span>
+</span></span><span class=line><span class=cl> <span class=c1>// 在方法中的v的地址为：0xc00000a100</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;自己定义的v1内存地址为：%p\n&#34;</span><span class=p>,</span> <span class=o>&amp;</span><span class=nx>v1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nx>v1</span><span class=p>.</span><span class=nf>test1</span><span class=p>()</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -1500,21 +1500,21 @@ fmt.Println(response[8:len(response)-1])
 </span><span class=lnt>16
 </span><span class=lnt>17
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kd>type</span> <span class=nx>Vertex</span> <span class=kd>struct</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>X</span><span class=p>,</span> <span class=nx>Y</span> <span class=kt>float64</span>
+</span></span><span class=line><span class=cl> <span class=nx>X</span><span class=p>,</span> <span class=nx>Y</span> <span class=kt>float64</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kd>func</span> <span class=p>(</span><span class=nx>v</span> <span class=o>*</span><span class=nx>Vertex</span><span class=p>)</span> <span class=nf>test2</span><span class=p>(){</span>
-</span></span><span class=line><span class=cl>	<span class=c1>// 自己定义的v1内存地址为：0xc00000a0e0</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;在方法中的v的地址为：%p\n&#34;</span><span class=p>,</span> <span class=nx>v</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=nx>v</span><span class=p>.</span><span class=nx>X</span><span class=o>++</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>	<span class=nx>v</span><span class=p>.</span><span class=nx>Y</span><span class=o>++</span><span class=p>;</span>
+</span></span><span class=line><span class=cl> <span class=c1>// 自己定义的v1内存地址为：0xc00000a0e0</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;在方法中的v的地址为：%p\n&#34;</span><span class=p>,</span> <span class=nx>v</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nx>v</span><span class=p>.</span><span class=nx>X</span><span class=o>++</span><span class=p>;</span>
+</span></span><span class=line><span class=cl> <span class=nx>v</span><span class=p>.</span><span class=nx>Y</span><span class=o>++</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span>  <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>v1</span> <span class=o>:=</span> <span class=o>&amp;</span><span class=nx>Vertex</span><span class=p>{</span><span class=mi>1</span><span class=p>,</span> <span class=mi>1</span><span class=p>}</span>
-</span></span><span class=line><span class=cl>	<span class=c1>// </span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;自己定义的v1内存地址为：%p\n&#34;</span><span class=p>,</span> <span class=nx>v1</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=nx>v1</span><span class=p>.</span><span class=nf>test2</span><span class=p>()</span>
+</span></span><span class=line><span class=cl> <span class=nx>v1</span> <span class=o>:=</span> <span class=o>&amp;</span><span class=nx>Vertex</span><span class=p>{</span><span class=mi>1</span><span class=p>,</span> <span class=mi>1</span><span class=p>}</span>
+</span></span><span class=line><span class=cl> <span class=c1>// </span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;自己定义的v1内存地址为：%p\n&#34;</span><span class=p>,</span> <span class=nx>v1</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nx>v1</span><span class=p>.</span><span class=nf>test2</span><span class=p>()</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -1774,7 +1774,7 @@ fmt.Println(response[8:len(response)-1])
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1>// 没有构造函数的概念，对象的创建通常交由一个全局的创建函数来完成，以NewXXX 来命名，表示“构造函数” ：</span>
 </span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>NewCar</span><span class=p>(</span><span class=nx>color</span><span class=p>,</span><span class=nx>size</span> <span class=kt>string</span><span class=p>)</span><span class=o>*</span><span class=nx>Car</span>  <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=k>return</span> <span class=o>&amp;</span><span class=nx>Car</span><span class=p>{</span><span class=nx>color</span><span class=p>,</span><span class=nx>size</span><span class=p>}</span>
+</span></span><span class=line><span class=cl> <span class=k>return</span> <span class=o>&amp;</span><span class=nx>Car</span><span class=p>{</span><span class=nx>color</span><span class=p>,</span><span class=nx>size</span><span class=p>}</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div><h2 id=接口>接口<a href=#接口 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -2723,21 +2723,21 @@ func main() {
 </span><span class=lnt>17
 </span><span class=lnt>18
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>resp</span><span class=p>,</span> <span class=nx>err</span> <span class=o>:=</span> <span class=nx>http</span><span class=p>.</span><span class=nf>Get</span><span class=p>(</span><span class=s>&#34;http://fund.eastmoney.com/js/fundcode_search.js&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=k>if</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>err</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>		<span class=k>return</span>
-</span></span><span class=line><span class=cl>	<span class=p>}</span>
-</span></span><span class=line><span class=cl>	<span class=k>defer</span> <span class=nx>resp</span><span class=p>.</span><span class=nx>Body</span><span class=p>.</span><span class=nf>Close</span><span class=p>()</span>
-</span></span><span class=line><span class=cl>	<span class=nx>body</span><span class=p>,</span> <span class=nx>err</span> <span class=o>:=</span> <span class=nx>ioutil</span><span class=p>.</span><span class=nf>ReadAll</span><span class=p>(</span><span class=nx>resp</span><span class=p>.</span><span class=nx>Body</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nx>resp</span><span class=p>,</span> <span class=nx>err</span> <span class=o>:=</span> <span class=nx>http</span><span class=p>.</span><span class=nf>Get</span><span class=p>(</span><span class=s>&#34;http://fund.eastmoney.com/js/fundcode_search.js&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=k>if</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>err</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span>
+</span></span><span class=line><span class=cl> <span class=p>}</span>
+</span></span><span class=line><span class=cl> <span class=k>defer</span> <span class=nx>resp</span><span class=p>.</span><span class=nx>Body</span><span class=p>.</span><span class=nf>Close</span><span class=p>()</span>
+</span></span><span class=line><span class=cl> <span class=nx>body</span><span class=p>,</span> <span class=nx>err</span> <span class=o>:=</span> <span class=nx>ioutil</span><span class=p>.</span><span class=nf>ReadAll</span><span class=p>(</span><span class=nx>resp</span><span class=p>.</span><span class=nx>Body</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>    <span class=c1>// 打印body</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nb>string</span><span class=p>(</span><span class=nx>body</span><span class=p>))</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nb>string</span><span class=p>(</span><span class=nx>body</span><span class=p>))</span>
 </span></span><span class=line><span class=cl>    <span class=c1>// 打印状态码</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>resp</span><span class=p>.</span><span class=nx>StatusCode</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=k>if</span> <span class=nx>resp</span><span class=p>.</span><span class=nx>StatusCode</span> <span class=o>==</span> <span class=mi>200</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;ok&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>		<span class=nf>parse</span><span class=p>(</span><span class=nb>string</span><span class=p>(</span><span class=nx>body</span><span class=p>))</span>
-</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=nx>resp</span><span class=p>.</span><span class=nx>StatusCode</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=k>if</span> <span class=nx>resp</span><span class=p>.</span><span class=nx>StatusCode</span> <span class=o>==</span> <span class=mi>200</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;ok&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=nf>parse</span><span class=p>(</span><span class=nb>string</span><span class=p>(</span><span class=nx>body</span><span class=p>))</span>
+</span></span><span class=line><span class=cl> <span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div><h3 id=netlisten>net.Listen<a href=#netlisten class=hanchor arialabel=Anchor>#</a></h3><p>Listen通知本地网络地址。</p><p>网络必须是“tcp”，“tcp4”，“tcp6”，“unix”或“unixpacket”。</p><p>对于TCP网络，如果地址参数中的主机为空或文字未指定的IP地址，则Listen会监听本地系统的所有可用单播和任播IP地址。</p><p>要仅使用IPv4，请使用网络“tcp4”。</p><p>该地址可以使用主机名称，但不建议这样做，因为它将为主机的至多一个IP地址创建一个监听器。</p><p>如果地址参数中的端口为空或“0”，如“127.0.0.1：”或“:: 1：0”中所示，则会自动选择一个端口号。Listener的Addr方法可用于发现所选端口。</p><pre tabindex=0><code>for retry := 0; retry &lt; 16; retry++ {
@@ -2817,14 +2817,14 @@ func main() {
 </span><span class=lnt> 9
 </span><span class=lnt>10
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kd>func</span> <span class=nf>check</span><span class=p>()</span> <span class=kt>bool</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>stat</span><span class=p>,</span> <span class=nx>err</span> <span class=o>:=</span> <span class=nx>os</span><span class=p>.</span><span class=nf>Stat</span><span class=p>(</span><span class=s>&#34;/Users/anthony/Desktop/go-testt/go.mod&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=k>if</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=k>if</span> <span class=nx>os</span><span class=p>.</span><span class=nf>IsExist</span><span class=p>(</span><span class=nx>err</span><span class=p>)</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>			<span class=k>return</span> <span class=kc>true</span>
-</span></span><span class=line><span class=cl>		<span class=p>}</span>
-</span></span><span class=line><span class=cl>		<span class=k>return</span> <span class=kc>false</span>
-</span></span><span class=line><span class=cl>	<span class=p>}</span>
-</span></span><span class=line><span class=cl>	<span class=k>return</span> <span class=kc>true</span>
+</span></span><span class=line><span class=cl> <span class=nx>stat</span><span class=p>,</span> <span class=nx>err</span> <span class=o>:=</span> <span class=nx>os</span><span class=p>.</span><span class=nf>Stat</span><span class=p>(</span><span class=s>&#34;/Users/anthony/Desktop/go-testt/go.mod&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=k>if</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>if</span> <span class=nx>os</span><span class=p>.</span><span class=nf>IsExist</span><span class=p>(</span><span class=nx>err</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>   <span class=k>return</span> <span class=kc>true</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=kc>false</span>
+</span></span><span class=line><span class=cl> <span class=p>}</span>
+</span></span><span class=line><span class=cl> <span class=k>return</span> <span class=kc>true</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div><h2 id=texttemplate>Text/template<a href=#texttemplate class=hanchor arialabel=Anchor>#</a></h2><p>html模板 <a href=https://pkg.go.dev/text/template>https://pkg.go.dev/text/template</a></p><h1 id=gin>Gin<a href=#gin class=hanchor arialabel=Anchor>#</a></h1><h2 id=demo>Demo<a href=#demo class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -2842,11 +2842,11 @@ func main() {
 </span></span><span class=line><span class=cl><span class=kn>import</span> <span class=s>&#34;github.com/gin-gonic/gin&#34;</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>r</span> <span class=o>:=</span> <span class=nx>gin</span><span class=p>.</span><span class=nf>Default</span><span class=p>()</span>
-</span></span><span class=line><span class=cl>	<span class=nx>r</span><span class=p>.</span><span class=nf>GET</span><span class=p>(</span><span class=s>&#34;/&#34;</span><span class=p>,</span> <span class=kd>func</span><span class=p>(</span><span class=nx>c</span> <span class=o>*</span><span class=nx>gin</span><span class=p>.</span><span class=nx>Context</span><span class=p>)</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=nx>c</span><span class=p>.</span><span class=nf>String</span><span class=p>(</span><span class=mi>200</span><span class=p>,</span> <span class=s>&#34;Hello, Geektutu&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=p>})</span>
-</span></span><span class=line><span class=cl>	<span class=nx>r</span><span class=p>.</span><span class=nf>Run</span><span class=p>()</span> <span class=c1>// listen and serve on 0.0.0.0:8080</span>
+</span></span><span class=line><span class=cl> <span class=nx>r</span> <span class=o>:=</span> <span class=nx>gin</span><span class=p>.</span><span class=nf>Default</span><span class=p>()</span>
+</span></span><span class=line><span class=cl> <span class=nx>r</span><span class=p>.</span><span class=nf>GET</span><span class=p>(</span><span class=s>&#34;/&#34;</span><span class=p>,</span> <span class=kd>func</span><span class=p>(</span><span class=nx>c</span> <span class=o>*</span><span class=nx>gin</span><span class=p>.</span><span class=nx>Context</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>c</span><span class=p>.</span><span class=nf>String</span><span class=p>(</span><span class=mi>200</span><span class=p>,</span> <span class=s>&#34;Hello, Geektutu&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=p>})</span>
+</span></span><span class=line><span class=cl> <span class=nx>r</span><span class=p>.</span><span class=nf>Run</span><span class=p>()</span> <span class=c1>// listen and serve on 0.0.0.0:8080</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div><h2 id=路由>路由<a href=#路由 class=hanchor arialabel=Anchor>#</a></h2><p>基本使用</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -2880,7 +2880,7 @@ func main() {
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1>// 第一种方法:</span>
 </span></span><span class=line><span class=cl><span class=nx>r</span><span class=p>.</span><span class=nf>GET</span><span class=p>(</span><span class=s>&#34;/&#34;</span><span class=p>,</span> <span class=kd>func</span><span class=p>(</span><span class=nx>c</span> <span class=o>*</span><span class=nx>gin</span><span class=p>.</span><span class=nx>Context</span><span class=p>)</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>c</span><span class=p>.</span><span class=nf>String</span><span class=p>(</span><span class=nx>http</span><span class=p>.</span><span class=nx>StatusOK</span><span class=p>,</span> <span class=s>&#34;Who are you?&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nx>c</span><span class=p>.</span><span class=nf>String</span><span class=p>(</span><span class=nx>http</span><span class=p>.</span><span class=nx>StatusOK</span><span class=p>,</span> <span class=s>&#34;Who are you?&#34;</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>})</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1>// 第二种方法</span>
@@ -2936,9 +2936,9 @@ func main() {
 </span></span><span class=line><span class=cl>    <span class=nx>e</span><span class=p>.</span><span class=nf>Group</span><span class=p>(</span><span class=s>&#34;v1&#34;</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>    <span class=p>{</span>
 </span></span><span class=line><span class=cl>        <span class=nx>v1</span><span class=p>.</span><span class=nf>GET</span><span class=p>(</span><span class=s>&#34;/post&#34;</span><span class=p>,</span> <span class=nx>postHandler</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>  		<span class=nx>v1</span><span class=p>.</span><span class=nf>GET</span><span class=p>(</span><span class=s>&#34;/get&#34;</span><span class=p>,</span> <span class=nx>getHandler</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=nx>v1</span><span class=p>.</span><span class=nf>GET</span><span class=p>(</span><span class=s>&#34;/get&#34;</span><span class=p>,</span> <span class=nx>getHandler</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>    <span class=p>}</span>
-</span></span><span class=line><span class=cl>  	<span class=o>...</span>
+</span></span><span class=line><span class=cl>   <span class=o>...</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
@@ -2960,11 +2960,11 @@ func main() {
 </span><span class=lnt>8
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kd>func</span> <span class=p>(</span><span class=nx>b</span> <span class=o>*</span><span class=nx>BaseApi</span><span class=p>)</span> <span class=nf>Login</span><span class=p>(</span><span class=nx>c</span> <span class=o>*</span><span class=nx>gin</span><span class=p>.</span><span class=nx>Context</span><span class=p>)</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>  <span class=c1>// 声明实体类</span>
-</span></span><span class=line><span class=cl>	<span class=kd>var</span> <span class=nx>l</span> <span class=nx>systemReq</span><span class=p>.</span><span class=nx>Login</span>
+</span></span><span class=line><span class=cl> <span class=kd>var</span> <span class=nx>l</span> <span class=nx>systemReq</span><span class=p>.</span><span class=nx>Login</span>
 </span></span><span class=line><span class=cl>  <span class=c1>// 赋值</span>
-</span></span><span class=line><span class=cl>	<span class=nx>err</span> <span class=o>:=</span> <span class=nx>c</span><span class=p>.</span><span class=nf>ShouldBindJSON</span><span class=p>(</span><span class=o>&amp;</span><span class=nx>l</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nx>err</span> <span class=o>:=</span> <span class=nx>c</span><span class=p>.</span><span class=nf>ShouldBindJSON</span><span class=p>(</span><span class=o>&amp;</span><span class=nx>l</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>  <span class=c1>// 获取ip</span>
-</span></span><span class=line><span class=cl>	<span class=nx>key</span> <span class=o>:=</span> <span class=nx>c</span><span class=p>.</span><span class=nf>ClientIP</span><span class=p>()</span>
+</span></span><span class=line><span class=cl> <span class=nx>key</span> <span class=o>:=</span> <span class=nx>c</span><span class=p>.</span><span class=nf>ClientIP</span><span class=p>()</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div><h2 id=响应处理>响应处理<a href=#响应处理 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -3065,8 +3065,8 @@ func main() {
 </span></span><span class=line><span class=cl><span class=nx>authorized</span> <span class=o>:=</span> <span class=nx>r</span><span class=p>.</span><span class=nf>Group</span><span class=p>(</span><span class=s>&#34;/&#34;</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=nx>authorized</span><span class=p>.</span><span class=nf>Use</span><span class=p>(</span><span class=nf>AuthRequired</span><span class=p>())</span>
 </span></span><span class=line><span class=cl><span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>authorized</span><span class=p>.</span><span class=nf>POST</span><span class=p>(</span><span class=s>&#34;/login&#34;</span><span class=p>,</span> <span class=nx>loginEndpoint</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=nx>authorized</span><span class=p>.</span><span class=nf>POST</span><span class=p>(</span><span class=s>&#34;/submit&#34;</span><span class=p>,</span> <span class=nx>submitEndpoint</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nx>authorized</span><span class=p>.</span><span class=nf>POST</span><span class=p>(</span><span class=s>&#34;/login&#34;</span><span class=p>,</span> <span class=nx>loginEndpoint</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nx>authorized</span><span class=p>.</span><span class=nf>POST</span><span class=p>(</span><span class=s>&#34;/submit&#34;</span><span class=p>,</span> <span class=nx>submitEndpoint</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div><p>自定义中间件</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -3081,16 +3081,16 @@ func main() {
 </span><span class=lnt>11
 </span><span class=lnt>12
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kd>func</span> <span class=nf>Logger</span><span class=p>()</span> <span class=nx>gin</span><span class=p>.</span><span class=nx>HandlerFunc</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=k>return</span> <span class=kd>func</span><span class=p>(</span><span class=nx>c</span> <span class=o>*</span><span class=nx>gin</span><span class=p>.</span><span class=nx>Context</span><span class=p>)</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=nx>t</span> <span class=o>:=</span> <span class=nx>time</span><span class=p>.</span><span class=nf>Now</span><span class=p>()</span>
-</span></span><span class=line><span class=cl>		<span class=c1>// 给Context实例设置一个值</span>
-</span></span><span class=line><span class=cl>		<span class=nx>c</span><span class=p>.</span><span class=nf>Set</span><span class=p>(</span><span class=s>&#34;geektutu&#34;</span><span class=p>,</span> <span class=s>&#34;1111&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>		<span class=c1>// 请求前</span>
-</span></span><span class=line><span class=cl>		<span class=nx>c</span><span class=p>.</span><span class=nf>Next</span><span class=p>()</span>
-</span></span><span class=line><span class=cl>		<span class=c1>// 请求后</span>
-</span></span><span class=line><span class=cl>		<span class=nx>latency</span> <span class=o>:=</span> <span class=nx>time</span><span class=p>.</span><span class=nf>Since</span><span class=p>(</span><span class=nx>t</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>		<span class=nx>log</span><span class=p>.</span><span class=nf>Print</span><span class=p>(</span><span class=nx>latency</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl> <span class=k>return</span> <span class=kd>func</span><span class=p>(</span><span class=nx>c</span> <span class=o>*</span><span class=nx>gin</span><span class=p>.</span><span class=nx>Context</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>t</span> <span class=o>:=</span> <span class=nx>time</span><span class=p>.</span><span class=nf>Now</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>  <span class=c1>// 给Context实例设置一个值</span>
+</span></span><span class=line><span class=cl>  <span class=nx>c</span><span class=p>.</span><span class=nf>Set</span><span class=p>(</span><span class=s>&#34;geektutu&#34;</span><span class=p>,</span> <span class=s>&#34;1111&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=c1>// 请求前</span>
+</span></span><span class=line><span class=cl>  <span class=nx>c</span><span class=p>.</span><span class=nf>Next</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>  <span class=c1>// 请求后</span>
+</span></span><span class=line><span class=cl>  <span class=nx>latency</span> <span class=o>:=</span> <span class=nx>time</span><span class=p>.</span><span class=nf>Since</span><span class=p>(</span><span class=nx>t</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=nx>log</span><span class=p>.</span><span class=nf>Print</span><span class=p>(</span><span class=nx>latency</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=p>}</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div><p>控制中间件</p><h3 id=中间件控制的方法>中间件控制的方法<a href=#中间件控制的方法 class=hanchor arialabel=Anchor>#</a></h3><p>gin提供了两个函数<code>Abort()</code>和<code>Next()</code>，二者区别在于：</p><blockquote><ol><li>next()函数会跳过当前中间件中next()后的逻辑，当<strong>下一个中间件执行完成后</strong>再执行剩余的逻辑</li><li>abort()函数执行终止当前中间件以后的中间件执行，<strong>但是会执行当前中间件的后续逻辑</strong></li></ol></blockquote><p>举例子更好理解：</p><p>我们注册中间件顺序为<code>m1</code>、<code>m2</code>、<code>m3</code>，如果采用<code>next()</code>：</p><blockquote><p>执行顺序就是</p><ol><li><code>m1的next()前面</code>、<code>m2的next()前面</code>、<code>m3的next()前面</code>、</li><li><code>业务逻辑</code></li><li><code>m3的next()后续</code>、<code>m2的next()后续</code>、<code>m1的next()后续</code>。</li></ol></blockquote><p>那如果<code>m2</code>中间调用了<code>Abort()</code>，则<code>m3</code>和<code>业务逻辑</code>不会执行，只会执行<code>m2的next()后续</code>、<code>m1的next()后续</code>。</p><h1 id=gorm>Gorm<a href=#gorm class=hanchor arialabel=Anchor>#</a></h1><h2 id=crud-接口>CRUD 接口<a href=#crud-接口 class=hanchor arialabel=Anchor>#</a></h2><h2 id=创建>创建<a href=#创建 class=hanchor arialabel=Anchor>#</a></h2><h3 id=创建记录>创建记录<a href=#创建记录 class=hanchor arialabel=Anchor>#</a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
@@ -3189,52 +3189,52 @@ func main() {
 </span><span class=lnt>47
 </span><span class=lnt>48
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kd>type</span> <span class=nx>SysMenu</span> <span class=kd>struct</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>gorm</span><span class=p>.</span><span class=nx>Model</span>
-</span></span><span class=line><span class=cl>	<span class=c1>// 菜单名称</span>
-</span></span><span class=line><span class=cl>	<span class=nx>Title</span> <span class=kt>string</span>
-</span></span><span class=line><span class=cl>	<span class=c1>// 直属上级菜单标识</span>
-</span></span><span class=line><span class=cl>	<span class=nx>ParentId</span> <span class=kt>int</span>
-</span></span><span class=line><span class=cl>	<span class=c1>// 菜单URL</span>
-</span></span><span class=line><span class=cl>	<span class=nx>Path</span> <span class=kt>string</span>
-</span></span><span class=line><span class=cl>	<span class=c1>// 0：Flase,1：True</span>
-</span></span><span class=line><span class=cl>	<span class=nx>AlwaysShow</span> <span class=kt>int</span>
-</span></span><span class=line><span class=cl>	<span class=c1>// 组件</span>
-</span></span><span class=line><span class=cl>	<span class=nx>Component</span> <span class=kt>string</span>
-</span></span><span class=line><span class=cl>	<span class=c1>// 0：Flase,1：True</span>
-</span></span><span class=line><span class=cl>	<span class=nx>Hidden</span> <span class=kt>int</span>
-</span></span><span class=line><span class=cl>	<span class=c1>// 图标</span>
-</span></span><span class=line><span class=cl>	<span class=nx>Icon</span> <span class=kt>string</span>
-</span></span><span class=line><span class=cl>	<span class=c1>// 0：Flase,1：True</span>
-</span></span><span class=line><span class=cl>	<span class=nx>NoCache</span> <span class=kt>string</span>
-</span></span><span class=line><span class=cl>	<span class=c1>// 前端内部名字</span>
-</span></span><span class=line><span class=cl>	<span class=nx>Name</span> <span class=kt>string</span>
-</span></span><span class=line><span class=cl>	<span class=c1>// 前端内部路由</span>
-</span></span><span class=line><span class=cl>	<span class=nx>Redirect</span> <span class=kt>string</span>
-</span></span><span class=line><span class=cl>	<span class=c1>// 0：否，1：是</span>
-</span></span><span class=line><span class=cl>	<span class=nx>IsButton</span> <span class=kt>int</span>
-</span></span><span class=line><span class=cl>	<span class=c1>// 请求后端接口</span>
-</span></span><span class=line><span class=cl>	<span class=nx>Ajax</span> <span class=kt>string</span>
+</span></span><span class=line><span class=cl> <span class=nx>gorm</span><span class=p>.</span><span class=nx>Model</span>
+</span></span><span class=line><span class=cl> <span class=c1>// 菜单名称</span>
+</span></span><span class=line><span class=cl> <span class=nx>Title</span> <span class=kt>string</span>
+</span></span><span class=line><span class=cl> <span class=c1>// 直属上级菜单标识</span>
+</span></span><span class=line><span class=cl> <span class=nx>ParentId</span> <span class=kt>int</span>
+</span></span><span class=line><span class=cl> <span class=c1>// 菜单URL</span>
+</span></span><span class=line><span class=cl> <span class=nx>Path</span> <span class=kt>string</span>
+</span></span><span class=line><span class=cl> <span class=c1>// 0：Flase,1：True</span>
+</span></span><span class=line><span class=cl> <span class=nx>AlwaysShow</span> <span class=kt>int</span>
+</span></span><span class=line><span class=cl> <span class=c1>// 组件</span>
+</span></span><span class=line><span class=cl> <span class=nx>Component</span> <span class=kt>string</span>
+</span></span><span class=line><span class=cl> <span class=c1>// 0：Flase,1：True</span>
+</span></span><span class=line><span class=cl> <span class=nx>Hidden</span> <span class=kt>int</span>
+</span></span><span class=line><span class=cl> <span class=c1>// 图标</span>
+</span></span><span class=line><span class=cl> <span class=nx>Icon</span> <span class=kt>string</span>
+</span></span><span class=line><span class=cl> <span class=c1>// 0：Flase,1：True</span>
+</span></span><span class=line><span class=cl> <span class=nx>NoCache</span> <span class=kt>string</span>
+</span></span><span class=line><span class=cl> <span class=c1>// 前端内部名字</span>
+</span></span><span class=line><span class=cl> <span class=nx>Name</span> <span class=kt>string</span>
+</span></span><span class=line><span class=cl> <span class=c1>// 前端内部路由</span>
+</span></span><span class=line><span class=cl> <span class=nx>Redirect</span> <span class=kt>string</span>
+</span></span><span class=line><span class=cl> <span class=c1>// 0：否，1：是</span>
+</span></span><span class=line><span class=cl> <span class=nx>IsButton</span> <span class=kt>int</span>
+</span></span><span class=line><span class=cl> <span class=c1>// 请求后端接口</span>
+</span></span><span class=line><span class=cl> <span class=nx>Ajax</span> <span class=kt>string</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1>// 钩子</span>
 </span></span><span class=line><span class=cl><span class=kd>func</span> <span class=p>(</span><span class=nx>s</span> <span class=o>*</span><span class=nx>SysMenu</span><span class=p>)</span> <span class=nf>BeforeSave</span><span class=p>(</span><span class=nx>tx</span> <span class=o>*</span><span class=nx>gorm</span><span class=p>.</span><span class=nx>DB</span><span class=p>)</span> <span class=p>(</span><span class=nx>err</span> <span class=kt>error</span><span class=p>)</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;BeforeSave&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=k>return</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;BeforeSave&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=k>return</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kd>func</span> <span class=p>(</span><span class=nx>s</span> <span class=o>*</span><span class=nx>SysMenu</span><span class=p>)</span> <span class=nf>BeforeCreate</span><span class=p>(</span><span class=nx>tx</span> <span class=o>*</span><span class=nx>gorm</span><span class=p>.</span><span class=nx>DB</span><span class=p>)</span> <span class=p>(</span><span class=nx>err</span> <span class=kt>error</span><span class=p>)</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;BeforeCreate&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=k>return</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;BeforeCreate&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=k>return</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kd>func</span> <span class=p>(</span><span class=nx>s</span> <span class=o>*</span><span class=nx>SysMenu</span><span class=p>)</span> <span class=nf>AfterCreate</span><span class=p>(</span><span class=nx>tx</span> <span class=o>*</span><span class=nx>gorm</span><span class=p>.</span><span class=nx>DB</span><span class=p>)</span> <span class=p>(</span><span class=nx>err</span> <span class=kt>error</span><span class=p>)</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;AfterCreate&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=k>return</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;AfterCreate&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=k>return</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kd>func</span> <span class=p>(</span><span class=nx>s</span> <span class=o>*</span><span class=nx>SysMenu</span><span class=p>)</span> <span class=nf>AfterSave</span><span class=p>(</span><span class=nx>tx</span> <span class=o>*</span><span class=nx>gorm</span><span class=p>.</span><span class=nx>DB</span><span class=p>)</span> <span class=p>(</span><span class=nx>err</span> <span class=kt>error</span><span class=p>)</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;AfterSave&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=k>return</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;AfterSave&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=k>return</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div><h3 id=根据-map-创建>根据 Map 创建<a href=#根据-map-创建 class=hanchor arialabel=Anchor>#</a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
@@ -3265,7 +3265,7 @@ func main() {
 </span></span><span class=line><span class=cl>  <span class=nx>Age</span>  <span class=kt>int64</span>  <span class=s>`gorm:&#34;default:18&#34;`</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div><h1 id=cobra>Cobra<a href=#cobra class=hanchor arialabel=Anchor>#</a></h1><h2 id=简介>简介<a href=#简介 class=hanchor arialabel=Anchor>#</a></h2><p><a href=http://github.com/spf13/cobra>cobra</a>是一个命令行程序库，可以用来编写命令行程序。</p><h2 id=快速入门>快速入门<a href=#快速入门 class=hanchor arialabel=Anchor>#</a></h2><p>安装包</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=err>$</span> <span class=k>go</span> <span class=nx>get</span> <span class=nx>github</span><span class=p>.</span><span class=nx>com</span><span class=o>/</span><span class=nx>spf13</span><span class=o>/</span><span class=nx>cobra</span><span class=o>/</span><span class=nx>cobra</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=k>go</span> <span class=nx>get</span> <span class=nx>github</span><span class=p>.</span><span class=nx>com</span><span class=o>/</span><span class=nx>spf13</span><span class=o>/</span><span class=nx>cobra</span><span class=o>/</span><span class=nx>cobra</span>
 </span></span></code></pre></td></tr></table></div></div><p>文件目录</p><pre tabindex=0><code class=language-file data-lang=file>- my-go-test
     - cmd
         - version
@@ -3279,7 +3279,7 @@ func main() {
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>import</span> <span class=s>&#34;go-test/cmd&#34;</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>cmd</span><span class=p>.</span><span class=nf>Execute</span><span class=p>()</span>
+</span></span><span class=line><span class=cl> <span class=nx>cmd</span><span class=p>.</span><span class=nf>Execute</span><span class=p>()</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div><p>version.go</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -3304,22 +3304,22 @@ func main() {
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>cmd</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kn>import</span> <span class=p>(</span>
-</span></span><span class=line><span class=cl>	<span class=s>&#34;fmt&#34;</span>
+</span></span><span class=line><span class=cl> <span class=s>&#34;fmt&#34;</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=s>&#34;github.com/spf13/cobra&#34;</span>
+</span></span><span class=line><span class=cl> <span class=s>&#34;github.com/spf13/cobra&#34;</span>
 </span></span><span class=line><span class=cl><span class=p>)</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kd>var</span> <span class=nx>versionCmd</span> <span class=p>=</span> <span class=o>&amp;</span><span class=nx>cobra</span><span class=p>.</span><span class=nx>Command</span><span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>Use</span><span class=p>:</span>   <span class=s>&#34;version&#34;</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>	<span class=nx>Short</span><span class=p>:</span> <span class=s>&#34;显示计算器版本&#34;</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>	<span class=nx>Long</span><span class=p>:</span>  <span class=s>&#34;显示计算器版本&#34;</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>	<span class=nx>Run</span><span class=p>:</span> <span class=kd>func</span><span class=p>(</span><span class=nx>cmd</span> <span class=o>*</span><span class=nx>cobra</span><span class=p>.</span><span class=nx>Command</span><span class=p>,</span> <span class=nx>args</span> <span class=p>[]</span><span class=kt>string</span><span class=p>)</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;anthony&#39;s jsq version 0.0.1&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=p>},</span>
+</span></span><span class=line><span class=cl> <span class=nx>Use</span><span class=p>:</span>   <span class=s>&#34;version&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl> <span class=nx>Short</span><span class=p>:</span> <span class=s>&#34;显示计算器版本&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl> <span class=nx>Long</span><span class=p>:</span>  <span class=s>&#34;显示计算器版本&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl> <span class=nx>Run</span><span class=p>:</span> <span class=kd>func</span><span class=p>(</span><span class=nx>cmd</span> <span class=o>*</span><span class=nx>cobra</span><span class=p>.</span><span class=nx>Command</span><span class=p>,</span> <span class=nx>args</span> <span class=p>[]</span><span class=kt>string</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;anthony&#39;s jsq version 0.0.1&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=p>},</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>init</span><span class=p>()</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>rootCmd</span><span class=p>.</span><span class=nf>AddCommand</span><span class=p>(</span><span class=nx>versionCmd</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nx>rootCmd</span><span class=p>.</span><span class=nf>AddCommand</span><span class=p>(</span><span class=nx>versionCmd</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div><p>root.go</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -3339,21 +3339,21 @@ func main() {
 </span><span class=lnt>16
 </span><span class=lnt>17
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>import</span> <span class=p>(</span>
-</span></span><span class=line><span class=cl>	<span class=s>&#34;fmt&#34;</span>
-</span></span><span class=line><span class=cl>	<span class=s>&#34;github.com/spf13/cobra&#34;</span>
+</span></span><span class=line><span class=cl> <span class=s>&#34;fmt&#34;</span>
+</span></span><span class=line><span class=cl> <span class=s>&#34;github.com/spf13/cobra&#34;</span>
 </span></span><span class=line><span class=cl><span class=p>)</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kd>var</span> <span class=nx>rootCmd</span> <span class=p>=</span> <span class=o>&amp;</span><span class=nx>cobra</span><span class=p>.</span><span class=nx>Command</span><span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>Use</span><span class=p>:</span>   <span class=s>&#34;jsq&#34;</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>	<span class=nx>Short</span><span class=p>:</span> <span class=s>&#34;计算器&#34;</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>	<span class=nx>Long</span><span class=p>:</span>  <span class=s>`anthony写的计算器`</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>	<span class=nx>Run</span><span class=p>:</span> <span class=kd>func</span><span class=p>(</span><span class=nx>cmd</span> <span class=o>*</span><span class=nx>cobra</span><span class=p>.</span><span class=nx>Command</span><span class=p>,</span> <span class=nx>args</span> <span class=p>[]</span><span class=kt>string</span><span class=p>)</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;anthony写的计算器,请使用 ./jsq -h&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=p>},</span>
+</span></span><span class=line><span class=cl> <span class=nx>Use</span><span class=p>:</span>   <span class=s>&#34;jsq&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl> <span class=nx>Short</span><span class=p>:</span> <span class=s>&#34;计算器&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl> <span class=nx>Long</span><span class=p>:</span>  <span class=s>`anthony写的计算器`</span><span class=p>,</span>
+</span></span><span class=line><span class=cl> <span class=nx>Run</span><span class=p>:</span> <span class=kd>func</span><span class=p>(</span><span class=nx>cmd</span> <span class=o>*</span><span class=nx>cobra</span><span class=p>.</span><span class=nx>Command</span><span class=p>,</span> <span class=nx>args</span> <span class=p>[]</span><span class=kt>string</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;anthony写的计算器,请使用 ./jsq -h&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=p>},</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>Execute</span><span class=p>()</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>rootCmd</span><span class=p>.</span><span class=nf>Execute</span><span class=p>()</span>
+</span></span><span class=line><span class=cl> <span class=nx>rootCmd</span><span class=p>.</span><span class=nf>Execute</span><span class=p>()</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div><h2 id=打包运行>打包运行<a href=#打包运行 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -3485,48 +3485,48 @@ func main() {
 </span><span class=lnt>44
 </span><span class=lnt>45
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>import</span> <span class=p>(</span>
-</span></span><span class=line><span class=cl>	<span class=s>&#34;fmt&#34;</span>
-</span></span><span class=line><span class=cl>	<span class=s>&#34;gopkg.in/yaml.v3&#34;</span>
-</span></span><span class=line><span class=cl>	<span class=s>&#34;os&#34;</span>
+</span></span><span class=line><span class=cl> <span class=s>&#34;fmt&#34;</span>
+</span></span><span class=line><span class=cl> <span class=s>&#34;gopkg.in/yaml.v3&#34;</span>
+</span></span><span class=line><span class=cl> <span class=s>&#34;os&#34;</span>
 </span></span><span class=line><span class=cl><span class=p>)</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kd>type</span> <span class=nx>Config</span> <span class=kd>struct</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>Mysql</span> <span class=nx>Mysql</span> <span class=s>`json:&#34;mysql&#34;`</span>
-</span></span><span class=line><span class=cl>	<span class=nx>Redis</span> <span class=nx>Redis</span> <span class=s>`json:&#34;redis&#34;`</span>
+</span></span><span class=line><span class=cl> <span class=nx>Mysql</span> <span class=nx>Mysql</span> <span class=s>`json:&#34;mysql&#34;`</span>
+</span></span><span class=line><span class=cl> <span class=nx>Redis</span> <span class=nx>Redis</span> <span class=s>`json:&#34;redis&#34;`</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kd>type</span> <span class=nx>Mysql</span> <span class=kd>struct</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>Url</span>  <span class=kt>string</span>
-</span></span><span class=line><span class=cl>	<span class=nx>Port</span> <span class=kt>int</span>
+</span></span><span class=line><span class=cl> <span class=nx>Url</span>  <span class=kt>string</span>
+</span></span><span class=line><span class=cl> <span class=nx>Port</span> <span class=kt>int</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kd>type</span> <span class=nx>Redis</span> <span class=kd>struct</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>Host</span> <span class=kt>string</span>
-</span></span><span class=line><span class=cl>	<span class=nx>Port</span> <span class=kt>int</span>
+</span></span><span class=line><span class=cl> <span class=nx>Host</span> <span class=kt>string</span>
+</span></span><span class=line><span class=cl> <span class=nx>Port</span> <span class=kt>int</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kd>func</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>	<span class=nx>dataBytes</span><span class=p>,</span> <span class=nx>err</span> <span class=o>:=</span> <span class=nx>os</span><span class=p>.</span><span class=nf>ReadFile</span><span class=p>(</span><span class=s>&#34;test.yaml&#34;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=k>if</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;读取文件失败：&#34;</span><span class=p>,</span> <span class=nx>err</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>		<span class=k>return</span>
-</span></span><span class=line><span class=cl>	<span class=p>}</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;yaml 文件的内容: \n&#34;</span><span class=p>,</span> <span class=nb>string</span><span class=p>(</span><span class=nx>dataBytes</span><span class=p>))</span>
-</span></span><span class=line><span class=cl>	<span class=nx>config</span> <span class=o>:=</span> <span class=nx>Config</span><span class=p>{}</span>
-</span></span><span class=line><span class=cl>	<span class=nx>err</span> <span class=p>=</span> <span class=nx>yaml</span><span class=p>.</span><span class=nf>Unmarshal</span><span class=p>(</span><span class=nx>dataBytes</span><span class=p>,</span> <span class=o>&amp;</span><span class=nx>config</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=k>if</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;解析 yaml 文件失败：&#34;</span><span class=p>,</span> <span class=nx>err</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>		<span class=k>return</span>
-</span></span><span class=line><span class=cl>	<span class=p>}</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;config → %+v\n&#34;</span><span class=p>,</span> <span class=nx>config</span><span class=p>)</span> <span class=c1>// config → {Mysql:{Url:127.0.0.1 Port:3306} Redis:{Host:127.0.0.1 Port:6379}}</span>
+</span></span><span class=line><span class=cl> <span class=nx>dataBytes</span><span class=p>,</span> <span class=nx>err</span> <span class=o>:=</span> <span class=nx>os</span><span class=p>.</span><span class=nf>ReadFile</span><span class=p>(</span><span class=s>&#34;test.yaml&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=k>if</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;读取文件失败：&#34;</span><span class=p>,</span> <span class=nx>err</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span>
+</span></span><span class=line><span class=cl> <span class=p>}</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;yaml 文件的内容: \n&#34;</span><span class=p>,</span> <span class=nb>string</span><span class=p>(</span><span class=nx>dataBytes</span><span class=p>))</span>
+</span></span><span class=line><span class=cl> <span class=nx>config</span> <span class=o>:=</span> <span class=nx>Config</span><span class=p>{}</span>
+</span></span><span class=line><span class=cl> <span class=nx>err</span> <span class=p>=</span> <span class=nx>yaml</span><span class=p>.</span><span class=nf>Unmarshal</span><span class=p>(</span><span class=nx>dataBytes</span><span class=p>,</span> <span class=o>&amp;</span><span class=nx>config</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=k>if</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;解析 yaml 文件失败：&#34;</span><span class=p>,</span> <span class=nx>err</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span>
+</span></span><span class=line><span class=cl> <span class=p>}</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;config → %+v\n&#34;</span><span class=p>,</span> <span class=nx>config</span><span class=p>)</span> <span class=c1>// config → {Mysql:{Url:127.0.0.1 Port:3306} Redis:{Host:127.0.0.1 Port:6379}}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=nx>mp</span> <span class=o>:=</span> <span class=nb>make</span><span class=p>(</span><span class=kd>map</span><span class=p>[</span><span class=kt>string</span><span class=p>]</span><span class=kt>any</span><span class=p>,</span> <span class=mi>2</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=nx>err</span> <span class=p>=</span> <span class=nx>yaml</span><span class=p>.</span><span class=nf>Unmarshal</span><span class=p>(</span><span class=nx>dataBytes</span><span class=p>,</span> <span class=nx>mp</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=k>if</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;解析 yaml 文件失败：&#34;</span><span class=p>,</span> <span class=nx>err</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>		<span class=k>return</span>
-</span></span><span class=line><span class=cl>	<span class=p>}</span>
-</span></span><span class=line><span class=cl>	<span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;map → %+v&#34;</span><span class=p>,</span> <span class=nx>config</span><span class=p>)</span> <span class=c1>// config → {Mysql:{Url:127.0.0.1 Port:3306} Redis:{Host:127.0.0.1 Port:6379}}</span>
+</span></span><span class=line><span class=cl> <span class=nx>mp</span> <span class=o>:=</span> <span class=nb>make</span><span class=p>(</span><span class=kd>map</span><span class=p>[</span><span class=kt>string</span><span class=p>]</span><span class=kt>any</span><span class=p>,</span> <span class=mi>2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=nx>err</span> <span class=p>=</span> <span class=nx>yaml</span><span class=p>.</span><span class=nf>Unmarshal</span><span class=p>(</span><span class=nx>dataBytes</span><span class=p>,</span> <span class=nx>mp</span><span class=p>)</span>
+</span></span><span class=line><span class=cl> <span class=k>if</span> <span class=nx>err</span> <span class=o>!=</span> <span class=kc>nil</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=nx>fmt</span><span class=p>.</span><span class=nf>Println</span><span class=p>(</span><span class=s>&#34;解析 yaml 文件失败：&#34;</span><span class=p>,</span> <span class=nx>err</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span>
+</span></span><span class=line><span class=cl> <span class=p>}</span>
+</span></span><span class=line><span class=cl> <span class=nx>fmt</span><span class=p>.</span><span class=nf>Printf</span><span class=p>(</span><span class=s>&#34;map → %+v&#34;</span><span class=p>,</span> <span class=nx>config</span><span class=p>)</span> <span class=c1>// config → {Mysql:{Url:127.0.0.1 Port:3306} Redis:{Host:127.0.0.1 Port:6379}}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div><h2 id=yaml解析库-1>yaml解析库<a href=#yaml解析库-1 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1

@@ -197,7 +197,7 @@
 </span><span class=lnt>6
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=nt>flutter</span><span class=p>:</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>assets</span><span class=p>:</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w>	  </span><span class=c># 指定单个资源</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>   </span><span class=c># 指定单个资源</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span>- <span class=l>assets/my_icon.png</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c># 指定整个目录,需要在目录名称的结尾加上 /：</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span>- <span class=l>directory/</span><span class=w>
@@ -784,16 +784,16 @@
 </span><span class=lnt>13
 </span><span class=lnt>14
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-gradle data-lang=gradle><span class=line><span class=cl><span class=n>protoc</span> <span class=o>{</span>
-</span></span><span class=line><span class=cl>				<span class=c1>// 原来的依赖
+</span></span><span class=line><span class=cl>    <span class=c1>// 原来的依赖
 </span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=n>artifact</span> <span class=o>=</span> <span class=s1>&#39;com.google.protobuf:protoc:3.12.0&#39;</span>
 </span></span><span class=line><span class=cl>        <span class=c1>// 修改之后的依赖
 </span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=n>artifact</span> <span class=o>=</span> <span class=s1>&#39;com.google.protobuf:protoc:3.12.0:osx-x86_64&#39;</span>
 </span></span><span class=line><span class=cl>    <span class=o>}</span>
 </span></span><span class=line><span class=cl>    <span class=n>plugins</span> <span class=o>{</span>
 </span></span><span class=line><span class=cl>        <span class=n>grpc</span> <span class=o>{</span>
-</span></span><span class=line><span class=cl> 						<span class=c1>// 原来的依赖
+</span></span><span class=line><span class=cl>       <span class=c1>// 原来的依赖
 </span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=n>artifact</span> <span class=o>=</span> <span class=s1>&#39;io.grpc:protoc-gen-grpc-java:1.31.0&#39;</span>
-</span></span><span class=line><span class=cl>						<span class=c1>// 修改之后的依赖
+</span></span><span class=line><span class=cl>      <span class=c1>// 修改之后的依赖
 </span></span></span><span class=line><span class=cl><span class=c1></span>            <span class=n>artifact</span> <span class=o>=</span> <span class=s1>&#39;io.grpc:protoc-gen-grpc-java:1.31.0:osx-x86_64&#39;</span>
 </span></span><span class=line><span class=cl>        <span class=o>}</span>
 </span></span><span class=line><span class=cl>    <span class=o>}</span>

@@ -289,7 +289,7 @@ v1.0.1
 &lt;/div>&lt;p>&lt;img src="https://image.runtimes.cc/202505281038400.png" alt="image-20250524145024856">&lt;/p>
 &lt;h1 id="发行代币">发行代币&lt;/h1>
 &lt;p>在闲鱼,淘宝上买些测试币,也可以通过水龙头获取(只是有点要求和门槛,不如直接买),这里我买了两笔
-&lt;img src="https://image.runtimes.cc/202505281036642.webp" alt="">&lt;/p>
+&lt;img src="https://image.runtimes.cc/202505281036642.webp" alt="TODO">&lt;/p>
 &lt;p>新建合约文件&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202505291022584.png" alt="image-20250529101100930">&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -369,9 +369,9 @@ v1.0.1
 &lt;h1 id="固定ip">固定IP&lt;/h1>
 &lt;p>配置完了,最好是重启下vmware和虚拟机,和禁用开启 win10上的vmare8网卡&lt;/p>
 &lt;p>1.vmare配置
-&lt;img src="https://image.runtimes.cc/202404051348330.png" alt="">&lt;/p>
+&lt;img src="https://image.runtimes.cc/202404051348330.png" alt="TODO">&lt;/p>
 &lt;p>2.电脑配置,虚拟机配置&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051349925.png" alt="">&lt;/p></description></item><item><title>ESM</title><link>https://isme.cz/esm/</link><pubDate>Mon, 05 May 2025 15:39:19 +0000</pubDate><guid>https://isme.cz/esm/</guid><description>&lt;h1 id="导入和导出">导入和导出&lt;/h1>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051349925.png" alt="TODO">&lt;/p></description></item><item><title>ESM</title><link>https://isme.cz/esm/</link><pubDate>Mon, 05 May 2025 15:39:19 +0000</pubDate><guid>https://isme.cz/esm/</guid><description>&lt;h1 id="导入和导出">导入和导出&lt;/h1>
 &lt;p>Es Module和CommonJs的导入导出不一样&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -941,7 +941,7 @@ v1.0.1
 &lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">flutter&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">assets&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">	 &lt;/span>&lt;span class="c"># 指定单个资源&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c"># 指定单个资源&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">assets/my_icon.png&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c"># 指定整个目录,需要在目录名称的结尾加上 /：&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">directory/&lt;/span>&lt;span class="w">
@@ -1704,16 +1704,16 @@ v1.0.1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-gradle" data-lang="gradle">&lt;span class="line">&lt;span class="cl">&lt;span class="n">protoc&lt;/span> &lt;span class="o">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">				&lt;span class="c1">// 原来的依赖
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 原来的依赖
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="n">artifact&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;com.google.protobuf:protoc:3.12.0&amp;#39;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 修改之后的依赖
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="n">artifact&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;com.google.protobuf:protoc:3.12.0:osx-x86_64&amp;#39;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">plugins&lt;/span> &lt;span class="o">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">grpc&lt;/span> &lt;span class="o">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> 						&lt;span class="c1">// 原来的依赖
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 原来的依赖
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="n">artifact&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;io.grpc:protoc-gen-grpc-java:1.31.0&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">						&lt;span class="c1">// 修改之后的依赖
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// 修改之后的依赖
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="n">artifact&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;io.grpc:protoc-gen-grpc-java:1.31.0:osx-x86_64&amp;#39;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">}&lt;/span>
@@ -1878,19 +1878,19 @@ v1.0.1
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// 创建 ServerBootstrap 对象，用于 Netty Server 启动&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">ServerBootstrap&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">bootstrap&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">new&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">ServerBootstrap&lt;/span>&lt;span class="p">();&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// 设置 ServerBootstrap 的各种属性&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> 	&lt;/span>&lt;span class="c1">// 设置两个 EventLoopGroup 对象&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// 设置两个 EventLoopGroup 对象&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">bootstrap&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">group&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">bossGroup&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">workerGroup&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> 			&lt;/span>&lt;span class="c1">// 指定 Channel 为服务端 NioServerSocketChannel&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// 指定 Channel 为服务端 NioServerSocketChannel&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">channel&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">NioServerSocketChannel&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">class&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> 			&lt;/span>&lt;span class="c1">// 设置 Netty Server 的端口&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// 设置 Netty Server 的端口&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">localAddress&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="k">new&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">InetSocketAddress&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">port&lt;/span>&lt;span class="p">))&lt;/span>&lt;span class="w"> 
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> 			&lt;/span>&lt;span class="c1">// 服务端 accept 队列的大小&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// 服务端 accept 队列的大小&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">option&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">ChannelOption&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">SO_BACKLOG&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">1024&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> 
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> 			&lt;/span>&lt;span class="c1">// TCP Keepalive 机制，实现 TCP 层级的心跳保活功能&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// TCP Keepalive 机制，实现 TCP 层级的心跳保活功能&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">childOption&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">ChannelOption&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">SO_KEEPALIVE&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> 
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> 			&lt;/span>&lt;span class="c1">// 允许较小的数据包的发送，降低延迟&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// 允许较小的数据包的发送，降低延迟&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">childOption&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">ChannelOption&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">TCP_NODELAY&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> 			&lt;/span>&lt;span class="c1">// 处理器&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// 处理器&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">childHandler&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">nettyServerHandlerInitializer&lt;/span>&lt;span class="p">);&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c1">// 绑定端口，并同步等待成功，即启动服务端&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="n">ChannelFuture&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">future&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">bootstrap&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">bind&lt;/span>&lt;span class="p">().&lt;/span>&lt;span class="na">sync&lt;/span>&lt;span class="p">();&lt;/span>&lt;span class="w">
@@ -2046,9 +2046,9 @@ v1.0.1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;dependency&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="nt">&amp;lt;groupId&amp;gt;&lt;/span>com.warrenstrange&lt;span class="nt">&amp;lt;/groupId&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="nt">&amp;lt;artifactId&amp;gt;&lt;/span>googleauth&lt;span class="nt">&amp;lt;/artifactId&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="nt">&amp;lt;version&amp;gt;&lt;/span>1.5.0&lt;span class="nt">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;groupId&amp;gt;&lt;/span>com.warrenstrange&lt;span class="nt">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;artifactId&amp;gt;&lt;/span>googleauth&lt;span class="nt">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;version&amp;gt;&lt;/span>1.5.0&lt;span class="nt">&amp;lt;/version&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;/dependency&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
@@ -2236,9 +2236,9 @@ v1.0.1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;dependency&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="nt">&amp;lt;groupId&amp;gt;&lt;/span>com.huaweicloud&lt;span class="nt">&amp;lt;/groupId&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="nt">&amp;lt;artifactId&amp;gt;&lt;/span>esdk-obs-java-bundle&lt;span class="nt">&amp;lt;/artifactId&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="nt">&amp;lt;version&amp;gt;&lt;/span>3.23.9.1&lt;span class="nt">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;groupId&amp;gt;&lt;/span>com.huaweicloud&lt;span class="nt">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;artifactId&amp;gt;&lt;/span>esdk-obs-java-bundle&lt;span class="nt">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;version&amp;gt;&lt;/span>3.23.9.1&lt;span class="nt">&amp;lt;/version&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;/dependency&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
@@ -2445,7 +2445,7 @@ v1.0.1
 &lt;/ol>
 &lt;p>默认在群里只能收到命令消息,和机器人私聊可以接收到全部的消息,如果想让机器人在群里也能接收到全部的消息,操作如下
 访问&lt;code>BotFather&lt;/code>,输入&lt;code>/setprivacy&lt;/code>,选择自己的机器人,选择&lt;code>DISABLED&lt;/code>,就可以了&lt;/p></description></item><item><title>Rime</title><link>https://isme.cz/rime/</link><pubDate>Sun, 02 Jul 2023 22:37:34 +0000</pubDate><guid>https://isme.cz/rime/</guid><description>&lt;h1 id="基本概念">基本概念&lt;/h1>
-&lt;p>Rime 是一个输入法框架，并不是狭义上的“输入法”，而是将各种输入法的共性抽象出来的算法框架。通过不同的配置文件，Rime 可以支持多种输入方案（Schema），这个所谓的输入方案就是我们狭义上的“输入法”。比如朙月拼音输入法就是 Rime 自带的一种输入方案，另外还有比如四叶草输入法（https://github.com/fkxxyz/rime-cloverpinyin）等等。鼠须管、小狼毫、中州韵分别是 Rime 在不同操作系统下的实现程序。Rime 的配置、词库文件均使用文本方式，便于修改。所有文件均要求以 UTF-8 编码。在配置文件中，以 # 号开头表示注释。&lt;/p>
+&lt;p>Rime 是一个输入法框架，并不是狭义上的“输入法”，而是将各种输入法的共性抽象出来的算法框架。通过不同的配置文件，Rime 可以支持多种输入方案（Schema），这个所谓的输入方案就是我们狭义上的“输入法”。比如朙月拼音输入法就是 Rime 自带的一种输入方案，另外还有比如四叶草输入法（&lt;a href="https://github.com/fkxxyz/rime-cloverpinyin%EF%BC%89%E7%AD%89%E7%AD%89%E3%80%82%E9%BC%A0%E9%A1%BB%E7%AE%A1%E3%80%81%E5%B0%8F%E7%8B%BC%E6%AF%AB%E3%80%81%E4%B8%AD%E5%B7%9E%E9%9F%B5%E5%88%86%E5%88%AB%E6%98%AF">https://github.com/fkxxyz/rime-cloverpinyin）等等。鼠须管、小狼毫、中州韵分别是&lt;/a> Rime 在不同操作系统下的实现程序。Rime 的配置、词库文件均使用文本方式，便于修改。所有文件均要求以 UTF-8 编码。在配置文件中，以 # 号开头表示注释。&lt;/p>
 &lt;h1 id="配置文件所在的目录">配置文件所在的目录&lt;/h1>
 &lt;p>Rime 有两个重要的配置目录：&lt;/p>
 &lt;h2 id="共享配置目录">共享配置目录&lt;/h2>
@@ -2545,7 +2545,7 @@ v1.0.1
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">$ hexo new post_name
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">hexo new post_name
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>在source/_posts中会生成文章post_name.md和同名文件夹post_name。
@@ -2553,9 +2553,11 @@ v1.0.1
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">!&lt;span class="o">[](&lt;/span>image.jpg&lt;span class="o">)&lt;/span>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">!&lt;span class="o">[&lt;/span>TODO&lt;span class="o">](&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">image.jpg&lt;span class="o">)&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;blockquote>
@@ -2871,20 +2873,20 @@ Dynaot买的域名, 指定 Cloudflar 的NameServer
 &lt;/div>&lt;p>再启动服务器&lt;/p>
 &lt;h2 id="aws升级配置">AWS升级配置&lt;/h2>
 &lt;p>1.先&lt;code>停止&lt;/code>实例,不是&lt;code>终止&lt;/code>实例
-&lt;img src="https://image.runtimes.cc/202404051405513.png" alt="">&lt;/p>
+&lt;img src="https://image.runtimes.cc/202404051405513.png" alt="TODO">&lt;/p>
 &lt;p>2.修改实例类型
-&lt;img src="https://image.runtimes.cc/202404051406722.png" alt="">&lt;/p>
+&lt;img src="https://image.runtimes.cc/202404051406722.png" alt="TODO">&lt;/p>
 &lt;p>{% note danger simple %}
 重启公网IP可能会改变
 {% endnote %}&lt;/p>
 &lt;h2 id="服务器局域网互通">服务器局域网互通&lt;/h2>
 &lt;p>需要把局域网 想要互通的服务器,加入一个公共的的默认安全组&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051406727.png" alt="">
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051406727.png" alt="TODO">
 选择&lt;code>default&lt;/code>安全组
-&lt;img src="https://image.runtimes.cc/202404051406784.png" alt="">&lt;/p>
+&lt;img src="https://image.runtimes.cc/202404051406784.png" alt="TODO">&lt;/p>
 &lt;h2 id="要看服务器部署在哪里">要看服务器部署在哪里&lt;/h2>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051406380.png" alt="">&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051407931.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051406380.png" alt="TODO">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051407931.png" alt="TODO">&lt;/p>
 &lt;h2 id="javasdk上传图片到s3">JavaSDK上传图片到S3&lt;/h2>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -3047,23 +3049,23 @@ Dynaot买的域名, 指定 Cloudflar 的NameServer
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kt">int&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="c1">//变量的定义
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>	&lt;span class="c1">//语法：数据类型 变量名 = 初始值
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">//变量的定义
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="c1">//语法：数据类型 变量名 = 初始值
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="kt">int&lt;/span> &lt;span class="n">a&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">10&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kt">int&lt;/span> &lt;span class="n">a&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">10&lt;/span>&lt;span class="p">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="n">cout&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="s">&amp;#34;a = &amp;#34;&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="n">a&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="n">endl&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">cout&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="s">&amp;#34;a = &amp;#34;&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="n">a&lt;/span> &lt;span class="o">&amp;lt;&amp;lt;&lt;/span> &lt;span class="n">endl&lt;/span>&lt;span class="p">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="n">system&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;pause&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">system&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;pause&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="k">return&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>注意：C++在创建变量时，&lt;code>必须给变量一个初始值&lt;/code>，否则会报错&lt;/p>
 &lt;h1 id="常量">常量&lt;/h1>
 &lt;p>&lt;strong>作用&lt;/strong>：用于记录程序中不可更改的数据&lt;/p></description></item><item><title>Cloudflare</title><link>https://isme.cz/cloudflare/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/cloudflare/</guid><description>&lt;h1 id="关闭ipv6">关闭IPV6&lt;/h1>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051517919.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051517919.png" alt="TODO">&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -3081,9 +3083,9 @@ Dynaot买的域名, 指定 Cloudflar 的NameServer
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>URL上的地址:
-&lt;img src="https://image.runtimes.cc/202404051411183.png" alt="">&lt;/p>
+&lt;img src="https://image.runtimes.cc/202404051411183.png" alt="TODO">&lt;/p>
 &lt;p>X-Auth-Key:
-&lt;img src="https://image.runtimes.cc/202404051411721.png" alt="">&lt;/p></description></item><item><title>CSS</title><link>https://isme.cz/css/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/css/</guid><description>&lt;h1 id="css">CSS&lt;/h1>
+&lt;img src="https://image.runtimes.cc/202404051411721.png" alt="TODO">&lt;/p></description></item><item><title>CSS</title><link>https://isme.cz/css/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/css/</guid><description>&lt;h1 id="css">CSS&lt;/h1>
 &lt;h2 id="选择器">选择器&lt;/h2>
 &lt;h3 id="基础选择器">基础选择器&lt;/h3>
 &lt;table>
@@ -3167,7 +3169,7 @@ Dynaot买的域名, 指定 Cloudflar 的NameServer
 &lt;h3 id="外边距">外边距&lt;/h3>
 &lt;p>margin的语法跟padding用法一样
 {% iframe &lt;a href="https://codepen.io/anthony2023/embed/PoVyWYO?default-tab=html%2Cresult%25%7d">https://codepen.io/anthony2023/embed/PoVyWYO?default-tab=html%2Cresult%}&lt;/a>&lt;/p></description></item><item><title>DataGrip</title><link>https://isme.cz/datagrip/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/datagrip/</guid><description>&lt;h1 id="查看ddl和复制为insert语句">查看ddl和复制为insert语句&lt;/h1>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051411320.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051411320.png" alt="TODO">&lt;/p>
 &lt;h1 id="显示">显示&lt;/h1>
 &lt;h2 id="设置数据库颜色">设置数据库颜色&lt;/h2>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051411473.png" alt="image-20230723151325737">&lt;/p>
@@ -3791,9 +3793,9 @@ bin/elasticsearch -d #后台启动
 &lt;h2 id="自定义列的格式">自定义列的格式&lt;/h2>
 &lt;p>比如这里要设置列的格式是 年月日星期几&lt;/p>
 &lt;p>默认的日期和时间是没有符合要求的
-&lt;img src="https://image.runtimes.cc/202404051416398.png" alt="">&lt;/p>
+&lt;img src="https://image.runtimes.cc/202404051416398.png" alt="TODO">&lt;/p>
 &lt;p>自定义设置
-&lt;img src="https://image.runtimes.cc/202404051416110.png" alt="">&lt;/p>
+&lt;img src="https://image.runtimes.cc/202404051416110.png" alt="TODO">&lt;/p>
 &lt;p>📌 这样设置之后,比如在单元格里值设置的是 2021-01-02
 实际上显现的会是 2021年1月2日 星期几&lt;/p>
 &lt;p>✅ 参考:&lt;a href="https://support.microsoft.com/zh-cn/office/%E6%8C%89%E6%83%B3%E8%A6%81%E7%9A%84%E6%96%B9%E5%BC%8F%E8%AE%BE%E7%BD%AE%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F-8e10019e-d5d8-47a1-ba95-db95123d273e">微软官方文档&lt;/a>&lt;/p></description></item><item><title>Flink</title><link>https://isme.cz/flink/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/flink/</guid><description>&lt;h1 id="flink">Flink&lt;/h1>
@@ -3834,180 +3836,180 @@ $ tail log/flink-*-taskexecutor-*.out
  (to,2)
  (be,2)
 &lt;/code>&lt;/pre>&lt;p>步骤四:停止集群&lt;/p>
-&lt;pre tabindex="0">&lt;code>$ ./bin/stop-cluster.sh
+&lt;pre tabindex="0">&lt;code>./bin/stop-cluster.sh
 &lt;/code>&lt;/pre>&lt;h2 id="使用datastream-api进行欺诈检测">使用DataStream API进行欺诈检测&lt;/h2>
 &lt;h3 id="java环境">Java环境&lt;/h3>
 &lt;pre tabindex="0">&lt;code>&amp;lt;project xmlns=&amp;#34;http://maven.apache.org/POM/4.0.0&amp;#34; xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34;
-		 xsi:schemaLocation=&amp;#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&amp;#34;&amp;gt;
-	&amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt;
+ xsi:schemaLocation=&amp;#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&amp;#34;&amp;gt;
+ &amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt;
 
-	&amp;lt;groupId&amp;gt;frauddetection&amp;lt;/groupId&amp;gt;
-	&amp;lt;artifactId&amp;gt;frauddetection&amp;lt;/artifactId&amp;gt;
-	&amp;lt;version&amp;gt;0.1&amp;lt;/version&amp;gt;
-	&amp;lt;packaging&amp;gt;jar&amp;lt;/packaging&amp;gt;
+ &amp;lt;groupId&amp;gt;frauddetection&amp;lt;/groupId&amp;gt;
+ &amp;lt;artifactId&amp;gt;frauddetection&amp;lt;/artifactId&amp;gt;
+ &amp;lt;version&amp;gt;0.1&amp;lt;/version&amp;gt;
+ &amp;lt;packaging&amp;gt;jar&amp;lt;/packaging&amp;gt;
 
-	&amp;lt;name&amp;gt;Flink Walkthrough DataStream Java&amp;lt;/name&amp;gt;
-	&amp;lt;url&amp;gt;https://flink.apache.org&amp;lt;/url&amp;gt;
+ &amp;lt;name&amp;gt;Flink Walkthrough DataStream Java&amp;lt;/name&amp;gt;
+ &amp;lt;url&amp;gt;https://flink.apache.org&amp;lt;/url&amp;gt;
 
-	&amp;lt;properties&amp;gt;
-		&amp;lt;project.build.sourceEncoding&amp;gt;UTF-8&amp;lt;/project.build.sourceEncoding&amp;gt;
-		&amp;lt;flink.version&amp;gt;1.10.2&amp;lt;/flink.version&amp;gt;
-		&amp;lt;java.version&amp;gt;1.8&amp;lt;/java.version&amp;gt;
-		&amp;lt;scala.binary.version&amp;gt;2.11&amp;lt;/scala.binary.version&amp;gt;
-		&amp;lt;maven.compiler.source&amp;gt;${java.version}&amp;lt;/maven.compiler.source&amp;gt;
-		&amp;lt;maven.compiler.target&amp;gt;${java.version}&amp;lt;/maven.compiler.target&amp;gt;
-	&amp;lt;/properties&amp;gt;
+ &amp;lt;properties&amp;gt;
+ &amp;lt;project.build.sourceEncoding&amp;gt;UTF-8&amp;lt;/project.build.sourceEncoding&amp;gt;
+ &amp;lt;flink.version&amp;gt;1.10.2&amp;lt;/flink.version&amp;gt;
+ &amp;lt;java.version&amp;gt;1.8&amp;lt;/java.version&amp;gt;
+ &amp;lt;scala.binary.version&amp;gt;2.11&amp;lt;/scala.binary.version&amp;gt;
+ &amp;lt;maven.compiler.source&amp;gt;${java.version}&amp;lt;/maven.compiler.source&amp;gt;
+ &amp;lt;maven.compiler.target&amp;gt;${java.version}&amp;lt;/maven.compiler.target&amp;gt;
+ &amp;lt;/properties&amp;gt;
 
-	&amp;lt;dependencies&amp;gt;
-		&amp;lt;dependency&amp;gt;
-			&amp;lt;groupId&amp;gt;org.apache.flink&amp;lt;/groupId&amp;gt;
-			&amp;lt;artifactId&amp;gt;flink-walkthrough-common_${scala.binary.version}&amp;lt;/artifactId&amp;gt;
-			&amp;lt;version&amp;gt;${flink.version}&amp;lt;/version&amp;gt;
-		&amp;lt;/dependency&amp;gt;
+ &amp;lt;dependencies&amp;gt;
+ &amp;lt;dependency&amp;gt;
+ &amp;lt;groupId&amp;gt;org.apache.flink&amp;lt;/groupId&amp;gt;
+ &amp;lt;artifactId&amp;gt;flink-walkthrough-common_${scala.binary.version}&amp;lt;/artifactId&amp;gt;
+ &amp;lt;version&amp;gt;${flink.version}&amp;lt;/version&amp;gt;
+ &amp;lt;/dependency&amp;gt;
 
-		&amp;lt;!-- This dependency is provided, because it should not be packaged into the JAR file. --&amp;gt;
-		&amp;lt;dependency&amp;gt;
-			&amp;lt;groupId&amp;gt;org.apache.flink&amp;lt;/groupId&amp;gt;
-			&amp;lt;artifactId&amp;gt;flink-streaming-java_${scala.binary.version}&amp;lt;/artifactId&amp;gt;
-			&amp;lt;version&amp;gt;${flink.version}&amp;lt;/version&amp;gt;
+ &amp;lt;!-- This dependency is provided, because it should not be packaged into the JAR file. --&amp;gt;
+ &amp;lt;dependency&amp;gt;
+ &amp;lt;groupId&amp;gt;org.apache.flink&amp;lt;/groupId&amp;gt;
+ &amp;lt;artifactId&amp;gt;flink-streaming-java_${scala.binary.version}&amp;lt;/artifactId&amp;gt;
+ &amp;lt;version&amp;gt;${flink.version}&amp;lt;/version&amp;gt;
 &amp;lt;!--			&amp;lt;scope&amp;gt;provided&amp;lt;/scope&amp;gt;--&amp;gt;
-		&amp;lt;/dependency&amp;gt;
+ &amp;lt;/dependency&amp;gt;
 
-		&amp;lt;dependency&amp;gt;
-			&amp;lt;groupId&amp;gt;org.projectlombok&amp;lt;/groupId&amp;gt;
-			&amp;lt;artifactId&amp;gt;lombok&amp;lt;/artifactId&amp;gt;
-			&amp;lt;version&amp;gt;1.18.0&amp;lt;/version&amp;gt;
-			&amp;lt;scope&amp;gt;provided&amp;lt;/scope&amp;gt;
-		&amp;lt;/dependency&amp;gt;
+ &amp;lt;dependency&amp;gt;
+ &amp;lt;groupId&amp;gt;org.projectlombok&amp;lt;/groupId&amp;gt;
+ &amp;lt;artifactId&amp;gt;lombok&amp;lt;/artifactId&amp;gt;
+ &amp;lt;version&amp;gt;1.18.0&amp;lt;/version&amp;gt;
+ &amp;lt;scope&amp;gt;provided&amp;lt;/scope&amp;gt;
+ &amp;lt;/dependency&amp;gt;
 
-		&amp;lt;!-- Add connector dependencies here. They must be in the default scope (compile). --&amp;gt;
+ &amp;lt;!-- Add connector dependencies here. They must be in the default scope (compile). --&amp;gt;
 
-		&amp;lt;dependency&amp;gt;
-			&amp;lt;groupId&amp;gt;org.apache.flink&amp;lt;/groupId&amp;gt;
-			&amp;lt;artifactId&amp;gt;flink-connector-kafka-0.10_${scala.binary.version}&amp;lt;/artifactId&amp;gt;
-			&amp;lt;version&amp;gt;${flink.version}&amp;lt;/version&amp;gt;
-		&amp;lt;/dependency&amp;gt;
+ &amp;lt;dependency&amp;gt;
+ &amp;lt;groupId&amp;gt;org.apache.flink&amp;lt;/groupId&amp;gt;
+ &amp;lt;artifactId&amp;gt;flink-connector-kafka-0.10_${scala.binary.version}&amp;lt;/artifactId&amp;gt;
+ &amp;lt;version&amp;gt;${flink.version}&amp;lt;/version&amp;gt;
+ &amp;lt;/dependency&amp;gt;
 
-		&amp;lt;!-- Add logging framework, to produce console output when running in the IDE. --&amp;gt;
-		&amp;lt;!-- These dependencies are excluded from the application JAR by default. --&amp;gt;
-		&amp;lt;dependency&amp;gt;
-			&amp;lt;groupId&amp;gt;org.slf4j&amp;lt;/groupId&amp;gt;
-			&amp;lt;artifactId&amp;gt;slf4j-log4j12&amp;lt;/artifactId&amp;gt;
-			&amp;lt;version&amp;gt;1.7.7&amp;lt;/version&amp;gt;
-			&amp;lt;scope&amp;gt;runtime&amp;lt;/scope&amp;gt;
-		&amp;lt;/dependency&amp;gt;
-		&amp;lt;dependency&amp;gt;
-			&amp;lt;groupId&amp;gt;log4j&amp;lt;/groupId&amp;gt;
-			&amp;lt;artifactId&amp;gt;log4j&amp;lt;/artifactId&amp;gt;
-			&amp;lt;version&amp;gt;1.2.17&amp;lt;/version&amp;gt;
-			&amp;lt;scope&amp;gt;runtime&amp;lt;/scope&amp;gt;
-		&amp;lt;/dependency&amp;gt;
-	&amp;lt;/dependencies&amp;gt;
+ &amp;lt;!-- Add logging framework, to produce console output when running in the IDE. --&amp;gt;
+ &amp;lt;!-- These dependencies are excluded from the application JAR by default. --&amp;gt;
+ &amp;lt;dependency&amp;gt;
+ &amp;lt;groupId&amp;gt;org.slf4j&amp;lt;/groupId&amp;gt;
+ &amp;lt;artifactId&amp;gt;slf4j-log4j12&amp;lt;/artifactId&amp;gt;
+ &amp;lt;version&amp;gt;1.7.7&amp;lt;/version&amp;gt;
+ &amp;lt;scope&amp;gt;runtime&amp;lt;/scope&amp;gt;
+ &amp;lt;/dependency&amp;gt;
+ &amp;lt;dependency&amp;gt;
+ &amp;lt;groupId&amp;gt;log4j&amp;lt;/groupId&amp;gt;
+ &amp;lt;artifactId&amp;gt;log4j&amp;lt;/artifactId&amp;gt;
+ &amp;lt;version&amp;gt;1.2.17&amp;lt;/version&amp;gt;
+ &amp;lt;scope&amp;gt;runtime&amp;lt;/scope&amp;gt;
+ &amp;lt;/dependency&amp;gt;
+ &amp;lt;/dependencies&amp;gt;
 
-	&amp;lt;build&amp;gt;
-		&amp;lt;plugins&amp;gt;
+ &amp;lt;build&amp;gt;
+ &amp;lt;plugins&amp;gt;
 
-			&amp;lt;!-- Java Compiler --&amp;gt;
-			&amp;lt;plugin&amp;gt;
-				&amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt;
-				&amp;lt;artifactId&amp;gt;maven-compiler-plugin&amp;lt;/artifactId&amp;gt;
-				&amp;lt;version&amp;gt;3.1&amp;lt;/version&amp;gt;
-				&amp;lt;configuration&amp;gt;
-					&amp;lt;source&amp;gt;${java.version}&amp;lt;/source&amp;gt;
-					&amp;lt;target&amp;gt;${java.version}&amp;lt;/target&amp;gt;
-				&amp;lt;/configuration&amp;gt;
-			&amp;lt;/plugin&amp;gt;
+ &amp;lt;!-- Java Compiler --&amp;gt;
+ &amp;lt;plugin&amp;gt;
+ &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt;
+ &amp;lt;artifactId&amp;gt;maven-compiler-plugin&amp;lt;/artifactId&amp;gt;
+ &amp;lt;version&amp;gt;3.1&amp;lt;/version&amp;gt;
+ &amp;lt;configuration&amp;gt;
+ &amp;lt;source&amp;gt;${java.version}&amp;lt;/source&amp;gt;
+ &amp;lt;target&amp;gt;${java.version}&amp;lt;/target&amp;gt;
+ &amp;lt;/configuration&amp;gt;
+ &amp;lt;/plugin&amp;gt;
 
-			&amp;lt;!-- We use the maven-shade plugin to create a fat jar that contains all necessary dependencies. --&amp;gt;
-			&amp;lt;!-- Change the value of &amp;lt;mainClass&amp;gt;...&amp;lt;/mainClass&amp;gt; if your program entry point changes. --&amp;gt;
-			&amp;lt;plugin&amp;gt;
-				&amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt;
-				&amp;lt;artifactId&amp;gt;maven-shade-plugin&amp;lt;/artifactId&amp;gt;
-				&amp;lt;version&amp;gt;3.0.0&amp;lt;/version&amp;gt;
-				&amp;lt;executions&amp;gt;
-					&amp;lt;!-- Run shade goal on package phase --&amp;gt;
-					&amp;lt;execution&amp;gt;
-						&amp;lt;phase&amp;gt;package&amp;lt;/phase&amp;gt;
-						&amp;lt;goals&amp;gt;
-							&amp;lt;goal&amp;gt;shade&amp;lt;/goal&amp;gt;
-						&amp;lt;/goals&amp;gt;
-						&amp;lt;configuration&amp;gt;
-							&amp;lt;artifactSet&amp;gt;
-								&amp;lt;excludes&amp;gt;
-									&amp;lt;exclude&amp;gt;org.apache.flink:force-shading&amp;lt;/exclude&amp;gt;
-									&amp;lt;exclude&amp;gt;com.google.code.findbugs:jsr305&amp;lt;/exclude&amp;gt;
-									&amp;lt;exclude&amp;gt;org.slf4j:*&amp;lt;/exclude&amp;gt;
-									&amp;lt;exclude&amp;gt;log4j:*&amp;lt;/exclude&amp;gt;
-								&amp;lt;/excludes&amp;gt;
-							&amp;lt;/artifactSet&amp;gt;
-							&amp;lt;filters&amp;gt;
-								&amp;lt;filter&amp;gt;
-									&amp;lt;!-- Do not copy the signatures in the META-INF folder.
+ &amp;lt;!-- We use the maven-shade plugin to create a fat jar that contains all necessary dependencies. --&amp;gt;
+ &amp;lt;!-- Change the value of &amp;lt;mainClass&amp;gt;...&amp;lt;/mainClass&amp;gt; if your program entry point changes. --&amp;gt;
+ &amp;lt;plugin&amp;gt;
+ &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt;
+ &amp;lt;artifactId&amp;gt;maven-shade-plugin&amp;lt;/artifactId&amp;gt;
+ &amp;lt;version&amp;gt;3.0.0&amp;lt;/version&amp;gt;
+ &amp;lt;executions&amp;gt;
+ &amp;lt;!-- Run shade goal on package phase --&amp;gt;
+ &amp;lt;execution&amp;gt;
+ &amp;lt;phase&amp;gt;package&amp;lt;/phase&amp;gt;
+ &amp;lt;goals&amp;gt;
+ &amp;lt;goal&amp;gt;shade&amp;lt;/goal&amp;gt;
+ &amp;lt;/goals&amp;gt;
+ &amp;lt;configuration&amp;gt;
+ &amp;lt;artifactSet&amp;gt;
+ &amp;lt;excludes&amp;gt;
+ &amp;lt;exclude&amp;gt;org.apache.flink:force-shading&amp;lt;/exclude&amp;gt;
+ &amp;lt;exclude&amp;gt;com.google.code.findbugs:jsr305&amp;lt;/exclude&amp;gt;
+ &amp;lt;exclude&amp;gt;org.slf4j:*&amp;lt;/exclude&amp;gt;
+ &amp;lt;exclude&amp;gt;log4j:*&amp;lt;/exclude&amp;gt;
+ &amp;lt;/excludes&amp;gt;
+ &amp;lt;/artifactSet&amp;gt;
+ &amp;lt;filters&amp;gt;
+ &amp;lt;filter&amp;gt;
+ &amp;lt;!-- Do not copy the signatures in the META-INF folder.
  Otherwise, this might cause SecurityExceptions when using the JAR. --&amp;gt;
-									&amp;lt;artifact&amp;gt;*:*&amp;lt;/artifact&amp;gt;
-									&amp;lt;excludes&amp;gt;
-										&amp;lt;exclude&amp;gt;META-INF/*.SF&amp;lt;/exclude&amp;gt;
-										&amp;lt;exclude&amp;gt;META-INF/*.DSA&amp;lt;/exclude&amp;gt;
-										&amp;lt;exclude&amp;gt;META-INF/*.RSA&amp;lt;/exclude&amp;gt;
-									&amp;lt;/excludes&amp;gt;
-								&amp;lt;/filter&amp;gt;
-							&amp;lt;/filters&amp;gt;
-							&amp;lt;transformers&amp;gt;
-								&amp;lt;transformer implementation=&amp;#34;org.apache.maven.plugins.shade.resource.ManifestResourceTransformer&amp;#34;&amp;gt;
-									&amp;lt;mainClass&amp;gt;spendreport.FraudDetectionJob&amp;lt;/mainClass&amp;gt;
-								&amp;lt;/transformer&amp;gt;
-							&amp;lt;/transformers&amp;gt;
-						&amp;lt;/configuration&amp;gt;
-					&amp;lt;/execution&amp;gt;
-				&amp;lt;/executions&amp;gt;
-			&amp;lt;/plugin&amp;gt;
-		&amp;lt;/plugins&amp;gt;
+ &amp;lt;artifact&amp;gt;*:*&amp;lt;/artifact&amp;gt;
+ &amp;lt;excludes&amp;gt;
+ &amp;lt;exclude&amp;gt;META-INF/*.SF&amp;lt;/exclude&amp;gt;
+ &amp;lt;exclude&amp;gt;META-INF/*.DSA&amp;lt;/exclude&amp;gt;
+ &amp;lt;exclude&amp;gt;META-INF/*.RSA&amp;lt;/exclude&amp;gt;
+ &amp;lt;/excludes&amp;gt;
+ &amp;lt;/filter&amp;gt;
+ &amp;lt;/filters&amp;gt;
+ &amp;lt;transformers&amp;gt;
+ &amp;lt;transformer implementation=&amp;#34;org.apache.maven.plugins.shade.resource.ManifestResourceTransformer&amp;#34;&amp;gt;
+ &amp;lt;mainClass&amp;gt;spendreport.FraudDetectionJob&amp;lt;/mainClass&amp;gt;
+ &amp;lt;/transformer&amp;gt;
+ &amp;lt;/transformers&amp;gt;
+ &amp;lt;/configuration&amp;gt;
+ &amp;lt;/execution&amp;gt;
+ &amp;lt;/executions&amp;gt;
+ &amp;lt;/plugin&amp;gt;
+ &amp;lt;/plugins&amp;gt;
 
-		&amp;lt;pluginManagement&amp;gt;
-			&amp;lt;plugins&amp;gt;
+ &amp;lt;pluginManagement&amp;gt;
+ &amp;lt;plugins&amp;gt;
 
-				&amp;lt;!-- This improves the out-of-the-box experience in Eclipse by resolving some warnings. --&amp;gt;
-				&amp;lt;plugin&amp;gt;
-					&amp;lt;groupId&amp;gt;org.eclipse.m2e&amp;lt;/groupId&amp;gt;
-					&amp;lt;artifactId&amp;gt;lifecycle-mapping&amp;lt;/artifactId&amp;gt;
-					&amp;lt;version&amp;gt;1.0.0&amp;lt;/version&amp;gt;
-					&amp;lt;configuration&amp;gt;
-						&amp;lt;lifecycleMappingMetadata&amp;gt;
-							&amp;lt;pluginExecutions&amp;gt;
-								&amp;lt;pluginExecution&amp;gt;
-									&amp;lt;pluginExecutionFilter&amp;gt;
-										&amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt;
-										&amp;lt;artifactId&amp;gt;maven-shade-plugin&amp;lt;/artifactId&amp;gt;
-										&amp;lt;versionRange&amp;gt;[3.0.0,)&amp;lt;/versionRange&amp;gt;
-										&amp;lt;goals&amp;gt;
-											&amp;lt;goal&amp;gt;shade&amp;lt;/goal&amp;gt;
-										&amp;lt;/goals&amp;gt;
-									&amp;lt;/pluginExecutionFilter&amp;gt;
-									&amp;lt;action&amp;gt;
-										&amp;lt;ignore/&amp;gt;
-									&amp;lt;/action&amp;gt;
-								&amp;lt;/pluginExecution&amp;gt;
-								&amp;lt;pluginExecution&amp;gt;
-									&amp;lt;pluginExecutionFilter&amp;gt;
-										&amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt;
-										&amp;lt;artifactId&amp;gt;maven-compiler-plugin&amp;lt;/artifactId&amp;gt;
-										&amp;lt;versionRange&amp;gt;[3.1,)&amp;lt;/versionRange&amp;gt;
-										&amp;lt;goals&amp;gt;
-											&amp;lt;goal&amp;gt;testCompile&amp;lt;/goal&amp;gt;
-											&amp;lt;goal&amp;gt;compile&amp;lt;/goal&amp;gt;
-										&amp;lt;/goals&amp;gt;
-									&amp;lt;/pluginExecutionFilter&amp;gt;
-									&amp;lt;action&amp;gt;
-										&amp;lt;ignore/&amp;gt;
-									&amp;lt;/action&amp;gt;
-								&amp;lt;/pluginExecution&amp;gt;
-							&amp;lt;/pluginExecutions&amp;gt;
-						&amp;lt;/lifecycleMappingMetadata&amp;gt;
-					&amp;lt;/configuration&amp;gt;
-				&amp;lt;/plugin&amp;gt;
-			&amp;lt;/plugins&amp;gt;
-		&amp;lt;/pluginManagement&amp;gt;
-	&amp;lt;/build&amp;gt;
+ &amp;lt;!-- This improves the out-of-the-box experience in Eclipse by resolving some warnings. --&amp;gt;
+ &amp;lt;plugin&amp;gt;
+ &amp;lt;groupId&amp;gt;org.eclipse.m2e&amp;lt;/groupId&amp;gt;
+ &amp;lt;artifactId&amp;gt;lifecycle-mapping&amp;lt;/artifactId&amp;gt;
+ &amp;lt;version&amp;gt;1.0.0&amp;lt;/version&amp;gt;
+ &amp;lt;configuration&amp;gt;
+ &amp;lt;lifecycleMappingMetadata&amp;gt;
+ &amp;lt;pluginExecutions&amp;gt;
+ &amp;lt;pluginExecution&amp;gt;
+ &amp;lt;pluginExecutionFilter&amp;gt;
+ &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt;
+ &amp;lt;artifactId&amp;gt;maven-shade-plugin&amp;lt;/artifactId&amp;gt;
+ &amp;lt;versionRange&amp;gt;[3.0.0,)&amp;lt;/versionRange&amp;gt;
+ &amp;lt;goals&amp;gt;
+ &amp;lt;goal&amp;gt;shade&amp;lt;/goal&amp;gt;
+ &amp;lt;/goals&amp;gt;
+ &amp;lt;/pluginExecutionFilter&amp;gt;
+ &amp;lt;action&amp;gt;
+ &amp;lt;ignore/&amp;gt;
+ &amp;lt;/action&amp;gt;
+ &amp;lt;/pluginExecution&amp;gt;
+ &amp;lt;pluginExecution&amp;gt;
+ &amp;lt;pluginExecutionFilter&amp;gt;
+ &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt;
+ &amp;lt;artifactId&amp;gt;maven-compiler-plugin&amp;lt;/artifactId&amp;gt;
+ &amp;lt;versionRange&amp;gt;[3.1,)&amp;lt;/versionRange&amp;gt;
+ &amp;lt;goals&amp;gt;
+ &amp;lt;goal&amp;gt;testCompile&amp;lt;/goal&amp;gt;
+ &amp;lt;goal&amp;gt;compile&amp;lt;/goal&amp;gt;
+ &amp;lt;/goals&amp;gt;
+ &amp;lt;/pluginExecutionFilter&amp;gt;
+ &amp;lt;action&amp;gt;
+ &amp;lt;ignore/&amp;gt;
+ &amp;lt;/action&amp;gt;
+ &amp;lt;/pluginExecution&amp;gt;
+ &amp;lt;/pluginExecutions&amp;gt;
+ &amp;lt;/lifecycleMappingMetadata&amp;gt;
+ &amp;lt;/configuration&amp;gt;
+ &amp;lt;/plugin&amp;gt;
+ &amp;lt;/plugins&amp;gt;
+ &amp;lt;/pluginManagement&amp;gt;
+ &amp;lt;/build&amp;gt;
 &amp;lt;/project&amp;gt;
 &lt;/code>&lt;/pre>&lt;h2 id="输入">输入&lt;/h2>
 &lt;h3 id="file输入">File输入&lt;/h3>
@@ -4188,7 +4190,7 @@ git reset --soft HEAD^
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">static_configs&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">targets&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;10.0.0.6:9090&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> 	&lt;/span>&lt;span class="c">#添加master及node节点添加&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="c">#添加master及node节点添加&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">job_name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;master&amp;#39;&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">static_configs&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">targets&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;10.0.0.6:9100&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="w">
@@ -4200,7 +4202,7 @@ git reset --soft HEAD^
 &lt;/div>
 &lt;/div>&lt;blockquote>
 &lt;p>这里只是提前编辑好,之后如果要添加新的机器,再后面添加&lt;/p></description></item><item><title>Harbor</title><link>https://isme.cz/harbor/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/harbor/</guid><description>&lt;h2 id="下载离线安装包">下载离线安装包&lt;/h2>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051422363.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051422363.png" alt="TODO">&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -4402,9 +4404,9 @@ git reset --soft HEAD^
 &lt;/div>
 &lt;/div>&lt;p>&lt;strong>段落格式的特点&lt;/strong>&lt;/p></description></item><item><title>IDEA</title><link>https://isme.cz/idea/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/idea/</guid><description>&lt;h1 id="教程">教程&lt;/h1>
 &lt;h2 id="idea查看方法被调用">IDEA查看方法被调用&lt;/h2>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051423853.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051423853.png" alt="TODO">&lt;/p>
 &lt;h2 id="修改光标所在行背景颜色">修改光标所在行背景颜色&lt;/h2>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051423630.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051423630.png" alt="TODO">&lt;/p>
 &lt;h2 id="断点判断条件">断点判断条件&lt;/h2>
 &lt;p>在断点上点右键,正常的写判断代码就行&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051423731.png" alt="image-20230803174451532">&lt;/p>
@@ -4820,9 +4822,9 @@ git reset --soft HEAD^
 &lt;li>&lt;a href="https://alt-tab-macos.netlify.app/">AltTab&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h1 id="iphone强制重启">iphone强制重启&lt;/h1>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051349933.webp" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051349933.webp" alt="TODO">&lt;/p>
 &lt;h1 id="浏览器返回手势">浏览器返回手势&lt;/h1>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051350113.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051350113.png" alt="TODO">&lt;/p>
 &lt;h1 id="放歌有噪音">放歌有噪音&lt;/h1>
 &lt;p>通过【活动监视器】程序终止【coreaudiod】进程：&lt;/p>
 &lt;ol>
@@ -4873,7 +4875,7 @@ git reset --soft HEAD^
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h1 id="mac-os-x-访问-windows共享文件夹">Mac OS X 访问 Windows共享文件夹&lt;/h1>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051351999.png" alt="">&lt;/p></description></item><item><title>Mycat</title><link>https://isme.cz/mycat/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/mycat/</guid><description>&lt;h1 id="主从复制">主从复制&lt;/h1>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051351999.png" alt="TODO">&lt;/p></description></item><item><title>Mycat</title><link>https://isme.cz/mycat/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/mycat/</guid><description>&lt;h1 id="主从复制">主从复制&lt;/h1>
 &lt;h1 id="启动">启动&lt;/h1>
 &lt;p>1 .下载jre包&lt;/p>
 &lt;p>2 下载mycat包&lt;/p>
@@ -5384,7 +5386,7 @@ docker cp xxx:/var/log/ /home/anthony/mysql
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="err">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">#配置日志, main 就是log_format 后面的名字
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> 	&lt;span class="c1"># 该server的访问日志的文件是logs/access.log,使用的是main格式
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="c1"># 该server的访问日志的文件是logs/access.log,使用的是main格式
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="s">access_log&lt;/span> &lt;span class="s">logs/access.log&lt;/span> &lt;span class="s">main&lt;/span>&lt;span class="p">;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
@@ -5456,7 +5458,7 @@ docker cp xxx:/var/log/ /home/anthony/mysql
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">head&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">meta&lt;/span> &lt;span class="na">charset&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;UTF-8&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">title&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>隔行变色&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">title&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">				&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">script&lt;/span> &lt;span class="na">src&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;./index.js&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&amp;lt;/&lt;/span>&lt;span class="nt">script&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">script&lt;/span> &lt;span class="na">src&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;./index.js&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&amp;lt;/&lt;/span>&lt;span class="nt">script&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">head&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">body&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">ul&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
@@ -5478,14 +5480,14 @@ docker cp xxx:/var/log/ /home/anthony/mysql
 &lt;/div>&lt;p>index.js&lt;/p></description></item><item><title>Obsidian</title><link>https://isme.cz/obsidian/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/obsidian/</guid><description>&lt;h1 id="插件">插件&lt;/h1>
 &lt;p>1.安装git插件
 2.运行命令,才能在界面上显示Git
-&lt;img src="https://image.runtimes.cc/202404051446974.png" alt="">&lt;/p>
+&lt;img src="https://image.runtimes.cc/202404051446974.png" alt="TODO">&lt;/p>
 &lt;h1 id="设置">设置&lt;/h1>
 &lt;h2 id="打开文件的时候显示的模式">打开文件的时候,显示的模式&lt;/h2>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051447844.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051447844.png" alt="TODO">&lt;/p>
 &lt;h2 id="本地图片的格式">本地图片的格式&lt;/h2>
 &lt;p>使用 Obsidian 时，粘贴的图片路径会变成&lt;code>[[]]&lt;/code> 的格式，在像 Typora 的软件上，就不适配。
 可以在设置里，关闭 Wiki 链接的选项，粘贴图片后的格式就会自动变成了。
-&lt;img src="https://image.runtimes.cc/202404051451913.png" alt="">&lt;/p></description></item><item><title>PHP</title><link>https://isme.cz/php/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/php/</guid><description>&lt;h1 id="安装nginx与php-74">安装Nginx与PHP 7.4&lt;/h1>
+&lt;img src="https://image.runtimes.cc/202404051451913.png" alt="TODO">&lt;/p></description></item><item><title>PHP</title><link>https://isme.cz/php/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/php/</guid><description>&lt;h1 id="安装nginx与php-74">安装Nginx与PHP 7.4&lt;/h1>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -5976,13 +5978,13 @@ pip3
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051354921.webp" alt="6">&lt;/p>
 &lt;p>&lt;img src="https://image.runtimes.cc/202404051355944.webp" alt="7">&lt;/p>
 &lt;h2 id="服务器禁用ipv6">服务器禁用IPV6&lt;/h2>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051355530.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051355530.png" alt="TODO">&lt;/p>
 &lt;p>⛔ 一定要重启&lt;/p>
 &lt;p>&lt;a href="https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/configure-ipv6-in-windows">官方文档&lt;/a>&lt;/p>
 &lt;h2 id="ie浏览器允许下载">IE浏览器允许下载&lt;/h2>
 &lt;p>通常服务器不允许乱下载软件,所以一般默认被禁用,下面两种方法都行&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051355878.png" alt="">&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051355807.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051355878.png" alt="TODO">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051355807.png" alt="TODO">&lt;/p>
 &lt;h1 id="安装win10系统创建本地账号">安装win10系统,创建本地账号&lt;/h1>
 &lt;p>在提示需要账号登录的时候,按&lt;code>Shift + F10&lt;/code>打开命令行,输入&lt;code>oobe\bypassnro.cmd&lt;/code>，就会重启,再安装，就不会要求输入微软账号了；也有例外的情况，用过win11商业版的镜像安装的时候,用这个命令不起作用
 &lt;img src="https://image.runtimes.cc/202404051355254.png" alt="win11">&lt;/p>
@@ -6001,7 +6003,7 @@ pip3
 &lt;/div>
 &lt;/div>&lt;h2 id="永久修改">永久修改&lt;/h2>
 &lt;p>进入注册表&lt;code>win+R-&amp;gt;输入regedit&lt;/code>在&lt;code>HKEY_CURRENT_USER\Console&lt;/code>，双击&lt;code>CodePage&lt;/code>修改键值为&lt;code>65001&lt;/code>
-&lt;img src="https://image.runtimes.cc/202404051355297.png" alt="">
+&lt;img src="https://image.runtimes.cc/202404051355297.png" alt="TODO">
 检查是否生效: 新开一个PowerShell,或者重启&lt;/p>
 &lt;h1 id="win10杀线程">Win10杀线程&lt;/h1>
 &lt;div class="highlight">&lt;div class="chroma">

@@ -188,15 +188,15 @@
 </span><span class=lnt>6
 </span><span class=lnt>7
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>docker</span> <span class=n>run</span> <span class=o>-</span><span class=n>v</span> \
-</span></span><span class=line><span class=cl>	<span class=o>/</span><span class=n>root</span><span class=o>/</span><span class=n>confluence</span><span class=o>/</span><span class=p>:</span><span class=o>/</span><span class=n>var</span><span class=o>/</span><span class=n>atlassian</span><span class=o>/</span><span class=n>application</span><span class=o>-</span><span class=n>data</span><span class=o>/</span><span class=n>confluence</span><span class=o>/</span> \
-</span></span><span class=line><span class=cl>	<span class=o>--</span><span class=n>name</span><span class=o>=</span><span class=s2>&#34;confluence&#34;</span> \
-</span></span><span class=line><span class=cl>	<span class=o>-</span><span class=n>d</span> \
-</span></span><span class=line><span class=cl>	<span class=o>-</span><span class=n>p</span> <span class=mi>8090</span><span class=p>:</span><span class=mi>8090</span> \
-</span></span><span class=line><span class=cl>	<span class=o>-</span><span class=n>p</span> <span class=mi>8091</span><span class=p>:</span><span class=mi>8091</span> \
-</span></span><span class=line><span class=cl>	<span class=n>atlassian</span><span class=o>/</span><span class=n>confluence</span><span class=o>-</span><span class=n>server</span>
+</span></span><span class=line><span class=cl> <span class=o>/</span><span class=n>root</span><span class=o>/</span><span class=n>confluence</span><span class=o>/</span><span class=p>:</span><span class=o>/</span><span class=n>var</span><span class=o>/</span><span class=n>atlassian</span><span class=o>/</span><span class=n>application</span><span class=o>-</span><span class=n>data</span><span class=o>/</span><span class=n>confluence</span><span class=o>/</span> \
+</span></span><span class=line><span class=cl> <span class=o>--</span><span class=n>name</span><span class=o>=</span><span class=s2>&#34;confluence&#34;</span> \
+</span></span><span class=line><span class=cl> <span class=o>-</span><span class=n>d</span> \
+</span></span><span class=line><span class=cl> <span class=o>-</span><span class=n>p</span> <span class=mi>8090</span><span class=p>:</span><span class=mi>8090</span> \
+</span></span><span class=line><span class=cl> <span class=o>-</span><span class=n>p</span> <span class=mi>8091</span><span class=p>:</span><span class=mi>8091</span> \
+</span></span><span class=line><span class=cl> <span class=n>atlassian</span><span class=o>/</span><span class=n>confluence</span><span class=o>-</span><span class=n>server</span>
 </span></span></code></pre></td></tr></table></div></div><p>破解:</p><p>1./opt/atlassian/confluence/confluence/WEB-INF/lib/atlassian-extras-decoder-v2-3.4.1.jar备份
 2.atlassian-extras-decoder-v2-3.4.1.jar重命名为atlassian-extras-2.4.jar并下载到本地 （和破解工具放在同一目录）
-3.下载破解工具confluence_keygen.jar,在上面的超链接下载</p><p><img src=https://image.runtimes.cc/202404051426404.png alt></p><p>4.将已被破解的jar包atlassian-extras-2.4.jar重名为atlassian-extras-decoder-v2-3.4.1.jar</p><p>并放置在原路径/opt/atlassian/confluence/confluence/WEB-INF/lib</p><p>5.下载mysql-connector-java-5.1.32-bin.jar 上传/opt/atlassian/confluence/confluence/WEB-INF/lib</p><p>6.开始安装到需要授权码</p><p><img src=https://image.runtimes.cc/202404051426338.png alt></p><p><img src=https://image.runtimes.cc/202404051427340.png alt></p><p>相关报错:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+3.下载破解工具confluence_keygen.jar,在上面的超链接下载</p><p><img src=https://image.runtimes.cc/202404051426404.png alt=TODO></p><p>4.将已被破解的jar包atlassian-extras-2.4.jar重名为atlassian-extras-decoder-v2-3.4.1.jar</p><p>并放置在原路径/opt/atlassian/confluence/confluence/WEB-INF/lib</p><p>5.下载mysql-connector-java-5.1.32-bin.jar 上传/opt/atlassian/confluence/confluence/WEB-INF/lib</p><p>6.开始安装到需要授权码</p><p><img src=https://image.runtimes.cc/202404051426338.png alt=TODO></p><p><img src=https://image.runtimes.cc/202404051427340.png alt=TODO></p><p>相关报错:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>启动发生报错</span> <span class=s2>&#34;Spring Application context has not been set&#34;</span>
 </span></span><span class=line><span class=cl><span class=n>rm</span> <span class=o>-</span><span class=n>f</span> <span class=o>/</span><span class=n>var</span><span class=o>/</span><span class=n>atlassian</span><span class=o>/</span><span class=n>application</span><span class=o>-</span><span class=n>data</span><span class=o>/</span><span class=n>confluence</span><span class=o>/</span><span class=n>confluence</span><span class=o>.</span><span class=n>cfg</span><span class=o>.</span><span class=n>xml</span>
@@ -354,7 +354,7 @@ nping --echo-client &#34;public&#34; echo.nmap.org
 </span></span><span class=line><span class=cl>➜  .ssh ll /Users/anthony/.ssh
 </span></span><span class=line><span class=cl>-rw-------@ <span class=m>1</span> anthony  staff   1.6K  <span class=m>6</span>  <span class=m>8</span> 21:50 id_rsa    
 </span></span><span class=line><span class=cl>-rw-r--r--@ <span class=m>1</span> anthony  staff   425B  <span class=m>6</span>  <span class=m>8</span> 21:50 id_rsa.pub
-</span></span><span class=line><span class=cl>-rw-------@ <span class=m>1</span> anthony  staff   3.0K  <span class=m>6</span>  <span class=m>8</span> 21:24 known_hosts			
+</span></span><span class=line><span class=cl>-rw-------@ <span class=m>1</span> anthony  staff   3.0K  <span class=m>6</span>  <span class=m>8</span> 21:24 known_hosts   
 </span></span><span class=line><span class=cl>-rw-------@ <span class=m>1</span> anthony  staff   2.3K  <span class=m>6</span>  <span class=m>8</span> 21:23 known_hosts.old
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1># 把公钥拷贝到服务器,这次是要输入密码</span>

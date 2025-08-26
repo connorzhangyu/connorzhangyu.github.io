@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>教程 on Hello World</title><link>https://isme.cz/tags/%E6%95%99%E7%A8%8B/</link><description>Recent content in 教程 on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Fri, 15 Aug 2025 14:51:48 +0700</lastBuildDate><atom:link href="https://isme.cz/tags/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml"/><item><title>Go基础</title><link>https://isme.cz/go/go%E5%9F%BA%E7%A1%80/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/go/go%E5%9F%BA%E7%A1%80/</guid><description>GO基础学习笔记-东尼</description></item><item><title>Vue后台系统</title><link>https://isme.cz/vue%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F/</link><pubDate>Mon, 26 Feb 2024 13:47:19 +0000</pubDate><guid>https://isme.cz/vue%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F/</guid><description>&lt;p>项目由 Vue3 + Pina + JavaScript + Ant Design Vue&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>教程 on Hello World</title><link>https://isme.cz/tags/%E6%95%99%E7%A8%8B/</link><description>Recent content in 教程 on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Tue, 26 Aug 2025 13:29:35 +0700</lastBuildDate><atom:link href="https://isme.cz/tags/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml"/><item><title>Go基础</title><link>https://isme.cz/go/go%E5%9F%BA%E7%A1%80/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/go/go%E5%9F%BA%E7%A1%80/</guid><description>GO基础学习笔记-东尼</description></item><item><title>Vue后台系统</title><link>https://isme.cz/vue%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F/</link><pubDate>Mon, 26 Feb 2024 13:47:19 +0000</pubDate><guid>https://isme.cz/vue%E5%90%8E%E5%8F%B0%E7%B3%BB%E7%BB%9F/</guid><description>&lt;p>项目由 Vue3 + Pina + JavaScript + Ant Design Vue&lt;/p>
 &lt;h1 id="创建项目">创建项目&lt;/h1>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -655,9 +655,9 @@
 &lt;li>&lt;a href="https://alt-tab-macos.netlify.app/">AltTab&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h1 id="iphone强制重启">iphone强制重启&lt;/h1>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051349933.webp" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051349933.webp" alt="TODO">&lt;/p>
 &lt;h1 id="浏览器返回手势">浏览器返回手势&lt;/h1>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051350113.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051350113.png" alt="TODO">&lt;/p>
 &lt;h1 id="放歌有噪音">放歌有噪音&lt;/h1>
 &lt;p>通过【活动监视器】程序终止【coreaudiod】进程：&lt;/p>
 &lt;ol>
@@ -708,7 +708,7 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;h1 id="mac-os-x-访问-windows共享文件夹">Mac OS X 访问 Windows共享文件夹&lt;/h1>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051351999.png" alt="">&lt;/p></description></item><item><title>Python</title><link>https://isme.cz/python/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/python/</guid><description>&lt;h1 id="安装">安装&lt;/h1>
+&lt;p>&lt;img src="https://image.runtimes.cc/202404051351999.png" alt="TODO">&lt;/p></description></item><item><title>Python</title><link>https://isme.cz/python/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/python/</guid><description>&lt;h1 id="安装">安装&lt;/h1>
 &lt;h1 id="虚拟环境">虚拟环境&lt;/h1>
 &lt;pre tabindex="0">&lt;code># 判断有没有虚拟环境
 virtualenv -V
