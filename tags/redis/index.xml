@@ -1,43 +1,2254 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Redis on Hello World</title><link>https://isme.cz/tags/redis/</link><description>Recent content in Redis on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Wed, 27 Aug 2025 11:37:29 +0000</lastBuildDate><atom:link href="https://isme.cz/tags/redis/index.xml" rel="self" type="application/rss+xml"/><item><title>核心技能自查清单</title><link>https://isme.cz/featured/developer-check-list/</link><pubDate>Wed, 27 Aug 2025 11:37:29 +0000</pubDate><guid>https://isme.cz/featured/developer-check-list/</guid><description>覆盖 Java 与 Go 从基础到架构的完整路线：计算机基础、并发、集合/标准库、框架、数据库与缓存、分布式、工程实践、源码阅读与架构，全部细化为可勾选的任务清单。</description></item><item><title>Redis</title><link>https://isme.cz/redis/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/redis/</guid><description>&lt;h1 id="安装redis">安装Redis&lt;/h1>
-&lt;h2 id="安装单机redis">安装单机Redis&lt;/h2>
-&lt;p>{% tabs 安装单机Redis %}&lt;/p>
-&lt;!-- tab Windows安装Redis-->
-&lt;p>&lt;a href="https://github.com/tporadowski/redis/releases">Releases · tporadowski/redis&lt;/a>&lt;/p>
-&lt;!-- endtab -->
-&lt;!-- tab Docker安装Redis -->
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;span class="lnt">6
-&lt;/span>&lt;span class="lnt">7
-&lt;/span>&lt;span class="lnt">8
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">docker run &lt;span class="se">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> -p 6379:6379 &lt;span class="se">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> --name myredis &lt;span class="se">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> -v &lt;span class="nv">$PWD&lt;/span>/redis.conf:/etc/redis/redis.conf &lt;span class="se">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> -v &lt;span class="nv">$PWD&lt;/span>/data:/data &lt;span class="se">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> -d redis:3.2 redis-server /etc/redis/redis.conf &lt;span class="se">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> --restart&lt;span class="o">=&lt;/span>always &lt;span class="se">\
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="se">&lt;/span> --appendonly yes
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>命令说明：&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>-name myredis&lt;/code> : 指定容器名称，这个最好加上，不然在看docker进程的时候会很尴尬。&lt;/li>
-&lt;li>&lt;code>p 6699:6379&lt;/code> ： 端口映射，默认redis启动的是6379,外部端口(6699)。&lt;/li>
-&lt;li>&lt;code>v $PWD/redis.conf:/etc/redis/redis.conf&lt;/code> ： 将主机中当前目录下的redis.conf配置文件映射。&lt;/li>
-&lt;li>&lt;code>v $PWD/data:/data -d redis:latest&lt;/code>： 将主机中当前目录下的data挂载到容器的/data&lt;/li>
-&lt;li>&lt;code>-redis-server --appendonly yes&lt;/code> :在容器执行redis-server启动命令，并打开redis持久化配置&lt;/li>
-&lt;li>&lt;code>-restart=always&lt;/code>:自动启动&lt;/li>
-&lt;li>注意事项：&lt;/li>
-&lt;li>如果不需要指定配置，&lt;code>v $PWD/redis.conf:/etc/redis/redis.conf&lt;/code> 可以不用&lt;/li>
-&lt;li>redis-server 后面的那段 &lt;code>/etc/redis/redis.conf&lt;/code> 也可以不用。&lt;/li>
-&lt;li>&lt;code>$PWD&lt;/code> 在window系统下貌似不能用,可以用相对路径&lt;code>/&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>客户端连接&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Redis on Hello World</title><link>https://isme.cz/tags/redis/</link><description>Recent content in Redis on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 27 Aug 2025 11:37:29 +0000</lastBuildDate><atom:link href="https://isme.cz/tags/redis/index.xml" rel="self" type="application/rss+xml"/><item><title>核心技能自查清单</title><link>https://isme.cz/featured/developer-check-list/</link><pubDate>Wed, 27 Aug 2025 11:37:29 +0000</pubDate><guid>https://isme.cz/featured/developer-check-list/</guid><description>覆盖 Java 与 Go 从基础到架构的完整路线：计算机基础、并发、集合/标准库、框架、数据库与缓存、分布式、工程实践、源码阅读与架构，全部细化为可勾选的任务清单。</description><content>&lt;h1 id="核心技能检查清单"&gt;核心技能检查清单&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;hi@isme developer-check-list $ cat ./doc/preface.txt&lt;br&gt;
+这是一个个人自查汇总 目的是明确自己的学习方向 也就是关于页所说的 B number&lt;br&gt;
+罗列出自己未达到精通水准的条目 方便清楚的知道自己还差在哪里 按计划逐步攻克
+勾选标准如下&lt;br&gt;
+&lt;strong&gt;准精通&lt;/strong&gt; 熟练使用 深入理解&lt;br&gt;
+&lt;strong&gt;精通&lt;/strong&gt; 按需重构 -&amp;gt; 官方贡献&lt;br&gt;
+❌弃用&lt;br&gt;
+🔲待定&lt;br&gt;
+🟡熟悉&lt;br&gt;
+✅完成 至少需达到 &lt;strong&gt;准精通&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="第-0-层准备与方法"&gt;第 0 层：准备与方法&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;✅ 选定主力语言顺序：先 &lt;strong&gt;Java→Go&lt;/strong&gt; / 或先 &lt;strong&gt;Go→Java&lt;/strong&gt;（任选一种更熟悉的做主线）&lt;/li&gt;
+&lt;li&gt;❌ 建立仓库 &lt;code&gt;learning-notes&lt;/code&gt;：每个主题一个 &lt;code&gt;README.md&lt;/code&gt;，记录要点/坑/例题&lt;/li&gt;
+&lt;li&gt;✅ 会用以下工具：IDEA / GoLand、VS Code、Postman/curl、Docker、Git &amp;amp; GitHub&lt;/li&gt;
+&lt;li&gt;❌ 习惯：所有示例都&lt;strong&gt;写最小可运行代码&lt;/strong&gt; + &lt;strong&gt;单元测试&lt;/strong&gt; + &lt;strong&gt;注释为什么&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="第-1-层计算机基础语言无关"&gt;第 1 层：计算机基础（语言无关）&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;🟡 操作系统：进程/线程/调度、虚拟内存、页缓存、文件系统、系统调用&lt;/li&gt;
+&lt;li&gt;🔲 计算机网络：TCP 三次握手/四次挥手、拥塞控制、HTTP/1.1-2-3、TLS、DNS&lt;/li&gt;
+&lt;li&gt;🟡 数据结构：数组、链表、栈队列、堆、树（AVL/红黑）、Trie、哈希表、图&lt;/li&gt;
+&lt;li&gt;🔲 算法：排序、二分、前缀和/差分、并查集、DFS/BFS、动态规划&lt;/li&gt;
+&lt;li&gt;✅ 数据库理论：事务 ACID、隔离级别、索引 B+Tree、执行计划、锁&lt;/li&gt;
+&lt;li&gt;🟡 分布式基础：CAP、BASE、幂等、重试、限流、熔断、降级、雪崩&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="第-2-层java-基础"&gt;第 2 层：Java 基础&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;✅ 语法与面向对象：类/接口/抽象类、继承/组合、泛型、异常、注解&lt;/li&gt;
+&lt;li&gt;✅ 集合：&lt;code&gt;ArrayList&lt;/code&gt; / &lt;code&gt;LinkedList&lt;/code&gt; / &lt;code&gt;HashMap&lt;/code&gt; / &lt;code&gt;TreeMap&lt;/code&gt; / &lt;code&gt;ConcurrentHashMap&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;🟡 IO/NIO：缓冲/通道/选择器、零拷贝、常用 &lt;code&gt;Files&lt;/code&gt;/&lt;code&gt;Paths&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;🔲 JVM：内存结构（堆/栈/元空间）、类加载、字节码基础、JIT、逃逸分析&lt;/li&gt;
+&lt;li&gt;🔲 GC 算法与实现：Serial/Parallel/CMS/G1/ZGC；Minor/Full GC、调优思路&lt;/li&gt;
+&lt;li&gt;🟡 并发关键字：&lt;code&gt;synchronized&lt;/code&gt;、&lt;code&gt;volatile&lt;/code&gt;、&lt;code&gt;final&lt;/code&gt; 的可见性与重排序语义&lt;/li&gt;
+&lt;li&gt;🔲 JUC：AQS、&lt;code&gt;ReentrantLock&lt;/code&gt;/&lt;code&gt;StampedLock&lt;/code&gt;、&lt;code&gt;CountDownLatch&lt;/code&gt;、&lt;code&gt;Semaphore&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;🔲 线程池：&lt;code&gt;ThreadPoolExecutor&lt;/code&gt; 参数、拒绝策略、监控告警&lt;/li&gt;
+&lt;li&gt;🔲 异步编程：&lt;code&gt;CompletableFuture&lt;/code&gt;、（可选）虚拟线程（Java 21）&lt;/li&gt;
+&lt;li&gt;✅ 常用构建：Maven/Gradle、依赖管理、多模块结构&lt;/li&gt;
+&lt;li&gt;🔲 单元测试：JUnit 5、Mockito、Testcontainers（集成测试）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="第-3-层go-基础"&gt;第 3 层：Go 基础&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;🟡 语法：切片/数组/map、结构体方法、指针/值接收者差异&lt;/li&gt;
+&lt;li&gt;🔲 接口：隐式实现、&lt;code&gt;io.Reader&lt;/code&gt;/&lt;code&gt;Writer&lt;/code&gt;、&lt;code&gt;fmt.Stringer&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;🟡 并发入门：goroutine、channel（无缓冲/有缓冲）、select&lt;/li&gt;
+&lt;li&gt;🔲 上下文：&lt;code&gt;context.Context&lt;/code&gt; 超时/取消/传递元数据&lt;/li&gt;
+&lt;li&gt;🟡 错误处理：&lt;code&gt;error&lt;/code&gt;、&lt;code&gt;errors.Is/As&lt;/code&gt;、&lt;code&gt;panic/recover&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;🟡 工程：&lt;code&gt;go mod&lt;/code&gt;、包布局（cmd/internal/pkg）、&lt;code&gt;go test -bench&lt;/code&gt;、&lt;code&gt;go vet&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;🔲 常用库：&lt;code&gt;net/http&lt;/code&gt;、&lt;code&gt;encoding/json&lt;/code&gt;、&lt;code&gt;time&lt;/code&gt;、&lt;code&gt;sync&lt;/code&gt;、&lt;code&gt;atomic&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="第-4-层并发与多线程"&gt;第 4 层：并发与多线程&lt;/h2&gt;
+&lt;h3 id="java"&gt;Java&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;🔲 内存模型（JMM）与 &lt;strong&gt;happens-before&lt;/strong&gt; 规则&lt;/li&gt;
+&lt;li&gt;🟡 锁的选择：对象锁 vs &lt;code&gt;ReentrantLock&lt;/code&gt; vs &lt;code&gt;StampedLock&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;🔲 原子类：&lt;code&gt;Atomic*&lt;/code&gt;、&lt;code&gt;LongAdder&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;🟡 无锁/低锁：CAS、自旋、伪共享与缓存行&lt;/li&gt;
+&lt;li&gt;🔲 任务编排：线程池 + &lt;code&gt;CompletableFuture&lt;/code&gt; 组合&lt;/li&gt;
+&lt;li&gt;🟡 分布式锁：Redis（SET NX EX、Redisson）、ZK（临时顺序节点）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="go"&gt;Go&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;🔲 调度模型：G-P-M（M:N）&lt;/li&gt;
+&lt;li&gt;🔲 Channel 模式：fan-in、fan-out、worker pool、pipeline、背压&lt;/li&gt;
+&lt;li&gt;🔲 &lt;code&gt;sync&lt;/code&gt;：&lt;code&gt;Mutex&lt;/code&gt;、&lt;code&gt;RWMutex&lt;/code&gt;、&lt;code&gt;WaitGroup&lt;/code&gt;、&lt;code&gt;Cond&lt;/code&gt;、&lt;code&gt;Once&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;🔲 性能：避免切片扩容（&lt;code&gt;make(len, cap)&lt;/code&gt;）、对象复用（&lt;code&gt;sync.Pool&lt;/code&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="第-5-层数据库与缓存"&gt;第 5 层：数据库与缓存&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;🟡 MySQL：索引设计、Explain、覆盖索引、回表、慢查询优化、分库分表思路&lt;/li&gt;
+&lt;li&gt;🔲 事务与锁：MVCC、快照读/当前读、间隙锁、死锁检测&lt;/li&gt;
+&lt;li&gt;🟡 Redis：字符串/哈希/列表/集合/有序集合、Bitmap/HyperLogLog/Geo&lt;/li&gt;
+&lt;li&gt;🔲 Redis 高可用：RDB/AOF、复制、哨兵、Cluster&lt;/li&gt;
+&lt;li&gt;🔲 缓存模式：Cache Aside / Write Through / Write Back、失效策略&lt;/li&gt;
+&lt;li&gt;🟡 缓存问题：穿透（布隆过滤器）、击穿（热点互斥）、雪崩（过期错峰）&lt;/li&gt;
+&lt;li&gt;🔲 分布式锁：正确性（唯一性、原子性、自动过期、可重入/续约）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="第-6-层框架与标准库"&gt;第 6 层：框架与标准库&lt;/h2&gt;
+&lt;h3 id="java企业后台为主"&gt;Java（企业后台为主）&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;🟡 Spring 核心：IoC、AOP、事件、生命周期、条件装配&lt;/li&gt;
+&lt;li&gt;🟡 Spring Boot：自动装配、配置映射、Starter 机制&lt;/li&gt;
+&lt;li&gt;🟡 Web：Spring MVC、校验、全局异常、拦截器/过滤器&lt;/li&gt;
+&lt;li&gt;🟡 数据访问：MyBatis / MyBatis-Plus、事务、分页、批处理&lt;/li&gt;
+&lt;li&gt;🟡 Spring Cloud（选型即可）：Nacos/Eureka、OpenFeign、Gateway、Config、Sleuth/Zipkin、Resilience4j&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="go云原生高并发"&gt;Go（云原生/高并发）&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;🔲 Web 框架：Gin/Echo（路由、中间件、绑定与校验）&lt;/li&gt;
+&lt;li&gt;🔲 ORM：GORM（迁移、事务、预加载、乐观锁）&lt;/li&gt;
+&lt;li&gt;🔲 依赖注入：Google Wire（编译期 DI）&lt;/li&gt;
+&lt;li&gt;🔲 配置：Viper；日志：zap/logrus；HTTP 客户端：resty&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="第-7-层设计模式与编程思想"&gt;第 7 层：设计模式与编程思想&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;🔲 OOP：封装/继承/多态（Java），组合优于继承（Go）&lt;/li&gt;
+&lt;li&gt;🟡 必会模式：单例、工厂、策略、装饰器、代理、模板方法、观察者&lt;/li&gt;
+&lt;li&gt;✅ 反射与动态代理：JDK/CGLIB、AOP 原理（切点/通知/代理链）&lt;/li&gt;
+&lt;li&gt;🔲 重构：坏味道、提炼函数、引入参数对象、用组合取代继承&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="第-8-层工程与架构实践"&gt;第 8 层：工程与架构实践&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;✅ Git Flow：feature / release / hotfix&lt;/li&gt;
+&lt;li&gt;✅ API 设计：REST/JSON、错误码、幂等、版本化&lt;/li&gt;
+&lt;li&gt;🔲 安全：鉴权（JWT/OAuth2）、CSRF、XSS、SQL 注入、RCE 防护&lt;/li&gt;
+&lt;li&gt;🔲 日志/指标/追踪：ELK、Prometheus + Grafana、OpenTelemetry&lt;/li&gt;
+&lt;li&gt;🟡 容器化：Dockerfile 最佳实践、多阶段构建、最小镜像&lt;/li&gt;
+&lt;li&gt;🔲 编排：Docker Compose → Kubernetes（Pod/Deployment/Service/Ingress）&lt;/li&gt;
+&lt;li&gt;🔲 配置：ConfigMap/Secret、灰度：HPA/金丝雀/蓝绿&lt;/li&gt;
+&lt;li&gt;✅ CI/CD：GitHub Actions/Jenkins（构建、测试、镜像、部署）&lt;/li&gt;
+&lt;li&gt;🔲 云映射：RDS、Elasticache、EKS、S3、CloudFront（或自选云）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="第-9-层源码阅读与开源贡献"&gt;第 9 层：源码阅读与开源贡献&lt;/h2&gt;
+&lt;h3 id="java-1"&gt;Java&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;🔲 JDK：&lt;code&gt;ArrayList&lt;/code&gt;、&lt;code&gt;HashMap&lt;/code&gt;、&lt;code&gt;ConcurrentHashMap&lt;/code&gt;、&lt;code&gt;CompletableFuture&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;🔲 Spring：IoC/AOP/事务传播、MVC 调度链&lt;/li&gt;
+&lt;li&gt;🔲 MyBatis：Mapper 动态代理、一级/二级缓存&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="go-1"&gt;Go&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;🔲 Go runtime：调度、GC 写屏障&lt;/li&gt;
+&lt;li&gt;🔲 Gin：路由树、Context 设计&lt;/li&gt;
+&lt;li&gt;🔲 GORM：链式 API、钩子、事务&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="推荐资料中文优先"&gt;推荐资料（中文优先）&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Java：《Effective Java》《Java 并发编程实战》《深入理解 JVM》&lt;/li&gt;
+&lt;li&gt;Go：《Go 语言圣经》《Go 语言设计与实现》&lt;/li&gt;
+&lt;li&gt;数据库：《高性能 MySQL》《Redis 设计与实现》（或《Redis 实战》）&lt;/li&gt;
+&lt;li&gt;架构：《架构整洁之道》《领域驱动设计精要》&lt;/li&gt;
+&lt;li&gt;云原生：《Kubernetes in Action》《gRPC 官方文档（中文）》&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="附录java-8--21-必学特性表"&gt;附录：Java 8 → 21 必学特性表&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;🟡 Java 8：Lambda / Stream / Optional / 新日期时间 / 默认接口方法&lt;/li&gt;
+&lt;li&gt;🟡 Java 9-11：模块化、&lt;code&gt;var&lt;/code&gt;、HTTP Client、Flight Recorder&lt;/li&gt;
+&lt;li&gt;🔲 Java 12-17：Switch 新语法、文本块、Records、Sealed Classes&lt;/li&gt;
+&lt;li&gt;🔲 Java 19-21：虚拟线程（Project Loom）、结构化并发、Scoped Values（了解）&lt;/li&gt;
+&lt;/ul&gt;</content></item><item><title>Redis</title><link>https://isme.cz/redis/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/redis/</guid><description>Redis 学习笔记：数据结构、持久化、集群架构、缓存设计与常见应用场景。</description><content>&lt;h1 id="安装redis"&gt;安装Redis&lt;/h1&gt;
+&lt;h2 id="安装单机redis"&gt;安装单机Redis&lt;/h2&gt;
+&lt;p&gt;{% tabs 安装单机Redis %}&lt;/p&gt;
+&lt;!-- tab Windows安装Redis--&gt;
+&lt;p&gt;&lt;a href="https://github.com/tporadowski/redis/releases"&gt;Releases · tporadowski/redis&lt;/a&gt;&lt;/p&gt;
+&lt;!-- endtab --&gt;
+&lt;!-- tab Docker安装Redis --&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;span class="lnt"&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker run &lt;span class="se"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; -p 6379:6379 &lt;span class="se"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; --name myredis &lt;span class="se"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; -v &lt;span class="nv"&gt;$PWD&lt;/span&gt;/redis.conf:/etc/redis/redis.conf &lt;span class="se"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; -v &lt;span class="nv"&gt;$PWD&lt;/span&gt;/data:/data &lt;span class="se"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; -d redis:3.2 redis-server /etc/redis/redis.conf &lt;span class="se"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; --restart&lt;span class="o"&gt;=&lt;/span&gt;always &lt;span class="se"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; --appendonly yes
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;命令说明：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-name myredis&lt;/code&gt; : 指定容器名称，这个最好加上，不然在看docker进程的时候会很尴尬。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;p 6699:6379&lt;/code&gt; ： 端口映射，默认redis启动的是6379,外部端口(6699)。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;v $PWD/redis.conf:/etc/redis/redis.conf&lt;/code&gt; ： 将主机中当前目录下的redis.conf配置文件映射。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;v $PWD/data:/data -d redis:latest&lt;/code&gt;： 将主机中当前目录下的data挂载到容器的/data&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-redis-server --appendonly yes&lt;/code&gt; :在容器执行redis-server启动命令，并打开redis持久化配置&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-restart=always&lt;/code&gt;:自动启动&lt;/li&gt;
+&lt;li&gt;注意事项：&lt;/li&gt;
+&lt;li&gt;如果不需要指定配置，&lt;code&gt;v $PWD/redis.conf:/etc/redis/redis.conf&lt;/code&gt; 可以不用&lt;/li&gt;
+&lt;li&gt;redis-server 后面的那段 &lt;code&gt;/etc/redis/redis.conf&lt;/code&gt; 也可以不用。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$PWD&lt;/code&gt; 在window系统下貌似不能用,可以用相对路径&lt;code&gt;/&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;客户端连接&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 先查询到myredis容器的ip地址。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker inspect myredis &lt;span class="p"&gt;|&lt;/span&gt; grep IP
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 连接到redis容器。然后就进入redis命令行了。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker run -it redis:latest redis-cli -h 192.168.42.32
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;!-- endtab --&gt;
+&lt;!-- tab Linux源码安装Redis--&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Cetnos安装需要的软件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;yum -y install gcc gcc-c++ kernel-devel make
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Ubunt 安装需要的软件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install gcc g++ make linux-kernel-headers kernel-package
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# ubuntu 新内核版本要用到的&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install gcc g++ make linux-libc-dev
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 下载redis&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;wget http://download.redis.io/releases/redis-5.0.5.tar.gz
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;tar -zxvf redis-5.0.5.tar.gz
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; redis-5.0.5
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 安装redis&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo make &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; make instal
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 注意make的时候可能会报错: #include &amp;lt;jemalloc/jemalloc.h&amp;gt;,使用下面的命令&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;make &lt;span class="nv"&gt;MALLOC&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;libc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;修改redis.cnf&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 设置后台运行&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;daemonize yes
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 设置log文件路径&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;logfile /var/log/redis/redis-server.log
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 设置持久化文件存放路径&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;dir /var/lib/redis
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 创建日志存放目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;mkdir /var/log/redis/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 创建持久化文件存放目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;mkdir /var/log/redis/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 创建存放配置的文件夹&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;mkdir /etc/redis
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 拷贝配置文件并改名&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cp redis.conf /etc/redis/6379.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 拷贝自启动脚本文件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cp /usr/local/redis-6.0.3/utils/redis_init_script /etc/init.d/redisd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;将启动脚本复制到&lt;code&gt;/etc/init.d&lt;/code&gt;目录下，本例将启动脚本命名为redisd（通常都以d结尾表示是后台自启动服务）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Centos&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#设置为开机自启动服务器&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /etc/init.d/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;chkconfig redisd on
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Ubuntu&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#设置服务脚本有执行权限&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo chmod +x /etc/init.d/redisd
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#注册服务&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /etc/init.d/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo update-rc.d redisd defaults
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;此处直接配置开启自启动 &lt;code&gt;chkconfig redisd on&lt;/code&gt; 将报错误： &lt;code&gt;service does not support chkconfig&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#!/bin/sh
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# chkconfig: 2345 90 10&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# description: Redis is a persistent key-value database&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;通用命令&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#启动Redis服务&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo service redisd start
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#关闭服务&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo service redisd stop
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#重启服务：&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo service redisd restart
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;!-- endtab --&gt;
+&lt;p&gt;{% endtabs %}&lt;/p&gt;
+&lt;h2 id="安装集群redis"&gt;安装集群Redis&lt;/h2&gt;
+&lt;p&gt;{% tabs 安装集群Redis %}&lt;/p&gt;
+&lt;!-- tab Docker安装集群--&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;span class="lnt"&gt;21
+&lt;/span&gt;&lt;span class="lnt"&gt;22
+&lt;/span&gt;&lt;span class="lnt"&gt;23
+&lt;/span&gt;&lt;span class="lnt"&gt;24
+&lt;/span&gt;&lt;span class="lnt"&gt;25
+&lt;/span&gt;&lt;span class="lnt"&gt;26
+&lt;/span&gt;&lt;span class="lnt"&gt;27
+&lt;/span&gt;&lt;span class="lnt"&gt;28
+&lt;/span&gt;&lt;span class="lnt"&gt;29
+&lt;/span&gt;&lt;span class="lnt"&gt;30
+&lt;/span&gt;&lt;span class="lnt"&gt;31
+&lt;/span&gt;&lt;span class="lnt"&gt;32
+&lt;/span&gt;&lt;span class="lnt"&gt;33
+&lt;/span&gt;&lt;span class="lnt"&gt;34
+&lt;/span&gt;&lt;span class="lnt"&gt;35
+&lt;/span&gt;&lt;span class="lnt"&gt;36
+&lt;/span&gt;&lt;span class="lnt"&gt;37
+&lt;/span&gt;&lt;span class="lnt"&gt;38
+&lt;/span&gt;&lt;span class="lnt"&gt;39
+&lt;/span&gt;&lt;span class="lnt"&gt;40
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;start install redis-cluster...&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; ! -d /opt/docker-redis/7001/ &lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="k"&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; mkdir -p /opt/docker-redis/700&lt;span class="o"&gt;{&lt;/span&gt;1,2,3,4,5,6&lt;span class="o"&gt;}&lt;/span&gt;/data/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /opt/docker-redis/7001/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;wget http://download.redis.io/redis-stable/redis.conf -O /opt/docker-redis/7001/redis7001.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sed -i &lt;span class="s1"&gt;&amp;#39;/^#/d;/^$/d&amp;#39;&lt;/span&gt; redis7001.conf &lt;span class="c1"&gt;#取出空行和注释行&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sed -i &lt;span class="s1"&gt;&amp;#39;s/bind/#bind/g;s/appendonly no/appendonly yes/g;s/protected-mode yes/protected-mode no/g&amp;#39;&lt;/span&gt; redis7001.conf &lt;span class="c1"&gt;#开启持久化，注释监听ip&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;#集群配置&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; /opt/docker-redis/7001/redis7001.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;cluster-enabled yes&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt;/opt/docker-redis/7001/redis7001.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;cluster-config-file nodes-7001.conf&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt;/opt/docker-redis/7001/redis7001.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;cluster-node-timeout 15000&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt;/opt/docker-redis/7001/redis7001.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;cluster-announce-ip 192.168.92.135&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt;/opt/docker-redis/7001/redis7001.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;cluster-announce-port 7001&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt;/opt/docker-redis/7001/redis7001.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;cluster-announce-bus-port 17001&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt;/opt/docker-redis/7001/redis7001.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;for&lt;/span&gt; port in &lt;span class="sb"&gt;`&lt;/span&gt;seq &lt;span class="m"&gt;7002&lt;/span&gt; 7006&lt;span class="sb"&gt;`&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="k"&gt;do&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; cp redis7001.conf ../&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;port&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/redis&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;port&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;cluster-config-file nodes-&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;port&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;.conf&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt;/opt/docker-redis/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;port&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/redis&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;port&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;cluster-announce-port &lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;port&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt;/opt/docker-redis/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;port&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/redis&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;port&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;cluster-announce-bus-port 1&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;port&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt;/opt/docker-redis/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;port&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/redis&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;port&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;done&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;for&lt;/span&gt; port in &lt;span class="sb"&gt;`&lt;/span&gt;seq &lt;span class="m"&gt;7001&lt;/span&gt; 7006&lt;span class="sb"&gt;`&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="k"&gt;do&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# sed -i &amp;#34;s/logfile \&amp;#34;\&amp;#34;/logfile \&amp;#34;\/usr\/local\/docker\/redis-cluster\/log\/redis.log\&amp;#34;/g&amp;#34; redis${port}.conf&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; sed -i &lt;span class="s2"&gt;&amp;#34;s/port 6379/port &lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;port&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;/g&amp;#34;&lt;/span&gt; /opt/docker-redis/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;port&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/redis&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;port&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; docker run --restart always --name redis-cluster-&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;port&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt; --net host --privileged&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;true&lt;/span&gt; -v /opt/docker-redis/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;port&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/redis&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;port&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.conf:/usr/local/docker/redis-cluster/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;port&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/redis&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;port&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.conf -v &lt;span class="se"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; /opt/docker-redis/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;port&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/data/:/usr/local/docker/redis-cluster/data/ &lt;span class="se"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; -d redis redis-server /usr/local/docker/redis-cluster/&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;port&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/redis&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;port&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;done&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker ps
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sleep 2s
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ss -tnulp&lt;span class="p"&gt;|&lt;/span&gt;grep redis
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#创建集群&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#redis-cli --cluster create 192.168.92.135:7001 192.168.92.135:7002 192.168.92.135:7003 192.168.92.135:7004 192.168.92.135:7005 192.168.92.135:7006 --cluster-replicas 1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;!-- endtab --&gt;
+&lt;!-- tab 源码安装集群--&gt;
+&lt;p&gt;&lt;strong&gt;下载,解压,编译安装&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;用一台虚拟机模拟6个节点，创建出3 master、3 salve 环境。&lt;/li&gt;
+&lt;li&gt;创建文件前,先编译好Redis程序&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;创建节点&lt;/strong&gt;
+创建配置redis.conf&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 端口7000 7001 7002 7003 7004 7005&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;port &lt;span class="m"&gt;7000&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 自己建议修改为0.0.0.0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;bind&lt;/span&gt; 0.0.0.0
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# redis后台运行&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;daemonize yes
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# pidfile文件对应7000 7001 7002 7003 7004 7005&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;pidfile /var/run/redis_7000.pid
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 开启集群 把注释#去掉&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cluster-enabled yes
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 集群的配置,配置文件首次启动自动生成7000 7001 7002 7003 7004 7005&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cluster-config-file nodes_7000.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 请求超时 默认15秒，可自行设置&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cluster-node-timeout &lt;span class="m"&gt;15000&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# AOF日志开启&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;appendonly yes
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;创建文件夹&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /usr/local
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;mkdir redis_cluster
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; redis_cluster
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;mkdir &lt;span class="m"&gt;7000&lt;/span&gt; &lt;span class="m"&gt;7001&lt;/span&gt; &lt;span class="m"&gt;7002&lt;/span&gt; &lt;span class="m"&gt;7003&lt;/span&gt; &lt;span class="m"&gt;7004&lt;/span&gt; &lt;span class="m"&gt;7005&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cp /usr/local/redis-5.0.5/redis.conf /usr/local/redis_cluster/7000/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cp /usr/local/redis-5.0.5/redis.conf /usr/local/redis_cluster/7001/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cp /usr/local/redis-5.0.5/redis.conf /usr/local/redis_cluster/7002/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cp /usr/local/redis-5.0.5/redis.conf /usr/local/redis_cluster/7003/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cp /usr/local/redis-5.0.5/redis.conf /usr/local/redis_cluster/7004/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cp /usr/local/redis-5.0.5/redis.conf /usr/local/redis_cluster/7005/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;分别修改三个文件夹里的配置文件,修改如下内容&lt;/p&gt;
+&lt;p&gt;启动节点的redis&lt;code&gt;/usr/local/bin/redis-server&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;/usr/local/bin/redis-server /usr/local/redis_cluster/7000/redis.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;/usr/local/bin/redis-server /usr/local/redis_cluster/7001/redis.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;/usr/local/bin/redis-server /usr/local/redis_cluster/7002/redis.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;/usr/local/bin/redis-server /usr/local/redis_cluster/7003/redis.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;/usr/local/bin/redis-server /usr/local/redis_cluster/7004/redis.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;/usr/local/bin/redis-server /usr/local/redis_cluster/7005/redis.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;检查 redis 启动情况&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ps -ef &lt;span class="p"&gt;|&lt;/span&gt; grep redi
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;root &lt;span class="m"&gt;61020&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt; 02:14 ? 00:00:01 redis-server 0.0.0.0:7000 &lt;span class="o"&gt;[&lt;/span&gt;cluster&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;root &lt;span class="m"&gt;61024&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt; 02:14 ? 00:00:01 redis-server 0.0.0.0:7001 &lt;span class="o"&gt;[&lt;/span&gt;cluster&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;root &lt;span class="m"&gt;61029&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt; 02:14 ? 00:00:01 redis-server 0.0.0.0:7002 &lt;span class="o"&gt;[&lt;/span&gt;cluster&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;root &lt;span class="m"&gt;61029&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt; 02:14 ? 00:00:01 redis-server 0.0.0.0:7002 &lt;span class="o"&gt;[&lt;/span&gt;cluster&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;root &lt;span class="m"&gt;61029&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt; 02:14 ? 00:00:01 redis-server 0.0.0.0:7002 &lt;span class="o"&gt;[&lt;/span&gt;cluster&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;root &lt;span class="m"&gt;61029&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt; 02:14 ? 00:00:01 redis-server 0.0.0.0:7002 &lt;span class="o"&gt;[&lt;/span&gt;cluster&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;启动集群&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;装的redis是5.x的版本,这里没有应用到&lt;code&gt;redis-trib.rb&lt;/code&gt;,所以就不需要装ruby&lt;/li&gt;
+&lt;li&gt;这里启动的时候可能会有报错,因为默认开启了&lt;code&gt;protected-mode&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /usr/local/bin
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;redis-cli --cluster create 192.168.0.100:7003 192.168.0.100:7004 192.168.0.100:7005 192.168.0.179:7000 192.168.0.179:7001 192.168.0.179:7002 --cluster-replicas &lt;span class="m"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Can I &lt;span class="nb"&gt;set&lt;/span&gt; the above configuration? &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;type&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;yes&amp;#39;&lt;/span&gt; to accept&lt;span class="o"&gt;)&lt;/span&gt;: yes
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;yes
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;校验,等运行完成&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;span class="lnt"&gt;21
+&lt;/span&gt;&lt;span class="lnt"&gt;22
+&lt;/span&gt;&lt;span class="lnt"&gt;23
+&lt;/span&gt;&lt;span class="lnt"&gt;24
+&lt;/span&gt;&lt;span class="lnt"&gt;25
+&lt;/span&gt;&lt;span class="lnt"&gt;26
+&lt;/span&gt;&lt;span class="lnt"&gt;27
+&lt;/span&gt;&lt;span class="lnt"&gt;28
+&lt;/span&gt;&lt;span class="lnt"&gt;29
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;[&lt;/span&gt;root@worker1 src&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="c1"&gt;# redis-cli --cluster check 192.168.0.179:7000&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.0.179:7000 &lt;span class="o"&gt;(&lt;/span&gt;27bce53b...&lt;span class="o"&gt;)&lt;/span&gt; -&amp;gt; &lt;span class="m"&gt;0&lt;/span&gt; keys &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="m"&gt;5462&lt;/span&gt; slots &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt; slaves.
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.0.100:7004 &lt;span class="o"&gt;(&lt;/span&gt;6b0173d9...&lt;span class="o"&gt;)&lt;/span&gt; -&amp;gt; &lt;span class="m"&gt;0&lt;/span&gt; keys &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="m"&gt;5461&lt;/span&gt; slots &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt; slaves.
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.0.100:7003 &lt;span class="o"&gt;(&lt;/span&gt;9f15a932...&lt;span class="o"&gt;)&lt;/span&gt; -&amp;gt; &lt;span class="m"&gt;0&lt;/span&gt; keys &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="m"&gt;5461&lt;/span&gt; slots &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt; slaves.
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;[&lt;/span&gt;OK&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt; keys in &lt;span class="m"&gt;3&lt;/span&gt; masters.
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;0.00 keys per slot on average.
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;gt;&amp;gt;&amp;gt; Performing Cluster Check &lt;span class="o"&gt;(&lt;/span&gt;using node 192.168.0.179:7000&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;M: 27bce53bda92341ca4a5c82c2361ab99f24c0b27 192.168.0.179:7000
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; slots:&lt;span class="o"&gt;[&lt;/span&gt;5461-10922&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;5462&lt;/span&gt; slots&lt;span class="o"&gt;)&lt;/span&gt; master
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="m"&gt;1&lt;/span&gt; additional replica&lt;span class="o"&gt;(&lt;/span&gt;s&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;S: c7ebcd900fb7d9afb1980797acba45518cb7d877 192.168.0.100:7005
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; slots: &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; slots&lt;span class="o"&gt;)&lt;/span&gt; slave
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; replicates 27bce53bda92341ca4a5c82c2361ab99f24c0b27
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;S: ed5256f8db1bf556a8dadbe8f2b07699507e17d9 192.168.0.179:7001
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; slots: &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; slots&lt;span class="o"&gt;)&lt;/span&gt; slave
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; replicates 6b0173d925f70807a9081b7bc09bcd37be857342
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;S: 758609eaea88bac25b864f2badbab2171a68089b 192.168.0.179:7002
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; slots: &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; slots&lt;span class="o"&gt;)&lt;/span&gt; slave
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; replicates 9f15a9329a9d0ec5c7fcb5abbba817730f0942f9
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;M: 6b0173d925f70807a9081b7bc09bcd37be857342 192.168.0.100:7004
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; slots:&lt;span class="o"&gt;[&lt;/span&gt;10923-16383&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;5461&lt;/span&gt; slots&lt;span class="o"&gt;)&lt;/span&gt; master
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="m"&gt;1&lt;/span&gt; additional replica&lt;span class="o"&gt;(&lt;/span&gt;s&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;M: 9f15a9329a9d0ec5c7fcb5abbba817730f0942f9 192.168.0.100:7003
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; slots:&lt;span class="o"&gt;[&lt;/span&gt;0-5460&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;5461&lt;/span&gt; slots&lt;span class="o"&gt;)&lt;/span&gt; master
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="m"&gt;1&lt;/span&gt; additional replica&lt;span class="o"&gt;(&lt;/span&gt;s&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;[&lt;/span&gt;OK&lt;span class="o"&gt;]&lt;/span&gt; All nodes agree about slots configuration.
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;gt;&amp;gt;&amp;gt; Check &lt;span class="k"&gt;for&lt;/span&gt; open slots...
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;gt;&amp;gt;&amp;gt; Check slots coverage...
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;[&lt;/span&gt;OK&lt;span class="o"&gt;]&lt;/span&gt; All &lt;span class="m"&gt;16384&lt;/span&gt; slots covered.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Cluster配置&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 设置加入cluster，成为其中的节点&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cluster-enabled yes&lt;span class="p"&gt;|&lt;/span&gt;no
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# cluster配置文件名，该文件属于自动生成，仅用于快速查找文件并查询文件内容&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cluster-config-file &amp;lt; filename&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 节点服务响应超时时间，用于判定该节点是否下线或切换为从节点&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cluster-node-timeout &amp;lt; milliseconds&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# master连接的slave最小数量&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cluster-migration-barrier &amp;lt; count&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Cluster节点操作命令&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;span class="lnt"&gt;21
+&lt;/span&gt;&lt;span class="lnt"&gt;22
+&lt;/span&gt;&lt;span class="lnt"&gt;23
+&lt;/span&gt;&lt;span class="lnt"&gt;24
+&lt;/span&gt;&lt;span class="lnt"&gt;25
+&lt;/span&gt;&lt;span class="lnt"&gt;26
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 连接到集群,加一个-c就行&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;redis-cli -c
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 查看集群节点信息&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cluster nodes
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 进入一个从节点redis，切换其主节点&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cluster replication &amp;lt;master-id&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 发现一个新节点，新增主节点&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cluster meet ip:port
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 忽略一个没有solt的节点&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cluster forget
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 手动故障转移&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cluster failover
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 计算键 key 应该被放置在哪个槽上&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cluster keyslot &amp;lt;key&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 返回槽 slot 目前包含的键值对数量&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cluster countkeysinslot &amp;lt;slot&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 返回 count 个 slot 槽中的键&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cluster getkeysinslot &amp;lt;slot&amp;gt; &amp;lt;count&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;!-- endtab --&gt;
+&lt;p&gt;{% endtabs %}&lt;/p&gt;
+&lt;h2 id="配置"&gt;配置&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# requirepass foobared 注释去掉并写入要设置的密码 , 需要重启:systemctl restart redis&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;requirepass &lt;span class="m"&gt;123456&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 将 bind 设置为允许所有 IP 地址的远程访问,需要重启:systemctl restart redis&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;bind&lt;/span&gt; 0.0.0.0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h1 id="redis的数据类型"&gt;Redis的数据类型&lt;/h1&gt;
+&lt;p&gt;redis自身是一个Map,其中所有的数据都是采用key:value的形式存储&lt;/p&gt;
+&lt;p&gt;数据类型指的是存储的数据的类型，也就是value部分的类型，key部分永远都是字符串&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;string &amp;ndash;&amp;gt; String&lt;/li&gt;
+&lt;li&gt;hash &amp;ndash;&amp;gt; Hashmap&lt;/li&gt;
+&lt;li&gt;list &amp;ndash;&amp;gt; LinkList&lt;/li&gt;
+&lt;li&gt;set &amp;ndash;&amp;gt; HashSet&lt;/li&gt;
+&lt;li&gt;sorted_set &amp;ndash;&amp;gt; TreeSet&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="string"&gt;String&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;redis所有的操作都是原子性的，采用单线程处理所有业务，命令是一个一个执行的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;span class="lnt"&gt;21
+&lt;/span&gt;&lt;span class="lnt"&gt;22
+&lt;/span&gt;&lt;span class="lnt"&gt;23
+&lt;/span&gt;&lt;span class="lnt"&gt;24
+&lt;/span&gt;&lt;span class="lnt"&gt;25
+&lt;/span&gt;&lt;span class="lnt"&gt;26
+&lt;/span&gt;&lt;span class="lnt"&gt;27
+&lt;/span&gt;&lt;span class="lnt"&gt;28
+&lt;/span&gt;&lt;span class="lnt"&gt;29
+&lt;/span&gt;&lt;span class="lnt"&gt;30
+&lt;/span&gt;&lt;span class="lnt"&gt;31
+&lt;/span&gt;&lt;span class="lnt"&gt;32
+&lt;/span&gt;&lt;span class="lnt"&gt;33
+&lt;/span&gt;&lt;span class="lnt"&gt;34
+&lt;/span&gt;&lt;span class="lnt"&gt;35
+&lt;/span&gt;&lt;span class="lnt"&gt;36
+&lt;/span&gt;&lt;span class="lnt"&gt;37
+&lt;/span&gt;&lt;span class="lnt"&gt;38
+&lt;/span&gt;&lt;span class="lnt"&gt;39
+&lt;/span&gt;&lt;span class="lnt"&gt;40
+&lt;/span&gt;&lt;span class="lnt"&gt;41
+&lt;/span&gt;&lt;span class="lnt"&gt;42
+&lt;/span&gt;&lt;span class="lnt"&gt;43
+&lt;/span&gt;&lt;span class="lnt"&gt;44
+&lt;/span&gt;&lt;span class="lnt"&gt;45
+&lt;/span&gt;&lt;span class="lnt"&gt;46
+&lt;/span&gt;&lt;span class="lnt"&gt;47
+&lt;/span&gt;&lt;span class="lnt"&gt;48
+&lt;/span&gt;&lt;span class="lnt"&gt;49
+&lt;/span&gt;&lt;span class="lnt"&gt;50
+&lt;/span&gt;&lt;span class="lnt"&gt;51
+&lt;/span&gt;&lt;span class="lnt"&gt;52
+&lt;/span&gt;&lt;span class="lnt"&gt;53
+&lt;/span&gt;&lt;span class="lnt"&gt;54
+&lt;/span&gt;&lt;span class="lnt"&gt;55
+&lt;/span&gt;&lt;span class="lnt"&gt;56
+&lt;/span&gt;&lt;span class="lnt"&gt;57
+&lt;/span&gt;&lt;span class="lnt"&gt;58
+&lt;/span&gt;&lt;span class="lnt"&gt;59
+&lt;/span&gt;&lt;span class="lnt"&gt;60
+&lt;/span&gt;&lt;span class="lnt"&gt;61
+&lt;/span&gt;&lt;span class="lnt"&gt;62
+&lt;/span&gt;&lt;span class="lnt"&gt;63
+&lt;/span&gt;&lt;span class="lnt"&gt;64
+&lt;/span&gt;&lt;span class="lnt"&gt;65
+&lt;/span&gt;&lt;span class="lnt"&gt;66
+&lt;/span&gt;&lt;span class="lnt"&gt;67
+&lt;/span&gt;&lt;span class="lnt"&gt;68
+&lt;/span&gt;&lt;span class="lnt"&gt;69
+&lt;/span&gt;&lt;span class="lnt"&gt;70
+&lt;/span&gt;&lt;span class="lnt"&gt;71
+&lt;/span&gt;&lt;span class="lnt"&gt;72
+&lt;/span&gt;&lt;span class="lnt"&gt;73
+&lt;/span&gt;&lt;span class="lnt"&gt;74
+&lt;/span&gt;&lt;span class="lnt"&gt;75
+&lt;/span&gt;&lt;span class="lnt"&gt;76
+&lt;/span&gt;&lt;span class="lnt"&gt;77
+&lt;/span&gt;&lt;span class="lnt"&gt;78
+&lt;/span&gt;&lt;span class="lnt"&gt;79
+&lt;/span&gt;&lt;span class="lnt"&gt;80
+&lt;/span&gt;&lt;span class="lnt"&gt;81
+&lt;/span&gt;&lt;span class="lnt"&gt;82
+&lt;/span&gt;&lt;span class="lnt"&gt;83
+&lt;/span&gt;&lt;span class="lnt"&gt;84
+&lt;/span&gt;&lt;span class="lnt"&gt;85
+&lt;/span&gt;&lt;span class="lnt"&gt;86
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 设值&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 格式 set &amp;lt;key&amp;gt; &amp;lt;value&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;set k1 anthony
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;OK&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 取值&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 格式 get &amp;lt;key&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;get k1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;anthony&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 删除值,成功返回1,不成功返回0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;del k1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;1&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;del k1234
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;0&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 一次性存入多个值&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;mset k1 v1 k2 v2 k3 v3
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;OK&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 一次性取出多个值&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;mget k1 k2 k3
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 1&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;v1&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 2&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;v2&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 3&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;v3&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 打印值的长度&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:1&amp;gt;set name anthony
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;OK&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:1&amp;gt;get name
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;anthony&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:1&amp;gt;strlen name
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;7&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 追加&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 有数据就追加&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:1&amp;gt;append name &lt;span class="m"&gt;666&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;10&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:1&amp;gt;get name
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;anthony666&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 没数据就新建&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:1&amp;gt;append othername frankie
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;7&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:1&amp;gt;get othername
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;frankie&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 递增递减,小数不行&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:1&amp;gt;set num &lt;span class="m"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;OK&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:1&amp;gt;incr num
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;2&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:1&amp;gt;incr num
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;3&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:1&amp;gt;decr num
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;2&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:1&amp;gt;decr num
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;1&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 递增递减指定值,小数不行&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:1&amp;gt;incrby num &lt;span class="m"&gt;4&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;6&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:1&amp;gt;decrby num &lt;span class="m"&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;4&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 小数不行&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:1&amp;gt;incrby num 1.5
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;ERR value is not an integer or out of range&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 递增指定小数,貌似没有递减&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:1&amp;gt;incrbyfloat num 1.5
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;5.5&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 指定过期时间&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# EX 用于指定 key 的过期时间。EX(秒),PX(毫秒),KEEPTTL 保持原有的过期时间不变。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# PX 毫秒-设置指定的到期时间（以毫秒为单位）。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# NX 没有key的时候才能set成功,XX key存在的时候才能set成功&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;SET key value &lt;span class="o"&gt;[&lt;/span&gt;EX seconds&lt;span class="p"&gt;|&lt;/span&gt;PX milliseconds&lt;span class="p"&gt;|&lt;/span&gt;KEEPTTL&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;NX&lt;span class="p"&gt;|&lt;/span&gt;XX&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;GET&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 指定过期时间&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# time,以秒为单位。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;SETEX key &lt;span class="nb"&gt;time&lt;/span&gt; value
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 功能等价NX, SET if Not eXists&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;redis&amp;gt; SETNX mykey &lt;span class="s2"&gt;&amp;#34;Hello&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;(&lt;/span&gt;integer&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;redis&amp;gt; SETNX mykey &lt;span class="s2"&gt;&amp;#34;World&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;(&lt;/span&gt;integer&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="hash"&gt;Hash&lt;/h2&gt;
+&lt;p&gt;{% mermaid %}&lt;/p&gt;
+&lt;p&gt;graph LR;
+Key;
+Key&amp;ndash;&amp;gt;Field1&amp;ndash;&amp;gt; Value1;
+Key&amp;ndash;&amp;gt;Field2&amp;ndash;&amp;gt; Value2;
+Key&amp;ndash;&amp;gt;Field3&amp;ndash;&amp;gt; Value3;
+subgraph 相当于Value&lt;br&gt;
+Field1;
+Value1;
+Field2;
+Value2;
+Field3;
+Value3;
+end;&lt;/p&gt;
+&lt;p&gt;{% endmermaid %}&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;span class="lnt"&gt;21
+&lt;/span&gt;&lt;span class="lnt"&gt;22
+&lt;/span&gt;&lt;span class="lnt"&gt;23
+&lt;/span&gt;&lt;span class="lnt"&gt;24
+&lt;/span&gt;&lt;span class="lnt"&gt;25
+&lt;/span&gt;&lt;span class="lnt"&gt;26
+&lt;/span&gt;&lt;span class="lnt"&gt;27
+&lt;/span&gt;&lt;span class="lnt"&gt;28
+&lt;/span&gt;&lt;span class="lnt"&gt;29
+&lt;/span&gt;&lt;span class="lnt"&gt;30
+&lt;/span&gt;&lt;span class="lnt"&gt;31
+&lt;/span&gt;&lt;span class="lnt"&gt;32
+&lt;/span&gt;&lt;span class="lnt"&gt;33
+&lt;/span&gt;&lt;span class="lnt"&gt;34
+&lt;/span&gt;&lt;span class="lnt"&gt;35
+&lt;/span&gt;&lt;span class="lnt"&gt;36
+&lt;/span&gt;&lt;span class="lnt"&gt;37
+&lt;/span&gt;&lt;span class="lnt"&gt;38
+&lt;/span&gt;&lt;span class="lnt"&gt;39
+&lt;/span&gt;&lt;span class="lnt"&gt;40
+&lt;/span&gt;&lt;span class="lnt"&gt;41
+&lt;/span&gt;&lt;span class="lnt"&gt;42
+&lt;/span&gt;&lt;span class="lnt"&gt;43
+&lt;/span&gt;&lt;span class="lnt"&gt;44
+&lt;/span&gt;&lt;span class="lnt"&gt;45
+&lt;/span&gt;&lt;span class="lnt"&gt;46
+&lt;/span&gt;&lt;span class="lnt"&gt;47
+&lt;/span&gt;&lt;span class="lnt"&gt;48
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 设值/修改值 hset key filed1 value&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;HSET user name zhangsan
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;1&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;hset user age &lt;span class="m"&gt;38&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;1&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 取一个属性值&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;hget user age
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;38&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 取多个属性值&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;hmget user age name
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 1&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;45&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 2&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;zhangsan&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 取一个key&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;hgetall user
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 1&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;name&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 2&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;zhangsan&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 3&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;age&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 4&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;38&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;# 删除一个属性值&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;hdel user name
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;1&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;hgetall user
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 1&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;age&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 2&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;38&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;# 查看有多少个属性&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 192.168.245.129:0&amp;gt;hlen user
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;3&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 获取所有的属性&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;hkeys user
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 1&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;age&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 2&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;name&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 3&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;sex&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 获取所有的属性值&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;hvals user
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 1&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;45&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 2&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;zhangsan&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 3&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;n&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;# 指定属性增加指定值&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 192.168.245.129:0&amp;gt;hincrby user age &lt;span class="m"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;46&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="list"&gt;List&lt;/h2&gt;
+&lt;p&gt;{% mermaid %}
+flowchart LR&lt;/p&gt;
+&lt;p&gt;subgraph 顺序表/数组
+id0(头指针)
+id1[华为]
+id2(苹果)
+id3(微软)
+end&lt;/p&gt;
+&lt;p&gt;subgraph 单向链表
+direction LR
+id00[头指针] &amp;ndash;&amp;gt; id4[[华为]]
+id4[[华为]] &amp;ndash;&amp;gt; id5[[苹果]]
+id5[[苹果]] &amp;ndash;&amp;gt; id6[[微软]]
+end
+subgraph 双向链表
+direction LR
+id000[头指针] &amp;lt;&amp;ndash;&amp;gt; id7[[华为]]
+id7[[华为]] &amp;lt;&amp;ndash;&amp;gt; id8[[苹果]]
+id8[[苹果]] &amp;lt;&amp;ndash;&amp;gt; id9[[微软]]
+end&lt;/p&gt;
+&lt;p&gt;{% endmermaid %}&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;span class="lnt"&gt;21
+&lt;/span&gt;&lt;span class="lnt"&gt;22
+&lt;/span&gt;&lt;span class="lnt"&gt;23
+&lt;/span&gt;&lt;span class="lnt"&gt;24
+&lt;/span&gt;&lt;span class="lnt"&gt;25
+&lt;/span&gt;&lt;span class="lnt"&gt;26
+&lt;/span&gt;&lt;span class="lnt"&gt;27
+&lt;/span&gt;&lt;span class="lnt"&gt;28
+&lt;/span&gt;&lt;span class="lnt"&gt;29
+&lt;/span&gt;&lt;span class="lnt"&gt;30
+&lt;/span&gt;&lt;span class="lnt"&gt;31
+&lt;/span&gt;&lt;span class="lnt"&gt;32
+&lt;/span&gt;&lt;span class="lnt"&gt;33
+&lt;/span&gt;&lt;span class="lnt"&gt;34
+&lt;/span&gt;&lt;span class="lnt"&gt;35
+&lt;/span&gt;&lt;span class="lnt"&gt;36
+&lt;/span&gt;&lt;span class="lnt"&gt;37
+&lt;/span&gt;&lt;span class="lnt"&gt;38
+&lt;/span&gt;&lt;span class="lnt"&gt;39
+&lt;/span&gt;&lt;span class="lnt"&gt;40
+&lt;/span&gt;&lt;span class="lnt"&gt;41
+&lt;/span&gt;&lt;span class="lnt"&gt;42
+&lt;/span&gt;&lt;span class="lnt"&gt;43
+&lt;/span&gt;&lt;span class="lnt"&gt;44
+&lt;/span&gt;&lt;span class="lnt"&gt;45
+&lt;/span&gt;&lt;span class="lnt"&gt;46
+&lt;/span&gt;&lt;span class="lnt"&gt;47
+&lt;/span&gt;&lt;span class="lnt"&gt;48
+&lt;/span&gt;&lt;span class="lnt"&gt;49
+&lt;/span&gt;&lt;span class="lnt"&gt;50
+&lt;/span&gt;&lt;span class="lnt"&gt;51
+&lt;/span&gt;&lt;span class="lnt"&gt;52
+&lt;/span&gt;&lt;span class="lnt"&gt;53
+&lt;/span&gt;&lt;span class="lnt"&gt;54
+&lt;/span&gt;&lt;span class="lnt"&gt;55
+&lt;/span&gt;&lt;span class="lnt"&gt;56
+&lt;/span&gt;&lt;span class="lnt"&gt;57
+&lt;/span&gt;&lt;span class="lnt"&gt;58
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 先插入huawei&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;lpush list1 huawei
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;1&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 再插入apple&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;lpush list1 apple
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;2&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 最后插入Microsoft&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;lpush list1 microsoft
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;3&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 从左边取&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;lrange list1 &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 1&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;microsoft&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 2&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;apple&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 3&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;huawei&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;# 一次性插入多条数据&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;rpush list2 a b c
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;3&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 从左边取&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# lrange key start stop&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# lindex key index 取指定索引的值&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# llen key 取长度&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 没有rrange&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;lrange list2 &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 1&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;a&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 2&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;b&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 3&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;c&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;# 从左边取的第二钟方法&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;lrange list2 &lt;span class="m"&gt;0&lt;/span&gt; -1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 1&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;a&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 2&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;b&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 3&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;c&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# lpop从左边删,rpop从右边删&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;lpush list3 a b c
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;3&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;lpop list3
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;c&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;----------------------------------------------------------------------------------------------------
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 阻塞取值,从运行命令开始,如果有数据,取出来,立马返回,如果没有数据,就等指定的时间20s,有就立马返回结束,如果没有,就一直等到时间结束&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;blpop list4 &lt;span class="m"&gt;20&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 1&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;list4&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 2&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;32&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 删除指定数据&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# lrem key count value&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# count是删除多少个value&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;lpush dianzan a b c d
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;4&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;lrem dianzan &lt;span class="m"&gt;1&lt;/span&gt; c
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;1&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;lrange dianzan &lt;span class="m"&gt;0&lt;/span&gt; -1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 1&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;d&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 2&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;b&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 3&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;a&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="set"&gt;Set&lt;/h2&gt;
+&lt;p&gt;&lt;img src="https://image.runtimes.cc/202404051516451.png" alt="TODO"&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;span class="lnt"&gt;21
+&lt;/span&gt;&lt;span class="lnt"&gt;22
+&lt;/span&gt;&lt;span class="lnt"&gt;23
+&lt;/span&gt;&lt;span class="lnt"&gt;24
+&lt;/span&gt;&lt;span class="lnt"&gt;25
+&lt;/span&gt;&lt;span class="lnt"&gt;26
+&lt;/span&gt;&lt;span class="lnt"&gt;27
+&lt;/span&gt;&lt;span class="lnt"&gt;28
+&lt;/span&gt;&lt;span class="lnt"&gt;29
+&lt;/span&gt;&lt;span class="lnt"&gt;30
+&lt;/span&gt;&lt;span class="lnt"&gt;31
+&lt;/span&gt;&lt;span class="lnt"&gt;32
+&lt;/span&gt;&lt;span class="lnt"&gt;33
+&lt;/span&gt;&lt;span class="lnt"&gt;34
+&lt;/span&gt;&lt;span class="lnt"&gt;35
+&lt;/span&gt;&lt;span class="lnt"&gt;36
+&lt;/span&gt;&lt;span class="lnt"&gt;37
+&lt;/span&gt;&lt;span class="lnt"&gt;38
+&lt;/span&gt;&lt;span class="lnt"&gt;39
+&lt;/span&gt;&lt;span class="lnt"&gt;40
+&lt;/span&gt;&lt;span class="lnt"&gt;41
+&lt;/span&gt;&lt;span class="lnt"&gt;42
+&lt;/span&gt;&lt;span class="lnt"&gt;43
+&lt;/span&gt;&lt;span class="lnt"&gt;44
+&lt;/span&gt;&lt;span class="lnt"&gt;45
+&lt;/span&gt;&lt;span class="lnt"&gt;46
+&lt;/span&gt;&lt;span class="lnt"&gt;47
+&lt;/span&gt;&lt;span class="lnt"&gt;48
+&lt;/span&gt;&lt;span class="lnt"&gt;49
+&lt;/span&gt;&lt;span class="lnt"&gt;50
+&lt;/span&gt;&lt;span class="lnt"&gt;51
+&lt;/span&gt;&lt;span class="lnt"&gt;52
+&lt;/span&gt;&lt;span class="lnt"&gt;53
+&lt;/span&gt;&lt;span class="lnt"&gt;54
+&lt;/span&gt;&lt;span class="lnt"&gt;55
+&lt;/span&gt;&lt;span class="lnt"&gt;56
+&lt;/span&gt;&lt;span class="lnt"&gt;57
+&lt;/span&gt;&lt;span class="lnt"&gt;58
+&lt;/span&gt;&lt;span class="lnt"&gt;59
+&lt;/span&gt;&lt;span class="lnt"&gt;60
+&lt;/span&gt;&lt;span class="lnt"&gt;61
+&lt;/span&gt;&lt;span class="lnt"&gt;62
+&lt;/span&gt;&lt;span class="lnt"&gt;63
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 添加&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;sadd users zs
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;1&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;sadd users lisi
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;1&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;sadd users ww
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;1&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 查列表&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;smembers users
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 1&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;lisi&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 2&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;ww&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 3&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;zs&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;# 查数量&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;scard users
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;3&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 判断是否有指定数据&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;sismember users ls
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;0&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;sismember users ww
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;1&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;smembers users
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 1&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;lisi&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 2&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;ww&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 3&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;zs&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;# 删除指定数据&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;srem users ww
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s2"&gt;&amp;#34;1&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.245.129:0&amp;gt;smembers users
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 1&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;lisi&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; 2&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;zs&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;# 随机获取集合中指定数量的数据,获取之后,原来的队列数据不变&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; srandmember key count
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;# 随机获取集合中的某个数据并讲该数据移除集合&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; spop key
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; --------------------------------------------------------------------------------------
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &amp;gt; sadd u1 a1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;gt; sadd u1 a2
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;gt; sadd u1 a3
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;gt; sadd u2 a1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;gt; sadd u2 a2
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 交集&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;gt; sinter u1 u2
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;a2
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;a1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 并集&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;gt; sunion u1 u2
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;a1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;a2
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;a3
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 差集 (u1,u2)顺序不一样,结果不一样&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;gt; sdiff u1 u2
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;a3
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;redis应用于随机推荐类信息检索，例如热点歌单推荐，热点新闻推荐，热点旅游线路，应用APP推荐，大V推荐等&lt;/p&gt;
+&lt;h2 id="sort_set"&gt;sort_set&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;span class="lnt"&gt;21
+&lt;/span&gt;&lt;span class="lnt"&gt;22
+&lt;/span&gt;&lt;span class="lnt"&gt;23
+&lt;/span&gt;&lt;span class="lnt"&gt;24
+&lt;/span&gt;&lt;span class="lnt"&gt;25
+&lt;/span&gt;&lt;span class="lnt"&gt;26
+&lt;/span&gt;&lt;span class="lnt"&gt;27
+&lt;/span&gt;&lt;span class="lnt"&gt;28
+&lt;/span&gt;&lt;span class="lnt"&gt;29
+&lt;/span&gt;&lt;span class="lnt"&gt;30
+&lt;/span&gt;&lt;span class="lnt"&gt;31
+&lt;/span&gt;&lt;span class="lnt"&gt;32
+&lt;/span&gt;&lt;span class="lnt"&gt;33
+&lt;/span&gt;&lt;span class="lnt"&gt;34
+&lt;/span&gt;&lt;span class="lnt"&gt;35
+&lt;/span&gt;&lt;span class="lnt"&gt;36
+&lt;/span&gt;&lt;span class="lnt"&gt;37
+&lt;/span&gt;&lt;span class="lnt"&gt;38
+&lt;/span&gt;&lt;span class="lnt"&gt;39
+&lt;/span&gt;&lt;span class="lnt"&gt;40
+&lt;/span&gt;&lt;span class="lnt"&gt;41
+&lt;/span&gt;&lt;span class="lnt"&gt;42
+&lt;/span&gt;&lt;span class="lnt"&gt;43
+&lt;/span&gt;&lt;span class="lnt"&gt;44
+&lt;/span&gt;&lt;span class="lnt"&gt;45
+&lt;/span&gt;&lt;span class="lnt"&gt;46
+&lt;/span&gt;&lt;span class="lnt"&gt;47
+&lt;/span&gt;&lt;span class="lnt"&gt;48
+&lt;/span&gt;&lt;span class="lnt"&gt;49
+&lt;/span&gt;&lt;span class="lnt"&gt;50
+&lt;/span&gt;&lt;span class="lnt"&gt;51
+&lt;/span&gt;&lt;span class="lnt"&gt;52
+&lt;/span&gt;&lt;span class="lnt"&gt;53
+&lt;/span&gt;&lt;span class="lnt"&gt;54
+&lt;/span&gt;&lt;span class="lnt"&gt;55
+&lt;/span&gt;&lt;span class="lnt"&gt;56
+&lt;/span&gt;&lt;span class="lnt"&gt;57
+&lt;/span&gt;&lt;span class="lnt"&gt;58
+&lt;/span&gt;&lt;span class="lnt"&gt;59
+&lt;/span&gt;&lt;span class="lnt"&gt;60
+&lt;/span&gt;&lt;span class="lnt"&gt;61
+&lt;/span&gt;&lt;span class="lnt"&gt;62
+&lt;/span&gt;&lt;span class="lnt"&gt;63
+&lt;/span&gt;&lt;span class="lnt"&gt;64
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 添加数据&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;gt; zadd scores &lt;span class="m"&gt;100&lt;/span&gt; zhangsan
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;gt; zadd scores &lt;span class="m"&gt;90&lt;/span&gt; lisi
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;gt; zadd scores &lt;span class="m"&gt;95&lt;/span&gt; wangwu
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 获取全部数据&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;gt; zrange scores &lt;span class="m"&gt;0&lt;/span&gt; -1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;lisi
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;wangwu
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;zhangsan
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 获取全部数据&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;gt; zrange scores &lt;span class="m"&gt;0&lt;/span&gt; -1 withscores
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;lisi
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;90&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;wangwu
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;95&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;zhangsan
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;100&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 反向获取全部数据&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;gt; zrevrange scores &lt;span class="m"&gt;0&lt;/span&gt; -1 withscores
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;zhangsan
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;100&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;wangwu
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;95&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;lisi
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;90&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 删除数据&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;gt; zrem scores zhangsan
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;gt; zrange scores &lt;span class="m"&gt;0&lt;/span&gt; -1 withscores
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;lisi
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;90&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;wangwu
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;95&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 按条件获取数据,可以用作分页&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;zrangebyscore key min max &lt;span class="o"&gt;[&lt;/span&gt;WITHSCORES&lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt;LIMIT&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;zrevrangebyscore key max min &lt;span class="o"&gt;[&lt;/span&gt;WITHSCORES&lt;span class="o"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 条件删除&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;zremrangebyrank key start stop
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;zremrangebyscore key min max
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;-----------------------------------------排名-------------------------------------------------------
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 添加模拟数据&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;gt; zadd movies &lt;span class="m"&gt;143&lt;/span&gt; aa &lt;span class="m"&gt;97&lt;/span&gt; bb &lt;span class="m"&gt;201&lt;/span&gt; cc
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;3&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 获取数据对应的索引(排名)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;gt; zrank movies bb
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 反向获取&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;gt; zrevrank movies bb
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="m"&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# score 值获取与修改&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;zscore key member
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;zincrby key increment member
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h1 id="redis-通用命令"&gt;Redis 通用命令&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;span class="lnt"&gt;21
+&lt;/span&gt;&lt;span class="lnt"&gt;22
+&lt;/span&gt;&lt;span class="lnt"&gt;23
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 删除&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;del key
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 获取key是否存在&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;exists key
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 获取key的类型&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;type&lt;/span&gt; key
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 设置指定有效期,秒&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;expire key second
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 设置指定有效期,毫秒&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;pexpire key milliseconds
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 有效期是时间戳&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;expireat key timestamp
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 获取key的有效期&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ttl key
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;pttl key 毫秒
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 集群环境下,模糊查询key&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 要是查不出来数据,99999要换成一个很大的值&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;SCAN &lt;span class="m"&gt;0&lt;/span&gt; MATCH * count &lt;span class="m"&gt;99999&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h1 id="持久化"&gt;持久化&lt;/h1&gt;
+&lt;p&gt;很多时候我们需要持久化数据也就是将内存中的数据写入到硬盘里面，大部分原因是为了之后重用数据（比如重启机器、机器故障之后恢复数据），或者是为了防止系统故障而将数据备份到一个远程位置。&lt;/p&gt;
+&lt;p&gt;Redis不同于Memcached的很重一点就是，Redis支持持久化，而且支持两种不同的持久化操作。&lt;/p&gt;
+&lt;p&gt;Redis的一种持久化方式叫快照（snapshotting，RDB）&lt;/p&gt;
+&lt;p&gt;另一种方式是只追加文件（append-only file,AOF）&lt;/p&gt;
+&lt;p&gt;这两种方法各有千秋，下面我会详细这两种持久化方法是什么，怎么用，如何选择适合自己的持久化方法。&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://image.runtimes.cc/202404051454660.png" alt="TODO"&gt;&lt;/p&gt;
+&lt;h2 id="rdb快照"&gt;RDB(快照)&lt;/h2&gt;
+&lt;p&gt;save 会生成rdb文件&lt;/p&gt;
+&lt;h3 id="save指令相关配置"&gt;save指令相关配置&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;配置项&lt;/th&gt;
+&lt;th&gt;描述&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;dbfilename dump.rdb&lt;/td&gt;
+&lt;td&gt;指定本地数据库文件名，默认值为 dump.rdb&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;dir ./&lt;/td&gt;
+&lt;td&gt;指定本地数据库存放目录&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;注意：&lt;strong&gt;Redis是单线程的&lt;/strong&gt;，所有命令都会在类似队列中排好队，不建议使用save指令，因为save指令的执行会阻塞当前Redis服务器，直到当前RDB过程完成位置，有可能会造成长时间阻塞，&lt;strong&gt;线上环境不建议使用&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id="bgsave指令"&gt;bgsave指令&lt;/h3&gt;
+&lt;p&gt;手动启动后台保存操作，但不是立即执行&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://image.runtimes.cc/202404051453704.png" alt="TODO"&gt;&lt;/p&gt;
+&lt;p&gt;执行成功了不会在控制台输出,可以在日志中看到&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;58142:M &lt;span class="m"&gt;07&lt;/span&gt; Aug &lt;span class="m"&gt;2020&lt;/span&gt; 07:23:17.355 * Starting BGSAVE &lt;span class="k"&gt;for&lt;/span&gt; SYNC with target: disk
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;58142:M &lt;span class="m"&gt;07&lt;/span&gt; Aug &lt;span class="m"&gt;2020&lt;/span&gt; 07:23:17.355 * Background saving started by pid &lt;span class="m"&gt;58183&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;58183:C &lt;span class="m"&gt;07&lt;/span&gt; Aug &lt;span class="m"&gt;2020&lt;/span&gt; 07:23:17.357 * DB saved on disk
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;58183:C &lt;span class="m"&gt;07&lt;/span&gt; Aug &lt;span class="m"&gt;2020&lt;/span&gt; 07:23:17.357 * RDB: &lt;span class="m"&gt;0&lt;/span&gt; MB of memory used by copy-on-write
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;58142:M &lt;span class="m"&gt;07&lt;/span&gt; Aug &lt;span class="m"&gt;2020&lt;/span&gt; 07:23:17.456 * Background saving terminated with success
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;bgsave命令是针对save阻塞问题做的优化。Redis内部所有涉及到RDB操作都采用bgsave的方式，save命令可以放弃使用&lt;/p&gt;
+&lt;h3 id="save配置"&gt;save配置&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;# second：监控时间范围
+# changes：监控key的变化量
+save second changes
+save 900 1 #在900秒(15分钟)之后，如果至少有1个key发生变化，Redis就会自动触发BGSAVE命令创建快照。
+save 300 10 #在300秒(5分钟)之后，如果至少有10个key发生变化，Redis就会自动触发BGSAVE命令创建快照。
+save 60 10000 #在60秒(1分钟)之后，如果至少有10000个key发生变化，Redis就会自动触发BGSAVE命令创建快照。
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="save配置原理"&gt;save配置原理&lt;/h3&gt;
+&lt;p&gt;&lt;img src="https://image.runtimes.cc/202404051453062.png" alt="TODO"&gt;&lt;/p&gt;
+&lt;p&gt;**注意：**save配置要根据实际业务情况进行设置，频度过高或过低都会出现性能问题，结果可能是灾难性的save配置中对second与changes设置通常具有互补对应关系，尽量不要设置成包含性关系save配置启动后执行的是bgsave操作&lt;/p&gt;
+&lt;h3 id="对比"&gt;对比&lt;/h3&gt;
+&lt;p&gt;&lt;img src="https://image.runtimes.cc/202404051453536.png" alt="TODO"&gt;&lt;/p&gt;
+&lt;h3 id="rdb启动方式"&gt;RDB启动方式&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;全量复制在主从复制中会提到&lt;/li&gt;
+&lt;li&gt;服务器运行过程中重启debug reload&lt;/li&gt;
+&lt;li&gt;关闭服务器时指定保存数据shutdown save&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="rdb-优缺点"&gt;RDB 优缺点&lt;/h3&gt;
+&lt;h3 id="rdb优点"&gt;RDB优点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;RDB是一个紧凑压缩的二进制文件，存储效率较高&lt;/li&gt;
+&lt;li&gt;RDB内部存储的是redis在某个时间点的数据快照，非常适合用于数据备份，全量复制等场景&lt;/li&gt;
+&lt;li&gt;RDB恢复数据的速度要比AOF快很多&lt;/li&gt;
+&lt;li&gt;应用：服务器中每X小时执行bgsave备份，并将RDB文件拷贝到远程己气中，用于灾难恢复&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="rdb缺点"&gt;RDB缺点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;RDB方式无论是执行指令还是利用配置，无法做到实时持久化，具体较大的可能性丢失数据&lt;/li&gt;
+&lt;li&gt;bgsave指令每次运行要执行fork操作创建子进程，要牺牲掉一些性能&lt;/li&gt;
+&lt;li&gt;Redis的众多版本中未进行RDB文件格式的版本统一，有可能出现个版本服务之间数据格式无法兼容现象&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="rdb存储的弊端"&gt;RDB存储的弊端&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;存储数据量较大，效率较低——基于快照思想，每次读写都是全部数据，当数据量巨大时，效率非常低&lt;/li&gt;
+&lt;li&gt;大数据量下的IO性能较低&lt;/li&gt;
+&lt;li&gt;基于fork创建子进程，内存产生额外消耗&lt;/li&gt;
+&lt;li&gt;宕机带来的数据丢失风险&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="解决思路"&gt;解决思路&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;不写全数据，仅记录部分数据&lt;/li&gt;
+&lt;li&gt;改记录数据未记录操作过程&lt;/li&gt;
+&lt;li&gt;对所有操作均进行记录，排除丢失数据的风险&lt;/li&gt;
+&lt;li&gt;这也就是AOF的引入&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="aof"&gt;AOF&lt;/h2&gt;
+&lt;h3 id="aof写数据过程"&gt;AOF写数据过程&lt;/h3&gt;
+&lt;p&gt;&lt;img src="https://image.runtimes.cc/202404051454829.png" alt="TODO"&gt;&lt;/p&gt;
+&lt;h3 id="aof写数据的三种策略"&gt;AOF写数据的三种策略&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;appendfsync always #每次有数据修改发生时都会写入AOF文件,这样会严重降低Redis的速度
+appendfsync everysec #每秒钟同步一次，显示地将多个写命令同步到硬盘 **(默认的)**
+appendfsync no #让操作系统决定何时进行同步
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="aof功能开启和相关配置"&gt;AOF功能开启和相关配置&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;# 是否开启APF持久化功能，默认为不开启
+appendonly yes|no
+# AOF写数据策略
+appendfsync always|everysec|no
+# AOF持久化文件名，默认文件名为appendonly.aof,建议配置为appendonly-端口号.aof
+appendfilename filename
+# AOF持久化文件保存路径，与RDB持久化文件保持一致即可
+dir
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="重写"&gt;重写&lt;/h3&gt;
+&lt;p&gt;随着命令的不断写入AOF，文件会越来越大，为了解决这个问题，Redis引入AOF重写机制压缩文件体积，AOF文件重写是将Redis进程内的数据转换为写命令同步到新AOF文件的过程，简单说就是将同样一个数据的若干个命令执行结果转换为最终结果数据对应的指令进行记录&lt;/p&gt;
+&lt;h3 id="aof重写作用"&gt;AOF重写作用&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;降低磁盘占用量，提高磁盘利用路&lt;/li&gt;
+&lt;li&gt;提高持久化效率，降低持久化写时间，提高IO性能&lt;/li&gt;
+&lt;li&gt;降低数据恢复用时，提高数据恢复效率&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="aof重写规则"&gt;AOF重写规则&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;进程内已超时的数据不再写入文件&lt;/li&gt;
+&lt;li&gt;忽略无效指令，重写时使用进程内数据直接生成，这样新的AOF文件只保留最终数据的写入命令　如del key1,hdel key2,srem key3,set key 222等&lt;/li&gt;
+&lt;li&gt;对统一数据的多条命令合并为一条命令如 lpush list1 a ,lpush list1 b,lpush list1 c可以转化为lpush list1 a b c为防止数据量过大造成客户端缓冲区溢出，对list,set,hash,set等类型，每条指令最多写入64个元素&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="重写方式"&gt;重写方式&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;# 手动重写,在命令行执行,会覆盖原来的aof文件,但是文件更小
+bgrewriteaof
+# 自动重写
+auto-aof-rewrite-min-size size
+auto-aof-rewrite-percentage percentage
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;手动重写流程:&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://image.runtimes.cc/202404051454591.png" alt="TODO"&gt;&lt;/p&gt;
+&lt;p&gt;自动重写的触发条件:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;# 自动重写触发条件设置
+auto-aof-rewrite-min-size
+auto-aof-rewrite-percentage percent
+# 自动重写触发对比参数（运行指令info Persistence获取具体信息）
+aof_current_size
+aof_base_size
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://image.runtimes.cc/202404051517623.png" alt="TODO"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://image.runtimes.cc/202404051455402.png" alt="TODO"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://image.runtimes.cc/202404051456010.png" alt="TODO"&gt;&lt;/p&gt;
+&lt;h2 id="aof和rdb的区别"&gt;AOF和RDB的区别&lt;/h2&gt;
+&lt;p&gt;&lt;img src="https://image.runtimes.cc/202404051456409.png" alt="TODO"&gt;&lt;/p&gt;
+&lt;h3 id="rdb和aof的选择之感"&gt;RDB和AOF的选择之感&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;对数据非常敏感，建议使用默认的AOF持久化方案AOF持久化策略使用erverysecond，每秒钟fsync一次。该策略redis任然可以保持很好的处理性能，当出现问题时，最多丢失0-1秒中的数据。注意：由于AOF文件存储体积较大，且恢复数据较慢&lt;/li&gt;
+&lt;li&gt;数据呈现阶段有效性，建议使用RDB持久化方案数据可以良好的做到阶段内无丢失（该阶段是开发者或运维人工手工维护的），且恢复速度较快，阶段点数据恢复通常采用RDB方案注意：利用RDB实现紧凑的数据持久化会使Redis降得很低&lt;/li&gt;
+&lt;li&gt;综合对比&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;RDB与AOF得选择实际上是在做一种权衡，每种都有利弊&lt;/li&gt;
+&lt;li&gt;如不能承受数分钟以内得数据丢失，对业务数据非常敏感，选用AOF&lt;/li&gt;
+&lt;li&gt;如能承受数分钟以内数据丢失，且追求大数据集得恢复速度，选用RDB灾难恢复选用RDB&lt;/li&gt;
+&lt;li&gt;双保险策略，同时开启RDB和AOF，重启后，Redis优先使用AOF来恢复数据，降低丢失数据的量&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="redis-40-对于持久化机制的优化"&gt;&lt;strong&gt;Redis 4.0 对于持久化机制的优化&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Redis 4.0 开始支持 RDB 和 AOF 的混合持久化（默认关闭，可以通过配置项 &lt;code&gt;aof-use-rdb-preamble&lt;/code&gt; 开启）。&lt;/p&gt;
+&lt;p&gt;如果把混合持久化打开，AOF 重写的时候就直接把 RDB 的内容写到 AOF 文件开头。这样做的好处是可以结合 RDB 和 AOF 的优点, 快速加载同时避免丢失过多的数据。当然缺点也是有的， AOF 里面的 RDB 部分是压缩格式不再是 AOF 格式，可读性较差。&lt;/p&gt;
+&lt;h1 id="事务"&gt;事务&lt;/h1&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;# 开启事务,设定事务的开启位置，此指令执行后，后续的所有指令均加入到事务中
+multi
+# 执行提交事务,加入事务的命令暂时到任务队列中，并没有立即执行，只有执行exec命令才开始执行
+exec
+# 取消事务,终止当前事务定义，发生在multi之后，exec之前
+discard
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="事务的工作流程"&gt;事务的工作流程&lt;/h2&gt;
+&lt;p&gt;&lt;img src="https://image.runtimes.cc/202404051456083.png" alt="TODO"&gt;&lt;/p&gt;
+&lt;h2 id="事务的注意事项"&gt;事务的注意事项&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;语法错误指命令书写格式有误&lt;/li&gt;
+&lt;li&gt;处理结果如果定义的事务中所包含的命令存在语法错误，整体事务中所有命令均不会被执行。包括那些语法正确的命令&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;运行错误指命令格式正确，但是无法正常的执行。例如对list进行incr操作&lt;/li&gt;
+&lt;li&gt;处理结果能够正确运行的命令会执行，运行错误的命令不会执行注意：已经执行完毕的命令对应的数据不会自动回滚，需要程序员自己在代码中实现回滚。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="手动进行事务回滚基本没法用"&gt;手动进行事务回滚(基本没法用)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;记录操作过程中被影响的数据之前的状态单数据：string多数据：hash,list,set,zset&lt;/li&gt;
+&lt;li&gt;设置指令恢复所有的被修改的项单数据：直接set（注意周边属性，例如时效）多数据：修改对应值或整体克隆复制&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="锁"&gt;锁&lt;/h1&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;# 对key添加监视锁，在执行exec前如果key发生了变化，终止事务执行
+watch key1 [key2…]
+# 取消对所有key的监视
+unwatch
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="分布式锁"&gt;分布式锁&lt;/h2&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;# 加锁
+setnx lock-key value
+# 设置超时时间
+expire lock-key second
+# 删除锁
+dek lock-key
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;利用setnx命令的返回值特征，有值则返回设置失败，无值则返回设置成功&lt;/li&gt;
+&lt;li&gt;对于返回设置成功的，拥有控制权，进行下一步的具体业务操作&lt;/li&gt;
+&lt;li&gt;对于返回设置失败的，不具有控制权，排队或等待操作完毕通过&lt;strong&gt;del&lt;/strong&gt;操作释放锁&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="删除策略"&gt;删除策略&lt;/h1&gt;
+&lt;h2 id="过期数据删除策略"&gt;过期数据删除策略&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Redis是一种内存级数据库，所有数据均存放在内存中，内存中的数据可以通过TTL指令获取其状态&lt;/li&gt;
+&lt;li&gt;XX : 具有时效性的数据&lt;/li&gt;
+&lt;li&gt;1 : 永久有效的数据&lt;/li&gt;
+&lt;li&gt;2 : 已经国企的数据 或 被删除的数据 或 未定义的数据&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="时效性数据的存储结构"&gt;时效性数据的存储结构&lt;/h2&gt;
+&lt;p&gt;&lt;img src="https://image.runtimes.cc/202404051457852.png" alt="TODO"&gt;&lt;/p&gt;
+&lt;h3 id="定时删除"&gt;定时删除&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;创建一个定时器，当key设置过期时间，且过期时间到达时，由定时器任务立即执行对键的删除操作&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;优点&lt;/strong&gt;：节约内存，到时就删除，快速释放掉不必要的内存占用&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;缺点&lt;/strong&gt;：CPU压力很大，无论CPU此时负载多高，均占用CPU，会影响redis服务器响应时间和指令吞吐量&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;总结&lt;/strong&gt;：用处理器性能换取存储空间&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="惰性删除"&gt;惰性删除&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;数据到达过期时间，不做处理。等下次访问该数据&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;如果未过期，返回数据&lt;/li&gt;
+&lt;li&gt;发现已经过期，删除，返回不存在&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;优点：节约CPU性能，发现必须删除的时候才删除&lt;/li&gt;
+&lt;li&gt;缺点：内存压力很大，出现长期占用内存的数据&lt;/li&gt;
+&lt;li&gt;总结：用存储空间换取处理器性能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="定期删除"&gt;定期删除&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Redis启动服务器初始化时，读取配置server.hz的值，默认为10&lt;/li&gt;
+&lt;li&gt;每秒钟执行server.hz次serverCron()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://image.runtimes.cc/202404051457886.png" alt="TODO"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;周期性轮询redis库中时效性数据，采用随机抽取的策略，利用过期数据占比的方式删除频度&lt;/li&gt;
+&lt;li&gt;特点1：CPU性能占用设置有峰值，检测频度可自定义设置&lt;/li&gt;
+&lt;li&gt;特点2：内存压力不是很大，长期占用内存的冷数据会被持续清理&lt;/li&gt;
+&lt;li&gt;总结：周期性抽查存储空间&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://image.runtimes.cc/202404051516388.png" alt="TODO"&gt;&lt;/p&gt;
+&lt;h1 id="逐出算法"&gt;逐出算法&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Redis使用内存存储数据，在执行每一个命令前，会调用freeMemorylfNeeded()检测内存是否充足。如果内存不满足新加入数据的最低存储要求，redis要临时删除一些数据为当前指令清理存储空间。清理数据的策略称为逐出算法。&lt;/li&gt;
+&lt;li&gt;注意：逐出数据的过程不是100%能够清理出足够的可使用的内存空间，如果不成功则反复执行。当对所有数据尝试完毕后，如果不能达到内存清理的要求，将出现错误信息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://image.runtimes.cc/202404051457056.png" alt="TODO"&gt;&lt;/p&gt;
+&lt;p&gt;相关配置&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;# 最大可使用内存
+maxmemory
+# 每次选取代删除数据的个数
+maxmemory-samples
+# 删除策略
+maxmemory-policy
+&lt;/code&gt;&lt;/pre&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;属性&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;volatile-lru&lt;/td&gt;
+&lt;td&gt;从已设置过期时间的数据集（server.db[i].expires）中挑选最近最少使用的数据淘汰&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;volatile-ttl&lt;/td&gt;
+&lt;td&gt;从已设置过期时间的数据集（server.db[i].expires）中挑选将要过期的数据淘汰&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;volatile-random&lt;/td&gt;
+&lt;td&gt;从已设置过期时间的数据集（server.db[i].expires）中任意选择数据淘汰&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;volatile-lfu&lt;/td&gt;
+&lt;td&gt;从已设置过期时间的数据集(server.db[i].expires)中挑选最不经常使用的数据淘汰&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;allkeys-lru&lt;/td&gt;
+&lt;td&gt;当内存不足以容纳新写入数据时，在键空间中，移除最近最少使用的key （这个是最常用的）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;allkeys-random&lt;/td&gt;
+&lt;td&gt;从数据集（server.db[i].dict）中任意选择数据淘汰&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;allkeys-lfu&lt;/td&gt;
+&lt;td&gt;当内存不足以容纳新写入数据时，在键空间中，移除最不经常使用的key&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;no-eviction&lt;/td&gt;
+&lt;td&gt;禁止驱逐数据，也就是说当内存不足以容纳新写入数据时，新写入操作会报错。这个应该没人使用吧！&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;img src="https://image.runtimes.cc/202404051457458.png" alt="TODO"&gt;&lt;/p&gt;
+&lt;p&gt;数据逐出策略配置依据&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用INFO命令输出监控信息，查询缓存int和miss的次数，根据业务需求调优Redis配置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="配置文件"&gt;配置文件&lt;/h1&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;# 设置服务器以守护进程的方式运行
+deamonize yes|no
+# 绑定主机地址
+bind 127.0.0.1
+# 设置服务器端口号
+port 6379
+# 设置数据库数量
+databases 16
+----------------------------------日志配置--------------------------------------
+# 设置服务器以指定日志记录级别
+loglevel debug|verbose|notice|warning
+# 日志记录文件名
+logfile 端口号.log
+# 持久化文件存放目录
+dir ./
+----------------------------------日志配置--------------------------------------
+# 设置同一时间最大客户链接数，默认无限制。当客户端连接到达上线，Redis会关闭新的链接
+maxclients 0
+# 客户端限制等待最大时常，达到最大之后关闭连接。如需关闭该功能，设置为0
+timeout 300
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id="redis-cluster结构设计"&gt;Redis-Cluster结构设计&lt;/h1&gt;
+&lt;h1 id="数据存储设计"&gt;数据存储设计&lt;/h1&gt;
+&lt;p&gt;Key -&amp;gt; CRC16(Key) 相当于HashCode值&amp;mdash;&amp;gt;%16384&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;将所有的存储空间计划切割成16384份，每台主机保存一部分,每份代表的使一个存储空间，不是一个key的保存空间&lt;/li&gt;
+&lt;li&gt;将key按照计算出的结果放到对应的存储空间&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://image.runtimes.cc/202404051457725.png" alt="TODO"&gt;&lt;/p&gt;
+&lt;p&gt;当有新的机器加入集群的时候,就会每台机器转移一些数据空间&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://image.runtimes.cc/202404051457378.png" alt="TODO"&gt;&lt;/p&gt;
+&lt;h1 id="集群内部通讯设计"&gt;集群内部通讯设计&lt;/h1&gt;
+&lt;p&gt;&lt;img src="https://image.runtimes.cc/202404051458468.png" alt="TODO"&gt;&lt;/p&gt;
+&lt;h1 id="集群常用命令"&gt;集群常用命令&lt;/h1&gt;
+&lt;p&gt;参考:&lt;a href="https://www.cnblogs.com/kevingrace/p/7910692.html"&gt;https://www.cnblogs.com/kevingrace/p/7910692.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;以下命令是Redis Cluster集群所独有的，执行下面命令需要先登录redis&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;# （客户端命令：redis-cli -c -p port -h ip）
+[root@manage redis]# redis-cli -c -p 6382 -h 192.168.10.12
+192.168.10.12:6382&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;集群&lt;code&gt;cluster info&lt;/code&gt; ：打印集群的信息&lt;code&gt;cluster nodes&lt;/code&gt; ：列出集群当前已知的所有节点（ node），以及这些节点的相关信息。&lt;/li&gt;
+&lt;li&gt;节点&lt;code&gt;cluster meet &amp;lt;ip&amp;gt; &amp;lt;port&amp;gt;&lt;/code&gt; ：将 ip 和 port 所指定的节点添加到集群当中，让它成为集群的一份子。&lt;code&gt;cluster forget &amp;lt;node_id&amp;gt;&lt;/code&gt;：从集群中移除 node_id 指定的节点。&lt;code&gt;cluster replicate &amp;lt;master_node_id&amp;gt;&lt;/code&gt; ：将当前从节点设置为 node_id 指定的master节点的slave节点。只能针对slave节点操作。&lt;code&gt;cluster saveconfig&lt;/code&gt; ：将节点的配置文件保存到硬盘里面。&lt;/li&gt;
+&lt;li&gt;slot&lt;code&gt;cluster addslots &amp;lt;slot&amp;gt; [slot ...]&lt;/code&gt; ：将一个或多个槽（ slot）指派（ assign）给当前节点。&lt;code&gt;cluster delslots &amp;lt;slot&amp;gt; [slot ...]&lt;/code&gt; ：移除一个或多个槽对当前节点的指派。&lt;code&gt;cluster flushslots&lt;/code&gt; ：移除指派给当前节点的所有槽，让当前节点变成一个没有指派任何槽的节点。&lt;code&gt;cluster setslot &amp;lt;slot&amp;gt; node &amp;lt;node_id&amp;gt;&lt;/code&gt;：将槽 slot 指派给 node_id 指定的节点，如果槽已经指派给&lt;/li&gt;
+&lt;li&gt;另一个节点，那么先让另一个节点删除该槽&amp;gt;，然后再进行指派&lt;code&gt;cluster setslot &amp;lt;slot&amp;gt; migrating &amp;lt;node_id&amp;gt;&lt;/code&gt;：将本节点的槽 slot 迁移到 node_id 指定的节点中。&lt;code&gt;cluster setslot &amp;lt;slot&amp;gt; importing &amp;lt;node_id&amp;gt;&lt;/code&gt; ：从 node_id 指定的节点中导入槽 slot 到本节点。&lt;code&gt;cluster setslot &amp;lt;slot&amp;gt; stable&lt;/code&gt;：取消对槽 slot 的导入（ import）或者迁移（ migrate）。&lt;/li&gt;
+&lt;li&gt;键&lt;code&gt;cluster keyslot &amp;lt;key&amp;gt;&lt;/code&gt;：计算键 key 应该被放置在哪个槽上。&lt;code&gt;cluster countkeysinslot &amp;lt;slot&amp;gt;&lt;/code&gt;：返回槽 slot 目前包含的键值对数量。&lt;code&gt;cluster getkeysinslot &amp;lt;slot&amp;gt; &amp;lt;count&amp;gt;&lt;/code&gt;：返回 count 个 slot 槽中的键 。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="解决方案"&gt;解决方案&lt;/h1&gt;
+&lt;h1 id="缓存预热"&gt;缓存预热&lt;/h1&gt;
+&lt;p&gt;在高请求之前，做好一系列措施，保证大量用户数量点击造成灾难。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;请求数量较高&lt;/li&gt;
+&lt;li&gt;主从之间数据吞吐量较大，数据同步操作频度较高&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="缓存预热解决方案"&gt;缓存预热解决方案&lt;/h3&gt;
+&lt;p&gt;前置准备工作：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;日常例行统计数据访问记录，统计访问频度较高的热点数据&lt;/li&gt;
+&lt;li&gt;利用LRU数据删除策略，构建数据留存队列例如：storm与kafka配合&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;准备工作：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;将统计结果中的数据分类，根据级别，redis优先加载级别较高的热点数据&lt;/li&gt;
+&lt;li&gt;利用分布式多服务器同时进行数据读取，提速数据加载过程&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;实施：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;使用脚本程序固定出大数据预热过程&lt;/li&gt;
+&lt;li&gt;如果条件允许，使用CDN（内容分发网络），效果会更好&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;缓存预热总结：缓存预热就是系统启动前，提前将相关的缓存数据直接加载到缓存系统。避免在用户请求的时候，先查询数据库，然后再将数据缓存的问题！用户直接查询事先被预热的缓存数据!&lt;/p&gt;
+&lt;h1 id="缓存雪崩"&gt;缓存雪崩&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;系统平稳运行过程中，忽然数据库连接量激增&lt;/li&gt;
+&lt;li&gt;应用服务器无法及时请求&lt;/li&gt;
+&lt;li&gt;大量408，500错误页面出现&lt;/li&gt;
+&lt;li&gt;客户反复刷新页面获取数据&lt;/li&gt;
+&lt;li&gt;数据库崩溃&lt;/li&gt;
+&lt;li&gt;应用服务器崩溃&lt;/li&gt;
+&lt;li&gt;重启应用服务器无效&lt;/li&gt;
+&lt;li&gt;Redis服务器崩溃&lt;/li&gt;
+&lt;li&gt;Redis集群崩溃&lt;/li&gt;
+&lt;li&gt;重启数据之后再次被瞬间流量放倒&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="问题排查"&gt;问题排查&lt;/h3&gt;
+&lt;p&gt;简介：缓存同一时间大面积的失效，所以，后面的请求都会落到数据库上，造成数据库短时间内承受大量请求而崩掉&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在一个较短的时间内，缓存中较多的key集中过期&lt;/li&gt;
+&lt;li&gt;此周期内请求访问过期的数据，redis未命中，redis向数据库获取数据&lt;/li&gt;
+&lt;li&gt;数据库同时接受到大量的请求无法即时处理&lt;/li&gt;
+&lt;li&gt;Redis大量请求被积压，开始出现超时现象&lt;/li&gt;
+&lt;li&gt;数据库流量激增，数据库崩溃&lt;/li&gt;
+&lt;li&gt;重启后任然面对缓存中无数据可用&lt;/li&gt;
+&lt;li&gt;Redis服务器资源被严重占用，Redis服务器崩溃&lt;/li&gt;
+&lt;li&gt;Redis集群呈现崩塌，集群瓦解&lt;/li&gt;
+&lt;li&gt;应用服务器无法即时得到数据响应请求，来自客户端的请求数量越来越多，应用服务器崩溃&lt;/li&gt;
+&lt;li&gt;应用服务器，redis，数据库全部重启，效果不理想&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="问题分析"&gt;问题分析&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;短时间范围内&lt;/li&gt;
+&lt;li&gt;大量key集中过期&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="解决方案道"&gt;解决方案（道）&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;更多的页面静态化处理&lt;/li&gt;
+&lt;li&gt;构建多级缓存架构Nginx缓存+redis缓存+ehcache缓存&lt;/li&gt;
+&lt;li&gt;检测Mysql严重耗时业务进行优化对数据库的瓶颈排查：例如超时查询、耗时较高事务等&lt;/li&gt;
+&lt;li&gt;灾难预警机制监控redis服务器性能指标1、CPU占用、CPU使用率2、内存容量3、查询平均响应时间4、线程数&lt;/li&gt;
+&lt;li&gt;限流、降级短时间范围内习生一些客户体验，限制一部分请求访问，降低应用服务器压力，待业务低速运转后再逐渐放开访问&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="解决方案术"&gt;解决方案（术）&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;LRU与LFU切换&lt;/li&gt;
+&lt;li&gt;数据有效期策略调整根据业务数据有效期进行分类错峰，A类90分钟，B类80分钟，C类70分钟过期时间使用固定形式+随机值的形式，稀释集中到期的key的数量&lt;/li&gt;
+&lt;li&gt;超热数据使用永久key&lt;/li&gt;
+&lt;li&gt;定期维护（自动+人工）对即将过期数据做访问量分析，确认是否演示，配合访问量统计，做热点数据的延时&lt;/li&gt;
+&lt;li&gt;加锁 慎用！！！！！！！&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;总结缓存雪崩式瞬间过期数量太大，导致对数据库服务器造成压力。如果能有效避免过期时间集中，可以有效解决雪崩现象的出现（约40%）。配合其他策略一起使用，并监控服务器的运行数据，根据运行巨鹿做快速调整&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://image.runtimes.cc/202404051458329.png" alt="TODO"&gt;&lt;/p&gt;
+&lt;h1 id="缓存击穿"&gt;缓存击穿&lt;/h1&gt;
+&lt;h3 id="数据库服务器崩溃2"&gt;数据库服务器崩溃（2）&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;系统平稳运行过程中&lt;/li&gt;
+&lt;li&gt;数据库连接量瞬间激增&lt;/li&gt;
+&lt;li&gt;Redis服务器无大量key过期&lt;/li&gt;
+&lt;li&gt;Redis内存平稳，无波动&lt;/li&gt;
+&lt;li&gt;Redis服务器CPU正常&lt;/li&gt;
+&lt;li&gt;数据库崩溃&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="问题排查-1"&gt;问题排查&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Redis中某个key过期，该key访问量巨大&lt;/li&gt;
+&lt;li&gt;多个数据请求从服务器直接压到Redis后，均为命中&lt;/li&gt;
+&lt;li&gt;Redis在短时间内发起了大量对数据库中同一个数据的访问&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;问题分析&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;单个key高热数据&lt;/li&gt;
+&lt;li&gt;key过期&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="解决方案术-1"&gt;解决方案（术）&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;预先设定以电商为例，每个商家根据店铺等级，指定若干款主打商品，在购物节期间，加大此类信息key的过期时常注意：购物节不仅仅指当天，以及后续若干天，访问峰值呈现逐渐降低趋势&lt;/li&gt;
+&lt;li&gt;现场调整监控访问量，对自然流量激增的数据延长过期时间或设置为永久性key&lt;/li&gt;
+&lt;li&gt;后台刷新数据启动定时任务，高峰期来临之前，刷新数据有效期，保存不丢失&lt;/li&gt;
+&lt;li&gt;二级缓存设置不同的失效时间，保障不会被同时淘汰就行&lt;/li&gt;
+&lt;li&gt;加锁分布式锁，防止被击穿，但是要注意也是性能瓶颈，慎重！！！！！！！！&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;总结：缓存击穿就是单个高热数据过期的瞬间，数据访问较大，未命中redis后，发起了大量对同一数据的数据库访问，导致对数据库服务器造成压力。应对策略应该在业务数据分析与预防方面进行，配合运行监控测试与即时调整策略，毕竟单个key的过期监控难度较高，配合雪崩处理策略即可&lt;/p&gt;
+&lt;h1 id="缓存穿透"&gt;缓存穿透&lt;/h1&gt;
+&lt;h3 id="数据库服务器崩溃3"&gt;数据库服务器崩溃（3）&lt;/h3&gt;
+&lt;p&gt;简介：一般是黑客故意去请求缓存中不存在的数据，导致所有的请求都落到数据库上，造成数据库短时间内承受大量请求而崩掉。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;系统平稳运行过程中&lt;/li&gt;
+&lt;li&gt;应用服务器流量随时间增量较大&lt;/li&gt;
+&lt;li&gt;Redis服务器命中率随时间逐步降低&lt;/li&gt;
+&lt;li&gt;Redis内存平稳，内存无压力&lt;/li&gt;
+&lt;li&gt;Redis服务器CPU占用激增&lt;/li&gt;
+&lt;li&gt;数据库服务器压力激增&lt;/li&gt;
+&lt;li&gt;数据库崩溃&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="问题排查-2"&gt;问题排查&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;redis中大面积出现未命中&lt;/li&gt;
+&lt;li&gt;出现非正常URL访问&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;问题分析&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;获取的数据在数据库中也不存在，数据库查询未得到对应数据&lt;/li&gt;
+&lt;li&gt;Redis获取到null数据未进行持久化，直接返回&lt;/li&gt;
+&lt;li&gt;下次此类数据到达重复上述过程&lt;/li&gt;
+&lt;li&gt;出现黑客攻击服务器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="解决方法术"&gt;解决方法（术）&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;缓存null对查询结果为null的数据进行缓存（长期使用，定期清理），设定短时限，例如30-60秒，最高五分钟&lt;/li&gt;
+&lt;li&gt;白名单策略提前预热各种分类数据id对应的bitmaps,id作为bitmaps的offset,相当于设置了数据白名单。当加载正常数据后放型，加载异常数据时直接拦截（效率偏低）使用布隆过滤器（有关布隆过滤器的命中问题对当前状态可以忽略）&lt;/li&gt;
+&lt;li&gt;实时监控试试监控redis命中率（业务正常范围时，通常回有一个波动值）与null数据的占比非活动时间波动：通常检测3-5倍，超过5倍纳入重点排查对象活动时间波动：通常检测10-50倍，超过50倍纳入重点排查对象根据背书不同，启动不同的排查流程。然后使用黑名单进行防控（运营）&lt;/li&gt;
+&lt;li&gt;key加密问题出现后，临时启动防灾业务key,对key进行业务层传输加密服务，设定校验程序，过来的key校验例如每天随机分配60个加密串，挑选2-3个，混淆到页面数据id中，发现访问key不满足规则，驳回数据访问&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;总结&lt;/strong&gt;缓存穿透是访问了不存在的数据，跳过了合法数据的redis数据缓存阶段，每次访问数据库，导致对数据库服务器造成压力。通常此类数据的出现量是一个较低的值，当出现此类情况以毒攻毒，并即时报警。应对策略应该在临时预案防范方面多做文章无论是黑名单还是白名单，都是对整体系统的压力，警报解除后尽快移除&lt;/p&gt;
+&lt;h1 id="redis-java"&gt;Redis-Java&lt;/h1&gt;
+&lt;h1 id="单机jedis"&gt;单机Jedis&lt;/h1&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;/**
+* 192.168.0.5 单机
+*/
+public class SingletonDemo {
+private Jedis jedis;
+@Before
+public void before() {
+//指定Redis服务Host和port
+jedis = new Jedis(&amp;#34;192.168.0.5&amp;#34;, 6379);
+}
+@After
+public void after() {
+//使用完关闭连接
+jedis.close();
+}
+/**
+* 设值
+*/
+@Test
+public void set() {
+//访问Redis服务
+jedis.set(&amp;#34;k1&amp;#34;, &amp;#34;v1&amp;#34;);
+System.out.println(jedis.get(&amp;#34;k1&amp;#34;));
+}
+/**
+* 设值,并且设置超时时间
+*/
+@Test
+public void setTime() {
+String key = &amp;#34;setTimeKey&amp;#34;;
+jedis.setex(key, 20000, &amp;#34;setTimeValue&amp;#34;);
+System.out.println(jedis.get(key));
+System.out.println(jedis.ttl(key));
+}
+/**
+* 分布式锁原理,
+* key不存在的时候才插入
+*/
+@Test
+public void setNX() {
+String key = &amp;#34;setNXKey&amp;#34;;
+// 1.先插入一个值
+jedis.set(key, &amp;#34;setNXValue&amp;#34;);
+// 2.NX是不存在时才set， XX是存在时才set， EX是秒，PX是毫秒
+String set = jedis.set(key, &amp;#34;setNXValue---NX&amp;#34;, &amp;#34;NX&amp;#34;, &amp;#34;EX&amp;#34;, 20000L);
+System.out.println(set);
+System.out.println(jedis.get(key));
+System.out.println(jedis.ttl(key));
+System.out.println(&amp;#34;======================================================&amp;#34;);
+// 3.设置个没有的key
+String key2 = &amp;#34;setNXKey2&amp;#34;;
+String set2 = jedis.set(key2, &amp;#34;setNXValue2---NX&amp;#34;, &amp;#34;NX&amp;#34;, &amp;#34;EX&amp;#34;, 20000L);
+System.out.println(set2);
+System.out.println(jedis.get(key2));
+System.out.println(jedis.ttl(key2));
+}
+/**
+* key存在时才插入
+*/
+@Test
+public void setXX() {
+String key = &amp;#34;setXXKey&amp;#34;;
+// 1.先插入一个值
+jedis.set(key, &amp;#34;setXXValue&amp;#34;);
+// 2.NN
+String set = jedis.set(key, &amp;#34;setXXValue---XX&amp;#34;, &amp;#34;XX&amp;#34;, &amp;#34;EX&amp;#34;, 20000L);
+System.out.println(set);
+System.out.println(jedis.get(key));
+System.out.println(jedis.ttl(key));
+System.out.println(&amp;#34;======================================================&amp;#34;);
+// 3.设置个没有的key
+String key2 = &amp;#34;setXXKey2&amp;#34;;
+String set2 = jedis.set(key2, &amp;#34;setXXValue2---NX&amp;#34;, &amp;#34;XX&amp;#34;, &amp;#34;EX&amp;#34;, 20000L);
+System.out.println(set2);
+System.out.println(jedis.get(key2));
+System.out.println(jedis.ttl(key2));
+}
+@Test
+public void expire() {
+}
+/**
+* redis监控信息
+*/
+@Test
+public void info() {
+String info = jedis.info();
+Stream.of(info.split(&amp;#34;\r\n&amp;#34;)).forEach(row -&amp;gt; {
+String[] split = row.split(&amp;#34;:&amp;#34;);
+if (split.length == 2) {
+System.out.printf(&amp;#34;key:%s ==== value:%s \r\n&amp;#34;,split[0],split[1]);
+}
+}
+);
+}
+/**
+* jedispool
+*/
+@Test
+public void jedisPool() throws InterruptedException {
+StopWatch watch = new StopWatch();
+watch.start();
+for (int i = 0; i &amp;lt; 100000; i++) {
+jedis.set(i + &amp;#34;&amp;#34;, i + &amp;#34;&amp;#34;);
+jedis.close();
+}
+watch.stop();
+System.out.println(&amp;#34;5-&amp;#34;+watch.getTime());
+}
+@Test
+public void jedisPool2() {
+// 替换成你的reids地址和端口
+String redisIp = &amp;#34;192.168.0.5&amp;#34;;
+int reidsPort = 6379;
+JedisPool jedisPool = new JedisPool(new JedisPoolConfig(), redisIp, reidsPort);
+Jedis resource = jedisPool.getResource();
+StopWatch watch = new StopWatch();
+watch.start();
+for (int i = 0; i &amp;lt; 100000; i++) {
+resource.set(i + &amp;#34;&amp;#34;, i + &amp;#34;&amp;#34;);
+}
+watch.stop();
+System.out.println(&amp;#34;5-&amp;#34;+watch.getTime());
+}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id="单机jedis连接集群节点"&gt;单机Jedis连接集群节点&lt;/h1&gt;
+&lt;p&gt;会报错&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;redis.clients.jedis.exceptions.JedisMovedDataException: MOVED 12706 192.168.0.8:6379
+at redis.clients.jedis.Protocol.processError(Protocol.java:115)
+at redis.clients.jedis.Protocol.process(Protocol.java:161)
+at redis.clients.jedis.Protocol.read(Protocol.java:215)
+at redis.clients.jedis.Connection.readProtocolWithCheckingBroken(Connection.java:340)
+at redis.clients.jedis.Connection.getStatusCodeReply(Connection.java:239)
+at redis.clients.jedis.Jedis.set(Jedis.java:121)
+at reids.ClusterDemo.set(ClusterDemo.java:68)
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id="集群jedis"&gt;集群Jedis&lt;/h1&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;/**
+* anthony@base:/var/log/redis$ redis-cli --cluster check 192.168.0.6:6379
+* 192.168.0.6:6379 (99af86e5...) -&amp;gt; 0 keys | 5461 slots | 1 slaves.
+* 192.168.0.8:6379 (982f74c7...) -&amp;gt; 3 keys | 5461 slots | 1 slaves.
+* 192.168.0.7:6379 (1069a632...) -&amp;gt; 0 keys | 5462 slots | 1 slaves.
+* [OK] 3 keys in 3 masters.
+* 0.00 keys per slot on average.
+* &amp;gt;&amp;gt;&amp;gt; Performing Cluster Check (using node 192.168.0.6:6379)
+* M: 99af86e59c7f5a4ddf212b29e9e1b12fa5e7a866 192.168.0.6:6379
+* slots:[0-5460] (5461 slots) master
+* 1 additional replica(s)
+* S: 102517bddae6af2434519e8f348cf062b0152fa7 192.168.0.9:6379
+* slots: (0 slots) slave
+* replicates 982f74c79ed5c5811b7011507c56f81374c70a0b
+* S: 392c5e4dcd5608c74a76902668ed58fb6ab50aaf 192.168.0.11:6379
+* slots: (0 slots) slave
+* replicates 1069a6320a0489f63e807c970c27f86f13f417cf
+* S: 4d12dd0de1af9d90bfac7dd141c36c348071d59f 192.168.0.10:6379
+* slots: (0 slots) slave
+* replicates 99af86e59c7f5a4ddf212b29e9e1b12fa5e7a866
+* M: 982f74c79ed5c5811b7011507c56f81374c70a0b 192.168.0.8:6379
+* slots:[10923-16383] (5461 slots) master
+* 1 additional replica(s)
+* M: 1069a6320a0489f63e807c970c27f86f13f417cf 192.168.0.7:6379
+* slots:[5461-10922] (5462 slots) master
+* 1 additional replica(s)
+* [OK] All nodes agree about slots configuration.
+* &amp;gt;&amp;gt;&amp;gt; Check for open slots...
+* &amp;gt;&amp;gt;&amp;gt; Check slots coverage...
+* [OK] All 16384 slots covered.
+*/
+public class ClusterDemo {
+private JedisCluster jedis;
+@Before
+public void before() {
+Set&amp;lt;HostAndPort&amp;gt; nodes = new HashSet&amp;lt;&amp;gt;();
+nodes.add(new HostAndPort(&amp;#34;192.168.0.6&amp;#34;, 6379));
+nodes.add(new HostAndPort(&amp;#34;192.168.0.7&amp;#34;, 6379));
+nodes.add(new HostAndPort(&amp;#34;192.168.0.8&amp;#34;, 6379));
+nodes.add(new HostAndPort(&amp;#34;192.168.0.9&amp;#34;, 6379));
+nodes.add(new HostAndPort(&amp;#34;192.168.0.10&amp;#34;, 6379));
+nodes.add(new HostAndPort(&amp;#34;192.168.0.11&amp;#34;, 6379));
+GenericObjectPoolConfig poolConfig = new GenericObjectPoolConfig();
+jedis = new JedisCluster(nodes,poolConfig);
+}
+@After
+public void after() throws IOException {
+//使用完关闭连接
+jedis.close();
+}
+/**
+* 设值
+*/
+@Test
+public void set() {
+//访问Redis服务
+jedis.set(&amp;#34;k1&amp;#34;, &amp;#34;v1&amp;#34;);
+System.out.println(jedis.get(&amp;#34;k1&amp;#34;));
+}
+/**
+* redis集群的节点信息
+* map.key = IP:PORT
+*/
+@Test
+public void info() {
+Map&amp;lt;String, JedisPool&amp;gt; clusterNodes = jedis.getClusterNodes();
+clusterNodes.keySet().forEach(key-&amp;gt;{
+System.out.printf(&amp;#34;%s==%s\r\n&amp;#34;,key,clusterNodes.get(key).getResource().info());
+});
+}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;RedisTemplate&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;# 插入
+myVO.setCode(typeCode);
+redisTemplate.opsForList().rightPush(key, JSONUtil.toJsonStr(myVO));
+# 取出
+List&amp;lt;String&amp;gt; range = redisTemplate.opsForList().range(key, 0, 100);
+# 删除取出的
+# trim 是保留的意思
+if(range.size() &amp;gt;0){
+redisTemplate.opsForList().trim(key, range.size() + 1, -1);
+}
+&lt;/code&gt;&lt;/pre&gt;</content></item></channel></rss>

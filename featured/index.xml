@@ -1,245 +1,1450 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>精选 on Hello World</title><link>https://isme.cz/featured/</link><description>Recent content in 精选 on Hello World</description><generator>Hugo</generator><language>zh</language><atom:link href="https://isme.cz/featured/index.xml" rel="self" type="application/rss+xml"/><item><title>核心技能自查清单</title><link>https://isme.cz/featured/developer-check-list/</link><pubDate>Wed, 27 Aug 2025 11:37:29 +0000</pubDate><guid>https://isme.cz/featured/developer-check-list/</guid><description>覆盖 Java 与 Go 从基础到架构的完整路线：计算机基础、并发、集合/标准库、框架、数据库与缓存、分布式、工程实践、源码阅读与架构，全部细化为可勾选的任务清单。</description></item><item><title>股票交易所后端程序员学习大纲</title><link>https://isme.cz/featured/stock-backend-learning/</link><pubDate>Wed, 24 Sep 2025 00:00:00 +0000</pubDate><guid>https://isme.cz/featured/stock-backend-learning/</guid><description>适合股票交易所后端程序员的学习路线大纲，从基础股票知识到交易规则、清算结算、风控与合规，再到高级主题。</description></item><item><title>一周宿舍简易餐盒食谱（电饭煲/小锅/微波炉/空气炸锅）</title><link>https://isme.cz/featured/dorm-meal-prep-1week/</link><pubDate>Thu, 11 Sep 2025 20:00:00 +0800</pubDate><guid>https://isme.cz/featured/dorm-meal-prep-1week/</guid><description>在宿舍用简单设备（电饭煲/小锅/微波炉/空气炸锅）完成的一周简易工作餐盒饭方案，含午晚餐安排与备餐技巧。</description></item><item><title>如何规划 AWS 学习与认证路径：从入门到架构师</title><link>https://isme.cz/featured/aws-study/</link><pubDate>Thu, 14 Aug 2025 18:03:01 +0000</pubDate><guid>https://isme.cz/featured/aws-study/</guid><description>&lt;h1 id="如何规划-aws-学习与认证路径从入门到架构师">如何规划 AWS 学习与认证路径：从入门到架构师&lt;/h1>
-&lt;p>随着云计算的普及，掌握 AWS 技能成为技术人员提升自身竞争力的重要途径。作为一名 Java 开发者，同时怀揣成为架构师的梦想，规划一条清晰的 AWS 学习与认证路径，将为你的职业发展奠定坚实基础。&lt;/p>
-&lt;p>在这篇文章中，我将分享适合 Java 开发者的 AWS 学习和认证路线，从入门到架构师，一步步助你掌握云计算技能。&lt;/p>
-&lt;hr>
-&lt;h2 id="为什么选择-aws-认证">为什么选择 AWS 认证？&lt;/h2>
-&lt;p>AWS 是全球最受欢迎的云计算平台，拥有丰富的服务生态和良好的市场口碑。通过 AWS 认证，你可以：&lt;/p>
-&lt;ol>
-&lt;li>系统学习 AWS 核心服务和最佳实践。&lt;/li>
-&lt;li>提升职业竞争力，尤其是在云计算相关的岗位中。&lt;/li>
-&lt;li>构建从开发到架构设计的完整技能体系。&lt;/li>
-&lt;/ol>
-&lt;hr>
-&lt;h2 id="aws-学习与认证路线">AWS 学习与认证路线&lt;/h2>
-&lt;p>根据 AWS 的认证体系，我们可以将学习过程分为五个阶段：&lt;strong>入门基础&lt;/strong>、&lt;strong>开发与构建&lt;/strong>、&lt;strong>架构设计&lt;/strong>、&lt;strong>高级架构与专业认证&lt;/strong>，以及 &lt;strong>扩展技能与专项认证&lt;/strong>。&lt;/p>
-&lt;hr>
-&lt;h3 id="阶段-1入门基础">阶段 1：入门基础&lt;/h3>
-&lt;blockquote>
-&lt;p>&lt;strong>目标&lt;/strong>：掌握 AWS 的核心概念和基础服务，为进一步学习打下基础。&lt;/p>&lt;/blockquote>
-&lt;p>&lt;strong>学习内容&lt;/strong>：&lt;/p>
-&lt;ul>
-&lt;li>云计算基础概念：弹性计算、按需服务、全球架构。&lt;/li>
-&lt;li>AWS 核心服务：EC2（虚拟服务器）、S3（存储服务）、RDS（数据库服务）、VPC（网络）、IAM（权限管理）。&lt;/li>
-&lt;li>AWS 定价模型和支持机制。&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>推荐课程&lt;/strong>：&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://aws.amazon.com/training/course-descriptions/cloud-practitioner-essentials/">AWS Cloud Practitioner Essentials&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>认证&lt;/strong>：&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>AWS Certified Cloud Practitioner&lt;/strong>&lt;br>
-入门级认证，适合初学者了解 AWS 服务及架构理念。学习周期为 2-4 周。&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="阶段-2开发与构建">阶段 2：开发与构建&lt;/h3>
-&lt;blockquote>
-&lt;p>&lt;strong>目标&lt;/strong>：学习如何使用 AWS 开发工具，在云上构建高效的应用程序。&lt;/p>&lt;/blockquote>
-&lt;p>&lt;strong>学习内容&lt;/strong>：&lt;/p>
-&lt;ul>
-&lt;li>AWS 开发服务：Lambda、DynamoDB、SQS、SNS、API Gateway。&lt;/li>
-&lt;li>基础架构自动化：CloudFormation 和 AWS CDK。&lt;/li>
-&lt;li>CI/CD 实践：CodePipeline、CodeDeploy、CodeBuild。&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>推荐课程&lt;/strong>：&lt;/p></description></item><item><title>Go 的声明语法：为什么与众不同</title><link>https://isme.cz/featured/go-declaration-syntax/</link><pubDate>Wed, 13 Aug 2025 22:00:00 +0700</pubDate><guid>https://isme.cz/featured/go-declaration-syntax/</guid><description>&lt;blockquote>
-&lt;p>本文整理自 Go 语言作者 Rob Pike 在 2010 年的文章 &lt;em>&amp;ldquo;Go&amp;rsquo;s Declaration Syntax&amp;rdquo;&lt;/em>，结合原文与实例，解释 Go 为什么采用不同于 C/Java 的声明方式。&lt;br>
-写这篇文章的原因：&lt;br>
-在网络上能找到不少 &lt;em>&amp;ldquo;Go&amp;rsquo;s Declaration Syntax&amp;rdquo;&lt;/em> 的中文翻译，但大多数存在直译生硬、遗漏原文细节甚至误解语义的问题。&lt;br>
-这些低质量翻译往往让读者更困惑，而不是更清楚。&lt;br>
-因此，我基于 Rob Pike 原文，结合上下文和代码示例，整理出一份更贴近原意、方便国内开发者理解的版本。&lt;br>
-同时保留原文核心思想，并补充了对比表与背景说明，帮助读者更好地掌握 Go 声明语法背后的设计理念。&lt;/p>&lt;/blockquote></description></item><item><title>MAC系统常用快捷键 基本常用的都整理在这里了</title><link>https://isme.cz/featured/mac-shortcut-key/</link><pubDate>Thu, 31 May 2018 09:13:00 +0700</pubDate><guid>https://isme.cz/featured/mac-shortcut-key/</guid><description>整理 Mac 系统常用快捷键，包括通用、系统、截图、Finder、浏览器、应用程序和文本处理，帮助提升日常效率。</description></item><item><title>如何通过 EC2 实例连接 Amazon RDS 数据库</title><link>https://isme.cz/featured/b765efc8-3b0e-421b-beb4-d1fac4fd836f/</link><pubDate>Tue, 17 Dec 2024 17:42:26 +0000</pubDate><guid>https://isme.cz/featured/b765efc8-3b0e-421b-beb4-d1fac4fd836f/</guid><description>&lt;h1 id="如何通过-ec2-实例连接-amazon-rds-数据库">如何通过 EC2 实例连接 Amazon RDS 数据库&lt;/h1>
-&lt;p>在云开发中，Amazon RDS 是一种强大而方便的托管数据库服务，但它通常处于一个受保护的私有网络中，无法直接从本地访问。如果你想在本地使用图形化工具（如 DBeaver 或 HeidiSQL）访问 RDS 数据库，可以通过 Amazon EC2 实例作为跳板实现。这篇文章将手把手教你如何完成这项操作。&lt;/p>
-&lt;hr>
-&lt;h2 id="1-为什么需要通过-ec2-访问-rds">1. 为什么需要通过 EC2 访问 RDS？&lt;/h2>
-&lt;p>Amazon RDS 默认部署在私有子网中，只有同一网络中的资源可以访问。直接将 RDS 公开到公网会带来安全风险，因此更好的办法是利用 EC2 实例作为跳板，通过 SSH 隧道安全地访问 RDS。这种方式既能保证数据库的安全性，也能满足开发需求。&lt;/p>
-&lt;p>说人话：&lt;em>其实就是薅羊毛的时候能省个公网ip的钱（AWS免费优惠只有一个公网ip，要给到ec2）&lt;/em>&lt;/p>
-&lt;p>土豪请划走 不需要往下看了&lt;/p>
-&lt;hr>
-&lt;h2 id="2-准备工作">2. 准备工作&lt;/h2>
-&lt;p>在开始操作之前，请确保以下内容已准备好：&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>&lt;strong>RDS 实例信息&lt;/strong>：&lt;/p>
-&lt;ul>
-&lt;li>记录 RDS 的连接端点（Endpoint）、端口（通常是 3306）以及数据库的用户名和密码。&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>EC2 实例信息&lt;/strong>：&lt;/p>
-&lt;ul>
-&lt;li>确保 EC2 实例处于运行状态，并记录其公有 IP 地址（或域名）。&lt;/li>
-&lt;li>下载并保存 EC2 实例的 &lt;code>.pem&lt;/code> SSH 密钥文件。&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>安全组配置&lt;/strong>：&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>RDS 安全组&lt;/strong>：允许 EC2 实例的安全组访问 RDS 的端口（如 3306）。&lt;/li>
-&lt;li>&lt;strong>EC2 安全组&lt;/strong>：允许本地 IP 地址的 SSH 入站访问（端口 22）。&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ol>
-&lt;hr>
-&lt;h2 id="3-在本地创建-ssh-隧道">3. 在本地创建 SSH 隧道&lt;/h2>
-&lt;p>SSH 隧道是连接本地客户端和 RDS 数据库的桥梁。以下是设置方法：&lt;/p></description></item><item><title>使用 Nginx + Cloudflare + Docker 部署 Java 服务的最佳实践</title><link>https://isme.cz/featured/5c8f5a74-11b1-4c78-8307-5dfdd5c6adc3/</link><pubDate>Sun, 08 Dec 2024 05:07:43 +0000</pubDate><guid>https://isme.cz/featured/5c8f5a74-11b1-4c78-8307-5dfdd5c6adc3/</guid><description>&lt;h1 id="使用-nginx--cloudflare--docker-部署-java-服务的最佳实践">使用 Nginx + Cloudflare + Docker 部署 Java 服务的最佳实践&lt;/h1>
-&lt;p>在生产环境中，Nginx、Cloudflare 和 Docker 是一个经典且高效的组合，特别适合 Java 服务的部署。本篇博客将详细介绍如何将这三者结合起来，构建高性能、高可用的服务架构。&lt;/p>
-&lt;hr>
-&lt;h2 id="架构概览">架构概览&lt;/h2>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">用户请求 → Cloudflare (CDN + DNS + HTTPS) → Nginx (反向代理 + 负载均衡) → Docker (Java 服务实例) → 数据库/缓存
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h3 id="架构组成">架构组成&lt;/h3>
-&lt;ol>
-&lt;li>&lt;strong>Cloudflare&lt;/strong>：提供 CDN 加速、HTTPS、DDoS 防护。&lt;/li>
-&lt;li>&lt;strong>Nginx&lt;/strong>：反向代理用户请求，将流量分发到多个 Java 服务实例。&lt;/li>
-&lt;li>&lt;strong>Docker&lt;/strong>：容器化运行 Java 服务，实现快速部署和弹性扩展。&lt;/li>
-&lt;/ol>
-&lt;hr>
-&lt;h2 id="一cloudflare-配置">一、Cloudflare 配置&lt;/h2>
-&lt;h3 id="1-职责">1. 职责&lt;/h3>
-&lt;ul>
-&lt;li>全球 CDN 加速，减少用户请求延迟。&lt;/li>
-&lt;li>提供 HTTPS 加密，确保数据传输安全。&lt;/li>
-&lt;li>防火墙和 DDoS 防护，保护服务免受恶意攻击。&lt;/li>
-&lt;/ul>
-&lt;h3 id="2-配置步骤">2. 配置步骤&lt;/h3>
-&lt;ol>
-&lt;li>登录 &lt;a href="https://www.cloudflare.com">Cloudflare&lt;/a>。&lt;/li>
-&lt;li>添加域名并设置 DNS 记录：
-&lt;ul>
-&lt;li>A 记录指向 Nginx 服务器的公网 IP。&lt;/li>
-&lt;li>或 CNAME 指向已有的负载均衡器域名。&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>启用 SSL/TLS：
-&lt;ul>
-&lt;li>配置 &amp;ldquo;Full&amp;rdquo; 模式（需要 Nginx 服务器支持 HTTPS）。&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>设置缓存策略：
-&lt;ul>
-&lt;li>针对静态资源（如 JS、CSS、图片）启用动态缓存。&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>配置安全规则：
-&lt;ul>
-&lt;li>限制可疑 IP 的访问频率。&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ol>
-&lt;hr>
-&lt;h2 id="二nginx-配置">二、Nginx 配置&lt;/h2>
-&lt;h3 id="1-职责-1">1. 职责&lt;/h3>
-&lt;ul>
-&lt;li>接收 Cloudflare 转发的流量，充当反向代理。&lt;/li>
-&lt;li>将请求分发到不同的 Java 服务实例，实现负载均衡。&lt;/li>
-&lt;li>提供 HTTPS 支持和 HTTP 压缩。&lt;/li>
-&lt;/ul>
-&lt;h3 id="2-配置示例">2. 配置示例&lt;/h3>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
-&lt;/span>&lt;span class="lnt"> 2
-&lt;/span>&lt;span class="lnt"> 3
-&lt;/span>&lt;span class="lnt"> 4
-&lt;/span>&lt;span class="lnt"> 5
-&lt;/span>&lt;span class="lnt"> 6
-&lt;/span>&lt;span class="lnt"> 7
-&lt;/span>&lt;span class="lnt"> 8
-&lt;/span>&lt;span class="lnt"> 9
-&lt;/span>&lt;span class="lnt">10
-&lt;/span>&lt;span class="lnt">11
-&lt;/span>&lt;span class="lnt">12
-&lt;/span>&lt;span class="lnt">13
-&lt;/span>&lt;span class="lnt">14
-&lt;/span>&lt;span class="lnt">15
-&lt;/span>&lt;span class="lnt">16
-&lt;/span>&lt;span class="lnt">17
-&lt;/span>&lt;span class="lnt">18
-&lt;/span>&lt;span class="lnt">19
-&lt;/span>&lt;span class="lnt">20
-&lt;/span>&lt;span class="lnt">21
-&lt;/span>&lt;span class="lnt">22
-&lt;/span>&lt;span class="lnt">23
-&lt;/span>&lt;span class="lnt">24
-&lt;/span>&lt;span class="lnt">25
-&lt;/span>&lt;span class="lnt">26
-&lt;/span>&lt;span class="lnt">27
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-nginx" data-lang="nginx">&lt;span class="line">&lt;span class="cl">&lt;span class="k">server&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">listen&lt;/span> &lt;span class="mi">80&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">server_name&lt;/span> &lt;span class="s">example.com&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># 强制 HTTPS
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kn">return&lt;/span> &lt;span class="mi">301&lt;/span> &lt;span class="s">https://&lt;/span>&lt;span class="nv">$host$request_uri&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">server&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">listen&lt;/span> &lt;span class="mi">443&lt;/span> &lt;span class="s">ssl&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">server_name&lt;/span> &lt;span class="s">example.com&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">ssl_certificate&lt;/span> &lt;span class="s">/etc/nginx/ssl/certificate.crt&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">ssl_certificate_key&lt;/span> &lt;span class="s">/etc/nginx/ssl/certificate.key&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">location&lt;/span> &lt;span class="s">/&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">proxy_pass&lt;/span> &lt;span class="s">http://java-service-cluster&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">proxy_set_header&lt;/span> &lt;span class="s">Host&lt;/span> &lt;span class="nv">$host&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">proxy_set_header&lt;/span> &lt;span class="s">X-Real-IP&lt;/span> &lt;span class="nv">$remote_addr&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">proxy_set_header&lt;/span> &lt;span class="s">X-Forwarded-For&lt;/span> &lt;span class="nv">$proxy_add_x_forwarded_for&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">upstream&lt;/span> &lt;span class="s">java-service-cluster&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">server&lt;/span> &lt;span class="n">127.0.0.1&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">8081&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kn">server&lt;/span> &lt;span class="n">127.0.0.1&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="mi">8082&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;hr>
-&lt;h2 id="三docker-配置">三、Docker 配置&lt;/h2>
-&lt;h3 id="1-构建-java-服务镜像">1. 构建 Java 服务镜像&lt;/h3>
-&lt;p>使用以下 Dockerfile 构建镜像：&lt;/p></description></item><item><title>使用 Cloudflare 和 Nginx 构建高性能安全站点</title><link>https://isme.cz/featured/cf-nginx/</link><pubDate>Sat, 07 Dec 2024 18:13:27 +0000</pubDate><guid>https://isme.cz/featured/cf-nginx/</guid><description>&lt;h1 id="使用-cloudflare-和-nginx-构建高性能安全站点">使用 Cloudflare 和 Nginx 构建高性能安全站点&lt;/h1>
-&lt;p>在现代网站架构中，&lt;strong>Nginx&lt;/strong> 和 &lt;strong>Cloudflare&lt;/strong> 是两大关键技术，它们分别在服务器端和网络加速层提供强大的支持。本篇博客将带你一步步配置 Nginx 与 Cloudflare 的集成，打造一个高性能且安全的生产环境。&lt;/p>
-&lt;hr>
-&lt;h2 id="一为什么选择-nginx-和-cloudflare">一、为什么选择 Nginx 和 Cloudflare？&lt;/h2>
-&lt;ul>
-&lt;li>&lt;strong>Nginx&lt;/strong>：以其轻量级、高并发性能著称，常用于反向代理、静态文件服务和负载均衡。&lt;/li>
-&lt;li>&lt;strong>Cloudflare&lt;/strong>：提供免费 CDN 加速、DDoS 防护、DNS 服务以及 HTTPS 加密服务，是全球站点优化的理想选择。&lt;/li>
-&lt;/ul>
-&lt;p>当二者结合时，Cloudflare 位于网络层，负责加速和安全，而 Nginx 位于服务器端，负责处理业务逻辑和请求分发。&lt;/p>
-&lt;hr>
-&lt;h2 id="二nginx-的安装与基本配置">二、Nginx 的安装与基本配置&lt;/h2>
-&lt;h3 id="1-安装-nginx">1. 安装 Nginx&lt;/h3>
-&lt;p>以 Ubuntu 为例：&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo apt update
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo apt install nginx
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo systemctl start nginx
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo systemctl &lt;span class="nb">enable&lt;/span> nginx
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>安装完成后，通过浏览器访问服务器 IP，确认是否能看到默认欢迎页。&lt;/p>
-&lt;h3 id="2-配置-nginx-基本站点">2. 配置 Nginx 基本站点&lt;/h3>
-&lt;p>在 &lt;code>/etc/nginx/conf.d/&lt;/code> 目录下创建站点配置文件：&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo nano /etc/nginx/conf.d/example.com.conf
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>内容如下：&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>精选 on Hello World</title><link>https://isme.cz/featured/</link><description>Recent content in 精选 on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><atom:link href="https://isme.cz/featured/index.xml" rel="self" type="application/rss+xml"/><item><title>核心技能自查清单</title><link>https://isme.cz/featured/developer-check-list/</link><pubDate>Wed, 27 Aug 2025 11:37:29 +0000</pubDate><guid>https://isme.cz/featured/developer-check-list/</guid><description>覆盖 Java 与 Go 从基础到架构的完整路线：计算机基础、并发、集合/标准库、框架、数据库与缓存、分布式、工程实践、源码阅读与架构，全部细化为可勾选的任务清单。</description><content>&lt;h1 id="核心技能检查清单"&gt;核心技能检查清单&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;hi@isme developer-check-list $ cat ./doc/preface.txt&lt;br&gt;
+这是一个个人自查汇总 目的是明确自己的学习方向 也就是关于页所说的 B number&lt;br&gt;
+罗列出自己未达到精通水准的条目 方便清楚的知道自己还差在哪里 按计划逐步攻克
+勾选标准如下&lt;br&gt;
+&lt;strong&gt;准精通&lt;/strong&gt; 熟练使用 深入理解&lt;br&gt;
+&lt;strong&gt;精通&lt;/strong&gt; 按需重构 -&amp;gt; 官方贡献&lt;br&gt;
+❌弃用&lt;br&gt;
+🔲待定&lt;br&gt;
+🟡熟悉&lt;br&gt;
+✅完成 至少需达到 &lt;strong&gt;准精通&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="第-0-层准备与方法"&gt;第 0 层：准备与方法&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;✅ 选定主力语言顺序：先 &lt;strong&gt;Java→Go&lt;/strong&gt; / 或先 &lt;strong&gt;Go→Java&lt;/strong&gt;（任选一种更熟悉的做主线）&lt;/li&gt;
+&lt;li&gt;❌ 建立仓库 &lt;code&gt;learning-notes&lt;/code&gt;：每个主题一个 &lt;code&gt;README.md&lt;/code&gt;，记录要点/坑/例题&lt;/li&gt;
+&lt;li&gt;✅ 会用以下工具：IDEA / GoLand、VS Code、Postman/curl、Docker、Git &amp;amp; GitHub&lt;/li&gt;
+&lt;li&gt;❌ 习惯：所有示例都&lt;strong&gt;写最小可运行代码&lt;/strong&gt; + &lt;strong&gt;单元测试&lt;/strong&gt; + &lt;strong&gt;注释为什么&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="第-1-层计算机基础语言无关"&gt;第 1 层：计算机基础（语言无关）&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;🟡 操作系统：进程/线程/调度、虚拟内存、页缓存、文件系统、系统调用&lt;/li&gt;
+&lt;li&gt;🔲 计算机网络：TCP 三次握手/四次挥手、拥塞控制、HTTP/1.1-2-3、TLS、DNS&lt;/li&gt;
+&lt;li&gt;🟡 数据结构：数组、链表、栈队列、堆、树（AVL/红黑）、Trie、哈希表、图&lt;/li&gt;
+&lt;li&gt;🔲 算法：排序、二分、前缀和/差分、并查集、DFS/BFS、动态规划&lt;/li&gt;
+&lt;li&gt;✅ 数据库理论：事务 ACID、隔离级别、索引 B+Tree、执行计划、锁&lt;/li&gt;
+&lt;li&gt;🟡 分布式基础：CAP、BASE、幂等、重试、限流、熔断、降级、雪崩&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="第-2-层java-基础"&gt;第 2 层：Java 基础&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;✅ 语法与面向对象：类/接口/抽象类、继承/组合、泛型、异常、注解&lt;/li&gt;
+&lt;li&gt;✅ 集合：&lt;code&gt;ArrayList&lt;/code&gt; / &lt;code&gt;LinkedList&lt;/code&gt; / &lt;code&gt;HashMap&lt;/code&gt; / &lt;code&gt;TreeMap&lt;/code&gt; / &lt;code&gt;ConcurrentHashMap&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;🟡 IO/NIO：缓冲/通道/选择器、零拷贝、常用 &lt;code&gt;Files&lt;/code&gt;/&lt;code&gt;Paths&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;🔲 JVM：内存结构（堆/栈/元空间）、类加载、字节码基础、JIT、逃逸分析&lt;/li&gt;
+&lt;li&gt;🔲 GC 算法与实现：Serial/Parallel/CMS/G1/ZGC；Minor/Full GC、调优思路&lt;/li&gt;
+&lt;li&gt;🟡 并发关键字：&lt;code&gt;synchronized&lt;/code&gt;、&lt;code&gt;volatile&lt;/code&gt;、&lt;code&gt;final&lt;/code&gt; 的可见性与重排序语义&lt;/li&gt;
+&lt;li&gt;🔲 JUC：AQS、&lt;code&gt;ReentrantLock&lt;/code&gt;/&lt;code&gt;StampedLock&lt;/code&gt;、&lt;code&gt;CountDownLatch&lt;/code&gt;、&lt;code&gt;Semaphore&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;🔲 线程池：&lt;code&gt;ThreadPoolExecutor&lt;/code&gt; 参数、拒绝策略、监控告警&lt;/li&gt;
+&lt;li&gt;🔲 异步编程：&lt;code&gt;CompletableFuture&lt;/code&gt;、（可选）虚拟线程（Java 21）&lt;/li&gt;
+&lt;li&gt;✅ 常用构建：Maven/Gradle、依赖管理、多模块结构&lt;/li&gt;
+&lt;li&gt;🔲 单元测试：JUnit 5、Mockito、Testcontainers（集成测试）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="第-3-层go-基础"&gt;第 3 层：Go 基础&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;🟡 语法：切片/数组/map、结构体方法、指针/值接收者差异&lt;/li&gt;
+&lt;li&gt;🔲 接口：隐式实现、&lt;code&gt;io.Reader&lt;/code&gt;/&lt;code&gt;Writer&lt;/code&gt;、&lt;code&gt;fmt.Stringer&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;🟡 并发入门：goroutine、channel（无缓冲/有缓冲）、select&lt;/li&gt;
+&lt;li&gt;🔲 上下文：&lt;code&gt;context.Context&lt;/code&gt; 超时/取消/传递元数据&lt;/li&gt;
+&lt;li&gt;🟡 错误处理：&lt;code&gt;error&lt;/code&gt;、&lt;code&gt;errors.Is/As&lt;/code&gt;、&lt;code&gt;panic/recover&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;🟡 工程：&lt;code&gt;go mod&lt;/code&gt;、包布局（cmd/internal/pkg）、&lt;code&gt;go test -bench&lt;/code&gt;、&lt;code&gt;go vet&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;🔲 常用库：&lt;code&gt;net/http&lt;/code&gt;、&lt;code&gt;encoding/json&lt;/code&gt;、&lt;code&gt;time&lt;/code&gt;、&lt;code&gt;sync&lt;/code&gt;、&lt;code&gt;atomic&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="第-4-层并发与多线程"&gt;第 4 层：并发与多线程&lt;/h2&gt;
+&lt;h3 id="java"&gt;Java&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;🔲 内存模型（JMM）与 &lt;strong&gt;happens-before&lt;/strong&gt; 规则&lt;/li&gt;
+&lt;li&gt;🟡 锁的选择：对象锁 vs &lt;code&gt;ReentrantLock&lt;/code&gt; vs &lt;code&gt;StampedLock&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;🔲 原子类：&lt;code&gt;Atomic*&lt;/code&gt;、&lt;code&gt;LongAdder&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;🟡 无锁/低锁：CAS、自旋、伪共享与缓存行&lt;/li&gt;
+&lt;li&gt;🔲 任务编排：线程池 + &lt;code&gt;CompletableFuture&lt;/code&gt; 组合&lt;/li&gt;
+&lt;li&gt;🟡 分布式锁：Redis（SET NX EX、Redisson）、ZK（临时顺序节点）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="go"&gt;Go&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;🔲 调度模型：G-P-M（M:N）&lt;/li&gt;
+&lt;li&gt;🔲 Channel 模式：fan-in、fan-out、worker pool、pipeline、背压&lt;/li&gt;
+&lt;li&gt;🔲 &lt;code&gt;sync&lt;/code&gt;：&lt;code&gt;Mutex&lt;/code&gt;、&lt;code&gt;RWMutex&lt;/code&gt;、&lt;code&gt;WaitGroup&lt;/code&gt;、&lt;code&gt;Cond&lt;/code&gt;、&lt;code&gt;Once&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;🔲 性能：避免切片扩容（&lt;code&gt;make(len, cap)&lt;/code&gt;）、对象复用（&lt;code&gt;sync.Pool&lt;/code&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="第-5-层数据库与缓存"&gt;第 5 层：数据库与缓存&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;🟡 MySQL：索引设计、Explain、覆盖索引、回表、慢查询优化、分库分表思路&lt;/li&gt;
+&lt;li&gt;🔲 事务与锁：MVCC、快照读/当前读、间隙锁、死锁检测&lt;/li&gt;
+&lt;li&gt;🟡 Redis：字符串/哈希/列表/集合/有序集合、Bitmap/HyperLogLog/Geo&lt;/li&gt;
+&lt;li&gt;🔲 Redis 高可用：RDB/AOF、复制、哨兵、Cluster&lt;/li&gt;
+&lt;li&gt;🔲 缓存模式：Cache Aside / Write Through / Write Back、失效策略&lt;/li&gt;
+&lt;li&gt;🟡 缓存问题：穿透（布隆过滤器）、击穿（热点互斥）、雪崩（过期错峰）&lt;/li&gt;
+&lt;li&gt;🔲 分布式锁：正确性（唯一性、原子性、自动过期、可重入/续约）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="第-6-层框架与标准库"&gt;第 6 层：框架与标准库&lt;/h2&gt;
+&lt;h3 id="java企业后台为主"&gt;Java（企业后台为主）&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;🟡 Spring 核心：IoC、AOP、事件、生命周期、条件装配&lt;/li&gt;
+&lt;li&gt;🟡 Spring Boot：自动装配、配置映射、Starter 机制&lt;/li&gt;
+&lt;li&gt;🟡 Web：Spring MVC、校验、全局异常、拦截器/过滤器&lt;/li&gt;
+&lt;li&gt;🟡 数据访问：MyBatis / MyBatis-Plus、事务、分页、批处理&lt;/li&gt;
+&lt;li&gt;🟡 Spring Cloud（选型即可）：Nacos/Eureka、OpenFeign、Gateway、Config、Sleuth/Zipkin、Resilience4j&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="go云原生高并发"&gt;Go（云原生/高并发）&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;🔲 Web 框架：Gin/Echo（路由、中间件、绑定与校验）&lt;/li&gt;
+&lt;li&gt;🔲 ORM：GORM（迁移、事务、预加载、乐观锁）&lt;/li&gt;
+&lt;li&gt;🔲 依赖注入：Google Wire（编译期 DI）&lt;/li&gt;
+&lt;li&gt;🔲 配置：Viper；日志：zap/logrus；HTTP 客户端：resty&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="第-7-层设计模式与编程思想"&gt;第 7 层：设计模式与编程思想&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;🔲 OOP：封装/继承/多态（Java），组合优于继承（Go）&lt;/li&gt;
+&lt;li&gt;🟡 必会模式：单例、工厂、策略、装饰器、代理、模板方法、观察者&lt;/li&gt;
+&lt;li&gt;✅ 反射与动态代理：JDK/CGLIB、AOP 原理（切点/通知/代理链）&lt;/li&gt;
+&lt;li&gt;🔲 重构：坏味道、提炼函数、引入参数对象、用组合取代继承&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="第-8-层工程与架构实践"&gt;第 8 层：工程与架构实践&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;✅ Git Flow：feature / release / hotfix&lt;/li&gt;
+&lt;li&gt;✅ API 设计：REST/JSON、错误码、幂等、版本化&lt;/li&gt;
+&lt;li&gt;🔲 安全：鉴权（JWT/OAuth2）、CSRF、XSS、SQL 注入、RCE 防护&lt;/li&gt;
+&lt;li&gt;🔲 日志/指标/追踪：ELK、Prometheus + Grafana、OpenTelemetry&lt;/li&gt;
+&lt;li&gt;🟡 容器化：Dockerfile 最佳实践、多阶段构建、最小镜像&lt;/li&gt;
+&lt;li&gt;🔲 编排：Docker Compose → Kubernetes（Pod/Deployment/Service/Ingress）&lt;/li&gt;
+&lt;li&gt;🔲 配置：ConfigMap/Secret、灰度：HPA/金丝雀/蓝绿&lt;/li&gt;
+&lt;li&gt;✅ CI/CD：GitHub Actions/Jenkins（构建、测试、镜像、部署）&lt;/li&gt;
+&lt;li&gt;🔲 云映射：RDS、Elasticache、EKS、S3、CloudFront（或自选云）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="第-9-层源码阅读与开源贡献"&gt;第 9 层：源码阅读与开源贡献&lt;/h2&gt;
+&lt;h3 id="java-1"&gt;Java&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;🔲 JDK：&lt;code&gt;ArrayList&lt;/code&gt;、&lt;code&gt;HashMap&lt;/code&gt;、&lt;code&gt;ConcurrentHashMap&lt;/code&gt;、&lt;code&gt;CompletableFuture&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;🔲 Spring：IoC/AOP/事务传播、MVC 调度链&lt;/li&gt;
+&lt;li&gt;🔲 MyBatis：Mapper 动态代理、一级/二级缓存&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="go-1"&gt;Go&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;🔲 Go runtime：调度、GC 写屏障&lt;/li&gt;
+&lt;li&gt;🔲 Gin：路由树、Context 设计&lt;/li&gt;
+&lt;li&gt;🔲 GORM：链式 API、钩子、事务&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="推荐资料中文优先"&gt;推荐资料（中文优先）&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Java：《Effective Java》《Java 并发编程实战》《深入理解 JVM》&lt;/li&gt;
+&lt;li&gt;Go：《Go 语言圣经》《Go 语言设计与实现》&lt;/li&gt;
+&lt;li&gt;数据库：《高性能 MySQL》《Redis 设计与实现》（或《Redis 实战》）&lt;/li&gt;
+&lt;li&gt;架构：《架构整洁之道》《领域驱动设计精要》&lt;/li&gt;
+&lt;li&gt;云原生：《Kubernetes in Action》《gRPC 官方文档（中文）》&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="附录java-8--21-必学特性表"&gt;附录：Java 8 → 21 必学特性表&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;🟡 Java 8：Lambda / Stream / Optional / 新日期时间 / 默认接口方法&lt;/li&gt;
+&lt;li&gt;🟡 Java 9-11：模块化、&lt;code&gt;var&lt;/code&gt;、HTTP Client、Flight Recorder&lt;/li&gt;
+&lt;li&gt;🔲 Java 12-17：Switch 新语法、文本块、Records、Sealed Classes&lt;/li&gt;
+&lt;li&gt;🔲 Java 19-21：虚拟线程（Project Loom）、结构化并发、Scoped Values（了解）&lt;/li&gt;
+&lt;/ul&gt;</content></item><item><title>股票交易所后端程序员学习大纲</title><link>https://isme.cz/featured/stock-backend-learning/</link><pubDate>Wed, 24 Sep 2025 00:00:00 +0000</pubDate><guid>https://isme.cz/featured/stock-backend-learning/</guid><description>适合股票交易所后端程序员的学习路线大纲，从基础股票知识到交易规则、清算结算、风控与合规，再到高级主题。</description><content>&lt;h1 id="-股票交易所后端程序员学习笔记大纲"&gt;📚 股票交易所后端程序员学习笔记大纲&lt;/h1&gt;
+&lt;h2 id="1-股票基础概念"&gt;1️⃣ 股票基础概念&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;股票是什么、代表什么（股权、份额）&lt;/li&gt;
+&lt;li&gt;股票种类：普通股 / 优先股 / A股 / B股 / H股 / 美股 ADR&lt;/li&gt;
+&lt;li&gt;基本术语：市价、现价、涨跌幅、成交量、成交额、股票代码、交易所&lt;/li&gt;
+&lt;li&gt;流通股、本益比（PE）、市值&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="2-交易规则与流程"&gt;2️⃣ 交易规则与流程&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;订单类型&lt;/strong&gt;：限价单、市价单、止损单、止盈单&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;撮合机制&lt;/strong&gt;：价格优先、时间优先、订单簿&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;T+1、T+2 规则&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;交易时间&lt;/strong&gt;：开盘、收盘、集合竞价、连续竞价&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;涨跌停板制度&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="3-市场参与者与角色"&gt;3️⃣ 市场参与者与角色&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;投资者（散户、机构）&lt;/li&gt;
+&lt;li&gt;券商（Broker）&lt;/li&gt;
+&lt;li&gt;交易所（Exchange）&lt;/li&gt;
+&lt;li&gt;清算所（Clearing House）&lt;/li&gt;
+&lt;li&gt;做市商（Market Maker）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="4-股票数据与行情"&gt;4️⃣ 股票数据与行情&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Level 1 数据&lt;/strong&gt;：最新价、成交量、买一卖一&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Level 2 数据&lt;/strong&gt;：盘口五档行情&lt;/li&gt;
+&lt;li&gt;K线图：分时、日K、周K、月K&lt;/li&gt;
+&lt;li&gt;技术指标：均线、MACD、换手率&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="5-清算与结算"&gt;5️⃣ 清算与结算&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;资金账户 / 股票账户&lt;/li&gt;
+&lt;li&gt;交收周期（T+1 / T+2）&lt;/li&gt;
+&lt;li&gt;中央结算公司角色&lt;/li&gt;
+&lt;li&gt;保证金、融资融券、融券卖空&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="6-风控与合规"&gt;6️⃣ 风控与合规&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;风险控制：单笔订单限额、单日交易限额、涨跌停检查&lt;/li&gt;
+&lt;li&gt;合规检查：KYC、AML、大宗交易报告、异常交易监控&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="7-高级主题进阶"&gt;7️⃣ 高级主题（进阶）&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;高频交易（HFT）与撮合引擎优化&lt;/li&gt;
+&lt;li&gt;FIX 协议（金融信息交换协议）&lt;/li&gt;
+&lt;li&gt;WebSocket 推送行情 vs REST 接口&lt;/li&gt;
+&lt;li&gt;低延迟架构、分布式账务系统设计&lt;/li&gt;
+&lt;/ul&gt;</content></item><item><title>一周宿舍简易餐盒食谱（电饭煲/小锅/微波炉/空气炸锅）</title><link>https://isme.cz/featured/dorm-meal-prep-1week/</link><pubDate>Thu, 11 Sep 2025 20:00:00 +0800</pubDate><guid>https://isme.cz/featured/dorm-meal-prep-1week/</guid><description>在宿舍用简单设备（电饭煲/小锅/微波炉/空气炸锅）完成的一周简易工作餐盒饭方案，含午晚餐安排与备餐技巧。</description><content>&lt;blockquote&gt;
+&lt;p&gt;适用设备：电饭煲、电热水壶/小锅、微波炉、空气炸锅（按宿舍规定使用）。&lt;br&gt;
+原则：省事、均衡、能带饭；能一次做多份并冷藏/冷冻复热。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="-一周宿舍简易餐盒食谱"&gt;🥡 一周宿舍简易餐盒食谱&lt;/h2&gt;
+&lt;h3 id="周一"&gt;周一&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;午餐盒饭&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;米饭（电饭煲）&lt;/li&gt;
+&lt;li&gt;蒸鸡胸肉（切片+少许盐黑胡椒）&lt;/li&gt;
+&lt;li&gt;蒸西兰花+胡萝卜（电饭煲同层蒸）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;晚餐&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;番茄鸡蛋面（小锅/电饭煲煮）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="周二"&gt;周二&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;午餐盒饭&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;米饭&lt;/li&gt;
+&lt;li&gt;午餐肉切片（空气炸锅/平底锅煎）&lt;/li&gt;
+&lt;li&gt;凉拌黄瓜（酱油+醋+蒜末）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;晚餐&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;土豆炖鸡块（电饭煲一锅炖）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="周三"&gt;周三&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;午餐盒饭&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;米饭&lt;/li&gt;
+&lt;li&gt;蒸蛋羹（电饭煲/微波炉）&lt;/li&gt;
+&lt;li&gt;清炒卷心菜（小电锅/小炒锅）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;晚餐&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;咖喱饭（咖喱块+土豆胡萝卜洋葱+米饭）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="周四"&gt;周四&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;午餐盒饭&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;红薯饭（在米饭里加红薯块同煮）&lt;/li&gt;
+&lt;li&gt;煎鸡腿（空气炸锅/小锅）&lt;/li&gt;
+&lt;li&gt;蒸玉米段&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;晚餐&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;青菜鸡蛋汤面&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="周五"&gt;周五&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;午餐盒饭&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;米饭&lt;/li&gt;
+&lt;li&gt;香煎豆腐块（生抽/酱油+葱花）&lt;/li&gt;
+&lt;li&gt;凉拌西红柿（生抽+香油）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;晚餐&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;番茄土豆炖牛肉（电饭煲一锅炖）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="周六"&gt;周六&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;午餐盒饭&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;米饭&lt;/li&gt;
+&lt;li&gt;空气炸鸡翅（酱油+蒜+蜂蜜腌一晚）&lt;/li&gt;
+&lt;li&gt;凉拌生菜（芝麻酱/花生酱拌）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;晚餐&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一锅火锅（小电锅：丸子、豆腐、蔬菜、粉丝）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="周日"&gt;周日&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;午餐盒饭&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;米饭&lt;/li&gt;
+&lt;li&gt;煎鸡蛋+火腿片&lt;/li&gt;
+&lt;li&gt;蒸南瓜片&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;晚餐&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;炒面（卷心菜+胡萝卜+鸡蛋）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="-采买与分装建议"&gt;🔧 采买与分装建议&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;周末一次性采买&lt;/strong&gt;：鸡胸/鸡腿、牛腩、豆腐、鸡蛋、土豆/胡萝卜/洋葱、西兰花、卷心菜、玉米、黄瓜、番茄、生菜、南瓜、红薯、挂面/米、咖喱块、丸子/冷冻配菜。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;分份冷冻&lt;/strong&gt;：肉类按每餐 150–200g 分装；蔬菜洗净分袋，西兰花焯水后更耐存。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;调料极简清单&lt;/strong&gt;：盐、黑胡椒、酱油、蚝油、醋、蒜、辣椒酱（可选蜂蜜/芝麻酱/香油）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="-宿舍备餐小技巧"&gt;⏱️ 宿舍备餐小技巧&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;边煮饭边蒸菜&lt;/strong&gt;：电饭煲放蒸架，一次搞定主食+配菜。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;多做一份&lt;/strong&gt;：晚餐做两到三餐量，装盒冷藏；次日微波/复蒸即食。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;主食囤份&lt;/strong&gt;：米饭多煮，分盒冷冻；吃前微波 2–3 分钟或上锅蒸回弹。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;带分隔餐盒&lt;/strong&gt;：防串味；提前在饭面刷少许油，米饭不干不黏。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;安全与规定&lt;/strong&gt;：遵守宿舍用电与明火规定，注意通风与卫生。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;想要 &lt;strong&gt;打印版（PDF/Excel）&lt;/strong&gt; 的周计划表吗？我可以把上面的菜单自动排成表格并提供下载。&lt;/p&gt;
+&lt;/blockquote&gt;</content></item><item><title>如何规划 AWS 学习与认证路径：从入门到架构师</title><link>https://isme.cz/featured/aws-study/</link><pubDate>Thu, 14 Aug 2025 18:03:01 +0000</pubDate><guid>https://isme.cz/featured/aws-study/</guid><description>系统规划 AWS 学习路线：从基础服务到专业认证，帮助开发者高效通过 SAA 等考试。</description><content>&lt;h1 id="如何规划-aws-学习与认证路径从入门到架构师"&gt;如何规划 AWS 学习与认证路径：从入门到架构师&lt;/h1&gt;
+&lt;p&gt;随着云计算的普及，掌握 AWS 技能成为技术人员提升自身竞争力的重要途径。作为一名 Java 开发者，同时怀揣成为架构师的梦想，规划一条清晰的 AWS 学习与认证路径，将为你的职业发展奠定坚实基础。&lt;/p&gt;
+&lt;p&gt;在这篇文章中，我将分享适合 Java 开发者的 AWS 学习和认证路线，从入门到架构师，一步步助你掌握云计算技能。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="为什么选择-aws-认证"&gt;为什么选择 AWS 认证？&lt;/h2&gt;
+&lt;p&gt;AWS 是全球最受欢迎的云计算平台，拥有丰富的服务生态和良好的市场口碑。通过 AWS 认证，你可以：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;系统学习 AWS 核心服务和最佳实践。&lt;/li&gt;
+&lt;li&gt;提升职业竞争力，尤其是在云计算相关的岗位中。&lt;/li&gt;
+&lt;li&gt;构建从开发到架构设计的完整技能体系。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id="aws-学习与认证路线"&gt;AWS 学习与认证路线&lt;/h2&gt;
+&lt;p&gt;根据 AWS 的认证体系，我们可以将学习过程分为五个阶段：&lt;strong&gt;入门基础&lt;/strong&gt;、&lt;strong&gt;开发与构建&lt;/strong&gt;、&lt;strong&gt;架构设计&lt;/strong&gt;、&lt;strong&gt;高级架构与专业认证&lt;/strong&gt;，以及 &lt;strong&gt;扩展技能与专项认证&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="阶段-1入门基础"&gt;阶段 1：入门基础&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;目标&lt;/strong&gt;：掌握 AWS 的核心概念和基础服务，为进一步学习打下基础。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;学习内容&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;云计算基础概念：弹性计算、按需服务、全球架构。&lt;/li&gt;
+&lt;li&gt;AWS 核心服务：EC2（虚拟服务器）、S3（存储服务）、RDS（数据库服务）、VPC（网络）、IAM（权限管理）。&lt;/li&gt;
+&lt;li&gt;AWS 定价模型和支持机制。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;推荐课程&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://aws.amazon.com/training/course-descriptions/cloud-practitioner-essentials/"&gt;AWS Cloud Practitioner Essentials&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;认证&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;AWS Certified Cloud Practitioner&lt;/strong&gt;&lt;br&gt;
+入门级认证，适合初学者了解 AWS 服务及架构理念。学习周期为 2-4 周。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="阶段-2开发与构建"&gt;阶段 2：开发与构建&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;目标&lt;/strong&gt;：学习如何使用 AWS 开发工具，在云上构建高效的应用程序。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;学习内容&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;AWS 开发服务：Lambda、DynamoDB、SQS、SNS、API Gateway。&lt;/li&gt;
+&lt;li&gt;基础架构自动化：CloudFormation 和 AWS CDK。&lt;/li&gt;
+&lt;li&gt;CI/CD 实践：CodePipeline、CodeDeploy、CodeBuild。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;推荐课程&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://aws.amazon.com/training/course-descriptions/developing/"&gt;Developing on AWS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;认证&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;AWS Certified Developer – Associate&lt;/strong&gt;&lt;br&gt;
+适合开发人员，专注于开发和部署应用，学习周期为 6-8 周。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="阶段-3架构设计"&gt;阶段 3：架构设计&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;目标&lt;/strong&gt;：学习如何设计高可用、容错、弹性的系统架构，满足企业的业务需求。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;学习内容&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;深入理解 AWS 核心服务：EC2、S3、VPC、Route 53、ELB、Auto Scaling。&lt;/li&gt;
+&lt;li&gt;架构模式：微服务、事件驱动架构、分布式系统设计。&lt;/li&gt;
+&lt;li&gt;安全设计：IAM 策略、KMS 加密、WAF。&lt;/li&gt;
+&lt;li&gt;成本优化和性能监控：CloudWatch、Trusted Advisor。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;推荐课程&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://aws.amazon.com/training/course-descriptions/architecting/"&gt;Architecting on AWS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;认证&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;AWS Certified Solutions Architect – Associate&lt;/strong&gt;&lt;br&gt;
+专注于设计分布式系统的认证，学习周期为 8-10 周。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="阶段-4高级架构与专业认证"&gt;阶段 4：高级架构与专业认证&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;目标&lt;/strong&gt;：掌握复杂架构设计能力，构建企业级混合云架构和多区域部署方案。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;学习内容&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;企业级架构：混合云架构、跨区域部署。&lt;/li&gt;
+&lt;li&gt;性能优化与故障排查。&lt;/li&gt;
+&lt;li&gt;数据流与分析架构（Kinesis、Redshift）。&lt;/li&gt;
+&lt;li&gt;灾备与迁移方案（AWS Migration Hub、CloudEndure）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;推荐课程&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://aws.amazon.com/training/course-descriptions/advanced-architecting/"&gt;Advanced Architecting on AWS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;认证&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;AWS Certified Solutions Architect – Professional&lt;/strong&gt;&lt;br&gt;
+专业级认证，适合资深架构师，学习周期为 12-16 周。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="阶段-5扩展技能与专项认证"&gt;阶段 5：扩展技能与专项认证&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;目标&lt;/strong&gt;：根据职业发展方向，学习特定领域技能，如 DevOps、安全、大数据和机器学习。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;可选认证&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;AWS Certified DevOps Engineer – Professional&lt;/strong&gt;&lt;br&gt;
+聚焦于 CI/CD、容器化、基础设施即代码等 DevOps 实践。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AWS Certified Security – Specialty&lt;/strong&gt;&lt;br&gt;
+专注于云安全，包括加密、合规性和权限管理。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AWS Certified Data Analytics – Specialty&lt;/strong&gt;&lt;br&gt;
+面向大数据和分析，学习 Glue、Kinesis、Redshift 等服务。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AWS Certified Machine Learning – Specialty&lt;/strong&gt;&lt;br&gt;
+专注于机器学习服务（如 SageMaker）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="学习资源推荐"&gt;学习资源推荐&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;AWS 官方资源&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://aws.amazon.com/training/"&gt;AWS Training 和 Certification&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;AWS 实验室：动手实践 AWS 服务。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;第三方学习平台&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;A Cloud Guru&lt;/strong&gt;：全面的 AWS 视频课程。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Whizlabs&lt;/strong&gt;：认证考试模拟题和解读。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Udemy&lt;/strong&gt;：高性价比的 AWS 课程。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;社区与实践&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;阅读 AWS 架构白皮书。&lt;/li&gt;
+&lt;li&gt;使用 &lt;a href="https://aws.amazon.com/well-architected-tool/"&gt;AWS Well-Architected Tool&lt;/a&gt; 审查你的架构设计。&lt;/li&gt;
+&lt;li&gt;参与 AWS 社区（如 AWS Community Builder）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id="示例时间表"&gt;示例时间表&lt;/h2&gt;
+&lt;p&gt;根据推荐路径，以下是一个为期一年的学习计划：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;第 1-2 个月&lt;/strong&gt;：学习云计算基础，通过 &lt;strong&gt;Cloud Practitioner&lt;/strong&gt; 认证。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;第 3-5 个月&lt;/strong&gt;：掌握开发技能，完成 &lt;strong&gt;Developer Associate&lt;/strong&gt; 认证。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;第 6-8 个月&lt;/strong&gt;：专注于架构设计，通过 &lt;strong&gt;Solutions Architect Associate&lt;/strong&gt; 认证。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;第 9-12 个月&lt;/strong&gt;：挑战专业级架构认证（&lt;strong&gt;Solutions Architect Professional&lt;/strong&gt;）或专项认证。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id="总结"&gt;总结&lt;/h2&gt;
+&lt;p&gt;通过以上学习与认证路径，你将逐步从入门者成长为能够独立设计复杂云架构的架构师。在学习过程中，动手实践和项目经验尤为重要，它不仅能加深你对 AWS 的理解，还能帮助你在未来的工作中游刃有余。&lt;/p&gt;
+&lt;p&gt;开始你的 AWS 学习之旅吧！如果有任何问题或经验分享，欢迎在评论区交流 😊&lt;/p&gt;</content></item><item><title>Go 的声明语法：为什么与众不同</title><link>https://isme.cz/featured/go-declaration-syntax/</link><pubDate>Wed, 13 Aug 2025 22:00:00 +0700</pubDate><guid>https://isme.cz/featured/go-declaration-syntax/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自 Go 语言作者 Rob Pike 在 2010 年的文章 &lt;em&gt;&amp;ldquo;Go&amp;rsquo;s Declaration Syntax&amp;rdquo;&lt;/em&gt;，结合原文与实例，解释 Go 为什么采用不同于 C/Java 的声明方式。&lt;br&gt;
+写这篇文章的原因：&lt;br&gt;
+在网络上能找到不少 &lt;em&gt;&amp;ldquo;Go&amp;rsquo;s Declaration Syntax&amp;rdquo;&lt;/em&gt; 的中文翻译，但大多数存在直译生硬、遗漏原文细节甚至误解语义的问题。&lt;br&gt;
+这些低质量翻译往往让读者更困惑，而不是更清楚。&lt;br&gt;
+因此，我基于 Rob Pike 原文，结合上下文和代码示例，整理出一份更贴近原意、方便国内开发者理解的版本。&lt;br&gt;
+同时保留原文核心思想，并补充了对比表与背景说明，帮助读者更好地掌握 Go 声明语法背后的设计理念。&lt;/p&gt;
+&lt;/blockquote&gt;</description><content>&lt;blockquote&gt;
+&lt;p&gt;本文整理自 Go 语言作者 Rob Pike 在 2010 年的文章 &lt;em&gt;&amp;ldquo;Go&amp;rsquo;s Declaration Syntax&amp;rdquo;&lt;/em&gt;，结合原文与实例，解释 Go 为什么采用不同于 C/Java 的声明方式。&lt;br&gt;
+写这篇文章的原因：&lt;br&gt;
+在网络上能找到不少 &lt;em&gt;&amp;ldquo;Go&amp;rsquo;s Declaration Syntax&amp;rdquo;&lt;/em&gt; 的中文翻译，但大多数存在直译生硬、遗漏原文细节甚至误解语义的问题。&lt;br&gt;
+这些低质量翻译往往让读者更困惑，而不是更清楚。&lt;br&gt;
+因此，我基于 Rob Pike 原文，结合上下文和代码示例，整理出一份更贴近原意、方便国内开发者理解的版本。&lt;br&gt;
+同时保留原文核心思想，并补充了对比表与背景说明，帮助读者更好地掌握 Go 声明语法背后的设计理念。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="1-背景c-系语法的问题"&gt;1. 背景：C 系语法的问题&lt;/h2&gt;
+&lt;p&gt;Go 诞生前，主流语言大多沿用 C 风格的声明方式：&lt;strong&gt;类型在前，变量名在后&lt;/strong&gt;。&lt;br&gt;
+比如：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-c" data-lang="c"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这看似简单，但在函数、指针、复杂类型时，C 风格语法显得&lt;strong&gt;不一致且难以阅读&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;问题 1：声明顺序不一致&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;变量声明：&lt;code&gt;int x;&lt;/code&gt; → 类型在前&lt;/li&gt;
+&lt;li&gt;函数声明：&lt;code&gt;int f(float y);&lt;/code&gt; → 返回值类型在最前，参数类型夹在中间&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;问题 2：指针声明容易混淆&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-c" data-lang="c"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;// a 是指针，b 却是普通 int
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;新手很容易以为 a 和 b 都是指针。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;问题 3：复杂类型可读性差&lt;/strong&gt;&lt;br&gt;
+函数指针声明在 C 中尤其难读：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-c" data-lang="c"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;fp&lt;/span&gt;&lt;span class="p"&gt;)(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;要在脑中打乱并重组顺序才能理解：&lt;code&gt;fp&lt;/code&gt; 是一个函数指针，接收两个 int，返回 int。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="2-go-的设计选择类型在变量名后"&gt;2. Go 的设计选择：类型在变量名后&lt;/h2&gt;
+&lt;p&gt;Go 改成 &lt;strong&gt;名字在前，类型在后&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;var&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// x 是 int&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;var&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// p 是指向 int 的指针&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;var&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;f&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// f 是接收 int 返回 int 的函数&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="好处一从左到右自然阅读"&gt;好处一：从左到右自然阅读&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“x 是 int”，“f 是函数”&lt;br&gt;
+即使是复杂类型，也能自然读下来：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;var&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;f&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;err&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;error&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;读作：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;f 是函数&lt;/li&gt;
+&lt;li&gt;参数 p 是 int&lt;/li&gt;
+&lt;li&gt;返回值 r 是 int&lt;/li&gt;
+&lt;li&gt;返回值 err 是 error&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="好处二变量参数返回值统一语法"&gt;好处二：变量、参数、返回值统一语法&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;func&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;y&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;参数和变量声明格式相同（名字 → 类型）&lt;/li&gt;
+&lt;li&gt;返回值类型也放在参数列表之后，阅读顺序统一&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="好处三避免符号绑定错误"&gt;好处三：避免符号绑定错误&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;var&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;b&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 两个都是指针&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;不再出现 C 那种 &lt;code&gt;int* a, b;&lt;/code&gt; 的混乱。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="3-历史借鉴"&gt;3. 历史借鉴&lt;/h2&gt;
+&lt;p&gt;这种写法并不是 Go 首创，它借鉴了 Pascal、Modula-2 等语言的声明方式。&lt;br&gt;
+这些语言同样采用“名字在前，类型在后”的语法，被认为更直观、更接近自然语言的思考习惯。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="4-rob-pike-想表达的核心"&gt;4. Rob Pike 想表达的核心&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;统一&lt;/strong&gt;：变量、参数、返回值声明方式一致，不需要脑中重排语序&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;可读&lt;/strong&gt;：复杂类型可以按自然顺序读，不会打乱思路&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;清晰&lt;/strong&gt;：减少符号绑定混淆，指针、函数类型更易理解&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;无历史包袱&lt;/strong&gt;：Go 从零设计，没有 C 的兼容压力，敢于直接改掉不合理之处&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id="5-c-与-go-对比表"&gt;5. C 与 Go 对比表&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;需求&lt;/th&gt;
+&lt;th&gt;C 写法&lt;/th&gt;
+&lt;th&gt;Go 写法&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;变量声明&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;int x;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;var x int&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;指针声明&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;int* a, b; // b 不是指针&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;var a, b *int&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;函数声明&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;int f(float y);&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;func f(y float) int&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;函数指针&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;int (*fp)(int, int);&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;var fp func(int, int) int&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;函数返回多个值&lt;/td&gt;
+&lt;td&gt;（C 无法直接返回多个值）&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;func f() (int, error)&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id="6-总结"&gt;6. 总结&lt;/h2&gt;
+&lt;p&gt;Go 的声明语法不是为了标新立异，而是为了让代码：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;可读性更高&lt;/strong&gt;（从左到右读）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;语法一致性更好&lt;/strong&gt;（变量、参数、返回值统一）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;减少误解&lt;/strong&gt;（避免符号绑定混淆）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;更容易口语化解释&lt;/strong&gt;（自然语言风格）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这种设计让 Go 的声明更接近人类思维，而不仅仅是机器能理解的格式。&lt;/p&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;原文链接：&lt;a href="https://go.dev/blog/declaration-syntax"&gt;Go&amp;rsquo;s Declaration Syntax&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</content></item><item><title>MAC系统常用快捷键 基本常用的都整理在这里了</title><link>https://isme.cz/featured/mac-shortcut-key/</link><pubDate>Thu, 31 May 2018 09:13:00 +0700</pubDate><guid>https://isme.cz/featured/mac-shortcut-key/</guid><description>整理 Mac 系统常用快捷键，包括通用、系统、截图、Finder、浏览器、应用程序和文本处理，帮助提升日常效率。</description><content>&lt;h2 id="写在前面"&gt;写在前面&lt;/h2&gt;
+&lt;p&gt;Mac 系统中有几个比较特殊的功能键，与 Windows 的差别主要在这里。&lt;br&gt;
+比如 Windows 常用的 &lt;strong&gt;Ctrl&lt;/strong&gt; 键，在 Mac 中对应的并不是长得很像的 Control，而是 &lt;strong&gt;Command(⌘)&lt;/strong&gt; 键。&lt;br&gt;
+⌘ 几乎是 Mac 上最常用的键。&lt;/p&gt;
+&lt;p&gt;在 Mac 中，每个按键都有与之对应的 &lt;strong&gt;技术符号&lt;/strong&gt;，常见的有：⌘ ⌥ ⇧ ⌃ ↩︎。&lt;br&gt;
+系统菜单和许多技术文章里都用这些符号（虽然我个人觉得直接写 Command 更直观）。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="mac-键盘快捷键符号对照表"&gt;Mac 键盘快捷键符号对照表&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;符号&lt;/th&gt;
+&lt;th&gt;含义&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;⌘&lt;/td&gt;
+&lt;td&gt;Command&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;⇧&lt;/td&gt;
+&lt;td&gt;Shift&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;⌥&lt;/td&gt;
+&lt;td&gt;Option&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;⌃&lt;/td&gt;
+&lt;td&gt;Control&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;fn&lt;/td&gt;
+&lt;td&gt;Function&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;↩︎&lt;/td&gt;
+&lt;td&gt;Return/Enter&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;⌫&lt;/td&gt;
+&lt;td&gt;Delete&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;⌦&lt;/td&gt;
+&lt;td&gt;向前删除（Fn+Delete）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;↑&lt;/td&gt;
+&lt;td&gt;上箭头&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;↓&lt;/td&gt;
+&lt;td&gt;下箭头&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;←&lt;/td&gt;
+&lt;td&gt;左箭头&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;→&lt;/td&gt;
+&lt;td&gt;右箭头&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;⇞&lt;/td&gt;
+&lt;td&gt;Page Up（Fn+↑）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;⇟&lt;/td&gt;
+&lt;td&gt;Page Down（Fn+↓）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Home&lt;/td&gt;
+&lt;td&gt;Fn+←&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;End&lt;/td&gt;
+&lt;td&gt;Fn+→&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;⇥&lt;/td&gt;
+&lt;td&gt;Tab&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;⇤&lt;/td&gt;
+&lt;td&gt;Shift+Tab&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;⎋&lt;/td&gt;
+&lt;td&gt;Escape&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;⏏︎&lt;/td&gt;
+&lt;td&gt;Eject (电源)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id="通用操作"&gt;通用操作&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;⌘ + Z 撤销&lt;/li&gt;
+&lt;li&gt;⌘ + X 剪切&lt;/li&gt;
+&lt;li&gt;⌘ + C 拷贝&lt;/li&gt;
+&lt;li&gt;⌘ + V 粘贴&lt;/li&gt;
+&lt;li&gt;⌘ + A 全选&lt;/li&gt;
+&lt;li&gt;⌘ + S 保存&lt;/li&gt;
+&lt;li&gt;⌘ + F 查找&lt;/li&gt;
+&lt;li&gt;⌘ + H 隐藏窗口&lt;/li&gt;
+&lt;li&gt;⌘ + M 最小化窗口&lt;/li&gt;
+&lt;li&gt;⌘ + N 新建&lt;/li&gt;
+&lt;li&gt;⌘ + O 打开&lt;/li&gt;
+&lt;li&gt;⌘ + ⇧ + S 另存为&lt;/li&gt;
+&lt;li&gt;⌘ + P 打印&lt;/li&gt;
+&lt;li&gt;⌘ + W 关闭&lt;/li&gt;
+&lt;li&gt;⌘ + Q 退出&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="系统功能"&gt;系统功能&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;⌥ 开机 → 启动管理器&lt;/li&gt;
+&lt;li&gt;⌘ + R 开机 → 恢复模式&lt;/li&gt;
+&lt;li&gt;⌘ + ⌥ + P + R → 重置 NVRAM&lt;/li&gt;
+&lt;li&gt;⌘ + ⌥ + ⌃ + ⏏︎ → 退出所有应用并关机&lt;/li&gt;
+&lt;li&gt;⌘ + ⌥ + ⎋ → 强制退出程序&lt;/li&gt;
+&lt;li&gt;⌘ + Space → Spotlight 搜索（默认输入法切换，推荐改掉）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="截图快捷键"&gt;截图快捷键&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;⌘ + ⇧ + 3 → 全屏截图（保存文件）&lt;/li&gt;
+&lt;li&gt;⌘ + ⇧ + Ctrl + 3 → 全屏截图到剪贴板&lt;/li&gt;
+&lt;li&gt;⌘ + ⇧ + 4 → 区域截图，按 Space 捕捉窗口&lt;/li&gt;
+&lt;li&gt;⌘ + ⇧ + Ctrl + 4 → 区域截图到剪贴板&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="finder文件管理器"&gt;Finder（文件管理器）&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;⌘ + ⇧ + N → 新建文件夹&lt;/li&gt;
+&lt;li&gt;⌘ + ⇧ + . → 显示/隐藏隐藏文件&lt;/li&gt;
+&lt;li&gt;⌘ + ⇧ + G → 跳转到路径&lt;/li&gt;
+&lt;li&gt;↩︎ → 重命名文件&lt;/li&gt;
+&lt;li&gt;⌘ + O → 打开文件&lt;/li&gt;
+&lt;li&gt;⌘ + ⌥ + V → 剪切（移动粘贴）&lt;/li&gt;
+&lt;li&gt;⌘ + ↑ → 打开上级目录&lt;/li&gt;
+&lt;li&gt;⌘ + ⌫ → 移至废纸篓&lt;/li&gt;
+&lt;li&gt;⌘ + ⇧ + ⌫ → 清倒废纸篓&lt;/li&gt;
+&lt;li&gt;Space → 快速预览&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="应用切换"&gt;应用切换&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;⌘ + ⇥ → 在应用间切换&lt;/li&gt;
+&lt;li&gt;⌘ + ⇤ → 反向切换应用&lt;/li&gt;
+&lt;li&gt;⌘ + ~ → 在同一应用的多个窗口间切换&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="浏览器快捷键"&gt;浏览器快捷键&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;⌘ + L → 光标跳至地址栏&lt;/li&gt;
+&lt;li&gt;⌃ + ⇥ → 下一个标签页&lt;/li&gt;
+&lt;li&gt;⌃ + ⇤ → 上一个标签页&lt;/li&gt;
+&lt;li&gt;⌘ + = → 放大页面&lt;/li&gt;
+&lt;li&gt;⌘ + - → 缩小页面&lt;/li&gt;
+&lt;li&gt;⌘ + T → 新建标签页&lt;/li&gt;
+&lt;li&gt;⌘ + W → 关闭标签页&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="应用程序中"&gt;应用程序中&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;⌘ + H → 隐藏当前应用&lt;/li&gt;
+&lt;li&gt;⌘ + ⌥ + H → 隐藏其他应用&lt;/li&gt;
+&lt;li&gt;⌘ + Q → 退出应用&lt;/li&gt;
+&lt;li&gt;⌘ + ⇧ + Z → 重做（撤销的逆操作）&lt;/li&gt;
+&lt;li&gt;⌘ + ⌥ + ⎋ → 打开“强制退出”窗口&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="文本处理"&gt;文本处理&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;⌘ + B → 粗体&lt;/li&gt;
+&lt;li&gt;fn + Delete → 向后删除&lt;/li&gt;
+&lt;li&gt;fn + ↑ / ↓ / ← / → → Page Up / Page Down / Home / End&lt;/li&gt;
+&lt;li&gt;⌘ + ← → 光标到行首&lt;/li&gt;
+&lt;li&gt;⌘ + → → 光标到行尾&lt;/li&gt;
+&lt;li&gt;⌘ + ↑ → 光标到文稿开头&lt;/li&gt;
+&lt;li&gt;⌘ + ↓ → 光标到文稿结尾&lt;/li&gt;
+&lt;li&gt;⌥ + ← → 光标到上一个单词开头&lt;/li&gt;
+&lt;li&gt;⌥ + → → 光标到下一个单词末尾&lt;/li&gt;
+&lt;li&gt;⌃ + A → 行首/段落开头&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="总结"&gt;总结&lt;/h2&gt;
+&lt;p&gt;Mac 快捷键逻辑简单：&lt;strong&gt;⌘ 相当于 Ctrl&lt;/strong&gt;，&lt;strong&gt;fn+方向键&lt;/strong&gt; 用来模拟 PC 的 Page Up/Down/Home/End。&lt;br&gt;
+熟练掌握这些快捷键能大幅提升效率 🚀。&lt;/p&gt;</content></item><item><title>如何通过 EC2 实例连接 Amazon RDS 数据库</title><link>https://isme.cz/featured/b765efc8-3b0e-421b-beb4-d1fac4fd836f/</link><pubDate>Tue, 17 Dec 2024 17:42:26 +0000</pubDate><guid>https://isme.cz/featured/b765efc8-3b0e-421b-beb4-d1fac4fd836f/</guid><description>在 AWS EC2 实例中连接 Amazon RDS 数据库的完整操作步骤，含安全组与参数配置说明。</description><content>&lt;h1 id="如何通过-ec2-实例连接-amazon-rds-数据库"&gt;如何通过 EC2 实例连接 Amazon RDS 数据库&lt;/h1&gt;
+&lt;p&gt;在云开发中，Amazon RDS 是一种强大而方便的托管数据库服务，但它通常处于一个受保护的私有网络中，无法直接从本地访问。如果你想在本地使用图形化工具（如 DBeaver 或 HeidiSQL）访问 RDS 数据库，可以通过 Amazon EC2 实例作为跳板实现。这篇文章将手把手教你如何完成这项操作。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="1-为什么需要通过-ec2-访问-rds"&gt;1. 为什么需要通过 EC2 访问 RDS？&lt;/h2&gt;
+&lt;p&gt;Amazon RDS 默认部署在私有子网中，只有同一网络中的资源可以访问。直接将 RDS 公开到公网会带来安全风险，因此更好的办法是利用 EC2 实例作为跳板，通过 SSH 隧道安全地访问 RDS。这种方式既能保证数据库的安全性，也能满足开发需求。&lt;/p&gt;
+&lt;p&gt;说人话：&lt;em&gt;其实就是薅羊毛的时候能省个公网ip的钱（AWS免费优惠只有一个公网ip，要给到ec2）&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;土豪请划走 不需要往下看了&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="2-准备工作"&gt;2. 准备工作&lt;/h2&gt;
+&lt;p&gt;在开始操作之前，请确保以下内容已准备好：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;RDS 实例信息&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;记录 RDS 的连接端点（Endpoint）、端口（通常是 3306）以及数据库的用户名和密码。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;EC2 实例信息&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;确保 EC2 实例处于运行状态，并记录其公有 IP 地址（或域名）。&lt;/li&gt;
+&lt;li&gt;下载并保存 EC2 实例的 &lt;code&gt;.pem&lt;/code&gt; SSH 密钥文件。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;安全组配置&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;RDS 安全组&lt;/strong&gt;：允许 EC2 实例的安全组访问 RDS 的端口（如 3306）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;EC2 安全组&lt;/strong&gt;：允许本地 IP 地址的 SSH 入站访问（端口 22）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id="3-在本地创建-ssh-隧道"&gt;3. 在本地创建 SSH 隧道&lt;/h2&gt;
+&lt;p&gt;SSH 隧道是连接本地客户端和 RDS 数据库的桥梁。以下是设置方法：&lt;/p&gt;
+&lt;h3 id="命令行方式创建-ssh-隧道"&gt;命令行方式创建 SSH 隧道&lt;/h3&gt;
+&lt;p&gt;在本地终端或命令行中运行以下命令：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ssh -i &amp;lt;your-key.pem&amp;gt; -L 3306:&amp;lt;RDS_Endpoint&amp;gt;:3306 ubuntu@&amp;lt;EC2_Public_IP&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;参数说明&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;your-key.pem&amp;gt;&lt;/code&gt;：EC2 实例的 SSH 密钥文件路径。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-L 3306:&amp;lt;RDS_Endpoint&amp;gt;:3306&lt;/code&gt;：本地端口 3306 被映射到 RDS 的端口 3306。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ubuntu@&amp;lt;EC2_Public_IP&amp;gt;&lt;/code&gt;：EC2 的用户名和公网 IP。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;保持此终端窗口开启，SSH 隧道会一直处于激活状态。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="4-使用本地图形客户端连接-rds"&gt;4. 使用本地图形客户端连接 RDS&lt;/h2&gt;
+&lt;p&gt;SSH 隧道建立后，可以通过图形化工具连接 RDS。以下以 &lt;strong&gt;DBeaver&lt;/strong&gt; 为例：&lt;/p&gt;
+&lt;h3 id="步骤-1下载并安装-dbeaver"&gt;步骤 1：下载并安装 DBeaver&lt;/h3&gt;
+&lt;p&gt;从 &lt;a href="https://dbeaver.io/"&gt;DBeaver 官网&lt;/a&gt; 下载适合你系统的版本并安装。&lt;/p&gt;
+&lt;h3 id="步骤-2新建数据库连接"&gt;步骤 2：新建数据库连接&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;打开 DBeaver，点击菜单 &lt;strong&gt;File &amp;gt; New Database Connection&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;在弹出的窗口中，选择数据库类型（例如 MySQL 或 PostgreSQL）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="步骤-3填写连接信息"&gt;步骤 3：填写连接信息&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Host&lt;/strong&gt;：填写 &lt;code&gt;127.0.0.1&lt;/code&gt;（因为通过 SSH 隧道，本地端口被映射到 RDS）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port&lt;/strong&gt;：填写本地映射的端口号（如 3306）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Database&lt;/strong&gt;：填写 RDS 中的数据库名称。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Username&lt;/strong&gt;：RDS 数据库的用户名。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Password&lt;/strong&gt;：RDS 数据库的密码。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="步骤-4测试连接"&gt;步骤 4：测试连接&lt;/h3&gt;
+&lt;p&gt;点击 &lt;strong&gt;Test Connection&lt;/strong&gt; 按钮，验证连接是否成功。如果一切配置正确，DBeaver 会提示连接成功。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="5-常见问题及解决方法"&gt;5. 常见问题及解决方法&lt;/h2&gt;
+&lt;h3 id="1-ssh-隧道连接失败"&gt;1. SSH 隧道连接失败&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;确保本地终端可以通过 SSH 连接到 EC2。&lt;/li&gt;
+&lt;li&gt;检查命令中 &lt;code&gt;.pem&lt;/code&gt; 文件路径和 EC2 公网 IP 是否正确。&lt;/li&gt;
+&lt;li&gt;检查 EC2 的安全组规则是否允许 SSH 访问。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="2-数据库客户端无法连接-rds"&gt;2. 数据库客户端无法连接 RDS&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;确保 RDS 的安全组允许来自 EC2 实例的流量。&lt;/li&gt;
+&lt;li&gt;检查本地客户端的连接信息是否正确，&lt;code&gt;Host&lt;/code&gt; 应为 &lt;code&gt;127.0.0.1&lt;/code&gt;，&lt;code&gt;Port&lt;/code&gt; 应为 3306。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="3-ssh-隧道断开"&gt;3. SSH 隧道断开&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;确保终端窗口保持打开状态，或者使用工具如 &lt;code&gt;tmux&lt;/code&gt; 或 &lt;code&gt;autossh&lt;/code&gt; 来保持连接。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="6-自动化-ssh-隧道"&gt;6. 自动化 SSH 隧道&lt;/h2&gt;
+&lt;p&gt;如果频繁需要访问 RDS，可以使用以下方式简化操作：&lt;/p&gt;
+&lt;h3 id="使用工具创建隧道"&gt;使用工具创建隧道&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Windows 用户&lt;/strong&gt;可以使用 PuTTY 设置 SSH 转发规则。&lt;/li&gt;
+&lt;li&gt;在工具（如 DBeaver 或 DataGrip）中直接配置内置的 SSH 隧道。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="脚本化-ssh-隧道"&gt;脚本化 SSH 隧道&lt;/h3&gt;
+&lt;p&gt;编写脚本，自动建立 SSH 隧道：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# connect_rds.sh&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ssh -i &amp;lt;your-key.pem&amp;gt; -L 3306:&amp;lt;RDS_Endpoint&amp;gt;:3306 ubuntu@&amp;lt;EC2_Public_IP&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;使用命令运行脚本：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;bash connect_rds.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="总结"&gt;总结&lt;/h2&gt;
+&lt;p&gt;通过 EC2 实例连接 RDS 是一种安全且高效的方式，适合本地开发和调试工作。使用 SSH 隧道可以在保护数据库安全的同时，灵活地通过本地图形化工具管理数据库。如果你有更复杂的需求，还可以结合 VPC Peering 或专线连接进一步优化。&lt;/p&gt;
+&lt;p&gt;希望这篇文章能帮你顺利连接到 RDS 数据库！如果有任何问题或建议，欢迎留言讨论。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;标签&lt;/strong&gt;：&lt;code&gt;AWS&lt;/code&gt; &lt;code&gt;RDS&lt;/code&gt; &lt;code&gt;EC2&lt;/code&gt; &lt;code&gt;SSH隧道&lt;/code&gt; &lt;code&gt;云数据库管理&lt;/code&gt;&lt;/p&gt;</content></item><item><title>使用 Nginx + Cloudflare + Docker 部署 Java 服务的最佳实践</title><link>https://isme.cz/featured/5c8f5a74-11b1-4c78-8307-5dfdd5c6adc3/</link><pubDate>Sun, 08 Dec 2024 05:07:43 +0000</pubDate><guid>https://isme.cz/featured/5c8f5a74-11b1-4c78-8307-5dfdd5c6adc3/</guid><description>Nginx、Cloudflare 与 Docker 三者联动，实现 Java 微服务的生产级部署方案。</description><content>&lt;h1 id="使用-nginx--cloudflare--docker-部署-java-服务的最佳实践"&gt;使用 Nginx + Cloudflare + Docker 部署 Java 服务的最佳实践&lt;/h1&gt;
+&lt;p&gt;在生产环境中，Nginx、Cloudflare 和 Docker 是一个经典且高效的组合，特别适合 Java 服务的部署。本篇博客将详细介绍如何将这三者结合起来，构建高性能、高可用的服务架构。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="架构概览"&gt;架构概览&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;用户请求 → Cloudflare (CDN + DNS + HTTPS) → Nginx (反向代理 + 负载均衡) → Docker (Java 服务实例) → 数据库/缓存
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="架构组成"&gt;架构组成&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Cloudflare&lt;/strong&gt;：提供 CDN 加速、HTTPS、DDoS 防护。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Nginx&lt;/strong&gt;：反向代理用户请求，将流量分发到多个 Java 服务实例。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Docker&lt;/strong&gt;：容器化运行 Java 服务，实现快速部署和弹性扩展。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id="一cloudflare-配置"&gt;一、Cloudflare 配置&lt;/h2&gt;
+&lt;h3 id="1-职责"&gt;1. 职责&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;全球 CDN 加速，减少用户请求延迟。&lt;/li&gt;
+&lt;li&gt;提供 HTTPS 加密，确保数据传输安全。&lt;/li&gt;
+&lt;li&gt;防火墙和 DDoS 防护，保护服务免受恶意攻击。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="2-配置步骤"&gt;2. 配置步骤&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;登录 &lt;a href="https://www.cloudflare.com"&gt;Cloudflare&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;添加域名并设置 DNS 记录：
+&lt;ul&gt;
+&lt;li&gt;A 记录指向 Nginx 服务器的公网 IP。&lt;/li&gt;
+&lt;li&gt;或 CNAME 指向已有的负载均衡器域名。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;启用 SSL/TLS：
+&lt;ul&gt;
+&lt;li&gt;配置 &amp;ldquo;Full&amp;rdquo; 模式（需要 Nginx 服务器支持 HTTPS）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;设置缓存策略：
+&lt;ul&gt;
+&lt;li&gt;针对静态资源（如 JS、CSS、图片）启用动态缓存。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;配置安全规则：
+&lt;ul&gt;
+&lt;li&gt;限制可疑 IP 的访问频率。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id="二nginx-配置"&gt;二、Nginx 配置&lt;/h2&gt;
+&lt;h3 id="1-职责-1"&gt;1. 职责&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;接收 Cloudflare 转发的流量，充当反向代理。&lt;/li&gt;
+&lt;li&gt;将请求分发到不同的 Java 服务实例，实现负载均衡。&lt;/li&gt;
+&lt;li&gt;提供 HTTPS 支持和 HTTP 压缩。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="2-配置示例"&gt;2. 配置示例&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;span class="lnt"&gt;21
+&lt;/span&gt;&lt;span class="lnt"&gt;22
+&lt;/span&gt;&lt;span class="lnt"&gt;23
+&lt;/span&gt;&lt;span class="lnt"&gt;24
+&lt;/span&gt;&lt;span class="lnt"&gt;25
+&lt;/span&gt;&lt;span class="lnt"&gt;26
+&lt;/span&gt;&lt;span class="lnt"&gt;27
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-nginx" data-lang="nginx"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;server&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;listen&lt;/span&gt; &lt;span class="mi"&gt;80&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;server_name&lt;/span&gt; &lt;span class="s"&gt;example.com&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;# 强制 HTTPS
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;301&lt;/span&gt; &lt;span class="s"&gt;https://&lt;/span&gt;&lt;span class="nv"&gt;$host$request_uri&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;server&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;listen&lt;/span&gt; &lt;span class="mi"&gt;443&lt;/span&gt; &lt;span class="s"&gt;ssl&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;server_name&lt;/span&gt; &lt;span class="s"&gt;example.com&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;ssl_certificate&lt;/span&gt; &lt;span class="s"&gt;/etc/nginx/ssl/certificate.crt&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;ssl_certificate_key&lt;/span&gt; &lt;span class="s"&gt;/etc/nginx/ssl/certificate.key&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;location&lt;/span&gt; &lt;span class="s"&gt;/&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;proxy_pass&lt;/span&gt; &lt;span class="s"&gt;http://java-service-cluster&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;proxy_set_header&lt;/span&gt; &lt;span class="s"&gt;Host&lt;/span&gt; &lt;span class="nv"&gt;$host&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;proxy_set_header&lt;/span&gt; &lt;span class="s"&gt;X-Real-IP&lt;/span&gt; &lt;span class="nv"&gt;$remote_addr&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;proxy_set_header&lt;/span&gt; &lt;span class="s"&gt;X-Forwarded-For&lt;/span&gt; &lt;span class="nv"&gt;$proxy_add_x_forwarded_for&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;upstream&lt;/span&gt; &lt;span class="s"&gt;java-service-cluster&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;server&lt;/span&gt; &lt;span class="n"&gt;127.0.0.1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;8081&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;server&lt;/span&gt; &lt;span class="n"&gt;127.0.0.1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;8082&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="三docker-配置"&gt;三、Docker 配置&lt;/h2&gt;
+&lt;h3 id="1-构建-java-服务镜像"&gt;1. 构建 Java 服务镜像&lt;/h3&gt;
+&lt;p&gt;使用以下 Dockerfile 构建镜像：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-dockerfile" data-lang="dockerfile"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;FROM&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;openjdk:17-jdk&lt;/span&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;WORKDIR&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;/app&lt;/span&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;COPY&lt;/span&gt; target/my-java-service.jar app.jar&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;ENTRYPOINT&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;java&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;-jar&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;/app.jar&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="err"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="2-使用-docker-compose-部署多实例"&gt;2. 使用 Docker Compose 部署多实例&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;version&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;3.8&amp;#39;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;services&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;java-service1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;my-java-service:latest&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;container_name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;java-service1&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;ports&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="s2"&gt;&amp;#34;8081:8080&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;java-service2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;my-java-service:latest&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;container_name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;java-service2&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;ports&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="s2"&gt;&amp;#34;8082:8080&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;启动服务：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;docker-compose up -d
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="四监控与优化"&gt;四、监控与优化&lt;/h2&gt;
+&lt;h3 id="1-性能优化"&gt;1. 性能优化&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Nginx&lt;/strong&gt;：启用 gzip 压缩。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-nginx" data-lang="nginx"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;gzip&lt;/span&gt; &lt;span class="no"&gt;on&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;gzip_types&lt;/span&gt; &lt;span class="s"&gt;text/plain&lt;/span&gt; &lt;span class="s"&gt;application/json&lt;/span&gt; &lt;span class="s"&gt;text/css&lt;/span&gt; &lt;span class="s"&gt;application/javascript&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Java 服务&lt;/strong&gt;：配置 JVM 参数优化内存使用。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;-Xms512m -Xmx1024m
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="2-监控"&gt;2. 监控&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;日志管理&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;使用 ELK（Elasticsearch + Logstash + Kibana）集中化日志分析。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;性能监控&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;使用 Prometheus + Grafana 实时监控服务状态。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="五总结"&gt;五、总结&lt;/h2&gt;
+&lt;p&gt;通过 Nginx + Cloudflare + Docker 的组合，可以实现以下目标：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;高性能&lt;/strong&gt;：Cloudflare 提供全球 CDN 加速，Nginx 和 Docker 提供负载均衡与弹性扩展。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;高可用&lt;/strong&gt;：通过多实例部署，保障服务的可用性。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;高安全性&lt;/strong&gt;：Cloudflare 的防护能力结合 HTTPS，确保数据传输和服务安全。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这种架构适合绝大多数生产环境的需求，特别是需要高性能和高安全性的场景。&lt;/p&gt;</content></item><item><title>使用 Cloudflare 和 Nginx 构建高性能安全站点</title><link>https://isme.cz/featured/cf-nginx/</link><pubDate>Sat, 07 Dec 2024 18:13:27 +0000</pubDate><guid>https://isme.cz/featured/cf-nginx/</guid><description>通过 Cloudflare CDN 与 Nginx 反向代理的组合配置，提升站点性能、安全性与可用性。</description><content>&lt;h1 id="使用-cloudflare-和-nginx-构建高性能安全站点"&gt;使用 Cloudflare 和 Nginx 构建高性能安全站点&lt;/h1&gt;
+&lt;p&gt;在现代网站架构中，&lt;strong&gt;Nginx&lt;/strong&gt; 和 &lt;strong&gt;Cloudflare&lt;/strong&gt; 是两大关键技术，它们分别在服务器端和网络加速层提供强大的支持。本篇博客将带你一步步配置 Nginx 与 Cloudflare 的集成，打造一个高性能且安全的生产环境。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="一为什么选择-nginx-和-cloudflare"&gt;一、为什么选择 Nginx 和 Cloudflare？&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Nginx&lt;/strong&gt;：以其轻量级、高并发性能著称，常用于反向代理、静态文件服务和负载均衡。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cloudflare&lt;/strong&gt;：提供免费 CDN 加速、DDoS 防护、DNS 服务以及 HTTPS 加密服务，是全球站点优化的理想选择。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;当二者结合时，Cloudflare 位于网络层，负责加速和安全，而 Nginx 位于服务器端，负责处理业务逻辑和请求分发。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="二nginx-的安装与基本配置"&gt;二、Nginx 的安装与基本配置&lt;/h2&gt;
+&lt;h3 id="1-安装-nginx"&gt;1. 安装 Nginx&lt;/h3&gt;
+&lt;p&gt;以 Ubuntu 为例：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt install nginx
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl start nginx
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl &lt;span class="nb"&gt;enable&lt;/span&gt; nginx
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;安装完成后，通过浏览器访问服务器 IP，确认是否能看到默认欢迎页。&lt;/p&gt;
+&lt;h3 id="2-配置-nginx-基本站点"&gt;2. 配置 Nginx 基本站点&lt;/h3&gt;
+&lt;p&gt;在 &lt;code&gt;/etc/nginx/conf.d/&lt;/code&gt; 目录下创建站点配置文件：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo nano /etc/nginx/conf.d/example.com.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;内容如下：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-nginx" data-lang="nginx"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;server&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;listen&lt;/span&gt; &lt;span class="mi"&gt;80&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;server_name&lt;/span&gt; &lt;span class="s"&gt;example.com&lt;/span&gt; &lt;span class="s"&gt;www.example.com&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;root&lt;/span&gt; &lt;span class="s"&gt;/var/www/example&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;index&lt;/span&gt; &lt;span class="s"&gt;index.html&lt;/span&gt; &lt;span class="s"&gt;index.htm&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;location&lt;/span&gt; &lt;span class="s"&gt;/&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;try_files&lt;/span&gt; &lt;span class="nv"&gt;$uri&lt;/span&gt; &lt;span class="nv"&gt;$uri/&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;404&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;保存文件后重载 Nginx 配置：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo nginx -t
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo systemctl reload nginx
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="三cloudflare-的配置与优化"&gt;三、Cloudflare 的配置与优化&lt;/h2&gt;
+&lt;h3 id="1-将域名接入-cloudflare"&gt;1. 将域名接入 Cloudflare&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;注册并登录 Cloudflare。&lt;/li&gt;
+&lt;li&gt;添加你的域名。&lt;/li&gt;
+&lt;li&gt;修改域名 DNS 到 Cloudflare 提供的解析服务器。&lt;/li&gt;
+&lt;li&gt;启用代理（橙色小云），Cloudflare 开始加速你的域名。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id="2-配置-ssl-模式"&gt;2. 配置 SSL 模式&lt;/h3&gt;
+&lt;p&gt;在 Cloudflare 面板中，前往 &lt;strong&gt;SSL/TLS &amp;gt; Overview&lt;/strong&gt;，选择适合你的模式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Flexible&lt;/strong&gt;：仅 Cloudflare 和客户端之间使用 HTTPS（不推荐）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Full&lt;/strong&gt;：Cloudflare 和 Nginx 之间使用 HTTPS，但无需有效证书。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Full (Strict)&lt;/strong&gt;：最安全模式，要求 Nginx 提供有效的 SSL 证书。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="四nginx-与-cloudflare-的集成配置"&gt;四、Nginx 与 Cloudflare 的集成配置&lt;/h2&gt;
+&lt;h3 id="1-获取真实客户端-ip"&gt;1. 获取真实客户端 IP&lt;/h3&gt;
+&lt;p&gt;Cloudflare 代理后，Nginx 默认会记录 Cloudflare 的服务器 IP。为解决这个问题，在 Nginx 的 &lt;code&gt;http&lt;/code&gt; 块中添加以下配置：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-nginx" data-lang="nginx"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;http&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;set_real_ip_from&lt;/span&gt; &lt;span class="n"&gt;103.21.244.0&lt;/span&gt;&lt;span class="s"&gt;/22&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;set_real_ip_from&lt;/span&gt; &lt;span class="n"&gt;104.16.0.0&lt;/span&gt;&lt;span class="s"&gt;/12&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;set_real_ip_from&lt;/span&gt; &lt;span class="n"&gt;108.162.192.0&lt;/span&gt;&lt;span class="s"&gt;/18&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;# 更多 IP 请参考 Cloudflare 文档
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;real_ip_header&lt;/span&gt; &lt;span class="s"&gt;CF-Connecting-IP&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="2-配置-https-支持"&gt;2. 配置 HTTPS 支持&lt;/h3&gt;
+&lt;p&gt;如果选择了 &lt;strong&gt;Full (Strict)&lt;/strong&gt; 模式，Nginx 必须配置 SSL：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-nginx" data-lang="nginx"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;server&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;listen&lt;/span&gt; &lt;span class="mi"&gt;443&lt;/span&gt; &lt;span class="s"&gt;ssl&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;server_name&lt;/span&gt; &lt;span class="s"&gt;example.com&lt;/span&gt; &lt;span class="s"&gt;www.example.com&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;ssl_certificate&lt;/span&gt; &lt;span class="s"&gt;/etc/ssl/certs/example.com.crt&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;ssl_certificate_key&lt;/span&gt; &lt;span class="s"&gt;/etc/ssl/private/example.com.key&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;root&lt;/span&gt; &lt;span class="s"&gt;/var/www/example&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;index&lt;/span&gt; &lt;span class="s"&gt;index.html&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;location&lt;/span&gt; &lt;span class="s"&gt;/&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;try_files&lt;/span&gt; &lt;span class="nv"&gt;$uri&lt;/span&gt; &lt;span class="nv"&gt;$uri/&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;404&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;此外，为提升安全性，建议启用 HSTS（严格传输安全策略）：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-nginx" data-lang="nginx"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;add_header&lt;/span&gt; &lt;span class="s"&gt;Strict-Transport-Security&lt;/span&gt; &lt;span class="s"&gt;&amp;#34;max-age=31536000&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;includeSubDomains&amp;#34;&lt;/span&gt; &lt;span class="s"&gt;always&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="3-配置缓存与压缩"&gt;3. 配置缓存与压缩&lt;/h3&gt;
+&lt;p&gt;启用缓存头，优化静态资源缓存：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-nginx" data-lang="nginx"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;location&lt;/span&gt; &lt;span class="s"&gt;/&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;add_header&lt;/span&gt; &lt;span class="s"&gt;Cache-Control&lt;/span&gt; &lt;span class="s"&gt;&amp;#34;public,&lt;/span&gt; &lt;span class="s"&gt;max-age=3600&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;expires&lt;/span&gt; &lt;span class="s"&gt;1h&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;启用 Gzip 压缩：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-nginx" data-lang="nginx"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;http&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;gzip&lt;/span&gt; &lt;span class="no"&gt;on&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;gzip_types&lt;/span&gt; &lt;span class="s"&gt;text/plain&lt;/span&gt; &lt;span class="s"&gt;application/json&lt;/span&gt; &lt;span class="s"&gt;application/javascript&lt;/span&gt; &lt;span class="s"&gt;text/css&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="4-代理-websocket-和-api"&gt;4. 代理 WebSocket 和 API&lt;/h3&gt;
+&lt;p&gt;如果有 WebSocket 或 API 后端，确保代理正确转发请求：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-nginx" data-lang="nginx"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;location&lt;/span&gt; &lt;span class="s"&gt;/ws/&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;proxy_pass&lt;/span&gt; &lt;span class="s"&gt;http://127.0.0.1:8080&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;proxy_set_header&lt;/span&gt; &lt;span class="s"&gt;Upgrade&lt;/span&gt; &lt;span class="nv"&gt;$http_upgrade&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;proxy_set_header&lt;/span&gt; &lt;span class="s"&gt;Connection&lt;/span&gt; &lt;span class="s"&gt;&amp;#34;upgrade&amp;#34;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;location&lt;/span&gt; &lt;span class="s"&gt;/api/&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;proxy_pass&lt;/span&gt; &lt;span class="s"&gt;http://127.0.0.1:8081&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;proxy_set_header&lt;/span&gt; &lt;span class="s"&gt;Host&lt;/span&gt; &lt;span class="nv"&gt;$host&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;proxy_set_header&lt;/span&gt; &lt;span class="s"&gt;X-Real-IP&lt;/span&gt; &lt;span class="nv"&gt;$remote_addr&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;proxy_set_header&lt;/span&gt; &lt;span class="s"&gt;X-Forwarded-For&lt;/span&gt; &lt;span class="nv"&gt;$proxy_add_x_forwarded_for&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="五生产环境中的安全与优化"&gt;五、生产环境中的安全与优化&lt;/h2&gt;
+&lt;h3 id="1-防火墙规则"&gt;1. 防火墙规则&lt;/h3&gt;
+&lt;p&gt;仅允许 Cloudflare 的 IP 访问你的服务器：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo ufw allow proto tcp from 103.21.244.0/22 to any port &lt;span class="m"&gt;443&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="2-日志管理"&gt;2. 日志管理&lt;/h3&gt;
+&lt;p&gt;启用详细日志便于排查问题：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-nginx" data-lang="nginx"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;access_log&lt;/span&gt; &lt;span class="s"&gt;/var/log/nginx/access.log&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;error_log&lt;/span&gt; &lt;span class="s"&gt;/var/log/nginx/error.log&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="3-监控性能"&gt;3. 监控性能&lt;/h3&gt;
+&lt;p&gt;使用工具如 &lt;code&gt;htop&lt;/code&gt; 和 &lt;code&gt;ngxtop&lt;/code&gt; 实时监控 Nginx 的性能。&lt;/p&gt;
+&lt;h3 id="4-配置-brotli-压缩"&gt;4. 配置 Brotli 压缩&lt;/h3&gt;
+&lt;p&gt;如果 Cloudflare 启用了 Brotli，Nginx 也可支持：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-nginx" data-lang="nginx"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;http&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;brotli&lt;/span&gt; &lt;span class="no"&gt;on&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="kn"&gt;brotli_types&lt;/span&gt; &lt;span class="s"&gt;text/plain&lt;/span&gt; &lt;span class="s"&gt;application/json&lt;/span&gt; &lt;span class="s"&gt;application/javascript&lt;/span&gt; &lt;span class="s"&gt;text/css&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="六总结"&gt;六、总结&lt;/h2&gt;
+&lt;p&gt;通过将 Cloudflare 与 Nginx 集成，你可以大幅提升站点的性能与安全性。Cloudflare 提供了强大的网络层加速和防护，Nginx 则负责高效处理请求和业务逻辑。&lt;/p&gt;
+&lt;p&gt;无论是个人博客还是企业站点，这种架构都是现代 Web 开发的最佳选择。如果你有任何问题或更好的建议，欢迎在评论区讨论！ 😊&lt;/p&gt;</content></item></channel></rss>

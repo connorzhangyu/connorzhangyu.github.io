@@ -1,0 +1,377 @@
+<!doctype html><html lang=zh><head><title>Vue后台系统 :: Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Vue 后台管理系统开发笔记：路由权限、组件封装、API 集成与打包部署。"><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://isme.cz/vue-admin/><link rel=stylesheet href=https://isme.cz/styles.css><link rel=stylesheet href=https://isme.cz/style.css><link rel="shortcut icon" href=https://isme.cz/img/theme-colors/orange.png><link rel=apple-touch-icon href=https://isme.cz/img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="og:title" content="Vue后台系统"><meta property="og:description" content="Vue 后台管理系统开发笔记：路由权限、组件封装、API 集成与打包部署。"><meta property="og:url" content="https://isme.cz/vue-admin/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="https://image.runtimes.cc/202404051535734.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><meta property="article:section" content="前端"><meta property="article:section" content="Vue"><meta property="article:published_time" content="2024-02-26 13:47:19 +0000 UTC"><link rel=preload as=font href=/fonts/fusion-pixel-12px-monospaced-zh_hans.ttf.woff2 type=font/woff2 crossorigin><link rel=preload as=font href=/fonts/fusion-pixel-12px-monospaced-latin.ttf.woff2 type=font/woff2 crossorigin><link rel=stylesheet href=/style.css></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/>首页</a></li><li><a href=/posts/>文章</a></li><li><a href=/featured/>精选</a></li><li><a href=/java/>Java</a></li><li><a href=/go/>Go</a></li><li><a href=/categories/>分类</a></li><li><a href=/tags/>标签</a></li><li><a href=/about/>关于</a></li><li><a href=/docs/>团队文档中心</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/>首页</a></li><li><a href=/posts/>文章</a></li><li><a href=/featured/>精选</a></li><li><a href=/java/>Java</a></li><li><a href=/go/>Go</a></li><li><a href=/categories/>分类</a></li><li><a href=/tags/>标签</a></li><li><a href=/about/>关于</a></li><li><a href=/docs/>团队文档中心</a></li></ul></nav></header><div class=content><article class=post><h1 class=post-title><a href=https://isme.cz/vue-admin/>Vue后台系统</a></h1><div class=post-meta><time class=post-date>2024-02-26&nbsp;[Updated: 2024-02-26]</time><span class=post-author>Anthony</span><span class=post-reading-time>4 分钟 (738 字)</span></div><span class=post-tags>#<a href=https://isme.cz/tags/%E5%89%8D%E7%AB%AF/>前端</a>&nbsp;
+#<a href=https://isme.cz/tags/%E6%95%99%E7%A8%8B/>教程</a>&nbsp;
+#<a href=https://isme.cz/tags/%E7%AC%94%E8%AE%B0/>笔记</a>&nbsp;
+#<a href=https://isme.cz/tags/vue.js/>Vue.js</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051535734.jpg class=post-cover alt=Vue后台系统 title="Cover Image"><div class=post-content><div><p>项目由 Vue3 + Pina + JavaScript + Ant Design Vue</p><h1 id=创建项目>创建项目<a href=#创建项目 class=hanchor arialabel=Anchor>#</a></h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl><span class=c1># 直接创建</span>
+</span></span><span class=line><span class=cl>npm create vite@latest my-vue-app -- --template vue
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 如果要创建ts或者自定义配置的项目就用这个</span>
+</span></span><span class=line><span class=cl>npm create vite
+</span></span></code></pre></td></tr></table></div></div><h1 id=引入ant-design-vue>引入Ant Design Vue<a href=#引入ant-design-vue class=hanchor arialabel=Anchor>#</a></h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>npm i --save ant-design-vue@4.x
+</span></span></code></pre></td></tr></table></div></div><p>mian.js</p><p>删掉自带的style.css文件</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kr>import</span> <span class=p>{</span><span class=nx>createApp</span><span class=p>}</span> <span class=nx>from</span> <span class=s1>&#39;vue&#39;</span>
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=nx>Antd</span> <span class=nx>from</span> <span class=s1>&#39;ant-design-vue&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=s1>&#39;ant-design-vue/dist/reset.css&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=nx>App</span> <span class=nx>from</span> <span class=s1>&#39;./App.vue&#39;</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>app</span> <span class=o>=</span> <span class=nx>createApp</span><span class=p>(</span><span class=nx>App</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>app</span><span class=p>.</span><span class=nx>use</span><span class=p>(</span><span class=nx>Antd</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nx>app</span><span class=p>.</span><span class=nx>mount</span><span class=p>(</span><span class=s1>&#39;#app&#39;</span><span class=p>);</span>
+</span></span></code></pre></td></tr></table></div></div><h1 id=安装router>安装router<a href=#安装router class=hanchor arialabel=Anchor>#</a></h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>npm install vue-router@4
+</span></span></code></pre></td></tr></table></div></div><p>创建src/router/index.js文件</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kr>import</span> <span class=p>{</span> <span class=nx>createWebHistory</span><span class=p>,</span> <span class=nx>createRouter</span> <span class=p>}</span> <span class=nx>from</span> <span class=s1>&#39;vue-router&#39;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=cm>/**
+</span></span></span><span class=line><span class=cl><span class=cm> * Note: 路由配置项
+</span></span></span><span class=line><span class=cl><span class=cm> *
+</span></span></span><span class=line><span class=cl><span class=cm> * hidden: true                     // 当设置 true 的时候该路由不会再侧边栏出现 如401，login等页面，或者如一些编辑页面/edit/1
+</span></span></span><span class=line><span class=cl><span class=cm> * alwaysShow: true                 // 当你一个路由下面的 children 声明的路由大于1个时，自动会变成嵌套的模式--如组件页面
+</span></span></span><span class=line><span class=cl><span class=cm> *                                  // 只有一个时，会将那个子路由当做根路由显示在侧边栏--如引导页面
+</span></span></span><span class=line><span class=cl><span class=cm> *                                  // 若你想不管路由下面的 children 声明的个数都显示你的根路由
+</span></span></span><span class=line><span class=cl><span class=cm> *                                  // 你可以设置 alwaysShow: true，这样它就会忽略之前定义的规则，一直显示根路由
+</span></span></span><span class=line><span class=cl><span class=cm> * redirect: noRedirect             // 当设置 noRedirect 的时候该路由在面包屑导航中不可被点击
+</span></span></span><span class=line><span class=cl><span class=cm> * name:&#39;router-name&#39;               // 设定路由的名字，一定要填写不然使用&lt;keep-alive&gt;时会出现各种问题
+</span></span></span><span class=line><span class=cl><span class=cm> * query: &#39;{&#34;id&#34;: 1, &#34;name&#34;: &#34;ry&#34;}&#39; // 访问路由的默认传递参数
+</span></span></span><span class=line><span class=cl><span class=cm> * roles: [&#39;admin&#39;, &#39;common&#39;]       // 访问路由的角色权限
+</span></span></span><span class=line><span class=cl><span class=cm> * permissions: [&#39;a:a:a&#39;, &#39;b:b:b&#39;]  // 访问路由的菜单权限
+</span></span></span><span class=line><span class=cl><span class=cm> * meta : {
+</span></span></span><span class=line><span class=cl><span class=cm>    noCache: true                   // 如果设置为true，则不会被 &lt;keep-alive&gt; 缓存(默认 false)
+</span></span></span><span class=line><span class=cl><span class=cm>    title: &#39;title&#39;                  // 设置该路由在侧边栏和面包屑中展示的名字
+</span></span></span><span class=line><span class=cl><span class=cm>    icon: &#39;svg-name&#39;                // 设置该路由的图标，对应路径src/assets/icons/svg
+</span></span></span><span class=line><span class=cl><span class=cm>    breadcrumb: false               // 如果设置为false，则不会在breadcrumb面包屑中显示
+</span></span></span><span class=line><span class=cl><span class=cm>    activeMenu: &#39;/system/user&#39;      // 当路由设置了该属性，则会高亮相对应的侧边栏。
+</span></span></span><span class=line><span class=cl><span class=cm>  }
+</span></span></span><span class=line><span class=cl><span class=cm> */</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 公共路由
+</span></span></span><span class=line><span class=cl><span class=kr>export</span> <span class=kr>const</span> <span class=nx>constantRoutes</span> <span class=o>=</span> <span class=p>[</span>
+</span></span><span class=line><span class=cl>  <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>path</span><span class=o>:</span> <span class=s1>&#39;/login&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nx>component</span><span class=o>:</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=kr>import</span><span class=p>(</span><span class=s1>&#39;@/views/login&#39;</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>    <span class=nx>hidden</span><span class=o>:</span> <span class=kc>true</span>
+</span></span><span class=line><span class=cl>  <span class=p>},</span>
+</span></span><span class=line><span class=cl><span class=p>]</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>router</span> <span class=o>=</span> <span class=nx>createRouter</span><span class=p>({</span>
+</span></span><span class=line><span class=cl>  <span class=nx>history</span><span class=o>:</span> <span class=nx>createWebHistory</span><span class=p>(),</span>
+</span></span><span class=line><span class=cl>  <span class=nx>routes</span><span class=o>:</span> <span class=nx>constantRoutes</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nx>scrollBehavior</span><span class=p>(</span><span class=nx>to</span><span class=p>,</span> <span class=nx>from</span><span class=p>,</span> <span class=nx>savedPosition</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=nx>savedPosition</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=k>return</span> <span class=nx>savedPosition</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=k>return</span> <span class=p>{</span> <span class=nx>top</span><span class=o>:</span> <span class=mi>0</span> <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=p>},</span>
+</span></span><span class=line><span class=cl><span class=p>});</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>export</span> <span class=k>default</span> <span class=nx>router</span><span class=p>;</span>
+</span></span></code></pre></td></tr></table></div></div><h1 id=配置开发环境>配置开发环境<a href=#配置开发环境 class=hanchor arialabel=Anchor>#</a></h1><p>编辑vite.config.js</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kr>import</span> <span class=p>{</span> <span class=nx>defineConfig</span><span class=p>,</span> <span class=nx>loadEnv</span> <span class=p>}</span> <span class=nx>from</span> <span class=s1>&#39;vite&#39;</span>
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=nx>path</span> <span class=nx>from</span> <span class=s1>&#39;path&#39;</span>
+</span></span><span class=line><span class=cl><span class=kr>import</span> <span class=nx>vue</span> <span class=nx>from</span> <span class=s1>&#39;@vitejs/plugin-vue&#39;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// https://vitejs.dev/config/
+</span></span></span><span class=line><span class=cl><span class=kr>export</span> <span class=k>default</span> <span class=nx>defineConfig</span><span class=p>(({</span> <span class=nx>mode</span><span class=p>,</span> <span class=nx>command</span> <span class=p>})</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>plugins</span><span class=o>:</span> <span class=p>[</span><span class=nx>vue</span><span class=p>()],</span>
+</span></span><span class=line><span class=cl>    <span class=nx>resolve</span><span class=o>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=c1>// https://cn.vitejs.dev/config/#resolve-alias
+</span></span></span><span class=line><span class=cl>      <span class=nx>alias</span><span class=o>:</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=c1>// 设置路径
+</span></span></span><span class=line><span class=cl>        <span class=s1>&#39;~&#39;</span><span class=o>:</span> <span class=nx>path</span><span class=p>.</span><span class=nx>resolve</span><span class=p>(</span><span class=nx>__dirname</span><span class=p>,</span> <span class=s1>&#39;./&#39;</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>        <span class=c1>// 设置别名
+</span></span></span><span class=line><span class=cl>        <span class=s1>&#39;@&#39;</span><span class=o>:</span> <span class=nx>path</span><span class=p>.</span><span class=nx>resolve</span><span class=p>(</span><span class=nx>__dirname</span><span class=p>,</span> <span class=s1>&#39;./src&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>      <span class=p>},</span>
+</span></span><span class=line><span class=cl>      <span class=c1>// https://cn.vitejs.dev/config/#resolve-extensions
+</span></span></span><span class=line><span class=cl>      <span class=nx>extensions</span><span class=o>:</span> <span class=p>[</span><span class=s1>&#39;.mjs&#39;</span><span class=p>,</span> <span class=s1>&#39;.js&#39;</span><span class=p>,</span> <span class=s1>&#39;.ts&#39;</span><span class=p>,</span> <span class=s1>&#39;.jsx&#39;</span><span class=p>,</span> <span class=s1>&#39;.tsx&#39;</span><span class=p>,</span> <span class=s1>&#39;.json&#39;</span><span class=p>,</span> <span class=s1>&#39;.vue&#39;</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>})</span>
+</span></span></code></pre></td></tr></table></div></div><p>项目根目录创建环境配置文件</p><p>.env.development</p><p>.env.prod</p><pre tabindex=0><code># 页面标题
+VITE_APP_TITLE = 若依管理系统
+
+# 开发环境配置
+VITE_APP_ENV = &#39;development&#39;
+
+# 若依管理系统/开发环境
+VITE_APP_BASE_API = &#39;/dev-api&#39;
+</code></pre><h1 id=安装sass>安装sass<a href=#安装sass class=hanchor arialabel=Anchor>#</a></h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>npm install -D sass
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 直接使用就可以</span>
+</span></span><span class=line><span class=cl>&lt;style <span class=nv>lang</span><span class=o>=</span><span class=s2>&#34;scss&#34;</span> scoped&gt;
+</span></span><span class=line><span class=cl>&lt;/style&gt;
+</span></span></code></pre></td></tr></table></div></div><h1 id=全局样式>全局样式<a href=#全局样式 class=hanchor arialabel=Anchor>#</a></h1><p>创建src/style/index.scss文件</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-scss data-lang=scss><span class=line><span class=cl><span class=k>@import</span> <span class=s1>&#39;./demo.scss&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nt>html</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=na>height</span><span class=o>:</span> <span class=mi>100</span><span class=kt>vh</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=na>box-sizing</span><span class=o>:</span> <span class=ni>border-box</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nt>body</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=na>height</span><span class=o>:</span> <span class=mi>100</span><span class=kt>vh</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=na>margin</span><span class=o>:</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=c1>//-moz-osx-font-smoothing: grayscale;
+</span></span></span><span class=line><span class=cl>  <span class=c1>//-webkit-font-smoothing: antialiased;
+</span></span></span><span class=line><span class=cl>  <span class=c1>//text-rendering: optimizeLegibility;
+</span></span></span><span class=line><span class=cl>  <span class=c1>//font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+</span></span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nn>#app</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=na>height</span><span class=o>:</span> <span class=mi>100</span><span class=kt>vh</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>创建src/style/demo.scss文件</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-scss data-lang=scss><span class=line><span class=cl><span class=c1>// 这个文件是用来写css的,前面导入的这个文件,所以后面只需要写就行了
+</span></span></span></code></pre></td></tr></table></div></div><p>导入scss,编辑main.js</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kr>import</span> <span class=s1>&#39;./style/index.scss&#39;</span>
+</span></span></code></pre></td></tr></table></div></div><h1 id=ant-design-vue-icon的使用>Ant Design Vue Icon的使用<a href=#ant-design-vue-icon的使用 class=hanchor arialabel=Anchor>#</a></h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-vue data-lang=vue><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>template</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;</span><span class=nt>a-form</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;login-from&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;</span><span class=nt>a-form-item</span> <span class=na>size</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;</span><span class=nt>a-input</span> <span class=na>placeholder</span><span class=o>=</span><span class=s>&#34;请输入用户名&#34;</span> <span class=na>size</span><span class=o>=</span><span class=s>&#34;large&#34;</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;</span><span class=nt>template</span> <span class=err>#</span><span class=na>prefix</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>          <span class=p>&lt;</span><span class=nt>UserOutlined</span><span class=p>/&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=p>&lt;/</span><span class=nt>template</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>      <span class=p>&lt;/</span><span class=nt>a-input</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=p>&lt;/</span><span class=nt>a-form-item</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=p>&lt;/</span><span class=nt>a-form</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>template</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=p>&lt;</span><span class=nt>script</span> <span class=na>setup</span><span class=p>&gt;</span>
+</span></span><span class=line><span class=cl>  <span class=kr>import</span> <span class=p>{</span><span class=nx>UserOutlined</span><span class=p>,</span> <span class=nx>LockOutlined</span><span class=p>}</span> <span class=nx>from</span> <span class=s1>&#39;@ant-design/icons-vue&#39;</span>
+</span></span><span class=line><span class=cl><span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</span></span></code></pre></td></tr></table></div></div><h1 id=安装axios>安装Axios<a href=#安装axios class=hanchor arialabel=Anchor>#</a></h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl>npm install axios
+</span></span></code></pre></td></tr></table></div></div><p>创建 src/utils/request.js</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kr>import</span> <span class=nx>axios</span> <span class=nx>from</span> <span class=s1>&#39;axios&#39;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>axios</span><span class=p>.</span><span class=nx>defaults</span><span class=p>.</span><span class=nx>headers</span><span class=p>[</span><span class=s1>&#39;Content-Type&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=s1>&#39;application/json;charset=utf-8&#39;</span>
+</span></span><span class=line><span class=cl><span class=c1>// 创建axios实例
+</span></span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>service</span> <span class=o>=</span> <span class=nx>axios</span><span class=p>.</span><span class=nx>create</span><span class=p>({</span>
+</span></span><span class=line><span class=cl>  <span class=c1>// axios中请求配置有baseURL选项，表示请求URL公共部分
+</span></span></span><span class=line><span class=cl>  <span class=nx>baseURL</span><span class=o>:</span> <span class=kr>import</span><span class=p>.</span><span class=nx>meta</span><span class=p>.</span><span class=nx>env</span><span class=p>.</span><span class=nx>VITE_APP_BASE_API</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=c1>// 超时
+</span></span></span><span class=line><span class=cl>  <span class=nx>timeout</span><span class=o>:</span> <span class=mi>10000</span>
+</span></span><span class=line><span class=cl><span class=p>})</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// request拦截器
+</span></span></span><span class=line><span class=cl><span class=nx>service</span><span class=p>.</span><span class=nx>interceptors</span><span class=p>.</span><span class=nx>request</span><span class=p>.</span><span class=nx>use</span><span class=p>(</span><span class=nx>config</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=nx>config</span>
+</span></span><span class=line><span class=cl><span class=p>},</span> <span class=nx>error</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>error</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=nb>Promise</span><span class=p>.</span><span class=nx>reject</span><span class=p>(</span><span class=nx>error</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>})</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 响应拦截器
+</span></span></span><span class=line><span class=cl><span class=nx>service</span><span class=p>.</span><span class=nx>interceptors</span><span class=p>.</span><span class=nx>response</span><span class=p>.</span><span class=nx>use</span><span class=p>(</span><span class=nx>res</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=c1>// 未设置状态码则默认成功状态
+</span></span></span><span class=line><span class=cl>    <span class=kr>const</span> <span class=nx>code</span> <span class=o>=</span> <span class=nx>res</span><span class=p>.</span><span class=nx>data</span><span class=p>.</span><span class=nx>code</span> <span class=o>||</span> <span class=mi>200</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=nx>code</span> <span class=o>===</span> <span class=mi>401</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>      <span class=k>return</span> <span class=nb>Promise</span><span class=p>.</span><span class=nx>reject</span><span class=p>(</span><span class=s1>&#39;无效的会话，或者会话已过期，请重新登录。&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span> <span class=k>else</span> <span class=k>if</span> <span class=p>(</span><span class=nx>code</span> <span class=o>===</span> <span class=mi>500</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nx>ElMessage</span><span class=p>({</span> <span class=nx>message</span><span class=o>:</span> <span class=nx>msg</span><span class=p>,</span> <span class=nx>type</span><span class=o>:</span> <span class=s1>&#39;error&#39;</span> <span class=p>})</span>
+</span></span><span class=line><span class=cl>      <span class=k>return</span> <span class=nb>Promise</span><span class=p>.</span><span class=nx>reject</span><span class=p>(</span><span class=k>new</span> <span class=nb>Error</span><span class=p>(</span><span class=nx>msg</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span> <span class=k>else</span> <span class=k>if</span> <span class=p>(</span><span class=nx>code</span> <span class=o>===</span> <span class=mi>601</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nx>ElMessage</span><span class=p>({</span> <span class=nx>message</span><span class=o>:</span> <span class=nx>msg</span><span class=p>,</span> <span class=nx>type</span><span class=o>:</span> <span class=s1>&#39;warning&#39;</span> <span class=p>})</span>
+</span></span><span class=line><span class=cl>      <span class=k>return</span> <span class=nb>Promise</span><span class=p>.</span><span class=nx>reject</span><span class=p>(</span><span class=k>new</span> <span class=nb>Error</span><span class=p>(</span><span class=nx>msg</span><span class=p>))</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span> <span class=k>else</span> <span class=k>if</span> <span class=p>(</span><span class=nx>code</span> <span class=o>!==</span> <span class=mi>200</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nx>ElNotification</span><span class=p>.</span><span class=nx>error</span><span class=p>({</span> <span class=nx>title</span><span class=o>:</span> <span class=nx>msg</span> <span class=p>})</span>
+</span></span><span class=line><span class=cl>      <span class=k>return</span> <span class=nb>Promise</span><span class=p>.</span><span class=nx>reject</span><span class=p>(</span><span class=s1>&#39;error&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=k>return</span>  <span class=nb>Promise</span><span class=p>.</span><span class=nx>resolve</span><span class=p>(</span><span class=nx>res</span><span class=p>.</span><span class=nx>data</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>  <span class=p>},</span>
+</span></span><span class=line><span class=cl>  <span class=nx>error</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;err&#39;</span> <span class=o>+</span> <span class=nx>error</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=kd>let</span> <span class=p>{</span> <span class=nx>message</span> <span class=p>}</span> <span class=o>=</span> <span class=nx>error</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=nx>message</span> <span class=o>==</span> <span class=s2>&#34;Network Error&#34;</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nx>message</span> <span class=o>=</span> <span class=s2>&#34;后端接口连接异常&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span> <span class=k>else</span> <span class=k>if</span> <span class=p>(</span><span class=nx>message</span><span class=p>.</span><span class=nx>includes</span><span class=p>(</span><span class=s2>&#34;timeout&#34;</span><span class=p>))</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nx>message</span> <span class=o>=</span> <span class=s2>&#34;系统接口请求超时&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span> <span class=k>else</span> <span class=k>if</span> <span class=p>(</span><span class=nx>message</span><span class=p>.</span><span class=nx>includes</span><span class=p>(</span><span class=s2>&#34;Request failed with status code&#34;</span><span class=p>))</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=nx>message</span> <span class=o>=</span> <span class=s2>&#34;系统接口&#34;</span> <span class=o>+</span> <span class=nx>message</span><span class=p>.</span><span class=nx>substr</span><span class=p>(</span><span class=nx>message</span><span class=p>.</span><span class=nx>length</span> <span class=o>-</span> <span class=mi>3</span><span class=p>)</span> <span class=o>+</span> <span class=s2>&#34;异常&#34;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=nx>ElMessage</span><span class=p>({</span> <span class=nx>message</span><span class=o>:</span> <span class=nx>message</span><span class=p>,</span> <span class=nx>type</span><span class=o>:</span> <span class=s1>&#39;error&#39;</span><span class=p>,</span> <span class=nx>duration</span><span class=o>:</span> <span class=mi>5</span> <span class=o>*</span> <span class=mi>1000</span> <span class=p>})</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=nb>Promise</span><span class=p>.</span><span class=nx>reject</span><span class=p>(</span><span class=nx>error</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kr>export</span> <span class=k>default</span> <span class=nx>service</span>
+</span></span></code></pre></td></tr></table></div></div><p>main.js</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=line><span class=cl><span class=kr>import</span> <span class=nx>router</span> <span class=nx>from</span> <span class=s1>&#39;./router&#39;</span>
+</span></span></code></pre></td></tr></table></div></div></div></div><div class=post-authors style="margin:22px 0 0;border-top:1px dashed rgba(255,255,255,.18);padding-top:14px"><div class=author style=display:flex;align-items:center;gap:10px;flex-wrap:wrap><img class=author-avatar src="/images/authors/avatar_small.webp?v=1" alt=isme width=48 height=48 loading=lazy decoding=async><div style=display:flex;flex-direction:column;gap:2px;min-width:0><strong style=line-height:1>isme</strong><span style=opacity:.9;line-height:1.2>AWS Certified Solutions Architect / 全栈工程师</span><span style=opacity:.75;line-height:1.2>📍 Bangkok, Thailand</span></div></div></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>阅读更多文章</span><hr></div><div class=pagination__buttons><span class="button previous"><a href=https://isme.cz/springboot-gmail-config/><span class=button__icon>←</span>
+<span class=button__text>SpringBoot配置Gmail</span>
+</a></span><span class="button next"><a href=https://isme.cz/tron/><span class=button__text>Tron</span>
+<span class=button__icon>→</span></a></span></div></div></article></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2026 Powered by <a href=https://gohugo.io>Hugo</a></span>
+<span>:: <a href=https://github.com/mirus-ua/hugo-theme-re-terminal target=_blank>Theme</a> made by <a href=https://github.com/mirus-ua target=_blank>Mirus</a></span></div></div></footer><script type=text/javascript src=/bundle.min.js></script></div></body></html>

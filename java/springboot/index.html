@@ -1,18 +1,10 @@
-<!doctype html><html lang=zh><head><title>SpringBoot :: Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content='定时器 定时器的数值放到配置文件,如果使用@Scheduled(fixedDelay = 类中的变量)这种方式试过不行
-1 2 3 @Scheduled(fixedDelayString = "${fixedDelayString}") public void open() { } 1 fixedDelayString=30000 RocketMQ 下载源码或者二进制包
-1 2 3 4 5 6 7 8 # 源码安装 # 解压文件 unzip rocketmq-all-5.2.0-source-release.zip cd rocketmq-all-5.2.0-source-release/ # 编译 mvn -Prelease-all -DskipTests -Dspotbugs.skip=true clean install -U # 编译后的二进制的目录,配置文件在这里 cd ./distribution 修改配置文件
-1 2 3 4 5 6 7 # 修改配置文件 # 修改内存配置,虚拟机的内存太小了 # vim ./bin/runserver.sh JAVA_OPT="${JAVA_OPT} -server -Xms512m -Xmx521m -Xmn256g -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=320m" # vim ./bin/runbroker.sh JAVA_OPT="${JAVA_OPT} -server -Xms512m -Xmx512m" 启动
-'><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://isme.cz/java/springboot/><link rel=stylesheet href=https://isme.cz/css/custom.min.c48d2dcfc3aad8abc3315f33f61b0f9ee763ed50a0938b6ae80c6726450e5b2a.css><link rel=stylesheet href=https://isme.cz/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css><link rel=stylesheet href=https://isme.cz/css/code.min.d529ea4b2fb8d34328d7d31afc5466d5f7bc2f0bc9abdd98b69385335d7baee4.css><link rel=stylesheet href=https://isme.cz/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css><link rel=stylesheet href=https://isme.cz/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css><link rel=stylesheet href=https://isme.cz/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css><link rel=stylesheet href=https://isme.cz/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css><link rel=stylesheet href=https://isme.cz/css/main.min.775ac2af004d44c22a6d000fbd1d9af529642f5cef27399d0280d180af2c2e9b.css><link rel=stylesheet href=https://isme.cz/css/menu.min.310d32205bdedd6f43144e3c3273c9deecd238eba5f9108db5ea96ca0cfbe377.css><link rel=stylesheet href=https://isme.cz/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css><link rel=stylesheet href=https://isme.cz/css/post.min.ad50c7f4d00e7975918f37fc74c6029e1959a40d66fb5b2c6564a8715e985573.css><link rel=stylesheet href=https://isme.cz/css/syntax.min.e9ab635cf918bc84b901eb65c0b2caa74c9544245e3647c1af5c129896ef276e.css><link rel=stylesheet href=https://isme.cz/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css><link rel=stylesheet href=https://isme.cz/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css><link rel=stylesheet href=https://isme.cz/style.css><link rel="shortcut icon" href=https://isme.cz/favicon.png><link rel=apple-touch-icon href=https://isme.cz/apple-touch-icon.png><meta name=twitter:card content="summary"><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="og:title" content="SpringBoot"><meta property="og:description" content='定时器 定时器的数值放到配置文件,如果使用@Scheduled(fixedDelay = 类中的变量)这种方式试过不行
-1 2 3 @Scheduled(fixedDelayString = "${fixedDelayString}") public void open() { } 1 fixedDelayString=30000 RocketMQ 下载源码或者二进制包
-1 2 3 4 5 6 7 8 # 源码安装 # 解压文件 unzip rocketmq-all-5.2.0-source-release.zip cd rocketmq-all-5.2.0-source-release/ # 编译 mvn -Prelease-all -DskipTests -Dspotbugs.skip=true clean install -U # 编译后的二进制的目录,配置文件在这里 cd ./distribution 修改配置文件
-1 2 3 4 5 6 7 # 修改配置文件 # 修改内存配置,虚拟机的内存太小了 # vim ./bin/runserver.sh JAVA_OPT="${JAVA_OPT} -server -Xms512m -Xmx521m -Xmn256g -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=320m" # vim ./bin/runbroker.sh JAVA_OPT="${JAVA_OPT} -server -Xms512m -Xmx512m" 启动
-'><meta property="og:url" content="https://isme.cz/java/springboot/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="https://image.runtimes.cc/202404051534895.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><meta property="article:section" content="Java"><meta property="article:section" content="Spring"><meta property="article:section" content="Spring Boot"><meta property="article:published_time" content="2023-07-15 14:58:26 +0000 UTC"><link rel=preload as=font href=/fonts/fusion-pixel-12px-monospaced-zh_hans.ttf.woff2 type=font/woff2 crossorigin><link rel=preload as=font href=/fonts/fusion-pixel-12px-monospaced-latin.ttf.woff2 type=font/woff2 crossorigin><link rel=stylesheet href=/style.css></head><body><div class="container center"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/>首页</a></li><li><a href=/posts/>文章</a></li><li><a href=/featured/>精选</a></li><li><a href=/java/>Java</a></li><li><a href=/go/>Go</a></li><li><a href=/categories/>分类</a></li><li><a href=/tags/>标签</a></li><li><a href=/about/>关于</a></li><li><a href=/docs/>团队文档中心</a></li><hr><li><a href=https://isme.cz/>中文</a></li><li><a href=https://isme.cz/en/>ENG</a></li><li><a href=https://isme.cz/th/>ไทย</a></li></ul></li></ul><ul class="menu menu--desktop menu--language-selector"><li class=menu__trigger>中文&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=https://isme.cz/>中文</a></li><li><a href=https://isme.cz/en/>ENG</a></li><li><a href=https://isme.cz/th/>ไทย</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/>首页</a></li><li><a href=/posts/>文章</a></li><li><a href=/featured/>精选</a></li><li><a href=/java/>Java</a></li><li><a href=/go/>Go</a></li><li><a href=/categories/>分类</a></li><li><a href=/tags/>标签</a></li><li><a href=/about/>关于</a></li><li><a href=/docs/>团队文档中心</a></li></ul></nav></header><div class=content><article class=post><h1 class=post-title><a href=https://isme.cz/java/springboot/>SpringBoot</a></h1><div class=post-meta><time class=post-date>2023-07-15&nbsp;[Updated: 2025-08-26]</time><span class=post-author>Anthony</span></div><span class=post-tags>#<a href=https://isme.cz/tags/java/>Java</a>&nbsp;
+<!doctype html><html lang=zh><head><title>SpringBoot :: Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Spring Boot 快速入门与进阶笔记，含自动配置原理、starter 使用与常见集成方案。"><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://isme.cz/java/springboot/><link rel=stylesheet href=https://isme.cz/styles.css><link rel=stylesheet href=https://isme.cz/style.css><link rel="shortcut icon" href=https://isme.cz/img/theme-colors/orange.png><link rel=apple-touch-icon href=https://isme.cz/img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="og:title" content="SpringBoot"><meta property="og:description" content="Spring Boot 快速入门与进阶笔记，含自动配置原理、starter 使用与常见集成方案。"><meta property="og:url" content="https://isme.cz/java/springboot/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="https://image.runtimes.cc/202404051534895.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><meta property="article:section" content="Java"><meta property="article:section" content="Spring"><meta property="article:section" content="Spring Boot"><meta property="article:published_time" content="2023-07-15 14:58:26 +0000 UTC"><link rel=preload as=font href=/fonts/fusion-pixel-12px-monospaced-zh_hans.ttf.woff2 type=font/woff2 crossorigin><link rel=preload as=font href=/fonts/fusion-pixel-12px-monospaced-latin.ttf.woff2 type=font/woff2 crossorigin><link rel=stylesheet href=/style.css></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/>首页</a></li><li><a href=/posts/>文章</a></li><li><a href=/featured/>精选</a></li><li><a href=/java/>Java</a></li><li><a href=/go/>Go</a></li><li><a href=/categories/>分类</a></li><li><a href=/tags/>标签</a></li><li><a href=/about/>关于</a></li><li><a href=/docs/>团队文档中心</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/>首页</a></li><li><a href=/posts/>文章</a></li><li><a href=/featured/>精选</a></li><li><a href=/java/>Java</a></li><li><a href=/go/>Go</a></li><li><a href=/categories/>分类</a></li><li><a href=/tags/>标签</a></li><li><a href=/about/>关于</a></li><li><a href=/docs/>团队文档中心</a></li></ul></nav></header><div class=content><article class=post><h1 class=post-title><a href=https://isme.cz/java/springboot/>SpringBoot</a></h1><div class=post-meta><time class=post-date>2023-07-15&nbsp;[Updated: 2026-06-06]</time><span class=post-author>Anthony</span><span class=post-reading-time>9 分钟 (1782 字)</span></div><span class=post-tags>#<a href=https://isme.cz/tags/java/>Java</a>&nbsp;
 </span><img src=https://image.runtimes.cc/202404051534895.png class=post-cover alt=SpringBoot title="Cover Image"><div class=post-content><div><h1 id=定时器>定时器<a href=#定时器 class=hanchor arialabel=Anchor>#</a></h1><p>定时器的数值放到配置文件,如果使用<code>@Scheduled(fixedDelay = 类中的变量)</code>这种方式试过不行</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=nd>@Scheduled</span><span class=p>(</span><span class=n>fixedDelayString</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s>&#34;${fixedDelayString}&#34;</span><span class=p>)</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>open</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>open</span><span class=p>()</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
 </span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-properties data-lang=properties><span class=line><span class=cl><span class=na>fixedDelayString</span><span class=o>=</span><span class=s>30000</span>
 </span></span></code></pre></td></tr></table></div></div><h1 id=rocketmq>RocketMQ<a href=#rocketmq class=hanchor arialabel=Anchor>#</a></h1><p>下载源码或者二进制包</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
@@ -120,9 +112,9 @@ sh bin/mqshutdown namesrv
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>printf</span><span class=p>(</span><span class=s>&#34;%s%n&#34;</span><span class=p>,</span><span class=w> </span><span class=n>sendResult</span><span class=p>);</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>producer</span><span class=p>.</span><span class=na>shutdown</span><span class=p>();</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Consumer</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Consumer</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span><span class=w> </span><span class=n>args</span><span class=p>)</span><span class=w> </span><span class=kd>throws</span><span class=w> </span><span class=n>MQClientException</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>DefaultMQPushConsumer</span><span class=w> </span><span class=n>consumer</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>DefaultMQPushConsumer</span><span class=p>(</span><span class=s>&#34;group1&#34;</span><span class=p>);</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>setNamesrvAddr</span><span class=p>(</span><span class=s>&#34;192.168.254.190:9876&#34;</span><span class=p>);</span><span class=w>
@@ -139,7 +131,7 @@ sh bin/mqshutdown namesrv
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>start</span><span class=p>();</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;消费者启起来了&#34;</span><span class=p>);</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
 </span></span></span></code></pre></td></tr></table></div></div><h2 id=单个生产者多个消费者>单个生产者多个消费者<a href=#单个生产者多个消费者 class=hanchor arialabel=Anchor>#</a></h2><h3 id=相同的topic相同的group-负载均衡>相同的Topic,相同的Group-负载均衡<a href=#相同的topic相同的group-负载均衡 class=hanchor arialabel=Anchor>#</a></h3><p>默认就是负载均衡,多个消费者,每个人收一条信息,不重复</p><p><img src=https://image.runtimes.cc/202404051459670.png alt=TODO></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
@@ -208,9 +200,9 @@ sh bin/mqshutdown namesrv
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>producer</span><span class=p>.</span><span class=na>shutdown</span><span class=p>();</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Consumer</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Consumer</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span><span class=w> </span><span class=n>args</span><span class=p>)</span><span class=w> </span><span class=kd>throws</span><span class=w> </span><span class=n>MQClientException</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=c1>// 谁来收</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>DefaultMQPushConsumer</span><span class=w> </span><span class=n>consumer</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>DefaultMQPushConsumer</span><span class=p>(</span><span class=s>&#34;group2&#34;</span><span class=p>);</span><span class=w>
@@ -231,21 +223,21 @@ sh bin/mqshutdown namesrv
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>start</span><span class=p>();</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;消费者启起来了&#34;</span><span class=p>);</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 第一个消费者</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡0</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡1</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡4</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡5</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡8</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡9</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=c1>// 第一个消费者</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡0</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡4</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡5</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡8</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡9</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 第二个消费者</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡2</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡3</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡6</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡7</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=c1>// 第二个消费者</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡2</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡3</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡6</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡7</span><span class=w>
 </span></span></span></code></pre></td></tr></table></div></div><h3 id=相同的topic相同的group-轮训>相同的Topic,相同的Group-轮训<a href=#相同的topic相同的group-轮训 class=hanchor arialabel=Anchor>#</a></h3><p>只是添加了消费者的一段代码:<code>consumer.setMessageModel(MessageModel.BROADCASTING);</code></p><p><img src=https://image.runtimes.cc/202404051459646.png alt=TODO></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
@@ -314,9 +306,9 @@ sh bin/mqshutdown namesrv
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>producer</span><span class=p>.</span><span class=na>shutdown</span><span class=p>();</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Consumer</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Consumer</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span><span class=w> </span><span class=n>args</span><span class=p>)</span><span class=w> </span><span class=kd>throws</span><span class=w> </span><span class=n>MQClientException</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>DefaultMQPushConsumer</span><span class=w> </span><span class=n>consumer</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>DefaultMQPushConsumer</span><span class=p>(</span><span class=s>&#34;group3&#34;</span><span class=p>);</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>setNamesrvAddr</span><span class=p>(</span><span class=s>&#34;192.168.254.190:9876&#34;</span><span class=p>);</span><span class=w>
@@ -335,19 +327,19 @@ sh bin/mqshutdown namesrv
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>start</span><span class=p>();</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;消费者启起来了&#34;</span><span class=p>);</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 两个消费者都是收到相同的消息</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡0</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡1</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡2</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡3</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡4</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡5</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡6</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡7</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡8</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡9</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=c1>// 两个消费者都是收到相同的消息</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡0</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡2</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡3</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡4</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡5</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡6</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡7</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡8</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡9</span><span class=w>
 </span></span></span></code></pre></td></tr></table></div></div><h3 id=不同的topic不同的group>不同的Topic,不同的Group<a href=#不同的topic不同的group class=hanchor arialabel=Anchor>#</a></h3><p><img src=https://image.runtimes.cc/202404051459641.png alt=TODO></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
@@ -437,7 +429,7 @@ sh bin/mqshutdown namesrv
 </span><span class=lnt>87
 </span><span class=lnt>88
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=c1>// 消费者1</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Consumer</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Consumer</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span><span class=w> </span><span class=n>args</span><span class=p>)</span><span class=w> </span><span class=kd>throws</span><span class=w> </span><span class=n>MQClientException</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>DefaultMQPushConsumer</span><span class=w> </span><span class=n>consumer</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>DefaultMQPushConsumer</span><span class=p>(</span><span class=s>&#34;group4&#34;</span><span class=p>);</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>setNamesrvAddr</span><span class=p>(</span><span class=s>&#34;192.168.254.190:9876&#34;</span><span class=p>);</span><span class=w>
@@ -455,10 +447,10 @@ sh bin/mqshutdown namesrv
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>start</span><span class=p>();</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;消费者启起来了&#34;</span><span class=p>);</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 消费者2</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Consumer</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=c1>// 消费者2</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Consumer</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span><span class=w> </span><span class=n>args</span><span class=p>)</span><span class=w> </span><span class=kd>throws</span><span class=w> </span><span class=n>MQClientException</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>DefaultMQPushConsumer</span><span class=w> </span><span class=n>consumer</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>DefaultMQPushConsumer</span><span class=p>(</span><span class=s>&#34;group4&#34;</span><span class=p>);</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>setNamesrvAddr</span><span class=p>(</span><span class=s>&#34;192.168.254.190:9876&#34;</span><span class=p>);</span><span class=w>
@@ -476,10 +468,10 @@ sh bin/mqshutdown namesrv
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>start</span><span class=p>();</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;消费者启起来了&#34;</span><span class=p>);</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 消费者3</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Consumer</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=c1>// 消费者3</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>Consumer</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=kd>static</span><span class=w> </span><span class=kt>void</span><span class=w> </span><span class=nf>main</span><span class=p>(</span><span class=n>String</span><span class=o>[]</span><span class=w> </span><span class=n>args</span><span class=p>)</span><span class=w> </span><span class=kd>throws</span><span class=w> </span><span class=n>MQClientException</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>DefaultMQPushConsumer</span><span class=w> </span><span class=n>consumer</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>DefaultMQPushConsumer</span><span class=p>(</span><span class=s>&#34;group4-1&#34;</span><span class=p>);</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>setNamesrvAddr</span><span class=p>(</span><span class=s>&#34;192.168.254.190:9876&#34;</span><span class=p>);</span><span class=w>
@@ -497,33 +489,33 @@ sh bin/mqshutdown namesrv
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>consumer</span><span class=p>.</span><span class=na>start</span><span class=p>();</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=n>System</span><span class=p>.</span><span class=na>out</span><span class=p>.</span><span class=na>println</span><span class=p>(</span><span class=s>&#34;消费者启起来了&#34;</span><span class=p>);</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 消费者1</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡2</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡3</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡6</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡7</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=c1>// 消费者1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡2</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡3</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡6</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡7</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 消费者2</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡0</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡1</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡4</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡5</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡8</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡9</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=c1>// 消费者2</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡0</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡4</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡5</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡8</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡9</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 消费者3</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡0</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡1</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡2</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡3</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡4</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡5</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡6</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡7</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡8</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=n>默认接受者是负载均衡9</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=c1>// 消费者3</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡0</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡1</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡2</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡3</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡4</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡5</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡6</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡7</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡8</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=n>默认接受者是负载均衡9</span><span class=w>
 </span></span></span></code></pre></td></tr></table></div></div><h1 id=swagger>Swagger<a href=#swagger class=hanchor arialabel=Anchor>#</a></h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
@@ -575,22 +567,22 @@ sh bin/mqshutdown namesrv
 </span><span class=lnt>37
 </span><span class=lnt>38
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=kn>import</span><span class=w> </span><span class=nn>io.swagger.annotations.ApiOperation</span><span class=p>;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>org.springframework.context.annotation.Bean</span><span class=p>;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>org.springframework.context.annotation.Configuration</span><span class=p>;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>springfox.documentation.builders.ApiInfoBuilder</span><span class=p>;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>springfox.documentation.builders.PathSelectors</span><span class=p>;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>springfox.documentation.builders.RequestHandlerSelectors</span><span class=p>;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>springfox.documentation.oas.annotations.EnableOpenApi</span><span class=p>;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>springfox.documentation.service.ApiInfo</span><span class=p>;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>springfox.documentation.service.Contact</span><span class=p>;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>springfox.documentation.spi.DocumentationType</span><span class=p>;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=kn>import</span><span class=w> </span><span class=nn>springfox.documentation.spring.web.plugins.Docket</span><span class=p>;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=cm>/**
+</span></span></span><span class=line><span class=cl><span class=kn>import</span><span class=w> </span><span class=nn>org.springframework.context.annotation.Bean</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kn>import</span><span class=w> </span><span class=nn>org.springframework.context.annotation.Configuration</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kn>import</span><span class=w> </span><span class=nn>springfox.documentation.builders.ApiInfoBuilder</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kn>import</span><span class=w> </span><span class=nn>springfox.documentation.builders.PathSelectors</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kn>import</span><span class=w> </span><span class=nn>springfox.documentation.builders.RequestHandlerSelectors</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kn>import</span><span class=w> </span><span class=nn>springfox.documentation.oas.annotations.EnableOpenApi</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kn>import</span><span class=w> </span><span class=nn>springfox.documentation.service.ApiInfo</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kn>import</span><span class=w> </span><span class=nn>springfox.documentation.service.Contact</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kn>import</span><span class=w> </span><span class=nn>springfox.documentation.spi.DocumentationType</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kn>import</span><span class=w> </span><span class=nn>springfox.documentation.spring.web.plugins.Docket</span><span class=p>;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=cm>/**
 </span></span></span><span class=line><span class=cl><span class=cm> * Swagger配置类
 </span></span></span><span class=line><span class=cl><span class=cm> */</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=nd>@EnableOpenApi</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=nd>@Configuration</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>SwaggerConfig</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nd>@EnableOpenApi</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nd>@Configuration</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>SwaggerConfig</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nd>@Bean</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=n>Docket</span><span class=w> </span><span class=nf>docket</span><span class=p>(){</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=k>new</span><span class=w> </span><span class=n>Docket</span><span class=p>(</span><span class=n>DocumentationType</span><span class=p>.</span><span class=na>OAS_30</span><span class=p>)</span><span class=w>
@@ -611,7 +603,7 @@ sh bin/mqshutdown namesrv
 </span></span></span><span class=line><span class=cl><span class=w>                </span><span class=p>.</span><span class=na>version</span><span class=p>(</span><span class=s>&#34;1.0&#34;</span><span class=p>)</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>                </span><span class=p>.</span><span class=na>build</span><span class=p>();</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
 </span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
@@ -652,11 +644,11 @@ sh bin/mqshutdown namesrv
 </span><span class=lnt>18
 </span><span class=lnt>19
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=nd>@RestController</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=nd>@RequestMapping</span><span class=p>(</span><span class=s>&#34;/test&#34;</span><span class=p>)</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=nd>@Api</span><span class=p>(</span><span class=n>tags</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s>&#34;测试2&#34;</span><span class=p>)</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=c1>// 排序</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=nd>@ApiSort</span><span class=p>(</span><span class=n>value</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>1</span><span class=p>)</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>TestController2</span><span class=w> </span><span class=p>{</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nd>@RequestMapping</span><span class=p>(</span><span class=s>&#34;/test&#34;</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nd>@Api</span><span class=p>(</span><span class=n>tags</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=s>&#34;测试2&#34;</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=c1>// 排序</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=nd>@ApiSort</span><span class=p>(</span><span class=n>value</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>1</span><span class=p>)</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=kd>class</span> <span class=nc>TestController2</span><span class=w> </span><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nd>@GetMapping</span><span class=p>(</span><span class=s>&#34;/3&#34;</span><span class=p>)</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nd>@ApiOperation</span><span class=p>(</span><span class=s>&#34;3&#34;</span><span class=p>)</span><span class=w>
@@ -669,7 +661,7 @@ sh bin/mqshutdown namesrv
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>public</span><span class=w> </span><span class=n>String</span><span class=w> </span><span class=nf>method2</span><span class=p>(){</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>        </span><span class=k>return</span><span class=w> </span><span class=s>&#34;hello wolrd&#34;</span><span class=p>;</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=p>}</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
 </span></span></span></code></pre></td></tr></table></div></div><h1 id=log4j2>Log4j2<a href=#log4j2 class=hanchor arialabel=Anchor>#</a></h1><h2 id=log4j2-1>Log4j2<a href=#log4j2-1 class=hanchor arialabel=Anchor>#</a></h2><p>日志所有级别级别从上到下 ,级别从低到高,报错(更重要)这种,级别最高,info,debug相对不怎么重要</p><ul><li>all</li><li>trace</li><li>debug</li><li>info</li><li>warn</li><li>error</li><li>fail</li></ul><p>Log4j2.xml配置例子</p><p>{% tabs Log4j2 %}</p><pre tabindex=0><code>info级别输出到info.log
 warn级别输出warn.log
 error级别输出到error.log
@@ -1103,7 +1095,7 @@ info级别和error级别 记录到dev.log</p><div class=highlight><div class=chr
 </span><span class=lnt>11
 </span><span class=lnt>12
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-java data-lang=java><span class=line><span class=cl><span class=nd>@GetMapping</span><span class=p>(</span><span class=s>&#34;/test&#34;</span><span class=p>)</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=kd>public</span><span class=w> </span><span class=n>String</span><span class=w> </span><span class=nf>test</span><span class=p>(){</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=kd>public</span><span class=w> </span><span class=n>String</span><span class=w> </span><span class=nf>test</span><span class=p>(){</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=c1>// 格式化当前日期时间</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>String</span><span class=w> </span><span class=n>formattedDateTime</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=n>LocalDateTime</span><span class=p>.</span><span class=na>now</span><span class=p>().</span><span class=na>format</span><span class=p>(</span><span class=n>DateTimeFormatter</span><span class=p>.</span><span class=na>ofPattern</span><span class=p>(</span><span class=s>&#34;yyyy-MM-dd HH:mm:ss&#34;</span><span class=p>));</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>
@@ -1113,7 +1105,7 @@ info级别和error级别 记录到dev.log</p><div class=highlight><div class=chr
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>log</span><span class=p>.</span><span class=na>warn</span><span class=p>(</span><span class=s>&#34;当前日期时间：{}&#34;</span><span class=p>,</span><span class=w> </span><span class=n>formattedDateTime</span><span class=p>);</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>log</span><span class=p>.</span><span class=na>trace</span><span class=p>(</span><span class=s>&#34;当前日期时间：{}&#34;</span><span class=p>,</span><span class=w> </span><span class=n>formattedDateTime</span><span class=p>);</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=k>return</span><span class=w> </span><span class=n>formattedDateTime</span><span class=p>;</span><span class=w>
-</span></span></span><span class=line><span class=cl><span class=w></span><span class=p>}</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=p>}</span><span class=w>
 </span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
@@ -1124,5 +1116,5 @@ info级别和error级别 记录到dev.log</p><div class=highlight><div class=chr
 </span></span><span class=line><span class=cl>ERROR <span class=m>64710</span> --- <span class=o>[</span>nio-8080-exec-1<span class=o>]</span> c.e.s.controller.IndexController         : 当前日期时间：2024-03-03 21:37:40
 </span></span><span class=line><span class=cl>WARN <span class=m>64710</span> --- <span class=o>[</span>nio-8080-exec-1<span class=o>]</span> c.e.s.controller.IndexController         : 当前日期时间：2024-03-03 21:37:40
 </span></span><span class=line><span class=cl><span class=c1># 为什么控制台没有打印 trace和debug日志</span>
-</span></span></code></pre></td></tr></table></div></div></div></div><div class=post-authors style="margin:22px 0 0;border-top:1px dashed rgba(255,255,255,.18);padding-top:14px"><div class=author style=display:flex;align-items:center;gap:10px;flex-wrap:wrap><img class=author-avatar src="/images/authors/avatar_small.webp?v=1" alt=isme width=48 height=48 loading=lazy decoding=async><div style=display:flex;flex-direction:column;gap:2px;min-width:0><strong style=line-height:1>isme</strong><span style=opacity:.9;line-height:1.2>AWS Certified Solutions Architect / 全栈工程师</span><span style=opacity:.75;line-height:1.2>📍 Bangkok, Thailand</span></div></div></div></article></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2025 Powered by <a href=https://gohugo.io>Hugo</a></span>
-<span>:: <a href=https://github.com/panr/hugo-theme-terminal target=_blank>Theme</a> made by <a href=https://github.com/panr target=_blank>panr</a></span></div></div></footer><script type=text/javascript src=/bundle.min.js></script></div></body></html>
+</span></span></code></pre></td></tr></table></div></div></div></div><div class=post-authors style="margin:22px 0 0;border-top:1px dashed rgba(255,255,255,.18);padding-top:14px"><div class=author style=display:flex;align-items:center;gap:10px;flex-wrap:wrap><img class=author-avatar src="/images/authors/avatar_small.webp?v=1" alt=isme width=48 height=48 loading=lazy decoding=async><div style=display:flex;flex-direction:column;gap:2px;min-width:0><strong style=line-height:1>isme</strong><span style=opacity:.9;line-height:1.2>AWS Certified Solutions Architect / 全栈工程师</span><span style=opacity:.75;line-height:1.2>📍 Bangkok, Thailand</span></div></div></div></article></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2026 Powered by <a href=https://gohugo.io>Hugo</a></span>
+<span>:: <a href=https://github.com/mirus-ua/hugo-theme-re-terminal target=_blank>Theme</a> made by <a href=https://github.com/mirus-ua target=_blank>Mirus</a></span></div></div></footer><script type=text/javascript src=/bundle.min.js></script></div></body></html>

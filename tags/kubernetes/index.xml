@@ -1,65 +1,264 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kubernetes on Hello World</title><link>https://isme.cz/tags/kubernetes/</link><description>Recent content in Kubernetes on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Wed, 27 Aug 2025 11:37:29 +0000</lastBuildDate><atom:link href="https://isme.cz/tags/kubernetes/index.xml" rel="self" type="application/rss+xml"/><item><title>核心技能自查清单</title><link>https://isme.cz/featured/developer-check-list/</link><pubDate>Wed, 27 Aug 2025 11:37:29 +0000</pubDate><guid>https://isme.cz/featured/developer-check-list/</guid><description>覆盖 Java 与 Go 从基础到架构的完整路线：计算机基础、并发、集合/标准库、框架、数据库与缓存、分布式、工程实践、源码阅读与架构，全部细化为可勾选的任务清单。</description></item><item><title>Kubernetes</title><link>https://isme.cz/kubernetes/</link><pubDate>Tue, 07 Nov 2023 11:21:07 +0000</pubDate><guid>https://isme.cz/kubernetes/</guid><description>&lt;h2 id="主节点上操作">主节点上操作&lt;/h2>
-&lt;p>定义主机名字&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">sudo vim /etc/hosts
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">192.168.11.128 k8s-master
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">192.168.11.129 k8s-node01
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">192.168.11.130 k8s-node01
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>修改主机名&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 打印hostname&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hostname
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 修改hostname,需要重新连接,才能看到变化&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sduo hostnamectl set-hostname xxx
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>下载k8s需要的镜像&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
-&lt;/span>&lt;span class="lnt"> 2
-&lt;/span>&lt;span class="lnt"> 3
-&lt;/span>&lt;span class="lnt"> 4
-&lt;/span>&lt;span class="lnt"> 5
-&lt;/span>&lt;span class="lnt"> 6
-&lt;/span>&lt;span class="lnt"> 7
-&lt;/span>&lt;span class="lnt"> 8
-&lt;/span>&lt;span class="lnt"> 9
-&lt;/span>&lt;span class="lnt">10
-&lt;/span>&lt;span class="lnt">11
-&lt;/span>&lt;span class="lnt">12
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 打印所需要的镜像&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">kubeadm config images list
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># docker pull 上面命令的镜像&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 比如&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo docker pull registry.k8s.io/kube-apiserver:v1.28.3
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo docker pull registry.k8s.io/kube-controller-manager:v1.28.3
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo docker pull registry.k8s.io/kube-scheduler:v1.28.3
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo docker pull registry.k8s.io/kube-proxy:v1.28.3
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo docker pull registry.k8s.io/pause:3.9
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo docker pull registry.k8s.io/etcd:3.5.9-0
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo docker pull registry.k8s.io/coredns/coredns:v1.10.1
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>创建master节点&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kubernetes on Hello World</title><link>https://isme.cz/tags/kubernetes/</link><description>Recent content in Kubernetes on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 27 Aug 2025 11:37:29 +0000</lastBuildDate><atom:link href="https://isme.cz/tags/kubernetes/index.xml" rel="self" type="application/rss+xml"/><item><title>核心技能自查清单</title><link>https://isme.cz/featured/developer-check-list/</link><pubDate>Wed, 27 Aug 2025 11:37:29 +0000</pubDate><guid>https://isme.cz/featured/developer-check-list/</guid><description>覆盖 Java 与 Go 从基础到架构的完整路线：计算机基础、并发、集合/标准库、框架、数据库与缓存、分布式、工程实践、源码阅读与架构，全部细化为可勾选的任务清单。</description><content>&lt;h1 id="核心技能检查清单"&gt;核心技能检查清单&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;hi@isme developer-check-list $ cat ./doc/preface.txt&lt;br&gt;
+这是一个个人自查汇总 目的是明确自己的学习方向 也就是关于页所说的 B number&lt;br&gt;
+罗列出自己未达到精通水准的条目 方便清楚的知道自己还差在哪里 按计划逐步攻克
+勾选标准如下&lt;br&gt;
+&lt;strong&gt;准精通&lt;/strong&gt; 熟练使用 深入理解&lt;br&gt;
+&lt;strong&gt;精通&lt;/strong&gt; 按需重构 -&amp;gt; 官方贡献&lt;br&gt;
+❌弃用&lt;br&gt;
+🔲待定&lt;br&gt;
+🟡熟悉&lt;br&gt;
+✅完成 至少需达到 &lt;strong&gt;准精通&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="第-0-层准备与方法"&gt;第 0 层：准备与方法&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;✅ 选定主力语言顺序：先 &lt;strong&gt;Java→Go&lt;/strong&gt; / 或先 &lt;strong&gt;Go→Java&lt;/strong&gt;（任选一种更熟悉的做主线）&lt;/li&gt;
+&lt;li&gt;❌ 建立仓库 &lt;code&gt;learning-notes&lt;/code&gt;：每个主题一个 &lt;code&gt;README.md&lt;/code&gt;，记录要点/坑/例题&lt;/li&gt;
+&lt;li&gt;✅ 会用以下工具：IDEA / GoLand、VS Code、Postman/curl、Docker、Git &amp;amp; GitHub&lt;/li&gt;
+&lt;li&gt;❌ 习惯：所有示例都&lt;strong&gt;写最小可运行代码&lt;/strong&gt; + &lt;strong&gt;单元测试&lt;/strong&gt; + &lt;strong&gt;注释为什么&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="第-1-层计算机基础语言无关"&gt;第 1 层：计算机基础（语言无关）&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;🟡 操作系统：进程/线程/调度、虚拟内存、页缓存、文件系统、系统调用&lt;/li&gt;
+&lt;li&gt;🔲 计算机网络：TCP 三次握手/四次挥手、拥塞控制、HTTP/1.1-2-3、TLS、DNS&lt;/li&gt;
+&lt;li&gt;🟡 数据结构：数组、链表、栈队列、堆、树（AVL/红黑）、Trie、哈希表、图&lt;/li&gt;
+&lt;li&gt;🔲 算法：排序、二分、前缀和/差分、并查集、DFS/BFS、动态规划&lt;/li&gt;
+&lt;li&gt;✅ 数据库理论：事务 ACID、隔离级别、索引 B+Tree、执行计划、锁&lt;/li&gt;
+&lt;li&gt;🟡 分布式基础：CAP、BASE、幂等、重试、限流、熔断、降级、雪崩&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="第-2-层java-基础"&gt;第 2 层：Java 基础&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;✅ 语法与面向对象：类/接口/抽象类、继承/组合、泛型、异常、注解&lt;/li&gt;
+&lt;li&gt;✅ 集合：&lt;code&gt;ArrayList&lt;/code&gt; / &lt;code&gt;LinkedList&lt;/code&gt; / &lt;code&gt;HashMap&lt;/code&gt; / &lt;code&gt;TreeMap&lt;/code&gt; / &lt;code&gt;ConcurrentHashMap&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;🟡 IO/NIO：缓冲/通道/选择器、零拷贝、常用 &lt;code&gt;Files&lt;/code&gt;/&lt;code&gt;Paths&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;🔲 JVM：内存结构（堆/栈/元空间）、类加载、字节码基础、JIT、逃逸分析&lt;/li&gt;
+&lt;li&gt;🔲 GC 算法与实现：Serial/Parallel/CMS/G1/ZGC；Minor/Full GC、调优思路&lt;/li&gt;
+&lt;li&gt;🟡 并发关键字：&lt;code&gt;synchronized&lt;/code&gt;、&lt;code&gt;volatile&lt;/code&gt;、&lt;code&gt;final&lt;/code&gt; 的可见性与重排序语义&lt;/li&gt;
+&lt;li&gt;🔲 JUC：AQS、&lt;code&gt;ReentrantLock&lt;/code&gt;/&lt;code&gt;StampedLock&lt;/code&gt;、&lt;code&gt;CountDownLatch&lt;/code&gt;、&lt;code&gt;Semaphore&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;🔲 线程池：&lt;code&gt;ThreadPoolExecutor&lt;/code&gt; 参数、拒绝策略、监控告警&lt;/li&gt;
+&lt;li&gt;🔲 异步编程：&lt;code&gt;CompletableFuture&lt;/code&gt;、（可选）虚拟线程（Java 21）&lt;/li&gt;
+&lt;li&gt;✅ 常用构建：Maven/Gradle、依赖管理、多模块结构&lt;/li&gt;
+&lt;li&gt;🔲 单元测试：JUnit 5、Mockito、Testcontainers（集成测试）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="第-3-层go-基础"&gt;第 3 层：Go 基础&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;🟡 语法：切片/数组/map、结构体方法、指针/值接收者差异&lt;/li&gt;
+&lt;li&gt;🔲 接口：隐式实现、&lt;code&gt;io.Reader&lt;/code&gt;/&lt;code&gt;Writer&lt;/code&gt;、&lt;code&gt;fmt.Stringer&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;🟡 并发入门：goroutine、channel（无缓冲/有缓冲）、select&lt;/li&gt;
+&lt;li&gt;🔲 上下文：&lt;code&gt;context.Context&lt;/code&gt; 超时/取消/传递元数据&lt;/li&gt;
+&lt;li&gt;🟡 错误处理：&lt;code&gt;error&lt;/code&gt;、&lt;code&gt;errors.Is/As&lt;/code&gt;、&lt;code&gt;panic/recover&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;🟡 工程：&lt;code&gt;go mod&lt;/code&gt;、包布局（cmd/internal/pkg）、&lt;code&gt;go test -bench&lt;/code&gt;、&lt;code&gt;go vet&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;🔲 常用库：&lt;code&gt;net/http&lt;/code&gt;、&lt;code&gt;encoding/json&lt;/code&gt;、&lt;code&gt;time&lt;/code&gt;、&lt;code&gt;sync&lt;/code&gt;、&lt;code&gt;atomic&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="第-4-层并发与多线程"&gt;第 4 层：并发与多线程&lt;/h2&gt;
+&lt;h3 id="java"&gt;Java&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;🔲 内存模型（JMM）与 &lt;strong&gt;happens-before&lt;/strong&gt; 规则&lt;/li&gt;
+&lt;li&gt;🟡 锁的选择：对象锁 vs &lt;code&gt;ReentrantLock&lt;/code&gt; vs &lt;code&gt;StampedLock&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;🔲 原子类：&lt;code&gt;Atomic*&lt;/code&gt;、&lt;code&gt;LongAdder&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;🟡 无锁/低锁：CAS、自旋、伪共享与缓存行&lt;/li&gt;
+&lt;li&gt;🔲 任务编排：线程池 + &lt;code&gt;CompletableFuture&lt;/code&gt; 组合&lt;/li&gt;
+&lt;li&gt;🟡 分布式锁：Redis（SET NX EX、Redisson）、ZK（临时顺序节点）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="go"&gt;Go&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;🔲 调度模型：G-P-M（M:N）&lt;/li&gt;
+&lt;li&gt;🔲 Channel 模式：fan-in、fan-out、worker pool、pipeline、背压&lt;/li&gt;
+&lt;li&gt;🔲 &lt;code&gt;sync&lt;/code&gt;：&lt;code&gt;Mutex&lt;/code&gt;、&lt;code&gt;RWMutex&lt;/code&gt;、&lt;code&gt;WaitGroup&lt;/code&gt;、&lt;code&gt;Cond&lt;/code&gt;、&lt;code&gt;Once&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;🔲 性能：避免切片扩容（&lt;code&gt;make(len, cap)&lt;/code&gt;）、对象复用（&lt;code&gt;sync.Pool&lt;/code&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="第-5-层数据库与缓存"&gt;第 5 层：数据库与缓存&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;🟡 MySQL：索引设计、Explain、覆盖索引、回表、慢查询优化、分库分表思路&lt;/li&gt;
+&lt;li&gt;🔲 事务与锁：MVCC、快照读/当前读、间隙锁、死锁检测&lt;/li&gt;
+&lt;li&gt;🟡 Redis：字符串/哈希/列表/集合/有序集合、Bitmap/HyperLogLog/Geo&lt;/li&gt;
+&lt;li&gt;🔲 Redis 高可用：RDB/AOF、复制、哨兵、Cluster&lt;/li&gt;
+&lt;li&gt;🔲 缓存模式：Cache Aside / Write Through / Write Back、失效策略&lt;/li&gt;
+&lt;li&gt;🟡 缓存问题：穿透（布隆过滤器）、击穿（热点互斥）、雪崩（过期错峰）&lt;/li&gt;
+&lt;li&gt;🔲 分布式锁：正确性（唯一性、原子性、自动过期、可重入/续约）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="第-6-层框架与标准库"&gt;第 6 层：框架与标准库&lt;/h2&gt;
+&lt;h3 id="java企业后台为主"&gt;Java（企业后台为主）&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;🟡 Spring 核心：IoC、AOP、事件、生命周期、条件装配&lt;/li&gt;
+&lt;li&gt;🟡 Spring Boot：自动装配、配置映射、Starter 机制&lt;/li&gt;
+&lt;li&gt;🟡 Web：Spring MVC、校验、全局异常、拦截器/过滤器&lt;/li&gt;
+&lt;li&gt;🟡 数据访问：MyBatis / MyBatis-Plus、事务、分页、批处理&lt;/li&gt;
+&lt;li&gt;🟡 Spring Cloud（选型即可）：Nacos/Eureka、OpenFeign、Gateway、Config、Sleuth/Zipkin、Resilience4j&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="go云原生高并发"&gt;Go（云原生/高并发）&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;🔲 Web 框架：Gin/Echo（路由、中间件、绑定与校验）&lt;/li&gt;
+&lt;li&gt;🔲 ORM：GORM（迁移、事务、预加载、乐观锁）&lt;/li&gt;
+&lt;li&gt;🔲 依赖注入：Google Wire（编译期 DI）&lt;/li&gt;
+&lt;li&gt;🔲 配置：Viper；日志：zap/logrus；HTTP 客户端：resty&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="第-7-层设计模式与编程思想"&gt;第 7 层：设计模式与编程思想&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;🔲 OOP：封装/继承/多态（Java），组合优于继承（Go）&lt;/li&gt;
+&lt;li&gt;🟡 必会模式：单例、工厂、策略、装饰器、代理、模板方法、观察者&lt;/li&gt;
+&lt;li&gt;✅ 反射与动态代理：JDK/CGLIB、AOP 原理（切点/通知/代理链）&lt;/li&gt;
+&lt;li&gt;🔲 重构：坏味道、提炼函数、引入参数对象、用组合取代继承&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="第-8-层工程与架构实践"&gt;第 8 层：工程与架构实践&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;✅ Git Flow：feature / release / hotfix&lt;/li&gt;
+&lt;li&gt;✅ API 设计：REST/JSON、错误码、幂等、版本化&lt;/li&gt;
+&lt;li&gt;🔲 安全：鉴权（JWT/OAuth2）、CSRF、XSS、SQL 注入、RCE 防护&lt;/li&gt;
+&lt;li&gt;🔲 日志/指标/追踪：ELK、Prometheus + Grafana、OpenTelemetry&lt;/li&gt;
+&lt;li&gt;🟡 容器化：Dockerfile 最佳实践、多阶段构建、最小镜像&lt;/li&gt;
+&lt;li&gt;🔲 编排：Docker Compose → Kubernetes（Pod/Deployment/Service/Ingress）&lt;/li&gt;
+&lt;li&gt;🔲 配置：ConfigMap/Secret、灰度：HPA/金丝雀/蓝绿&lt;/li&gt;
+&lt;li&gt;✅ CI/CD：GitHub Actions/Jenkins（构建、测试、镜像、部署）&lt;/li&gt;
+&lt;li&gt;🔲 云映射：RDS、Elasticache、EKS、S3、CloudFront（或自选云）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="第-9-层源码阅读与开源贡献"&gt;第 9 层：源码阅读与开源贡献&lt;/h2&gt;
+&lt;h3 id="java-1"&gt;Java&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;🔲 JDK：&lt;code&gt;ArrayList&lt;/code&gt;、&lt;code&gt;HashMap&lt;/code&gt;、&lt;code&gt;ConcurrentHashMap&lt;/code&gt;、&lt;code&gt;CompletableFuture&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;🔲 Spring：IoC/AOP/事务传播、MVC 调度链&lt;/li&gt;
+&lt;li&gt;🔲 MyBatis：Mapper 动态代理、一级/二级缓存&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="go-1"&gt;Go&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;🔲 Go runtime：调度、GC 写屏障&lt;/li&gt;
+&lt;li&gt;🔲 Gin：路由树、Context 设计&lt;/li&gt;
+&lt;li&gt;🔲 GORM：链式 API、钩子、事务&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="推荐资料中文优先"&gt;推荐资料（中文优先）&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Java：《Effective Java》《Java 并发编程实战》《深入理解 JVM》&lt;/li&gt;
+&lt;li&gt;Go：《Go 语言圣经》《Go 语言设计与实现》&lt;/li&gt;
+&lt;li&gt;数据库：《高性能 MySQL》《Redis 设计与实现》（或《Redis 实战》）&lt;/li&gt;
+&lt;li&gt;架构：《架构整洁之道》《领域驱动设计精要》&lt;/li&gt;
+&lt;li&gt;云原生：《Kubernetes in Action》《gRPC 官方文档（中文）》&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="附录java-8--21-必学特性表"&gt;附录：Java 8 → 21 必学特性表&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;🟡 Java 8：Lambda / Stream / Optional / 新日期时间 / 默认接口方法&lt;/li&gt;
+&lt;li&gt;🟡 Java 9-11：模块化、&lt;code&gt;var&lt;/code&gt;、HTTP Client、Flight Recorder&lt;/li&gt;
+&lt;li&gt;🔲 Java 12-17：Switch 新语法、文本块、Records、Sealed Classes&lt;/li&gt;
+&lt;li&gt;🔲 Java 19-21：虚拟线程（Project Loom）、结构化并发、Scoped Values（了解）&lt;/li&gt;
+&lt;/ul&gt;</content></item><item><title>Kubernetes</title><link>https://isme.cz/kubernetes/</link><pubDate>Tue, 07 Nov 2023 11:21:07 +0000</pubDate><guid>https://isme.cz/kubernetes/</guid><description>Kubernetes 容器编排笔记：Pod、Deployment、Service、Ingress 与运维实践。</description><content>&lt;h2 id="主节点上操作"&gt;主节点上操作&lt;/h2&gt;
+&lt;p&gt;定义主机名字&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo vim /etc/hosts
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.11.128 k8s-master
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.11.129 k8s-node01
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;192.168.11.130 k8s-node01
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;修改主机名&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 打印hostname&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;hostname
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 修改hostname,需要重新连接,才能看到变化&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sduo hostnamectl set-hostname xxx
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;下载k8s需要的镜像&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 打印所需要的镜像&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;kubeadm config images list
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# docker pull 上面命令的镜像&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 比如&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo docker pull registry.k8s.io/kube-apiserver:v1.28.3
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo docker pull registry.k8s.io/kube-controller-manager:v1.28.3
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo docker pull registry.k8s.io/kube-scheduler:v1.28.3
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo docker pull registry.k8s.io/kube-proxy:v1.28.3
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo docker pull registry.k8s.io/pause:3.9
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo docker pull registry.k8s.io/etcd:3.5.9-0
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo docker pull registry.k8s.io/coredns/coredns:v1.10.1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;创建master节点&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo kubeadm init --apiserver-advertise-address&lt;span class="o"&gt;=&lt;/span&gt;192.168.110.128 --pod-network-cidr&lt;span class="o"&gt;=&lt;/span&gt;172.16.0.0/16
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 创建完之后会提示,并且执行&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;mkdir -p &lt;span class="nv"&gt;$HOME&lt;/span&gt;/.kube
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo cp -i /etc/kubernetes/admin.conf &lt;span class="nv"&gt;$HOME&lt;/span&gt;/.kube/config
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo chown &lt;span class="k"&gt;$(&lt;/span&gt;id -u&lt;span class="k"&gt;)&lt;/span&gt;:&lt;span class="k"&gt;$(&lt;/span&gt;id -g&lt;span class="k"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;$HOME&lt;/span&gt;/.kube/config
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;查看k8s状态&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ kubectl get node
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;NAME STATUS ROLES AGE VERSION
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;k8s-node01 NotReady control-plane 4m9s v1.28.2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;使用网络插件&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;curl https://docs.projectcalico.org/manifests/calico.yaml -O
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;kubectl apply -f calico.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content></item></channel></rss>

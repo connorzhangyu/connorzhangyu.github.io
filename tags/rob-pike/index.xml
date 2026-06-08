@@ -1,7 +1,176 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rob Pike on Hello World</title><link>https://isme.cz/tags/rob-pike/</link><description>Recent content in Rob Pike on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Wed, 13 Aug 2025 22:00:00 +0700</lastBuildDate><atom:link href="https://isme.cz/tags/rob-pike/index.xml" rel="self" type="application/rss+xml"/><item><title>Go 的声明语法：为什么与众不同</title><link>https://isme.cz/featured/go-declaration-syntax/</link><pubDate>Wed, 13 Aug 2025 22:00:00 +0700</pubDate><guid>https://isme.cz/featured/go-declaration-syntax/</guid><description>&lt;blockquote>
-&lt;p>本文整理自 Go 语言作者 Rob Pike 在 2010 年的文章 &lt;em>&amp;ldquo;Go&amp;rsquo;s Declaration Syntax&amp;rdquo;&lt;/em>，结合原文与实例，解释 Go 为什么采用不同于 C/Java 的声明方式。&lt;br>
-写这篇文章的原因：&lt;br>
-在网络上能找到不少 &lt;em>&amp;ldquo;Go&amp;rsquo;s Declaration Syntax&amp;rdquo;&lt;/em> 的中文翻译，但大多数存在直译生硬、遗漏原文细节甚至误解语义的问题。&lt;br>
-这些低质量翻译往往让读者更困惑，而不是更清楚。&lt;br>
-因此，我基于 Rob Pike 原文，结合上下文和代码示例，整理出一份更贴近原意、方便国内开发者理解的版本。&lt;br>
-同时保留原文核心思想，并补充了对比表与背景说明，帮助读者更好地掌握 Go 声明语法背后的设计理念。&lt;/p>&lt;/blockquote></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rob Pike on Hello World</title><link>https://isme.cz/tags/rob-pike/</link><description>Recent content in Rob Pike on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 13 Aug 2025 22:00:00 +0700</lastBuildDate><atom:link href="https://isme.cz/tags/rob-pike/index.xml" rel="self" type="application/rss+xml"/><item><title>Go 的声明语法：为什么与众不同</title><link>https://isme.cz/featured/go-declaration-syntax/</link><pubDate>Wed, 13 Aug 2025 22:00:00 +0700</pubDate><guid>https://isme.cz/featured/go-declaration-syntax/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;本文整理自 Go 语言作者 Rob Pike 在 2010 年的文章 &lt;em&gt;&amp;ldquo;Go&amp;rsquo;s Declaration Syntax&amp;rdquo;&lt;/em&gt;，结合原文与实例，解释 Go 为什么采用不同于 C/Java 的声明方式。&lt;br&gt;
+写这篇文章的原因：&lt;br&gt;
+在网络上能找到不少 &lt;em&gt;&amp;ldquo;Go&amp;rsquo;s Declaration Syntax&amp;rdquo;&lt;/em&gt; 的中文翻译，但大多数存在直译生硬、遗漏原文细节甚至误解语义的问题。&lt;br&gt;
+这些低质量翻译往往让读者更困惑，而不是更清楚。&lt;br&gt;
+因此，我基于 Rob Pike 原文，结合上下文和代码示例，整理出一份更贴近原意、方便国内开发者理解的版本。&lt;br&gt;
+同时保留原文核心思想，并补充了对比表与背景说明，帮助读者更好地掌握 Go 声明语法背后的设计理念。&lt;/p&gt;
+&lt;/blockquote&gt;</description><content>&lt;blockquote&gt;
+&lt;p&gt;本文整理自 Go 语言作者 Rob Pike 在 2010 年的文章 &lt;em&gt;&amp;ldquo;Go&amp;rsquo;s Declaration Syntax&amp;rdquo;&lt;/em&gt;，结合原文与实例，解释 Go 为什么采用不同于 C/Java 的声明方式。&lt;br&gt;
+写这篇文章的原因：&lt;br&gt;
+在网络上能找到不少 &lt;em&gt;&amp;ldquo;Go&amp;rsquo;s Declaration Syntax&amp;rdquo;&lt;/em&gt; 的中文翻译，但大多数存在直译生硬、遗漏原文细节甚至误解语义的问题。&lt;br&gt;
+这些低质量翻译往往让读者更困惑，而不是更清楚。&lt;br&gt;
+因此，我基于 Rob Pike 原文，结合上下文和代码示例，整理出一份更贴近原意、方便国内开发者理解的版本。&lt;br&gt;
+同时保留原文核心思想，并补充了对比表与背景说明，帮助读者更好地掌握 Go 声明语法背后的设计理念。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="1-背景c-系语法的问题"&gt;1. 背景：C 系语法的问题&lt;/h2&gt;
+&lt;p&gt;Go 诞生前，主流语言大多沿用 C 风格的声明方式：&lt;strong&gt;类型在前，变量名在后&lt;/strong&gt;。&lt;br&gt;
+比如：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-c" data-lang="c"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这看似简单，但在函数、指针、复杂类型时，C 风格语法显得&lt;strong&gt;不一致且难以阅读&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;问题 1：声明顺序不一致&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;变量声明：&lt;code&gt;int x;&lt;/code&gt; → 类型在前&lt;/li&gt;
+&lt;li&gt;函数声明：&lt;code&gt;int f(float y);&lt;/code&gt; → 返回值类型在最前，参数类型夹在中间&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;问题 2：指针声明容易混淆&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-c" data-lang="c"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c1"&gt;// a 是指针，b 却是普通 int
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;新手很容易以为 a 和 b 都是指针。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;问题 3：复杂类型可读性差&lt;/strong&gt;&lt;br&gt;
+函数指针声明在 C 中尤其难读：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-c" data-lang="c"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;fp&lt;/span&gt;&lt;span class="p"&gt;)(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;要在脑中打乱并重组顺序才能理解：&lt;code&gt;fp&lt;/code&gt; 是一个函数指针，接收两个 int，返回 int。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="2-go-的设计选择类型在变量名后"&gt;2. Go 的设计选择：类型在变量名后&lt;/h2&gt;
+&lt;p&gt;Go 改成 &lt;strong&gt;名字在前，类型在后&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;var&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// x 是 int&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;var&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// p 是指向 int 的指针&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;var&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;f&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// f 是接收 int 返回 int 的函数&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="好处一从左到右自然阅读"&gt;好处一：从左到右自然阅读&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“x 是 int”，“f 是函数”&lt;br&gt;
+即使是复杂类型，也能自然读下来：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;var&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;f&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kd"&gt;func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;r&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;err&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;error&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;读作：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;f 是函数&lt;/li&gt;
+&lt;li&gt;参数 p 是 int&lt;/li&gt;
+&lt;li&gt;返回值 r 是 int&lt;/li&gt;
+&lt;li&gt;返回值 err 是 error&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="好处二变量参数返回值统一语法"&gt;好处二：变量、参数、返回值统一语法&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;func&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;x&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;y&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;参数和变量声明格式相同（名字 → 类型）&lt;/li&gt;
+&lt;li&gt;返回值类型也放在参数列表之后，阅读顺序统一&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="好处三避免符号绑定错误"&gt;好处三：避免符号绑定错误&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-go" data-lang="go"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;var&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nx"&gt;b&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c1"&gt;// 两个都是指针&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;不再出现 C 那种 &lt;code&gt;int* a, b;&lt;/code&gt; 的混乱。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="3-历史借鉴"&gt;3. 历史借鉴&lt;/h2&gt;
+&lt;p&gt;这种写法并不是 Go 首创，它借鉴了 Pascal、Modula-2 等语言的声明方式。&lt;br&gt;
+这些语言同样采用“名字在前，类型在后”的语法，被认为更直观、更接近自然语言的思考习惯。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="4-rob-pike-想表达的核心"&gt;4. Rob Pike 想表达的核心&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;统一&lt;/strong&gt;：变量、参数、返回值声明方式一致，不需要脑中重排语序&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;可读&lt;/strong&gt;：复杂类型可以按自然顺序读，不会打乱思路&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;清晰&lt;/strong&gt;：减少符号绑定混淆，指针、函数类型更易理解&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;无历史包袱&lt;/strong&gt;：Go 从零设计，没有 C 的兼容压力，敢于直接改掉不合理之处&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id="5-c-与-go-对比表"&gt;5. C 与 Go 对比表&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;需求&lt;/th&gt;
+&lt;th&gt;C 写法&lt;/th&gt;
+&lt;th&gt;Go 写法&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;变量声明&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;int x;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;var x int&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;指针声明&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;int* a, b; // b 不是指针&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;var a, b *int&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;函数声明&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;int f(float y);&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;func f(y float) int&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;函数指针&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;int (*fp)(int, int);&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;var fp func(int, int) int&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;函数返回多个值&lt;/td&gt;
+&lt;td&gt;（C 无法直接返回多个值）&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;func f() (int, error)&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id="6-总结"&gt;6. 总结&lt;/h2&gt;
+&lt;p&gt;Go 的声明语法不是为了标新立异，而是为了让代码：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;可读性更高&lt;/strong&gt;（从左到右读）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;语法一致性更好&lt;/strong&gt;（变量、参数、返回值统一）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;减少误解&lt;/strong&gt;（避免符号绑定混淆）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;更容易口语化解释&lt;/strong&gt;（自然语言风格）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这种设计让 Go 的声明更接近人类思维，而不仅仅是机器能理解的格式。&lt;/p&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;原文链接：&lt;a href="https://go.dev/blog/declaration-syntax"&gt;Go&amp;rsquo;s Declaration Syntax&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</content></item></channel></rss>

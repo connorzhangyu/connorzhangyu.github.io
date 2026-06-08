@@ -1,88 +1,199 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>开发工具 on Hello World</title><link>https://isme.cz/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</link><description>Recent content in 开发工具 on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Wed, 13 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://isme.cz/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml"/><item><title>Vim 快速入门 &amp; IntelliJ IDEA 基础配置</title><link>https://isme.cz/vim-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-intellij-idea-%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</link><pubDate>Wed, 13 Aug 2025 00:00:00 +0000</pubDate><guid>https://isme.cz/vim-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-intellij-idea-%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</guid><description>&lt;h2 id="前言">前言&lt;/h2>
-&lt;p>Vim 是一款强大的编辑器，配合 IntelliJ IDEA 的 IdeaVim 插件，可以显著提升代码编辑效率。本文将介绍 &lt;strong>Vim 最小必备快捷键&lt;/strong> 以及 &lt;strong>IdeaVim 的基础配置方法&lt;/strong>，帮助你快速上手。&lt;/p>
-&lt;hr>
-&lt;h2 id="一vim-最少必备快捷键初学者版">一、Vim 最少必备快捷键（初学者版）&lt;/h2>
-&lt;h3 id="1-移动6-个">1. 移动（6 个）&lt;/h3>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>功能&lt;/th>
- &lt;th>按键&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>光标左 / 右&lt;/td>
- &lt;td>&lt;code>h&lt;/code> / &lt;code>l&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>光标上 / 下&lt;/td>
- &lt;td>&lt;code>k&lt;/code> / &lt;code>j&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>行首 / 行尾&lt;/td>
- &lt;td>&lt;code>0&lt;/code> / &lt;code>$&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>文件开头 / 结尾&lt;/td>
- &lt;td>&lt;code>gg&lt;/code> / &lt;code>G&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;hr>
-&lt;h3 id="2-编辑7-个">2. 编辑（7 个）&lt;/h3>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>功能&lt;/th>
- &lt;th>按键&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>插入模式（前 / 后）&lt;/td>
- &lt;td>&lt;code>i&lt;/code> / &lt;code>a&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>新行（下 / 上）&lt;/td>
- &lt;td>&lt;code>o&lt;/code> / &lt;code>O&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>删除当前行&lt;/td>
- &lt;td>&lt;code>dd&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>复制当前行&lt;/td>
- &lt;td>&lt;code>yy&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>粘贴到光标后&lt;/td>
- &lt;td>&lt;code>p&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>撤销&lt;/td>
- &lt;td>&lt;code>u&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;hr>
-&lt;h3 id="3-查找2-个">3. 查找（2 个）&lt;/h3>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>功能&lt;/th>
- &lt;th>按键&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>搜索字符串（向下）&lt;/td>
- &lt;td>&lt;code>/关键字&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>下一个匹配&lt;/td>
- &lt;td>&lt;code>n&lt;/code>&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;p>💡 &lt;strong>记忆技巧&lt;/strong>：&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>开发工具 on Hello World</title><link>https://isme.cz/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/</link><description>Recent content in 开发工具 on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 13 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://isme.cz/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml"/><item><title>Vim 快速入门 &amp; IntelliJ IDEA 基础配置</title><link>https://isme.cz/vim-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-intellij-idea-%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</link><pubDate>Wed, 13 Aug 2025 00:00:00 +0000</pubDate><guid>https://isme.cz/vim-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8-intellij-idea-%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</guid><description>Vim 是一款强大的编辑器，配合 IntelliJ IDEA 的 IdeaVim 插件，可以显著提升代码编辑效率。本文将介绍 Vim 最小必备快捷键 以及 IdeaVim 的基础配置方法，帮助你快速上手。</description><content>&lt;h2 id="前言"&gt;前言&lt;/h2&gt;
+&lt;p&gt;Vim 是一款强大的编辑器，配合 IntelliJ IDEA 的 IdeaVim 插件，可以显著提升代码编辑效率。本文将介绍 &lt;strong&gt;Vim 最小必备快捷键&lt;/strong&gt; 以及 &lt;strong&gt;IdeaVim 的基础配置方法&lt;/strong&gt;，帮助你快速上手。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="一vim-最少必备快捷键初学者版"&gt;一、Vim 最少必备快捷键（初学者版）&lt;/h2&gt;
+&lt;h3 id="1-移动6-个"&gt;1. 移动（6 个）&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;功能&lt;/th&gt;
+&lt;th&gt;按键&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;光标左 / 右&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;h&lt;/code&gt; / &lt;code&gt;l&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;光标上 / 下&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;k&lt;/code&gt; / &lt;code&gt;j&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;行首 / 行尾&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;0&lt;/code&gt; / &lt;code&gt;$&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;文件开头 / 结尾&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;gg&lt;/code&gt; / &lt;code&gt;G&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3 id="2-编辑7-个"&gt;2. 编辑（7 个）&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;功能&lt;/th&gt;
+&lt;th&gt;按键&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;插入模式（前 / 后）&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;i&lt;/code&gt; / &lt;code&gt;a&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;新行（下 / 上）&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;o&lt;/code&gt; / &lt;code&gt;O&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;删除当前行&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;dd&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;复制当前行&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;yy&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;粘贴到光标后&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;p&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;撤销&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;u&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h3 id="3-查找2-个"&gt;3. 查找（2 个）&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;功能&lt;/th&gt;
+&lt;th&gt;按键&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;搜索字符串（向下）&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;/关键字&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;下一个匹配&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;n&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;💡 &lt;strong&gt;记忆技巧&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;移动&lt;/strong&gt;全靠 &lt;code&gt;hjkl&lt;/code&gt;（左下上右）+ &lt;code&gt;0&lt;/code&gt; 和 &lt;code&gt;$&lt;/code&gt;（行首行尾）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;编辑&lt;/strong&gt;记住 &lt;code&gt;i&lt;/code&gt;（insert）&lt;code&gt;a&lt;/code&gt;（append）&lt;code&gt;o&lt;/code&gt;（open new line）&lt;code&gt;d&lt;/code&gt;（delete）&lt;code&gt;y&lt;/code&gt;（yank）&lt;code&gt;p&lt;/code&gt;（paste）&lt;code&gt;u&lt;/code&gt;（undo）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;查找&lt;/strong&gt;只记 &lt;code&gt;/&lt;/code&gt; 和 &lt;code&gt;n&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="二在-intellij-idea-中启用-vim"&gt;二、在 IntelliJ IDEA 中启用 Vim&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;打开 &lt;strong&gt;Preferences → Plugins&lt;/strong&gt;，搜索并安装 &lt;strong&gt;IdeaVim&lt;/strong&gt; 插件。&lt;/li&gt;
+&lt;li&gt;重启 IntelliJ IDEA。&lt;/li&gt;
+&lt;li&gt;底部状态栏会出现 &lt;code&gt;VIM&lt;/code&gt; 图标，表示插件已启用。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id="三配置-ideavim-基础功能"&gt;三、配置 IdeaVim 基础功能&lt;/h2&gt;
+&lt;h3 id="1-创建-ideavimrc"&gt;1. 创建 &lt;code&gt;~/.ideavimrc&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;IdeaVim 支持读取 &lt;code&gt;~/.ideavimrc&lt;/code&gt; 作为配置文件（类似 &lt;code&gt;.vimrc&lt;/code&gt;）。&lt;br&gt;
+在终端创建：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;touch ~/.ideavimrc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id="2-示例配置"&gt;2. 示例配置&lt;/h3&gt;
+&lt;p&gt;下面是一个适合初学者的 &lt;code&gt;.ideavimrc&lt;/code&gt; 示例：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-vim" data-lang="vim"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;&amp;#34; 显示行号&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="nx"&gt;number&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="nx"&gt;relativenumber&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;&amp;#34; 系统剪贴板互通&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="nx"&gt;clipboard&lt;/span&gt;&lt;span class="p"&gt;+=&lt;/span&gt;&lt;span class="nx"&gt;unnamedplus&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;&amp;#34; 普通模式下自动切换到英文输入法（需 IdeaVimExtension + im-select）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="nx"&gt;keep&lt;/span&gt;&lt;span class="p"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;english&lt;/span&gt;&lt;span class="p"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;in&lt;/span&gt;&lt;span class="p"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;normal&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;&amp;#34; 保存文件快捷键：空格 + w&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;map&lt;/span&gt; &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nx"&gt;Space&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;&lt;span class="nx"&gt;w&lt;/span&gt; :&lt;span class="nx"&gt;w&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nx"&gt;CR&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id="3-自动切换英文输入法可选"&gt;3. 自动切换英文输入法（可选）&lt;/h3&gt;
+&lt;p&gt;如果中文输入法会干扰 Vim 按键，可以：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;安装 &lt;strong&gt;IdeaVimExtension&lt;/strong&gt; 插件（在 IDEA 插件市场）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;安装 &lt;a href="https://github.com/daipeihust/im-select"&gt;&lt;code&gt;im-select&lt;/code&gt;&lt;/a&gt; 工具。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 &lt;code&gt;~/.ideavimrc&lt;/code&gt; 中加入：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-vim" data-lang="vim"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="nx"&gt;keep&lt;/span&gt;&lt;span class="p"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;english&lt;/span&gt;&lt;span class="p"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;in&lt;/span&gt;&lt;span class="p"&gt;-&lt;/span&gt;&lt;span class="nx"&gt;normal&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这样每次 &lt;code&gt;Esc&lt;/code&gt; 回到 Normal 模式时，会自动切到英文输入法。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="四常见问题"&gt;四、常见问题&lt;/h2&gt;
+&lt;h3 id="1-g-快捷键无效"&gt;1. &lt;code&gt;G&lt;/code&gt; 快捷键无效&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;先按 &lt;code&gt;Esc&lt;/code&gt; 确保在 Normal 模式。&lt;/li&gt;
+&lt;li&gt;切换到英文输入法再按 &lt;code&gt;Shift + g&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;如果仍无效，执行 &lt;code&gt;:verbose map G&lt;/code&gt; 检查是否被映射覆盖。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="2-ideavimrc-修改不生效"&gt;2. &lt;code&gt;.ideavimrc&lt;/code&gt; 修改不生效&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;重启 IntelliJ IDEA。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;或在 IDEA 中执行：&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;:source ~/.ideavimrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="五总结"&gt;五、总结&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;先掌握最小快捷键&lt;/strong&gt;（15 个左右），保证能替代鼠标完成基本编辑。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;在 IDEA 配置 &lt;code&gt;.ideavimrc&lt;/code&gt;&lt;/strong&gt;，提升编辑体验。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;建议配合自动切英文功能&lt;/strong&gt;，消除输入法干扰。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;掌握这些内容后，你的代码编辑效率会有明显提升。&lt;/p&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果你已经学会这些基础操作，可以逐步学习更高级的 Vim 功能，例如文本对象（&lt;code&gt;ci&amp;quot;&lt;/code&gt;、&lt;code&gt;di(&lt;/code&gt; 等）、多文件编辑、宏录制等，让 Vim 真正成为你手中的利器。&lt;/p&gt;
+&lt;/blockquote&gt;</content></item></channel></rss>

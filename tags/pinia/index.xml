@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pinia on Hello World</title><link>https://isme.cz/tags/pinia/</link><description>Recent content in Pinia on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Mon, 04 Aug 2025 01:38:57 +0700</lastBuildDate><atom:link href="https://isme.cz/tags/pinia/index.xml" rel="self" type="application/rss+xml"/><item><title>Pinia</title><link>https://isme.cz/pinia/</link><pubDate>Sun, 07 Jul 2024 19:43:45 +0000</pubDate><guid>https://isme.cz/pinia/</guid><description>&lt;p>安装&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">npm install pinia
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pinia on Hello World</title><link>https://isme.cz/tags/pinia/</link><description>Recent content in Pinia on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 07 Jul 2024 19:43:45 +0000</lastBuildDate><atom:link href="https://isme.cz/tags/pinia/index.xml" rel="self" type="application/rss+xml"/><item><title>Pinia</title><link>https://isme.cz/pinia/</link><pubDate>Sun, 07 Jul 2024 19:43:45 +0000</pubDate><guid>https://isme.cz/pinia/</guid><description>Pinia 状态管理库使用笔记：store 定义、actions/getters 与 Vue 3 集成。</description><content>&lt;p&gt;安装&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;npm install pinia
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content></item></channel></rss>

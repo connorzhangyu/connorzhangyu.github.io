@@ -1,24 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IDEA on Hello World</title><link>https://isme.cz/tags/idea/</link><description>Recent content in IDEA on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Tue, 26 Aug 2025 12:48:16 +0700</lastBuildDate><atom:link href="https://isme.cz/tags/idea/index.xml" rel="self" type="application/rss+xml"/><item><title>IDEA</title><link>https://isme.cz/idea/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/idea/</guid><description>&lt;h1 id="教程">教程&lt;/h1>
-&lt;h2 id="idea查看方法被调用">IDEA查看方法被调用&lt;/h2>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051423853.png" alt="TODO">&lt;/p>
-&lt;h2 id="修改光标所在行背景颜色">修改光标所在行背景颜色&lt;/h2>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051423630.png" alt="TODO">&lt;/p>
-&lt;h2 id="断点判断条件">断点判断条件&lt;/h2>
-&lt;p>在断点上点右键,正常的写判断代码就行&lt;/p>
-&lt;p>&lt;img src="https://image.runtimes.cc/202404051423731.png" alt="image-20230803174451532">&lt;/p>
-&lt;h2 id="插件">插件&lt;/h2>
-&lt;h3 id="rabinbow-brackets">Rabinbow Brackets&lt;/h3>
-&lt;p>作者:Zhihao Zhang&lt;/p>
-&lt;p>使用方法&lt;/p>
-&lt;p>&lt;code>Command&lt;/code>+右键,高亮选中部分&lt;/p>
-&lt;p>&lt;code>Alt&lt;/code>+右键,高亮选中部分,其余的代码变暗&lt;/p>
-&lt;h3 id="commitmessage">CommitMessage&lt;/h3>
-&lt;p>作者:郭翰林&lt;/p>
-&lt;p>使用方法,提交的时候,点击✈️的图标&lt;/p>
-&lt;h3 id="codeium">Codeium&lt;/h3>
-&lt;p>作者:Codeium&lt;/p>
-&lt;p>写代码的时候会有自动提示,按tab确定使用AI生成的代码&lt;/p>
-&lt;h3 id="key-promoter-x">Key Promoter X&lt;/h3>
-&lt;h3 id="translation">Translation&lt;/h3>
-&lt;p>作者:Yii.Guxing&lt;/p>
-&lt;p>选中要翻译的内容,右键选择翻译&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IDEA on Hello World</title><link>https://isme.cz/tags/idea/</link><description>Recent content in IDEA on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 19 Nov 2022 18:25:00 +0000</lastBuildDate><atom:link href="https://isme.cz/tags/idea/index.xml" rel="self" type="application/rss+xml"/><item><title>IDEA</title><link>https://isme.cz/intellij-idea/</link><pubDate>Sat, 19 Nov 2022 18:25:00 +0000</pubDate><guid>https://isme.cz/intellij-idea/</guid><description>IntelliJ IDEA 使用技巧：快捷键、插件推荐、调试配置与代码质量工具。</description><content>&lt;h1 id="教程"&gt;教程&lt;/h1&gt;
+&lt;h2 id="idea查看方法被调用"&gt;IDEA查看方法被调用&lt;/h2&gt;
+&lt;p&gt;&lt;img src="https://image.runtimes.cc/202404051423853.png" alt="TODO"&gt;&lt;/p&gt;
+&lt;h2 id="修改光标所在行背景颜色"&gt;修改光标所在行背景颜色&lt;/h2&gt;
+&lt;p&gt;&lt;img src="https://image.runtimes.cc/202404051423630.png" alt="TODO"&gt;&lt;/p&gt;
+&lt;h2 id="断点判断条件"&gt;断点判断条件&lt;/h2&gt;
+&lt;p&gt;在断点上点右键,正常的写判断代码就行&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://image.runtimes.cc/202404051423731.png" alt="image-20230803174451532"&gt;&lt;/p&gt;
+&lt;h2 id="插件"&gt;插件&lt;/h2&gt;
+&lt;h3 id="rabinbow-brackets"&gt;Rabinbow Brackets&lt;/h3&gt;
+&lt;p&gt;作者:Zhihao Zhang&lt;/p&gt;
+&lt;p&gt;使用方法&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Command&lt;/code&gt;+右键,高亮选中部分&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Alt&lt;/code&gt;+右键,高亮选中部分,其余的代码变暗&lt;/p&gt;
+&lt;h3 id="commitmessage"&gt;CommitMessage&lt;/h3&gt;
+&lt;p&gt;作者:郭翰林&lt;/p&gt;
+&lt;p&gt;使用方法,提交的时候,点击✈️的图标&lt;/p&gt;
+&lt;h3 id="codeium"&gt;Codeium&lt;/h3&gt;
+&lt;p&gt;作者:Codeium&lt;/p&gt;
+&lt;p&gt;写代码的时候会有自动提示,按tab确定使用AI生成的代码&lt;/p&gt;
+&lt;h3 id="key-promoter-x"&gt;Key Promoter X&lt;/h3&gt;
+&lt;h3 id="translation"&gt;Translation&lt;/h3&gt;
+&lt;p&gt;作者:Yii.Guxing&lt;/p&gt;
+&lt;p&gt;选中要翻译的内容,右键选择翻译&lt;/p&gt;</content></item></channel></rss>

@@ -1,50 +1,133 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on Hello World</title><link>https://isme.cz/tags/hugo/</link><description>Recent content in Hugo on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Sat, 13 Dec 2025 09:29:06 +0400</lastBuildDate><atom:link href="https://isme.cz/tags/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>Neovide + Neovim 入门到日常开发：最实用教程</title><link>https://isme.cz/neovide-neovim-guide/</link><pubDate>Sun, 17 Aug 2025 00:00:00 +0000</pubDate><guid>https://isme.cz/neovide-neovim-guide/</guid><description>&lt;blockquote>
-&lt;p>这是一篇&lt;strong>开箱即用&lt;/strong>的 Neovide + Neovim 教程：先覆盖日常写作/写代码最常用的命令，再给出顺滑开发所需的插件与配置（含中文输入法自动切换）。&lt;br>
-读完你可以立刻完成：&lt;strong>打开项目 → 编辑 Markdown/代码 → 预览/运行 → Git 提交&lt;/strong> 的完整日常流。&lt;/p>&lt;/blockquote>
-&lt;hr>
-&lt;h2 id="1-为什么选-neovide--neovim">1. 为什么选 Neovide + Neovim？&lt;/h2>
-&lt;ul>
-&lt;li>&lt;strong>Neovim&lt;/strong>：现代化的 Vim，速度快、扩展强（Lua 插件生态）。&lt;/li>
-&lt;li>&lt;strong>Neovide&lt;/strong>：Neovim 的&lt;strong>轻量 GUI&lt;/strong>，支持系统剪贴板、Retina 渲染与动效，比终端更友好。&lt;/li>
-&lt;li>&lt;strong>优势&lt;/strong>：编辑体验接近 Sublime 的轻快 + VS Code 级扩展，长远效率高。&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h2 id="2-基础概念三种模式必会">2. 基础概念：三种模式（必会）&lt;/h2>
-&lt;ul>
-&lt;li>&lt;strong>普通模式 (Normal)&lt;/strong>：&lt;code>Esc&lt;/code> 回到此模式；移动、复制、删除都在这里做。&lt;/li>
-&lt;li>&lt;strong>插入模式 (Insert)&lt;/strong>：&lt;code>i&lt;/code>（光标前插入）/&lt;code>a&lt;/code>（光标后）/&lt;code>o&lt;/code>（下一行）。&lt;/li>
-&lt;li>&lt;strong>命令模式 (Command)&lt;/strong>：&lt;code>:&lt;/code> 输入如 &lt;code>:w&lt;/code> 保存、&lt;code>:q&lt;/code> 退出、&lt;code>:wq&lt;/code> 保存并退。&lt;/li>
-&lt;/ul>
-&lt;blockquote>
-&lt;p>心法：&lt;strong>编辑 = i / a / o；操作 = Esc；命令 = :&lt;/strong>。&lt;/p>&lt;/blockquote>
-&lt;hr>
-&lt;h2 id="3-5-分钟速成日常够用的命令">3. 5 分钟速成：日常够用的命令&lt;/h2>
-&lt;h3 id="光标与跳转">光标与跳转&lt;/h3>
-&lt;ul>
-&lt;li>上下左右：&lt;code>h j k l&lt;/code>&lt;/li>
-&lt;li>行首/尾：&lt;code>0 / $&lt;/code>；文件头/尾：&lt;code>gg / G&lt;/code>&lt;/li>
-&lt;li>按词移动：&lt;code>w / b&lt;/code>&lt;/li>
-&lt;li>跳行：&lt;code>:N&lt;/code>（如 &lt;code>:20&lt;/code> 到第 20 行）&lt;/li>
-&lt;/ul>
-&lt;h3 id="编辑与撤销">编辑与撤销&lt;/h3>
-&lt;ul>
-&lt;li>复制行：&lt;code>yy&lt;/code>；粘贴：&lt;code>p&lt;/code>；剪切行：&lt;code>dd&lt;/code>&lt;/li>
-&lt;li>删除词：&lt;code>dw&lt;/code>；替换字符：&lt;code>r&lt;/code>&lt;/li>
-&lt;li>撤销：&lt;code>u&lt;/code>；重做：&lt;code>Ctrl+r&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;h3 id="搜索与替换">搜索与替换&lt;/h3>
-&lt;ul>
-&lt;li>搜索：&lt;code>/关键字&lt;/code> → &lt;code>n&lt;/code> 下一个，&lt;code>N&lt;/code> 上一个&lt;/li>
-&lt;li>当前行替换：&lt;code>:s/foo/bar/&lt;/code>&lt;/li>
-&lt;li>全文替换：&lt;code>:%s/foo/bar/g&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;h3 id="文件窗口标签">文件/窗口/标签&lt;/h3>
-&lt;ul>
-&lt;li>保存/退出：&lt;code>:w&lt;/code> / &lt;code>:q&lt;/code> / &lt;code>:wq&lt;/code> / 强退 &lt;code>:q!&lt;/code>&lt;/li>
-&lt;li>分屏：&lt;code>:sp file&lt;/code>（横）/ &lt;code>:vsp file&lt;/code>（竖）&lt;/li>
-&lt;li>窗口切换：&lt;code>Ctrl-w h/j/k/l&lt;/code>&lt;/li>
-&lt;li>标签页：&lt;code>:tabnew&lt;/code>，切换 &lt;code>gt / gT&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h2 id="4-与系统剪贴板互通像普通编辑器一样复制粘贴">4. 与系统剪贴板互通（像普通编辑器一样复制粘贴）&lt;/h2>
-&lt;p>在配置里加上（下文有完整配置）：&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on Hello World</title><link>https://isme.cz/tags/hugo/</link><description>Recent content in Hugo on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sun, 17 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://isme.cz/tags/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>Neovide + Neovim 入门到日常开发：最实用教程</title><link>https://isme.cz/neovide-neovim-guide/</link><pubDate>Sun, 17 Aug 2025 00:00:00 +0000</pubDate><guid>https://isme.cz/neovide-neovim-guide/</guid><description>&lt;hr&gt;</description><content>&lt;blockquote&gt;
+&lt;p&gt;这是一篇&lt;strong&gt;开箱即用&lt;/strong&gt;的 Neovide + Neovim 教程：先覆盖日常写作/写代码最常用的命令，再给出顺滑开发所需的插件与配置（含中文输入法自动切换）。&lt;br&gt;
+读完你可以立刻完成：&lt;strong&gt;打开项目 → 编辑 Markdown/代码 → 预览/运行 → Git 提交&lt;/strong&gt; 的完整日常流。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="1-为什么选-neovide--neovim"&gt;1. 为什么选 Neovide + Neovim？&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Neovim&lt;/strong&gt;：现代化的 Vim，速度快、扩展强（Lua 插件生态）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Neovide&lt;/strong&gt;：Neovim 的&lt;strong&gt;轻量 GUI&lt;/strong&gt;，支持系统剪贴板、Retina 渲染与动效，比终端更友好。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;优势&lt;/strong&gt;：编辑体验接近 Sublime 的轻快 + VS Code 级扩展，长远效率高。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="2-基础概念三种模式必会"&gt;2. 基础概念：三种模式（必会）&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;普通模式 (Normal)&lt;/strong&gt;：&lt;code&gt;Esc&lt;/code&gt; 回到此模式；移动、复制、删除都在这里做。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;插入模式 (Insert)&lt;/strong&gt;：&lt;code&gt;i&lt;/code&gt;（光标前插入）/&lt;code&gt;a&lt;/code&gt;（光标后）/&lt;code&gt;o&lt;/code&gt;（下一行）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;命令模式 (Command)&lt;/strong&gt;：&lt;code&gt;:&lt;/code&gt; 输入如 &lt;code&gt;:w&lt;/code&gt; 保存、&lt;code&gt;:q&lt;/code&gt; 退出、&lt;code&gt;:wq&lt;/code&gt; 保存并退。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;心法：&lt;strong&gt;编辑 = i / a / o；操作 = Esc；命令 = :&lt;/strong&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="3-5-分钟速成日常够用的命令"&gt;3. 5 分钟速成：日常够用的命令&lt;/h2&gt;
+&lt;h3 id="光标与跳转"&gt;光标与跳转&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;上下左右：&lt;code&gt;h j k l&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;行首/尾：&lt;code&gt;0 / $&lt;/code&gt;；文件头/尾：&lt;code&gt;gg / G&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;按词移动：&lt;code&gt;w / b&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;跳行：&lt;code&gt;:N&lt;/code&gt;（如 &lt;code&gt;:20&lt;/code&gt; 到第 20 行）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="编辑与撤销"&gt;编辑与撤销&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;复制行：&lt;code&gt;yy&lt;/code&gt;；粘贴：&lt;code&gt;p&lt;/code&gt;；剪切行：&lt;code&gt;dd&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;删除词：&lt;code&gt;dw&lt;/code&gt;；替换字符：&lt;code&gt;r&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;撤销：&lt;code&gt;u&lt;/code&gt;；重做：&lt;code&gt;Ctrl+r&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="搜索与替换"&gt;搜索与替换&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;搜索：&lt;code&gt;/关键字&lt;/code&gt; → &lt;code&gt;n&lt;/code&gt; 下一个，&lt;code&gt;N&lt;/code&gt; 上一个&lt;/li&gt;
+&lt;li&gt;当前行替换：&lt;code&gt;:s/foo/bar/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;全文替换：&lt;code&gt;:%s/foo/bar/g&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="文件窗口标签"&gt;文件/窗口/标签&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;保存/退出：&lt;code&gt;:w&lt;/code&gt; / &lt;code&gt;:q&lt;/code&gt; / &lt;code&gt;:wq&lt;/code&gt; / 强退 &lt;code&gt;:q!&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;分屏：&lt;code&gt;:sp file&lt;/code&gt;（横）/ &lt;code&gt;:vsp file&lt;/code&gt;（竖）&lt;/li&gt;
+&lt;li&gt;窗口切换：&lt;code&gt;Ctrl-w h/j/k/l&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;标签页：&lt;code&gt;:tabnew&lt;/code&gt;，切换 &lt;code&gt;gt / gT&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="4-与系统剪贴板互通像普通编辑器一样复制粘贴"&gt;4. 与系统剪贴板互通（像普通编辑器一样复制粘贴）&lt;/h2&gt;
+&lt;p&gt;在配置里加上（下文有完整配置）：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-lua" data-lang="lua"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;vim.opt&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;clipboard&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;unnamedplus&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;之后：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;复制：&lt;code&gt;yy&lt;/code&gt;（或选择后 &lt;code&gt;y&lt;/code&gt;）➜ 可以在系统任何 App ⌘V 粘贴&lt;/li&gt;
+&lt;li&gt;粘贴：&lt;code&gt;p&lt;/code&gt;（或在 Neovide 里直接 ⌘V）&lt;/li&gt;
+&lt;li&gt;全文复制：&lt;code&gt;ggVG&amp;quot;+y&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;用剪贴板替换全文：&lt;code&gt;:%d | 0 put +&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="5-博客项目日常工作流hugo--代码"&gt;5. 博客/项目日常工作流（Hugo &amp;amp; 代码）&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;打开项目：终端执行 &lt;code&gt;neovide ~/blog&lt;/code&gt;（或你的项目路径）&lt;/li&gt;
+&lt;li&gt;文件树浏览：&lt;code&gt;&amp;lt;Space&amp;gt;e&lt;/code&gt; 打开文件树，定位 &lt;code&gt;content/posts/&lt;/code&gt;（Hugo）&lt;/li&gt;
+&lt;li&gt;写 Markdown：打开/新建 &lt;code&gt;:e content/posts/my-post.md&lt;/code&gt;，预览 &lt;code&gt;&amp;lt;Space&amp;gt;mp&lt;/code&gt;（浏览器实时预览）&lt;/li&gt;
+&lt;li&gt;改配置/工作流：&lt;code&gt;:e config.toml&lt;/code&gt; 或 &lt;code&gt;:e .github/workflows/deploy.yml&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;多文件协同：分屏 &lt;code&gt;:vsp config.toml&lt;/code&gt;；标签切换 &lt;code&gt;&amp;lt;S-h&amp;gt;&lt;/code&gt; / &lt;code&gt;&amp;lt;S-l&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;保存并退出：&lt;code&gt;:wq&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;小技巧：&lt;code&gt;gg=G&lt;/code&gt; 一键整理全文缩进（代码特别好用）。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="6-一份能跑的最小配置含插件"&gt;6. 一份能跑的最小配置（含插件）&lt;/h2&gt;
+&lt;p&gt;管理器用 &lt;code&gt;lazy.nvim&lt;/code&gt;。首次启动会自动安装插件（需 git，Markdown 预览需 node/npm）。&lt;br&gt;
+首次使用：打开 Neovide 后执行 &lt;code&gt;:Lazy sync&lt;/code&gt;（或在 &lt;code&gt;:Lazy&lt;/code&gt; 页面按 &lt;code&gt;s&lt;/code&gt;）安装/更新插件。&lt;br&gt;
+Markdown 预览需要 Node.js（通过 &lt;code&gt;brew install node&lt;/code&gt; 安装，内含 npm）。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="7-插件推荐清单"&gt;7. 插件推荐清单&lt;/h2&gt;
+&lt;h3 id="核心必备博客--日常开发"&gt;核心必备（博客 + 日常开发）&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;nvim-tree&lt;/strong&gt;：文件树浏览&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;lualine&lt;/strong&gt;：状态栏显示模式/分支/位置&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;bufferline&lt;/strong&gt;：多文件标签管理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;nvim-treesitter&lt;/strong&gt;：语法高亮/缩进/折叠&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;markdown-preview.nvim&lt;/strong&gt;：Markdown 实时预览&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="开发增强"&gt;开发增强&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;nvim-lspconfig&lt;/strong&gt; + &lt;strong&gt;mason.nvim&lt;/strong&gt; + &lt;strong&gt;mason-lspconfig.nvim&lt;/strong&gt;：LSP 安装与配置&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;nvim-cmp&lt;/strong&gt; + &lt;strong&gt;LuaSnip&lt;/strong&gt;：自动补全与代码片段&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="进阶可选"&gt;进阶（可选）&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;telescope.nvim&lt;/strong&gt;：模糊搜索（文件/内容/历史）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;gitsigns.nvim&lt;/strong&gt; + &lt;strong&gt;vim-fugitive&lt;/strong&gt;：Git 集成&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Comment.nvim&lt;/strong&gt;：快速注释（&lt;code&gt;gcc&lt;/code&gt; / 选区 &lt;code&gt;gc&lt;/code&gt;）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;vim-surround&lt;/strong&gt;：括号/引号包裹与替换（&lt;code&gt;S)&lt;/code&gt;、&lt;code&gt;cs&amp;quot;'&lt;/code&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;原则：从少到多。先把“核心五件套”用顺，再逐步加搜索/Git/注释等。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="8-常用快捷键基于上面配置"&gt;8. 常用快捷键（基于上面配置）&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;文件树：&lt;code&gt;&amp;lt;Space&amp;gt;e&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;标签切换：&lt;code&gt;&amp;lt;S-h&amp;gt;&lt;/code&gt; / &lt;code&gt;&amp;lt;S-l&amp;gt;&lt;/code&gt;；跳到第 N 个文件：&lt;code&gt;&amp;lt;Space&amp;gt;1..9&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Markdown 预览：&lt;code&gt;&amp;lt;Space&amp;gt;mp&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;窗口切换：&lt;code&gt;Ctrl-w h/j/k/l&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;保存/退出：&lt;code&gt;:w&lt;/code&gt; / &lt;code&gt;:q&lt;/code&gt; / &lt;code&gt;:wq&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;全文缩进整理：&lt;code&gt;gg=G&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="9-中文输入法常见问题"&gt;9. 中文输入法常见问题&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;命令模式被中文干扰（：ｗｑ）：用 im-select 自动切换，Normal/Command 强制英文、Insert 恢复中文。&lt;/li&gt;
+&lt;li&gt;剪贴板不好使：确认 &lt;code&gt;vim.opt.clipboard = &amp;quot;unnamedplus&amp;quot;&lt;/code&gt;，Neovide 下可直接 ⌘C/⌘V。&lt;/li&gt;
+&lt;li&gt;文件树不跟随 &lt;code&gt;:cd&lt;/code&gt;：在 nvim-tree 开启 &lt;code&gt;sync_root_with_cwd = true&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="10-结语"&gt;10. 结语&lt;/h2&gt;
+&lt;p&gt;上面的配置聚焦稳定、够用、轻量：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;写博客：文件树 + Markdown 预览&lt;/li&gt;
+&lt;li&gt;写代码：Treesitter + LSP/补全 + 标签管理&lt;/li&gt;
+&lt;li&gt;系统剪贴板 &amp;amp; 中文输入法：开箱顺滑&lt;/li&gt;
+&lt;/ul&gt;</content></item></channel></rss>

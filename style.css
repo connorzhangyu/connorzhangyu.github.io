@@ -157,41 +157,30 @@ body {
     }
 }
 
-/* 命令输出/欢迎语：缩进与命令对齐；欢迎语用主题橙 */
-.tty-output {
-    margin: .15rem 0 .35rem 0;
-    padding-left: 1.5ch;
-    font-family: "PixelZH", "PixelLatin", monospace !important;
-    white-space: pre-wrap;
-}
-
-/* 公共部分：所有 tty 输出类 */
-.tty-welcome,
-.tty-status {
-    font-family: "PixelZH", "PixelLatin", monospace !important;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-/* 欢迎语：强调色 */
+/* 欢迎语：第一行输出，强调色 */
 .tty-welcome {
+    margin: .2rem 0 .05rem 0;
+    padding-left: 1.5ch;
     color: var(--tty-accent);
-}
-
-/* 状态输出与“终端输出”统一风格 */
-.tty-status {
-    margin: .2rem 0 0 0;
-    padding-left: 1.5ch; /* 与命令行的 $ 后对齐 */
-    color: var(--tty-fg);
-    font-family: "PixelZH", "PixelLatin", monospace !important;
+    font-family: “PixelZH”, “PixelLatin”, monospace !important;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-/* 第二行提示更弱一些，避免喧宾夺主 */
-.tty-status--hint {
+/* 状态行：第二行输出，次要色 */
+.tty-stats {
+    margin: 0 0 .3rem 0;
+    padding-left: 1.5ch;
+    color: var(--tty-dim);
+    font-family: “PixelZH”, “PixelLatin”, monospace !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* running... 行内标记 */
+.tty-running {
     color: var(--tty-dim);
 }
 
@@ -238,14 +227,14 @@ body {
     }
 }
 
-/* 列表表格：日期 | 标题 | 标签(+n) */
+/* 列表表格：★ | 日期 | 标题 | 标签(+n) */
 .tty-table {
     display: block;
 }
 
 .tty-row {
     display: grid;
-    grid-template-columns: 10ch 1fr auto;
+    grid-template-columns: 2ch 10ch 1fr auto;
     gap: 1ch;
     align-items: center;
     padding: .18rem .28rem;
@@ -265,6 +254,14 @@ body {
 
 .tty-row.is-featured:hover {
     background: rgba(255, 204, 102, .16);
+}
+
+/* 精选星标 */
+.col-star {
+    color: var(--tty-accent);
+    text-align: center;
+    font-size: .85em;
+    line-height: 1;
 }
 
 .col-date {
@@ -308,11 +305,12 @@ body {
     border-color: #a7f3d0;
 }
 
-/* 空状态 */
-.tty-empty {
-    padding-left: 1.5ch;
-    color: var(--tty-dim);
-    font-family: "PixelZH", "PixelLatin", monospace !important;
+/* 精选与最新之间的分隔线 */
+.tty-sep {
+    margin: .35rem .28rem;
+    border: none;
+    border-top: 1px dashed var(--tty-dim);
+    opacity: .3;
 }
 
 /* 链接下划线优化（全站） */
@@ -328,10 +326,10 @@ a {
     text-shadow: 0 0 1px rgba(0, 0, 0, .35);
 }
 
-/* 移动端：隐藏日期给标题留空间 */
+/* 移动端：隐藏日期，保留星标列 */
 @media (max-width: 720px) {
     .tty-row {
-        grid-template-columns: 1fr auto;
+        grid-template-columns: 2ch 1fr auto;
     }
 
     .col-date {

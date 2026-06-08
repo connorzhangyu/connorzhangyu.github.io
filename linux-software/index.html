@@ -1,0 +1,476 @@
+<!doctype html><html lang=zh><head><title>Linux软件 :: Hello World</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Linux 下常用软件安装与配置记录，涵盖开发环境、服务器工具与效率工具。"><meta name=keywords content><meta name=robots content="noodp"><link rel=canonical href=https://isme.cz/linux-software/><link rel=stylesheet href=https://isme.cz/styles.css><link rel=stylesheet href=https://isme.cz/style.css><link rel="shortcut icon" href=https://isme.cz/img/theme-colors/orange.png><link rel=apple-touch-icon href=https://isme.cz/img/theme-colors/orange.png><meta name=twitter:card content="summary"><meta property="og:locale" content="zh"><meta property="og:type" content="article"><meta property="og:title" content="Linux软件"><meta property="og:description" content="Linux 下常用软件安装与配置记录，涵盖开发环境、服务器工具与效率工具。"><meta property="og:url" content="https://isme.cz/linux-software/"><meta property="og:site_name" content="Hello World"><meta property="og:image" content="https://image.runtimes.cc/202404051530296.jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><meta property="article:section" content="Linux"><meta property="article:published_time" content="2022-11-19 18:25:00 +0000 UTC"><link rel=preload as=font href=/fonts/fusion-pixel-12px-monospaced-zh_hans.ttf.woff2 type=font/woff2 crossorigin><link rel=preload as=font href=/fonts/fusion-pixel-12px-monospaced-latin.ttf.woff2 type=font/woff2 crossorigin><link rel=stylesheet href=/style.css></head><body class=orange><div class="container center headings--one-size"><header class=header><div class=header__inner><div class=header__logo><a href=/><div class=logo>记仇小本本</div></a></div><ul class="menu menu--mobile"><li class=menu__trigger>Menu&nbsp;▾</li><li><ul class=menu__dropdown><li><a href=/>首页</a></li><li><a href=/posts/>文章</a></li><li><a href=/featured/>精选</a></li><li><a href=/java/>Java</a></li><li><a href=/go/>Go</a></li><li><a href=/categories/>分类</a></li><li><a href=/tags/>标签</a></li><li><a href=/about/>关于</a></li><li><a href=/docs/>团队文档中心</a></li></ul></li></ul></div><nav class=navigation-menu><ul class="navigation-menu__inner menu--desktop"><li><a href=/>首页</a></li><li><a href=/posts/>文章</a></li><li><a href=/featured/>精选</a></li><li><a href=/java/>Java</a></li><li><a href=/go/>Go</a></li><li><a href=/categories/>分类</a></li><li><a href=/tags/>标签</a></li><li><a href=/about/>关于</a></li><li><a href=/docs/>团队文档中心</a></li></ul></nav></header><div class=content><article class=post><h1 class=post-title><a href=https://isme.cz/linux-software/>Linux软件</a></h1><div class=post-meta><time class=post-date>2022-11-19&nbsp;[Updated: 2024-07-01]</time><span class=post-author>Anthony</span><span class=post-reading-time>6 分钟 (1153 字)</span></div><span class=post-tags>#<a href=https://isme.cz/tags/linux/>Linux</a>&nbsp;
+#<a href=https://isme.cz/tags/%E8%BD%AF%E4%BB%B6/>软件</a>&nbsp;
+</span><img src=https://image.runtimes.cc/202404051530296.jpeg class=post-cover alt=Linux软件 title="Cover Image"><div class=post-content><div><h1 id=jumpsserver>JumpSserver<a href=#jumpsserver class=hanchor arialabel=Anchor>#</a></h1><h2 id=设置sftp根目录>设置SFTP根目录<a href=#设置sftp根目录 class=hanchor arialabel=Anchor>#</a></h2><p>3.0版本设置文件管理</p><p>克隆一份Linux平台</p><p><img src=https://image.runtimes.cc/202404051426282.png alt=image-20230917163307359></p><p><img src=https://image.runtimes.cc/202404051426865.png alt=image-20230917163359314></p><p><img src=https://image.runtimes.cc/202404051426331.png alt=image-20230917163415467></p><p>修改或者创建资产的时候,选择该克隆的平台,在资产这里不能设置SFTP路径</p><p><img src=https://image.runtimes.cc/202404051426116.png alt=image-20230917163519193></p><h1 id=安装vmware-tool>安装vmware tool<a href=#安装vmware-tool class=hanchor arialabel=Anchor>#</a></h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>运行 ./vmware-install.pl
+</span></span><span class=line><span class=cl>一直按yes,按完一段之后就会有暂时的停顿
+</span></span><span class=line><span class=cl>运行命令 reboot
+</span></span></code></pre></td></tr></table></div></div><h1 id=安装wget>安装Wget<a href=#安装wget class=hanchor arialabel=Anchor>#</a></h1><p>最开始的Centos7 感觉什么都没有<code>wget</code>也没有</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl> <span class=c1>#远程下载的工具</span>
+</span></span><span class=line><span class=cl> yum -y install wget
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl> <span class=c1>#bash: make: command not found 是因为缺少这些工具</span>
+</span></span><span class=line><span class=cl> yum -y install gcc automake autoconf libtool make
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl> yum -y install wget
+</span></span></code></pre></td></tr></table></div></div><h1 id=安装lnmp环境>安装LNMP环境<a href=#安装lnmp环境 class=hanchor arialabel=Anchor>#</a></h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 更新源</span>
+</span></span><span class=line><span class=cl>apt-get update <span class=o>&amp;&amp;</span> apt-get dist-upgrade -y
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 安装nginx</span>
+</span></span><span class=line><span class=cl>apt-get install nginx
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 安装php-fpm和常用php扩展</span>
+</span></span><span class=line><span class=cl>apt-get install php-fpm php-gd php-mbstring php-curl php-xml php-mcrypt php-mysql php-zip php-json php-redis php-memcached
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 安装mysql</span>
+</span></span><span class=line><span class=cl>apt-get install mysql-server
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 建立测试站点</span>
+</span></span><span class=line><span class=cl><span class=c1># 1.我们在/var/www下面新建一个test目录，作为站点目录。 运行以下命令：</span>
+</span></span><span class=line><span class=cl>mkdir /var/www/test
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 2.新建php入口文件</span>
+</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s1>&#39;&lt;?php echo 1;&#39;</span>  &gt; /var/www/test/index.php
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 3.授权给fpm用户www-data，使fpm进程可以访问站点文件</span>
+</span></span><span class=line><span class=cl>chown -R www-data:www-data /var/www/test <span class=o>&amp;&amp;</span> chmod -R <span class=m>755</span> /var/www/test
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 4.设置nginx站点配置,在/etc/nginx/conf.d新增一个test.conf文件，并写入以下内容</span>
+</span></span><span class=line><span class=cl><span class=c1># 这个配置表示站点监听80端口，网站根目录为/var/www/test,入口文件为index.php,通过php-fpm进程来执行php脚本。</span>
+</span></span><span class=line><span class=cl>server <span class=o>{</span>
+</span></span><span class=line><span class=cl>        listen <span class=m>80</span> default_server<span class=p>;</span>
+</span></span><span class=line><span class=cl>        listen <span class=o>[</span>::<span class=o>]</span>:80 default_server<span class=p>;</span>
+</span></span><span class=line><span class=cl>        root /var/www/test<span class=p>;</span>
+</span></span><span class=line><span class=cl>        index index.php index.html index.htm<span class=p>;</span>
+</span></span><span class=line><span class=cl>        server_name _<span class=p>;</span>
+</span></span><span class=line><span class=cl>        location / <span class=o>{</span>
+</span></span><span class=line><span class=cl>                try_files <span class=nv>$uri</span> <span class=nv>$uri</span>/ <span class=o>=</span>404<span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl>        location ~ <span class=se>\.</span>php$ <span class=o>{</span>
+</span></span><span class=line><span class=cl>               include snippets/fastcgi-php.conf<span class=p>;</span>
+</span></span><span class=line><span class=cl>               fastcgi_pass unix:/run/php/php7.0-fpm.sock<span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=o>}</span>
+</span></span><span class=line><span class=cl><span class=o>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 5.重新加载</span>
+</span></span><span class=line><span class=cl>nginx -t <span class=o>&amp;&amp;</span> nginx -s reload
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 6.访问试试看</span>
+</span></span></code></pre></td></tr></table></div></div><h1 id=ubuntu卸载apache>Ubuntu卸载Apache<a href=#ubuntu卸载apache class=hanchor arialabel=Anchor>#</a></h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 删除apache</span>
+</span></span><span class=line><span class=cl>$ sudo apt-get --purge remove apache2
+</span></span><span class=line><span class=cl>$ sudo apt-get --purge remove apache2.2-common
+</span></span><span class=line><span class=cl>$ sudo apt-get autoremove
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 找到没有删除掉的配置文件，一并删除</span>
+</span></span><span class=line><span class=cl>$ sudo find  /etc -name <span class=s2>&#34;*apache*&#34;</span> -exec  rm -rf <span class=o>{}</span> <span class=se>\;</span>
+</span></span><span class=line><span class=cl>$ sudo rm -rf /var/www
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 重装apache2</span>
+</span></span><span class=line><span class=cl>$ sudo apt-get install apache2
+</span></span><span class=line><span class=cl>$ sudo /etc/init.d/apache2 restart
+</span></span></code></pre></td></tr></table></div></div><p>Ubuntu安装软件指定版本号</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 安装软件的时候,机器上安装的依赖版本可能高于软件本身需要的</span>
+</span></span><span class=line><span class=cl>The following packages have unmet dependencies:
+</span></span><span class=line><span class=cl> libpcre3-dev : Depends: libpcre3 <span class=o>(=</span> 2:8.39-12build1<span class=o>)</span> but 2:8.44-1+ubuntu18.04.1+deb.sury.org+1 is to be installed
+</span></span><span class=line><span class=cl>                Depends: libpcrecpp0v5 <span class=o>(=</span> 2:8.39-12build1<span class=o>)</span> but 2:8.44-1+ubuntu18.04.1+deb.sury.org+1 is to be installed
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>sudo apt install <span class=nv>libpcrecpp0v5</span><span class=o>=</span>2:8.39-12build1 <span class=nv>libpcre3</span><span class=o>=</span>2:8.39-12build1
+</span></span></code></pre></td></tr></table></div></div><h1 id=gitlab安装>Gitlab安装<a href=#gitlab安装 class=hanchor arialabel=Anchor>#</a></h1><p><a href=https://ken.io/note/centos7-gitlab-install-tutorial#H3-11>https://ken.io/note/centos7-gitlab-install-tutorial#H3-11</a></p><h1 id=zsh安装>Zsh安装<a href=#zsh安装 class=hanchor arialabel=Anchor>#</a></h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>$ sudo apt-get install zsh
+</span></span><span class=line><span class=cl><span class=c1># 验证是否安装成功</span>
+</span></span><span class=line><span class=cl>$ zsh --version
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 将 Zsh 设为默认 Shell</span>
+</span></span><span class=line><span class=cl>$ sudo chsh -s <span class=k>$(</span>which zsh<span class=k>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 安装oh my zsh</span>
+</span></span><span class=line><span class=cl>https://ohmyz.sh/
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 注销当前用户重新登录</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 若输出为 /bin/zsh 或者 /usr/bin/zsh 则表示当前默认 Shell 是 Zsh</span>
+</span></span><span class=line><span class=cl>$ <span class=nb>echo</span> <span class=nv>$SHELL</span>
+</span></span></code></pre></td></tr></table></div></div><h1 id=安装confluence>安装confluence<a href=#安装confluence class=hanchor arialabel=Anchor>#</a></h1><p><a href="https://www.atlassian.com/purchase/?utm_source=pocket_mylist">atlassian的相关软件</a></p><p><a href="https://3reality.tech/downloads/atlassian/?utm_source=pocket_mylist">confluence下载地址</a></p><p>安装:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>docker</span> <span class=n>run</span> <span class=o>-</span><span class=n>v</span> \
+</span></span><span class=line><span class=cl> <span class=o>/</span><span class=n>root</span><span class=o>/</span><span class=n>confluence</span><span class=o>/</span><span class=p>:</span><span class=o>/</span><span class=n>var</span><span class=o>/</span><span class=n>atlassian</span><span class=o>/</span><span class=n>application</span><span class=o>-</span><span class=n>data</span><span class=o>/</span><span class=n>confluence</span><span class=o>/</span> \
+</span></span><span class=line><span class=cl> <span class=o>--</span><span class=n>name</span><span class=o>=</span><span class=s2>&#34;confluence&#34;</span> \
+</span></span><span class=line><span class=cl> <span class=o>-</span><span class=n>d</span> \
+</span></span><span class=line><span class=cl> <span class=o>-</span><span class=n>p</span> <span class=mi>8090</span><span class=p>:</span><span class=mi>8090</span> \
+</span></span><span class=line><span class=cl> <span class=o>-</span><span class=n>p</span> <span class=mi>8091</span><span class=p>:</span><span class=mi>8091</span> \
+</span></span><span class=line><span class=cl> <span class=n>atlassian</span><span class=o>/</span><span class=n>confluence</span><span class=o>-</span><span class=n>server</span>
+</span></span></code></pre></td></tr></table></div></div><p>破解:</p><p>1./opt/atlassian/confluence/confluence/WEB-INF/lib/atlassian-extras-decoder-v2-3.4.1.jar备份
+2.atlassian-extras-decoder-v2-3.4.1.jar重命名为atlassian-extras-2.4.jar并下载到本地 （和破解工具放在同一目录）
+3.下载破解工具confluence_keygen.jar,在上面的超链接下载</p><p><img src=https://image.runtimes.cc/202404051426404.png alt=TODO></p><p>4.将已被破解的jar包atlassian-extras-2.4.jar重名为atlassian-extras-decoder-v2-3.4.1.jar</p><p>并放置在原路径/opt/atlassian/confluence/confluence/WEB-INF/lib</p><p>5.下载mysql-connector-java-5.1.32-bin.jar 上传/opt/atlassian/confluence/confluence/WEB-INF/lib</p><p>6.开始安装到需要授权码</p><p><img src=https://image.runtimes.cc/202404051426338.png alt=TODO></p><p><img src=https://image.runtimes.cc/202404051427340.png alt=TODO></p><p>相关报错:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=n>启动发生报错</span> <span class=s2>&#34;Spring Application context has not been set&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>rm</span> <span class=o>-</span><span class=n>f</span> <span class=o>/</span><span class=n>var</span><span class=o>/</span><span class=n>atlassian</span><span class=o>/</span><span class=n>application</span><span class=o>-</span><span class=n>data</span><span class=o>/</span><span class=n>confluence</span><span class=o>/</span><span class=n>confluence</span><span class=o>.</span><span class=n>cfg</span><span class=o>.</span><span class=n>xml</span>
+</span></span></code></pre></td></tr></table></div></div><h1 id=nmap>Nmap<a href=#nmap class=hanchor arialabel=Anchor>#</a></h1><h2 id=找出活跃的主机>找出活跃的主机<a href=#找出活跃的主机 class=hanchor arialabel=Anchor>#</a></h2><pre tabindex=0><code>nmap -sP 192.168.41.136
+
+nping --echo-client &#34;public&#34; echo.nmap.org
+</code></pre><h2 id=查看打开的端口>查看打开的端口<a href=#查看打开的端口 class=hanchor arialabel=Anchor>#</a></h2><p>nmap 192.168.41.136</p><h1 id=网络软件>网络软件<a href=#网络软件 class=hanchor arialabel=Anchor>#</a></h1><p><a href=https://one.one.one.one/purge-cache/>清理网络DNS缓存</a></p><p><a href="https://dnschecker.org/ns-lookup.php?query=55lukcy.in&amp;dns=cloudflare">检查nameserver有没有生效</a></p><p><a href=https://www.whatsmydns.net/#CNAME/whatsmydns.net>DNS生效的国家</a></p><p><a href=https://www.ip2location.com/demo/92.98.82.166>IP查询</a></p><p><a href=https://www.amazon.com/sendtokindle>发送文件到Kindle</a></p><h1 id=vim>VIM<a href=#vim class=hanchor arialabel=Anchor>#</a></h1><h2 id=vim的配置文件设置>vim的配置文件设置<a href=#vim的配置文件设置 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 先复制一份vim配置模板到个人目录下</span>
+</span></span><span class=line><span class=cl>cp /usr/share/vim/vimrc ~/.vimrc
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 编辑</span>
+</span></span><span class=line><span class=cl>vi ~/.vimrc
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 添加</span>
+</span></span><span class=line><span class=cl>syntax on <span class=c1># 开启高亮</span>
+</span></span><span class=line><span class=cl><span class=nb>set</span> nu!   <span class=c1># 默认开启行号</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=行号>行号<a href=#行号 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nb>set</span> nu
+</span></span></code></pre></td></tr></table></div></div><h2 id=过滤注释>过滤注释<a href=#过滤注释 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl> cat redis.conf <span class=p>|</span>grep -v <span class=s1>&#39;#&#39;</span> <span class=p>|</span>grep -v <span class=s1>&#39;^$&#39;</span> &gt;redis-6237.conf
+</span></span></code></pre></td></tr></table></div></div><h2 id=多行注释>多行注释<a href=#多行注释 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=m>1</span> Ctrl+v进入v模式
+</span></span><span class=line><span class=cl><span class=m>2</span> 上下方向键选中要注释的行
+</span></span><span class=line><span class=cl><span class=m>3</span> shift+i（即大写的I）行首插入
+</span></span><span class=line><span class=cl><span class=m>4</span> 输入注释符//
+</span></span><span class=line><span class=cl><span class=m>5</span> 按esc返回
+</span></span></code></pre></td></tr></table></div></div><h2 id=反注释>反注释<a href=#反注释 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=m>1</span> Ctrl+v进入v模式
+</span></span><span class=line><span class=cl><span class=m>2</span> 上下方向键选中要注释的行，左右键选择要删除的字符//
+</span></span><span class=line><span class=cl><span class=m>3</span> 按d删除
+</span></span></code></pre></td></tr></table></div></div><h2 id=格式化>格式化<a href=#格式化 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># gg 跳转到第一行</span>
+</span></span><span class=line><span class=cl><span class=c1># shift+v 转到可视模式</span>
+</span></span><span class=line><span class=cl><span class=c1># shift+g 全选</span>
+</span></span><span class=line><span class=cl><span class=c1># 按下=号</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=删除开头的行>删除#开头的行<a href=#删除开头的行 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>:g/^#/d
+</span></span></code></pre></td></tr></table></div></div><h1 id=ssh>SSH<a href=#ssh class=hanchor arialabel=Anchor>#</a></h1><h2 id=安装ssh>安装ssh<a href=#安装ssh class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 判断Ubuntu是否安装了ssh服务,检查有没有可以看到“sshd”</span>
+</span></span><span class=line><span class=cl>ps -e <span class=p>|</span> grep ssh
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 安装ssh服务，输入命令</span>
+</span></span><span class=line><span class=cl>sudo apt-get install openssh-server
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 启动服务</span>
+</span></span><span class=line><span class=cl>sudo /etc/init.d/ssh start
+</span></span></code></pre></td></tr></table></div></div><h2 id=ssh配置文件设置>SSH配置文件设置<a href=#ssh配置文件设置 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>vim /etc/ssh/sshd_config
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 这是设置允许root登陆</span>
+</span></span><span class=line><span class=cl>PermitRootLogin prohibit-password <span class=o>===</span>&gt; PermitRootLogin yes
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 这是设置允许使用账号密码登录</span>
+</span></span><span class=line><span class=cl><span class=c1># 不能只注释,注释会不起作用,还是可以用密码登录</span>
+</span></span><span class=line><span class=cl>PasswordAuthentication <span class=nv>no</span> <span class=o>===</span>&gt; PasswordAuthentication yes
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 允许用证书登录方式</span>
+</span></span><span class=line><span class=cl>PubkeyAuthentication yes
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 重启ssh服务</span>
+</span></span><span class=line><span class=cl>sudo service ssh reload
+</span></span></code></pre></td></tr></table></div></div><h2 id=ssh连接key失效>SSH连接,key失效<a href=#ssh连接key失效 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>λ ssh root@10.19.44.12
+</span></span><span class=line><span class=cl>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+</span></span><span class=line><span class=cl>@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+</span></span><span class=line><span class=cl>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+</span></span><span class=line><span class=cl>IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+</span></span><span class=line><span class=cl>Someone could be eavesdropping on you right now <span class=o>(</span>man-in-the-middle attack<span class=o>)</span>!
+</span></span><span class=line><span class=cl>It is also possible that a host key has just been changed.
+</span></span><span class=line><span class=cl>The fingerprint <span class=k>for</span> the ECDSA key sent by the remote host is
+</span></span><span class=line><span class=cl>SHA256:RIqSp3Pd94k4PPQcDtKAzK0sQbf4VWffKGwy/nvO8Kw.
+</span></span><span class=line><span class=cl>Please contact your system administrator.
+</span></span><span class=line><span class=cl>Add correct host key in C:<span class=se>\\</span>Users<span class=se>\\</span>Owner/.ssh/known_hosts to get rid of this message.
+</span></span><span class=line><span class=cl>Offending ECDSA key in C:<span class=se>\\</span>Users<span class=se>\\</span>Owner/.ssh/known_hosts:12
+</span></span><span class=line><span class=cl>ECDSA host key <span class=k>for</span> 10.19.44.12 has changed and you have requested strict checking.
+</span></span><span class=line><span class=cl>Host key verification failed.
+</span></span></code></pre></td></tr></table></div></div><p>解决方法:找到.ssh文件下的known_hosts,删除相关ip的行</p><h2 id=生成证书>生成证书<a href=#生成证书 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl><span class=c1># 客户端生成秘钥</span>
+</span></span><span class=line><span class=cl>ssh-keygen
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># ssh目录的文件</span>
+</span></span><span class=line><span class=cl><span class=c1># id_rsa,私钥文件。不应该分享给任何人。私钥文件通常以 PEM 格式存储。</span>
+</span></span><span class=line><span class=cl><span class=c1># id_rsa.pub,公钥文件。公钥可以公开分享，用于配置在你需要访问的服务器上。服务器使用公钥来加密信息，私钥可以解密。</span>
+</span></span><span class=line><span class=cl><span class=c1># known_hosts, 文件存储了你之前连接过的所有服务器的主机密钥。这些密钥用于验证服务器的身份，以防止中间人攻击。每次你连接一个新的服务器，服务器的公钥会被添加到这个文件中。</span>
+</span></span><span class=line><span class=cl><span class=c1># known_hosts.old,是 `known_hosts` 文件的备份。每当 `known_hosts` 文件更新时，旧版本会被保存为 `known_hosts.old`。这可以作为一个安全机制，如果新的 `known_hosts` 文件出现问题，可以回滚到旧版本。</span>
+</span></span><span class=line><span class=cl>➜  .ssh ll /Users/anthony/.ssh
+</span></span><span class=line><span class=cl>-rw-------@ <span class=m>1</span> anthony  staff   1.6K  <span class=m>6</span>  <span class=m>8</span> 21:50 id_rsa    
+</span></span><span class=line><span class=cl>-rw-r--r--@ <span class=m>1</span> anthony  staff   425B  <span class=m>6</span>  <span class=m>8</span> 21:50 id_rsa.pub
+</span></span><span class=line><span class=cl>-rw-------@ <span class=m>1</span> anthony  staff   3.0K  <span class=m>6</span>  <span class=m>8</span> 21:24 known_hosts   
+</span></span><span class=line><span class=cl>-rw-------@ <span class=m>1</span> anthony  staff   2.3K  <span class=m>6</span>  <span class=m>8</span> 21:23 known_hosts.old
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 把公钥拷贝到服务器,这次是要输入密码</span>
+</span></span><span class=line><span class=cl>ssh-copy-id -i ~/.ssh/id_rsa.pub user@remote_host
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 使用证书登录服务器</span>
+</span></span><span class=line><span class=cl><span class=c1># 实验的时候有个问题,如果不指定证书登录的命令,还是会提示输入密码</span>
+</span></span><span class=line><span class=cl>ssh -i ~/.ssh/id_rsa_server2 ubuntu@your_server_ip2
+</span></span></code></pre></td></tr></table></div></div><h2 id=root账号登录并且配置证书>root账号登录并且配置证书<a href=#root账号登录并且配置证书 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl><span class=c1># 已经使用别的用户(账户名是:anthony)登录了服务器之后,再执行</span>
+</span></span><span class=line><span class=cl>sudo passwd root
+</span></span><span class=line><span class=cl><span class=c1># 第一次输入anthony用户的密码</span>
+</span></span><span class=line><span class=cl><span class=c1># 第二次输入新密码</span>
+</span></span><span class=line><span class=cl><span class=c1># 第三次再次输入新密码</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 修改配置文件,让root用户可以登录,看上面的配置</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 客户端上传rsa公钥,留意这里是root的账户的路径</span>
+</span></span><span class=line><span class=cl>cat ~/.ssh/id_rsa.pub <span class=p>|</span> ssh root@172.16.147.129 <span class=s1>&#39;cat &gt;&gt; /root/.ssh/authorized_keys&#39;</span>
+</span></span><span class=line><span class=cl><span class=c1># 然后就可以使用root账户和证书登录了</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 证书本身是不区分用户名,只认是不是一对公钥还是私钥</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=root登录之后没有高亮>root登录之后没有高亮<a href=#root登录之后没有高亮 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>cp /home/kali/.bashrc /root
+</span></span><span class=line><span class=cl><span class=nb>source</span> .bashrc
+</span></span></code></pre></td></tr></table></div></div><h2 id=oh-my-zsh>oh-my-zsh<a href=#oh-my-zsh class=hanchor arialabel=Anchor>#</a></h2><h3 id=安装oh-my-zsh>安装oh-my-zsh<a href=#安装oh-my-zsh class=hanchor arialabel=Anchor>#</a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 配置文件位置</span>
+</span></span><span class=line><span class=cl>vim ~/.zshrc
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 配置主题</span>
+</span></span><span class=line><span class=cl><span class=c1># jonathan 是主题的名字</span>
+</span></span><span class=line><span class=cl><span class=nv>ZSH_THEME</span><span class=o>=</span><span class=s2>&#34;jonathan&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 配置插件,空格分开 插件的名字</span>
+</span></span><span class=line><span class=cl><span class=nv>plugins</span><span class=o>=(</span>git zsh-syntax-highlighting zsh-autosuggestions<span class=o>)</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=oh-my-zsh插件>oh my zsh插件<a href=#oh-my-zsh插件 class=hanchor arialabel=Anchor>#</a></h3><h4 id=zsh-syntax-highlighting>zsh-syntax-highlighting<a href=#zsh-syntax-highlighting class=hanchor arialabel=Anchor>#</a></h4><p>高亮语法，如图，输入正确语法会显示绿色，错误的会显示红色，使得我们无需运行该命令即可知道此命令语法是否正确</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>git clone https://github.com/zsh-users/zsh-syntax-highlighting.git <span class=si>${</span><span class=nv>ZSH_CUSTOM</span><span class=k>:-</span><span class=p>~/.oh-my-zsh/custom</span><span class=si>}</span>/plugins/zsh-syntax-highlighting
+</span></span></code></pre></td></tr></table></div></div><p>plugins=(其他的插件 zsh-syntax-highlighting)</p><h4 id=zsh-autosuggestions>zsh-autosuggestions<a href=#zsh-autosuggestions class=hanchor arialabel=Anchor>#</a></h4><p>自动补全</p><p>只需输入部分命令即可根据之前输入过的命令提示，按右键→即可补全</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>git clone https://github.com/zsh-users/zsh-autosuggestions <span class=si>${</span><span class=nv>ZSH_CUSTOM</span><span class=k>:-</span><span class=p>~/.oh-my-zsh/custom</span><span class=si>}</span>/plugins/zsh-autosuggestions
+</span></span></code></pre></td></tr></table></div></div><p>plugins=(其他的插件 zsh-syntax-highlighting)</p><h1 id=shell>Shell<a href=#shell class=hanchor arialabel=Anchor>#</a></h1><h2 id=设置别名>设置别名<a href=#设置别名 class=hanchor arialabel=Anchor>#</a></h2><p>经常要用命令行,进入到某个目录</p><ol><li>编辑你的 Shell 配置文件，例如 Bash 的配置文件是 <code>~/.bashrc</code> 或 <code>~/.bash_profile</code>，Zsh 的配置文件是 <code>~/.zshrc</code>。</li><li>添加 <code>alias work='cd /path/to/your/work/directory'</code></li><li>运行 <code>source ~/.bashrc</code> 或 <code>source ~/.zshrc</code> 来使配置生效。</li><li>终端中输入 <code>work</code> 命令，就会进入你设置的工作目录</li></ol><h2 id=设置环境变量>设置环境变量<a href=#设置环境变量 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 设置环境变量</span>
+</span></span><span class=line><span class=cl><span class=nb>export</span> <span class=nv>http_proxy</span><span class=o>=</span>http://127.0.0.1:3128
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 删除环境变量</span>
+</span></span><span class=line><span class=cl><span class=nb>unset</span> http_proxy
+</span></span></code></pre></td></tr></table></div></div><h2 id=curl换行>curl换行<a href=#curl换行 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>curl http://www.baidu.com -w <span class=s1>&#39;\n&#39;</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=curl请求不校验证书>curl请求不校验证书<a href=#curl请求不校验证书 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 报错信息</span>
+</span></span><span class=line><span class=cl><span class=c1># curl failed to verify the legitimacy of the server and therefore could not</span>
+</span></span><span class=line><span class=cl><span class=c1># establish a secure connection to it. To learn more about this situation and</span>
+</span></span><span class=line><span class=cl><span class=c1># how to fix it, please visit the web page mentioned above.</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>curl -k https://random.com
+</span></span><span class=line><span class=cl><span class=c1># 或者</span>
+</span></span><span class=line><span class=cl>curl -insecure https://random.com
+</span></span></code></pre></td></tr></table></div></div><h2 id=脚本首行>脚本首行<a href=#脚本首行 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=cp>#!/bin/bash
+</span></span></span></code></pre></td></tr></table></div></div><h2 id=脚本变量>脚本变量<a href=#脚本变量 class=hanchor arialabel=Anchor>#</a></h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># shell脚本给变量赋值的时候 = 两边不能加空格</span>
+</span></span><span class=line><span class=cl><span class=nv>your_name</span><span class=o>=</span><span class=s2>&#34;runoob&#34;</span>
+</span></span><span class=line><span class=cl><span class=c1># 使用双引号拼接</span>
+</span></span><span class=line><span class=cl><span class=nv>greeting</span><span class=o>=</span><span class=s2>&#34;hello, &#34;</span><span class=nv>$your_name</span><span class=s2>&#34; !&#34;</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=判断>判断<a href=#判断 class=hanchor arialabel=Anchor>#</a></h2><p><a href=https://blog.csdn.net/doiido/article/details/43966819>Linux shell脚本之 if条件判断_doiido的专栏-CSDN博客</a></p><h2 id=判断数值>判断数值<a href=#判断数值 class=hanchor arialabel=Anchor>#</a></h2><table><thead><tr><th>命令</th><th>解释</th></tr></thead><tbody><tr><td>[ INT1 -eq INT2 ]</td><td>INT1和INT2两数相等返回为真 ,=</td></tr><tr><td>[ INT1 -ne INT2 ]</td><td>INT1和INT2两数不等返回为真 ,&lt;></td></tr><tr><td>[ INT1 -gt INT2 ]</td><td>INT1大于INT2返回为真 ,></td></tr><tr><td>[ INT1 -ge INT2 ]</td><td>INT1大于等于INT2返回为真,>=</td></tr><tr><td>[ INT1 -lt INT2 ]</td><td>INT1小于INT2返回为真 ,&lt;</td></tr><tr><td>[ INT1 -le INT2 ]</td><td>INT1小于等于INT2返回为真,&lt;=</td></tr></tbody></table><h2 id=字符串判断>字符串判断<a href=#字符串判断 class=hanchor arialabel=Anchor>#</a></h2><table><thead><tr><th>命令</th><th>解释</th></tr></thead><tbody><tr><td>[ -z STRING ]</td><td>如果STRING的长度为零则返回为真，即空是真</td></tr><tr><td>[ -n STRING ]</td><td>如果STRING的长度非零则返回为真，即非空是真</td></tr><tr><td>[ STRING1 ]</td><td>如果字符串不为空则返回为真,与-n类似</td></tr><tr><td>[ STRING1 == STRING2 ]</td><td>如果两个字符串相同则返回为真</td></tr><tr><td>[ STRING1 != STRING2 ]</td><td>如果字符串不相同则返回为真</td></tr><tr><td>[ STRING1 &lt; STRING2 ]</td><td>如果 “STRING1”字典排序在“STRING2”前面则返回为真。</td></tr><tr><td>[ STRING1 > STRING2 ]</td><td>如果 “STRING1”字典排序在“STRING2”后面则返回为真。</td></tr></tbody></table><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=cp>#!/bin/sh
+</span></span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nv>STRING</span><span class=o>=</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=o>[</span> -z <span class=s2>&#34;</span><span class=nv>$STRING</span><span class=s2>&#34;</span> <span class=o>]</span><span class=p>;</span> <span class=k>then</span>
+</span></span><span class=line><span class=cl>    <span class=nb>echo</span> <span class=s2>&#34;STRING is empty&#34;</span>
+</span></span><span class=line><span class=cl><span class=k>fi</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=o>[</span> -n <span class=s2>&#34;</span><span class=nv>$STRING</span><span class=s2>&#34;</span> <span class=o>]</span><span class=p>;</span> <span class=k>then</span>
+</span></span><span class=line><span class=cl>    <span class=nb>echo</span> <span class=s2>&#34;STRING is not empty&#34;</span>
+</span></span><span class=line><span class=cl><span class=k>fi</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 结果是:STRING is empty</span>
+</span></span></code></pre></td></tr></table></div></div></div></div><div class=post-authors style="margin:22px 0 0;border-top:1px dashed rgba(255,255,255,.18);padding-top:14px"><div class=author style=display:flex;align-items:center;gap:10px;flex-wrap:wrap><img class=author-avatar src="/images/authors/avatar_small.webp?v=1" alt=isme width=48 height=48 loading=lazy decoding=async><div style=display:flex;flex-direction:column;gap:2px;min-width:0><strong style=line-height:1>isme</strong><span style=opacity:.9;line-height:1.2>AWS Certified Solutions Architect / 全栈工程师</span><span style=opacity:.75;line-height:1.2>📍 Bangkok, Thailand</span></div></div></div><div class=pagination><div class=pagination__title><span class=pagination__title-h>阅读更多文章</span><hr></div><div class=pagination__buttons><span class="button previous"><a href=https://isme.cz/jenkins/><span class=button__icon>←</span>
+<span class=button__text>Jenkins</span>
+</a></span><span class="button next"><a href=https://isme.cz/mac-tips/><span class=button__text>Mac</span>
+<span class=button__icon>→</span></a></span></div></div></article></div><footer class=footer><div class=footer__inner><div class=copyright><span>© 2026 Powered by <a href=https://gohugo.io>Hugo</a></span>
+<span>:: <a href=https://github.com/mirus-ua/hugo-theme-re-terminal target=_blank>Theme</a> made by <a href=https://github.com/mirus-ua target=_blank>Mirus</a></span></div></div></footer><script type=text/javascript src=/bundle.min.js></script></div></body></html>

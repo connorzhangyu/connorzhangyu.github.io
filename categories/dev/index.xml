@@ -1,1 +1,60 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dev on Hello World</title><link>https://isme.cz/categories/dev/</link><description>Recent content in Dev on Hello World</description><generator>Hugo</generator><language>zh</language><lastBuildDate>Wed, 03 Sep 2025 14:00:00 +0700</lastBuildDate><atom:link href="https://isme.cz/categories/dev/index.xml" rel="self" type="application/rss+xml"/><item><title>MyBatis 缓存机制详解：一级缓存、二级缓存与 PerpetualCache</title><link>https://isme.cz/java/mybatis-cache/</link><pubDate>Wed, 03 Sep 2025 14:00:00 +0700</pubDate><guid>https://isme.cz/java/mybatis-cache/</guid><description>全面整理 MyBatis 的一级缓存、二级缓存及其底层实现 PerpetualCache，帮助你快速掌握工作原理与应用场景。</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dev on Hello World</title><link>https://isme.cz/categories/dev/</link><description>Recent content in Dev on Hello World</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 03 Sep 2025 14:00:00 +0700</lastBuildDate><atom:link href="https://isme.cz/categories/dev/index.xml" rel="self" type="application/rss+xml"/><item><title>MyBatis 缓存机制详解：一级缓存、二级缓存与 PerpetualCache</title><link>https://isme.cz/java/mybatis-cache/</link><pubDate>Wed, 03 Sep 2025 14:00:00 +0700</pubDate><guid>https://isme.cz/java/mybatis-cache/</guid><description>全面整理 MyBatis 的一级缓存、二级缓存及其底层实现 PerpetualCache，帮助你快速掌握工作原理与应用场景。</description><content>&lt;h1 id="mybatis-缓存机制详解"&gt;MyBatis 缓存机制详解&lt;/h1&gt;
+&lt;p&gt;MyBatis 提供了两级缓存机制，用于减少数据库访问、提升性能。&lt;/p&gt;
+&lt;h2 id="-一级缓存local-cache"&gt;🔹 一级缓存（Local Cache）&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;作用域&lt;/strong&gt;：&lt;code&gt;SqlSession&lt;/code&gt; 级别（默认开启）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;实现&lt;/strong&gt;：基于 &lt;code&gt;PerpetualCache&lt;/code&gt; 的 &lt;code&gt;HashMap&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;特性&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;在同一个 &lt;code&gt;SqlSession&lt;/code&gt; 中，相同的 SQL 查询会直接命中缓存，不再发起数据库请求&lt;/li&gt;
+&lt;li&gt;当执行 &lt;code&gt;INSERT&lt;/code&gt;、&lt;code&gt;UPDATE&lt;/code&gt;、&lt;code&gt;DELETE&lt;/code&gt; 时，缓存会被清空（保证数据一致性）&lt;/li&gt;
+&lt;li&gt;作用域小，线程隔离，安全可靠&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;⚠️ 注意：如果是不同的 &lt;code&gt;SqlSession&lt;/code&gt;，即使 SQL 一样也不会共享一级缓存。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="-二级缓存mapper-cache"&gt;🔹 二级缓存（Mapper Cache）&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;作用域&lt;/strong&gt;：&lt;code&gt;Mapper&lt;/code&gt; 命名空间级别（需手动开启）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;实现&lt;/strong&gt;：同样基于 &lt;code&gt;PerpetualCache&lt;/code&gt;，可配置为 EhCache、Redis 等&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;特性&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;在同一个 &lt;code&gt;Mapper&lt;/code&gt; 下的不同 &lt;code&gt;SqlSession&lt;/code&gt; 之间共享缓存&lt;/li&gt;
+&lt;li&gt;生命周期更长，通常随应用进程而存在&lt;/li&gt;
+&lt;li&gt;提高了缓存复用率，但要注意数据一致性问题&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;⚠️ 注意：二级缓存默认是关闭的，需要在 &lt;code&gt;mybatis-config.xml&lt;/code&gt; 或 Mapper 文件中显式配置：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-xml" data-lang="xml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;&amp;lt;settings&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nt"&gt;&amp;lt;setting&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;cacheEnabled&amp;#34;&lt;/span&gt; &lt;span class="na"&gt;value=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;true&amp;#34;&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;&amp;lt;/settings&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;&amp;lt;cache&lt;/span&gt; &lt;span class="na"&gt;eviction=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;LRU&amp;#34;&lt;/span&gt; &lt;span class="na"&gt;flushInterval=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;60000&amp;#34;&lt;/span&gt; &lt;span class="na"&gt;size=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;512&amp;#34;&lt;/span&gt; &lt;span class="na"&gt;readOnly=&lt;/span&gt;&lt;span class="s"&gt;&amp;#34;false&amp;#34;&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;🔹 PerpetualCache
+• 定义：MyBatis 默认的缓存实现类，位于 org.apache.ibatis.cache.impl
+• 底层：本质是对 HashMap 的简单封装
+• 特性：
+• 提供最基本的缓存操作：putObject、getObject、removeObject、clear
+• 通过装饰器模式与 LRU、FIFO、SoftReference、WeakReference 等策略结合使用
+• 一级缓存、二级缓存都依赖它&lt;/p&gt;
+&lt;p&gt;⸻&lt;/p&gt;
+&lt;p&gt;🎯 总结
+• 一级缓存：SqlSession 级别，默认开启，线程安全，生命周期短。
+• 二级缓存：Mapper 命名空间级别，需手动开启，跨 SqlSession 共享。
+• PerpetualCache：底层实现，简单 HashMap 封装，配合装饰器支持多种缓存策略。&lt;/p&gt;
+&lt;p&gt;✅ 开发中常见用法：
+• 读多写少 的数据（如字典表、配置表） → 建议开启二级缓存
+• 高并发写入表 → 谨慎使用缓存，避免数据不一致&lt;/p&gt;</content></item></channel></rss>
